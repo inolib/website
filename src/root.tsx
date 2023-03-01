@@ -1,14 +1,16 @@
-import { component$ } from "@builder.io/qwik";
-import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
+import { component$, useStylesScoped$ } from "@builder.io/qwik";
+import { QwikCityProvider } from "@builder.io/qwik-city";
+
+import { Body } from "./components/Body";
+import { Head } from "./components/Head";
+
+import "./global.css?inline";
 
 export default component$(() => {
   return (
     <QwikCityProvider>
-      <head></head>
-      <body>
-        <RouterOutlet />
-        <ServiceWorkerRegister />
-      </body>
+      <Head />
+      <Body />
     </QwikCityProvider>
   );
 });
