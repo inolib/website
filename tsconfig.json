@@ -1,0 +1,19 @@
+{
+  "include": ["./src"],
+  "compilerOptions": {
+    "composite": true,
+    "esModuleInterop": true,
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@builder.io/qwik",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "tsBuildInfoFile": "./.cache/tsbuildinfo.json"
+  }
+}
