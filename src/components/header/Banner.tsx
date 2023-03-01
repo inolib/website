@@ -13,7 +13,7 @@ export const Banner = component$((props: BannerProps) => {
 
       <section>
         <h1>
-          <img alt="INOLIB" src="../../../public/images/logo-white.svg" />
+          <img alt="INOLIB" src="/images/logo-white.svg" />
           <span>Human Noble Technology</span>
         </h1>
 

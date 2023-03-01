@@ -15,7 +15,7 @@ export const Navbar = component$((props: NavbarProps) => {
         <ul>
           <li>
             <a href="" aria-current={props.page === "home" ? "page" : ""} aria-label="Accueil">
-              <img alt="" src="../../../public/images/logo-blue.svg" /> inolib
+              <img alt="" src="/images/logo-blue.svg" /> inolib
             </a>
           </li>
           <li>
