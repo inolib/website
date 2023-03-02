@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const Contentinfo = component$(() => {
   return (
-    <footer>
+    <footer aria-label="footer de la page" role="contentinfo">
       <section class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white py-10 md:flex">
         <section class="md:flex md:flex-col md:items-end md:px-8 md:w-1/2">
           <div class="md:w-2/3">
@@ -26,10 +26,13 @@ export const Contentinfo = component$(() => {
         </section>
 
         <section class="md:border-l-2 md:grid md:grid-rows-1 md:grid-cols-1 md:pl-10 md:w-1/4">
-          <ul class="border-y-2 border-[#9A35AD] flex justify-between py-8 md:border-y-0 md:items-center md:columns-1 md:py-0 md:row-start-1 ">
+          <ul
+            class="border-y-2 border-[#9A35AD] flex justify-between py-8 md:border-y-0 md:items-center md:columns-1 md:py-0 md:row-start-1 "
+            aria-label="liste des reseau sociaux d'Inolib"
+          >
             <li>
               <a href="#">
-                <img alt="facebook INOLIB" src="\images\logo-facebook-violet.svg"></img>
+                <img alt="facebook INOLIB" src="\images\logo-facebook-violet.svg" aria-label="page Contact"></img>
               </a>
             </li>
             <li>
