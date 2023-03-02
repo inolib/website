@@ -9,7 +9,9 @@ export const Navbar = component$(() => {
       {/* <nav>
         <a href="#contenu">Aller au contenu principal</a>
       </nav> */}
-      <nav class="shadow-3xl font-bold flex py-3 bg-white justify-between mx-3">
+
+      <nav class="shadow-3xl font-semibold flex py-3 bg-white justify-between mx-3">
+
         <div class="">
           <a
             class="flex text-3xl text-[#0B3168] items-center flex-row"
@@ -24,7 +26,9 @@ export const Navbar = component$(() => {
           <ul class="flex ml-[35vw]">
             <li>
               <a
+
                 class="hover:bg-[#0B3168] font-semibold hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-lg"
+
                 href="/actualites"
                 {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
               >
@@ -33,7 +37,9 @@ export const Navbar = component$(() => {
             </li>
             <li>
               <a
+
                 class="hover:bg-[#0B3168] font-semibold hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-lg"
+
                 href="/accessibilite"
                 {...(location.url.pathname === "/accessibilite" ? { "aria-current": "page" } : {})}
               >
@@ -42,7 +48,9 @@ export const Navbar = component$(() => {
             </li>
             <li>
               <a
+
                 class="hover:bg-[#0B3168] font-semibold hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-lg"
+
                 href="/presentation"
                 {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
               >
@@ -51,7 +59,9 @@ export const Navbar = component$(() => {
             </li>
             <li>
               <a
+
                 class="hover:bg-[#0B3168] font-semibold hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-lg"
+
                 href="/services"
                 {...(location.url.pathname === "/services" ? { "aria-current": "page" } : {})}
               >
@@ -60,7 +70,9 @@ export const Navbar = component$(() => {
             </li>
             <li>
               <a
+
                 class="hover:bg-[#0B3168] font-semibold hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-lg"
+
                 href="/temoignages"
                 {...(location.url.pathname === "/temoignages" ? { "aria-current": "page" } : {})}
               >
@@ -69,7 +81,9 @@ export const Navbar = component$(() => {
             </li>
             <li>
               <a
+
                 class="hover:bg-[#0B3168] font-semibold hover:text-white hover:rounded-md pl-[0.6vw] pr-[2vw] py-[0.3vw] text-[#0B3168] text-lg"
+
                 href="/contact"
                 {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
               >
@@ -79,7 +93,9 @@ export const Navbar = component$(() => {
           </ul>
         </div>
         <div class="flex items-center space-x-2">
-          <button class="border-[#0B3168] border-[1px] hover:bg-[#0B3168] hover:text-white px-4 py-1 font-normal text-[#0B3168] text-lg bg-white rounded-md">
+
+          <button class="border-[#0B3168] border-[1px] hover:bg-[#0B3168] hover:text-white px-4 py-1 font-light text-[#0B3168] text-lg bg-white rounded-md">
+
             Connexion
           </button>
         </div>

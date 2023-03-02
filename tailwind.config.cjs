@@ -5,6 +5,8 @@ module.exports = {
   content: ["./src/**/*.{mdx,ts,tsx}"],
   plugins: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: { sans: ["Luciole, sans-serif"] },
+    },
   },
 };
