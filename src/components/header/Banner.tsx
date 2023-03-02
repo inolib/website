@@ -1,15 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 
-import { Navbar } from "./Navbar";
+import { Navbar } from "~/header/Navbar";
 
-type BannerProps = {
-  page: string;
-};
-
-export const Banner = component$((props: BannerProps) => {
+export const Banner = component$(() => {
   return (
     <header>
-      <Navbar page={props.page} />
+      <Navbar />
 
       <section>
         <h1>

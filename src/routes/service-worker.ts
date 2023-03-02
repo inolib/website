@@ -1,12 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-misused-promises */
 
 import { setupServiceWorker } from "@builder.io/qwik-city/service-worker";
 
+declare const self: ServiceWorkerGlobalScope;
+
 setupServiceWorker();
 
-addEventListener("install", () => self.skipWaiting());
-addEventListener("activate", () => self.clients.claim());
-
-declare const self: ServiceWorkerGlobalScope;
+addEventListener("install", async () => await self.skipWaiting());
+addEventListener("activate", async () => await self.clients.claim());
