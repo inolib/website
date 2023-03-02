@@ -69,7 +69,7 @@ export const Navbar = component$(() => {
             </li>
             <li>
               <a
-                className="hover:bg-[#0B3168] font-semibold hover:text-white hover:rounded-md pl-[0.6vw] pr-[2vw] py-[0.3vw] text-[#0B3168] text-lg"
+                className="hover:bg-[#0B3168] font-semibold hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-lg"
                 href="/contact"
                 {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
               >
