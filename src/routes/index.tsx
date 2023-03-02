@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
+
   return (
     <main>
       <section className="mx-[10vw] bg-[url('/image/Home-image.png')]">
