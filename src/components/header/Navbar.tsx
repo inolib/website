@@ -27,7 +27,6 @@ export const Navbar = component$(() => {
             <li>
               <a
                 className="hover:bg-[#0B3168] font-normal hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-l"
-
                 href="/actualites"
                 {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
               >
@@ -36,9 +35,7 @@ export const Navbar = component$(() => {
             </li>
             <li>
               <a
-
                 className="hover:bg-[#0B3168] font-normal hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-l"
-
                 href="/accessibilite"
                 {...(location.url.pathname === "/accessibilite" ? { "aria-current": "page" } : {})}
               >
