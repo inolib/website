@@ -1,7 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 
-import { Banner } from "../components/header/Banner";
-import { Contentinfo } from "../components/footer/Contentinfo";
+import { Banner } from "~/header/Banner";
+import { Contentinfo } from "~/footer/Contentinfo";
 
 export default component$(() => {
   return (
