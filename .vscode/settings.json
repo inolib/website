@@ -1,6 +1,6 @@
 {
   "css.lint.unknownAtRules": "ignore",
-  "files.eol": "\n",
   "javascript.validate.enable": false,
+  "typescript.tsdk": "./node_modules/typescript/lib",
   "typescript.validate.enable": false
 }
