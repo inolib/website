@@ -1,7 +1,7 @@
 import { createDOM } from "@builder.io/qwik/testing";
 import { expect, test } from "vitest";
 
-import { Counter } from "../../src/components/Counter";
+import { Counter } from "~/Counter";
 
 test("Default start value is 0", async () => {
   const { render, screen } = await createDOM();
