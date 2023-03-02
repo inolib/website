@@ -1,5 +1,5 @@
 {
-  "include": ["./src"],
+  "include": ["./src", "./tests"],
   "compilerOptions": {
     "composite": true,
     "esModuleInterop": true,
@@ -8,9 +8,13 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
+    "lib": ["DOM", "WebWorker"],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
+    "paths": {
+      "~/*": ["./src/components/*"]
+    },
     "skipLibCheck": true,
     "strict": true,
     "target": "ESNext",
