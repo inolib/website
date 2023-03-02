@@ -3,7 +3,7 @@ import { RouterOutlet, ServiceWorkerRegister } from "@builder.io/qwik-city";
 
 export const Body = component$(() => {
   return (
-    <body>
+    <body className="no-scrollbar">
       <Slot />
       <RouterOutlet />
       <ServiceWorkerRegister />
