@@ -1,18 +1,17 @@
 import { component$ } from "@builder.io/qwik";
+import { useLocation } from "@builder.io/qwik-city";
 
-type NavbarProps = {
-  page: string;
-};
+export const Navbar = component$(() => {
+  const location = useLocation();
 
-export const Navbar = component$((props: NavbarProps) => {
   return (
     <>
       <nav class="flex py-5 bg-white justify-between mx-3">
         <div class="">
           <a
             className="flex text-3xl items-center flex-row"
-            href=""
-            aria-current={props.page === "home" ? "page" : ""}
+            href="/"
+            {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
             aria-label="Accueil"
           >
             <img className="w-16 h-16 mx-2" alt="" src="/images/logo-blue.svg" /> Inolib
@@ -24,7 +23,7 @@ export const Navbar = component$((props: NavbarProps) => {
               <a
                 className="hover:bg-[#0B3168] hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-xl"
                 href="/actualites"
-                aria-current={props.page === "actualites" ? "page" : ""}
+                {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
               >
                 Actualité
               </a>
@@ -33,7 +32,7 @@ export const Navbar = component$((props: NavbarProps) => {
               <a
                 className="hover:bg-[#0B3168] hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-xl"
                 href="/accessibilite"
-                aria-current={props.page === "accessibilite" ? "page" : ""}
+                {...(location.url.pathname === "/accessibilite" ? { "aria-current": "page" } : {})}
               >
                 Accessibilité
               </a>
@@ -42,7 +41,7 @@ export const Navbar = component$((props: NavbarProps) => {
               <a
                 className="hover:bg-[#0B3168] hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-xl"
                 href="/presentation"
-                aria-current={props.page === "presentation" ? "page" : ""}
+                {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
               >
                 Présentation
               </a>
@@ -51,7 +50,7 @@ export const Navbar = component$((props: NavbarProps) => {
               <a
                 className="hover:bg-[#0B3168] hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-xl"
                 href="/services"
-                aria-current={props.page === "services" ? "page" : ""}
+                {...(location.url.pathname === "/services" ? { "aria-current": "page" } : {})}
               >
                 Services
               </a>
@@ -60,7 +59,7 @@ export const Navbar = component$((props: NavbarProps) => {
               <a
                 className="hover:bg-[#0B3168] hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-xl"
                 href="/temoignages"
-                aria-current={props.page === "temoignes" ? "page" : ""}
+                {...(location.url.pathname === "/temoignages" ? { "aria-current": "page" } : {})}
               >
                 Témoignes
               </a>
@@ -69,7 +68,7 @@ export const Navbar = component$((props: NavbarProps) => {
               <a
                 className="hover:bg-[#0B3168] hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-xl"
                 href="/contact"
-                aria-current={props.page === "contact" ? "page" : ""}
+                {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
               >
                 Contact
               </a>
