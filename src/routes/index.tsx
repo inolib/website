@@ -73,6 +73,83 @@ export default component$(() => {
           </span>
         </article>
       </section>
+      <section
+        aria-label="témoignage"
+        className="h-[90vh] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh] mt-[10vh] bg-no-repeat"
+      >
+        <span className="flex flex-col -z-1 ">
+          <span className="flex flex-col w-[35vw] ml-[8vw] mt-[10vh]">
+            <h3 className="text-4xl text-white pb-[5vh]">Témoignages</h3>
+            <blockquote className="max-w-lg text-2xl text-white">
+              " Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat rerum iure eum! Minima facilis
+              earum unde repellat quo nisi."
+            </blockquote>
+          </span>
+        </span>
+        <span className="w-[100vw] pr-[12vw] flex flex-row-reverse">
+          <img className="-mt-[15vh] h-[60vh]" src="/images/temoignage-home.png" alt="" />
+          <span className="flex flex-col mr-[3vw]">
+            <p className="mt-[20vh] max-w-xl text-[#0F3069]">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
+              voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
+              iure eum! Minima facilis earum unde repellat quo nisi.
+            </p>
+            <a
+              className="bg-[#0B3168] border-white border-[1px] mt-[7vh] mr-[8vw] flex justify-center py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[10vw] font-normal"
+              href="/presentation"
+            >
+              <p>Découvrir</p>
+            </a>
+          </span>
+        </span>
+      </section>
+      <section className="mb-[10vh]">
+        <span className="flex justify-start mt-20 ml-[9vw]">
+          <h2 className="text-[#0B3168] font-normal text-4xl">Actualités</h2>
+        </span>
+        <span className="grid grid-col-2 grid-row-2- ml-[1vw] mt-14">
+          <span className="col-end-1 ml-[8vw] border-slate-300 w-[40vw] border-b-[2px]">
+            <img className="mb-10" src="/images/home1.png" alt="" />
+            <h3 className="text-[#0B3168] font-normal text-3xl max-w-sm mb-10">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
+            <p className="max-w-md text-[#0B3168]">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est id, facilis veritatis repudiandae nobis eius
+              magnam non libero a dolor recusandae obcaecati similique eligendi magni aliquid nisi illum nemo explicabo.
+            </p>
+            <p className="text-[#0B3168] text-[11px] pb-[5vh] mt-4">20.06.2023&ensp; |&ensp; Développement</p>
+          </span>
+          <span className="col-end-2 mr-[8vw]">
+            <img className="mb-10" src="/images/home2.png" alt="" />
+            <h3 className="text-[#0B3168] font-normal text-3xl max-w-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
+            <p className="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Accessibilité</p>
+          </span>
+          <span className="col-end-2 mr-[8vw] pb-4 -mt-[23vh]">
+            <img className="mb-10" src="/images/home3.png" alt="" />
+            <h3 className="text-[#0B3168] font-normal text-3xl max-w-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h3>
+            <p className="text-[#0B3168] text-[11px] mt-4">03.02.2023&ensp; |&ensp; Accessibilité</p>
+          </span>
+          <a
+            aria-label="lien vers pas actualité"
+            className="flex justify-end mr-[8vw] -mt-[30vh] text-[#0B3168]"
+            href="/actualites"
+          >
+            Voir toute notre actualité{" "}
+            <img
+              className="w-[2vw] h-[2vh] mt-[0.8vh]"
+              src="/images/icon-small-arrow.svg"
+              alt="lien vers page accessibilité"
+            />
+          </a>
+          <a aria-label="lien vers le haut de la page" className="col-end-1 flex justify-end mr-[6.4vw]" href="/">
+            <img src="/images/icon-arrow-up.svg" alt="" />
+          </a>
+        </span>
+      </section>
     </main>
   );
 });
