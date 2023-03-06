@@ -13,16 +13,16 @@ export const Navbar = component$(() => {
       <nav class="shadow-3xl font-normal flex py-3 bg-white justify-between mx-3">
         <div class="">
           <a
-            className="flex text-3xl text-[#0B3168] items-center flex-row"
+            class="flex text-3xl text-[#0B3168] items-center flex-row"
             href="/"
             {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
             aria-label="Accueil"
           >
-            <img className="w-10 h-10 mx-2" alt="" src="/images/logo-blue.svg" /> inolib
+            <img class="w-10 h-10 mx-2" alt="" src="/images/logo-blue.svg" /> inolib
           </a>
         </div>
         <div class="items-center hidden space-x-8 md:flex">
-          <ul className="flex ml-[35vw]">
+          <ul class="flex ml-[35vw]">
             <li>
               <a
                 class="hover:bg-[#0B3168] font-normal hover:text-white hover:rounded-md px-[0.6vw] py-[0.3vw] text-[#0B3168] text-lg"
