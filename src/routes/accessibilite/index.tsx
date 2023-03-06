@@ -11,15 +11,15 @@ export default component$(() => {
         <img class="md:mt-48" src="../images\banner-accessibilite.png" />
         <div class="ml-[5vw]">
           <h1 class="font-bold mb-5 text-3xl md:text-4xl max-w-sm">Qu'est ce que l'accessibilité ?</h1>
-          <p class=" max-w-sm">
+          <p class=" max-w-md">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna. Aliqua.
           </p>
         </div>
       </header>
       <main>
-        <span className="flex mt-10 ml-[8vw]">
-          <h2 className="text-[#0B3168] font-normal text-4xl mt-8">Découvrir</h2>
+        <span class="flex mt-10 ml-[8vw]">
+          <h2 class="text-[#0B3168] font-normal text-4xl mt-8">Découvrir</h2>
         </span>
         <span class="flex justify-between mt-10 ml-[8vw]">
           <p class="text-[#0B3168] w-[50%]">
@@ -84,8 +84,8 @@ export default component$(() => {
             perferendis doloribus asperiores repellat.
           </p>
         </span>
-        <span className="flex mt-10 ml-[8vw]">
-          <h2 className="text-[#0B3168] font-normal text-4xl mt-8">Explications</h2>
+        <span class="flex mt-10 ml-[8vw]">
+          <h2 class="text-[#0B3168] font-normal text-4xl mt-8">Explications</h2>
         </span>
         <span class="flex justify-between mt-10 ml-[8vw]">
           <p class="text-[#0B3168] w-[50%]">
@@ -145,7 +145,7 @@ export default component$(() => {
         <span class="flex justify-center mt-[25vh] ml-[6.5vw] mb-10">
           <a
             aria-label="lien vers le haut de la page"
-            className="col-end-1 flex justify-end mr-[6.4vw]"
+            class="col-end-1 flex justify-end mr-[6.4vw]"
             href="/accessibilite"
           >
             <img src="/images/icon-arrow-up.svg" alt="" />
