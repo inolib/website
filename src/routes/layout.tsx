@@ -7,7 +7,7 @@ import { Navbar } from "~/header/Navbar";
 export default component$(() => {
   return (
     <>
-      <Banner />
+      <Navbar />
       <main>
         <Slot />
       </main>
