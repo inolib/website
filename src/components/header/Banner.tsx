@@ -1,10 +1,8 @@
 import { component$ } from "@builder.io/qwik";
-import { Navbar } from "~/header/Navbar";
 
 export const Banner = component$(() => {
   return (
     <header>
-      <Navbar />
       <section className="bg-no-repeat bg-[length:100vw_75vh] bg-[url('/images/home-banner.png')] h-[120vh]">
         <h1 className="relative flex w-[85vw] h-[57vh] pt-[15vh]">
           <img className="mr-[-9vw] w-[35%] h-[35%]" alt="INOLIB" src="/images/logo-white.svg" />
