@@ -1,5 +1,4 @@
 import { component$ } from "@builder.io/qwik";
-import { Navbar } from "~/header/Navbar";
 
 export const Banner = component$(() => {
   return (

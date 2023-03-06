@@ -121,7 +121,7 @@ export default component$(() => {
         </section>
         <section>
           <ul class="md:flex md:flex-wrap md:px-28 pt-20">
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
+            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
               <img
                 class="object-cover w-full md:object-none md:w-auto"
                 alt="portrait de Djebrine Aloui"
@@ -138,7 +138,7 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
+            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
               <img
                 class="object-cover w-full md:object-none md:w-auto"
                 alt="portrait de Djebrine Aloui"
@@ -155,7 +155,7 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
+            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
               <img
                 class="object-cover w-full md:object-none md:w-auto"
                 alt="portrait de Djebrine Aloui"
@@ -172,7 +172,7 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
+            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
               <img
                 class="object-cover w-full md:object-none md:w-auto"
                 alt="portrait de Djebrine Aloui"
@@ -189,7 +189,7 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
+            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
               <img
                 class="object-cover w-full md:object-none md:w-auto"
                 alt="portrait de Djebrine Aloui"
@@ -206,7 +206,7 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
+            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
               <img
                 class="object-cover w-full md:object-none md:w-auto"
                 alt="portrait de Djebrine Aloui"
@@ -225,6 +225,11 @@ export default component$(() => {
             </li>
           </ul>
         </section>
+        <div class="flex w-full justify-center my-10">
+          <a href="#header" aria-label="retour haut de la page">
+            <img class="mt-20 mb-20" src="..\images\icon-arrow-up.svg" />
+          </a>
+        </div>
       </main>
     </>
   );
