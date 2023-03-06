@@ -3,7 +3,7 @@ import { component$ } from "@builder.io/qwik";
 export const Banner = component$(() => {
   return (
     <header>
-      <section className="bg-no-repeat bg-[length:100vw_75vh] bg-[url('/images/home-banner.png')] h-[120vh]">
+      <section className="bg-no-repeat bg-[length:100vw_75vh] bg-[url('/images/home-banner.png')] h-[120vh] mb-[-20vh]">
         <h1 className="relative flex w-[85vw] h-[57vh] pt-[15vh]">
           <img className="mr-[-9vw] w-[35%] h-[35%]" alt="INOLIB" src="/images/logo-white.svg" />
           <span className="flex flex-col border-l font-bold text-white max-w-[5vw] h-[50vh] text-[300%] pl-10">
