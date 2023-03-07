@@ -7,6 +7,7 @@ export default component$(() => {
       <header
         class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
         role="banner"
+        id="header"
       >
         <img class="md:mt-48 z-10" src="../images\serviceheader.png" />
         <div class="md:pl-14">
@@ -285,13 +286,13 @@ export default component$(() => {
         <span class="flex justify-center">
           <a
             class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[5vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[15vw]"
-            href="/"
+            href="#header"
           >
             <p>Demander un devis</p>
           </a>
         </span>
         <span class="flex justify-center mt-[18vh] mb-[5vh]">
-          <a aria-label="lien vers le haut de la page" href="/services">
+          <a aria-label="lien vers le haut de la page" href="#header">
             <img src="/images/icon-arrow-up.svg" alt="lien vers le haut de la page" />
           </a>
         </span>
