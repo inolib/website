@@ -148,7 +148,7 @@ export default component$(() => {
             />
           </a>
           <a aria-label="lien vers le haut de la page" class="col-end-1 flex justify-end mr-[6.4vw]" href="/">
-            <img src="/images/icon-arrow-up.svg" alt="" />
+            <img src="/images/icon-arrow-up.svg" alt="lien vers le haut de la page" />
           </a>
         </span>
       </section>
