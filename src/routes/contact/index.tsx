@@ -18,55 +18,68 @@ export default component$(() => {
           </p>
         </div>
       </header>
-      <main class="text-[#0B3168]">
-        <h2 class="text-2xl font-bold my-6">Nous écrires</h2>
-        <section class="flex p-4">
-          <section class="bg-gradient-to-b flex flex-col from-[#5A0C69] to-[#0F3069] items-center text-center text-white">
-            <p class="mx-10">
-              Une information ?<br />
-              Un devis ?
-            </p>
-            <p class="hidden md:block">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
-              eleifend va lucum.
-            </p>
-            <div class="flex ">
-              <a href="tel:0611223344">
-                <img alt="icone de téléphone" src="..\images\icon-phone.svg" aria-label="cliquez-ici pour télphoner" />
-              </a>
-              <p>tel:06 70 86 50 32</p>
-            </div>
-            <section class="md:grid md:grid-rows-1 md:grid-cols-1 md:pl-10 md:w-1/4">
+      <main class="text-[#0B3168] md:px-28">
+        <h2 class="text-2xl font-bold my-6 md:pt-10 md:mb-14">Nous écrires</h2>
+        <section class="shadow-xl mb-10 flex md:px-0 md:h-[100vh] md:w-full">
+          <section class="bg-gradient-to-b flex flex-col from-[#5A0C69] to-[#0F3069] text-white w-1/3 relative">
+            <div class="p-10">
+              <p class="text-center text-xl m-6">
+                Une information ?<br />
+                Un devis ?
+              </p>
+              <p class="mb-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
+                eleifend va lucum.
+              </p>
+              <div class="flex mb-6">
+                <img src="..\images\icon-phone.svg" />
+                <p class="pl-3">06 70 86 50 32</p>
+              </div>
+              <div class="flex mb-6">
+                <img src="..\images\icon-mail.svg" />
+                <p class="pl-3">contact@inolib.com</p>
+              </div>
+
               <ul
-                class="flex justify-between py-8 md:border-y-0 md:items-center md:columns-1 md:py-0 md:row-start-1 "
+                class="flex justify-between py-8 md:border-y-0 md:items-center md:py-0 md:w-2/3"
                 aria-label="liste des reseau sociaux d'Inolib"
               >
                 <li>
                   <a href="#">
-                    <img alt="facebook INOLIB" src="\images\logo-facebook-violet.svg" aria-label="page Contact"></img>
+                    <img
+                      alt="facebook INOLIB"
+                      class="scale-50"
+                      src="\images\logo-facebook-violet.svg"
+                      aria-label="page Contact"
+                    ></img>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img alt="twitter INOLIB" src="\images\logo-twiter.svg"></img>
+                    <img alt="twitter INOLIB" class="scale-50" src="\images\logo-twiter.svg"></img>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img alt="LinkedIn INOLIB" src="\images\logo-linkedin.svg"></img>
+                    <img alt="LinkedIn INOLIB" class="scale-50" src="\images\logo-linkedin.svg"></img>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img alt="instagram INOLIB" src="\images\logo-instagram.svg"></img>
+                    <img alt="instagram INOLIB" class="scale-50" src="\images\logo-instagram.svg"></img>
                   </a>
                 </li>
               </ul>
-              <img src="..\images\background-card-contact.svg" />
-            </section>
+            </div>
+            <img class="w-3/5 h-auto absolute bottom-0 right-0" src="..\images\background-card.svg" />
           </section>
-          <form class="flex flex-col justify-between">
-            <select class="text-black flex" name="Type de la demande" aria-label="type de votre demande">
+
+          <form class="flex md:grid md:grid-cols-4 md:grid-rows-5 md:px-10 py-14 md:w-2/3">
+            <select
+              class="border-solid border-[1px] border-[#0B3168] flex h-12 rounded-md md:col-span-1 md:col-start-1 md:col-end-3 md:row-start-1"
+              name="Type de la demande"
+              aria-label="type de votre demande"
+            >
               <option value="" disabled selected hidden>
                 Type de la demande
               </option>
@@ -74,14 +87,74 @@ export default component$(() => {
               <option>Formation</option>
               <option>Développement</option>
             </select>
-            <div class="flex flex-col">
-              <input placeholder="Nom" type="text" value="Nom" />
-              <input placeholder="Prénom" type="text" value="Prénom" />
-              <input placeholder="Mail" type="email" value="Mail" />
-              <input placeholder="Téléphone" type="tel" value="Téléphone" />
-            </div>
+
+            <label class="md:col-span-1 md:row-start-2 md:col-start-1  md:col-end-3 md:flex md:flex-col md:pr-5">
+              Nom
+              <input
+                class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
+                placeholder="Nom"
+                type="text"
+              />
+            </label>
+            <label class="md:col-span-2 md:row-start-2 md:col-start-3  md:col-end-5 md:flex md:flex-col md:pl-5">
+              Prénom
+              <input
+                class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
+                placeholder="Prénom"
+                type="text"
+              />
+            </label>
+            <label class="md:col-span-1 md:row-start-3 md:col-start-1  md:col-end-3 md:flex md:flex-col md:pr-5">
+              Mail
+              <input
+                class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
+                placeholder="Mail"
+                type="email"
+              />
+            </label>
+            <label class="md:col-span-2 md:row-start-3 md:col-start-3  md:col-end-5 md:flex md:flex-col md:pl-5">
+              Téléphone
+              <input
+                class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
+                placeholder="Téléphone"
+                type="tel"
+              />
+            </label>
+
+            <textarea
+              class="border-solid border-[1px] border-[#0B3168] md:col-span-4 pl-2 md:row-start-4 md:col-start-1  md:col-end-5"
+              placeholder="Votre texte"
+              aria-label="zone pour écrire les détails de votre demande"
+            ></textarea>
+            <button class="h-14 mr-2 rounded-md hover:border-2 hover:border-[#0B3168] md:col-span-1 md:row-start-5 md:col-start-3  md:col-end-4 md:mt-14">
+              Effacer
+            </button>
+            <button class="bg-[#0B3168] h-14 rounded-md text-white md:col-span-1 md:row-start-5 md:col-start-4  md:col-end-4 md:mt-14">
+              Envoyer
+            </button>
           </form>
         </section>
+        <section>
+          <h2 class=" font-bold mb-10 text-2xl">Nous rencontrer</h2>
+          <div class="flex justify-between shadow-lg mb-10">
+            <div class="flex flex-col justify-center items-center w-full">
+              <img class="h-16 w-auto" src="..\images\icon-pin-map.svg" />
+              <p class="text-center">
+                INOLIB
+                <br />
+                254 RUE VENDÔME
+                <br />
+                69003 LYON
+              </p>
+            </div>
+            <img class="p-2" src="..\images\map.png" />
+          </div>
+        </section>
+        <div class="flex w-full justify-center my-10">
+          <a href="#header" aria-label="retour haut de la page">
+            <img class="mt-20 mb-20" src="..\images\icon-arrow-up.svg" />
+          </a>
+        </div>
       </main>
     </>
   );
