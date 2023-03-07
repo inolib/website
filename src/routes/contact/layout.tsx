@@ -6,12 +6,9 @@ import { Contentinfo } from "~/footer/Contentinfo";
 export default component$(() => {
   return (
     <>
-      <Banner />
       <main>
         <Slot />
       </main>
-
-      <Contentinfo />
     </>
   );
 });
