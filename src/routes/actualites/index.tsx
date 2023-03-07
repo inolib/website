@@ -209,33 +209,33 @@ export default component$(() => {
         </form>
         <section class="grid grid-cols-3 grid-rows-2 gap-20 mx-[10vw]">
           <article>
-            <img class="h-[40vh]" src="/images/home3.png" alt="" />
+            <img class="h-[40vh]" src="/images/home3.png" alt="article 1" />
             <h3 class="text-[#0B3168] font-normal mt-[4vh] text-3xl max-w-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h3>
             <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Accessibilité</p>
           </article>
           <article>
-            <img class="h-[40vh]" src="/images/home7.png" alt="" />
+            <img class="h-[40vh]" src="/images/home7.png" alt="article 2" />
             <h3 class="text-[#0B3168] font-normal mt-[4vh]  text-3xl max-w-sm">
               Lorem ipsum dolor sit amet consectetur !
             </h3>
             <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Développement</p>
           </article>
           <article>
-            <img class="h-[40vh]" src="/images/home2.png" alt="" />
+            <img class="h-[40vh]" src="/images/home2.png" alt="article 3" />
             <h3 class="text-[#0B3168] font-normal mt-[4vh]  text-3xl max-w-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h3>
             <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Accessibilité</p>
           </article>
           <article>
-            <img class="h-[40vh]" src="/images/home6.png" alt="" />
+            <img class="h-[40vh]" src="/images/home6.png" alt="article 4" />
             <h3 class="text-[#0B3168] font-normal mt-[4vh]  text-3xl max-w-sm">Lorem ipsum dolor.</h3>
             <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Formation</p>
           </article>
           <article>
-            <img class="h-[40vh]" src="/images/home5.png" alt="" />
+            <img class="h-[40vh]" src="/images/home5.png" alt="article 5" />
             <h3 class="text-[#0B3168] font-normal mt-[4vh] text-3xl max-w-sm">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </h3>
