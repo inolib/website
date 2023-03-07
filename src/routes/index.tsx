@@ -89,7 +89,7 @@ export default component$(() => {
           </span>
         </span>
         <span class="w-[100vw] pr-[12vw] flex flex-row-reverse">
-          <img class="-mt-[15vh] h-[60vh]" src="/images/temoignage-home.png" alt="" />
+          <img class="-mt-[15vh] h-[60vh]" src="/images/temoignage-homme.png" alt="" />
           <span class="flex flex-col mr-[3vw]">
             <p class="mt-[20vh] max-w-xl text-[#0F3069]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
