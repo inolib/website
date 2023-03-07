@@ -7,6 +7,7 @@ export default component$(() => {
       <header
         class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
         role="banner"
+        id="header"
       >
         <img class="md:mt-48 z-10" src="../images\home5.png" />
         <div class="md:pl-14">
@@ -120,7 +121,7 @@ export default component$(() => {
           <img class="hidden md:block" src="..\images\background-team-bulles.svg" />
         </section>
         <section>
-          <ul class="md:flex md:flex-wrap md:px-28 pt-20">
+          <ul class="md:flex md:flex-wrap md:px-28 pt-20" aria-label="liste des employés d'Inolib">
             <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
               <img
                 class="object-cover w-full md:object-none md:w-auto"

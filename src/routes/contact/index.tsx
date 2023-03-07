@@ -7,6 +7,7 @@ export default component$(() => {
       <header
         class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
         role="banner"
+        id="header"
       >
         <img class="md:mt-48 z-10" src="..\images\contact-banner.png" />
         <div class="md:pl-14">
@@ -47,26 +48,25 @@ export default component$(() => {
                 <li>
                   <a href="#">
                     <img
-                      alt="facebook INOLIB"
+                      alt="lien vers le facebook INOLIB"
                       class="scale-50"
                       src="\images\logo-facebook-violet.svg"
-                      aria-label="page Contact"
                     ></img>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img alt="twitter INOLIB" class="scale-50" src="\images\logo-twiter.svg"></img>
+                    <img alt="lien vers twitter INOLIB" class="scale-50" src="\images\logo-twiter.svg"></img>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img alt="LinkedIn INOLIB" class="scale-50" src="\images\logo-linkedin.svg"></img>
+                    <img alt="lien vers le LinkedIn INOLIB" class="scale-50" src="\images\logo-linkedin.svg"></img>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img alt="instagram INOLIB" class="scale-50" src="\images\logo-instagram.svg"></img>
+                    <img alt="lien vers l'instagram INOLIB" class="scale-50" src="\images\logo-instagram.svg"></img>
                   </a>
                 </li>
               </ul>
@@ -94,6 +94,7 @@ export default component$(() => {
                 class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
                 placeholder="Nom"
                 type="text"
+                aria-label="entrez votre nom"
               />
             </label>
             <label class="md:col-span-2 md:row-start-2 md:col-start-3  md:col-end-5 md:flex md:flex-col md:pl-5">
@@ -102,6 +103,7 @@ export default component$(() => {
                 class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
                 placeholder="Prénom"
                 type="text"
+                aria-label="entrez votre prénom"
               />
             </label>
             <label class="md:col-span-1 md:row-start-3 md:col-start-1  md:col-end-3 md:flex md:flex-col md:pr-5">
@@ -110,6 +112,7 @@ export default component$(() => {
                 class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
                 placeholder="Mail"
                 type="email"
+                aria-label="entrez votre e-mail"
               />
             </label>
             <label class="md:col-span-2 md:row-start-3 md:col-start-3  md:col-end-5 md:flex md:flex-col md:pl-5">
@@ -118,6 +121,7 @@ export default component$(() => {
                 class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
                 placeholder="Téléphone"
                 type="tel"
+                aria-label="entrez votre numéro de téléphone"
               />
             </label>
 

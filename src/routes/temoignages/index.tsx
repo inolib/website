@@ -7,6 +7,7 @@ export default component$(() => {
       <header
         class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
         role="banner"
+        id="header"
       >
         <img class="md:mt-48 z-10" src="..\images\temoignage-homme-header.png" />
         <div class="md:pl-14">
