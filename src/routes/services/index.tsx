@@ -8,223 +8,293 @@ export default component$(() => {
         class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
         role="banner"
       >
-        <img class="md:mt-48 z-10" src="../images\illustrationheaderabout.png" />
+        <img class="md:mt-48 z-10" src="../images\serviceheader.png" />
         <div class="md:pl-14">
-          <h1 class="font-bold m-5 text-3xl md:text-4xl">Qui sommes-nous ?</h1>
-          <p class="text-justify">
+          <h1 class="font-bold mb-5 text-3xl md:text-4xl">Nos services</h1>
+          <p class="max-w-[30vw]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna. Aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
+            dolore magna. Aliqua. Lorem ipsum dolor sit amet.
           </p>
+          <span class="flex mt-[12vh] -mb-[25vh]">
+            <p class="border-r-2 px-5 ">Conseil & Audit</p>
+            <p class="px-5">Formations</p>
+            <p class="border-l-2 px-5">Développement</p>
+          </span>
         </div>
       </header>
       <main class="text-[#0B3168]">
-        <article class="md:px-28 md:pt-4">
-          <h2 class="text-2xl font-bold my-6">Ce qui nous animes</h2>
-          <div class="md:flex">
-            <div class="md:px-4 md:pr-10 md:pl-0 md:w-[46vw]">
-              <p class="text-justify md:text-left">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium vel, enim, dolore dolorem a
-                mollitia adipisci ipsa pariatur ipsum officiis eligendi expedita. Eaque cumque suscipit quidem
-                exercitationem. Ipsa, eveniet eaque. At modi porro, perspiciatis enim illum laborum nostrum nesciunt
-                voluptatum doloremque vitae, consequuntur eaque aliquam deserunt pariatur sequi possimus, tempora quidem
-                quas repellendus dolore. Illum accusantium sed dolores aperiam. Deserunt. Aliquam dolor facere officiis
-                suscipit! Nobis repellat porro molestiae temporibus, totam sed cupiditate excepturi eligendi animi esse?
-                Voluptas, at molestiae, quis magnam temporibus ut in minus voluptate soluta eaque enim. Odit, eligendi
-                similique. Odit, saepe at! Nisi nemo exercitationem impedit obcaecati assumenda accusantium. A, omnis
-                laboriosam unde laudantium quia corrupti. Animi, optio? Perspiciatis incidunt in fugiat laudantium
-                expedita, repellendus cum. Eaque sint illo dignissimos quod cum ex, possimus, sed minus omnis voluptate
-                alias aspernatur maxime quasi quibusdam hic officiis inventore ea placeat consectetur illum totam quia
-                tenetur fugit libero? Voluptate? Optio ex id maiores perferendis molestias saepe debitis atque aut
-                quaerat commodi hic, nam illo et labore ea quasi facilis maxime incidunt fugit necessitatibus
-                laboriosam! Temporibus consequuntur sunt enim facilis. Tempore alias, earum officiis ut est labore
-                distinctio fugit voluptatibus quis minus repudiandae saepe dolorem aperiam quibusdam odio, veniam rerum
-                officia eius libero obcaecati dolor quisquam, omnis dolorum nostrum. Neque? Minima tempore laudantium
-                neque accusamus cum, aspernatur, culpa ipsum inventore qui possimus ullam ratione sint aliquam iusto
-                eveniet ducimus dicta necessitatibus nostrum corrupti itaque architecto hic dolor quas. Quibusdam, quam?
-                Culpa a incidunt natus! Sint fugit dolores debitis. Aliquam totam neque ullam dolore. Doloremque
-                sapiente maiores natus nulla quisquam ducimus aperiam porro rerum sunt? Facilis voluptatum eum modi
-                neque dignissimos? Cupiditate iusto voluptates enim ipsa cum qui, omnis beatae fugiat aperiam dolore
-                provident porro quasi, ab molestiae nulla similique illum blanditiis consectetur harum, non molestias
-                laborum nihil voluptate nemo. Exercitationem.
+        <span class="flex mt-10 ml-[8vw]">
+          <h2 class="text-4xl mt-6">Conseil & Audit</h2>
+        </span>
+        <span class="flex mt-[5vh] mx-[8vw]">
+          <p class="mr-[1vw]">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint ea laudantium sunt. Possimus delectus
+            excepturi harum tempore corrupti impedit sit, deserunt officia dolorem, aspernatur facere! Beatae laboriosam
+            consectetur rerum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint ea laudantium sunt.
+            Possimus delectus excepturi harum tempore corrupti impedit sit, deserunt officia dolorem, aspernatur facere!
+            laudantium sunt. Possimus delectus excepturi harum tempore corrupti impedit sit, deserunt officia dolorem,
+            Beatae laboriosam consectetur rerum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint ea
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            aspernatur facere! Beatae laboriosam consectetur rerum?Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            illum quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing
+            illum quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            illum quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing
+            illum quidem eaque quibusdam saepe commodi ratione sit!
+          </p>
+          <p class="ml-[1vw]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, cumque iure. Possimus neque eius repellendus
+            consequatur labore, nesciunt qui sunt non fugit illum quidem eaque quibusdam saepe commodi ratione sit!Lorem
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            illum quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing
+            illum quidem eaque quibusdam saepe commodi ratione sit! ipsum dolor sit amet consectetur adipisicing elit.
+            Porro, cumque iure. Possimus neque eius repellendus ipsum dolor sit amet consectetur adipisicing elit.
+            Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit illum
+            quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit illum
+            quidem eaque quibusdam saepe commodi ratione sit!Lorem consequatur labore, nesciunt qui sunt non fugit illum
+            quidem eaque quibusdam saepe commodi ratione sit!
+          </p>
+        </span>
+        <span class="flex mt-10 mx-[8vw] justify-around">
+          <span class="flex flex-col max-w-[40vw] mr-[7vw] mt-[8vh]">
+            <span class="flex mb-[5vh]">
+              <img src="/images/checkservice.svg" alt="" />
+              <p class="ml-[1vw]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.quibusdam saepe
+                commodi ratione sit.
               </p>
-            </div>
-            <div class="md:w-1/3">
-              <img class="mb-6" src="..\images\presentation-article-1.png" />
-              <blockquote class="px-4 text-center">
-                <strong>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, culpa alias? Officia autem
-                  doloribus nemo cul.
-                </strong>
-              </blockquote>
-            </div>
-          </div>
-        </article>
-        <article class=" md:px-28">
-          <h2 class="text-2xl font-bold my-6">Ce que nous sommes au quotidien</h2>
-          <div class="md:flex">
-            <div class="max-w-lg px-4 md:pr-10">
-              <img class="mb-6" src="..\images\presentation-article-2.png" />
-              <blockquote class="px-4">
-                <strong>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, culpa alias? Officia autem
-                  doloribus nemo cul.
-                </strong>
-              </blockquote>
-            </div>
-            <div class="my-10 md:mb-10 md:mt-0  md:w-[46vw]">
-              <p class="text-justify md:text-left">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium vel, enim, dolore dolorem a
-                mollitia adipisci ipsa pariatur ipsum officiis eligendi expedita. Eaque cumque suscipit quidem
-                exercitationem. Ipsa, eveniet eaque. At modi porro, perspiciatis enim illum laborum nostrum nesciunt
-                voluptatum doloremque vitae, consequuntur eaque aliquam deserunt pariatur sequi possimus, tempora quidem
-                quas repellendus dolore. Illum accusantium sed dolores aperiam. Deserunt. Aliquam dolor facere officiis
-                suscipit! Nobis repellat porro molestiae temporibus, totam sed cupiditate excepturi eligendi animi esse?
-                Voluptas, at molestiae, quis magnam temporibus ut in minus voluptate soluta eaque enim. Odit, eligendi
-                similique. Odit, saepe at! Nisi nemo exercitationem impedit obcaecati assumenda accusantium. A, omnis
-                laboriosam unde laudantium quia corrupti. Animi, optio? Perspiciatis incidunt in fugiat laudantium
-                expedita, repellendus cum. Eaque sint illo dignissimos quod cum ex, possimus, sed minus omnis voluptate
-                alias aspernatur maxime quasi quibusdam hic officiis inventore ea placeat consectetur illum totam quia
-                tenetur fugit libero? Voluptate? Optio ex id maiores perferendis molestias saepe debitis atque aut
-                quaerat commodi hic, nam illo et labore ea quasi facilis maxime incidunt fugit necessitatibus
-                laboriosam! Temporibus consequuntur sunt enim facilis. Tempore alias, earum officiis ut est labore
-                distinctio fugit voluptatibus quis minus repudiandae saepe dolorem aperiam quibusdam odio, veniam rerum
-                officia eius libero obcaecati dolor quisquam, omnis dolorum nostrum. Neque? Minima tempore laudantium
-                neque accusamus cum, aspernatur, culpa ipsum inventore qui possimus ullam ratione sint aliquam iusto
-                eveniet ducimus dicta necessitatibus nostrum corrupti itaque architecto hic dolor quas. Quibusdam, quam?
-                Culpa a incidunt natus! Sint fugit dolores debitis. Aliquam totam neque ullam dolore. Doloremque
-                sapiente maiores natus nulla quisquam ducimus aperiam porro rerum sunt? Facilis voluptatum eum modi
-                neque dignissimos? Cupiditate iusto voluptates enim ipsa cum qui, omnis beatae fugiat aperiam dolore
-                provident porro quasi, ab molestiae nulla similique illum blanditiis consectetur harum, non molestias
-                laborum nihil voluptate nemo. Exercitationem.
+            </span>
+            <span class="flex mb-[5vh]">
+              <img src="/images/checkservice.svg" alt="" />
+              <p class="ml-[1vw]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
+                commodi ratione sit.
               </p>
-            </div>
-          </div>
-        </article>
-        <section class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white flex px-4 py-8 md:px-36">
-          <div class="flex flex-col justify-center md:pr-16">
-            <strong>
-              <h2 class="text-3xl mb-2 md:mb-8">Notre équipe</h2>
-            </strong>
-            <strong>
-              <p class="text-2xl my-6 md:mb-12">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Aliquam totam neque ullam dolore.
+            </span>
+            <span class="flex mb-[5vh]">
+              <img src="/images/checkservice.svg" alt="" />
+              <p class="ml-[1vw]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
+                commodi ratione sit.
               </p>
-            </strong>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna.
+            </span>
+          </span>
+          <span class="flex flex-col">
+            <img src="/images/conseilservice.png" alt="" />
+            <p class="mt-[1vh]">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, maiores impedit ut illum et dolore magna.
             </p>
-          </div>
-          <img class="hidden md:block" src="..\images\background-team-bulles.svg" />
+          </span>
+        </span>
+        <p class="mt-[10vh] mx-[8vw]">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure tempora natus accusantium consequuntur,
+          doloribus quisquam, distinctio iste nulla atque eos eum id reiciendis quam unde corrupti perspiciatis?
+          Eligendi, placeat natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus tenetur
+          minima sit, voluptatibus explicabo obcaecati soluta ratione? Animi odio id perspiciatis dolorem labore
+          repellat sunt reprehenderit assumenda ipsum dolor! Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Incidunt, ipsam. Necessitatibus, illo tempora rem corrupti porro soluta nesciunt libero incidunt quas
+          consequuntur quasi voluptates culpa eos unde? Fugit, eos error? Lorem ipsum dolor sit amet consectetur,
+          adipisicing elit. Minus nisi reprehenderit, ipsum voluptatem architecto et numquam voluptas debitis in
+          reiciendis quae omnis perferendis provident ipsa quasi dolore beatae obcaecati ratione. Lorem ipsum, dolor sit
+          amet consectetur adipisicing elit. Debitis eaque pariatur cupiditate quam ducimus hic provident est laborum!
+          Eaque fugit atque culpa voluptas rerum provident blanditiis sunt esse praesentium. Architecto. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Beatae alias reiciendis earum sequi reprehenderit provident
+          veniam enim accusantium repellat voluptas vero accusamus, harum omnis dolore quasi sapiente, dolorem, iusto
+          at.
+        </p>
+        <span class="flex justify-center">
+          <img class="w-[14vw] h-[30vh]" src="/images/purple-logo.png" alt="" />
+        </span>
+        <span class="flex justify-center">
+          <p class="text-2xl text-center max-w-[70vw]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolore labore commodi.culpa voluptas
+            rerum provident blanditiis sunt esse praesentium.
+          </p>
+        </span>
+        <span class="flex justify-center">
+          <a
+            class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[5vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[15vw]"
+            href="/"
+          >
+            <p>Demander un devis</p>
+          </a>
+        </span>
+        <span class="flex flex-col mt-10 bg-slate-200">
+          <h2 class="text-4xl ml-[8vw] mt-6">Formations</h2>
+          <span class="flex">
+            <img class="ml-[8vw] mt-10 w-[40vw] h-[50vh]" src="/images/home4.png" alt="" />
+            <p class=" mt-[4.7vh] ml-10 max-w-[40vw]">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus itaque, ex temporibus officiis
+              laborum repudiandae, aliquam consequatur eligendi tempore iusto illo illum at iste provident eaque eos!
+              Nisi, iure vero? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, doloribus? Facere sit
+              minima repudiandae iure exercitationem nemo quia, provident eos quod saepe deleniti eaque dolorum
+              laboriosam dolores doloribus corporis? Quis. Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Tenetur quasi velit quis? Commodi eum eius, fuga distinctio ab fugiat dolore vel, dolorem repudiandae sit
+              ipsa laudantium reprehenderit dolor dignissimos tempora. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Et nobis libero molestias corrupti similique, hic dicta illum quam enim! Dolorum
+              aspernatur enim aut omnis minima, assumenda repellendus reiciendis ipsum et.
+            </p>
+          </span>
+          <section class="bg-white mx-[8vw] mt-[10vh]">
+            <h2 class="text-4xl ml-[4vw] mt-6">Toutes nos formations</h2>
+            <span class="grid grid-cols-2 grid-row-2 pt-[10vh] pl-[13vw] h-[200vh]">
+              <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[23vw] h-[27vh]">
+                <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
+                <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
+                  <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
+                  <p class="text-[#0B3168]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
+                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
+                    autem! Molestias, facilis?
+                  </p>
+                </span>
+              </article>
+              <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[23vw] h-[27vh]">
+                <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
+                <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
+                  <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
+                  <p class="text-[#0B3168]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
+                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
+                    autem! Molestias, facilis?
+                  </p>
+                </span>
+              </article>
+              <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[23vw] h-[27vh]">
+                <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
+                <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
+                  <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
+                  <p class="text-[#0B3168]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
+                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
+                    autem! Molestias, facilis?
+                  </p>
+                </span>
+              </article>
+              <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[23vw] h-[27vh]">
+                <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
+                <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
+                  <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
+                  <p class="text-[#0B3168]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
+                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
+                    autem! Molestias, facilis?
+                  </p>
+                </span>
+              </article>
+            </span>
+          </section>
+        </span>
+        <section
+          aria-label="Développement"
+          class="h-[90vh] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh] mt-[10vh] bg-no-repeat"
+        >
+          <span class="flex flex-col -z-1 ">
+            <span class="flex flex-col w-[35vw] ml-[8vw] mt-[10vh]">
+              <h3 class="text-4xl text-white pb-[5vh]">Développement</h3>
+              <p class="max-w-lg  text-white">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat rerum iure eum! Minima facilis
+                earum unde repellat quo nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, placeat
+                omnis. Nam incidunt dolorum aliquam autem ducimus dignissimos minima soluta labore. Praesentium dolores
+                illo omnis pariatur sint. Aut, quidem perferendis.
+              </p>
+            </span>
+          </span>
+          <span class="w-[100vw] pr-[12vw] flex flex-row-reverse">
+            <img class="-mt-[15vh] h-[50vh] " src="/images/photoArticle.png" alt="" />
+          </span>
         </section>
-        <section>
-          <ul class="md:flex md:flex-wrap md:px-28 pt-20">
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
-              <img
-                class="object-cover w-full md:object-none md:w-auto"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
-              <img
-                class="object-cover w-full md:object-none md:w-auto"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
-              <img
-                class="object-cover w-full md:object-none md:w-auto"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
-              <img
-                class="object-cover w-full md:object-none md:w-auto"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
-              <img
-                class="object-cover w-full md:object-none md:w-auto"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="flex flex-col items-center text-black mb-12 md:items-start md:pr-10">
-              <img
-                class="object-cover w-full md:object-none md:w-auto"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-          </ul>
-        </section>
+        <span class="flex mx-[8vw] -mt-[8vh]">
+          <p class="mr-[1vw]">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint ea laudantium sunt. Possimus delectus
+            excepturi harum tempore corrupti impedit sit, deserunt officia dolorem, aspernatur facere! Beatae laboriosam
+            consectetur rerum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint ea laudantium sunt.
+            Possimus delectus excepturi harum tempore corrupti impedit sit, deserunt officia dolorem, aspernatur facere!
+            laudantium sunt. Possimus delectus excepturi harum tempore corrupti impedit sit, deserunt officia dolorem,
+            Beatae laboriosam consectetur rerum? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quam sint ea
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            aspernatur facere! Beatae laboriosam consectetur rerum?Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            illum quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing
+            illum quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            illum quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing
+            illum quidem eaque quibusdam saepe commodi ratione sit!
+          </p>
+          <p class="ml-[1vw]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, cumque iure. Possimus neque eius repellendus
+            consequatur labore, nesciunt qui sunt non fugit illum quidem eaque quibusdam saepe commodi ratione sit!Lorem
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            elit. Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit
+            illum quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing
+            illum quidem eaque quibusdam saepe commodi ratione sit! ipsum dolor sit amet consectetur adipisicing elit.
+            Porro, cumque iure. Possimus neque eius repellendus ipsum dolor sit amet consectetur adipisicing elit.
+            Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit illum
+            quidem eaque quibusdam saepe commodi ratione sit!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Porro, cumque iure. Possimus neque eius repellendus consequatur labore, nesciunt qui sunt non fugit illum
+            quidem eaque quibusdam saepe commodi ratione sit!Lorem consequatur labore, nesciunt qui sunt non fugit illum
+            quidem eaque quibusdam saepe commodi ratione sit!
+          </p>
+        </span>
+        <span class="flex flex-row-reverse mt-[12vh] mr-[8vw] ml-[10vw]">
+          <span class="flex flex-col max-w-[40vw] mr-[7vw] ml-[5vw]">
+            <span class="flex mb-[5vh]">
+              <img src="/images/checkservice.svg" alt="" />
+              <p class="ml-[1vw] text-lg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.quibusdam saepe
+                commodi ratione sit.
+              </p>
+            </span>
+            <span class="flex mb-[5vh]">
+              <img src="/images/checkservice.svg" alt="" />
+              <p class="ml-[1vw] text-lg">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
+                commodi ratione sit.
+              </p>
+            </span>
+            <span class="flex mb-[5vh] text-lg">
+              <img src="/images/checkservice.svg" alt="" />
+              <p class="ml-[1vw]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
+                commodi ratione sit.
+              </p>
+            </span>
+            <span class="flex mb-[5vh] text-lg">
+              <img src="/images/checkservice.svg" alt="" />
+              <p class="ml-[1vw]">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
+                commodi ratione sit.
+              </p>
+            </span>
+          </span>
+          <span class="flex flex-col">
+            <img src="/images/actualitehome1.png" alt="" />
+          </span>
+        </span>
+        <span class="flex justify-center mt-[15vh]">
+          <p class="text-2xl text-center max-w-[70vw]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolore labore commodi.culpa voluptas
+            rerum provident blanditiis sunt esse praesentium.
+          </p>
+        </span>
+        <span class="flex justify-center">
+          <a
+            class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[5vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[15vw]"
+            href="/"
+          >
+            <p>Demander un devis</p>
+          </a>
+        </span>
+        <span class="flex justify-center mt-[18vh] mb-[5vh]">
+          <a aria-label="lien vers le haut de la page" href="/services">
+            <img src="/images/icon-arrow-up.svg" alt="lien vers le haut de la page" />
+          </a>
+        </span>
       </main>
     </>
   );

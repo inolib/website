@@ -9,8 +9,6 @@ export default component$(() => {
       <main>
         <Slot />
       </main>
-
-      <Contentinfo />
     </>
   );
 });

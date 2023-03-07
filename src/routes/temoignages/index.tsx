@@ -50,10 +50,10 @@ export default component$(() => {
           <section class="md:flex md:flex-row-reverse justify-end">
             <div class="md:pl-10 md:w-2/3">
               <div class="md:flex">
-                <h4 class="text-xl mb-3">Manon Rodrigue</h4>
-                <p class="text-l mb-4">CEO Fakecompagny</p>
+                <h4 class="text-xl mb-3 md:border-r-[#0B3168] md:border-[1px] md:pr-2">Manon Rodrigue</h4>
+                <p class="text-l md:pl-2">CEO Fakecompagny</p>
               </div>
-              <p class="text-justify md:text-left mb-12">
+              <p class="text-justify md:text-left md:mt-4 mb-12">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
                 eleifend a. Quisque convallis dui nunc, in ultrices leo tincidunt non. Aenean bibendum dignissim turpis,
                 sed egestas sapien pulvinar at. Curabitur rhoncus eget enim eget vulputate. Aliquam non gravida turpis,
@@ -78,10 +78,10 @@ export default component$(() => {
           <section class="md:flex ">
             <div class="md:pr-10 md:w-2/3">
               <div class="md:flex">
-                <h4 class="text-xl mb-3">Fabrice Primeau</h4>
-                <p class="text-l mb-6">CEO Fakecompagny</p>
+                <h4 class="text-xl mb-3 md:border-r-[#0B3168] md:border-[1px] md:pr-2">Fabrice Primeau</h4>
+                <p class="text-l md:pl-2">CEO Fakecompagny</p>
               </div>
-              <p class="text-justify md:text-left mb-12">
+              <p class="text-justify md:text-left mb-12 md:mt-6">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
                 eleifend a. Quisque convallis dui nunc, in ultrices leo tincidunt non. Aenean bibendum dignissim turpis,
                 sed egestas sapien pulvinar at. Curabitur rhoncus eget enim eget vulputate. Aliquam non gravida turpis,

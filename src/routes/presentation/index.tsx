@@ -8,7 +8,7 @@ export default component$(() => {
         class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
         role="banner"
       >
-        <img class="md:mt-48 z-10" src="../images\illustrationheaderabout.png" />
+        <img class="md:mt-48 z-10" src="../images\home5.png" />
         <div class="md:pl-14">
           <h1 class="font-bold m-5 text-3xl md:text-4xl">Qui sommes-nous ?</h1>
           <p class="text-justify">

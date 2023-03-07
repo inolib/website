@@ -7,7 +7,7 @@ export const Contentinfo = component$(() => {
         <section class="md:flex md:flex-col md:items-end md:px-8 md:w-1/2">
           <div class="md:w-2/3">
             <div class="flex mb-3">
-              <img alt="" src="/images/logo-white.svg" className="h-10 w-auto" />
+              <img alt="" src="/images/logo-white.svg" class="h-10 w-auto" />
               <h3 class="flex items-center font-bold pl-2 text-2xl">INOLIB</h3>
             </div>
             <p class="border-t-2 border-[#9A35AD] font-bold mb-6 pt-3 md:border-t-0">Des questions?</p>
