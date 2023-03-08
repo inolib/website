@@ -5,6 +5,7 @@ export default component$(() => {
   return (
     <>
       <header
+        id="header"
         class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
         role="banner"
         id="header"
@@ -144,7 +145,7 @@ export default component$(() => {
             <h2 class="text-4xl ml-[4vw] mt-6">Toutes nos formations</h2>
             <span class="grid grid-cols-2 grid-row-2 pt-[10vh] pl-[13vw] h-[200vh]">
               <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[23vw] h-[27vh]">
-                <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
+                <img class="h-[35vh] mt-[55vh]" src="/images/logo-dev.png" alt="" />
                 <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
                   <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
                   <p class="text-[#0B3168]">
@@ -152,10 +153,19 @@ export default component$(() => {
                     optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                     autem! Molestias, facilis?
                   </p>
+                  <span class="flex justify-center">
+                    <a
+                      class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[5vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[15vw]"
+                      href="/"
+                      aria-label="lien vers offre de service"
+                    >
+                      <p>En savoir plus</p>
+                    </a>
+                  </span>
                 </span>
               </article>
               <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[23vw] h-[27vh]">
-                <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
+                <img class="h-[35vh] mt-[55vh]" src="/images/logo-dev.png" alt="" />
                 <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
                   <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
                   <p class="text-[#0B3168]">
@@ -163,10 +173,19 @@ export default component$(() => {
                     optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                     autem! Molestias, facilis?
                   </p>
+                  <span class="flex justify-center">
+                    <a
+                      class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[5vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[15vw]"
+                      href="/"
+                      aria-label="lien vers offre de service"
+                    >
+                      <p>En savoir plus</p>
+                    </a>
+                  </span>
                 </span>
               </article>
               <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[23vw] h-[27vh]">
-                <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
+                <img class="h-[35vh] mt-[55vh]" src="/images/logo-dev.png" alt="" />
                 <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
                   <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
                   <p class="text-[#0B3168]">
@@ -174,10 +193,19 @@ export default component$(() => {
                     optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                     autem! Molestias, facilis?
                   </p>
+                  <span class="flex justify-center">
+                    <a
+                      class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[5vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[15vw]"
+                      href="/"
+                      aria-label="lien vers offre de service"
+                    >
+                      <p>En savoir plus</p>
+                    </a>
+                  </span>
                 </span>
               </article>
               <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[23vw] h-[27vh]">
-                <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
+                <img class="h-[35vh] mt-[55vh]" src="/images/logo-dev.png" alt="" />
                 <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
                   <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
                   <p class="text-[#0B3168]">
@@ -185,14 +213,24 @@ export default component$(() => {
                     optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                     autem! Molestias, facilis?
                   </p>
+                  <span class="flex justify-center">
+                    <a
+                      class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[5vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[15vw]"
+                      href="/"
+                      aria-label="lien vers offre de service"
+                    >
+                      <p>En savoir plus</p>
+                    </a>
+                  </span>
                 </span>
               </article>
             </span>
           </section>
         </span>
+        <span class="bg-slate-200 block h-[15vh]"></span>
         <section
           aria-label="Développement"
-          class="h-[90vh] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh] mt-[10vh] bg-no-repeat"
+          class="h-[90vh] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh]  bg-no-repeat"
         >
           <span class="flex flex-col -z-1 ">
             <span class="flex flex-col w-[35vw] ml-[8vw] mt-[10vh]">
