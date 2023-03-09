@@ -1,5 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 
+import { Button } from "~/ui/buttons/Button";
+
 export const Contentinfo = component$(() => {
   return (
     <footer aria-label="footer de la page" role="contentinfo">
@@ -16,12 +18,7 @@ export const Contentinfo = component$(() => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, magnam accusamus dolores soluta deserunt
               nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas.
             </p>
-            <a
-              class="items-center bg-white flex cursor-pointer drop-shadow-md h-10 justify-center mb-8 rounded-md text-[#0b3168] w-100% lg:w-36"
-              href="/contact"
-            >
-              Nous contacter
-            </a>
+            <Button color="white" href="/contact" label="En savoir plus" />
           </div>
         </section>
 

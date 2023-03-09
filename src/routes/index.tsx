@@ -1,11 +1,13 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
-import { Banner } from "~/header/Banner";
+
+import { BannerHome } from "~/header/BannerHome";
+import { Button } from "~/ui/buttons/Button";
 
 export default component$(() => {
   return (
     <main class="flex justify-center flex-col">
-      <Banner />
+      <BannerHome />
       <section class="mx-[10vw] w-[85vw] h-[75vh] flex items-center justify-end bg-[length:80vw_80vh] bg-no-repeat bg-[url('/images/Home-image.png')]">
         <div class="bg-white w-[38vw] h-[40vh] pr-10 mr-[12vw] mb-[16vh]">
           <span class=" max-w-[5vw]">
@@ -66,12 +68,7 @@ export default component$(() => {
             <p class="text-[#0B3168] text-2xl">
               Découvrez tout nos service en détails ! Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </p>
-            <a
-              class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[25vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[10vw] font-normal"
-              href="/presentation"
-            >
-              <p>En savoir plus</p>
-            </a>
+            <Button color="blue" href="/presentation" label="En savoir plus" />
           </span>
         </article>
       </section>
@@ -96,12 +93,7 @@ export default component$(() => {
               voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
               iure eum! Minima facilis earum unde repellat quo nisi.
             </p>
-            <a
-              class="bg-[#0B3168] border-white border-[1px] mt-[7vh] mr-[8vw] flex justify-center py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[10vw] font-normal"
-              href="/presentation"
-            >
-              <p>Découvrir</p>
-            </a>
+            <Button color="blue" href="/temoignages" label="Découvrir" />
           </span>
         </span>
       </section>

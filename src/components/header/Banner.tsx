@@ -1,27 +1,25 @@
 import { component$ } from "@builder.io/qwik";
 
-export const Banner = component$(() => {
+type BannerProps = {
+  content: string;
+  imageSrc: string;
+  title: string;
+};
+
+export const Banner = component$((props: BannerProps) => {
   return (
-    <header>
-      <section class="bg-no-repeat bg-[length:100vw_75vh] bg-[url('/images/home-banner.png')] h-[120vh] mb-[-20vh]">
-        <h1 class="relative flex w-[85vw] h-[57vh] pt-[15vh]">
-          <img class="mr-[-9vw] w-[35%] h-[35%]" alt="INOLIB" src="/images/logo-white.svg" />
-          <span class="flex flex-col border-l font-bold text-white max-w-[5vw] h-[50vh] text-[300%] pl-10">
-            HUMAN NOBLE TECHNOLOGY
-            <a
-              class="bg-white border-[#0B3168] border-[1px] mt-10 pl-[3vw] py-[2vh] text-[#0B3168] text-xl rounded-md ml-[10vw] w-[12vw] font-normal"
-              href="/presentation"
-            >
-              Découvrir
-            </a>
-          </span>
-        </h1>
-        <section class="flex justify-around mt-[24vh]">
-          <img class="ml-[25vw]" src="/images/logo-hup-violet.svg" alt="logo hup" />
-          <img src="/images/logo-fidev-violet.svg" alt="logo hup" />
-          <img class="mr-[25vw]" src="/images/logo-apside-violet.svg" alt="logo hup" />
-        </section>
-      </section>
+    <header
+      class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
+      role="banner"
+      id="header"
+    >
+      <img class="md:mt-48" src={props.imageSrc} />
+
+      <div class="ml-[5vw]">
+        <h1 class="font-bold mb-5 text-3xl md:text-4xl max-w-sm">{props.title}</h1>
+
+        <p class=" max-w-md">{props.content}</p>
+      </div>
     </header>
   );
 });

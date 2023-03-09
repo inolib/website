@@ -1,23 +1,17 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
+import { Banner } from "~/header/Banner";
+
 export default component$(() => {
   return (
     <>
-      <header
-        class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
-        role="banner"
-        id="header"
-      >
-        <img class="md:mt-48" src="../images\banner-actualites.png" />
-        <div class="ml-[5vw]">
-          <h1 class="font-bold mb-5 text-3xl md:text-4xl max-w-sm">Qu'est ce que l'accessibilité ?</h1>
-          <p class=" max-w-md">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna.
-          </p>
-        </div>
-      </header>
+      <Banner
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore magna."
+        imageSrc="/images/banner-actualites.png"
+        title="Actualités"
+      />
 
       <main class="pt-[8vh]">
         <h2 class="text-[#0B3168] mx-[8vw] mb-[10vh] text-4xl">Les dernières actualités</h2>
