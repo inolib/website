@@ -24,8 +24,10 @@ export const Article = component$((props: ArticleProps) => {
 
   return (
     <article class="md:px-28 md:pt-4">
-      <h2 class={`text-2xl font-semibold `}>{props.title}</h2>
-
+      <span class={`flex ${styles}`}>
+        <h2 class={`text-2xl font-semibold text-[#0F3069] `}>{props.title}</h2>
+        <p>{props.titleQuote}</p>
+      </span>
       <div class={`flex ${stylesArticleGaucheFlex}`}>
         <span class={`${stylesArticlePadding}`}>
           <span class={`flex ${styles}`}>
