@@ -1,12 +1,15 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
+
+import { ButtonTopPage } from "~/ui/buttons/ButtonTopPage";
 import { BannerHome } from "~/components/header/BannerHome";
 import { Button } from "~/components/ui/buttons/Button";
 import { CardsRowDisplay } from "~/components/cards/CardsRowDisplay";
 import { DiscoverAcessCard } from "~/components/cards/DiscoverAcessCard";
 import { SplitedImage } from "~/components/cards/SplitedImage";
 import { Banner2 } from "~/components/cards/Banner2";
+
 
 export default component$(() => {
   return (
@@ -69,10 +72,10 @@ export default component$(() => {
               alt="lien vers page accessibilité"
             />
           </a>
-          <a aria-label="lien vers le haut de la page" class="col-end-1 flex justify-end mr-[6.4vw]" href="/">
-            <img src="/images/icon-arrow-up.svg" alt="lien vers le haut de la page" />
-          </a>
         </span>
+        <div class="flex w-full justify-center my-10">
+          <ButtonTopPage />
+        </div>
       </section>
     </main>
   );
