@@ -3,6 +3,8 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { BannerHome } from "~/components/header/BannerHome";
 import { Button } from "~/components/ui/buttons/Button";
+import { ServicesHomeCard } from "~/components/cards/ServicesHomeCard";
+import { ServicesHomeCardBlank } from "~/components/cards/ServicesHomeCardBlank";
 
 export default component$(() => {
   return (
@@ -27,50 +29,34 @@ export default component$(() => {
         </div>
       </section>
       <span class="flex justify-start mt-10 ml-[10vw]">
-        <h2 class="text-[#0B3168] font-normal text-4xl">Nos services</h2>
+        <h2 class="text-[#0B3168] font-semibold text-4xl">Nos services</h2>
       </span>
-      <section class="flex justify-around mt-10 ml-[9vw] mr-[10vw] h-[90vh]" aria-label="articles">
-        <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:90vw_30vh] w-[17.5vw] h-[27vh]">
-          <img class="h-[35vh] mt-[57vh]" src="/images/logo-audit.png" alt="" />
-          <span class="bg-white flex flex-col items-center  justify-center shadow-xl pb-[20vh] px-4">
-            <h3 class="text-[#0B3168] mb-5 text-2xl">Conseil et Audit</h3>
-            <p class="text-[#0B3168]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-              modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-              Molestias, facilis?
-            </p>
-          </span>
-        </article>
-        <article class="border-purple-700 border-2px flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[17.5vw] h-[27vh]">
-          <img class="h-[35vh] mt-[57vh]" src="/images/logo-formation.png" alt="" />
-          <span class="bg-white flex flex-col items-center  justify-center shadow-xl pb-[20vh] px-4">
-            <h3 class="text-[#0B3168] mb-5 text-2xl">Formation</h3>
-            <p class="text-[#0B3168]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-              modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-              Molestias, facilis?
-            </p>
-          </span>
-        </article>
-        <article class="border-purple-500 flex flex-col justify-center items-center bg-no-repeat bg-[url('/images/bg-cards.png')] bg-[length:80vw_30vh] w-[17.5vw] h-[27vh]">
-          <img class="h-[35vh] mt-[57vh]" src="/images/logo-dev.png" alt="" />
-          <span class="bg-white flex flex-col items-center justify-center shadow-xl pb-[20vh] px-4">
-            <h3 class="text-[#0B3168] mb-5 text-2xl">Développement</h3>
-            <p class="text-[#0B3168]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-              modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-              Molestias, facilis?
-            </p>
-          </span>
-        </article>
-        <article class="border-purple-500 flex flex-col justify-center items-center w-[17.5vw] h-[89vh]">
-          <span class="bg-white shadow-xl pb-[20vh] px-4 pt-[10vh] flex flex-col justify-center items-center h-[89vh] mb-[2vh]">
-            <p class="text-[#0B3168] text-2xl">
-              Découvrez tout nos service en détails ! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <Button color="blue" href="/presentation" label="En savoir plus" />
-          </span>
-        </article>
+      <section class="flex  justify-around my-[4rem] mx-[10rem]">
+        <ServicesHomeCard label="Conseil et Audit" image="/images/logo-audit.png" background="purple">
+          <p q:slot="content" class="text-[#0B3168]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
+            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
+            Molestias, facilis?
+          </p>
+        </ServicesHomeCard>
+        <ServicesHomeCard label="Formation" image="/images/logo-formation.png" background="purple">
+          <p q:slot="content" class="text-[#0B3168]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
+            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
+            Molestias, facilis?
+          </p>
+        </ServicesHomeCard>
+        <ServicesHomeCard label="Développement" image="/images/logo-dev.png" background="purple">
+          <p q:slot="content" class="text-[#0B3168]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
+            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
+            Molestias, facilis?
+          </p>
+        </ServicesHomeCard>
+        <ServicesHomeCardBlank
+          styles="[10rem]"
+          content="Découvrez tout nos services en détails ! Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        />
       </section>
       <section
         aria-label="témoignage"
