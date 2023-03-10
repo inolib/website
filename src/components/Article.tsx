@@ -10,6 +10,8 @@ type ArticleProps = {
   styles?: string;
   stylesArticleGaucheFlex?: string;
   stylesArticleGauchePadding?: string;
+  stylesImgSize?: string;
+  typoImgQuote?: "bold | normal";
 };
 
 export const Article = component$((props: ArticleProps) => {
@@ -17,6 +19,8 @@ export const Article = component$((props: ArticleProps) => {
   const stylesArticleGaucheFlex = props.stylesArticleGaucheFlex !== undefined ? props.stylesArticleGaucheFlex : "";
   const stylesArticleGauchePadding =
     props.stylesArticleGauchePadding !== undefined ? props.stylesArticleGauchePadding : "";
+  const stylesImgSize = props.stylesImgSize !== undefined ? props.stylesImgSize : "";
+  const imgQuoteSize = props.typoImgQuote === "bold" ? "font-bold text-xl" : "";
 
   return (
     <article class="md:px-28 md:pt-4">
@@ -29,11 +33,9 @@ export const Article = component$((props: ArticleProps) => {
           <div class={`md:px-4 md:pr-10 md:pl-0 md:w-[46vw]`}>{props.content}</div>
           <p>{props.contentQuote}</p>
         </span>
-        <div class="md:w-1/3">
-          <img src={props.imageSrc} alt="" />
-          <strong>
-            <blockquote class="px-4 text-center mt-4">{props.imageQuote}</blockquote>
-          </strong>
+        <div class="">
+          <img class={`${stylesImgSize}`} src={props.imageSrc} alt="" />
+          <blockquote class={`px-4 text-center mt-4 ${imgQuoteSize}`}>{props.imageQuote}</blockquote>
         </div>
       </div>
     </article>
