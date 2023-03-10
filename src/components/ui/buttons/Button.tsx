@@ -13,11 +13,7 @@ export const Button = component$((props: ButtonProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
 
   return (
-    <a
-      class={`bg-${primaryColor} px-8 py-4 text-${secondaryColor} text-xl rounded-md`}
-      href={props.href}
-      styles={props.styles}
-    >
+    <a class={`bg-${primaryColor} px-8 py-4 text-${secondaryColor} text-xl ${styles} rounded-md`} href={props.href}>
       {props.label}
     </a>
   );

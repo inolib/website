@@ -11,6 +11,7 @@ type CardProps = {
 
 export const ServicesHomeCard = component$((props: CardProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
+  const background = props.background !== undefined ? props.background : "";
   const primaryBackground = props.background === "purple" ? "[url('/images/bg-cards.png')]" : "white";
   const secondaryBackground = props.background === "purple" ? "white" : "[url(/images/bg-cards.png)]";
 

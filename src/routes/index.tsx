@@ -1,88 +1,32 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { BannerHome } from "~/components/header/BannerHome";
 import { Button } from "~/components/ui/buttons/Button";
-import { ServicesHomeCard } from "~/components/cards/ServicesHomeCard";
-import { ServicesHomeCardBlank } from "~/components/cards/ServicesHomeCardBlank";
+import { CardsRowDisplay } from "~/components/cards/CardsRowDisplay";
+import { DiscoverAcessCard } from "~/components/cards/DiscoverAcessCard";
+import { SplitedImage } from "~/components/cards/SplitedImage";
+import { Banner2 } from "~/components/cards/Banner2";
 
 export default component$(() => {
   return (
     <main class="flex justify-center flex-col">
       <BannerHome />
-      <section class="mx-[10vw] w-[85vw] h-[75vh] flex items-center justify-end bg-[length:80vw_80vh] bg-no-repeat bg-[url('/images/Home-image.png')]">
-        <div class="bg-white w-[38vw] h-[40vh] pr-10 mr-[12vw] mb-[16vh]">
-          <span class=" max-w-[5vw]">
-            <h2 class="text-[#0B3168] text-3xl ml-10 mt-10 font-semibold">Découvrir l'accessibilité</h2>
-            <p class="text-[#0B3168] ml-10 mt-10 font-extralight flex">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, magnam accusamus dolores soluta deserunt
-              nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas odit.
-              <a href="/accessibilite">
-                <img
-                  class="w-[5vw] h-[5vh] ml-4 mt-4 px-4"
-                  src="/images/icon-small-arrow.svg"
-                  alt="lien vers page accessibilité"
-                />
-              </a>
-            </p>
-          </span>
-        </div>
-      </section>
-      <span class="flex justify-start mt-10 ml-[10vw]">
-        <h2 class="text-[#0B3168] font-semibold text-4xl">Nos services</h2>
-      </span>
-      <section class="flex  justify-around my-[4rem] mx-[10rem]">
-        <ServicesHomeCard label="Conseil et Audit" image="/images/logo-audit.png" background="purple">
-          <p q:slot="content" class="text-[#0B3168]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-            Molestias, facilis?
-          </p>
-        </ServicesHomeCard>
-        <ServicesHomeCard label="Formation" image="/images/logo-formation.png" background="purple">
-          <p q:slot="content" class="text-[#0B3168]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-            Molestias, facilis?
-          </p>
-        </ServicesHomeCard>
-        <ServicesHomeCard label="Développement" image="/images/logo-dev.png" background="purple">
-          <p q:slot="content" class="text-[#0B3168]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-            Molestias, facilis?
-          </p>
-        </ServicesHomeCard>
-        <ServicesHomeCardBlank
-          styles="[10rem]"
-          content="Découvrez tout nos services en détails ! Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        />
-      </section>
-      <section
-        aria-label="témoignage"
-        class="h-[90vh] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh] mt-[10vh] bg-no-repeat"
-      >
-        <span class="flex flex-col -z-1 ">
-          <span class="flex flex-col w-[35vw] ml-[8vw] mt-[10vh]">
-            <h3 class="text-4xl text-white pb-[5vh]">Témoignages</h3>
-            <blockquote class="max-w-lg text-2xl text-white">
-              " Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat rerum iure eum! Minima facilis
+      <SplitedImage src="/images/decouvriraccess.png" />
+      <CardsRowDisplay />
+      <Banner2
+        styles="ml-[6rem]"
+        src="/images/temoignage-homme.png"
+        title="Témoignages"
+        quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat rerum iure eum! Minima facilis
               earum unde repellat quo nisi."
-            </blockquote>
-          </span>
-        </span>
-        <span class="w-[100vw] pr-[12vw] flex flex-row-reverse">
-          <img class="-mt-[15vh] h-[60vh]" src="/images/temoignage-homme.png" alt="" />
-          <span class="flex flex-col mr-[3vw]">
-            <p class="mt-[20vh] max-w-xl text-[#0F3069]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
-              voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
-              iure eum! Minima facilis earum unde repellat quo nisi.
-            </p>
-            <Button color="blue" href="/temoignages" label="Découvrir" />
-          </span>
-        </span>
-      </section>
+      >
+        <p q:slot="content" class="mt-[20vh] max-w-xl text-[#0F3069]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime voluptatibus
+          cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum iure eum! Minima
+          facilis earum unde repellat quo nisi.
+        </p>
+      </Banner2>
       <section class="mb-[10vh]">
         <span class="flex justify-start mt-20 ml-[9vw]">
           <h2 class="text-[#0B3168] font-normal text-4xl">Actualités</h2>
