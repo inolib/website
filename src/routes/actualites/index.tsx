@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
-import { Banner } from "c/header/Banner";
+import { Banner } from "~/components/header/Banner";
 
 export default component$(() => {
   return (
