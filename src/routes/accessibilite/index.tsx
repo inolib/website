@@ -1,12 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
-import { Article } from "~/Article";
 
-
-import { Banner } from "~/header/Banner";
-import { ButtonTopPage } from "~/ui/buttons/ButtonTopPage";
-
-
+import { Article } from "~/components/Article";
+import { Banner } from "~/components/header/Banner";
+import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 
 export default component$(() => {
   return (

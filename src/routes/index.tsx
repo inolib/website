@@ -1,15 +1,13 @@
 import { component$, Slot } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
-
-import { ButtonTopPage } from "~/ui/buttons/ButtonTopPage";
 import { BannerHome } from "~/components/header/BannerHome";
 import { Button } from "~/components/ui/buttons/Button";
 import { CardsRowDisplay } from "~/components/cards/CardsRowDisplay";
 import { DiscoverAcessCard } from "~/components/cards/DiscoverAcessCard";
 import { SplitedImage } from "~/components/cards/SplitedImage";
 import { Banner2 } from "~/components/cards/Banner2";
-
+import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 
 export default component$(() => {
   return (
@@ -73,7 +71,7 @@ export default component$(() => {
             />
           </a>
         </span>
-        <div class="flex w-full justify-center my-10">
+        <div class="flex w-full justify-center">
           <ButtonTopPage />
         </div>
       </section>
