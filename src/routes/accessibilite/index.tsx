@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { Banner } from "~/header/Banner";
+import { ButtonTopPage } from "~/ui/buttons/ButtonTopPage";
 
 export default component$(() => {
   return (
@@ -137,11 +138,9 @@ export default component$(() => {
             perferendis doloribus asperiores repellat.
           </p>
         </span>
-        <span class="flex justify-center mt-[25vh] ml-[6.5vw] mb-10">
-          <a aria-label="lien vers le haut de la page" class="col-end-1 flex justify-end mr-[6.4vw]" href="#header">
-            <img src="/images/icon-arrow-up.svg" alt="" />
-          </a>
-        </span>
+        <div class="flex w-full justify-center my-10">
+          <ButtonTopPage />
+        </div>
       </main>
     </>
   );

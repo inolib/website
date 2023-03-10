@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
+import { ButtonTopPage } from "~/ui/buttons/ButtonTopPage";
 
 export default component$(() => {
   return (
@@ -330,9 +331,7 @@ export default component$(() => {
           </a>
         </span>
         <span class="flex justify-center mt-[18vh] mb-[5vh]">
-          <a aria-label="lien vers le haut de la page" href="#header">
-            <img src="/images/icon-arrow-up.svg" alt="lien vers le haut de la page" />
-          </a>
+          <ButtonTopPage />
         </span>
       </main>
     </>

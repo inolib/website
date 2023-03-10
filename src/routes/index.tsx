@@ -3,6 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { BannerHome } from "~/header/BannerHome";
 import { Button } from "~/ui/buttons/Button";
+import { ButtonTopPage } from "~/ui/buttons/ButtonTopPage";
 
 export default component$(() => {
   return (
@@ -139,10 +140,10 @@ export default component$(() => {
               alt="lien vers page accessibilité"
             />
           </a>
-          <a aria-label="lien vers le haut de la page" class="col-end-1 flex justify-end mr-[6.4vw]" href="/">
-            <img src="/images/icon-arrow-up.svg" alt="lien vers le haut de la page" />
-          </a>
         </span>
+        <div class="flex w-full justify-center my-10">
+          <ButtonTopPage />
+        </div>
       </section>
     </main>
   );
