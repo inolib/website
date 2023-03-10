@@ -13,7 +13,7 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "~/*": ["./src/components/*"]
+      "~/*": ["./src/*"]
     },
     "skipLibCheck": true,
     "strict": true,

@@ -1,7 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
 
-import { Contentinfo } from "~/footer/Contentinfo";
-import { Navbar } from "~/header/Navbar";
+import { Contentinfo } from "~/components/footer/Contentinfo";
+import { Navbar } from "~/components/header/Navbar";
 
 export default component$(() => {
   return (

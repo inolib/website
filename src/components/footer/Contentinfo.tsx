@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 
-import { Button } from "~/ui/buttons/Button";
+import { Button } from "~/components/ui/buttons/Button";
 
 export const Contentinfo = component$(() => {
   return (

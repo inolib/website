@@ -2,8 +2,11 @@ import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { Article } from "~/Article";
 
+
 import { Banner } from "~/header/Banner";
 import { ButtonTopPage } from "~/ui/buttons/ButtonTopPage";
+
+
 
 export default component$(() => {
   return (
