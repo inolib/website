@@ -13,7 +13,7 @@ export const BannerHome = component$(() => {
           </span>
         </h1>
         <span class="ml-[35rem]">
-          <Button color="white" href="/presentation" label="Découvrir" styles="" />
+          <Button color="white" href="/presentation" label="Découvrir" />
         </span>
         <section class="flex justify-around mt-[24vh]">
           <img class="ml-[25vw]" src="/images/logo-hup-violet.svg" alt="logo hup" />
