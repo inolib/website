@@ -1,8 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { QwikCityProvider } from "@builder.io/qwik-city";
 
-import { Body } from "~/Body";
-import { Head } from "~/Head";
+import { Body } from "c/Body";
+import { Head } from "c/Head";
 
 import "./global.css";
 

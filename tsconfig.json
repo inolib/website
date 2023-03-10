@@ -13,7 +13,9 @@
     "moduleResolution": "node",
     "noEmit": true,
     "paths": {
-      "~/*": ["./src/components/*"]
+      "~/*": ["./src/*"],
+      "c/*": ["./src/components/*"],
+      "h/*": ["./src/hooks/*"]
     },
     "skipLibCheck": true,
     "strict": true,
