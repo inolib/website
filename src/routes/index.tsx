@@ -12,7 +12,7 @@ export default component$(() => {
   return (
     <>
       <BannerHome />
-      <main class="flex justify-center flex-col">
+      <main class="flex flex-col justify-center">
         <SplitedImage src="/images/decouvriraccess.png" />
         <CardsRowDisplay />
         <Banner2
@@ -29,7 +29,7 @@ export default component$(() => {
           </p>
         </Banner2>
         <section class="mb-[10vh]">
-          <ArticlesGridDisplay title="Actulités" />
+          <ArticlesGridDisplay title="Actualités" />
           <div class="flex w-full justify-center">
             <ButtonTopPage />
           </div>

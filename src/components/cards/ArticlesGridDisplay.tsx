@@ -2,25 +2,25 @@ import { component$, Slot } from "@builder.io/qwik";
 import { Button } from "../ui/buttons/Button";
 import { ArticleHomePage } from "./ArticleHomePage";
 
-export const ArticlesGridDisplay = component$((props: ArticleProps) => {
-  type ArticleProps = {
-    src: string;
-    title: string;
-    content: string;
-    label: string;
-    styles?: string;
-    date: string;
-    category: string;
-  };
+type ArticleProps = {
+  category?: string;
+  content?: string;
+  date?: string;
+  label?: string;
+  src?: string;
+  styles?: string;
+  title: string;
+};
 
+export const ArticlesGridDisplay = component$((props: ArticleProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
 
   return (
     <>
-      <span class="flex justify-start mt-20 ml-[9vw]">
-        <h2 class="text-[#0B3168] font-normal text-4xl">{props.title}</h2>
+      <span class="mt-20 ml-[9vw] flex justify-start">
+        <h2 class="text-4xl font-normal text-[#0B3168]">{props.title}</h2>
       </span>
-      <span class="grid grid-col-2 grid-row-2- mt-14">
+      <span class="grid-col-2 grid-row-2- mt-14 grid">
         <ArticleHomePage
           src="/images/home1.png"
           styles="col-end-1 ml-[8vw] w-[40vw]"
@@ -51,12 +51,12 @@ export const ArticlesGridDisplay = component$((props: ArticleProps) => {
         />
         <a
           aria-label="lien vers pas actualité"
-          class="flex justify-end mr-[8vw] -mt-[20rem] font-semibold text-[#0B3168]"
+          class="mr-[8vw] -mt-[20rem] flex justify-end font-semibold text-[#0B3168]"
           href="/actualites"
         >
           Voir toute notre actualité{" "}
           <img
-            class="w-[2vw] h-[2vh] mt-[0.8vh]"
+            class="mt-[0.8vh] h-[2vh] w-[2vw]"
             src="/images/icon-small-arrow.svg"
             alt="lien vers page accessibilité"
           />

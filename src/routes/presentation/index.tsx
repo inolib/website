@@ -8,13 +8,13 @@ export default component$(() => {
   return (
     <>
       <header
-        class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white p-4 md:h-[60vh] md:flex md:px-28 md:items-center md:relative md:mb-28"
+        class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] p-4 text-white md:relative md:mb-28 md:flex md:h-[60vh] md:items-center md:px-28"
         role="banner"
         id="header"
       >
-        <img class="md:mt-48 z-10" src="../images\home5.png" />
+        <img class="z-10 md:mt-48" src="../images\home5.png" />
         <div class="md:pl-14">
-          <h1 class="font-bold m-5 text-3xl md:text-4xl">Qui sommes-nous ?</h1>
+          <h1 class="m-5 text-3xl font-bold md:text-4xl">Qui sommes-nous ?</h1>
           <p class="text-justify">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna. Aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -39,7 +39,7 @@ export default component$(() => {
           title="Ce que nous sommes au quotidien"
           styles="py-6"
           stylesArticleGaucheFlex="flex-row-reverse justify-end"
-          stylesArticlePadding="pl-10"
+          stylesArticleGauchePadding="pl-10"
           content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium vel, enim, dolore dolorem a
           mollitia adipisci ipsa pariatur ipsum officiis eligendi expedita. Eaque cumque suscipit quidem
           exercitationem. Ipsa, eveniet eaque. At modi porro, perspiciatis enim illum laborum nostrum nesciunt
@@ -68,13 +68,13 @@ export default component$(() => {
           doloribus nemo cul.“"
         ></Article>
 
-        <section class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white flex px-4 py-8 md:px-36">
+        <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-4 py-8 text-white md:px-36">
           <div class="flex flex-col justify-center md:pr-16">
             <strong>
-              <h2 class="text-3xl mb-2 md:mb-8">Notre équipe</h2>
+              <h2 class="mb-2 text-3xl md:mb-8">Notre équipe</h2>
             </strong>
             <strong>
-              <p class="text-2xl my-6 md:mb-12">
+              <p class="my-6 text-2xl md:mb-12">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Aliquam totam neque ullam dolore.
               </p>
@@ -87,16 +87,16 @@ export default component$(() => {
           <img class="hidden md:block" src="..\images\background-team-bulles.svg" />
         </section>
         <section>
-          <ul class="md:flex md:flex-wrap md:px-28 pt-20" aria-label="liste des employés d'Inolib">
-            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
+          <ul class="pt-20 md:flex md:flex-wrap md:px-28" aria-label="liste des employés d'Inolib">
+            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
               <img
-                class="object-cover w-full md:object-none md:w-auto"
+                class="w-full object-cover md:w-auto md:object-none"
                 alt="portrait de Djebrine Aloui"
                 src="..\images\presentation-image-profil.png"
               />
               <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
               <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
+              <div class="mt-4 flex justify-center">
                 <a href="#">
                   <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
                 </a>
@@ -105,15 +105,15 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
+            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
               <img
-                class="object-cover w-full md:object-none md:w-auto"
+                class="w-full object-cover md:w-auto md:object-none"
                 alt="portrait de Djebrine Aloui"
                 src="..\images\presentation-image-profil.png"
               />
               <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
               <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
+              <div class="mt-4 flex justify-center">
                 <a href="#">
                   <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
                 </a>
@@ -122,15 +122,15 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
+            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
               <img
-                class="object-cover w-full md:object-none md:w-auto"
+                class="w-full object-cover md:w-auto md:object-none"
                 alt="portrait de Djebrine Aloui"
                 src="..\images\presentation-image-profil.png"
               />
               <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
               <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
+              <div class="mt-4 flex justify-center">
                 <a href="#">
                   <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
                 </a>
@@ -139,15 +139,15 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
+            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
               <img
-                class="object-cover w-full md:object-none md:w-auto"
+                class="w-full object-cover md:w-auto md:object-none"
                 alt="portrait de Djebrine Aloui"
                 src="..\images\presentation-image-profil.png"
               />
               <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
               <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
+              <div class="mt-4 flex justify-center">
                 <a href="#">
                   <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
                 </a>
@@ -156,15 +156,15 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
+            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
               <img
-                class="object-cover w-full md:object-none md:w-auto"
+                class="w-full object-cover md:w-auto md:object-none"
                 alt="portrait de Djebrine Aloui"
                 src="..\images\presentation-image-profil.png"
               />
               <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
               <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
+              <div class="mt-4 flex justify-center">
                 <a href="#">
                   <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
                 </a>
@@ -173,15 +173,15 @@ export default component$(() => {
                 </a>
               </div>
             </li>
-            <li class="flex flex-col items-center text-black mb-16 md:items-start md:pr-10">
+            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
               <img
-                class="object-cover w-full md:object-none md:w-auto"
+                class="w-full object-cover md:w-auto md:object-none"
                 alt="portrait de Djebrine Aloui"
                 src="..\images\presentation-image-profil.png"
               />
               <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
               <i>CEO et fondateur</i>
-              <div class="flex justify-center mt-4">
+              <div class="mt-4 flex justify-center">
                 <a href="#">
                   <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
                 </a>
@@ -192,7 +192,7 @@ export default component$(() => {
             </li>
           </ul>
         </section>
-        <div class="flex w-full justify-center my-10">
+        <div class="my-10 flex w-full justify-center">
           <ButtonTopPage />
         </div>
       </main>

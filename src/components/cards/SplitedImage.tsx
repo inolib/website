@@ -1,14 +1,14 @@
 import { component$ } from "@builder.io/qwik";
 import { DiscoverAcessCard } from "./DiscoverAcessCard";
 
-export const SplitedImage = component$((props: ImageProps) => {
-  type ImageProps = {
-    src: string;
-  };
+type ImageProps = {
+  src: string;
+};
 
+export const SplitedImage = component$((props: ImageProps) => {
   return (
     <>
-      <section class="mx-[10vw] flex relative">
+      <section class="relative mx-[10vw] flex">
         <img src={props.src} alt="" />
         <span class="absolute flex">
           <DiscoverAcessCard
