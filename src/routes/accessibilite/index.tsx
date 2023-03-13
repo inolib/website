@@ -25,10 +25,9 @@ export default component$(() => {
           imageSrc="/images/homme-fauteuil.png"
           imageQuote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
           typoImgQuote="bold"
-          styles="py-6"
         ></Article>
 
-        <p class="md:px-28 mt-10">
+        <p class="md:px-28 md:mb-6">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
           eleifend a. Quisque convallis dui nunc, in ultrices leo tincidunt non. Aenean bibendum dignissim turpis, sed
           egestas sapien pulvinar at. Curabitur rhoncus eget enim eget vulputate. Aliquam non gravida turpis, sed
@@ -66,11 +65,9 @@ export default component$(() => {
           weakness of will, which is the same as saying through shrinking from toil and pain. These cases are
           perfectly simple and easy to distinguish"
           imageSrc="/images/prothese.png"
-          styles="py-6"
-          stylesImgSize=""
         ></Article>
 
-        <p class="md:px-28 mt-10">
+        <p class="md:px-28">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
           eleifend a. Quisque convallis dui nunc, in ultrices leo tincidunt non. Aenean bibendum dignissim turpis, sed
           egestas sapien pulvinar at. Curabitur rhoncus eget enim eget vulputate. Aliquam non gravida turpis, sed
