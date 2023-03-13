@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 
 type BannerProps = {
   content: string;
@@ -14,11 +14,10 @@ export const Banner = component$((props: BannerProps) => {
       id="header"
     >
       <img class="md:mt-48" src={props.imageSrc} />
-
       <div class="ml-[5vw]">
-        <h1 class="font-bold mb-5 text-3xl md:text-4xl max-w-sm">{props.title}</h1>
-
+        <h1 class="font-semibold mb-5 text-3xl md:text-5xl max-w-sm">{props.title}</h1>
         <p class=" max-w-md">{props.content}</p>
+        <Slot name="services" />
       </div>
     </header>
   );
