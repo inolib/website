@@ -3,7 +3,7 @@ import { component$ } from "@builder.io/qwik";
 type ArticleProps = {
   title?: string;
   titleQuote?: string;
-  content: string;
+  content?: string;
   contentQuote?: string;
   imageSrc?: string;
   imageQuote?: string;
