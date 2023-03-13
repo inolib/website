@@ -4,7 +4,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 import { BannerHome } from "~/components/header/BannerHome";
 import { CardsRowDisplay } from "~/components/cards/CardsRowDisplay";
 import { SplitedImage } from "~/components/cards/SplitedImage";
-import { Banner2 } from "~/components/cards/Banner2";
+import { Banner2 } from "~/components/header/Banner2";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { ArticlesGridDisplay } from "~/components/cards/ArticlesGridDisplay";
 
