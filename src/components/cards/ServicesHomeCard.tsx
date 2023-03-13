@@ -6,20 +6,16 @@ type CardProps = {
   image?: string;
   label?: string;
   styles?: string;
-  background?: "purple" | "white";
 };
 
 export const ServicesHomeCard = component$((props: CardProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
-  const background = props.background !== undefined ? props.background : "";
-  const primaryBackground = props.background === "purple" ? "[url('/images/bg-cards.png')]" : "white";
-  const secondaryBackground = props.background === "purple" ? "white" : "[url(/images/bg-cards.png)]";
 
   return (
     <>
       <article aria-label="articles" class={`flex flex-col`}>
         <span
-          class={`flex flex-col justify-center items-center bg-no-repeat bg-${primaryBackground} h-[15rem] w-[17.5rem]`}
+          class={`flex flex-col justify-center items-center bg-no-repeat bg-[url(/images/bg-cards.png)] h-[15rem] w-[17.5rem]`}
         >
           <img class="mb-[3rem]" src={props.image} alt="" />
         </span>
