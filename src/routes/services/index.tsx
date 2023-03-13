@@ -183,12 +183,7 @@ export default component$(() => {
           </p>
         </span>
         <span class="flex justify-center">
-          <a
-            class="bg-[#0B3168] border-white border-[1px] flex justify-center mt-[5vh] py-[1.5vh] pw-[2.5vw] text-white text-lg rounded-md w-[15vw]"
-            href="#header"
-          >
-            <p>Demander un devis</p>
-          </a>
+          <Button href="/services" label="Demander un devis" color="blue" styles="mt-[2rem]" />
         </span>
         <span class="flex justify-center mb-[2rem]">
           <ButtonTopPage />
