@@ -18,7 +18,7 @@ export const Contentinfo = component$(() => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, magnam accusamus dolores soluta deserunt
               nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas.
             </p>
-            <Button color="white" href="/contact" label="En savoir plus" />
+            <Button color="white" href="/contact" label="Nous contacter" />
           </div>
         </section>
 

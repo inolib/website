@@ -24,8 +24,6 @@ export const ArticlesGridDisplay = component$((props: ArticleProps) => {
         <ArticleHomePage
           src="/images/home1.png"
           styles="col-end-1 ml-[8vw] w-[40vw]"
-          styles2="mb-10"
-          styles3="pb-[5vh]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Développement"
           date="20.06.2023"
@@ -44,14 +42,14 @@ export const ArticlesGridDisplay = component$((props: ArticleProps) => {
         />
         <ArticleHomePage
           src="/images/home3.png"
-          styles="col-end-2 mr-[6rem]"
+          styles="col-end-2 mr-[6rem] -mt-[5rem]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Accessibilité"
           date="03.02.2023"
         />
         <a
           aria-label="lien vers pas actualité"
-          class="mr-[8vw] -mt-[20rem] flex justify-end font-semibold text-[#0B3168]"
+          class="mr-[8rem] -mt-[18rem] ml-[8rem] pt-8 border-t border-slate-300 flex justify-end font-normal text-[#0B3168]"
           href="/actualites"
         >
           Voir toute notre actualité{" "}
