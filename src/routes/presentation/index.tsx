@@ -3,26 +3,19 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 import ArticlePresentation1 from "~/components/articles/ArticlePresentation1";
 import ArticlePresentation2 from "~/components/articles/ArticlePresentation2";
+import { Banner } from "~/components/header/Banner";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 
 export default component$(() => {
   return (
     <>
-      <header
-        class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] p-4 text-white md:relative md:mb-28 md:flex md:h-[60vh] md:items-center md:px-28"
-        role="banner"
-        id="header"
-      >
-        <img class="z-10 md:mt-48" src="../images\home5.png" />
-        <div class="md:pl-14">
-          <h1 class="m-5 text-3xl font-bold md:text-4xl">Qui sommes-nous ?</h1>
-          <p class="text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      <Banner
+        imageSrc="../images/home5.png"
+        title="Qui sommes-nous ?"
+        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna. Aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-      </header>
+            incididunt ut labore et dolore magna aliqua."
+      />
       <main class="text-[#0B3168]">
         <ArticlePresentation1 />
 
