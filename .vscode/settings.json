@@ -1,5 +1,7 @@
 {
-  "css.lint.unknownAtRules": "ignore",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "javascript.validate.enable": false,
   "typescript.tsdk": "./node_modules/typescript/lib",
   "typescript.validate.enable": false
