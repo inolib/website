@@ -126,7 +126,7 @@ export default component$(() => {
               omnis pariatur sint. Aut, quidem perferendis."
         />
         <HorizontalParagraph
-          styles="-mt-[7.5rem]"
+          styles="-mt-[7rem]"
           content1="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure tempora natus accusantium consequuntur,
           doloribus quisquam, distinctio iste nulla atque eos eum id reiciendis quam unde corrupti perspiciatis?
           Eligendi, placeat natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus tenetur
