@@ -28,7 +28,6 @@ export const CardsGridDisplay = component$(() => {
             <ServicesCard
               image="/images/logo-audit.png"
               label="Description"
-              background="purple"
               title="Accessibilité numérique en entreprise"
             >
               <p q:slot="content" class="text-[#0B3168]">
@@ -45,7 +44,7 @@ export const CardsGridDisplay = component$(() => {
                 <Button styles="" color="blue" href="/services" label="En savoir plus" />
               </span>
             </ServicesCard>
-            <ServicesCard image="/images/logo-dev.png" label="Description" background="purple" title="Développement">
+            <ServicesCard image="/images/logo-dev.png" label="Description" title="Développement">
               <p q:slot="content" class="text-[#0B3168]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
                 optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
@@ -60,12 +59,7 @@ export const CardsGridDisplay = component$(() => {
                 <Button styles="" color="blue" href="/services" label="En savoir plus" />
               </span>
             </ServicesCard>
-            <ServicesCard
-              image="/images/logo-audit.png"
-              label="Description"
-              background="purple"
-              title="Nom de la formation"
-            >
+            <ServicesCard image="/images/logo-audit.png" label="Description" title="Nom de la formation">
               <p q:slot="content" class="text-[#0B3168]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
                 optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
@@ -80,12 +74,7 @@ export const CardsGridDisplay = component$(() => {
                 <Button styles="" color="blue" href="/services" label="En savoir plus" />
               </span>
             </ServicesCard>
-            <ServicesCard
-              image="/images/logo-formation.png"
-              label="Description"
-              background="purple"
-              title="Lorem ipsum dolor"
-            >
+            <ServicesCard image="/images/logo-formation.png" label="Description" title="Lorem ipsum dolor">
               <p q:slot="content" class="text-[#0B3168]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
                 optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur

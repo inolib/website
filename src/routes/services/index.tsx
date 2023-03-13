@@ -7,7 +7,7 @@ import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { ServicesCard } from "~/components/cards/ServicesCard";
 import { CardsGridDisplay } from "~/components/cards/CardsGridDisplay";
 import { Banner3 } from "~/components/cards/Banner3";
-import { HorizontalParagraph } from "~/components/cards/HorozontalParagraph";
+import { HorizontalParagraph } from "~/components/cards/HorizontalParagraph";
 
 export default component$(() => {
   return (
@@ -130,7 +130,7 @@ export default component$(() => {
               omnis pariatur sint. Aut, quidem perferendis."
         />
         <HorizontalParagraph
-          styles="-mt-[7rem]"
+          styles="-mt-[10rem]"
           content1="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure tempora natus accusantium consequuntur,
           doloribus quisquam, distinctio iste nulla atque eos eum id reiciendis quam unde corrupti perspiciatis?
           Eligendi, placeat natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus tenetur
