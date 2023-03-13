@@ -3,6 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 import ArticlePresentation1 from "~/components/articles/ArticlePresentation1";
 import ArticlePresentation2 from "~/components/articles/ArticlePresentation2";
+import { PresentationCard } from "~/components/cards/PresentationCard";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 
 export default component$(() => {
@@ -48,108 +49,36 @@ export default component$(() => {
         </section>
         <section>
           <ul class="pt-20 md:flex md:flex-wrap md:px-28" aria-label="liste des employés d'Inolib">
-            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
-              <img
-                class="w-full object-cover md:w-auto md:object-none"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="mt-4 flex justify-center">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
-              <img
-                class="w-full object-cover md:w-auto md:object-none"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="mt-4 flex justify-center">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
-              <img
-                class="w-full object-cover md:w-auto md:object-none"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="mt-4 flex justify-center">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
-              <img
-                class="w-full object-cover md:w-auto md:object-none"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="mt-4 flex justify-center">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
-              <img
-                class="w-full object-cover md:w-auto md:object-none"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="mt-4 flex justify-center">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
-            <li class="mb-16 flex flex-col items-center text-black md:items-start md:pr-10">
-              <img
-                class="w-full object-cover md:w-auto md:object-none"
-                alt="portrait de Djebrine Aloui"
-                src="..\images\presentation-image-profil.png"
-              />
-              <h3 class="my-2 text-2xl">Djebrine Aloui</h3>
-              <i>CEO et fondateur</i>
-              <div class="mt-4 flex justify-center">
-                <a href="#">
-                  <img class="mr-2" alt="logo de LinkedIn" src="..\images\logo-linkedin-gris.svg" />
-                </a>
-                <a href="#">
-                  <img class="ml-2" alt="logo d'instagram" src="..\images\logo-instagram-gris.svg" />
-                </a>
-              </div>
-            </li>
+            <PresentationCard
+              name="Djebrine Aloui"
+              position="CEO & Fondateur"
+              imageSrc="\images\presentation-image-profil.png"
+            />
+            <PresentationCard
+              name="Djebrine Aloui"
+              position="CEO & Fondateur"
+              imageSrc="\images\presentation-image-profil.png"
+            />
+            <PresentationCard
+              name="Djebrine Aloui"
+              position="CEO & Fondateur"
+              imageSrc="\images\presentation-image-profil.png"
+            />
+            <PresentationCard
+              name="Djebrine Aloui"
+              position="CEO & Fondateur"
+              imageSrc="\images\presentation-image-profil.png"
+            />
+            <PresentationCard
+              name="Djebrine Aloui"
+              position="CEO & Fondateur"
+              imageSrc="\images\presentation-image-profil.png"
+            />
+            <PresentationCard
+              name="Djebrine Aloui"
+              position="CEO & Fondateur"
+              imageSrc="\images\presentation-image-profil.png"
+            />
           </ul>
         </section>
         <div class="my-10 flex w-full justify-center">
