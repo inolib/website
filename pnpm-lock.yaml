@@ -26,6 +26,7 @@ specifiers:
   typescript: ^4.9.5
   vite: ^4.1.4
   vitest: ^0.29.2
+  zod: ^3.21.4
 
 devDependencies:
   '@builder.io/qwik': 0.20.1_undici@5.20.0
@@ -53,6 +54,7 @@ devDependencies:
   typescript: 4.9.5
   vite: 4.1.4_@types+node@18.15.0
   vitest: 0.29.2
+  zod: 3.21.4
 
 packages:
 
