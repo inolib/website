@@ -10,7 +10,7 @@ export const Navbar = component$(() => {
         <a href="#contenu">Aller au contenu principal</a>
       </nav> */}
 
-      <nav class="shadow-3xl font-normal flex py-3 bg-white justify-between mx-3">
+      <nav class="shadow-4xl font-normal flex py-3 bg-white justify-between mx-3">
         <div class="">
           <a
             class="flex text-3xl text-[#0B3168] items-center flex-row"
@@ -80,9 +80,13 @@ export const Navbar = component$(() => {
           </ul>
         </div>
         <div class="flex items-center space-x-2">
-          <button class="border-[#0B3168] border-[1px] hover:bg-[#0B3168] hover:text-white  px-3 py-1 font-light text-[#0B3168] text-lg bg-white rounded-md">
+          <a
+            href="/connexion"
+            class="border-[#0B3168] border-[1px] hover:bg-[#0B3168] hover:text-white  px-3 py-1 font-light text-[#0B3168] text-lg bg-white rounded-md"
+            {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
+          >
             Connexion
-          </button>
+          </a>
         </div>
       </nav>
     </>
