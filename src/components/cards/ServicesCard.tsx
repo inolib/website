@@ -1,7 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
 
-import { Button } from "~/components/ui/buttons/Button";
-
 type CardProps = {
   image?: string;
   title?: string;
@@ -10,8 +8,6 @@ type CardProps = {
 };
 
 export const ServicesCard = component$((props: CardProps) => {
-  const styles = props.styles !== undefined ? props.styles : "";
-
   return (
     <>
       <article aria-label="articles" class={`flex flex-col`}>
