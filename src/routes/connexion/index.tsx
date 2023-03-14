@@ -11,6 +11,7 @@ export default component$(() => {
           </h1>
           <div className=" flex md:w-3/5 justify-center ">
             <input
+              title="formulaire de connexion adresse email"
               type="email"
               placeholder="Entrer votre email"
               required
@@ -22,6 +23,7 @@ export default component$(() => {
           <br />
           <div className="flex  justify-center md:w-3/5">
             <input
+              title="formulaire de connexion mot de passe"
               type="password"
               required
               id="password"
@@ -32,6 +34,7 @@ export default component$(() => {
           </div>
           <br />
           <button
+            title="se connecter"
             type="submit"
             className="bg-[#0B3168] mt-10 md:mt-2 text-white m-3 py-1 px-4 rounded-lg shadow-lg h-10 w-32 md:h-14 md:w-44 md:text-lg hover:shadow hover:bg-[#FFFFFF] hover:text-[#15133C] hover:border hover:border-[#15133C]"
           >
