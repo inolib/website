@@ -4,7 +4,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-      <div className="h-[100vh]">
+      <div className="h-[100vh] bg-slate-100">
         <form className=" flex flex-col items-center justify-center  ">
           <h1 className=" text-[#0B3168] font-semibold items-center content-center justify-center text-4xl mb-16 md:mb-14 mt-44">
             Connexion
