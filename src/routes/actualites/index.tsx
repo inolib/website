@@ -1,6 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
+import { CardsActualiteGridDisplay } from "~/components/cards/CardsActualiteGridDisplay";
+
 import { Banner } from "~/components/header/Banner";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 
@@ -203,45 +205,10 @@ export default component$(() => {
             </ul>
           </div>
         </form>
-        <section class="grid grid-cols-3 grid-rows-2 gap-20 mx-[10vw]">
-          <article>
-            <img class="h-[40vh]" src="/images/home3.png" alt="article 1" />
-            <h3 class="text-[#0B3168] font-normal mt-[4vh] text-3xl max-w-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h3>
-            <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Accessibilité</p>
-          </article>
-          <article>
-            <img class="h-[40vh]" src="/images/home7.png" alt="article 2" />
-            <h3 class="text-[#0B3168] font-normal mt-[4vh]  text-3xl max-w-sm">
-              Lorem ipsum dolor sit amet consectetur !
-            </h3>
-            <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Développement</p>
-          </article>
-          <article>
-            <img class="h-[40vh]" src="/images/home2.png" alt="article 3" />
-            <h3 class="text-[#0B3168] font-normal mt-[4vh]  text-3xl max-w-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h3>
-            <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Accessibilité</p>
-          </article>
-          <article>
-            <img class="h-[40vh]" src="/images/home6.png" alt="article 4" />
-            <h3 class="text-[#0B3168] font-normal mt-[4vh]  text-3xl max-w-sm">Lorem ipsum dolor.</h3>
-            <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Formation</p>
-          </article>
-          <article>
-            <img class="h-[40vh]" src="/images/home5.png" alt="article 5" />
-            <h3 class="text-[#0B3168] font-normal mt-[4vh] text-3xl max-w-sm">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </h3>
-            <p class="text-[#0B3168] text-[11px] mt-4">10.03.2023&ensp; |&ensp; Inolib</p>
-          </article>
-          <article class="flex flex-col justify-center items-center shadow-xl h-[40vh]">
-            <img src="/images/icon-plus.png" alt="" />
-            <p class="text-[#0B3168] mt-3">Charger plus d'actualités</p>
-          </article>
+        <section>
+          <CardsActualiteGridDisplay />
         </section>
+
         <ButtonTopPage />
       </main>
     </>
