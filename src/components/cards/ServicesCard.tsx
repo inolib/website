@@ -2,9 +2,9 @@ import { component$, Slot } from "@builder.io/qwik";
 
 type CardProps = {
   image?: string;
-  title?: string;
   label?: string;
   styles?: string;
+  title?: string;
 };
 
 export const ServicesCard = component$((props: CardProps) => {

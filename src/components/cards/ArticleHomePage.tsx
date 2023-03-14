@@ -1,20 +1,20 @@
 import { component$, Slot } from "@builder.io/qwik";
 
 type ArticleProps = {
-  src: string;
-  title?: string;
-  content?: string;
-  label: string;
-  styles?: string;
-  imgStyles?: string;
-  date: string;
-  category: string;
   alt?: string;
+  category: string;
+  content?: string;
+  date: string;
+  imgStyles?: string;
+  label: string;
+  src: string;
+  styles?: string;
+  title?: string;
 };
 
 export const ArticleHomePage = component$((props: ArticleProps) => {
-  const styles = props.styles !== undefined ? props.styles : "";
   const imgStyles = props.imgStyles !== undefined ? props.imgStyles : "";
+  const styles = props.styles !== undefined ? props.styles : "";
 
   return (
     <>

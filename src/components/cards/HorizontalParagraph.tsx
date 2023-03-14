@@ -1,10 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 
 type ParagraphProps = {
-  title?: string;
   content1?: string;
   content2?: string;
   styles?: string;
+  title?: string;
 };
 
 export const HorizontalParagraph = component$((props: ParagraphProps) => {

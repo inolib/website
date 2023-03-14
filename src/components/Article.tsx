@@ -1,23 +1,23 @@
 import { component$, Slot } from "@builder.io/qwik";
 
 type ArticleProps = {
-  title?: string;
-  titleQuote?: string;
+  articleTestimonyStyles?: string;
   content?: string;
   contentQuote?: string;
   imageSrc?: string;
   imageQuote?: string;
-  articleTestimonyStyles?: string;
   imgSeparator?: string;
+  imageText?: string;
   styles?: string;
   stylesTestimony?: string;
   stylesContent?: string;
   stylesArticleGaucheFlex?: string;
   stylesArticlePadding?: string;
   stylesImgArticle?: string;
-  typoImgQuote?: "bold | normal";
+  title?: string;
+  titleQuote?: string;
   testimony?: string;
-  imageText?: string;
+  typoImgQuote?: "bold | normal";
 };
 
 export const Article = component$((props: ArticleProps) => {

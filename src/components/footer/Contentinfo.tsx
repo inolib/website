@@ -4,7 +4,7 @@ import { Button } from "~/components/ui/buttons/Button";
 
 export const Contentinfo = component$(() => {
   return (
-    <footer aria-label="footer de la page" role="contentinfo">
+    <footer aria-label="footer de la page" id="footer" role="contentinfo">
       <section class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white px-4 py-8 md:flex">
         <section class="md:flex md:flex-col md:items-end md:px-8 md:w-1/2">
           <div class="md:w-2/3">
