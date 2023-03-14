@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 
 type PresentationCardProps = {
-  name: string;
-  position: string;
   imageSrc: string;
   linkLinkdin?: string;
   linkInsta?: string;
+  name: string;
+  position: string;
 };
 
 export const PresentationCard = component$((props: PresentationCardProps) => {

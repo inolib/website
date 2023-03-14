@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 
 type CardProps = {
-  title: string;
-  content: string;
-  styles?: string;
-  href: string;
   alt: string;
+  content: string;
+  href: string;
+  styles?: string;
+  title: string;
 };
 
 export const DiscoverAcessCard = component$((props: CardProps) => {

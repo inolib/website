@@ -1,11 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
+
 import { Article } from "~/components/Article";
-
-import { CardsActualiteGridDisplay } from "~/components/cards/CardsActualiteGridDisplay";
-
 import { Banner } from "~/components/header/Banner";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
+import { CardsActualiteGridDisplay } from "~/components/cards/CardsActualiteGridDisplay";
 import { DropDownMenu } from "~/components/ui/buttons/DropDownMenu";
 import { SearchBar } from "~/components/ui/SearchBar";
 

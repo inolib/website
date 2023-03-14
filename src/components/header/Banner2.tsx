@@ -2,11 +2,11 @@ import { component$, Slot } from "@builder.io/qwik";
 import { Button } from "../ui/buttons/Button";
 
 type BannerProps = {
-  src: string;
-  title: string;
   content?: string;
   quote: string;
+  src: string;
   styles?: string;
+  title: string;
 };
 
 export const Banner2 = component$((props: BannerProps) => {

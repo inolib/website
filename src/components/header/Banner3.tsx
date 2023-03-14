@@ -1,17 +1,13 @@
-import { component$, Slot } from "@builder.io/qwik";
-import { Button } from "../ui/buttons/Button";
+import { component$ } from "@builder.io/qwik";
 
 type BannerProps = {
-  src: string;
-  title: string;
   content?: string;
   quote: string;
-  styles?: string;
+  src: string;
+  title: string;
 };
 
 export const Banner3 = component$((props: BannerProps) => {
-  const styles = props.styles !== undefined ? props.styles : "";
-
   return (
     <>
       <section
