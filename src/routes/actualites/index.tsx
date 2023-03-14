@@ -34,22 +34,6 @@ export default component$(() => {
             03.02.2023&ensp; |&ensp; Développement
           </p>
         </Article>
-
-        {/* <span class="flex flex-row mx-[10vw]">
-          <img class="mr-[10vw]" src="/images/photoArticle.png" alt="" />
-          <span class="">
-            <h3 class="text-[#0B3168] text-3xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna.
-            </h3>
-            <p class="text-[#0B3168] mt-4  ">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-              atque corrupti quos dolores.
-            </p>
-            <p class="text-[#0B3168] text-[11px] mt-4">03.02.2023&ensp; |&ensp; Développement</p>
-          </span>
-        </span> */}
-
         <form class="flex items-center -mt-[5rem]">
           <SearchBar placeholder="Rechercher par mots-clés..." />
           <DropDownMenu label="Types" />
