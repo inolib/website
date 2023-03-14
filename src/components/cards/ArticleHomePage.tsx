@@ -13,8 +13,6 @@ type ArticleProps = {
 
 export const ArticleHomePage = component$((props: ArticleProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
-  const toto = props.styles !== undefined ? props.styles : "";
-  const tata = props.styles !== undefined ? props.styles : "";
 
   return (
     <>
