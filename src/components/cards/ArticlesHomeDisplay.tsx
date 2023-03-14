@@ -1,5 +1,5 @@
-import { component$, Slot } from "@builder.io/qwik";
-import { Button } from "../ui/buttons/Button";
+import { component$ } from "@builder.io/qwik";
+
 import { ArticleHomePage } from "./ArticleHomePage";
 
 type ArticleProps = {
@@ -12,7 +12,7 @@ type ArticleProps = {
   title: string;
 };
 
-export const ArticlesGridDisplay = component$((props: ArticleProps) => {
+export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
 
   return (

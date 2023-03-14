@@ -6,7 +6,7 @@ import { CardsRowDisplay } from "~/components/cards/CardsRowDisplay";
 import { SplitedImage } from "~/components/cards/SplitedImage";
 import { Banner2 } from "~/components/header/Banner2";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
-import { ArticlesGridDisplay } from "~/components/cards/ArticlesGridDisplay";
+import { ArticlesHomeDisplay } from "~/components/cards/ArticlesHomeDisplay";
 
 export default component$(() => {
   return (
@@ -29,7 +29,7 @@ export default component$(() => {
           </p>
         </Banner2>
         <section class="mb-[10vh]">
-          <ArticlesGridDisplay title="Actualités" />
+          <ArticlesHomeDisplay title="Actualités" />
           <div class="flex w-full justify-center">
             <ButtonTopPage />
           </div>
