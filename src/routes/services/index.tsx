@@ -19,9 +19,15 @@ export default component$(() => {
         title="Nos services"
       >
         <span q:slot="services" class="flex mt-[12vh] -mb-[23vh]">
-          <p class="border-r-2 px-5 ">Conseil & Audit</p>
-          <p class="px-5">Formations</p>
-          <p class="border-l-2 px-5">Développement</p>
+          <a aria-label="raccourci vers nos conseil et audit" href="#Conseil">
+            <p class="border-r-2 px-5 ">Conseil & Audit</p>
+          </a>
+          <a aria-label="raccourci vers nos formations" href="#Formation">
+            <p class="px-5">Formations</p>
+          </a>
+          <a aria-label="raccourci vers nos formations" href="#Developpement">
+            <p class="border-l-2 px-5">Développement</p>
+          </a>
         </span>
       </Banner>
       <main class="text-[#0B3168]">
@@ -55,6 +61,7 @@ export default component$(() => {
           dolor sit amet consectetur adipisicing elit. Beatae alias reiciendis earum sequi reprehenderit provident
           veniam enim accusantium repellat voluptas vero accusamus, harum omnis dolore quasi sapiente, dolorem, iusto
           at."
+          id="Conseil"
         />
         <Article
           imageSrc="/images/conseilservice.png"
@@ -123,6 +130,7 @@ export default component$(() => {
               unde repellat quo nisi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, placeat omnis.
               Nam incidunt dolorum aliquam autem ducimus dignissimos minima soluta labore. Praesentium dolores illo
               omnis pariatur sint. Aut, quidem perferendis."
+          id="Developpement"
         />
         <HorizontalParagraph
           styles="-mt-[7rem]"

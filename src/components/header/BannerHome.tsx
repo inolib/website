@@ -16,9 +16,9 @@ export const BannerHome = component$(() => {
           <Button color="white" href="/presentation" label="Découvrir" />
         </span>
         <section class="flex justify-around mt-[12rem]">
-          <img class="ml-[25vw]" src="/images/logo-hup-violet.svg" alt="logo hup" />
-          <img src="/images/logo-fidev-violet.svg" alt="logo hup" />
-          <img class="mr-[25vw]" src="/images/logo-apside-violet.svg" alt="logo hup" />
+          <img class="ml-[25vw]" src="/images/logo-hup-violet.svg" alt="logo HUP" />
+          <img src="/images/logo-fidev-violet.svg" alt="logo FIDEV" />
+          <img class="mr-[25vw]" src="/images/logo-apside-violet.svg" alt="logo APSIDE" />
         </section>
       </section>
     </header>

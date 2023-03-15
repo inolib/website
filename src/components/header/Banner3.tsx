@@ -5,6 +5,7 @@ type BannerProps = {
   quote: string;
   src: string;
   title: string;
+  id?: string;
 };
 
 export const Banner3 = component$((props: BannerProps) => {
@@ -13,6 +14,7 @@ export const Banner3 = component$((props: BannerProps) => {
       <section
         aria-label="Développement"
         class="h-[90vh] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh]  bg-no-repeat"
+        id={props.id}
       >
         <span class="flex flex-col -z-1 ">
           <span class="flex flex-col w-[35vw] ml-[8vw] mt-[10vh]">

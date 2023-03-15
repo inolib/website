@@ -40,7 +40,7 @@ export const Article = component$((props: ArticleProps) => {
             <img class="px-4" src={props.imgSeparator} alt="" />
             <p class="text-l">{props.titleQuote}</p>
           </span>
-          <div class={`md:px-4 md:pr-10 md:pl-0 md:w-[46vw] ${stylesContent}`}>
+          <div class={`md:px-4 md:pr-10 md:pl-0 md:w-[47rem] ${stylesContent}`}>
             {props.content}
             <Slot name="date&category" />
             <Slot name="check-box" />
@@ -51,7 +51,7 @@ export const Article = component$((props: ArticleProps) => {
           </strong>
         </span>
         <div class={`flex flex-col ${stylesImgArticle}`}>
-          <img src={props.imageSrc} alt="" />
+          <img class="h-auto max-w-full" src={props.imageSrc} alt="" />
           <blockquote class={`mt-6 text-center max-w-content  ${imgQuoteSize}`}>{props.imageQuote}</blockquote>
           <p class={`mt-6 text-center max-w-content ${styles} ${imgQuoteSize}`}>{props.imageText}</p>
         </div>
