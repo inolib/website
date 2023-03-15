@@ -2,10 +2,10 @@ import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { Article } from "~/components/Article";
+import { CardsActualiteGridDisplay } from "~/components/cards/CardsActualiteGridDisplay";
 import { Banner } from "~/components/header/Banner";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
-import { CardsActualiteGridDisplay } from "~/components/cards/CardsActualiteGridDisplay";
-import { DropDownMenu } from "~/components/ui/buttons/DropDownMenu";
+import { Filter } from "~/components/ui/composite/Filter";
 import { SearchBar } from "~/components/ui/SearchBar";
 
 export default component$(() => {
@@ -35,11 +35,13 @@ export default component$(() => {
             03.02.2023&ensp; |&ensp; Développement
           </p>
         </Article>
+
         <form class="flex items-center -mt-[5rem]">
           <SearchBar placeholder="Rechercher par mots-clés..." />
-          <DropDownMenu label="Types" />
-          <DropDownMenu label="Périodes" />
+          <Filter labels={{ button: "Types", items: ["Option 1", "Option 2", "Option 3"] }} />
+          <Filter labels={{ button: "Périodes", items: ["Option 1", "Option 2", "Option 3"] }} />
         </form>
+
         <section>
           <CardsActualiteGridDisplay />
         </section>
