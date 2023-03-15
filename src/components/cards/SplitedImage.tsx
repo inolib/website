@@ -8,7 +8,7 @@ type ImageProps = {
 export const SplitedImage = component$((props: ImageProps) => {
   return (
     <>
-      <section class="relative mx-[10vw] flex">
+      <section class="relative mx-[10rem] flex">
         <img src={props.src} alt="" />
         <span class="absolute flex">
           <DiscoverAcessCard

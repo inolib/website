@@ -12,8 +12,8 @@ export const HorizontalParagraph = component$((props: ParagraphProps) => {
 
   return (
     <>
-      <span class="flex pt-[5rem] ml-[8rem]">
-        <h2 class="text-4xl mt-6">{props.title}</h2>
+      <span class="flex pt-[3rem] ml-[8rem]">
+        <h2 class="text-4xl mb-6">{props.title}</h2>
       </span>
       <span class={`flex mx-[8rem] ${styles}`}>
         <p class="mr-[1vw]">{props.content1}</p>

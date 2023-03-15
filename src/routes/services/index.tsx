@@ -18,7 +18,7 @@ export default component$(() => {
         imageSrc="/images/serviceheader.png"
         title="Nos services"
       >
-        <span q:slot="services" class="flex mt-[12vh] -mb-[23vh]">
+        <span q:slot="services" class="flex mt-[3.2rem] -mb-[23rem]">
           <p class="border-r-2 px-5 ">Conseil & Audit</p>
           <p class="px-5">Formations</p>
           <p class="border-l-2 px-5">Développement</p>
