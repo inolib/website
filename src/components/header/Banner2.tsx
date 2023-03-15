@@ -24,7 +24,7 @@ export const Banner2 = component$((props: BannerProps) => {
             <blockquote class="max-w-lg text-2xl text-white">{props.quote}</blockquote>
           </span>
         </span>
-        <span class="flex w-[100vw] flex-row-reverse pr-[12vw]">
+        <span class="flex flex-row-reverse pr-[12vw]">
           <img class="-mt-[15vh] h-[60vh]" src={props.src} alt="" />
           <span class="mr-[3vw] flex flex-col font-normal">
             <Slot name="content" />

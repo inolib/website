@@ -41,7 +41,6 @@ export default component$(() => {
             Connexion
           </button>
         </form>
-        <div></div>
       </div>
     </>
   );
