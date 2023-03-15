@@ -179,7 +179,7 @@ export const Filter = component$<FilterProps>((props) => {
   });
 
   useOn(
-    "click",
+    "mouseup",
     $(async (event) => {
       if (event.target === refs.button.value) {
         // focus sur le bouton
@@ -199,7 +199,7 @@ export const Filter = component$<FilterProps>((props) => {
 
   // enregistre un event listener sur `keydown`
   useOn(
-    "keydown",
+    "keyup",
     $(async (event) => {
       switch (event.code) {
         case "Escape":
