@@ -1,12 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
+
 import { Article } from "~/components/Article";
-
 import { CardsActualiteGridDisplay } from "~/components/cards/CardsActualiteGridDisplay";
-
 import { Banner } from "~/components/header/Banner";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
-import { DropDownMenu } from "~/components/ui/buttons/DropDownMenu";
+import { Filter } from "~/components/ui/composite/Filter";
 import { SearchBar } from "~/components/ui/SearchBar";
 
 export default component$(() => {
@@ -21,6 +20,7 @@ export default component$(() => {
 
       <main class="mt-[10rem]">
         <h2 class="text-[#0B3168] mx-[8vw] mb-[10vh] text-4xl">Les dernières actualités</h2>
+
         <Article
           stylesTestimony="w-[40rem] ml-[5rem]"
           stylesContent="pt-[2rem] w-[40rem] ml-[5rem]"
@@ -36,11 +36,13 @@ export default component$(() => {
             03.02.2023&ensp; |&ensp; Développement
           </p>
         </Article>
+
         <form class="flex items-center -mt-[5rem]">
           <SearchBar placeholder="Rechercher par mots-clés..." />
-          <DropDownMenu label="Types" />
-          <DropDownMenu label="Périodes" />
+          <Filter labels={{ button: "Types", items: ["Option 1", "Option 2", "Option 3"] }} />
+          <Filter labels={{ button: "Périodes", items: ["Option 1", "Option 2", "Option 3"] }} />
         </form>
+
         <section>
           <CardsActualiteGridDisplay />
         </section>
