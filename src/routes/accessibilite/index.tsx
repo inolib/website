@@ -68,5 +68,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "accessibilite",
+  title: "accessibilité",
 };

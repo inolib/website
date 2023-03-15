@@ -6,7 +6,7 @@ import { ServicesHomeCardBlank } from "~/components/cards/ServicesHomeCardBlank"
 export const CardsRowDisplay = component$(() => {
   return (
     <>
-      <span class="flex justify-start mt-10 ml-[10vw]">
+      <span class="flex justify-start mt-10 ml-[10rem]">
         <h2 class="text-[#0B3168] font-semibold text-4xl">Nos services</h2>
       </span>
       <section class="flex  justify-around my-[4rem] mx-[10rem]">

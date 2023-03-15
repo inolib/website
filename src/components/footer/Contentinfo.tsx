@@ -29,22 +29,22 @@ export const Contentinfo = component$(() => {
           >
             <li>
               <a href="#">
-                <img alt="facebook INOLIB" src="\images\logo-facebook-violet.svg" aria-label="page Contact"></img>
+                <img alt="facebook INOLIB" src="\images\logo-facebook-violet.svg" aria-label="facebook d'Inolib"></img>
               </a>
             </li>
             <li>
               <a href="#">
-                <img alt="twitter INOLIB" src="\images\logo-twiter.svg"></img>
+                <img alt="twitter INOLIB" src="\images\logo-twiter.svg" aria-label="twitter d'inolib"></img>
               </a>
             </li>
             <li>
               <a href="#">
-                <img alt="LinkedIn INOLIB" src="\images\logo-linkedin.svg"></img>
+                <img alt="LinkedIn INOLIB" src="\images\logo-linkedin.svg" aria-label="Linkedin d'Inolib"></img>
               </a>
             </li>
             <li>
               <a href="#">
-                <img alt="instagram INOLIB" src="\images\logo-instagram.svg"></img>
+                <img alt="instagram INOLIB" src="\images\logo-instagram.svg" aria-label="Instagram d'Inolib"></img>
               </a>
             </li>
           </ul>
