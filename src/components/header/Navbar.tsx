@@ -1,14 +1,14 @@
 import { component$ } from "@builder.io/qwik";
 import { useLocation } from "@builder.io/qwik-city";
 
+import { FastAccessMenu } from "../section/FastAccesMenu";
+
 export const Navbar = component$(() => {
   const location = useLocation();
 
   return (
     <>
-      {/* <nav>
-        <a href="#contenu">Aller au contenu principal</a>
-      </nav> */}
+      <FastAccessMenu />
 
       <nav class="shadow-4xl font-normal flex py-3 bg-white justify-between mx-3">
         <div class="">

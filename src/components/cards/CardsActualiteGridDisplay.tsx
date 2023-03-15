@@ -8,55 +8,55 @@ export const CardsActualiteGridDisplay = component$(() => {
     <ul class="grid grid-cols-3 grid-rows-2 gap-20 mx-[10vw]">
       <li>
         <ArticleHomePage
-          src="/images/home7.png"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-          category="Accessibilité"
-          date="10.03.2023"
-          styles="h-[10rem]"
-          imgStyles="h-[14rem]"
           alt="article 1"
-        />
-      </li>
-      <li>
-        <ArticleHomePage
-          src="/images/home2.png"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Accessibilité"
           date="10.03.2023"
-          styles="h-[10rem]"
           imgStyles="h-[14rem]"
-          alt="article 2"
+          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          src="/images/home7.png"
+          styles="h-[10rem]"
         />
       </li>
       <li>
         <ArticleHomePage
-          src="/images/home6.png"
-          label="Lorem ipsum dolor."
+          alt="article 2"
+          category="Accessibilité"
+          date="10.03.2023"
+          imgStyles="h-[14rem]"
+          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          src="/images/home2.png"
+          styles="h-[10rem]"
+        />
+      </li>
+      <li>
+        <ArticleHomePage
+          alt="article 3"
           category="Formation"
           date="10.03.2023"
-          styles="h-[10rem]"
+          label="Lorem ipsum dolor."
           imgStyles="h-[14rem]"
-          alt="article 3"
+          src="/images/home6.png"
+          styles="h-[10rem]"
         />
       </li>
       <li>
         <ArticleHomePage
-          src="/images/home5.png"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          alt="article 4"
           category="Inolib"
           date="10.03.2023"
+          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          src="/images/home5.png"
           styles="h-[14rem]"
-          alt="article 4"
         />
       </li>
       <li>
         <ArticleHomePage
-          src="/images/home3.png"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          alt="article 5"
           category="Accessibilité"
           date="10.03.2023"
+          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          src="/images/home3.png"
           styles="h-[14rem]"
-          alt="article 5"
         />
       </li>
       <li>

@@ -4,8 +4,8 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 import ArticlePresentation1 from "~/components/articles/ArticlePresentation1";
 import ArticlePresentation2 from "~/components/articles/ArticlePresentation2";
 import { Banner } from "~/components/header/Banner";
-import { PresentationCard } from "~/components/cards/PresentationCard";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
+import { PresentationCard } from "~/components/cards/PresentationCard";
 
 export default component$(() => {
   return (
