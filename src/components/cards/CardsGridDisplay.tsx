@@ -6,7 +6,7 @@ import { ServicesCard } from "~/components/cards/ServicesCard";
 export const CardsGridDisplay = component$(() => {
   return (
     <>
-      <span class="flex flex-col mt-10 bg-slate-200">
+      <span class="flex flex-col mt-10 bg-slate-200" id="Formation">
         <h2 class="text-4xl ml-[8vw] mt-6">Formations</h2>
         <span class="flex">
           <img class="ml-[8vw] mt-10 w-[40vw] h-[50vh]" src="/images/home4.png" alt="" />

@@ -16,17 +16,17 @@ export const Banner2 = component$((props: BannerProps) => {
     <>
       <section
         aria-label="témoignage"
-        class="mt-[10vh] h-[90vh] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh] bg-no-repeat"
+        class="mt-[4rem] h-[42rem] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh] bg-no-repeat"
       >
         <span class="-z-1 flex flex-col ">
-          <span class="ml-[8vw] mt-[10vh] flex w-[35vw] flex-col">
-            <h3 class="pb-[5vh] text-4xl text-white">{props.title}</h3>
+          <span class="ml-[8rem] mt-[4.5rem] flex w-[35rem] flex-col">
+            <h3 class="pb-[2rem] text-4xl text-white">{props.title}</h3>
             <blockquote class="max-w-lg text-2xl text-white">{props.quote}</blockquote>
           </span>
         </span>
-        <span class="flex flex-row-reverse pr-[12vw]">
-          <img class="-mt-[15vh] h-[60vh]" src={props.src} alt="" />
-          <span class="mr-[3vw] flex flex-col font-normal">
+        <span class="flex flex-row-reverse pr-[10rem]">
+          <img class="-mt-[5.5rem] h-[27rem]" src={props.src} alt="" />
+          <span class="mr-[3rem] flex flex-col font-normal">
             <Slot name="content" />
           </span>
         </span>

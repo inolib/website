@@ -19,8 +19,7 @@ export default component$(() => {
       />
 
       <main class="mt-[10rem]">
-        <h2 class="text-[#0B3168] mx-[8vw] mb-[10vh] text-4xl">Les dernières actualités</h2>
-
+        <h2 class="text-[#0B3168] mx-[8vw] mb-[5rem] text-4xl">Les dernières actualités</h2>
         <Article
           stylesTestimony="w-[40rem] ml-[5rem]"
           stylesContent="pt-[2rem] w-[40rem] ml-[5rem]"

@@ -22,13 +22,13 @@ export default component$(() => {
           quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat rerum iure eum! Minima facilis
               earum unde repellat quo nisi."
         >
-          <p q:slot="content" class="mt-[20vh] max-w-xl text-[#0F3069]">
+          <p q:slot="content" class="mt-[9rem] max-w-xl text-[#0F3069]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
             voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
             iure eum! Minima facilis earum unde repellat quo nisi.
           </p>
         </Banner2>
-        <section class="mb-[10vh]">
+        <section class="mb-[4.5rem]">
           <ArticlesHomeDisplay title="Actualités" />
           <div class="flex w-full justify-center">
             <ButtonTopPage />
