@@ -13,7 +13,7 @@ export const Banner = component$((props: BannerProps) => {
       role="banner"
       id="header"
     >
-      <img class="md:mt-48" src={props.imageSrc} />
+      <img class="md:mt-48" src={props.imageSrc} alt="" />
       <div class="ml-[5rem]">
         <h1 class="font-semibold mb-5 text-3xl md:text-5xl max-w-sm">{props.title}</h1>
         <p class=" max-w-md">{props.content}</p>

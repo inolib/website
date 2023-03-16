@@ -6,7 +6,12 @@ import { Navbar } from "~/components/header/Navbar";
 export default component$(() => {
   return (
     <>
-      <Navbar />
+      <Navbar
+        labels={{
+          button: "Types",
+          items: ["ACTUALITÉ", "ACCESSIBILITÉ", "PRÉSENTATION", "SERVICES", "TÉMOIGNAGES", "CONTACT", "Connexion"],
+        }}
+      />
 
       <main>
         <Slot />

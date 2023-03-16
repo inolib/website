@@ -19,13 +19,13 @@ export default component$(() => {
         title="Nos services"
       >
         <span q:slot="services" class="flex mt-[12vh] -mb-[23vh]">
-          <a aria-label="raccourci vers nos conseil et audit" href="#Conseil">
+          <a aria-label="Nos conseil et audit" href="#Conseil">
             <p class="border-r-2 px-5 ">Conseil & Audit</p>
           </a>
-          <a aria-label="raccourci vers nos formations" href="#Formation">
+          <a aria-label="Nos formations" href="#Formation">
             <p class="px-5">Formations</p>
           </a>
-          <a aria-label="raccourci vers nos formations" href="#Developpement">
+          <a aria-label="Nos offre de développement" href="#Developpement">
             <p class="border-l-2 px-5">Développement</p>
           </a>
         </span>

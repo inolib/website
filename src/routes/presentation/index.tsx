@@ -38,7 +38,7 @@ export default component$(() => {
               dolore magna.
             </p>
           </div>
-          <img class="hidden md:block" src="..\images\background-team-bulles.svg" />
+          <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
         </section>
         <section>
           <ul class="pt-20 md:flex md:flex-wrap md:px-28" aria-label="liste des employés d'Inolib">

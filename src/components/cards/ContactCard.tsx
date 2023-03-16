@@ -13,11 +13,11 @@ export const ContactCard = component$(() => {
           eleifend va lucum.
         </p>
         <div class="flex mb-6">
-          <img src="..\images\icon-phone.svg" />
+          <img alt="" src="\images\icon-phone.svg" />
           <p class="pl-3">06 70 86 50 32</p>
         </div>
         <div class="flex mb-6">
-          <img src="..\images\icon-mail.svg" />
+          <img alt="" src="\images\icon-mail.svg" />
           <p class="pl-3">contact@inolib.com</p>
         </div>
 
@@ -47,7 +47,7 @@ export const ContactCard = component$(() => {
           </li>
         </ul>
       </div>
-      <img class="w-3/5 h-auto absolute bottom-0 right-0" src="..\images\background-card.svg" />
+      <img alt="" class="w-3/5 h-auto absolute bottom-0 right-0" src="\images\background-card.svg" />
     </section>
   );
 });
