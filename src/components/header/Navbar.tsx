@@ -1,26 +1,52 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$, useStore } from "@builder.io/qwik";
+
 import { useLocation } from "@builder.io/qwik-city";
 
 import { FastAccessMenu } from "../section/FastAccesMenu";
 
-export const Navbar = component$(() => {
+type NavStore = {
+  burger: {
+    attributes: {
+      hidden: boolean;
+    };
+  };
+};
+
+export const Navbar = component$<NavProps>((props) => {
   const location = useLocation();
+
+  const store = useStore<NavStore>(
+    {
+      burger: {
+        attributes: {
+          hidden: true,
+        },
+      },
+    },
+    {
+      deep: true,
+    }
+  );
+
+  const handleBurger$ = $<HandleBurgerFonction>(() => {
+    store.burger.attributes.hidden = !store.burger.attributes.hidden;
+  });
 
   return (
     <>
       <FastAccessMenu />
-      <nav class="">
+      <nav>
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
               <button
+                onClick$={handleBurger$}
                 type="button"
                 class="inline-flex items-center justify-center rounded-md p-2 text-[#0B3168] hover:bg-[#0B3168] hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 aria-controls="mobile-menu"
                 aria-expanded="false"
+                aria-label="ouvrir le menu principal"
               >
-                <span class="sr-only">Open main menu</span>
-
                 <svg
                   class="block h-6 w-6"
                   fill="none"
@@ -122,7 +148,7 @@ export const Navbar = component$(() => {
           </div>
         </div>
 
-        <div class="sm:hidden" id="mobile-menu">
+        <div {...store.burger.attributes} class="sm:hidden" id="mobile-menu">
           <div class="space-y-1 px-2 pt-2 pb-3">
             <a
               href="/actualites"
