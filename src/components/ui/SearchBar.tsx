@@ -6,12 +6,10 @@ type SearchProps = {
 };
 
 export const SearchBar = component$((props: SearchProps) => {
-  const styles = props.styles !== undefined ? props.styles : "";
-
   return (
     <>
       <label for="simple-search" class="sr-only">
-        Search
+        Barre de recherche
       </label>
       <div class=" ml-[10vw] mb-[8vh] relative w-[20vw]">
         <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
