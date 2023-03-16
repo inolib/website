@@ -6,19 +6,19 @@ export const BannerHome = component$(() => {
   return (
     <header>
       <section class="bg-no-repeat bg-[length:100vw_75vh] bg-[url('/images/home-banner.png')] h-[120vh] mb-[-20vh]">
-        <h1 class=" flex w-[85vw] h-[25rem] pt-[15vh]">
+        <span class=" flex w-[85vw] h-[25rem] pt-[15vh]">
           <img class="mr-[-9vw] w-[35%] h-[35%]" alt="INOLIB" src="/images/logo-white.svg" />
-          <span class="flex flex-col border-l font-bold text-white w-min h-[50vh] text-[300%] pl-10">
+          <h1 class="flex flex-col border-l font-bold text-white w-min h-[50vh] text-[300%] pl-10">
             HUMAN NOBLE TECHNOLOGY
-          </span>
-        </h1>
+          </h1>
+        </span>
         <span class="ml-[35rem]">
           <Button color="white" href="/presentation" label="Découvrir" />
         </span>
         <section class="flex justify-around mt-[12rem]">
-          <img class="ml-[25vw]" src="/images/logo-hup-violet.svg" alt="logo HUP" />
-          <img src="/images/logo-fidev-violet.svg" alt="logo FIDEV" />
-          <img class="mr-[25vw]" src="/images/logo-apside-violet.svg" alt="logo APSIDE" />
+          <img class="ml-[25vw]" src="/images/logo-hup-violet.svg" alt="HUP" />
+          <img src="/images/logo-fidev-violet.svg" alt="FIDEV" />
+          <img class="mr-[25vw]" src="/images/logo-apside-violet.svg" alt="APSIDE" />
         </section>
       </section>
     </header>
