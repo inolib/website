@@ -9,32 +9,30 @@ export default component$(() => {
           <h1 className=" text-[#0B3168] font-semibold items-center content-center justify-center text-4xl mb-16 md:mb-14 mt-44">
             Connexion
           </h1>
-          <div className=" flex md:w-3/5 justify-center ">
+          <div className=" flex md:w-3/5 justify-center mb-[2rem]">
             <input
-              title="formulaire de connexion adresse email"
+              aria-label="entrez votre e-mail"
               type="email"
-              placeholder="Entrer votre email"
               required
               id="email"
               name="email"
               className="bg-gray-200 form-control text-gray-600 py-2 px-4 border rounded-2xl md:w-3/5 h-10 w-56 md:h-14"
             />
           </div>
-          <br />
-          <div className="flex  justify-center md:w-3/5">
+
+          <div className="flex  justify-center md:w-3/5 mb-[2rem]">
             <input
-              title="formulaire de connexion mot de passe"
+              aria-label="Entrez votre mot de passe"
               type="password"
               required
               id="password"
               name="password"
-              placeholder="Entrer votre mot de passe"
               className="bg-gray-200 form-control  text-gray-600 py-2 px-4 border rounded-2xl md:w-3/5 h-10 w-56 md:h-14"
             />
           </div>
-          <br />
+
           <button
-            title="se connecter"
+            aria-label="se connecter"
             type="submit"
             className="bg-[#0B3168] mt-10 md:mt-2 text-white m-3 py-1 px-4 rounded-lg shadow-lg h-10 w-32 md:h-14 md:w-44 md:text-lg hover:shadow hover:bg-[#FFFFFF] hover:text-[#15133C] hover:border hover:border-[#15133C]"
           >

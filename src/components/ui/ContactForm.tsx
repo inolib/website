@@ -7,6 +7,7 @@ export const ContactForm = component$(() => {
         class="border-solid border-[1px] border-[#0B3168] flex h-12 rounded-md md:col-span-1 md:col-start-1 md:col-end-3 md:row-start-1"
         name="Type de la demande"
         aria-label="type de votre demande"
+        required
       >
         <option value="" disabled selected hidden>
           Type de la demande
@@ -20,7 +21,7 @@ export const ContactForm = component$(() => {
         Nom
         <input
           class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
-          placeholder="Nom"
+          required
           type="text"
           aria-label="entrez votre nom"
         />
@@ -29,7 +30,7 @@ export const ContactForm = component$(() => {
         Prénom
         <input
           class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
-          placeholder="Prénom"
+          required
           type="text"
           aria-label="entrez votre prénom"
         />
@@ -38,7 +39,7 @@ export const ContactForm = component$(() => {
         Mail
         <input
           class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
-          placeholder="Mail"
+          required
           type="email"
           aria-label="entrez votre e-mail"
         />
@@ -47,7 +48,7 @@ export const ContactForm = component$(() => {
         Téléphone
         <input
           class="border-solid border-[1px] border-[#0B3168] pl-2 md:h-12 rounded-md"
-          placeholder="Téléphone"
+          required
           type="tel"
           aria-label="entrez votre numéro de téléphone"
         />
@@ -56,6 +57,7 @@ export const ContactForm = component$(() => {
       <textarea
         class="border-solid border-[1px] border-[#0B3168] md:col-span-4 pl-2 md:row-start-4 md:col-start-1  md:col-end-5"
         placeholder="Votre texte"
+        required
         aria-label="zone pour écrire les détails de votre demande"
       ></textarea>
       <button class="h-14 mr-2 rounded-md hover:border-2 hover:border-[#0B3168] md:col-span-1 md:row-start-5 md:col-start-3  md:col-end-4 md:mt-14">

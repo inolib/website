@@ -36,7 +36,7 @@ export const Article = component$((props: ArticleProps) => {
       <div class={`flex pt-6 ${stylesArticleGaucheFlex}`}>
         <span>
           <span class={`flex ${articleTestimonyStyles}`}>
-            <h4 class={`font-bold text-xl ${stylesTestimony}`}>{props.testimony}</h4>
+            <h3 class={`font-bold text-xl ${stylesTestimony}`}>{props.testimony}</h3>
             <img class="px-4" src={props.imgSeparator} alt="" />
             <p class="text-l">{props.titleQuote}</p>
           </span>

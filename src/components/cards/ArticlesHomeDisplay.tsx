@@ -13,8 +13,6 @@ type ArticleProps = {
 };
 
 export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
-  const styles = props.styles !== undefined ? props.styles : "";
-
   return (
     <>
       <span class="mt-20 ml-[9vw] flex justify-start">
@@ -27,6 +25,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Développement"
           date="20.06.2023"
+          alt=""
         >
           <p q:slot="content" class="max-w-md text-[#0B3168]">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est id, facilis veritatis repudiandae nobis eius
@@ -39,6 +38,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Accessibilité"
           date="10.03.2023"
+          alt=""
         />
         <ArticleHomePage
           src="/images/home3.png"
@@ -46,13 +46,14 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Accessibilité"
           date="03.02.2023"
+          alt=""
         />
         <a
-          aria-label="lien vers pas actualité"
+          aria-label="lien vers notre actualité"
           class="mr-[8rem] -mt-[18rem] ml-[8rem] pt-8 border-t border-slate-300 flex justify-end font-normal text-[#0B3168]"
           href="/actualites"
         >
-          Voir toute notre actualité{" "}
+          Voir toute notre actualité
           <img
             class="mt-[0.8vh] h-[2vh] w-[2vw]"
             src="/images/icon-small-arrow.svg"
