@@ -14,6 +14,7 @@ export default component$(() => {
       imageSrc="\images\presentation-article-1.png"
       imageQuote="“ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ”"
       typoImgQuote="bold"
+      stylesArticleGaucheFlex="md:flex-row"
     ></Article>
   );
 });

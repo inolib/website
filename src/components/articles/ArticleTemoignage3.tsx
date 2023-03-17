@@ -16,6 +16,7 @@ Pellentesque ut nulla ut magna hendrerit tincidunt nec eget justo. Vestibulum pu
       imageQuote="“ Lorem ipsum dolor sit amet, consectetur adipiscing. ”"
       imgSeparator="\images\icon-separator-small.svg"
       typoImgQuote="bold"
+      stylesArticleGaucheFlex="md:flex-row"
     ></Article>
   );
 });

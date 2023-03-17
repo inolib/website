@@ -6,8 +6,8 @@ export default component$(() => {
   return (
     <Article
       title="Ce que nous sommes au quotidien"
-      stylesArticleGaucheFlex="flex-row-reverse justify-end"
-      stylesArticleGauchePadding="pl-10"
+      stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end"
+      stylesArticleGauchePadding="md:pl-10"
       content="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium vel, enim, dolore dolorem a
           mollitia adipisci ipsa pariatur ipsum officiis eligendi expedita. Eaque cumque suscipit quidem
           exercitationem. Ipsa, eveniet eaque. At modi porro, perspiciatis enim illum laborum nostrum nesciunt
