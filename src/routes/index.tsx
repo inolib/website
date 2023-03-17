@@ -7,17 +7,34 @@ import { Banner2 } from "~/components/header/Banner2";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { CardsRowDisplay } from "~/components/cards/CardsRowDisplay";
 import { SplitedImage } from "~/components/cards/SplitedImage";
+import { Banner } from "~/components/header/Banner";
+import { Button } from "~/components/ui/buttons/Button";
 
 export default component$(() => {
   return (
     <>
       <BannerHome />
       <main class="flex flex-col justify-center overflow-x-hidden">
-        <SplitedImage src="/images/decouvriraccess.png" />
+        <SplitedImage src="/images/decouvriraccess.png" styles="hidden md:block" />
+        <Banner
+          styles="md:hidden block"
+          title="Découvrir l'accessiblité"
+          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
+            voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
+            iure eum! Minima facilis earum unde repellat quo nisi."
+        />
         <CardsRowDisplay />
+        <Banner
+          q:slot="button"
+          styles="md:hidden block mt-[4rem] "
+          title="Témoignages"
+          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
+            voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
+            iure eum! Minima facilis earum unde repellat quo nisi."
+        />
         <Banner2
-          styles="ml-[6rem] flex justify-center md:justify-start -mt-[30rem] md:mt-[0rem] md:mr-[0rem] mr-[5.7rem]"
           src="/images/temoignage-homme.png"
+          styles=" flex justify-center hidden md:block md:justify-start -mt-[30rem] md:mt-[0rem] md:mr-[0rem] "
           title="Témoignages"
           quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat rerum iure eum! Minima facilis
               earum unde repellat quo nisi."

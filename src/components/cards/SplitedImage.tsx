@@ -3,11 +3,13 @@ import { DiscoverAcessCard } from "./DiscoverAcessCard";
 
 type ImageProps = {
   src: string;
+  styles?: string;
 };
 
 export const SplitedImage = component$((props: ImageProps) => {
+  const styles = props.styles !== undefined ? props.styles : "";
   return (
-    <>
+    <span class={`${styles}`}>
       <section class="relative md:mx-[10rem] flex">
         <img src={props.src} alt="" />
         <span class="absolute md:flex md:flex-row flex flex-col">
@@ -23,6 +25,6 @@ export const SplitedImage = component$((props: ImageProps) => {
         <img class=" md:w-[40rem] hidden md:flex" src="images/bg-cards.png" alt="" />
       </section>
       ;
-    </>
+    </span>
   );
 });

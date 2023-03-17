@@ -13,7 +13,7 @@ export const Banner2 = component$((props: BannerProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
 
   return (
-    <>
+    <span class={`${styles}`}>
       <section
         aria-label="témoignage"
         class="mt-[4rem] h-[42rem] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh] bg-no-repeat"
@@ -25,15 +25,15 @@ export const Banner2 = component$((props: BannerProps) => {
           </span>
         </span>
         <span class="flex flex-row-reverse pr-[10rem]">
-          <img class="-mt-[5.5rem] h-[27rem]" src={props.src} alt="" />
+          <img class={`-mt-[5.5rem] h-[27rem]`} src={props.src} alt="" />
           <span class="mr-[3rem] mt-5 flex flex-col font-normal">
             <Slot name="content" />
           </span>
         </span>
-        <span class={`${styles}`}>
+        <span class={`ml-[10rem]`}>
           <Button color="blue" href="/temoignages" label="Découvrir" />
         </span>
       </section>
-    </>
+    </span>
   );
 });
