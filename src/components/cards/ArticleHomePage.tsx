@@ -18,12 +18,14 @@ export const ArticleHomePage = component$((props: ArticleProps) => {
 
   return (
     <>
-      <span class={`text-[#0B3168] ${styles}`}>
-        <img class={`mb-10 ${imgStyles}`} src={props.src} alt={props.alt} />
-        <h3 class={`max-w-sm text-3xl mb-5`}>{props.label}</h3>
+      <span
+        class={`text-[#0B3168] ${styles} md:shadow-none text-sm md:text-base border-2 md:border-none shadow-2xl mx-2`}
+      >
+        <img class={`mb-10 ${imgStyles} md:block hidden`} src={props.src} alt={props.alt} />
+        <h3 class={`max-w-sm md:text-3xl text-xl mb-5`}>{props.label}</h3>
         <Slot name="content" />
         <p class={`mt-4 text-[11px]`}>
-          {props.date}&ensp; |&ensp; {props.category}
+          {props.date}&ensp;|&ensp; {props.category}
         </p>
       </span>
     </>

@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 
 import { Button } from "~/components/ui/buttons/Button";
 
@@ -12,10 +12,10 @@ export const ServicesHomeCardBlank = component$((props: CardProps) => {
 
   return (
     <>
-      <article aria-label="articles" class="flex flex-col ">
+      <article aria-label="articles" class="flex-col mx-7 md:mt-[1.2rem] hidden md:flex ">
         <span class={`flex flex-col items-center justify-center shadow-xl pb-[10rem] px-4 h-[40rem] w-[17.5rem]`}>
-          <p class={`text-[#0B3168] my-${styles} pb-32 text-2xl`}>{props.content}</p>
-          <Button color="blue" href="/services" label="En savoir plus" />
+          <p class={`text-[#0B3168] ${styles} pb-32 text-2xl`}>{props.content}</p>
+          <Slot name="button" />
         </span>
       </article>
     </>

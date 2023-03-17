@@ -35,7 +35,7 @@ export const Navbar = component$<NavProps>((props) => {
   return (
     <>
       <FastAccessMenu />
-      <nav>
+      <nav class="sticky top-0 z-50 bg-white border-b-[1px] border-slate-200">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 right-0 flex items-center sm:hidden">
