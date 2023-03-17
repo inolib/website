@@ -13,15 +13,16 @@ type ArticleProps = {
 };
 
 export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
+  const styles = props.styles !== undefined ? props.styles : "";
   return (
     <>
-      <span class="mt-20 ml-[9vw] flex justify-start">
-        <h2 class="text-4xl font-normal text-[#0B3168]">{props.title}</h2>
+      <span class="md:mt-20 md:ml-[9rem] ml-[1rem] flex justify-start">
+        <h2 class="text-4xl text-[#0B3168] font-semibold">{props.title}</h2>
       </span>
-      <span class="grid-col-2 grid-row-2- mt-14 grid">
+      <span class="md:grid-md:col-2 md:grid-row-2- md:mt-14 md:grid">
         <ArticleHomePage
           src="/images/home1.png"
-          styles="col-end-1 ml-[8vw] w-[40vw]"
+          styles="md:col-end-1 md:ml-[8vw] md:w-[40vw]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Développement"
           date="20.06.2023"
@@ -34,7 +35,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
         </ArticleHomePage>
         <ArticleHomePage
           src="/images/home2.png"
-          styles="col-end-2 mr-[6rem]"
+          styles="md:col-end-2 md:mr-[6rem]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Accessibilité"
           date="10.03.2023"
@@ -42,7 +43,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
         />
         <ArticleHomePage
           src="/images/home3.png"
-          styles="col-end-2 mr-[6rem] -mt-[5rem]"
+          styles="md:col-end-2 md:mr-[6rem] md:-mt-[5rem]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Accessibilité"
           date="03.02.2023"
@@ -50,7 +51,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
         />
         <a
           aria-label="lien vers notre actualité"
-          class="mr-[8rem] -mt-[18rem] ml-[8rem] pt-8 border-t border-slate-300 flex justify-end font-normal text-[#0B3168]"
+          class="mr-[8rem] -mt-[18rem] ml-[8rem] pt-8 border-t border-slate-300 md:flex hidden justify-end font-normal text-[#0B3168]"
           href="/actualites"
         >
           Voir toute notre actualité
