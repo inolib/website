@@ -41,7 +41,7 @@ export default component$(() => {
           <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
         </section>
         <section>
-          <ul class="pt-20 md:flex md:flex-wrap md:px-28" aria-label="liste des employés d'Inolib">
+          <ul class="md:pt-20 md:flex md:flex-wrap md:px-28" aria-label="liste des employés d'Inolib">
             <PresentationCard
               name="Djebrine Aloui"
               position="CEO & Fondateur"
