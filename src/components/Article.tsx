@@ -31,10 +31,10 @@ export const Article = component$((props: ArticleProps) => {
 
   return (
     <article class="md:mx-[8rem] md:py-8 text-[#0B3168]">
-      <h2 class={`text-2xl font-semibold `}>{props.title}</h2>
+      <h2 class={`mx-5 my-5 text-2xl font-semibold md:m-0`}>{props.title}</h2>
 
       <div class={`flex flex-col ${stylesArticleGaucheFlex}  md:pt-6 `}>
-        <span>
+        <span class="mx-5 md:mx-0">
           <span class={`flex ${articleTestimonyStyles}`}>
             <h3 class={`font-bold md:text-xl ${stylesTestimony}`}>{props.testimony}</h3>
             <img class="md:px-4" src={props.imgSeparator} alt="" />
