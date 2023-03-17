@@ -72,7 +72,7 @@ export default component$(() => {
           styles="mt-1 md:-mt-[1rem]"
           stylesArticleGaucheFlex="md:flex-row"
         >
-          <span q:slot="check-box" class="flex justify-around mt-10 md:mx-[8rem] ">
+          <span q:slot="check-box" class="flex justify-around mx-5 mt-10 md:mx-[8rem] ">
             <ul class="flex flex-col mt-10">
               <li class="flex mb-[2.5rem] md:w-[40rem]">
                 <img src="/images/checkservice.svg" alt="" />
@@ -153,7 +153,7 @@ export default component$(() => {
         />
 
         <Article imageSrc="/images/actualitehome1.png" stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end">
-          <span q:slot="check-box" class="flex flex-col mt-16 md:flex-row-reverse  md:pl-[5rem] md:mt-0">
+          <span q:slot="check-box" class="flex flex-col mt-16 mx-5 md:flex-row-reverse md:pl-[5rem] md:mt-0 md:mx-0">
             <ul class="flex flex-col ">
               <li class="flex mb-[2.5rem] ">
                 <img src="/images/checkservice.svg" alt="" />
