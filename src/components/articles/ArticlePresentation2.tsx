@@ -34,7 +34,7 @@ export default component$(() => {
       imageSrc="\images\presentation-article-2.png"
       imageQuote="“Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, culpa alias? Officia autem
           doloribus nemo cul.“"
-      stylesImgArticle="pr-10"
+      stylesImgArticle="md:pr-10"
     ></Article>
   );
 });

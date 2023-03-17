@@ -23,7 +23,7 @@ export const CardsGridDisplay = component$(() => {
           </p>
         </span>
         <section class="bg-white md:mx-[8rem] md:mt-[10rem] md:pb-[8rem]">
-          <h2 class="text-4xl mt-6 md:ml-[3rem] ">Toutes nos formations</h2>
+          <h2 class="mx-5 text-3xl md:text-4xl mt-6 md:mr-0 md:ml-[3rem] ">Toutes nos formations</h2>
           <span class="flex flex-col items-center md:grid md:grid-cols-2 md:gap-10 md:grid-row-2 md:pt-[5rem] md:pl-[13rem]">
             <ServicesCard
               image="/images/logo-audit.png"
