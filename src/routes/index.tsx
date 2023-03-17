@@ -12,11 +12,11 @@ export default component$(() => {
   return (
     <>
       <BannerHome />
-      <main class="flex flex-col justify-center">
+      <main class="flex flex-col justify-center overflow-x-hidden">
         <SplitedImage src="/images/decouvriraccess.png" />
         <CardsRowDisplay />
         <Banner2
-          styles="ml-[6rem]"
+          styles="ml-[6rem] flex justify-center md:justify-start -mt-[30rem] md:mt-[0rem] md:mr-[0rem] mr-[5.7rem]"
           src="/images/temoignage-homme.png"
           title="Témoignages"
           quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat rerum iure eum! Minima facilis

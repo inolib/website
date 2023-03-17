@@ -18,7 +18,7 @@ export const ServicesHomeCard = component$((props: CardProps) => {
         <span
           class={`flex md:flex-col items-center justify-center md:shadow-xl md:pb-[10rem] md:px-4 md:h-[25rem] md:w-[17.5rem] w-[14rem] h-[6rem]`}
         >
-          <h3 class={`text-[#0B3168] mt-[2rem] ml-[7rem] md:ml-[0rem] font-semibold md:my-5 md:text-2xl text-xl`}>
+          <h3 class={`text-[#0B3168] ml-[5rem] md:ml-[0rem] font-semibold md:my-5 md:text-2xl text-xl`}>
             {props.label}
           </h3>
           <span class={"invisible md:visible"}>

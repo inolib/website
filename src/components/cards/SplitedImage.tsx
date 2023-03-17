@@ -10,7 +10,7 @@ export const SplitedImage = component$((props: ImageProps) => {
     <>
       <section class="relative md:mx-[10rem] flex">
         <img src={props.src} alt="" />
-        <span class="absolute flex">
+        <span class="absolute md:flex md:flex-row flex flex-col">
           <DiscoverAcessCard
             styles="md:ml-[35rem] md:mt-[5rem]"
             alt="aller vers page accessibilité"
@@ -20,7 +20,7 @@ export const SplitedImage = component$((props: ImageProps) => {
           nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas odit."
           />
         </span>
-        <img class=" md:w-[40rem]" src="images/bg-cards.png" alt="" />
+        <img class=" md:w-[40rem] hidden md:flex" src="images/bg-cards.png" alt="" />
       </section>
       ;
     </>
