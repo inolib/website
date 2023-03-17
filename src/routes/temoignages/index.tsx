@@ -26,7 +26,7 @@ export default component$(() => {
 
           <ArticleTemoignage3 />
         </section>
-        <div class="flex w-full justify-center my-10">
+        <div class="flex w-full justify-center mb-10">
           <ButtonTopPage />
         </div>
       </main>

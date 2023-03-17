@@ -14,6 +14,7 @@ export default component$(() => {
       imageSrc="/images/homme-fauteuil.png"
       imageQuote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
       typoImgQuote="bold"
+      stylesArticleGaucheFlex="md:flex-row"
     ></Article>
   );
 });

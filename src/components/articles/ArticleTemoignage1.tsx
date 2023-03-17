@@ -12,7 +12,8 @@ export default component$(() => {
       contentQuote="“ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ”"
       imageSrc="\images\temoignage-1-femme.png"
       imgSeparator="\images\icon-separator-small.svg"
-      stylesImgArticle="mr-10"
+      stylesImgArticle="md:mr-10"
+      stylesArticleGaucheFlex="md:flex-row"
     ></Article>
   );
 });

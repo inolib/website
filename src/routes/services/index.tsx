@@ -18,15 +18,18 @@ export default component$(() => {
         imageSrc="/images/serviceheader.png"
         title="Nos services"
       >
-        <span q:slot="services" class="flex mt-[12vh] -mb-[23vh]">
+        <span
+          q:slot="services"
+          class="flex justify-center text-sm md:justify-start pt-4  md:mt-[12vh] md:-mb-[23vh] md:text-base "
+        >
           <a aria-label="Nos conseil et audit" href="#Conseil">
-            <p class="border-r-2 px-5 ">Conseil & Audit</p>
+            <p class="px-2 border-r-2 md:px-5 ">Conseil & Audit</p>
           </a>
           <a aria-label="Nos formations" href="#Formation">
-            <p class="px-5">Formations</p>
+            <p class="px-2 md:px-5">Formations</p>
           </a>
           <a aria-label="Nos offre de développement" href="#Developpement">
-            <p class="border-l-2 px-5">Développement</p>
+            <p class="px-2 border-l-2 md:px-5">Développement</p>
           </a>
         </span>
       </Banner>
@@ -66,27 +69,28 @@ export default component$(() => {
         <Article
           imageSrc="/images/conseilservice.png"
           imageText="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure, maiores impedit ut illum et dolore magna."
-          styles="-mt-[1rem]"
+          styles="mt-1 md:-mt-[1rem]"
+          stylesArticleGaucheFlex="md:flex-row"
         >
-          <span q:slot="check-box" class="flex mt-10 mx-[8rem] justify-around">
+          <span q:slot="check-box" class="flex justify-around mx-5 mt-10 md:mx-[8rem] ">
             <ul class="flex flex-col mt-10">
-              <li class="flex mb-[5vh] w-[40rem]">
+              <li class="flex mb-[2.5rem] md:w-[40rem]">
                 <img src="/images/checkservice.svg" alt="" />
-                <p class="ml-[1vw] font-normal">
+                <p class="ml-2 font-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.quibusdam saepe
                   commodi ratione sit.
                 </p>
               </li>
-              <li class="flex mb-[5vh]">
+              <li class="flex mb-[2.5rem]">
                 <img src="/images/checkservice.svg" alt="" />
-                <p class="ml-[1vw] font-normal">
+                <p class="ml-2 font-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
                   commodi ratione sit.
                 </p>
               </li>
-              <li class="flex mb-[5vh]">
+              <li class="flex mb-[2.5rem]">
                 <img src="/images/checkservice.svg" alt="" />
-                <p class="ml-[1vw] font-normal">
+                <p class="ml-2 font-normal">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
                   commodi ratione sit.
                 </p>
@@ -94,7 +98,7 @@ export default component$(() => {
             </ul>
           </span>
         </Article>
-        <p class="mt-[2rem] mx-[8vw]">
+        <p class="text-justify mx-5 md:text-left mt-[2rem] md:mx-[8rem]">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure tempora natus accusantium consequuntur,
           doloribus quisquam, distinctio iste nulla atque eos eum id reiciendis quam unde corrupti perspiciatis?
           Eligendi, placeat natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus tenetur
@@ -111,7 +115,7 @@ export default component$(() => {
           at.
         </p>
         <span class="flex justify-center">
-          <img class="w-[14vw] h-[30vh]" src="/images/purple-logo.png" alt="" />
+          <img class="w-[14rem] h-[14rem]" src="/images/purple-logo.png" alt="" />
         </span>
         <span class="flex justify-center">
           <p class="text-2xl text-center max-w-[70vw]">
@@ -133,7 +137,7 @@ export default component$(() => {
           id="Developpement"
         />
         <HorizontalParagraph
-          styles="-mt-[12rem]"
+          styles="mt-[8rem] md:mt-[10rem]"
           content1="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure tempora natus accusantium consequuntur,
           doloribus quisquam, distinctio iste nulla atque eos eum id reiciendis quam unde corrupti perspiciatis?
           Eligendi, placeat natus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit possimus tenetur
@@ -148,31 +152,31 @@ export default component$(() => {
           Incidunt, ipsam."
         />
 
-        <Article imageSrc="/images/actualitehome1.png" stylesArticleGaucheFlex="flex-row-reverse">
-          <span q:slot="check-box" class="flex flex-row-reverse  px-[5rem]">
+        <Article imageSrc="/images/actualitehome1.png" stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end">
+          <span q:slot="check-box" class="flex flex-col mt-16 mx-5 md:flex-row-reverse md:pl-[5rem] md:mt-0 md:mx-0">
             <ul class="flex flex-col ">
-              <li class="flex w-[50rem] -mr-[35rem] mb-[5vh]">
+              <li class="flex mb-[2.5rem] ">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-[1vw] text-lg">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.quibusdam saepe
                   commodi ratione sit.
                 </p>
               </li>
-              <li class="flex w-[50rem] -mr-[35rem] mb-[5vh]">
+              <li class="flex mb-[2.5rem] ">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-[1vw] text-lg">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
                   commodi ratione sit.
                 </p>
               </li>
-              <li class="flex w-[50rem] -mr-[15rem] mb-[5vh] text-lg">
+              <li class="flex mb-[2.5rem] ">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-[1vw]">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
                   commodi ratione sit.
                 </p>
               </li>
-              <li class="flex w-[50rem] -mr-[35rem] mb-[5vh] text-lg">
+              <li class="flex mb-[2.5rem] ">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-[1vw]">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur ducimus perferendis.Quibusdam saepe
@@ -184,7 +188,7 @@ export default component$(() => {
         </Article>
 
         <span class="flex justify-center">
-          <p class="text-2xl text-center max-w-[70vw]">
+          <p class="text-xl text-center px-2 md:px-0 max-w-[70vw] md:text-2xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolore labore commodi.culpa voluptas
             rerum provident blanditiis sunt esse praesentium.
           </p>

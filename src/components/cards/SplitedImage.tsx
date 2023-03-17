@@ -3,26 +3,28 @@ import { DiscoverAcessCard } from "./DiscoverAcessCard";
 
 type ImageProps = {
   src: string;
+  styles?: string;
 };
 
 export const SplitedImage = component$((props: ImageProps) => {
+  const styles = props.styles !== undefined ? props.styles : "";
   return (
-    <>
-      <section class="relative mx-[10rem] flex">
+    <span class={`${styles}`}>
+      <section class="relative md:mx-[10rem] flex">
         <img src={props.src} alt="" />
-        <span class="absolute flex">
+        <span class="absolute md:flex md:flex-row flex flex-col">
           <DiscoverAcessCard
-            styles="ml-[35rem] mt-[5rem]"
-            alt="lien vers page accessibilité"
+            styles="md:ml-[35rem] md:mt-[5rem]"
+            alt="aller vers page accessibilité"
             href="/accessibilite"
             title="Découvrir l'accessibilité"
             content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, magnam accusamus dolores soluta deserunt
           nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas odit."
           />
         </span>
-        <img class=" w-[40rem]" src="images/bg-cards.png" alt="" />
+        <img class=" md:w-[40rem] hidden md:flex" src="images/bg-cards.png" alt="" />
       </section>
       ;
-    </>
+    </span>
   );
 });

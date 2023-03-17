@@ -16,9 +16,9 @@ non ante auctor, iaculis tristique ante pharetra. Aenean eu sodales erat. Sed se
 Curabitur at ornare ex. Nullam condimentum nulla vel orci congue condimentum. In hac habitasse platea dictumst. Nulla molestie sem non ante auctor, iaculis tristique ante pharetra. Aenean eu sodales erat. Sed sed justo sodales, vestibulum sapien quis, cursus elit. Etiam sed lorem sollicitudin, auctor urna viverra, tincidunt neque."
       imageSrc="\images\temoignage-2-femme.png"
       imageQuote="“ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ”"
-      stylesImgArticle="pr-10"
+      stylesImgArticle="md:pr-10"
       typoImgQuote="bold"
-      stylesArticleGaucheFlex="flex-row-reverse justify-end"
+      stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end"
       imgSeparator="\images\icon-separator-small.svg"
     ></Article>
   );

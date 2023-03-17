@@ -13,17 +13,17 @@ export const Banner3 = component$((props: BannerProps) => {
     <>
       <section
         aria-label="Développement"
-        class="h-[40rem] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh]  bg-no-repeat"
+        class="h-[26rem] bg-gradient-to-b from-[#5A0C69] to-[#0F3069]  bg-no-repeat"
         id={props.id}
       >
-        <span class="flex flex-col -z-1 ">
-          <span class="flex flex-col w-[55rem] ml-[8rem] mt-[4rem]">
+        <span class="flex flex-col md:w-1/2 ">
+          <span class="py-5 px-5 flex flex-col md:ml-[8rem] md:mt-[4rem] md:px-0 md:py-0">
             <h3 class="text-4xl text-white pb-[2rem]">{props.title}</h3>
-            <p class="max-w-lg  text-white">{props.content}</p>
+            <p class="text-l  text-white">{props.content}</p>
           </span>
         </span>
-        <span class="w-[100vw] pr-[12rem] flex flex-row-reverse">
-          <img class="-mt-[10rem] h-[50vh] " src={props.src} alt="" />
+        <span class="w-[100vw] md:pr-[7rem] md:flex md:flex-row-reverse">
+          <img class="md:-mt-[10rem] md:h-[25rem] " src={props.src} alt="" />
         </span>
       </section>
     </>
