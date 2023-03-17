@@ -22,6 +22,7 @@ export default component$(() => {
           weakness of will, which is the same as saying through shrinking from toil and pain. These cases are
           perfectly simple and easy to distinguish"
       imageSrc="/images/prothese.png"
+      stylesArticleGaucheFlex="md:flex-row"
     ></Article>
   );
 });

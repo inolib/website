@@ -13,6 +13,7 @@ export default component$(() => {
       imageSrc="\images\temoignage-1-femme.png"
       imgSeparator="\images\icon-separator-small.svg"
       stylesImgArticle="mr-10"
+      stylesArticleGaucheFlex="md:flex-row"
     ></Article>
   );
 });

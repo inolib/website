@@ -10,7 +10,7 @@ type CardProps = {
 export const ServicesCard = component$((props: CardProps) => {
   return (
     <>
-      <article aria-label="articles" class={`flex flex-col`}>
+      <article aria-label="articles" class={`flex flex-col pb-10 md:pb-0`}>
         <span
           class={`flex flex-col justify-center items-center bg-no-repeat bg-[url(/images/bg-cards.png)] bg-[length:110rem_40rem] h-[18rem] w-[22.5rem]`}
         >

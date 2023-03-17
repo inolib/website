@@ -6,11 +6,11 @@ import { ServicesCard } from "~/components/cards/ServicesCard";
 export const CardsGridDisplay = component$(() => {
   return (
     <>
-      <span class="flex flex-col mt-10 bg-slate-200" id="Formation">
-        <h2 class="text-4xl ml-[8vw] mt-6">Formations</h2>
-        <span class="flex">
-          <img class="ml-[8vw] mt-10 w-[40vw] h-[50vh]" src="/images/home4.png" alt="" />
-          <p class=" mt-[4.7vh] ml-10 max-w-[40vw]">
+      <span class="flex flex-col mt-6 md:mt-10 md:bg-slate-200" id="Formation">
+        <h2 class="px-5 text-4xl mt-6 md:px-0 md:ml-[11rem] ">Formations</h2>
+        <span class="flex flex-col md:flex-row">
+          <img class="w-full h-auto mt-6 md:ml-[8rem] md:mt-10 md:w-auto md:h-[22rem]" src="/images/home4.png" alt="" />
+          <p class="px-5 text-justify mt-10 md:text-left md:px-0  md:ml-10 md:mr-[8rem]">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus itaque, ex temporibus officiis laborum
             repudiandae, aliquam consequatur eligendi tempore iusto illo illum at iste provident eaque eos! Nisi, iure
             vero? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, doloribus? Facere sit minima
@@ -22,9 +22,9 @@ export const CardsGridDisplay = component$(() => {
             assumenda repellendus reiciendis ipsum et.
           </p>
         </span>
-        <section class="bg-white mx-[8rem] mt-[10rem] pb-[8rem]">
-          <h2 class="text-4xl ml-[4vw] mt-6">Toutes nos formations</h2>
-          <span class="grid grid-cols-2 gap-10 grid-row-2 pt-[10vh] pl-[13vw]">
+        <section class="bg-white md:mx-[8rem] md:mt-[10rem] md:pb-[8rem]">
+          <h2 class="text-4xl mt-6 md:ml-[3rem] ">Toutes nos formations</h2>
+          <span class="flex flex-col items-center md:grid md:grid-cols-2 md:gap-10 md:grid-row-2 md:pt-[5rem] md:pl-[13rem]">
             <ServicesCard
               image="/images/logo-audit.png"
               label="Description"
@@ -92,7 +92,7 @@ export const CardsGridDisplay = component$(() => {
           </span>
         </section>
       </span>
-      <span class="bg-slate-200 block h-[15vh]"></span>
+      <span class="h-[3rem] md:bg-slate-200 block md:h-[8rem]"></span>
     </>
   );
 });

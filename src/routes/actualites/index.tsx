@@ -24,7 +24,7 @@ export default component$(() => {
           stylesTestimony="w-[40rem] ml-[5rem]"
           stylesContent="pt-[2rem] w-[40rem] ml-[5rem]"
           imageSrc="/images/photoArticle.png"
-          stylesArticleGaucheFlex="flex-row-reverse -mt-[5rem]"
+          stylesArticleGaucheFlex="md:flex-row-reverse -mt-[5rem]"
           testimony="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna."
           content="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
