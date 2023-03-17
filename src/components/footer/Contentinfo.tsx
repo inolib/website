@@ -12,13 +12,15 @@ export const Contentinfo = component$(() => {
               <img alt="" src="/images/logo-white.svg" class="h-10 w-auto" />
               <h3 class="flex items-center font-bold pl-2 text-2xl">INOLIB</h3>
             </div>
-            <p class="border-t-2 border-[#9A35AD] font-bold mb-6 pt-3 md:border-t-0">Des questions?</p>
+            <p class="border-t-2 border-[#9A35AD] font-bold mb-6 pt-4 md:border-t-0">Des questions?</p>
             <h3 class="font-bold mb-3 text-2xl">Contactez-nous!</h3>
             <p class="mb-5">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, magnam accusamus dolores soluta deserunt
               nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas.
             </p>
-            <Button color="white" href="/contact" label="Nous contacter" />
+            <span class="flex justify-center mb-7 md:justify-start md:mb-0">
+              <Button color="white" href="/contact" label="Nous contacter" />
+            </span>
           </div>
         </section>
 

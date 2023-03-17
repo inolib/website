@@ -18,7 +18,7 @@ Curabitur at ornare ex. Nullam condimentum nulla vel orci congue condimentum. In
       imageQuote="“ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. ”"
       stylesImgArticle="pr-10"
       typoImgQuote="bold"
-      stylesArticleGaucheFlex="flex-row-reverse justify-end"
+      stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end"
       imgSeparator="\images\icon-separator-small.svg"
     ></Article>
   );
