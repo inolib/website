@@ -20,6 +20,7 @@ specifiers:
   postcss: ^8.4.21
   prettier: ^2.8.4
   prettier-plugin-jsdoc: ^0.4.2
+  prettier-plugin-jsxattribute-sort: ^1.0.1
   prettier-plugin-packagejson: ^2.4.3
   prettier-plugin-prisma: ^4.10.0
   prettier-plugin-tailwindcss: ^0.2.5
@@ -50,6 +51,7 @@ devDependencies:
   postcss: 8.4.21
   prettier: 2.8.4
   prettier-plugin-jsdoc: 0.4.2_prettier@2.8.4
+  prettier-plugin-jsxattribute-sort: 1.0.1_typescript@5.0.2
   prettier-plugin-packagejson: 2.4.3_prettier@2.8.4
   prettier-plugin-prisma: 4.10.0_prettier@2.8.4
   prettier-plugin-tailwindcss: 0.2.5_43gfmj5xwfrjcahudsispoe34q
@@ -3134,6 +3136,16 @@ packages:
       - supports-color
     dev: true
 
+  /prettier-plugin-jsxattribute-sort/1.0.1_typescript@5.0.2:
+    resolution: {integrity: sha512-6gv2VGmn2PZf3QZ+Mrnig6yUYE6nGwm1ZuIVBDpX/skxjtIEfeXfErZIzeOSVUr5EpL0nERminCac5qCOdA6Cw==}
+    dependencies:
+      prettier: 2.8.4
+      subsecond: 0.2.5_typescript@5.0.2
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
   /prettier-plugin-packagejson/2.4.3_prettier@2.8.4:
     resolution: {integrity: sha512-kPeeviJiwy0BgOSk7No8NmzzXfW4R9FYWni6ziA5zc1kGVVrKnBzMZdu2TUhI+I7h8/5Htt3vARYOk7KKJTTNQ==}
     peerDependencies:
@@ -3556,6 +3568,15 @@ packages:
     resolution: {integrity: sha512-HFpbb5gr2ypci7Qw+IOhnP2zOU7e77b+rzM+wTzXzfi1PrtBCX0E7Pk4wL4iTLnhzZ+JgEGAhX81ebTg/aYjQw==}
     dependencies:
       inline-style-parser: 0.1.1
+    dev: true
+
+  /subsecond/0.2.5_typescript@5.0.2:
+    resolution: {integrity: sha512-ss5ATHeKvzOFdDh0d424WbFkke61gSvjeil3XPUjJik+SSGm/m0sr6VUUB6DUgNH8/pTDrbLUgea1Re9nYFh0w==}
+    dependencies:
+      '@typescript-eslint/typescript-estree': 5.55.0_typescript@5.0.2
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
     dev: true
 
   /supports-color/5.5.0:
