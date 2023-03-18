@@ -13,7 +13,6 @@ type ArticleProps = {
 };
 
 export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
-  const styles = props.styles !== undefined ? props.styles : "";
   return (
     <>
       <span class="md:mt-20 md:ml-[9rem] ml-[1rem] flex justify-start">

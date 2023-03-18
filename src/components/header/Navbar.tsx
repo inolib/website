@@ -4,6 +4,8 @@ import { useLocation } from "@builder.io/qwik-city";
 
 import { FastAccessMenu } from "../section/FastAccesMenu";
 
+type HandleBurgerFonction = () => void;
+
 type NavStore = {
   burger: {
     attributes: {
@@ -12,7 +14,7 @@ type NavStore = {
   };
 };
 
-export const Navbar = component$<NavProps>((props) => {
+export const Navbar = component$(() => {
   const location = useLocation();
 
   const store = useStore<NavStore>(

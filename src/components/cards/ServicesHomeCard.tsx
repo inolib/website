@@ -1,4 +1,4 @@
-import { component$, Slot, useStore, $, useOnWindow } from "@builder.io/qwik";
+import { component$, Slot } from "@builder.io/qwik";
 
 type CardProps = {
   image?: string;

@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 type BannerProps = {
   content?: string;
-  quote: string;
+  quote?: string;
   src: string;
   title: string;
   id?: string;

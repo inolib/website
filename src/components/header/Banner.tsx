@@ -3,7 +3,7 @@ import { Button } from "../ui/buttons/Button";
 
 type BannerProps = {
   content: string;
-  imageSrc: string;
+  imageSrc?: string;
   title: string;
   styles?: string;
 };

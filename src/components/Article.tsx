@@ -12,12 +12,12 @@ type ArticleProps = {
   stylesTestimony?: string;
   stylesContent?: string;
   stylesArticleGaucheFlex?: string;
-  stylesArticlePadding?: string;
+  stylesArticleGauchePadding?: string;
   stylesImgArticle?: string;
   title?: string;
   titleQuote?: string;
   testimony?: string;
-  typoImgQuote?: "bold | normal";
+  typoImgQuote?: "bold" | "normal";
 };
 
 export const Article = component$((props: ArticleProps) => {

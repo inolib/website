@@ -8,7 +8,6 @@ import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { CardsRowDisplay } from "~/components/cards/CardsRowDisplay";
 import { SplitedImage } from "~/components/cards/SplitedImage";
 import { Banner } from "~/components/header/Banner";
-import { Button } from "~/components/ui/buttons/Button";
 
 export default component$(() => {
   return (

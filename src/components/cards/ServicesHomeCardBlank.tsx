@@ -1,7 +1,5 @@
 import { component$, Slot } from "@builder.io/qwik";
 
-import { Button } from "~/components/ui/buttons/Button";
-
 type CardProps = {
   content: string;
   styles?: string;
