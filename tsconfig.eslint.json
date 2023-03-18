@@ -1,4 +1,16 @@
 {
   "extends": "./tsconfig.json",
-  "files": ["./.eslintrc.cjs", "./.prettierrc.cjs", "./postcss.config.cjs", "./tailwind.config.cjs", "./vite.config.ts"]
+  "files": [
+    "./.eslintrc.cjs",
+    "./.prettierrc.cjs",
+    "./postcss.config.cjs",
+    "./tailwind.config.cjs",
+    "./vite.config.ts",
+    "./.config/.prettierrc.jsdoc.cjs",
+    "./.config/.prettierrc.jsxattribute-sort.cjs",
+    "./.config/.prettierrc.packagejson.cjs",
+    "./.config/.prettierrc.prisma.cjs",
+    "./.config/.prettierrc.sort-imports.cjs",
+    "./.config/.prettierrc.tailwindcss.cjs"
+  ]
 }
