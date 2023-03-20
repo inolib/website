@@ -249,7 +249,7 @@ export const Filter = component$<FilterProps>((props) => {
         {...store.button.attributes}
         aria-controls={menuId}
         aria-haspopup="true"
-        class="text-white h-[7vh] w-[9vw] justify-center ml-20 bg-[#0B3168] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="text-white md:h-[3.5rem] md:w-[7rem] h-[3.5rem] w-[15rem] my-2 justify-center md:ml-20 bg-[#0B3168] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         id={buttonId}
         ref={refs.button}
         type="button"

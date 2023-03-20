@@ -18,11 +18,11 @@ export default component$(() => {
         title="Actualités"
       />
 
-      <main class="mt-[10rem]">
-        <h2 class="text-[#0B3168] mx-[8vw] mb-[5rem] text-4xl">Les dernières actualités</h2>
+      <main class="md:mt-[10rem] mt-[3rem] overflow-x-hidden">
+        <h2 class="text-[#0B3168] md:mx-[8rem] ml-[2rem] md:mb-[5rem] mb-[6rem] text-4xl">Les dernières actualités</h2>
         <Article
-          stylesTestimony="w-[40rem] ml-[5rem]"
-          stylesContent="pt-[2rem] w-[40rem] ml-[5rem]"
+          stylesTestimony="md:w-[40rem] md:ml-[5rem] ml-[1rem]"
+          stylesContent="pt-[2rem] md:w-[40rem] md:ml-[5rem]"
           imageSrc="/images/photoArticle.png"
           stylesArticleGaucheFlex="md:flex-row-reverse -mt-[5rem]"
           testimony="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -36,7 +36,7 @@ export default component$(() => {
           </p>
         </Article>
 
-        <form class="flex items-center -mt-[5rem]">
+        <form class="flex md:flex-row flex-col items-center md:justify-start justify-center -mt-[5rem]">
           <SearchBar placeholder="Rechercher par mots-clés..." />
           <Filter labels={{ button: "Types", items: ["Option 1", "Option 2", "Option 3"] }} />
           <Filter labels={{ button: "Périodes", items: ["Option 1", "Option 2", "Option 3"] }} />
