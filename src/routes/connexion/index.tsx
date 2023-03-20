@@ -10,7 +10,7 @@ export default component$(() => {
             Connexion
           </h1>
           <div class=" flex flex-col text-[#0B3168] md:w-3/5 justify-center mb-[2rem]">
-            <label class={`mb-1`} htmlFor="email">
+            <label class={`mb-1`} for="email">
               Email
             </label>
             <input
@@ -24,7 +24,7 @@ export default component$(() => {
           </div>
 
           <div class="flex flex-col justify-center text-[#0B3168] md:w-3/5 mb-[2rem]">
-            <label class={`mb-1`} htmlFor="password">
+            <label class={`mb-1`} for="password">
               Mot de passe
             </label>
             <input
