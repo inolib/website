@@ -201,7 +201,9 @@ export const Filter = component$<FilterProps>((props) => {
   useOn(
     "keyup",
     $(async (event) => {
-      switch (event.code) {
+      const code = (event as KeyboardEvent).code;
+
+      switch (code) {
         case "Escape":
           // ferme le filtre et déplace le focus sur le bouton
           await closeFilter$();
@@ -210,7 +212,7 @@ export const Filter = component$<FilterProps>((props) => {
         default:
           if (event.target === refs.button.value) {
             // vérifie que le focus est sur le bouton
-            switch (event.code) {
+            switch (code) {
               case "ArrowDown":
               case "Enter":
               case "Space":
@@ -225,7 +227,7 @@ export const Filter = component$<FilterProps>((props) => {
             }
           } else {
             // si le focus sur une des cases à cocher
-            switch (event.code) {
+            switch (code) {
               case "ArrowDown":
                 // déplace le focus vers le bas
                 await moveFocus$("down");
@@ -279,7 +281,11 @@ export const Filter = component$<FilterProps>((props) => {
           const inputId = nanoid();
 
           return (
-            <li class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600" role="presentation">
+            <li
+              key={index}
+              class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600"
+              role="presentation"
+            >
               <input
                 // génère l'ttribut `tabIndex`
                 {...store.inputs[index].attributes}
