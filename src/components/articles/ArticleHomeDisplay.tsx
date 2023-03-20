@@ -16,7 +16,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
   return (
     <>
       <span class="md:mt-20 md:ml-[9rem] ml-[1rem] flex justify-start">
-        <h2 class="text-4xl text-[#0B3168] font-semibold">{props.title}</h2>
+        <h2 class="text-4xl text-[#0B3168] font-medium mt-10">{props.title}</h2>
       </span>
       <span class="md:grid-md:col-2 md:grid-row-2- md:mt-14 md:grid">
         <ArticleHomePage

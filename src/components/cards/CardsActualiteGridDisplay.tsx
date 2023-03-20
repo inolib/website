@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 
-import { ArticleHomePage } from "./ArticleHomePage";
+import { ArticleHomePage } from "../articles/ArticleHomePage";
 import { BlancArticleService } from "./BlancArticleService";
 
 export const CardsActualiteGridDisplay = component$(() => {
   return (
-    <ul class="grid grid-cols-3 grid-rows-2 gap-20 mx-[10vw]">
+    <ul class="md:grid md:grid-cols-3 md:grid-rows-2 md:gap-20 mx-[3rem] md:mx-[8rem]">
       <li>
         <ArticleHomePage
           alt="article 1"
