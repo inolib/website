@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const ContactForm = component$(() => {
   return (
-    <form class="grid grid-cols-4 grid-rows-7 md:grid-rows-5 md:px-10 py-14 md:w-2/3">
+    <form class="grid grid-cols-4 grid-rows-7 mx-[3rem] md:grid-rows-5 md:px-10 py-14 md:w-2/3">
       <select
         class="border-solid border-[1px] border-[#0B3168] flex h-12 rounded-md col-span-5 md:col-span-2 col-start-1 col-end-5 md:col-end-3 row-start-1"
         name="Type de la demande"
@@ -60,10 +60,10 @@ export const ContactForm = component$(() => {
         required
         aria-label="zone pour écrire les détails de votre demande"
       ></textarea>
-      <button class="h-14 mr-2 rounded-md hover:border-2 hover:border-[#0B3168] row-start-7 col-start-1 col-end-2 col-span-1 md:row-start-5 md:col-start-3  md:col-end-4 md:mt-14">
+      <button class="h-14 mr-2 rounded-md hover:border-2 hover:border-[#0B3168] row-start-7 col-start-1 col-end-2 col-span-2 md:row-start-5 md:col-start-3  md:col-end-4 md:mt-14">
         Effacer
       </button>
-      <button class="bg-[#0B3168] h-14 rounded-md text-white row-start-7 col-start-2 col-end-3 col-span-1 md:row-start-5 md:col-start-4  md:col-end-4 md:mt-14">
+      <button class="bg-[#0B3168] h-14 rounded-md text-white row-start-7 col-start-3 col-end-5 col-span-2 md:row-start-5 md:col-start-4  md:col-end-4 md:mt-14">
         Envoyer
       </button>
     </form>

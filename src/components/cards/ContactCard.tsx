@@ -49,7 +49,7 @@ export const ContactCard = component$(() => {
       </div>
       <img
         alt=""
-        class="w-1/5 sm:hidden md:block md:w-3/5 h-auto absolute bottom-0 right-0"
+        class="w-1/5 hidden md:block md:w-3/5 h-auto absolute bottom-0 right-0"
         src="\images\background-card.svg"
       />
     </section>
