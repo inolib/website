@@ -84,7 +84,7 @@ export const Navbar = component$(() => {
               >
                 <img class="block h-10 w-auto lg:hidden" src="/images/logo-blue.svg" alt="Your Company" />
                 <img class="hidden h-10 w-auto lg:block" src="/images/logo-blue.svg" alt="Your Company" />
-                <h1 class="text-4xl font-medium text-[#0B3168] mx-4">Inolib</h1>
+                <h1 class="text-4xl font-medium text-[#0B3168] mx-4">inolib</h1>
               </a>
               <div class="hidden sm:block">
                 <div class="flex space-x-4 sm:space-x-0 sm:ml-[36rem]">

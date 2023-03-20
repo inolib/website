@@ -9,7 +9,10 @@ export default component$(() => {
           <h1 class=" text-[#0B3168] font-semibold items-center content-center justify-center text-4xl mb-16 md:mb-14 mt-44">
             Connexion
           </h1>
-          <div class=" flex md:w-3/5 justify-center mb-[2rem]">
+          <div class=" flex flex-col text-[#0B3168] md:w-3/5 justify-center mb-[2rem]">
+            <label class={`mb-1`} htmlFor="email">
+              Email
+            </label>
             <input
               aria-label="entrez votre e-mail"
               type="email"
@@ -20,7 +23,10 @@ export default component$(() => {
             />
           </div>
 
-          <div class="flex  justify-center md:w-3/5 mb-[2rem]">
+          <div class="flex flex-col justify-center text-[#0B3168] md:w-3/5 mb-[2rem]">
+            <label class={`mb-1`} htmlFor="password">
+              Mot de passe
+            </label>
             <input
               aria-label="Entrez votre mot de passe"
               type="password"
