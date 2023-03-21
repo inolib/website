@@ -1,9 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
+import { ActualPassword } from "~/components/ui/composite/ActualPassword";
 import { ButtonBackLobby } from "~/components/ui/buttons/ButtonBackLobby";
 import { BannerProfile } from "~/components/header/BannerProfile";
-import { UserInformationForm } from "~/components/ui/composite/UserInformationForm";
+import { ChangePasswordForm } from "~/components/ui/composite/ChangePasswordForm";
 
 export default component$(() => {
   return (
@@ -12,14 +13,17 @@ export default component$(() => {
         <BannerProfile title="MY FAKE COMPAGNY" imageSrc="/images/userLogo.png" />
         <ButtonBackLobby />
         <span class="flex justify-center md:justify-start">
-          <h2 class="text-3xl md:ml-[6rem] font-semibold">Mes informations</h2>
+          <h2 class="text-3xl md:ml-[6rem] font-semibold">Mot de passe</h2>
         </span>
-        <UserInformationForm />
+        <div class="md:flex md:justify-center">
+          <ActualPassword />
+          <ChangePasswordForm />
+        </div>
       </main>
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "information",
+  title: "password",
 };

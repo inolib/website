@@ -4,6 +4,7 @@ type BannerProps = {
   content: string;
   imageSrc: string;
   title: string;
+  style?: string;
 };
 
 export const Banner = component$((props: BannerProps) => {

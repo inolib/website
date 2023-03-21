@@ -10,7 +10,7 @@ export const BannerProfile = component$((props: BannerProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
   return (
     <header
-      class={`bg-gradient-to-b from-[#5A0C69] flex flex-col w-screen ${styles} justify-center items-center to-[#0F3069] text-white md:h-[27rem] md:mb-28`}
+      class={`bg-gradient-to-b from-[#5A0C69] flex flex-col w-screen ${styles} justify-center items-center to-[#0F3069] text-white md:h-[27rem]`}
       role="banner"
       id="header"
     >
