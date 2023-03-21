@@ -8,8 +8,8 @@ export default component$(() => {
   return (
     <>
       <main class="text-[#0B3168]">
-        <h2 class="text-2xl ">Mes informations</h2>
         <ButtonBackLobby />
+        <h2 class="text-3xl ml-[5rem] font-semibold">Mes informations</h2>
         <UserInformationForm />
       </main>
     </>
