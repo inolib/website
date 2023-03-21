@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "@inolib/website",
   "version": "0.0.0",
-  "description": "",
+  "description": "INOLIB’s website",
   "type": "module",
   "scripts": {
     "build": "vite build",

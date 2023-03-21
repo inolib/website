@@ -16,7 +16,7 @@ export const BannerHome = component$(() => {
             HUMAN NOBLE TECHNOLOGY
           </h1>
         </span>
-        <span an class={`flex justify-center my-[7rem]`}>
+        <span class={`flex justify-center my-[7rem]`}>
           <img class={`scale-[1.4] md:hidden`} src="/images/vector-23.svg" alt="aller au contenu principal" />
         </span>
         <span class="md:ml-[35rem] md:block flex justify-center md:-mt-[16rem]">
