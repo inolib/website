@@ -4,10 +4,10 @@ type BannerProps = {
   imageSrc?: string;
   title: string;
   styles?: string;
-  tabs1: string;
-  tabs2: string;
-  tabs3: string;
-  tabs4: string;
+  tabs1?: string;
+  tabs2?: string;
+  tabs3?: string;
+  tabs4?: string;
 };
 type Handletabs1Fonction = () => void;
 type Handletabs2Fonction = () => void;
