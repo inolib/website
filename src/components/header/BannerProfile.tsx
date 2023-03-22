@@ -1,5 +1,7 @@
 import { $, component$, useStore } from "@builder.io/qwik";
+
 import { ActualPassword } from "../ui/composite/ActualPassword";
+import { DocumentsTable } from "../ui/composite/DocumentsTable";
 import { ChangePasswordForm } from "../ui/composite/ChangePasswordForm";
 import { UserInformationForm } from "../ui/composite/UserInformationForm";
 
@@ -163,7 +165,7 @@ export const BannerProfile = component$((props: BannerProps) => {
           <ActualPassword />
         </div>
         <div {...store.tabs.attributes.tab3} id="documents" role="tabpanel" aria-labelledby="documents-tab">
-          TAB3
+          <DocumentsTable />
         </div>
         <div {...store.tabs.attributes.tab4} id="QCM" role="tabpanel" aria-labelledby="QCM-tab">
           TAB4
