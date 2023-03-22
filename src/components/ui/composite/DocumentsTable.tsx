@@ -1,13 +1,12 @@
 import { component$ } from "@builder.io/qwik";
 
-import { DoccumentTableLine } from "./DocumentTableLine";
+import { DocumentTableLine } from "./DocumentTableLine";
 
 export const DocumentsTable = component$(() => {
   return (
     <span class="flex flex-col mb-[10rem]">
       <span class="md:flex justify-center text-[#0B3168] relative">
-        <caption class="sr-only">ensemble des documents à votre disposition</caption>
-        <table class="text-left mb-12 md:w-[82%] ">
+        <table class="text-left mb-12 md:w-[82%]" aria-label="ensemble des documents à votre disposition">
           <thead class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] text-white">
             <th class="border-x-2 border-white hover px-5  py-[1rem]" scope="col">
               Nom
@@ -25,36 +24,36 @@ export const DocumentsTable = component$(() => {
               information
             </th>
           </thead>
-          <tbody class="">
-            <DoccumentTableLine
+          <tbody>
+            <DocumentTableLine
               nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
               categorie="Accessibilité"
               date="2023.05.10"
               type="PDF"
               information="plus d'info"
             />
-            <DoccumentTableLine
+            <DocumentTableLine
               nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
               categorie="Accessibilité"
               date="2023.05.10"
               type="PDF"
               information="plus d'info"
             />
-            <DoccumentTableLine
+            <DocumentTableLine
               nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
               categorie="Accessibilité"
               date="2023.05.10"
               type="PDF"
               information="plus d'info"
             />
-            <DoccumentTableLine
+            <DocumentTableLine
               nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
               categorie="Accessibilité"
               date="2023.05.10"
               type="PDF"
               information="plus d'info"
             />
-            <DoccumentTableLine
+            <DocumentTableLine
               nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
               categorie="Accessibilité"
               date="2023.05.10"

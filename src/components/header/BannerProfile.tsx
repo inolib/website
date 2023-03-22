@@ -27,15 +27,23 @@ type UserBannerStore = {
     attributes: {
       tab1: {
         hidden: boolean;
+
+        "aria-expanded": boolean;
       };
       tab2: {
         hidden: boolean;
+
+        "aria-expanded": boolean;
       };
       tab3: {
         hidden: boolean;
+
+        "aria-expanded": boolean;
       };
       tab4: {
         hidden: boolean;
+
+        "aria-expanded": boolean;
       };
     };
   };
@@ -49,15 +57,23 @@ export const BannerProfile = component$((props: BannerProps) => {
         attributes: {
           tab1: {
             hidden: false,
+
+            "aria-expanded": true,
           },
           tab2: {
             hidden: true,
+
+            "aria-expanded": false,
           },
           tab3: {
             hidden: true,
+
+            "aria-expanded": false,
           },
           tab4: {
             hidden: true,
+
+            "aria-expanded": false,
           },
         },
       },
@@ -69,27 +85,51 @@ export const BannerProfile = component$((props: BannerProps) => {
 
   const handleTabs1$ = $<Handletabs1Fonction>(() => {
     store.tabs.attributes.tab1.hidden = false;
+
+    store.tabs.attributes.tab1["aria-expanded"] = true;
     store.tabs.attributes.tab2.hidden = true;
+
+    store.tabs.attributes.tab2["aria-expanded"] = false;
     store.tabs.attributes.tab3.hidden = true;
+
+    store.tabs.attributes.tab3["aria-expanded"] = false;
     store.tabs.attributes.tab4.hidden = true;
+
+    store.tabs.attributes.tab4["aria-expanded"] = false;
   });
   const handleTabs2$ = $<Handletabs2Fonction>(() => {
     store.tabs.attributes.tab2.hidden = false;
+
+    store.tabs.attributes.tab2["aria-expanded"] = true;
     store.tabs.attributes.tab1.hidden = true;
+
+    store.tabs.attributes.tab1["aria-expanded"] = false;
     store.tabs.attributes.tab3.hidden = true;
+
+    store.tabs.attributes.tab3["aria-expanded"] = false;
     store.tabs.attributes.tab4.hidden = true;
+
+    store.tabs.attributes.tab4["aria-expanded"] = false;
   });
   const handleTabs3$ = $<Handletabs3Fonction>(() => {
     store.tabs.attributes.tab3.hidden = false;
+    store.tabs.attributes.tab3["aria-expanded"] = true;
     store.tabs.attributes.tab2.hidden = true;
+    store.tabs.attributes.tab2["aria-expanded"] = false;
     store.tabs.attributes.tab1.hidden = true;
+    store.tabs.attributes.tab1["aria-expanded"] = false;
     store.tabs.attributes.tab4.hidden = true;
+    store.tabs.attributes.tab4["aria-expanded"] = false;
   });
   const handleTabs4$ = $<Handletabs4Fonction>(() => {
     store.tabs.attributes.tab4.hidden = false;
+    store.tabs.attributes.tab4["aria-expanded"] = true;
     store.tabs.attributes.tab2.hidden = true;
+    store.tabs.attributes.tab2["aria-expanded"] = false;
     store.tabs.attributes.tab3.hidden = true;
+    store.tabs.attributes.tab3["aria-expanded"] = false;
     store.tabs.attributes.tab1.hidden = true;
+    store.tabs.attributes.tab1["aria-expanded"] = false;
   });
   return (
     <>
@@ -109,8 +149,6 @@ export const BannerProfile = component$((props: BannerProps) => {
               type="button"
               role="tab"
               aria-controls="informations"
-              aria-selected="false"
-              aria-expanded="false"
             >
               {props.tabs1}
             </button>
@@ -123,8 +161,6 @@ export const BannerProfile = component$((props: BannerProps) => {
               type="button"
               role="tab"
               aria-controls="password"
-              aria-selected="false"
-              aria-expanded="false"
             >
               {props.tabs2}
             </button>
@@ -137,8 +173,6 @@ export const BannerProfile = component$((props: BannerProps) => {
               type="button"
               role="tab"
               aria-controls="documents"
-              aria-selected="false"
-              aria-expanded="false"
             >
               {props.tabs3}
             </button>
@@ -151,8 +185,6 @@ export const BannerProfile = component$((props: BannerProps) => {
               type="button"
               role="tab"
               aria-controls="QCM"
-              aria-selected="false"
-              aria-expanded="false"
             >
               {props.tabs4}
             </button>

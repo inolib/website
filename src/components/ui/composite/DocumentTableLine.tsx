@@ -8,7 +8,7 @@ type LineProps = {
   information: string;
 };
 
-export const DoccumentTableLine = component$((props: LineProps) => {
+export const DocumentTableLine = component$((props: LineProps) => {
   return (
     <>
       <tr class="h-14 border-b-[1px] border-[#E1E1E1]">
