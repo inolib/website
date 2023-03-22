@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const UserInformationForm = component$(() => {
   return (
-    <form class="grid grid-cols-4 grid-rows-7 mx-[3rem] md:grid-cols-9 md:grid-rows-4 py-14">
+    <form class="grid grid-cols-4 grid-rows-7 mx-[3rem] md:grid-cols-9 md:grid-rows-4 my-14">
       <select
         class="border-solid border-[1px] border-[#0B3168] flex h-12 rounded-md row-start-1 col-start-1 col-end-5 col-span-5 md:col-start-6 md:col-span-2  md:col-end-8 "
         name="Type de la demande"
