@@ -161,8 +161,10 @@ export const BannerProfile = component$((props: BannerProps) => {
           <UserInformationForm />
         </div>
         <div {...store.tabs.attributes.tab2} id="password" role="tabpanel" aria-labelledby="password-tab">
-          <ChangePasswordForm />
-          <ActualPassword />
+          <span class="flex flex-col my-12 md:flex-row md:justify-center">
+            <ActualPassword />
+            <ChangePasswordForm />
+          </span>
         </div>
         <div {...store.tabs.attributes.tab3} id="documents" role="tabpanel" aria-labelledby="documents-tab">
           <DocumentsTable />
