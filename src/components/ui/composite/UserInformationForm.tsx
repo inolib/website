@@ -17,7 +17,7 @@ export const UserInformationForm = component$(() => {
         <option>doloremt</option>
       </select>
 
-      <label class=" col-span-4 row-start-2 col-start-1 col-end-5 flex flex-col mb-3 md:cold-start-3 md:col-end-5 md:col-span-2 md:row-start-1 md:mb-0 md:pr-5">
+      <label class=" col-span-4 row-start-2 col-start-1 col-end-5 flex flex-col mb-3 md:cold-start-3 md:col-end-5 md:col-span-2 md:row-start-1 md:mb-0">
         Nom
         <input
           class="border-solid border-[1px] border-[#0B3168] pl-2 md:mb-0 md:h-12 rounded-md"
