@@ -94,13 +94,13 @@ export const BannerProfile = component$((props: BannerProps) => {
   return (
     <>
       <header
-        class={`bg-gradient-to-b from-[#5A0C69] flex flex-col ${styles} justify-center items-center to-[#0F3069] text-white md:h-[27rem]`}
+        class={`bg-gradient-to-b from-[#5A0C69] w-auto flex flex-col ${styles} justify-center items-center to-[#0F3069] text-white md:h-[27rem]`}
         role="banner"
         id="header"
       >
         <img class={`w-[20rem] h-[20rem]`} src={props.imageSrc} alt="" />
         <h1 class={`text-white text-3xl text-center -mt-10 mb-10`}>{props.title}</h1>
-        <ul class="flex justify-center z-40 py-8 text-sm md:text-base" role="tablist">
+        <ul class="md:flex justify-center text-center py-8 text-sm md:text-base" role="tablist">
           <li aria-label="Mes informations" role="presentation">
             <button
               onClick$={handleTabs1$}
@@ -118,7 +118,7 @@ export const BannerProfile = component$((props: BannerProps) => {
           <li aria-label="Mot de passe" role="presentation">
             <button
               onClick$={handleTabs2$}
-              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded border-l-2 md:px-5"
+              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
               id="password-tab"
               type="button"
               role="tab"
@@ -132,7 +132,7 @@ export const BannerProfile = component$((props: BannerProps) => {
           <li aria-label="Mes documents" role="presentation">
             <button
               onClick$={handleTabs3$}
-              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded border-l-2 md:px-5"
+              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
               id="documents-tab"
               type="button"
               role="tab"
@@ -146,7 +146,7 @@ export const BannerProfile = component$((props: BannerProps) => {
           <li aria-label="Mes QCM" role="presentation">
             <button
               onClick$={handleTabs4$}
-              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded border-l-2 md:px-5"
+              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
               id="QCM-tab"
               type="button"
               role="tab"
@@ -159,7 +159,7 @@ export const BannerProfile = component$((props: BannerProps) => {
           </li>
         </ul>
       </header>
-      <div>
+      <div class={`w-auto`}>
         <div {...store.tabs.attributes.tab1} id="informations" role="tabpanel" aria-labelledby="informations-tab">
           <ButtonBackLobby title="Mes informations" />
           <UserInformationForm />
@@ -177,12 +177,14 @@ export const BannerProfile = component$((props: BannerProps) => {
         </div>
         <div {...store.tabs.attributes.tab4} id="QCM" role="tabpanel" aria-labelledby="QCM-tab">
           <ButtonBackLobby title="Mes QCM" />
-          <span class={`grid grid-cols-3 grid-rows-2 gap-10 mx-[8rem] mb-[5rem]`}>
+          <span
+            class={`flex flex-col justify-center md:grid md:grid-cols-3 md:grid-rows-2 md:gap-10 mx-[2rem] md:mx-[8rem] md:mb-[5rem]`}
+          >
             <ServicesCard
               image="/images/logo-formation.png"
               label="Description"
               title="QCM sur l'accessibilité numérique"
-              styles="mx-[3rem]"
+              styles="md:mx-[3rem]"
             >
               <p q:slot="content" class="text-[#0B3168]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
@@ -193,15 +195,15 @@ export const BannerProfile = component$((props: BannerProps) => {
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="mt-[10rem] ml-[6rem]">
-                <Button styles="" color="blue" href="/services" label="Rejouer !" />
+              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+                <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
             <ServicesCard
               image="/images/logo-formation.png"
               label="Description"
               title="QCM sur l'accessibilité numérique"
-              styles="mx-[3rem]"
+              styles="md:mx-[3rem]"
             >
               <p q:slot="content" class="text-[#0B3168]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
@@ -212,15 +214,15 @@ export const BannerProfile = component$((props: BannerProps) => {
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="mt-[10rem] ml-[6rem]">
-                <Button styles="" color="blue" href="/services" label="Rejouer !" />
+              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+                <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
             <ServicesCard
               image="/images/logo-formation.png"
               label="Description"
               title="QCM sur l'accessibilité numérique"
-              styles="mx-[3rem]"
+              styles="md:mx-[3rem]"
             >
               <p q:slot="content" class="text-[#0B3168]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
@@ -231,15 +233,15 @@ export const BannerProfile = component$((props: BannerProps) => {
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="mt-[10rem] ml-[6rem]">
-                <Button styles="" color="blue" href="/services" label="Rejouer !" />
+              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+                <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
             <ServicesCard
               image="/images/logo-formation.png"
               label="Description"
               title="QCM sur l'accessibilité numérique"
-              styles="mx-[3rem]"
+              styles="md:mx-[3rem]"
             >
               <p q:slot="content" class="text-[#0B3168]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
@@ -250,15 +252,15 @@ export const BannerProfile = component$((props: BannerProps) => {
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="mt-[10rem] ml-[6rem]">
-                <Button styles="" color="blue" href="/services" label="Rejouer !" />
+              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+                <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
             <ServicesCard
               image="/images/logo-formation.png"
               label="Description"
               title="QCM sur l'accessibilité numérique"
-              styles="mx-[3rem]"
+              styles="md:mx-[3rem]"
             >
               <p q:slot="content" class="text-[#0B3168]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
@@ -269,8 +271,8 @@ export const BannerProfile = component$((props: BannerProps) => {
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="mt-[10rem] ml-[6rem]">
-                <Button styles="" color="blue" href="/services" label="Rejouer !" />
+              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+                <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
           </span>
