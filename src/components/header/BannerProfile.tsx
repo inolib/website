@@ -62,7 +62,7 @@ export const BannerProfile = component$((props: BannerProps) => {
           },
           tab2: {
             hidden: true,
-            "aria-selected": false,
+
             "aria-expanded": false,
           },
           tab3: {
