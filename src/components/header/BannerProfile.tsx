@@ -1,4 +1,7 @@
 import { $, component$, useStore } from "@builder.io/qwik";
+import { ActualPassword } from "../ui/composite/ActualPassword";
+import { ChangePasswordForm } from "../ui/composite/ChangePasswordForm";
+import { UserInformationForm } from "../ui/composite/UserInformationForm";
 
 type BannerProps = {
   imageSrc?: string;
@@ -159,7 +162,7 @@ export const BannerProfile = component$((props: BannerProps) => {
           role="tabpanel"
           aria-labelledby="informations-tab"
         >
-          TAB1
+          <UserInformationForm />
         </div>
         <div
           {...store.tabs.attributes.tab2}
@@ -168,7 +171,8 @@ export const BannerProfile = component$((props: BannerProps) => {
           role="tabpanel"
           aria-labelledby="password-tab"
         >
-          TAB2
+          <ChangePasswordForm />
+          <ActualPassword />
         </div>
         <div
           {...store.tabs.attributes.tab3}
