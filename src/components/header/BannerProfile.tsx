@@ -154,42 +154,18 @@ export const BannerProfile = component$((props: BannerProps) => {
           </li>
         </ul>
       </header>
-      <div class="flex justify-center">
-        <div
-          {...store.tabs.attributes.tab1}
-          class=" text-4xl text-black"
-          id="informations"
-          role="tabpanel"
-          aria-labelledby="informations-tab"
-        >
+      <div>
+        <div {...store.tabs.attributes.tab1} id="informations" role="tabpanel" aria-labelledby="informations-tab">
           <UserInformationForm />
         </div>
-        <div
-          {...store.tabs.attributes.tab2}
-          class=" text-4xl text-black"
-          id="password"
-          role="tabpanel"
-          aria-labelledby="password-tab"
-        >
+        <div {...store.tabs.attributes.tab2} id="password" role="tabpanel" aria-labelledby="password-tab">
           <ChangePasswordForm />
           <ActualPassword />
         </div>
-        <div
-          {...store.tabs.attributes.tab3}
-          class=" text-4xl text-black"
-          id="documents"
-          role="tabpanel"
-          aria-labelledby="documents-tab"
-        >
+        <div {...store.tabs.attributes.tab3} id="documents" role="tabpanel" aria-labelledby="documents-tab">
           TAB3
         </div>
-        <div
-          {...store.tabs.attributes.tab4}
-          class=" text-4xl text-black"
-          id="QCM"
-          role="tabpanel"
-          aria-labelledby="QCM-tab"
-        >
+        <div {...store.tabs.attributes.tab4} id="QCM" role="tabpanel" aria-labelledby="QCM-tab">
           TAB4
         </div>
       </div>
