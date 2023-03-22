@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const ChangePasswordForm = component$(() => {
   return (
-    <form class="grid grid-cols-4 grid-rows-7 mx-[3rem] md:shadow-xl md:mb-[7rem] md:w-1/5">
+    <form class="grid grid-cols-4 grid-rows-7 mx-[3rem] md:shadow-xl md:mb-[7rem] md:w-1/5 text-[#0B3168] md:ml-[9rem] md:mr-[6rem]">
       <h3 class="col-span-4 row-start-1 col-start-1 col-end-5 flex flex-col mb-5 text-l font-semibold">
         Changer mon mot de passe
       </h3>

@@ -166,8 +166,10 @@ export const BannerProfile = component$((props: BannerProps) => {
         </div>
         <div {...store.tabs.attributes.tab2} id="password" role="tabpanel" aria-labelledby="password-tab">
           <ButtonBackLobby title="Mot de passe" />
-          <ChangePasswordForm />
-          <ActualPassword />
+          <span class="flex flex-col my-12 md:flex-row md:justify-center">
+            <ActualPassword />
+            <ChangePasswordForm />
+          </span>
         </div>
         <div {...store.tabs.attributes.tab3} id="documents" role="tabpanel" aria-labelledby="documents-tab">
           <ButtonBackLobby title="Mes documents" />
