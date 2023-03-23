@@ -17,65 +17,32 @@ type BannerProps = {
   tabs3?: string;
   tabs4?: string;
 };
-type Handletabs1Fonction = () => void;
-type Handletabs2Fonction = () => void;
-type Handletabs3Fonction = () => void;
-type Handletabs4Fonction = () => void;
+
+type HandleToggleFunction = (index: number) => void;
+type ToggleFunction = (selectedIndex: number) => void;
+
+type TabsStore = {
+  tab: {
+    toggle: number;
+  };
+};
 
 type UserBannerStore = {
   tabs: {
     attributes: {
-      tab1: {
-        hidden: boolean;
-
-        "aria-expanded": boolean;
-      };
-      tab2: {
-        hidden: boolean;
-
-        "aria-expanded": boolean;
-      };
-      tab3: {
-        hidden: boolean;
-
-        "aria-expanded": boolean;
-      };
-      tab4: {
-        hidden: boolean;
-
-        "aria-expanded": boolean;
-      };
-    };
+      hidden: boolean;
+      // "aria-expanded": boolean;
+    }[];
   };
 };
 
 export const BannerProfile = component$((props: BannerProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
-  const store = useStore<UserBannerStore>(
+
+  const store2 = useStore<TabsStore>(
     {
-      tabs: {
-        attributes: {
-          tab1: {
-            hidden: false,
-
-            "aria-expanded": true,
-          },
-          tab2: {
-            hidden: true,
-
-            "aria-expanded": false,
-          },
-          tab3: {
-            hidden: true,
-
-            "aria-expanded": false,
-          },
-          tab4: {
-            hidden: true,
-
-            "aria-expanded": false,
-          },
-        },
+      tab: {
+        toggle: 1,
       },
     },
     {
@@ -83,59 +50,44 @@ export const BannerProfile = component$((props: BannerProps) => {
     }
   );
 
-  const handleTabs1$ = $<Handletabs1Fonction>(() => {
-    store.tabs.attributes.tab1.hidden = false;
+  const store = useStore<UserBannerStore>(
+    {
+      tabs: {
+        attributes: [
+          {
+            hidden: false,
+            // "aria-expanded": true,
+          },
+          {
+            hidden: true,
+            // "aria-expanded": false,
+          },
+          {
+            hidden: true,
+            // "aria-expanded": false,
+          },
+          {
+            hidden: true,
+            // "aria-expanded": false,
+          },
+        ],
+      },
+    },
+    {
+      deep: true,
+    }
+  );
 
-    store.tabs.attributes.tab1["aria-expanded"] = true;
-
-    store.tabs.attributes.tab2.hidden = true;
-    store.tabs.attributes.tab2["aria-expanded"] = false;
-
-    store.tabs.attributes.tab3.hidden = true;
-    store.tabs.attributes.tab3["aria-expanded"] = false;
-
-    store.tabs.attributes.tab4.hidden = true;
-    store.tabs.attributes.tab4["aria-expanded"] = false;
+  const handleToggle$ = $<HandleToggleFunction>((index) => {
+    store2.tab.toggle = index;
   });
-  const handleTabs2$ = $<Handletabs2Fonction>(() => {
-    store.tabs.attributes.tab2.hidden = false;
-    store.tabs.attributes.tab2["aria-expanded"] = true;
 
-    store.tabs.attributes.tab1.hidden = true;
-    store.tabs.attributes.tab1["aria-expanded"] = false;
-
-    store.tabs.attributes.tab3.hidden = true;
-    store.tabs.attributes.tab3["aria-expanded"] = false;
-
-    store.tabs.attributes.tab4.hidden = true;
-    store.tabs.attributes.tab4["aria-expanded"] = false;
+  const toggle$ = $<ToggleFunction>((selectedIndex) => {
+    store.tabs.attributes.forEach((tab, index) => {
+      tab.hidden = index === selectedIndex ? false : true;
+    });
   });
-  const handleTabs3$ = $<Handletabs3Fonction>(() => {
-    store.tabs.attributes.tab3.hidden = false;
-    store.tabs.attributes.tab3["aria-expanded"] = true;
 
-    store.tabs.attributes.tab2.hidden = true;
-    store.tabs.attributes.tab2["aria-expanded"] = false;
-
-    store.tabs.attributes.tab1.hidden = true;
-    store.tabs.attributes.tab1["aria-expanded"] = false;
-
-    store.tabs.attributes.tab4.hidden = true;
-    store.tabs.attributes.tab4["aria-expanded"] = false;
-  });
-  const handleTabs4$ = $<Handletabs4Fonction>(() => {
-    store.tabs.attributes.tab4.hidden = false;
-    store.tabs.attributes.tab4["aria-expanded"] = true;
-
-    store.tabs.attributes.tab2.hidden = true;
-    store.tabs.attributes.tab2["aria-expanded"] = false;
-
-    store.tabs.attributes.tab3.hidden = true;
-    store.tabs.attributes.tab3["aria-expanded"] = false;
-
-    store.tabs.attributes.tab1.hidden = true;
-    store.tabs.attributes.tab1["aria-expanded"] = false;
-  });
   return (
     <>
       <header
@@ -148,8 +100,11 @@ export const BannerProfile = component$((props: BannerProps) => {
         <ul class="justify-center py-8 text-center text-sm md:flex md:text-base" role="tablist">
           <li aria-label="Mes informations" role="presentation">
             <button
-              onClick$={handleTabs1$}
-              class="px-2 hover:rounded hover:bg-white hover:text-[#0B3168] md:px-5"
+              onClick$={async () => {
+                await handleToggle$(0);
+                await toggle$(0);
+              }}
+              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:px-5"
               id="informations-tab"
               type="button"
               role="tab"
@@ -160,8 +115,11 @@ export const BannerProfile = component$((props: BannerProps) => {
           </li>
           <li aria-label="Mot de passe" role="presentation">
             <button
-              onClick$={handleTabs2$}
-              class="px-2 hover:rounded hover:bg-white hover:text-[#0B3168] md:border-l-2 md:px-5"
+              onClick$={async () => {
+                await handleToggle$(1);
+                await toggle$(1);
+              }}
+              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
               id="password-tab"
               type="button"
               role="tab"
@@ -172,8 +130,11 @@ export const BannerProfile = component$((props: BannerProps) => {
           </li>
           <li aria-label="Mes documents" role="presentation">
             <button
-              onClick$={handleTabs3$}
-              class="px-2 hover:rounded hover:bg-white hover:text-[#0B3168] md:border-l-2 md:px-5"
+              onClick$={async () => {
+                await handleToggle$(2);
+                await toggle$(2);
+              }}
+              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
               id="documents-tab"
               type="button"
               role="tab"
@@ -184,8 +145,11 @@ export const BannerProfile = component$((props: BannerProps) => {
           </li>
           <li aria-label="Mes QCM" role="presentation">
             <button
-              onClick$={handleTabs4$}
-              class="px-2 hover:rounded hover:bg-white hover:text-[#0B3168] md:border-l-2 md:px-5"
+              onClick$={async () => {
+                await handleToggle$(3);
+                await toggle$(3);
+              }}
+              class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
               id="QCM-tab"
               type="button"
               role="tab"
@@ -197,22 +161,22 @@ export const BannerProfile = component$((props: BannerProps) => {
         </ul>
       </header>
       <div class={`w-auto`}>
-        <div {...store.tabs.attributes.tab1} id="informations" role="tabpanel" aria-labelledby="informations-tab">
+        <div {...store.tabs.attributes[0]} id="informations" role="tabpanel" aria-labelledby="informations-tab">
           <ButtonBackLobby title="Mes informations" />
           <UserInformationForm />
         </div>
-        <div {...store.tabs.attributes.tab2} id="password" role="tabpanel" aria-labelledby="password-tab">
+        <div {...store.tabs.attributes[1]} id="password" role="tabpanel" aria-labelledby="password-tab">
           <ButtonBackLobby title="Mot de passe" />
           <span class="my-12 flex flex-col md:flex-row md:justify-center">
             <ActualPassword />
             <ChangePasswordForm />
           </span>
         </div>
-        <div {...store.tabs.attributes.tab3} id="documents" role="tabpanel" aria-labelledby="documents-tab">
+        <div {...store.tabs.attributes[2]} id="documents" role="tabpanel" aria-labelledby="documents-tab">
           <ButtonBackLobby title="Mes documents" />
           <DocumentsTable />
         </div>
-        <div {...store.tabs.attributes.tab4} id="QCM" role="tabpanel" aria-labelledby="QCM-tab">
+        <div {...store.tabs.attributes[3]} id="QCM" role="tabpanel" aria-labelledby="QCM-tab">
           <ButtonBackLobby title="Mes QCM" />
           <span
             class={`mx-[2rem] flex flex-col justify-center md:mx-[8rem] md:mb-[5rem] md:grid md:grid-cols-3 md:grid-rows-2 md:gap-10`}
