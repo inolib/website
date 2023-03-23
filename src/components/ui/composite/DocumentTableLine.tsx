@@ -1,17 +1,17 @@
 import { component$ } from "@builder.io/qwik";
 
 type LineProps = {
-  nom: string;
   categorie: string;
   date: string;
-  type: string;
   information: string;
+  nom: string;
+  type: string;
 };
 
 export const DocumentTableLine = component$((props: LineProps) => {
   return (
     <>
-      <tr class="h-14 border-b-[1px] border-[#E1E1E1]">
+      <tr class="border-b-[1px] border-[#E1E1E1] h-14">
         <td class="px-5 py-3 md:py-0" scope="row">
           {props.nom}
         </td>

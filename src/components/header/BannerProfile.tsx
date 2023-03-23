@@ -87,47 +87,52 @@ export const BannerProfile = component$((props: BannerProps) => {
     store.tabs.attributes.tab1.hidden = false;
 
     store.tabs.attributes.tab1["aria-expanded"] = true;
+
     store.tabs.attributes.tab2.hidden = true;
-
     store.tabs.attributes.tab2["aria-expanded"] = false;
+
     store.tabs.attributes.tab3.hidden = true;
-
     store.tabs.attributes.tab3["aria-expanded"] = false;
-    store.tabs.attributes.tab4.hidden = true;
 
+    store.tabs.attributes.tab4.hidden = true;
     store.tabs.attributes.tab4["aria-expanded"] = false;
   });
   const handleTabs2$ = $<Handletabs2Fonction>(() => {
     store.tabs.attributes.tab2.hidden = false;
-
     store.tabs.attributes.tab2["aria-expanded"] = true;
+
     store.tabs.attributes.tab1.hidden = true;
-
     store.tabs.attributes.tab1["aria-expanded"] = false;
+
     store.tabs.attributes.tab3.hidden = true;
-
     store.tabs.attributes.tab3["aria-expanded"] = false;
-    store.tabs.attributes.tab4.hidden = true;
 
+    store.tabs.attributes.tab4.hidden = true;
     store.tabs.attributes.tab4["aria-expanded"] = false;
   });
   const handleTabs3$ = $<Handletabs3Fonction>(() => {
     store.tabs.attributes.tab3.hidden = false;
     store.tabs.attributes.tab3["aria-expanded"] = true;
+
     store.tabs.attributes.tab2.hidden = true;
     store.tabs.attributes.tab2["aria-expanded"] = false;
+
     store.tabs.attributes.tab1.hidden = true;
     store.tabs.attributes.tab1["aria-expanded"] = false;
+
     store.tabs.attributes.tab4.hidden = true;
     store.tabs.attributes.tab4["aria-expanded"] = false;
   });
   const handleTabs4$ = $<Handletabs4Fonction>(() => {
     store.tabs.attributes.tab4.hidden = false;
     store.tabs.attributes.tab4["aria-expanded"] = true;
+
     store.tabs.attributes.tab2.hidden = true;
     store.tabs.attributes.tab2["aria-expanded"] = false;
+
     store.tabs.attributes.tab3.hidden = true;
     store.tabs.attributes.tab3["aria-expanded"] = false;
+
     store.tabs.attributes.tab1.hidden = true;
     store.tabs.attributes.tab1["aria-expanded"] = false;
   });
@@ -303,7 +308,7 @@ export const BannerProfile = component$((props: BannerProps) => {
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+              <span q:slot="button" class="mt-[6rem] ml-[5rem] md:ml-[6rem] md:mt-[10rem]">
                 <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
