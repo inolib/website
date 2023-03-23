@@ -18,8 +18,8 @@ export default component$(() => {
         title="Actualités"
       />
 
-      <main class="md:mt-[10rem] mt-[3rem] overflow-x-hidden">
-        <h2 class="text-[#0B3168] md:mx-[8rem] ml-[2rem] md:mb-[5rem] mb-[6rem] text-4xl">Les dernières actualités</h2>
+      <main class="mt-[3rem] overflow-x-hidden md:mt-[10rem]">
+        <h2 class="ml-[2rem] mb-[6rem] text-4xl text-[#0B3168] md:mx-[8rem] md:mb-[5rem]">Les dernières actualités</h2>
         <Article
           stylesTestimony="md:w-[40rem] md:ml-[5rem] ml-[1rem]"
           stylesContent="pt-[2rem] md:w-[40rem] md:ml-[5rem]"
@@ -31,12 +31,12 @@ export default component$(() => {
               atque corrupti quos dolores At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
               atque corrupti quos dolores."
         >
-          <p q:slot="date&category" class="text-[#0B3168] text-[11px] mt-4">
+          <p q:slot="date&category" class="mt-4 text-[11px] text-[#0B3168]">
             03.02.2023&ensp; |&ensp; Développement
           </p>
         </Article>
 
-        <form class="flex md:flex-row flex-col items-center md:justify-start justify-center -mt-[5rem]">
+        <form class="-mt-[5rem] flex flex-col items-center justify-center md:flex-row md:justify-start">
           <SearchBar placeholder="Rechercher par mots-clés..." />
           <Filter labels={{ button: "Types", items: ["Option 1", "Option 2", "Option 3"] }} />
           <Filter labels={{ button: "Périodes", items: ["Option 1", "Option 2", "Option 3"] }} />

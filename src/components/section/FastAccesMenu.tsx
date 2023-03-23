@@ -11,7 +11,7 @@ export const FastAccessMenu = component$(() => {
         </li>
         <li>
           <a class="sr-only focus:not-sr-only focus:rounded-sm  focus:bg-[#0B3168] focus:text-white" href="#footer">
-            Bas de le page
+            Bas de la page
           </a>
         </li>
       </ul>

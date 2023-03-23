@@ -1,11 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 
 type LineProps = {
-  nom: string;
   categorie: string;
   date: string;
-  type: string;
   information: string;
+  nom: string;
+  type: string;
 };
 
 export const DocumentTableLine = component$((props: LineProps) => {
@@ -15,11 +15,11 @@ export const DocumentTableLine = component$((props: LineProps) => {
         <td class="px-5 py-3 md:py-0" scope="row">
           {props.nom}
         </td>
-        <td class="hidden sm:table-cell px-5 py-3 md:py-0">{props.categorie}</td>
-        <td class="hidden sm:table-cell px-5 py-3 md:py-0">{props.date}</td>
-        <td class="hidden sm:table-cell px-5 py-3 md:py-0">{props.type}</td>
+        <td class="hidden px-5 py-3 sm:table-cell md:py-0">{props.categorie}</td>
+        <td class="hidden px-5 py-3 sm:table-cell md:py-0">{props.date}</td>
+        <td class="hidden px-5 py-3 sm:table-cell md:py-0">{props.type}</td>
         <td
-          class="md:hidden px-5 py-3 underline underline-offset-1 md:py-0"
+          class="px-5 py-3 underline underline-offset-1 md:hidden md:py-0"
           aria-label="cliquez pour obtenir plus d'information sur le document"
         >
           {props.information}

@@ -91,13 +91,13 @@ export const BannerProfile = component$((props: BannerProps) => {
   return (
     <>
       <header
-        class={`bg-gradient-to-b from-[#5A0C69] w-auto flex flex-col ${styles} justify-center items-center to-[#0F3069] text-white md:h-[27rem]`}
+        class={`flex w-auto flex-col bg-gradient-to-b from-[#5A0C69] ${styles} items-center justify-center to-[#0F3069] text-white md:h-[27rem]`}
         role="banner"
         id="header"
       >
-        <img class={`w-[20rem] h-[20rem]`} src={props.imageSrc} alt="" />
-        <h1 class={`text-white text-3xl text-center -mt-10 mb-10`}>{props.title}</h1>
-        <ul class="md:flex justify-center text-center py-8 text-sm md:text-base" role="tablist">
+        <img class={`h-[20rem] w-[20rem]`} src={props.imageSrc} alt="" />
+        <h1 class={`-mt-10 mb-10 text-center text-3xl text-white`}>{props.title}</h1>
+        <ul class="justify-center py-8 text-center text-sm md:flex md:text-base" role="tablist">
           <li aria-label="Mes informations" role="presentation">
             <button
               onClick$={async () => {
@@ -167,7 +167,7 @@ export const BannerProfile = component$((props: BannerProps) => {
         </div>
         <div {...store.tabs.attributes[1]} id="password" role="tabpanel" aria-labelledby="password-tab">
           <ButtonBackLobby title="Mot de passe" />
-          <span class="flex flex-col my-12 md:flex-row md:justify-center">
+          <span class="my-12 flex flex-col md:flex-row md:justify-center">
             <ActualPassword />
             <ChangePasswordForm />
           </span>
@@ -179,7 +179,7 @@ export const BannerProfile = component$((props: BannerProps) => {
         <div {...store.tabs.attributes[3]} id="QCM" role="tabpanel" aria-labelledby="QCM-tab">
           <ButtonBackLobby title="Mes QCM" />
           <span
-            class={`flex flex-col justify-center md:grid md:grid-cols-3 md:grid-rows-2 md:gap-10 mx-[2rem] md:mx-[8rem] md:mb-[5rem]`}
+            class={`mx-[2rem] flex flex-col justify-center md:mx-[8rem] md:mb-[5rem] md:grid md:grid-cols-3 md:grid-rows-2 md:gap-10`}
           >
             <ServicesCard
               image="/images/logo-formation.png"
@@ -192,11 +192,11 @@ export const BannerProfile = component$((props: BannerProps) => {
                 optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                 autem! Molestias, facilis?
               </p>
-              <span q:slot="services" class="flex justify-center text-[12px] text-[#0B3168] font-medium">
+              <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+              <span q:slot="button" class="mt-[6rem] ml-[5rem] md:mt-[10rem] md:ml-[6rem]">
                 <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
@@ -211,11 +211,11 @@ export const BannerProfile = component$((props: BannerProps) => {
                 optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                 autem! Molestias, facilis?
               </p>
-              <span q:slot="services" class="flex justify-center text-[12px] text-[#0B3168] font-medium">
+              <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+              <span q:slot="button" class="mt-[6rem] ml-[5rem] md:mt-[10rem] md:ml-[6rem]">
                 <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
@@ -230,11 +230,11 @@ export const BannerProfile = component$((props: BannerProps) => {
                 optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                 autem! Molestias, facilis?
               </p>
-              <span q:slot="services" class="flex justify-center text-[12px] text-[#0B3168] font-medium">
+              <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+              <span q:slot="button" class="mt-[6rem] ml-[5rem] md:mt-[10rem] md:ml-[6rem]">
                 <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
@@ -249,11 +249,11 @@ export const BannerProfile = component$((props: BannerProps) => {
                 optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                 autem! Molestias, facilis?
               </p>
-              <span q:slot="services" class="flex justify-center text-[12px] text-[#0B3168] font-medium">
+              <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+              <span q:slot="button" class="mt-[6rem] ml-[5rem] md:mt-[10rem] md:ml-[6rem]">
                 <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>
@@ -268,11 +268,11 @@ export const BannerProfile = component$((props: BannerProps) => {
                 optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
                 autem! Molestias, facilis?
               </p>
-              <span q:slot="services" class="flex justify-center text-[12px] text-[#0B3168] font-medium">
+              <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
                 <p class="border-r-2 px-5 ">Moyen</p>
                 <p class="px-5">10 minutes</p>
               </span>
-              <span q:slot="button" class="md:mt-[10rem] mt-[6rem] ml-[5rem] md:ml-[6rem]">
+              <span q:slot="button" class="mt-[6rem] ml-[5rem] md:ml-[6rem] md:mt-[10rem]">
                 <Button styles="" color="blue" href="/services" label="Jouer !" />
               </span>
             </ServicesCard>

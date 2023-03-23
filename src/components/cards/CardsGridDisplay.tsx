@@ -6,11 +6,11 @@ import { ServicesCard } from "~/components/cards/ServicesCard";
 export const CardsGridDisplay = component$(() => {
   return (
     <>
-      <span class="flex flex-col mt-6 md:mt-10 md:bg-slate-200" id="Formation">
-        <h2 class="px-5 text-4xl mt-6 md:px-0 md:ml-[11rem] ">Formations</h2>
+      <span class="mt-6 flex flex-col md:mt-10 md:bg-slate-200" id="Formation">
+        <h2 class="mt-6 px-5 text-4xl md:ml-[11rem] md:px-0 ">Formations</h2>
         <span class="flex flex-col md:flex-row">
-          <img class="w-full h-auto mt-6 md:ml-[8rem] md:mt-10 md:w-auto md:h-[22rem]" src="/images/home4.png" alt="" />
-          <p class="px-5 text-justify mt-10 md:text-left md:px-0  md:ml-10 md:mr-[8rem]">
+          <img class="mt-6 h-auto w-full md:ml-[8rem] md:mt-10 md:h-[22rem] md:w-auto" src="/images/home4.png" alt="" />
+          <p class="mt-10 px-5 text-justify md:ml-10 md:mr-[8rem]  md:px-0 md:text-left">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus itaque, ex temporibus officiis laborum
             repudiandae, aliquam consequatur eligendi tempore iusto illo illum at iste provident eaque eos! Nisi, iure
             vero? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non, doloribus? Facere sit minima
@@ -23,8 +23,8 @@ export const CardsGridDisplay = component$(() => {
           </p>
         </span>
         <section class="bg-white md:mx-[8rem] md:mt-[10rem] md:pb-[8rem]">
-          <h2 class="mx-5 text-3xl md:text-4xl mt-6 md:mr-0 md:ml-[3rem] ">Toutes nos formations</h2>
-          <span class="flex flex-col items-center md:grid md:grid-cols-2 md:gap-10 md:grid-row-2 md:pt-[5rem] md:pl-[13rem]">
+          <h2 class="mx-5 mt-6 text-3xl md:mr-0 md:ml-[3rem] md:text-4xl ">Toutes nos formations</h2>
+          <span class="md:grid-row-2 flex flex-col items-center md:grid md:grid-cols-2 md:gap-10 md:pt-[5rem] md:pl-[13rem]">
             <ServicesCard
               image="/images/logo-audit.png"
               label="Description"
@@ -92,7 +92,7 @@ export const CardsGridDisplay = component$(() => {
           </span>
         </section>
       </span>
-      <span class="h-[3rem] md:bg-slate-200 block md:h-[8rem]"></span>
+      <span class="block h-[3rem] md:h-[8rem] md:bg-slate-200"></span>
     </>
   );
 });
