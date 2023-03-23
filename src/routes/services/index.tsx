@@ -20,7 +20,7 @@ export default component$(() => {
       >
         <span
           q:slot="services"
-          class="flex justify-center text-sm md:justify-start pt-4  md:mt-[12vh] md:-mb-[23vh] md:text-base "
+          class="flex justify-center text-sm md:justify-start md:mt-[3rem] md:-mb-[23vh] md:text-base "
         >
           <a aria-label="Nos conseil et audit" href="#Conseil">
             <p class="px-2 border-r-2 md:px-5 ">Conseil & Audit</p>
