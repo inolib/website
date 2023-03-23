@@ -11,11 +11,11 @@ export const SearchBar = component$((props: SearchProps) => {
       <label for="simple-search" class="sr-only">
         Barre de recherche
       </label>
-      <div class="w-[15rem] md:ml-[10rem] md:mb-[4rem] mb-[1rem] md:relative md:w-[20rem] ">
-        <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+      <div class="mb-[1rem] w-[15rem] md:relative md:ml-[10rem] md:mb-[4rem] md:w-[20rem] ">
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
           <svg
             aria-hidden="true"
-            class="hidden h-5 text-gray-500 w-5 dark:text-gray-400 md:mt-[4rem] mt-[149.7rem] md:flex"
+            class="mt-[149.7rem] hidden h-5 w-5 text-gray-500 dark:text-gray-400 md:mt-[4rem] md:flex"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +30,7 @@ export const SearchBar = component$((props: SearchProps) => {
         <input
           type="text"
           id="simple-search"
-          class="bg-gray-50 border border-gray-300 mt-[4rem] text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:pl-10 md:p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          class="mt-[4rem] block w-full rounded-lg border border-gray-300 bg-gray-50 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-500 dark:focus:ring-blue-500 md:p-2.5 md:pl-10"
           placeholder={props.placeholder}
           required
         />

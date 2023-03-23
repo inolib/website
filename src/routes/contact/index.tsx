@@ -19,13 +19,13 @@ export default component$(() => {
       />
 
       <main class="text-[#0B3168] md:px-28">
-        <h2 class="text-2xl font-bold my-6 md:pt-10 md:mb-14">Nous écrires</h2>
-        <section class="shadow-xl mb-10 flex flex-col-reverse md:flex-row-reverse md:px-0 md:h-[100vh] md:w-full">
+        <h2 class="my-6 text-2xl font-bold md:mb-14 md:pt-10">Nous écrires</h2>
+        <section class="mb-10 flex flex-col-reverse shadow-xl md:h-[100vh] md:w-full md:flex-row-reverse md:px-0">
           <ContactForm />
           <ContactCard />
         </section>
         <LocalisationCard />
-        <div class="flex w-full justify-center my-10">
+        <div class="my-10 flex w-full justify-center">
           <ButtonTopPage />
         </div>
       </main>

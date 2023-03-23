@@ -251,7 +251,7 @@ export const Filter = component$<FilterProps>((props) => {
         {...store.button.attributes}
         aria-controls={menuId}
         aria-haspopup="true"
-        class="text-white md:h-[3.5rem] md:w-[7rem] h-[3.5rem] w-[15rem] my-2 justify-center md:ml-20 bg-[#0B3168] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="my-2 inline-flex h-[3.5rem] w-[15rem] items-center justify-center rounded-3xl bg-[#0B3168] px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 md:ml-20 md:h-[3.5rem] md:w-[7rem]"
         id={buttonId}
         ref={refs.button}
         type="button"
@@ -259,7 +259,7 @@ export const Filter = component$<FilterProps>((props) => {
         {props.labels.button}
         <svg
           aria-hidden="true"
-          class="w-4 h-4 ml-2"
+          class="ml-2 h-4 w-4"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -273,7 +273,7 @@ export const Filter = component$<FilterProps>((props) => {
         // génère l'attribut `hidden`
         {...store.ul.attributes}
         aria-labelledby={buttonId}
-        class="z-10 w-48 bg-white rounded-lg shadow dark:bg-gray-700 p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200"
+        class="z-10 w-48 space-y-1 rounded-lg bg-white p-3 text-sm text-gray-700 shadow dark:bg-gray-700 dark:text-gray-200"
         id={menuId}
         role="menu"
       >
@@ -283,20 +283,20 @@ export const Filter = component$<FilterProps>((props) => {
           return (
             <li
               key={index}
-              class="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600"
+              class="flex items-center rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-600"
               role="presentation"
             >
               <input
                 // génère l'ttribut `tabIndex`
                 {...store.inputs[index].attributes}
-                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-500 dark:bg-gray-600 dark:ring-offset-gray-700 dark:focus:ring-blue-600 dark:focus:ring-offset-gray-700"
                 id={inputId}
                 ref={refs.inputs[index]}
                 role="menuitemcheckbox"
                 type="checkbox"
                 value={label}
               />
-              <label class="w-full ml-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300" for={inputId}>
+              <label class="ml-2 w-full rounded text-sm font-medium text-gray-900 dark:text-gray-300" for={inputId}>
                 {label}
               </label>
             </li>

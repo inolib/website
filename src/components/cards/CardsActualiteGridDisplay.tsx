@@ -5,7 +5,7 @@ import { BlancArticleService } from "./BlancArticleService";
 
 export const CardsActualiteGridDisplay = component$(() => {
   return (
-    <ul class="md:grid md:grid-cols-3 md:grid-rows-2 md:gap-20 mx-[3rem] md:mx-[8rem]">
+    <ul class="mx-[3rem] md:mx-[8rem] md:grid md:grid-cols-3 md:grid-rows-2 md:gap-20">
       <li>
         <ArticleHomePage
           alt="article 1"

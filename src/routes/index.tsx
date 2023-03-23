@@ -46,7 +46,7 @@ export default component$(() => {
             iure eum! Minima facilis earum unde repellat quo nisi.
           </p>
         </Banner2>
-        <section class="mb-[4.5rem] mx-4">
+        <section class="mx-4 mb-[4.5rem]">
           <ArticlesHomeDisplay title="Actualités" />
           <div class="flex justify-center">
             <ButtonTopPage />

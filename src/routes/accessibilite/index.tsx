@@ -18,7 +18,7 @@ export default component$(() => {
       <main class="text-[#0B3168]">
         <ArticleAccessibilite1 />
 
-        <p class="px-4 text-justify md:px-28 md:mb-6 md:text-left">
+        <p class="px-4 text-justify md:mb-6 md:px-28 md:text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
           eleifend a. Quisque convallis dui nunc, in ultrices leo tincidunt non. Aenean bibendum dignissim turpis, sed
           egestas sapien pulvinar at. Curabitur rhoncus eget enim eget vulputate. Aliquam non gravida turpis, sed
@@ -59,7 +59,7 @@ export default component$(() => {
           Suspendisse vehicula nisi nec sodales tristique. Fusce ac mollis odio, euismod porta metus.
         </p>
 
-        <div class="flex w-full justify-center my-10">
+        <div class="my-10 flex w-full justify-center">
           <ButtonTopPage />
         </div>
       </main>

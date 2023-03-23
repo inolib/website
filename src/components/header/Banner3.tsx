@@ -13,7 +13,7 @@ export const Banner3 = component$((props: BannerProps) => {
     <>
       <section
         aria-label="Développement"
-        class=" bg-gradient-to-b from-[#5A0C69] to-[#0F3069]  bg-no-repeat h-[26rem]"
+        class=" h-[26rem] bg-gradient-to-b from-[#5A0C69]  to-[#0F3069] bg-no-repeat"
         id={props.id}
       >
         <span class="flex flex-col md:w-1/2 ">
@@ -23,7 +23,7 @@ export const Banner3 = component$((props: BannerProps) => {
           </span>
         </span>
         <span class="w-[100vw] md:flex md:flex-row-reverse md:pr-[7rem]">
-          <img class="md:h-[25rem] md:-mt-[10rem]" src={props.src} alt="" />
+          <img class="md:-mt-[10rem] md:h-[25rem]" src={props.src} alt="" />
         </span>
       </section>
     </>

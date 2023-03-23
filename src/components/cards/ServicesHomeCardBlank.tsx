@@ -10,8 +10,8 @@ export const ServicesHomeCardBlank = component$((props: CardProps) => {
 
   return (
     <>
-      <article aria-label="articles" class="flex-col mx-7 md:mt-[1.2rem] hidden md:flex ">
-        <span class={`flex flex-col items-center justify-center shadow-xl pb-[10rem] px-4 h-[40rem] w-[17.5rem]`}>
+      <article aria-label="articles" class="mx-7 hidden flex-col md:mt-[1.2rem] md:flex ">
+        <span class={`flex h-[40rem] w-[17.5rem] flex-col items-center justify-center px-4 pb-[10rem] shadow-xl`}>
           <p class={`text-[#0B3168] ${styles} pb-32 text-2xl`}>{props.content}</p>
           <Slot name="button" />
         </span>
