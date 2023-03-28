@@ -7,11 +7,9 @@ export default component$(() => {
   return (
     <>
       <Navbar />
-
-      <main>
+      <span>
         <Slot />
-      </main>
-
+      </span>
       <Contentinfo />
     </>
   );
