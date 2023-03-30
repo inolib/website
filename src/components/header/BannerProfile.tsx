@@ -31,7 +31,7 @@ type UserBannerStore = {
   tabs: {
     attributes: {
       hidden: boolean;
-      // "aria-expanded": boolean;
+      "aria-expanded": boolean;
     }[];
   };
 };
@@ -56,19 +56,19 @@ export const BannerProfile = component$((props: BannerProps) => {
         attributes: [
           {
             hidden: false,
-            // "aria-expanded": true,
+            "aria-expanded": true,
           },
           {
             hidden: true,
-            // "aria-expanded": false,
+            "aria-expanded": false,
           },
           {
             hidden: true,
-            // "aria-expanded": false,
+            "aria-expanded": false,
           },
           {
             hidden: true,
-            // "aria-expanded": false,
+            "aria-expanded": false,
           },
         ],
       },
@@ -85,6 +85,7 @@ export const BannerProfile = component$((props: BannerProps) => {
   const toggle$ = $<ToggleFunction>((selectedIndex) => {
     store.tabs.attributes.forEach((tab, index) => {
       tab.hidden = index === selectedIndex ? false : true;
+      tab["aria-expended"] = index === selectedIndex ? true : false;
     });
   });
 

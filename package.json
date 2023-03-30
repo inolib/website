@@ -59,6 +59,7 @@
     "zod": "^3.21.4"
   },
   "dependencies": {
+    "@inolib/ui": "^0.0.0",
     "flowbite": "^1.6.4"
   }
 }
