@@ -19,7 +19,7 @@ export const Banner2 = component$((props: BannerProps) => {
         class="mt-[4rem] h-[42rem] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] bg-[length:100vw_50vh] bg-no-repeat"
       >
         <span class="-z-1 flex flex-col ">
-          <span class="ml-[8rem] md:mt-[4.5rem] flex w-[35rem] flex-col">
+          <span class="ml-[8rem] flex w-[35rem] flex-col md:mt-[4.5rem]">
             <h3 class="pb-[2rem] text-4xl text-white">{props.title}</h3>
             <blockquote class="max-w-lg text-2xl text-white">{props.quote}</blockquote>
           </span>

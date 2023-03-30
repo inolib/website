@@ -6,10 +6,10 @@ export default component$(() => {
     <>
       <div class="h-[100vh] bg-slate-100">
         <form class=" flex flex-col items-center justify-center  ">
-          <h1 class=" text-[#0B3168] font-semibold items-center content-center justify-center text-4xl mb-16 md:mb-14 mt-44">
+          <h1 class=" mb-16 mt-44 content-center items-center justify-center text-4xl font-semibold text-[#0B3168] md:mb-14">
             Connexion
           </h1>
-          <div class=" flex flex-col text-[#0B3168] md:w-3/5 justify-center mb-[2rem]">
+          <div class=" mb-[2rem] flex flex-col justify-center text-[#0B3168] md:w-3/5">
             <label class={`mb-1`} for="email">
               Email
             </label>
@@ -19,11 +19,11 @@ export default component$(() => {
               required
               id="email"
               name="email"
-              class="bg-gray-200 form-control text-gray-600 py-2 px-4 border rounded-2xl md:w-3/5 h-10 w-56 md:h-14"
+              class="form-control h-10 w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-3/5"
             />
           </div>
 
-          <div class="flex flex-col justify-center text-[#0B3168] md:w-3/5 mb-[2rem]">
+          <div class="mb-[2rem] flex flex-col justify-center text-[#0B3168] md:w-3/5">
             <label class={`mb-1`} for="password">
               Mot de passe
             </label>
@@ -33,14 +33,14 @@ export default component$(() => {
               required
               id="password"
               name="password"
-              class="bg-gray-200 form-control  text-gray-600 py-2 px-4 border rounded-2xl md:w-3/5 h-10 w-56 md:h-14"
+              class="form-control h-10  w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-3/5"
             />
           </div>
 
           <button
             aria-label="se connecter"
             type="submit"
-            class="bg-[#0B3168] mt-10 md:mt-2 text-white m-3 py-1 px-4 rounded-lg shadow-lg h-10 w-32 md:h-14 md:w-44 md:text-lg hover:shadow hover:bg-[#FFFFFF] hover:text-[#15133C] hover:border hover:border-[#15133C]"
+            class="m-3 mt-10 h-10 w-32 rounded-lg bg-[#0B3168] py-1 px-4 text-white shadow-lg hover:border hover:border-[#15133C] hover:bg-[#FFFFFF] hover:text-[#15133C] hover:shadow md:mt-2 md:h-14 md:w-44 md:text-lg"
           >
             Connexion
           </button>

@@ -3,9 +3,9 @@ import { component$ } from "@builder.io/qwik";
 export const LocalisationCard = component$(() => {
   return (
     <section>
-      <h2 class=" font-bold mb-10 text-2xl">Nous rencontrer</h2>
-      <div class="flex flex-col md:flex-row justify-between shadow-xl md:mb-10">
-        <div class="flex flex-col justify-center items-center w-full">
+      <h2 class=" mb-10 text-2xl font-bold">Nous rencontrer</h2>
+      <div class="flex flex-col justify-between shadow-xl md:mb-10 md:flex-row">
+        <div class="flex w-full flex-col items-center justify-center">
           <img alt="" class="h-16 w-auto" src="\images\icon-pin-map.svg" />
           <p class="text-center">
             INOLIB
