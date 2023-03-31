@@ -18,14 +18,7 @@ type BannerProps = {
   tabs4?: string;
 };
 
-type HandleToggleFunction = (index: number) => void;
 type ToggleFunction = (selectedIndex: number) => void;
-
-type TabsStore = {
-  tab: {
-    toggle: number;
-  };
-};
 
 type UserBannerStore = {
   tabs: {
@@ -38,17 +31,6 @@ type UserBannerStore = {
 
 export const BannerProfile = component$((props: BannerProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
-
-  const store2 = useStore<TabsStore>(
-    {
-      tab: {
-        toggle: 1,
-      },
-    },
-    {
-      deep: true,
-    }
-  );
 
   const store = useStore<UserBannerStore>(
     {
@@ -78,10 +60,6 @@ export const BannerProfile = component$((props: BannerProps) => {
     }
   );
 
-  const handleToggle$ = $<HandleToggleFunction>((index) => {
-    store2.tab.toggle = index;
-  });
-
   const toggle$ = $<ToggleFunction>((selectedIndex) => {
     store.tabs.attributes.forEach((tab, index) => {
       tab.hidden = index === selectedIndex ? false : true;
@@ -102,7 +80,6 @@ export const BannerProfile = component$((props: BannerProps) => {
           <li aria-label="Mes informations" role="presentation">
             <button
               onClick$={async () => {
-                await handleToggle$(0);
                 await toggle$(0);
               }}
               class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:px-5"
@@ -117,7 +94,6 @@ export const BannerProfile = component$((props: BannerProps) => {
           <li aria-label="Mot de passe" role="presentation">
             <button
               onClick$={async () => {
-                await handleToggle$(1);
                 await toggle$(1);
               }}
               class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
@@ -132,7 +108,6 @@ export const BannerProfile = component$((props: BannerProps) => {
           <li aria-label="Mes documents" role="presentation">
             <button
               onClick$={async () => {
-                await handleToggle$(2);
                 await toggle$(2);
               }}
               class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
@@ -147,7 +122,6 @@ export const BannerProfile = component$((props: BannerProps) => {
           <li aria-label="Mes QCM" role="presentation">
             <button
               onClick$={async () => {
-                await handleToggle$(3);
                 await toggle$(3);
               }}
               class="px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5"
