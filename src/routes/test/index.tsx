@@ -1,67 +1,73 @@
 import { component$ } from "@builder.io/qwik";
 
-import {
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItemList,
-  Select,
-  SelectButton,
-  SelectOption,
-  SelectOptionList,
-} from "@inolib/ui";
+import { Menu, MenuButton, MenuItemLink, MenuItems } from "@inolib/ui";
+import { Select, SelectButton, SelectOption, SelectOptions } from "@inolib/ui";
 
 const people = [
-  { id: 1, name: "Matthieu MEIGNAN", available: true },
-  { id: 2, name: "Quentin FERRARI", available: false },
-  { id: 3, name: "Matthieu GEORGE", available: true },
+  { id: 1, name: "Matthieu M", available: true },
+  { id: 2, name: "Quentin F", available: true },
 ];
 
 const page = [
-  { id: 1, type: "Actualité", available: true, value: "/actualites" },
-  { id: 2, type: "Accessibilite", available: true, value: "/accessibilite" },
-  { id: 3, type: "Présentation", available: true, value: "/presentation" },
-  { id: 4, type: "Services", available: true, value: "/services" },
-  { id: 5, type: "Témoignages", available: true, value: "/temoignages" },
-  { id: 6, type: "Contact", available: true, value: "/contact" },
-  { id: 7, type: "Connexion", available: true, value: "/profile" },
+  { id: 1, name: "Actualité", href: "/actualites" },
+  { id: 2, name: "Accessibilite", href: "/accessibilite" },
+  { id: 3, name: "Présentation", href: "/presentation" },
+  { id: 4, name: "Services", href: "/services" },
+  { id: 5, name: "Témoignages", href: "/temoignages" },
+  { id: 6, name: "Contact", href: "/contact" },
+  { id: 7, name: "Connexion", href: "/profile" },
 ];
 
 export default component$(() => {
   return (
-    <>
+    <div>
       <Select name="foo">
         <SelectButton>Click me! (1)</SelectButton>
-        <SelectOptionList>
+        <SelectOptions>
           {people.map((person) => (
             <SelectOption disabled={!person.available} key={person.id} value={person}>
               {person.name}
             </SelectOption>
           ))}
-        </SelectOptionList>
+        </SelectOptions>
       </Select>
 
       <Select name="bar" multiple={true}>
         <SelectButton>Click me! (2)</SelectButton>
-        <SelectOptionList>
+        <SelectOptions>
           {people.map((person) => (
             <SelectOption disabled={!person.available} key={person.id} value={person}>
               {person.name}
             </SelectOption>
           ))}
-        </SelectOptionList>
+        </SelectOptions>
       </Select>
-      <Menu>
-        <MenuButton>click me (3)</MenuButton>
+      <Menu styles="md:hidden w-full flex flex-col items-end bg-white relative">
+        <MenuButton styles="rounded-md p-2 m-2 text-[#0B3168] hover:bg-[#0B3168] hover:text-white focus:outline-none focus:bg-[#0B3168] focus:text-white focus:ring-2 focus:ring-inset focus:ring-white">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </MenuButton>
 
-        <MenuItemList>
+        <MenuItems styles="space-y-1 px-2 pt-2 pb-3 items-start w-full">
           {page.map((page) => (
-            <MenuItem disabled={!page.available} key={page.id} link={page.value}>
-              {page.type}
-            </MenuItem>
+            <MenuItemLink
+              href={page.href}
+              key={page.id}
+              styles="rounded-md px-3 py-2 text-base font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+            >
+              {page.name}
+            </MenuItemLink>
           ))}
-        </MenuItemList>
+        </MenuItems>
       </Menu>
-    </>
+    </div>
   );
 });
