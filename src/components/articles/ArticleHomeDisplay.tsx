@@ -24,7 +24,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
           styles="md:col-end-1 md:ml-[8vw] md:w-[40vw]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Développement"
-          date="20.06.2023"
+          date="20.Juin.2023"
           alt=""
         >
           <p q:slot="content" class="max-w-md text-[#0B3168]">
@@ -37,7 +37,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
           styles="md:col-end-2 md:mr-[6rem]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           category="Accessibilité"
-          date="10.03.2023"
+          date="10.Mars.2023"
           alt=""
         />
         <ArticleHomePage

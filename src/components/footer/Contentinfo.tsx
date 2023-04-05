@@ -24,9 +24,26 @@ export const Contentinfo = component$(() => {
           </div>
         </section>
 
-        <section class="md:grid md:w-1/4 md:grid-cols-1 md:grid-rows-1 md:border-l-2 md:pl-10">
+        <section class="md:grid md:grid-cols-1 md:grid-rows-1 md:border-l-2 md:pl-10">
+          <ul class="flex flex-wrap justify-center border-y-2 border-[#9A35AD] py-8 md:justify-start md:items-start md:border-y-0 md:py-0">
+            <li class="m-2">
+              <a href="#">Plan du site</a>
+            </li>
+            <li class="m-2">
+              <a href="#">Politique d'accéssbilité</a>
+            </li>
+            <li class="m-2">
+              <a href="#">Mentions légales</a>
+            </li>
+            <li class="m-2">
+              <a href="#">Politique de confidentialité</a>
+            </li>
+            <li class="m-2">
+              <a href="#">Glossaire</a>
+            </li>
+          </ul>
           <ul
-            class="flex justify-between border-y-2 border-[#9A35AD] py-8 md:row-start-1 md:columns-1 md:items-center md:border-y-0 md:py-0 "
+            class="flex justify-between border-y-2 border-[#9A35AD] py-8 md:row-start-1 md:columns-1 md:items-center md:border-y-0 md:py-0 md:w-3/5 "
             aria-label="reseau sociaux d'Inolib"
           >
             <li>

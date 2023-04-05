@@ -24,6 +24,7 @@ export const ContactForm = component$(() => {
           required
           type="text"
           aria-label="entrez votre nom"
+          maxlength="50"
         />
       </label>
       <label class="col-span-4 col-start-1 col-end-5 row-start-3 mb-3 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-2  md:mb-0 md:pl-5">
@@ -33,6 +34,7 @@ export const ContactForm = component$(() => {
           required
           type="text"
           aria-label="entrez votre prénom"
+          maxlength="50"
         />
       </label>
       <label class="col-span-4 col-start-1 col-end-5 row-start-4 flex flex-col md:col-span-2 md:col-end-3 md:row-start-3 md:pr-5">
@@ -42,6 +44,7 @@ export const ContactForm = component$(() => {
           required
           type="email"
           aria-label="entrez votre e-mail"
+          maxlength="50"
         />
       </label>
       <label class="col-span-4 col-start-1 col-end-5 row-start-5 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-3 md:pl-5">
@@ -56,6 +59,8 @@ export const ContactForm = component$(() => {
 
       <textarea
         class="col-span-4 col-start-1 col-end-5 row-start-6 mb-6 border-[1px] border-solid border-[#0B3168] md:row-start-4 md:mb-0 md:pl-2"
+        id="textarea"
+        maxlength="1500"
         placeholder="Sujet de votre demande"
         required
         aria-label="zone pour écrire les détails de votre demande"
