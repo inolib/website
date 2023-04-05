@@ -34,13 +34,6 @@ export default component$(() => {
               id="password"
               name="password"
               class="form-control h-10  w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-3/5"
-              onselectstart="return false"
-              onpaste="return false;"
-              onCopy="return false"
-              onCut="return false"
-              onDrag="return false"
-              onDrop="return false"
-              autocomplete="off"
             />
           </div>
 

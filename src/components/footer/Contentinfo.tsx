@@ -30,7 +30,7 @@ export const Contentinfo = component$(() => {
               <a href="#">Plan du site</a>
             </li>
             <li class="m-2">
-              <a href="#">Politique d'accéssbilité</a>
+              <a href="#">Politique d'accessbilité</a>
             </li>
             <li class="m-2">
               <a href="#">Mentions légales</a>

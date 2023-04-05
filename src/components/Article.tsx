@@ -31,7 +31,7 @@ export const Article = component$((props: ArticleProps) => {
 
   return (
     <article class="text-[#0B3168] md:mx-[8rem] md:py-8">
-      <title class={`mx-5 my-7 text-2xl font-semibold md:m-0`}>{props.title}</title>
+      <h2 class={`mx-5 my-7 text-2xl font-semibold md:m-0`}>{props.title}</h2>
 
       <div class={`flex flex-col ${stylesArticleGaucheFlex} md:pt-6`}>
         <span class="mx-5 md:mx-0">
