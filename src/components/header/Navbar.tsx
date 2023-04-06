@@ -18,13 +18,13 @@ export const Navbar = component$(() => {
             <div class="flex flex-1 items-center justify-start sm:items-stretch sm:justify-start">
               <a
                 href="/"
-                class="flex h-10 w-10 flex-shrink-0 items-center sm:absolute sm:-ml-[10rem]"
+                class="flex h-10 w-10 flex-shrink-0 items-center sm:absolute sm:-ml-[10rem] z-10"
                 {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
                 aria-label="Accueil"
               >
-                <img class="block h-10 w-auto lg:hidden" src="/images/logo-blue.svg" alt="Your Company" />
-                <img class="hidden h-10 w-auto lg:block" src="/images/logo-blue.svg" alt="Your Company" />
-                <h1 class="mx-4 text-4xl font-medium text-[#0B3168] ">inolib</h1>
+                <img class="block h-10 w-auto lg:hidden z-10" src="/images/logo-blue.svg" alt="Accueil" />
+                <img class="hidden h-10 w-auto lg:block z-10" src="/images/logo-blue.svg" alt="Accueil" />
+                <h1 class="mx-4 text-4xl font-medium text-[#0B3168] z-10">inolib</h1>
               </a>
               <div class="hidden sm:block">
                 <div class="flex space-x-4 sm:ml-[36rem] sm:space-x-0">
