@@ -10,11 +10,6 @@ import { ChangePasswordForm } from "~/components/ui/composite/ChangePasswordForm
 import { DocumentsTable } from "~/components/ui/composite/DocumentsTable";
 import { UserInformationForm } from "~/components/ui/composite/UserInformationForm";
 
-type BannerProps = {
-  title: string;
-  styles?: string;
-};
-
 const tabs = [
   { id: "1", name: "Mes informations", selected: true, controls: "1", label: "Mes informations" },
   { id: "2", name: "Mot de passe", selected: false, controls: "2", label: "Mot de passe" },
@@ -22,23 +17,22 @@ const tabs = [
   { id: "4", name: "QCM", selected: false, controls: "4", label: "QCM" },
 ];
 
-export default component$((props: BannerProps) => {
-  const styles = props.styles !== undefined ? props.styles : "";
+export default component$(() => {
   return (
     <>
       <Tabs>
         <header
-          class={`flex w-auto flex-col bg-gradient-to-b from-[#5A0C69] ${styles} items-center justify-center to-[#0F3069] text-white md:h-[27rem]`}
+          class={`flex w-auto flex-col bg-gradient-to-b from-[#5A0C69] items-center justify-center to-[#0F3069] text-white md:h-[27rem]`}
           role="banner"
           id="header"
         >
           <img class={`h-[20rem] w-[20rem]`} src="/images/userLogo.png" alt="" />
           <h1 class={`-mt-10 mb-10 text-center text-3xl text-white`}>MY FAKE COMPAGNY</h1>
-          <ul class="justify-center py-8 text-center text-sm  md:text-base" role="tablist">
-            <TabsTabs>
+          <ul class="justify-center py-8 text-center flex text-sm  md:text-base" role="tablist">
+            <TabsTabs styles="md:flex">
               {tabs.map((tabs) => (
                 <TabsTab
-                  styles={`px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:border-l-2 md:px-5`}
+                  styles={`px-2 hover:bg-white hover:text-[#0B3168] hover:rounded md:px-5`}
                   controls={tabs.controls}
                   selected={tabs.selected}
                   aria-label={tabs.label}
