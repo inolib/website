@@ -13,7 +13,7 @@ export default component$(() => {
   return (
     <>
       <BannerHome />
-      <main class="flex flex-col justify-center overflow-x-hidden">
+      <section class="flex flex-col justify-center overflow-x-hidden">
         <SplitedImage src="/images/decouvriraccess.png" styles="hidden md:block" />
         <Banner
           imageSrc="/images/decouvriraccess.png"
@@ -52,7 +52,7 @@ export default component$(() => {
             <ButtonTopPage />
           </div>
         </section>
-      </main>
+      </section>
     </>
   );
 });

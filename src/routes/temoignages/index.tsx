@@ -18,7 +18,7 @@ export default component$(() => {
         title="Témoignages"
       />
 
-      <main class="text-[#0B3168]">
+      <section class="text-[#0B3168]">
         <section class="" aria-label="3 témoignages">
           <ArticleTemoignage1 />
 
@@ -29,7 +29,7 @@ export default component$(() => {
         <div class="mb-10 flex w-full justify-center">
           <ButtonTopPage />
         </div>
-      </main>
+      </section>
     </>
   );
 });

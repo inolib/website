@@ -17,7 +17,7 @@ export default component$(() => {
             dolore magna. Aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua."
       />
-      <main class="text-[#0B3168]">
+      <section class="text-[#0B3168]">
         <ArticlePresentation1 />
 
         <ArticlePresentation2 />
@@ -77,7 +77,7 @@ export default component$(() => {
         <div class="my-10 flex w-full justify-center">
           <ButtonTopPage />
         </div>
-      </main>
+      </section>
     </>
   );
 });
