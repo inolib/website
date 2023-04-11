@@ -33,7 +33,7 @@ export default component$(() => {
           </a>
         </span>
       </Banner>
-      <main class="text-[#0B3168]">
+      <section class="text-[#0B3168]">
         <HorizontalParagraph
           title="Conseil & Audit"
           content1="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure tempora natus accusantium consequuntur,
@@ -199,7 +199,7 @@ export default component$(() => {
         <span class="mb-[2rem] flex justify-center">
           <ButtonTopPage />
         </span>
-      </main>
+      </section>
     </>
   );
 });

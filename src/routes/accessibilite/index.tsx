@@ -15,7 +15,8 @@ export default component$(() => {
         imageSrc="/images/banner-accessibilite.png"
         title="Qu’est-ce que l’accessibilité ?"
       />
-      <main class="text-[#0B3168]">
+
+      <section class="text-[#0B3168]">
         <ArticleAccessibilite1 />
 
         <p class="px-4 text-justify md:mb-6 md:px-28 md:text-left">
@@ -62,7 +63,7 @@ export default component$(() => {
         <div class="my-10 flex w-full justify-center">
           <ButtonTopPage />
         </div>
-      </main>
+      </section>
     </>
   );
 });

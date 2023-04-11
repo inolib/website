@@ -2,14 +2,8 @@
  * @type {import('tailwindcss').Config}
  */
 module.exports = {
-  content: ["./src/**/*.{mdx,ts,tsx}", "./node_modules/flowbite/**/*.js"],
-  plugins: [
-    require("@tailwindcss/aspect-ratio"),
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/line-clamp"),
-    require("@tailwindcss/typography"),
-    require("flowbite/plugin"),
-  ],
+  content: ["./src/**/*.{mdx,ts,tsx}"],
+  plugins: [require("@tailwindcss/aspect-ratio"), require("@tailwindcss/forms"), require("@tailwindcss/typography")],
   theme: {
     extend: {
       fontFamily: {

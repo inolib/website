@@ -18,7 +18,7 @@ export default component$(() => {
         title="Actualités"
       />
 
-      <main class="mt-[3rem] overflow-x-hidden md:mt-[10rem]">
+      <section class="mt-[3rem] overflow-x-hidden md:mt-[10rem]">
         <h2 class="ml-[2rem] mb-[6rem] text-4xl text-[#0B3168] md:mx-[8rem] md:mb-[5rem]">Les dernières actualités</h2>
         <Article
           stylesTestimony="md:w-[40rem] md:ml-[5rem] ml-[1rem]"
@@ -46,7 +46,7 @@ export default component$(() => {
           <CardsActualiteGridDisplay />
         </section>
         <ButtonTopPage styles="pb-[2rem]" />
-      </main>
+      </section>
     </>
   );
 });
