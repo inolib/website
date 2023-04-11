@@ -19,9 +19,6 @@ devDependencies:
   '@tailwindcss/forms':
     specifier: ^0.5.3
     version: 0.5.3(tailwindcss@3.3.1)
-  '@tailwindcss/line-clamp':
-    specifier: ^0.4.4
-    version: 0.4.4(tailwindcss@3.3.1)
   '@tailwindcss/typography':
     specifier: ^0.5.9
     version: 0.5.9(tailwindcss@3.3.1)
@@ -747,14 +744,6 @@ packages:
       tailwindcss: 3.3.1(postcss@8.4.21)
     dev: true
 
-  /@tailwindcss/line-clamp@0.4.4(tailwindcss@3.3.1):
-    resolution: {integrity: sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==}
-    peerDependencies:
-      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
-    dependencies:
-      tailwindcss: 3.3.1(postcss@8.4.21)
-    dev: true
-
   /@tailwindcss/typography@0.5.9(tailwindcss@3.3.1):
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
     peerDependencies:
@@ -1185,7 +1174,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001477
-      electron-to-chromium: 1.4.356
+      electron-to-chromium: 1.4.357
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
     dev: true
@@ -1482,8 +1471,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.356:
-    resolution: {integrity: sha512-nEftV1dRX3omlxAj42FwqRZT0i4xd2dIg39sog/CnCJeCcL1TRd2Uh0i9Oebgv8Ou0vzTPw++xc+Z20jzS2B6A==}
+  /electron-to-chromium@1.4.357:
+    resolution: {integrity: sha512-UTkCbNTAcGXABmEnQrGcW4m3cG6fcyBfD4KDF0iyEAlbrGZiY9dmslyDAGOD1Kr5biN2F743Y30aRCOtau35Vw==}
     dev: true
 
   /emoji-regex@8.0.0:
