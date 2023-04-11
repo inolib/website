@@ -5,7 +5,6 @@ import { Tabs, TabsTabs, TabsPanels, TabsPanel, TabsTab } from "@inolib/ui";
 import { ServicesCard } from "~/components/cards/ServicesCard";
 import { Button } from "~/components/ui/buttons/Button";
 import { ButtonBackLobby } from "~/components/ui/buttons/ButtonBackLobby";
-import { ActualPassword } from "~/components/ui/composite/ActualPassword";
 import { ChangePasswordForm } from "~/components/ui/composite/ChangePasswordForm";
 import { DocumentsTable } from "~/components/ui/composite/DocumentsTable";
 import { UserInformationForm } from "~/components/ui/composite/UserInformationForm";
@@ -50,10 +49,9 @@ export default component$(() => {
               <ButtonBackLobby title="Mes informations" />
               <UserInformationForm />
             </TabsPanel>
-            <TabsPanel id="2">
+            <TabsPanel styles="" id="2">
               <ButtonBackLobby title="Mot de passe" />
-              <span class="my-12 flex flex-col md:flex-row md:justify-center">
-                <ActualPassword />
+              <span class="my-12 flex flex-col md:w-{screen} md:flex-row md:justify-center  ">
                 <ChangePasswordForm />
               </span>
             </TabsPanel>
