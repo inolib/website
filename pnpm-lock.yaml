@@ -10,6 +10,9 @@ devDependencies:
   '@ianvs/prettier-plugin-sort-imports':
     specifier: ^3.7.2
     version: 3.7.2(prettier@2.8.7)
+  '@prisma/client':
+    specifier: ^4.12.0
+    version: 4.12.0(prisma@4.12.0)
   '@tailwindcss/aspect-ratio':
     specifier: ^0.4.2
     version: 0.4.2(tailwindcss@3.3.1)
@@ -64,9 +67,15 @@ devDependencies:
   prettier-plugin-packagejson:
     specifier: ^2.4.3
     version: 2.4.3(prettier@2.8.7)
+  prettier-plugin-prisma:
+    specifier: ^4.12.0
+    version: 4.12.0(prettier@2.8.7)
   prettier-plugin-tailwindcss:
     specifier: ^0.2.7
     version: 0.2.7(@ianvs/prettier-plugin-sort-imports@3.7.2)(prettier-plugin-jsdoc@0.4.2)(prettier@2.8.7)
+  prisma:
+    specifier: ^4.12.0
+    version: 4.12.0
   tailwindcss:
     specifier: ^3.3.1
     version: 3.3.1(postcss@8.4.21)
@@ -76,6 +85,9 @@ devDependencies:
   vite:
     specifier: ^4.2.1
     version: 4.2.1(@types/node@18.15.11)
+  vite-node:
+    specifier: ^0.30.0
+    version: 0.30.0(@types/node@18.15.11)
   vitest:
     specifier: ^0.30.0
     version: 0.30.0
@@ -689,6 +701,33 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.5.0
+    dev: true
+
+  /@prisma/client@4.12.0(prisma@4.12.0):
+    resolution: {integrity: sha512-j9/ighfWwux97J2dS15nqhl60tYoH8V0IuSsgZDb6bCFcQD3fXbXmxjYC8GHhIgOk3lB7Pq+8CwElz2MiDpsSg==}
+    engines: {node: '>=14.17'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 4.12.0-67.659ef412370fa3b41cd7bf6e94587c1dfb7f67e7
+      prisma: 4.12.0
+    dev: true
+
+  /@prisma/engines-version@4.12.0-67.659ef412370fa3b41cd7bf6e94587c1dfb7f67e7:
+    resolution: {integrity: sha512-JIHNj5jlXb9mcaJwakM0vpgRYJIAurxTUqM0iX0tfEQA5XLZ9ONkIckkhuAKdAzocZ+80GYg7QSsfpjg7OxbOA==}
+    dev: true
+
+  /@prisma/engines@4.12.0:
+    resolution: {integrity: sha512-0alKtnxhNB5hYU+ymESBlGI4b9XrGGSdv7Ud+8TE/fBNOEhIud0XQsAR+TrvUZgS4na5czubiMsODw0TUrgkIA==}
+    requiresBuild: true
+    dev: true
+
+  /@prisma/prisma-fmt-wasm@4.12.0-67.659ef412370fa3b41cd7bf6e94587c1dfb7f67e7:
+    resolution: {integrity: sha512-jh9ajkGl3Lw9uTKEwlNBSh79a1v6C1JducqxakgkQyLev6kG1xxkuc2rDGrIDxUdpCOuuPRjuSCHhjnv7qLLgQ==}
     dev: true
 
   /@tailwindcss/aspect-ratio@0.4.2(tailwindcss@3.3.1):
@@ -3206,6 +3245,16 @@ packages:
       synckit: 0.8.5
     dev: true
 
+  /prettier-plugin-prisma@4.12.0(prettier@2.8.7):
+    resolution: {integrity: sha512-5wb4B+9UfJEwp+e5amuOINh23yCjjaEUXDrIzbvFWFHUx2SmbVHdyd9VsRo9VNP34gqVdLBaltyTXV5NCAaAUA==}
+    engines: {node: '>=14', npm: '>=8'}
+    peerDependencies:
+      prettier: '>=2'
+    dependencies:
+      '@prisma/prisma-fmt-wasm': 4.12.0-67.659ef412370fa3b41cd7bf6e94587c1dfb7f67e7
+      prettier: 2.8.7
+    dev: true
+
   /prettier-plugin-tailwindcss@0.2.7(@ianvs/prettier-plugin-sort-imports@3.7.2)(prettier-plugin-jsdoc@0.4.2)(prettier@2.8.7):
     resolution: {integrity: sha512-jQopIOgjLpX+y8HeD56XZw7onupRTC0cw7eKKUimI7vhjkPF5/1ltW5LyqaPtSyc8HvEpvNZsvvsGFa2qpa59w==}
     engines: {node: '>=12.17.0'}
@@ -3276,6 +3325,15 @@ packages:
       ansi-regex: 5.0.1
       ansi-styles: 5.2.0
       react-is: 17.0.2
+    dev: true
+
+  /prisma@4.12.0:
+    resolution: {integrity: sha512-xqVper4mbwl32BWzLpdznHAYvYDWQQWK2tBfXjdUD397XaveRyAP7SkBZ6kFlIg8kKayF4hvuaVtYwXd9BodAg==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@prisma/engines': 4.12.0
     dev: true
 
   /property-information@6.2.0:
