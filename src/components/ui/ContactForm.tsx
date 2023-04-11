@@ -1,6 +1,18 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$, useStore } from "@builder.io/qwik";
+
+type CounterStore = {
+  count: number;
+};
 
 export const ContactForm = component$(() => {
+  const store = useStore<CounterStore>({
+    count: 0,
+  });
+
+  const counter$ = $((event: Event) => {
+    store.count = (event.target as HTMLTextAreaElement).value.length;
+  });
+
   return (
     <form class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10">
       <select
@@ -80,8 +92,14 @@ export const ContactForm = component$(() => {
           aria-label="entrez votre numéro de téléphone"
         />
       </label>
-
+      <div class="col-span-2 col-start-1 flex ">
+        <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
+      </div>
       <textarea
+        maxLength={1000}
+        onInput$={counter$}
+        class="col-span-4 col-start-1 col-end-5 row-start-6 mb-6 border-[1px] border-solid border-[#0B3168] md:row-start-4 md:mb-0 md:pl-2"
+        placeholder="Sujet de votre demande"
         class="col-span-4 col-start-1 col-end-5 row-start-8 mb-6 border-[1px] border-solid border-[#0B3168] md:row-start-5 md:row-span-2 md:pl-2 md:mt-6"
         id="textarea"
         maxLength={1500}

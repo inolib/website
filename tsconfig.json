@@ -1,5 +1,5 @@
 {
-  "include": ["./src", "src/tests"],
+  "include": ["./src"],
   "compilerOptions": {
     "composite": true,
     "esModuleInterop": true,
