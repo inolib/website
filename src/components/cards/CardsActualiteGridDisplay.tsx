@@ -10,7 +10,7 @@ export const CardsActualiteGridDisplay = component$(() => {
         <ArticleHomePage
           alt="article 1"
           category="Accessibilité"
-          date="10.03.2023"
+          date="10.Mars.2023"
           imgStyles="h-[14rem]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           src="/images/home7.png"
@@ -21,7 +21,7 @@ export const CardsActualiteGridDisplay = component$(() => {
         <ArticleHomePage
           alt="article 2"
           category="Accessibilité"
-          date="10.03.2023"
+          date="10.Mars.2023"
           imgStyles="h-[14rem]"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           src="/images/home2.png"
@@ -32,7 +32,7 @@ export const CardsActualiteGridDisplay = component$(() => {
         <ArticleHomePage
           alt="article 3"
           category="Formation"
-          date="10.03.2023"
+          date="10.Mars.2023"
           label="Lorem ipsum dolor."
           imgStyles="h-[14rem]"
           src="/images/home6.png"
@@ -43,7 +43,7 @@ export const CardsActualiteGridDisplay = component$(() => {
         <ArticleHomePage
           alt="article 4"
           category="Inolib"
-          date="10.03.2023"
+          date="10.Mars.2023"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           src="/images/home5.png"
           styles="h-[14rem]"
@@ -53,7 +53,7 @@ export const CardsActualiteGridDisplay = component$(() => {
         <ArticleHomePage
           alt="article 5"
           category="Accessibilité"
-          date="10.03.2023"
+          date="10.Mars.2023"
           label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           src="/images/home3.png"
           styles="h-[14rem]"

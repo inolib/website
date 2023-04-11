@@ -14,11 +14,15 @@ export const ContactCard = component$(() => {
         </p>
         <div class="mb-4 flex md:mb-6">
           <img alt="" src="\images\icon-phone.svg" />
-          <p class="pl-3">06 70 86 50 32</p>
+          <a href="tel:+33670865032" class="pl-3">
+            06 70 86 50 32
+          </a>
         </div>
         <div class="mb-4 flex md:mb-6">
           <img alt="" src="\images\icon-mail.svg" />
-          <p class="pl-3">contact@inolib.com</p>
+          <a href="mailto:contact@inolib.com" class="pl-3">
+            contact@inolib.com
+          </a>
         </div>
 
         <ul
