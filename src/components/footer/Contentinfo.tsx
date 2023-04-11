@@ -36,7 +36,7 @@ export const Contentinfo = component$(() => {
               <a href="#">Mentions légales</a>
             </li>
             <li class="m-2">
-              <a href="#">Politique de confidentialité</a>
+              <a href="/legal">Politique de confidentialité</a>
             </li>
             <li class="m-2">
               <a href="#">Glossaire</a>
