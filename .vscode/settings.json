@@ -1,4 +1,7 @@
 {
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "javascript.validate.enable": false,
   "tailwindCSS.classAttributes": ["class", "styles"],
   "typescript.tsdk": "./node_modules/typescript/lib",
