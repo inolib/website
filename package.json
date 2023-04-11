@@ -20,7 +20,6 @@
     "lint": "pnpm run lint:eslint && pnpm run lint:tsc",
     "lint:eslint": "eslint --ext .cjs,.ts,.tsx .",
     "lint:tsc": "tsc",
-    "qwik": "qwik",
     "serve:dev": "vite --mode ssr",
     "serve:preview": "pnpm run build && pnpm run build:preview && vite preview",
     "test": "vitest",
