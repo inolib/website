@@ -96,14 +96,11 @@ export const ContactForm = component$(() => {
         <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
       </div>
       <textarea
-        maxLength={1000}
         onInput$={counter$}
-        class="col-span-4 col-start-1 col-end-5 row-start-6 mb-6 border-[1px] border-solid border-[#0B3168] md:row-start-4 md:mb-0 md:pl-2"
         placeholder="Sujet de votre demande"
         class="col-span-4 col-start-1 col-end-5 row-start-8 mb-6 border-[1px] border-solid border-[#0B3168] md:row-start-5 md:row-span-2 md:pl-2 md:mt-6"
         id="textarea"
         maxLength={1500}
-        placeholder="Sujet de votre demande*"
         required
         aria-label="zone pour écrire les détails de votre demande"
       ></textarea>

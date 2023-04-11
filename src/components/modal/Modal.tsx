@@ -4,7 +4,7 @@ import { contextId } from "../ui/composite/UserInformationForm";
 export const Modal = component$(() => {
   const context = useContext(contextId);
 
-  const closeModal$ = $<ModalCloseFunction>(() => {
+  const closeModal$ = $(() => {
     context.Modal.modal.attributes.hidden = false;
   });
 

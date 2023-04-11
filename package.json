@@ -62,7 +62,6 @@
     "zod": "^3.21.4"
   },
   "prisma": {
-    "@inolib/ui": "^0.0.0*",
     "seed": "vite-node ./prisma/seed.ts"
   }
 }
