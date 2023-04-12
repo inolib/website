@@ -94,7 +94,7 @@ export default component$(() => {
             <p>L'audit a porté sur un échantillon de 11 pages du site à savoir :</p>
             <ul>
               <li>
-                <a ref="/services">Nos services</a>
+                <a href="/services">Nos services</a>
               </li>
               <li>
                 <a href="/actualites">Actualités</a>
@@ -103,7 +103,7 @@ export default component$(() => {
                 <a href="/presentation">Presentation</a>
               </li>
               <li>
-                <a ref="/contact">Contact</a>
+                <a href="/contact">Contact</a>
               </li>
               <li>
                 <a href="/connexion">Connexion</a>
