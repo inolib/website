@@ -27,7 +27,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@inolib/ui": "^0.0.2"
+    "@inolib/ui": "^0.0.4"
   },
   "devDependencies": {
     "@builder.io/qwik": "^0.101.0",

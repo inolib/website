@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@inolib/ui':
-    specifier: ^0.0.2
-    version: 0.0.2
+    specifier: ^0.0.4
+    version: 0.0.4
 
 devDependencies:
   '@builder.io/qwik':
@@ -609,8 +609,8 @@ packages:
       - supports-color
     dev: true
 
-  /@inolib/ui@0.0.2:
-    resolution: {integrity: sha512-7tv1d16rO8qigM3CxQQcJ3TKZ+42/9NXT1fSGmsr4Y0+eLwIhJ4RyBXCb3buU49U6v8xnpObG+N7v9G+TnvlfQ==, tarball: https://npm.pkg.github.com/download/@inolib/ui/0.0.2/cc6e8c7a621d46ecabcec717dfeacf93649b0f45}
+  /@inolib/ui@0.0.4:
+    resolution: {integrity: sha512-qSsOHxuuoJK4a91gMkwI0u0su+RtbnkpmcWsR60CImlVj8rCH6nCS28vhj6FFAbruGyAdbICJQKFXTn9ff2DAQ==, tarball: https://npm.pkg.github.com/download/@inolib/ui/0.0.4/52c6ef803fc3b7ea3a73c47a67d50f09e5f35866}
     dev: false
 
   /@istanbuljs/schema@0.1.3:
