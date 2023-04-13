@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { Menu, MenuButton, MenuItemLink, MenuItems } from "@inolib/ui";
+import { Menu, MenuButton, MenuItemLink, MenuItems } from "~/ui/Menu";
 
 const page = [
   { id: 1, name: "Actualité", href: "/actualites" },
