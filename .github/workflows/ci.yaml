@@ -44,5 +44,5 @@ jobs:
       - name: Test
         run: pnpm run ci:test
 
-      - name: build
+      - name: Build
         run: pnpm run ci:build
