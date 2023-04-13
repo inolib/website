@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 
-import { Tabs, TabsTabs, TabsPanels, TabsPanel, TabsTab } from "@inolib/ui";
+import { Tabs, TabsTabs, TabsPanels, TabsPanel, TabsTab } from "~/ui/Tabs";
 
 const tabs = [
   { id: "1", name: "Mes informations", selected: true, controls: "1" },

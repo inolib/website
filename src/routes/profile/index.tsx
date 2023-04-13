@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
-import { Tabs, TabsTabs, TabsPanels, TabsPanel, TabsTab } from "@inolib/ui";
+import { Tabs, TabsTabs, TabsPanels, TabsPanel, TabsTab } from "~/ui/Tabs";
 import { ServicesCard } from "~/components/cards/ServicesCard";
 import { Button } from "~/components/ui/buttons/Button";
 import { ButtonBackLobby } from "~/components/ui/buttons/ButtonBackLobby";

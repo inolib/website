@@ -8,7 +8,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "jsxImportSource": "@builder.io/qwik",
-    "lib": ["DOM", "WebWorker"],
+    "lib": ["DOM", "ESNext", "WebWorker"],
     "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,

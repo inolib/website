@@ -4,11 +4,12 @@
   "description": "INOLIB’s website",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "pnpm run build:client && pnpm run build:server",
+    "build:client": "vite build",
     "build:preview": "vite build --ssr ./src/entry.preview.tsx",
+    "build:server": "vite build -c ./.config/vercel-edge/vite.config.ts",
     "ci:build": "pnpm run build",
-    "ci:format": "pnpm run format",
-    "ci:lint": "pnpm run lint",
+    "ci:lint": "pnpm exec prisma generate && pnpm run lint",
     "ci:test": "pnpm run test",
     "format": "pnpm run format:prettier && pnpm run format:jsdoc && pnpm run format:jsxattribute-sort && pnpm run format:packagejson && pnpm run format:prisma && pnpm run format:sort-imports && pnpm run format:tailwindcss",
     "format:jsdoc": "prettier --config ./.config/.prettierrc.jsdoc.cjs --write ./**/*.cjs ./**/*.ts ./**/*.tsx",
@@ -25,9 +26,6 @@
     "serve:preview": "pnpm run build && pnpm run build:preview && vite preview",
     "test": "vitest",
     "test:coverage": "vitest run --coverage"
-  },
-  "dependencies": {
-    "@inolib/ui": "github:inolib/ui"
   },
   "devDependencies": {
     "@builder.io/qwik": "^0.101.0",
