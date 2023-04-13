@@ -10,8 +10,6 @@ export const useFocus = (store: Focus) => {
   useVisibleTask$(
     ({ track }) => {
       const element = track(() => store.focused?.value);
-      console.log(element);
-
       element?.focus();
     },
     { strategy: "document-ready" }
