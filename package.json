@@ -4,8 +4,10 @@
   "description": "INOLIB’s website",
   "type": "module",
   "scripts": {
-    "build": "vite build",
+    "build": "pnpm run build:client && pnpm run build:server",
+    "build:client": "vite build",
     "build:preview": "vite build --ssr ./src/entry.preview.tsx",
+    "build:server": "vite build -c ./.config/vercel-edge/vite.config.ts",
     "ci:build": "pnpm run build",
     "ci:format": "pnpm run format",
     "ci:lint": "pnpm run lint",
