@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@inolib/ui':
-    specifier: github:inolib/ui
-    version: github.com/inolib/ui/6b2b029f7b38429b630ebbf00e93e26c5b28226b
+    specifier: ^0.0.1
+    version: 0.0.1
 
 devDependencies:
   '@builder.io/qwik':
@@ -609,6 +609,10 @@ packages:
       - supports-color
     dev: true
 
+  /@inolib/ui@0.0.1:
+    resolution: {integrity: sha512-VeO4tArm50zaCFbh2iGPOHU3AFKbXZLpD3uNCyCV359wzZxsAaPITHAEW04xnAKWE+AOJqHRQ0QZXKleMzQcow==, tarball: https://npm.pkg.github.com/download/@inolib/ui/0.0.1/ab543e35539781f378032e4ab3cdc326167ba654}
+    dev: false
+
   /@istanbuljs/schema@0.1.3:
     resolution: {integrity: sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==}
     engines: {node: '>=8'}
@@ -1125,7 +1129,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.5
-      caniuse-lite: 1.0.30001477
+      caniuse-lite: 1.0.30001478
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1178,8 +1182,8 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001477
-      electron-to-chromium: 1.4.357
+      caniuse-lite: 1.0.30001478
+      electron-to-chromium: 1.4.361
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10(browserslist@4.21.5)
     dev: true
@@ -1232,8 +1236,8 @@ packages:
     engines: {node: '>= 6'}
     dev: true
 
-  /caniuse-lite@1.0.30001477:
-    resolution: {integrity: sha512-lZim4iUHhGcy5p+Ri/G7m84hJwncj+Kz7S5aD4hoQfslKZJgt0tHc/hafVbqHC5bbhHb+mrW2JOUHkI5KH7toQ==}
+  /caniuse-lite@1.0.30001478:
+    resolution: {integrity: sha512-gMhDyXGItTHipJj2ApIvR+iVB5hd0KP3svMWWXDvZOmjzJJassGLMfxRkQCSYgGd2gtdL/ReeiyvMSFD1Ss6Mw==}
     dev: true
 
   /ccount@2.0.1:
@@ -1476,8 +1480,8 @@ packages:
       esutils: 2.0.3
     dev: true
 
-  /electron-to-chromium@1.4.357:
-    resolution: {integrity: sha512-UTkCbNTAcGXABmEnQrGcW4m3cG6fcyBfD4KDF0iyEAlbrGZiY9dmslyDAGOD1Kr5biN2F743Y30aRCOtau35Vw==}
+  /electron-to-chromium@1.4.361:
+    resolution: {integrity: sha512-VocVwjPp05HUXzf3xmL0boRn5b0iyqC7amtDww84Jb1QJNPBc7F69gJyEeXRoriLBC4a5pSyckdllrXAg4mmRA==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -4218,9 +4222,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
-
-  github.com/inolib/ui/6b2b029f7b38429b630ebbf00e93e26c5b28226b:
-    resolution: {tarball: https://codeload.github.com/inolib/ui/tar.gz/6b2b029f7b38429b630ebbf00e93e26c5b28226b}
-    name: '@inolib/ui'
-    version: 0.0.0
-    dev: false
