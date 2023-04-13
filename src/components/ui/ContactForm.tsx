@@ -1,21 +1,76 @@
-import { $, component$, useStore } from "@builder.io/qwik";
+import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
+import { server$ } from "@builder.io/qwik-city";
+
+import { type ContactCategory, PrismaClient } from "@prisma/client";
 
 type CounterStore = {
   count: number;
+  categories: ContactCategory[];
+  categoryId: Signal<string>;
+  companyName: Signal<string>;
+  lastName: Signal<string>;
+  firstName: Signal<string>;
+  email: Signal<string>;
+  phone: Signal<string>;
+  message: Signal<string>;
 };
+
+export const registerRequestQrl = server$((store: CounterStore) => {
+  const prisma = new PrismaClient();
+
+  const main = async () => {
+    await prisma.contactRequest.upsert({
+      where: { id: "" },
+      update: {},
+      create: {
+        categoryId: store.categoryId.value,
+        companyName: store.companyName.value,
+        lastName: store.lastName.value,
+        firstName: store.firstName.value,
+        email: store.email.value,
+        phone: store.phone.value,
+        message: store.message.value,
+      },
+    });
+  };
+
+  main()
+    .then(async () => {
+      console.log("success");
+      await prisma.$disconnect();
+    })
+    .catch(async (error) => {
+      console.error(error);
+      await prisma.$disconnect();
+    });
+});
 
 export const ContactForm = component$(() => {
   const store = useStore<CounterStore>({
     count: 0,
+    categories: [],
+    categoryId: useSignal<string>(""),
+    companyName: useSignal<string>(""),
+    lastName: useSignal<string>(""),
+    firstName: useSignal<string>(""),
+    email: useSignal<string>(""),
+    phone: useSignal<string>(""),
+    message: useSignal<string>(""),
   });
 
   const counter$ = $((event: Event) => {
     store.count = (event.target as HTMLTextAreaElement).value.length;
   });
 
+  useTask$(async () => {
+    const prisma = new PrismaClient();
+    store.categories = await prisma.contactCategory.findMany();
+  });
+
   return (
     <form class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10">
       <select
+        bind:value={store.categoryId}
         class="col-span-5 col-start-1 col-end-5 row-start-1 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-end-3 md:mr-5 md:mb-3"
         name="Type de la demande"
         aria-label="type de votre demande"
@@ -24,9 +79,12 @@ export const ContactForm = component$(() => {
         <option value="" disabled selected hidden>
           Type de la demande*
         </option>
-        <option>Audit</option>
-        <option>Formation</option>
-        <option>Développement</option>
+
+        {store.categories.map((category) => (
+          <option key={category.id} value={category.id}>
+            {category.name}
+          </option>
+        ))}
       </select>
 
       <select
@@ -46,6 +104,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-3 mb-3 flex flex-col md:row-start-2  md:col-span-2 md:col-end-3 md:pr-5">
         Nom de l'entreprise
         <input
+          bind:value={store.companyName}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
           type="text"
           aria-label="entrez votre nom"
@@ -56,6 +115,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 row-start-4 mb-3  flex flex-col md:col-span-2 md:col-end-3 md:row-start-3 md:pr-5">
         Nom*
         <input
+          bind:value={store.lastName}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
           required
           type="text"
@@ -66,6 +126,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-5 mb-3 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-3 md:pl-5">
         Prénom*
         <input
+          bind:value={store.firstName}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
           type="text"
@@ -76,6 +137,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-6 flex flex-col md:col-span-2 md:col-end-3 md:row-start-4 md:pr-5">
         Mail*
         <input
+          bind:value={store.email}
           class="mb-3 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
           type="email"
@@ -86,6 +148,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-7 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-4 md:pl-5">
         Téléphone*
         <input
+          bind:value={store.phone}
           class="mb-6 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
           type="tel"
@@ -96,6 +159,7 @@ export const ContactForm = component$(() => {
         <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
       </div>
       <textarea
+        bind:value={store.message}
         onInput$={counter$}
         placeholder="Sujet de votre demande"
         class="col-span-4 col-start-1 col-end-5 row-start-8 mb-6 border-[1px] border-solid border-[#0B3168] md:row-start-5 md:row-span-2 md:pl-2 md:mt-6"
@@ -105,14 +169,19 @@ export const ContactForm = component$(() => {
         aria-label="zone pour écrire les détails de votre demande"
       ></textarea>
       <button
+        type="reset"
         class=" col-span-2 col-start-1 col-end-2 row-start-9 mr-2 h-14 rounded-md hover:border-2 hover:border-[#0B3168] md:col-start-3  md:col-end-4 md:row-start-7 md:mt-14"
         aria-label="Effacer le formulaire"
       >
         Effacer
       </button>
       <button
+        type="button"
         class="col-span-2 col-start-3 col-end-5 row-start-9 h-14 rounded-md bg-[#0B3168] text-white md:col-start-4 md:col-end-4  md:row-start-7 md:mt-14"
         aria-label="Envoyer le formulaire"
+        onClick$={async () => {
+          await registerRequestQrl(store);
+        }}
       >
         Envoyer
       </button>
