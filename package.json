@@ -6,11 +6,10 @@
   "scripts": {
     "build": "pnpm run build:client && pnpm run build:server",
     "build:client": "vite build",
-    "build:prisma": "pnpm exec prisma generate",
     "build:server": "vite build -c ./.config/vercel-edge/vite.config.ts",
-    "cd:build": "pnpm run build:prisma && pnpm run build",
+    "cd:build": "prisma generate && pnpm run build",
     "ci:build": "pnpm run build",
-    "ci:lint": "pnpm run build:prisma && pnpm run lint",
+    "ci:lint": "prisma generate && pnpm run lint",
     "ci:test": "pnpm run test",
     "format": "pnpm run format:prettier && pnpm run format:jsdoc && pnpm run format:jsxattribute-sort && pnpm run format:packagejson && pnpm run format:prisma && pnpm run format:sort-imports && pnpm run format:tailwindcss",
     "format:jsdoc": "prettier --config ./.config/.prettierrc.jsdoc.cjs --write ./**/*.cjs ./**/*.ts ./**/*.tsx",
