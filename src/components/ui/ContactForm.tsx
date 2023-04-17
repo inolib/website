@@ -84,7 +84,7 @@ export const ContactForm = component$(() => {
       }
     `);
 
-    console.log(result.data);
+    console.log("result:", result);
 
     store.categories = result.data.contactCategories;
   });
