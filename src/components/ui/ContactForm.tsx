@@ -1,11 +1,11 @@
 import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
-import { type ContactCategory, PrismaClient } from "@prisma/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 
 type CounterStore = {
   count: number;
-  categories: ContactCategory[];
+  categories: [];
   categoryId: Signal<string>;
   companyName: Signal<string>;
   lastName: Signal<string>;
@@ -16,32 +16,30 @@ type CounterStore = {
 };
 
 export const registerRequestQrl = server$((store: CounterStore) => {
-  const prisma = new PrismaClient();
-
-  const main = async () => {
-    await prisma.contactRequest.upsert({
-      where: { id: "" },
-      update: {},
-      create: {
-        categoryId: store.categoryId.value,
-        companyName: store.companyName.value,
-        lastName: store.lastName.value,
-        firstName: store.firstName.value,
-        email: store.email.value,
-        phone: store.phone.value,
-        message: store.message.value,
-      },
-    });
-  };
-
-  main()
-    .then(async () => {
-      await prisma.$disconnect();
-    })
-    .catch(async (error) => {
-      console.error(error);
-      await prisma.$disconnect();
-    });
+  // const prisma = new PrismaClient();
+  // const main = async () => {
+  //   await prisma.contactRequest.upsert({
+  //     where: { id: "" },
+  //     update: {},
+  //     create: {
+  //       categoryId: store.categoryId.value,
+  //       companyName: store.companyName.value,
+  //       lastName: store.lastName.value,
+  //       firstName: store.firstName.value,
+  //       email: store.email.value,
+  //       phone: store.phone.value,
+  //       message: store.message.value,
+  //     },
+  //   });
+  // };
+  // main()
+  //   .then(async () => {
+  //     await prisma.$disconnect();
+  //   })
+  //   .catch(async (error) => {
+  //     console.error(error);
+  //     await prisma.$disconnect();
+  //   });
 });
 
 export const ContactForm = component$(() => {
@@ -61,21 +59,22 @@ export const ContactForm = component$(() => {
     store.count = (event.target as HTMLTextAreaElement).value.length;
   });
 
-  useTask$(() => {
-    const prisma = new PrismaClient();
+  useTask$(async () => {
+    const apollo = new ApolloClient({
+      uri: "https://api-inolib.vercel.app/api",
+      cache: new InMemoryCache(),
+    });
 
-    const main = async () => {
-      store.categories = await prisma.contactCategory.findMany();
-    };
-
-    main()
-      .then(async () => {
-        await prisma.$disconnect();
-      })
-      .catch(async (error) => {
-        console.error(error);
-        await prisma.$disconnect();
-      });
+    store.categories = await apollo.query({
+      query: /* GraphQL */ `
+        query GetContactCategories {
+          contactCategories {
+            id
+            name
+          }
+        }
+      `,
+    });
   });
 
   return (
