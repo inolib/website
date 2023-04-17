@@ -1,7 +1,7 @@
 import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { request } from "graphql-request";
 
 type CounterStore = {
   count: number;
@@ -60,21 +60,17 @@ export const ContactForm = component$(() => {
   });
 
   useTask$(async () => {
-    const apollo = new ApolloClient({
-      uri: "https://api-inolib.vercel.app/api",
-      cache: new InMemoryCache(),
-    });
-
-    store.categories = await apollo.query({
-      query: /* GraphQL */ `
+    store.categories = await request(
+      "https://api-inolib.vercel.app/api",
+      /* GraphQL */ `
         query GetContactCategories {
           contactCategories {
             id
             name
           }
         }
-      `,
-    });
+      `
+    );
   });
 
   return (

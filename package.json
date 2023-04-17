@@ -27,7 +27,6 @@
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@apollo/client": "^3.7.12",
     "@builder.io/qwik": "^0.101.0",
     "@builder.io/qwik-city": "^0.101.0",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
@@ -44,6 +43,7 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-qwik": "^0.101.0",
     "graphql": "^16.6.0",
+    "graphql-request": "^6.0.0",
     "nanoid": "^4.0.2",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
