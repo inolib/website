@@ -84,6 +84,8 @@ export const ContactForm = component$(() => {
       }
     `);
 
+    console.log(result.data);
+
     store.categories = result.data.contactCategories;
   });
 
