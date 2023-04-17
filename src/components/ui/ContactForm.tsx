@@ -65,7 +65,7 @@ export const ContactForm = component$(() => {
   useTask$(async () => {
     const client = new GraphQLClient(API_URL, { fetch });
 
-    const data = await client.request(/* GraphQL */ `
+    const data = await client.rawRequest(/* GraphQL */ `
       query GetContactCategories {
         contactCategories {
           id
