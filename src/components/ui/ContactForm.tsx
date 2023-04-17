@@ -86,7 +86,7 @@ export const ContactForm = component$(() => {
           Type de la demande*
         </option>
 
-        {store.categories.map((category) => (
+        {store.categories.map((category: Record<"id" | "name", string>) => (
           <option key={category.id} value={category.id}>
             {category.name}
           </option>
