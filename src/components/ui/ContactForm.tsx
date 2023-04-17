@@ -8,12 +8,6 @@ type ContactCategory = {
   name: string;
 };
 
-type ContactCategoriesResult = {
-  data: {
-    contactCategories: ContactCategory[];
-  };
-};
-
 type CounterStore = {
   count: number;
   categories: ContactCategory[];
@@ -75,7 +69,7 @@ export const ContactForm = component$(() => {
   useTask$(async () => {
     const client = new GraphQLClient(API_URL, { fetch });
 
-    const result = await client.request<ContactCategoriesResult>(/* GraphQL */ `
+    const result = await client.request<{ contactCategories: ContactCategory[] }>(/* GraphQL */ `
       query GetContactCategories {
         contactCategories {
           id
@@ -84,9 +78,7 @@ export const ContactForm = component$(() => {
       }
     `);
 
-    console.log("result:", result);
-
-    store.categories = result.data.contactCategories;
+    store.categories = result.contactCategories;
   });
 
   return (
