@@ -50,16 +50,24 @@ export const registerRequestQrl = server$((store: CounterStore) => {
 });
 
 export const ContactForm = component$(() => {
+  const _categoryId = useSignal<string>("");
+  const _companyName = useSignal<string>("");
+  const _email = useSignal<string>("");
+  const _firstName = useSignal<string>("");
+  const _lastName = useSignal<string>("");
+  const _message = useSignal<string>("");
+  const _phone = useSignal<string>("");
+
   const store = useStore<CounterStore>({
     count: 0,
     categories: [],
-    categoryId: useSignal<string>(""),
-    companyName: useSignal<string>(""),
-    lastName: useSignal<string>(""),
-    firstName: useSignal<string>(""),
-    email: useSignal<string>(""),
-    phone: useSignal<string>(""),
-    message: useSignal<string>(""),
+    categoryId: _categoryId,
+    companyName: _companyName,
+    email: _email,
+    firstName: _firstName,
+    lastName: _lastName,
+    message: _message,
+    phone: _phone,
   });
 
   const counter$ = $((event: Event) => {

@@ -16,12 +16,14 @@ export type TabsPanelStore = {
 };
 
 export const TabsPanel = component$<TabsPanelProps>(({ id, styles }) => {
+  const _ref = useSignal<HTMLElement>();
+
   const context = useContext(contextId);
 
   const store = useStore<TabsPanelStore>(
     {
       id: nanoid(),
-      ref: useSignal<HTMLElement>(),
+      ref: _ref,
     },
     { deep: true }
   );

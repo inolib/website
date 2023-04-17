@@ -25,12 +25,14 @@ export type MenuButtonStore = {
 };
 
 export const MenuButton = component$<MenuButtonProps>(({ styles }) => {
+  const _ref = useSignal<HTMLElement>();
+
   const context = useContext(contextId);
 
   const store = useStore<MenuButtonStore>(
     {
       expanded: false,
-      ref: useSignal<HTMLElement>(),
+      ref: _ref,
     },
     { deep: true }
   );
