@@ -42,6 +42,8 @@
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-qwik": "^0.101.0",
+    "graphql": "^16.6.0",
+    "graphql-request": "^6.0.0",
     "nanoid": "^4.0.2",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
