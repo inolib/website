@@ -36,7 +36,6 @@ export const registerRequestQrl = server$((store: CounterStore) => {
 
   main()
     .then(async () => {
-      console.log("success");
       await prisma.$disconnect();
     })
     .catch(async (error) => {
@@ -62,9 +61,21 @@ export const ContactForm = component$(() => {
     store.count = (event.target as HTMLTextAreaElement).value.length;
   });
 
-  useTask$(async () => {
+  useTask$(() => {
     const prisma = new PrismaClient();
-    store.categories = await prisma.contactCategory.findMany();
+
+    const main = async () => {
+      store.categories = await prisma.contactCategory.findMany();
+    };
+
+    main()
+      .then(async () => {
+        await prisma.$disconnect();
+      })
+      .catch(async (error) => {
+        console.error(error);
+        await prisma.$disconnect();
+      });
   });
 
   return (
