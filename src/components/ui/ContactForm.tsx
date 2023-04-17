@@ -1,7 +1,8 @@
 import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
-import { request } from "graphql-request";
+import { GraphQLClient } from "graphql-request";
+import fetch from "cross-fetch";
 
 type CounterStore = {
   count: number;
@@ -14,6 +15,8 @@ type CounterStore = {
   phone: Signal<string>;
   message: Signal<string>;
 };
+
+const API_URL = "https://api-inolib.vercel.app/api";
 
 export const registerRequestQrl = server$((store: CounterStore) => {
   // const prisma = new PrismaClient();
@@ -60,17 +63,20 @@ export const ContactForm = component$(() => {
   });
 
   useTask$(async () => {
-    store.categories = await request(
-      "https://api-inolib.vercel.app/api",
-      /* GraphQL */ `
-        query GetContactCategories {
-          contactCategories {
-            id
-            name
-          }
+    const client = new GraphQLClient(API_URL, { fetch });
+
+    const data = await client.request(/* GraphQL */ `
+      query GetContactCategories {
+        contactCategories {
+          id
+          name
         }
-      `
-    );
+      }
+    `);
+
+    console.log(data);
+
+    // store.categories = data;
   });
 
   return (
