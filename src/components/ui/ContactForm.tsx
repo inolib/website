@@ -1,11 +1,16 @@
 import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
-import { request } from "graphql-request";
+import { GraphQLClient } from "graphql-request";
+
+type ContactCategory = {
+  id: string;
+  name: string;
+};
 
 type CounterStore = {
   count: number;
-  categories: [];
+  categories: ContactCategory[];
   categoryId: Signal<string>;
   companyName: Signal<string>;
   lastName: Signal<string>;
@@ -14,6 +19,8 @@ type CounterStore = {
   phone: Signal<string>;
   message: Signal<string>;
 };
+
+const API_URL = "https://api-inolib.vercel.app/api";
 
 export const registerRequestQrl = server$((store: CounterStore) => {
   // const prisma = new PrismaClient();
@@ -60,17 +67,18 @@ export const ContactForm = component$(() => {
   });
 
   useTask$(async () => {
-    store.categories = await request(
-      "https://api-inolib.vercel.app/api",
-      /* GraphQL */ `
-        query GetContactCategories {
-          contactCategories {
-            id
-            name
-          }
+    const client = new GraphQLClient(API_URL, { fetch });
+
+    const result = await client.request<{ contactCategories: ContactCategory[] }>(/* GraphQL */ `
+      query GetContactCategories {
+        contactCategories {
+          id
+          name
         }
-      `
-    );
+      }
+    `);
+
+    store.categories = result.contactCategories;
   });
 
   return (
@@ -86,7 +94,7 @@ export const ContactForm = component$(() => {
           Type de la demande*
         </option>
 
-        {store.categories.map((category: Record<"id" | "name", string>) => (
+        {store.categories.map((category) => (
           <option key={category.id} value={category.id}>
             {category.name}
           </option>
