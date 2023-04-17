@@ -2,7 +2,6 @@ import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@buil
 import { server$ } from "@builder.io/qwik-city";
 
 import { GraphQLClient } from "graphql-request";
-import fetch from "cross-fetch";
 
 type CounterStore = {
   count: number;
