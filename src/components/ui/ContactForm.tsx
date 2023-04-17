@@ -3,9 +3,20 @@ import { server$ } from "@builder.io/qwik-city";
 
 import { GraphQLClient } from "graphql-request";
 
+type ContactCategory = {
+  id: string;
+  name: string;
+};
+
+type ContactCategoriesResult = {
+  data: {
+    contactCategories: ContactCategory[];
+  };
+};
+
 type CounterStore = {
   count: number;
-  categories: [];
+  categories: ContactCategory[];
   categoryId: Signal<string>;
   companyName: Signal<string>;
   lastName: Signal<string>;
@@ -64,7 +75,7 @@ export const ContactForm = component$(() => {
   useTask$(async () => {
     const client = new GraphQLClient(API_URL, { fetch });
 
-    const data = await client.rawRequest(/* GraphQL */ `
+    const result = await client.request<ContactCategoriesResult>(/* GraphQL */ `
       query GetContactCategories {
         contactCategories {
           id
@@ -73,9 +84,7 @@ export const ContactForm = component$(() => {
       }
     `);
 
-    console.log(data);
-
-    // store.categories = data;
+    store.categories = result.data.contactCategories;
   });
 
   return (
@@ -91,7 +100,7 @@ export const ContactForm = component$(() => {
           Type de la demande*
         </option>
 
-        {store.categories.map((category: Record<"id" | "name", string>) => (
+        {store.categories.map((category) => (
           <option key={category.id} value={category.id}>
             {category.name}
           </option>
