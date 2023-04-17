@@ -35,13 +35,15 @@ type MoveFocusFunction = (direction: "down" | "up") => void;
 type OpenFilterFunction = (focusOn: "first" | "last") => void;
 
 export const Filter = component$<FilterProps>((props) => {
+  const _button = useSignal<HTMLElement>();
+
   const buttonId = nanoid();
   const menuId = nanoid();
 
   // références aux éléments HTML, s'utilise via refs.button.value ou refs.inputs[...].value
   const refs = {
-    button: useSignal<HTMLElement>(),
-    inputs: props.labels.items.map(() => useSignal<HTMLElement>()),
+    button: _button,
+    inputs: props.labels.items.map(() => _button),
   };
 
   // stocke l'état du composant avec les valeurs par défaut

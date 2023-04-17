@@ -29,12 +29,14 @@ export const selectQrl = $(async (context: TabsContext, store: TabsTabStore, mov
 });
 
 export const TabsTab = component$<TabsTabProps>(({ controls, selected = false, styles }) => {
+  const _ref = useSignal<HTMLElement>();
+
   const context = useContext(contextId);
 
   const store = useStore<TabsTabStore>(
     {
       controls,
-      ref: useSignal<HTMLElement>(),
+      ref: _ref,
       selected,
     },
     { deep: true }

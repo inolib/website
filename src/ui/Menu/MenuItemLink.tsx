@@ -16,12 +16,15 @@ export type MenuItemLinkStore = {
 };
 
 export const MenuItemLink = component$<MenuItemLinkProps>(({ href, styles }) => {
+  const _ref = useSignal<HTMLElement>();
+  const _selected = useLocation().url.pathname === (href.endsWith("/") ? href : `${href}/`);
+
   const context = useContext(contextId);
 
   const store = useStore<MenuItemLinkStore>(
     {
-      ref: useSignal<HTMLElement>(),
-      selected: useLocation().url.pathname === (href.endsWith("/") ? href : `${href}/`),
+      ref: _ref,
+      selected: _selected,
     },
     { deep: true }
   );

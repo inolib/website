@@ -70,22 +70,24 @@ export const SelectOption = component$<SelectOptionProps>(({ disabled = false, s
     await focusQrl(context, store.ref);
   });
 
+  const _ref = useSignal<HTMLElement>();
+
   const context = useContext(contextId);
 
   const store = useStore<SelectOptionStore>(
     {
       disabled: context.Select.disabled || disabled,
-      ref: useSignal<HTMLElement>(),
+      ref: _ref,
       selected,
       value,
     },
     { deep: true }
   );
 
-  if (!store.disabled && !context.Select.readonly) {
-    useOn(
-      "keyup",
-      $(async (e) => {
+  useOn(
+    "keyup",
+    $(async (e) => {
+      if (!store.disabled && !context.Select.readonly) {
         const event = e as KeyboardEvent;
 
         switch (event.code) {
@@ -94,20 +96,22 @@ export const SelectOption = component$<SelectOptionProps>(({ disabled = false, s
             break;
           }
         }
-      })
-    );
+      }
+    })
+  );
 
-    useOn(
-      "click",
-      $(async (e) => {
+  useOn(
+    "click",
+    $(async (e) => {
+      if (!store.disabled && !context.Select.readonly) {
         const event = e as MouseEvent;
 
         if (event.detail > 0 && event.button === 0) {
           await toggleQrl(context, store);
         }
-      })
-    );
-  }
+      }
+    })
+  );
 
   useTask$(() => {
     if (context.SelectOption === undefined) {
