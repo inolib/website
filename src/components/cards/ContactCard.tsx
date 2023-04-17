@@ -12,17 +12,29 @@ export const ContactCard = component$(() => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
           eleifend va lucum.
         </p>
-        <div class="mb-4 flex md:mb-6">
-          <img alt="" src="\images\icon-phone.svg" />
-          <a href="tel:+33670865032" class="pl-3">
-            06 70 86 50 32
-          </a>
+        <div class="mb-4 md:hidden">
+          <p>Appelez-nous!</p>
+          <p>06 70 86 50 32</p>
         </div>
-        <div class="mb-4 flex md:mb-6">
-          <img alt="" src="\images\icon-mail.svg" />
-          <a href="mailto:contact@inolib.com" class="pl-3">
-            contact@inolib.com
-          </a>
+        <div class="hidden md:block md:mb-6">
+          <div class="flex">
+            <img alt="" src="\images\icon-phone.svg" />
+            <a href="tel:+33670865032" class="pl-3">
+              06 70 86 50 32
+            </a>
+          </div>
+        </div>
+        <div class="mb-4 md:hidden">
+          <p>Contactez-nous!</p>
+          <p>contact@inolib.com</p>
+        </div>
+        <div class="hidden md:block mb-4 md:mb-6">
+          <div class="flex">
+            <img alt="" src="\images\icon-mail.svg" />
+            <a href="mailto:contact@inolib.com" class="pl-3">
+              contact@inolib.com
+            </a>
+          </div>
         </div>
 
         <ul
