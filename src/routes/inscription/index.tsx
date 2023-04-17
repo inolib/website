@@ -52,7 +52,7 @@ export default component$(() => {
                     required
                     id="password"
                     name="password"
-                    class="form-control h-10  w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
+                    class="form-control h-10 w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
                   />
                 </div>
               </label>
@@ -61,7 +61,7 @@ export default component$(() => {
           <div class="flex">
             <button
               aria-label="Effacer le formulaire"
-              type="submit"
+              type="reset"
               class="m-3 mt-10 h-10 w-32 rounded-lg bg-red-600 py-1 px-4 text-white shadow-lg hover:border hover:border-red-600 hover:bg-[#FFFFFF] hover:text-[#15133C] hover:shadow md:mt-2 md:h-14 md:w-44 md:text-lg"
             >
               Effacer
