@@ -6,7 +6,7 @@ export default component$(() => {
     <>
       <div class="h-[100vh] bg-slate-100">
         <form class=" flex flex-col items-center justify-center  ">
-          <h1 class=" mb-12 mt-44 content-center items-center justify-center text-4xl font-semibold text-[#0B3168] md:mb-14">
+          <h1 class=" mb-12 mt-36 content-center items-center justify-center text-4xl font-semibold text-[#0B3168] md:mb-14">
             Connexion
           </h1>
           <div class="w-[36%] md:w-1/2">
