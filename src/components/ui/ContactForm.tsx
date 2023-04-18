@@ -22,31 +22,45 @@ type CounterStore = {
 
 const API_URL = "https://api-inolib.vercel.app/api";
 
-export const registerRequestQrl = server$((store: CounterStore) => {
-  // const prisma = new PrismaClient();
-  // const main = async () => {
-  //   await prisma.contactRequest.upsert({
-  //     where: { id: "" },
-  //     update: {},
-  //     create: {
-  //       categoryId: store.categoryId.value,
-  //       companyName: store.companyName.value,
-  //       lastName: store.lastName.value,
-  //       firstName: store.firstName.value,
-  //       email: store.email.value,
-  //       phone: store.phone.value,
-  //       message: store.message.value,
-  //     },
-  //   });
-  // };
-  // main()
-  //   .then(async () => {
-  //     await prisma.$disconnect();
-  //   })
-  //   .catch(async (error) => {
-  //     console.error(error);
-  //     await prisma.$disconnect();
-  //   });
+export const registerRequestQrl = server$(async (store: CounterStore) => {
+  const client = new GraphQLClient(API_URL, { fetch });
+
+  const result = await client.request<{ id?: string }>(
+    /* GraphQL */ `
+      mutation NewContactRequest(
+        $categoryId: String
+        $companyName: String
+        $firstName: String
+        $lastName: String
+        $email: String
+        $phone: String
+        $message: String
+      ) {
+        newContactRequest(
+          categoryId: $categoryId
+          companyName: $companyName
+          firstName: $firstName
+          lastName: $lastName
+          email: $email
+          phone: $phone
+          message: $message
+        ) {
+          id
+        }
+      }
+    `,
+    {
+      categoryId: store.categoryId.value,
+      companyName: store.companyName.value,
+      firstName: store.firstName.value,
+      lastName: store.lastName.value,
+      email: store.email.value,
+      phone: store.phone.value,
+      message: store.message.value,
+    }
+  );
+
+  console.log("id:", result.id);
 });
 
 export const ContactForm = component$(() => {
