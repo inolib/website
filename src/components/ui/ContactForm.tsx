@@ -1,7 +1,12 @@
 import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
-import { type ContactCategory, PrismaClient } from "@prisma/client";
+import { GraphQLClient } from "graphql-request";
+
+type ContactCategory = {
+  id: string;
+  name: string;
+};
 
 type CounterStore = {
   count: number;
@@ -15,67 +20,87 @@ type CounterStore = {
   message: Signal<string>;
 };
 
-export const registerRequestQrl = server$((store: CounterStore) => {
-  const prisma = new PrismaClient();
+const API_URL = "https://api-inolib.vercel.app/api";
 
-  const main = async () => {
-    await prisma.contactRequest.upsert({
-      where: { id: "" },
-      update: {},
-      create: {
-        categoryId: store.categoryId.value,
-        companyName: store.companyName.value,
-        lastName: store.lastName.value,
-        firstName: store.firstName.value,
-        email: store.email.value,
-        phone: store.phone.value,
-        message: store.message.value,
-      },
-    });
-  };
+export const registerRequestQrl = server$(async (store: CounterStore) => {
+  const client = new GraphQLClient(API_URL, { fetch });
 
-  main()
-    .then(async () => {
-      await prisma.$disconnect();
-    })
-    .catch(async (error) => {
-      console.error(error);
-      await prisma.$disconnect();
-    });
+  const result: { newContactRequest: { id: string } } = await client.request(
+    /* GraphQL */ `
+      mutation NewContactRequest(
+        $categoryId: String!
+        $companyName: String!
+        $firstName: String!
+        $lastName: String!
+        $email: String!
+        $phone: String!
+        $message: String!
+      ) {
+        newContactRequest(
+          categoryId: $categoryId
+          companyName: $companyName
+          firstName: $firstName
+          lastName: $lastName
+          email: $email
+          phone: $phone
+          message: $message
+        ) {
+          id
+        }
+      }
+    `,
+    {
+      categoryId: store.categoryId.value,
+      companyName: store.companyName.value,
+      firstName: store.firstName.value,
+      lastName: store.lastName.value,
+      email: store.email.value,
+      phone: store.phone.value,
+      message: store.message.value,
+    }
+  );
+
+  console.log("result:", result);
 });
 
 export const ContactForm = component$(() => {
+  const _categoryId = useSignal<string>("");
+  const _companyName = useSignal<string>("");
+  const _email = useSignal<string>("");
+  const _firstName = useSignal<string>("");
+  const _lastName = useSignal<string>("");
+  const _message = useSignal<string>("");
+  const _phone = useSignal<string>("");
+
   const store = useStore<CounterStore>({
     count: 0,
     categories: [],
-    categoryId: useSignal<string>(""),
-    companyName: useSignal<string>(""),
-    lastName: useSignal<string>(""),
-    firstName: useSignal<string>(""),
-    email: useSignal<string>(""),
-    phone: useSignal<string>(""),
-    message: useSignal<string>(""),
+    categoryId: _categoryId,
+    companyName: _companyName,
+    email: _email,
+    firstName: _firstName,
+    lastName: _lastName,
+    message: _message,
+    phone: _phone,
   });
 
   const counter$ = $((event: Event) => {
     store.count = (event.target as HTMLTextAreaElement).value.length;
   });
 
-  useTask$(() => {
-    const prisma = new PrismaClient();
+  useTask$(async () => {
+    const client = new GraphQLClient(API_URL, { fetch });
 
-    const main = async () => {
-      store.categories = await prisma.contactCategory.findMany();
-    };
+    const result = await client.request<{ contactCategories: ContactCategory[] }>(/* GraphQL */ `
+      query GetContactCategories {
+        contactCategories {
+          id
+          name
+        }
+      }
+    `);
 
-    main()
-      .then(async () => {
-        await prisma.$disconnect();
-      })
-      .catch(async (error) => {
-        console.error(error);
-        await prisma.$disconnect();
-      });
+    store.categories = result.contactCategories;
   });
 
   return (
