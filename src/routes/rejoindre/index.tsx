@@ -9,7 +9,7 @@ export default component$(() => {
         <select
           class="row-start-1 col-span-1 md:col-start-1 md:col-span-1 h-12 rounded-md border-[1px] border-solid border-[#0B3168] m-2"
           aria-label="Renseignez-votre civilité"
-          name=""
+          name="Renseignez votre civilité"
         >
           <option value="" disabled selected hidden>
             Choix de votre civilité*
@@ -60,7 +60,11 @@ export default component$(() => {
           />
         </label>
 
-        <select class="h-12 rounded-md border-[1px] border-solid border-[#0B3168] m-2">
+        <select
+          class="h-12 rounded-md border-[1px] border-solid border-[#0B3168] m-2"
+          aria-label="Objet de votre demande"
+          name="Objet de votre demande"
+        >
           <option value="" disabled selected hidden>
             Objet de votre demande
           </option>
@@ -80,11 +84,21 @@ export default component$(() => {
         ></textarea>
         <label class="row-start-8 col-span-2 flex flex-col md:row-start-5 md:col-start-1 md:col-span-1 mx-2">
           Lien Linkedin :
-          <input class="h-12 rounded-md border-[1px] border-solid border-[#0B3168] my-2" type="text" />
+          <input
+            class="h-12 rounded-md border-[1px] border-solid border-[#0B3168] my-2"
+            type="text"
+            aria-label="Entrez votre URL LinkedIn"
+            maxLength={50}
+          />
         </label>
         <label class="row-start-9 col-span-2 flex flex-col md:row-start-5 md:col-start-2 md:col-span-1 mx-2">
           Lien Github :
-          <input class="h-12 rounded-md border-[1px] border-solid border-[#0B3168] my-2" type="text" />
+          <input
+            class="h-12 rounded-md border-[1px] border-solid border-[#0B3168] my-2"
+            type="text"
+            aria-label="Entrez votre URL Github"
+            maxLength={50}
+          />
         </label>
         <div class="flex row-start-10 col-span-2 md:row-start-6 md:col-start-1">
           <input class="m-2" type="checkbox" />
@@ -93,10 +107,14 @@ export default component$(() => {
         <button
           class="row-start-11 col-start-1 col-span-1 md:row-start-7 h-14 rounded-md hover:border-2 hover:border-[#0B3168] m-2"
           type="reset"
+          aria-label="Vider les champs du formulaires"
         >
           Effacer
         </button>
-        <button class="row-start-11 col-start-2 col-span-1 md:row-start-7 h-14 rounded-md bg-[#0B3168] text-white m-2">
+        <button
+          class="row-start-11 col-start-2 col-span-1 md:row-start-7 h-14 rounded-md bg-[#0B3168] text-white m-2"
+          aria-label="Valider le formulaire"
+        >
           Envoyer
         </button>
       </form>
