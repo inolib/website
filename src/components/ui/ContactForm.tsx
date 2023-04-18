@@ -2,13 +2,14 @@ import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@buil
 import { server$ } from "@builder.io/qwik-city";
 
 import { GraphQLClient } from "graphql-request";
+import { Toaster } from "./Toaster";
 
 type ContactCategory = {
   id: string;
   name: string;
 };
 
-type ContacStore = {
+type CounterStore = {
   count: number;
   toaster: boolean;
   categories: ContactCategory[];
