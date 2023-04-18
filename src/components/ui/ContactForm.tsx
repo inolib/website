@@ -25,18 +25,16 @@ const API_URL = "https://api-inolib.vercel.app/api";
 export const registerRequestQrl = server$(async (store: CounterStore) => {
   const client = new GraphQLClient(API_URL, { fetch });
 
-  console.log("send request to API");
-
   const result = await client.request<{ id?: string }>(
     /* GraphQL */ `
       mutation NewContactRequest(
-        $categoryId: String
-        $companyName: String
-        $firstName: String
-        $lastName: String
-        $email: String
-        $phone: String
-        $message: String
+        $categoryId: String!
+        $companyName: String!
+        $firstName: String!
+        $lastName: String!
+        $email: String!
+        $phone: String!
+        $message: String!
       ) {
         newContactRequest(
           categoryId: $categoryId
