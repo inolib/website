@@ -1,7 +1,19 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
+  const toggle$ = $(() => {
+    const passwordInput = document.getElementById("password") as HTMLInputElement;
+    const password = passwordInput.type === "password";
+    password ? (passwordInput.type = "text") : (passwordInput.type = "password");
+  });
+
+  const toggle2$ = $(() => {
+    const verifyPasswordInput = document.getElementById("verifyPassword") as HTMLInputElement;
+    const password = verifyPasswordInput.type === "password";
+    password ? (verifyPasswordInput.type = "text") : (verifyPasswordInput.type = "password");
+  });
+
   return (
     <>
       <div class="h-[100vh] bg-slate-100">
@@ -11,13 +23,12 @@ export default component$(() => {
           </h1>
           <div class="w-[36%] md:w-1/2">
             <div class=" mb-[2rem] text-[#0B3168]">
-              <label class="mb-1 flex flex-col items-center justify-center" for="email">
+              <label class="mb-1 flex flex-col items-center justify-center">
                 Email
                 <input
                   aria-label="entrez votre e-mail"
                   type="email"
                   required
-                  id="email"
                   name="email"
                   class="form-control h-10 w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-3/5"
                 />
@@ -25,16 +36,22 @@ export default component$(() => {
             </div>
 
             <div class="mb-[2rem] flex flex-col items-center justify-center text-[#0B3168]">
-              <label class="mb-1 w-3/5 text-center" for="password">
+              <label class="mb-1 w-3/5 text-center">
                 Mot de passe
                 <div class="relative flex items-center">
-                  <img alt="" class="absolute right-2 h-8 w-auto scale-75" src="\images\hide-icon.png" />
+                  <img
+                    alt=""
+                    class="absolute right-2 h-8 w-auto scale-75"
+                    src="\images\hide-icon.png"
+                    id="eye1"
+                    onClick$={toggle$}
+                  />
+
                   <input
                     aria-label="Entrez votre mot de passe"
                     type="password"
                     required
                     id="password"
-                    name="password"
                     class="form-control h-10  w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
                   />
                 </div>
@@ -42,16 +59,21 @@ export default component$(() => {
             </div>
 
             <div class="mb-[2rem] flex flex-col items-center justify-center text-[#0B3168]">
-              <label class="mb-1 w-3/5 text-center" for="password">
+              <label class="mb-1 w-3/5 text-center">
                 Confirmez votre mot de passe
                 <div class="relative flex items-center">
-                  <img alt="" class="absolute right-2 h-8 w-auto scale-75" src="\images\hide-icon.png" />
+                  <img
+                    alt=""
+                    class="absolute right-2 h-8 w-auto scale-75"
+                    src="\images\hide-icon.png"
+                    id="eye2"
+                    onClick$={toggle2$}
+                  />
                   <input
                     aria-label="Confirmez votre mot de passe"
                     type="password"
                     required
-                    id="password"
-                    name="password"
+                    id="verifyPassword"
                     class="form-control h-10 w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
                   />
                 </div>
