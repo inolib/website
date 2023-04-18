@@ -25,7 +25,7 @@ const API_URL = "https://api-inolib.vercel.app/api";
 export const registerRequestQrl = server$(async (store: CounterStore) => {
   const client = new GraphQLClient(API_URL, { fetch });
 
-  const result = await client.request<{ id?: string }>(
+  const result = await client.request(
     /* GraphQL */ `
       mutation NewContactRequest(
         $categoryId: String!
@@ -60,7 +60,7 @@ export const registerRequestQrl = server$(async (store: CounterStore) => {
     }
   );
 
-  console.log("id:", result.id);
+  console.log("result:", result);
 });
 
 export const ContactForm = component$(() => {
