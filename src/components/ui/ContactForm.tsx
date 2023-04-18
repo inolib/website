@@ -1,8 +1,12 @@
 import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
-import { type ContactCategory, PrismaClient } from "@prisma/client";
-import { Toaster } from "./Toaster";
+import { GraphQLClient } from "graphql-request";
+
+type ContactCategory = {
+  id: string;
+  name: string;
+};
 
 type ContacStore = {
   count: number;
@@ -17,48 +21,55 @@ type ContacStore = {
   message: Signal<string>;
 };
 
-export const registerRequestQrl = server$((store: ContacStore) => {
-  const prisma = new PrismaClient();
+const API_URL = "https://api-inolib.vercel.app/api";
 
-  const main = async () => {
-    await prisma.contactRequest.upsert({
-      where: { id: "" },
-      update: {},
-      create: {
-        categoryId: store.categoryId.value,
-        companyName: store.companyName.value,
-        lastName: store.lastName.value,
-        firstName: store.firstName.value,
-        email: store.email.value,
-        phone: store.phone.value,
-        message: store.message.value,
-      },
-    });
-  };
-
-  main()
-    .then(async () => {
-      console.log("success");
-      await prisma.$disconnect();
-    })
-    .catch(async (error) => {
-      console.error(error);
-      await prisma.$disconnect();
-    });
+export const registerRequestQrl = server$((store: CounterStore) => {
+  // const prisma = new PrismaClient();
+  // const main = async () => {
+  //   await prisma.contactRequest.upsert({
+  //     where: { id: "" },
+  //     update: {},
+  //     create: {
+  //       categoryId: store.categoryId.value,
+  //       companyName: store.companyName.value,
+  //       lastName: store.lastName.value,
+  //       firstName: store.firstName.value,
+  //       email: store.email.value,
+  //       phone: store.phone.value,
+  //       message: store.message.value,
+  //     },
+  //   });
+  // };
+  // main()
+  //   .then(async () => {
+  //     await prisma.$disconnect();
+  //   })
+  //   .catch(async (error) => {
+  //     console.error(error);
+  //     await prisma.$disconnect();
+  //   });
 });
 
 export const ContactForm = component$(() => {
-  const store = useStore<ContacStore>({
+  const _categoryId = useSignal<string>("");
+  const _companyName = useSignal<string>("");
+  const _email = useSignal<string>("");
+  const _firstName = useSignal<string>("");
+  const _lastName = useSignal<string>("");
+  const _message = useSignal<string>("");
+  const _phone = useSignal<string>("");
+
+  const store = useStore<CounterStore>({
     count: 0,
     toaster: false,
     categories: [],
-    categoryId: useSignal<string>(""),
-    companyName: useSignal<string>(""),
-    lastName: useSignal<string>(""),
-    firstName: useSignal<string>(""),
-    email: useSignal<string>(""),
-    phone: useSignal<string>(""),
-    message: useSignal<string>(""),
+    categoryId: _categoryId,
+    companyName: _companyName,
+    email: _email,
+    firstName: _firstName,
+    lastName: _lastName,
+    message: _message,
+    phone: _phone,
   });
 
   const counter$ = $((event: Event) => {
@@ -70,8 +81,18 @@ export const ContactForm = component$(() => {
   });
 
   useTask$(async () => {
-    const prisma = new PrismaClient();
-    store.categories = await prisma.contactCategory.findMany();
+    const client = new GraphQLClient(API_URL, { fetch });
+
+    const result = await client.request<{ contactCategories: ContactCategory[] }>(/* GraphQL */ `
+      query GetContactCategories {
+        contactCategories {
+          id
+          name
+        }
+      }
+    `);
+
+    store.categories = result.contactCategories;
   });
 
   return (

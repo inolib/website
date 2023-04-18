@@ -1,4 +1,4 @@
-name: CI
+name: Continuous Integration
 
 on:
   pull_request:
@@ -7,12 +7,12 @@ on:
     branches: [main]
 
 jobs:
-  workflow:
+  continuous_integration:
     name: Lint, test, and build
 
     strategy:
       matrix:
-        node: [18, 19]
+        node: [18]
         os: [ubuntu-latest]
 
     runs-on: ${{ matrix.os }}

@@ -9,7 +9,7 @@ export const ChangePasswordForm = component$(() => {
       <label class="col-span-2 col-start-1 col-end-5 row-start-2 mb-5 flex flex-col">
         Ancien mot de passe
         <div class="relative flex items-center">
-          <img alt="" class="absolute right-2 h-8 w-auto" src="\images\hide-icon.png" />
+          <img alt="" class="absolute right-2 h-8 w-auto scale-75" src="\images\hide-icon.png" />
           <input
             class="w-full rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
@@ -22,7 +22,7 @@ export const ChangePasswordForm = component$(() => {
       <label class="col-span-2 col-start-1 col-end-5 row-start-3 mb-7 flex flex-col">
         Nouveau mot de passe
         <div class=" relative flex items-center">
-          <img alt="" class="absolute right-2 h-8 w-auto" src="\images\hide-icon.png" />
+          <img alt="" class="absolute right-2 h-8 w-auto scale-75" src="\images\hide-icon.png" />
           <input
             class="w-full rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
