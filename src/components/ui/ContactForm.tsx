@@ -11,7 +11,7 @@ type ContactCategory = {
 
 type CounterStore = {
   count: number;
-  toaster: boolean;
+  showToaster: boolean;
   categories: ContactCategory[];
   categoryId: Signal<string>;
   companyName: Signal<string>;
@@ -27,42 +27,48 @@ const API_URL = "https://api-inolib.vercel.app/api";
 export const registerRequestQrl = server$(async (store: CounterStore) => {
   const client = new GraphQLClient(API_URL, { fetch });
 
-  const result: { newContactRequest: { id: string } } = await client.request(
-    /* GraphQL */ `
-      mutation NewContactRequest(
-        $categoryId: String!
-        $companyName: String!
-        $firstName: String!
-        $lastName: String!
-        $email: String!
-        $phone: String!
-        $message: String!
-      ) {
-        newContactRequest(
-          categoryId: $categoryId
-          companyName: $companyName
-          firstName: $firstName
-          lastName: $lastName
-          email: $email
-          phone: $phone
-          message: $message
+  try {
+    const result: { newContactRequest: { id: string } } = await client.request(
+      /* GraphQL */ `
+        mutation NewContactRequest(
+          $categoryId: String!
+          $companyName: String!
+          $firstName: String!
+          $lastName: String!
+          $email: String!
+          $phone: String!
+          $message: String!
         ) {
-          id
+          newContactRequest(
+            categoryId: $categoryId
+            companyName: $companyName
+            firstName: $firstName
+            lastName: $lastName
+            email: $email
+            phone: $phone
+            message: $message
+          ) {
+            id
+          }
         }
+      `,
+      {
+        categoryId: store.categoryId.value,
+        companyName: store.companyName.value,
+        firstName: store.firstName.value,
+        lastName: store.lastName.value,
+        email: store.email.value,
+        phone: store.phone.value,
+        message: store.message.value,
       }
-    `,
-    {
-      categoryId: store.categoryId.value,
-      companyName: store.companyName.value,
-      firstName: store.firstName.value,
-      lastName: store.lastName.value,
-      email: store.email.value,
-      phone: store.phone.value,
-      message: store.message.value,
-    }
-  );
+    );
 
-  console.log("result:", result);
+    store.showToaster = true;
+    console.log("result:", result);
+    console.log("after:", store.showToaster);
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 export const ContactForm = component$(() => {
@@ -74,22 +80,27 @@ export const ContactForm = component$(() => {
   const _message = useSignal<string>("");
   const _phone = useSignal<string>("");
 
-  const store = useStore<CounterStore>({
-    count: 0,
-    toaster: false,
-    categories: [],
-    categoryId: _categoryId,
-    companyName: _companyName,
-    email: _email,
-    firstName: _firstName,
-    lastName: _lastName,
-    message: _message,
-    phone: _phone,
-  });
+  const store = useStore<CounterStore>(
+    {
+      count: 0,
+      showToaster: false,
+      categories: [],
+      categoryId: _categoryId,
+      companyName: _companyName,
+      email: _email,
+      firstName: _firstName,
+      lastName: _lastName,
+      message: _message,
+      phone: _phone,
+    },
+    { deep: true }
+  );
 
   const counter$ = $((event: Event) => {
     store.count = (event.target as HTMLTextAreaElement).value.length;
   });
+
+  console.log("before:", store.showToaster);
 
   const resetCounter$ = $(() => {
     store.count = 0;
@@ -112,9 +123,7 @@ export const ContactForm = component$(() => {
 
   return (
     <form class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10">
-      <div hidden={store.toaster}>
-        <Toaster store={store} />
-      </div>
+      <div>{store.showToaster && <Toaster store={store} />}</div>
       <select
         bind:value={store.categoryId}
         class="col-span-5 col-start-1 col-end-5 row-start-1 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-end-3 md:mr-5 md:mb-3"
