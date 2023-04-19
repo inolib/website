@@ -1,7 +1,11 @@
-import { component$ } from "@builder.io/qwik";
+import { $, component$, useSignal, Signal } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
+  const passwordVisible = useSignal<boolean>(false);
+  const togglePasswordVisible$ = $((passwordVisible: Signal<boolean>) => {
+    passwordVisible.value = !passwordVisible.value;
+  });
   return (
     <>
       <div class="h-[100vh] bg-slate-100">
@@ -28,12 +32,18 @@ export default component$(() => {
               <label class="mb-1 w-3/5 text-center" for="password">
                 Mot de passe
                 <div class="relative flex items-center">
-                  <img alt="" class="absolute right-2 h-8 w-auto scale-75" src="\images\hide-icon.png" />
+                  <img
+                    onClick$={async () => {
+                      await togglePasswordVisible$(passwordVisible);
+                    }}
+                    alt=""
+                    class="absolute right-2 h-8 w-auto hover:scale-100 scale-75"
+                    src="\images\hide-icon.png"
+                  />
                   <input
                     aria-label="Entrez votre mot de passe"
-                    type="password"
+                    type={passwordVisible.value ? "text" : "password"}
                     required
-                    id="password"
                     name="password"
                     class="form-control h-10  w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
                   />
@@ -42,10 +52,10 @@ export default component$(() => {
             </div>
             <a
               class="md:mb-4 text-blue-600 visited:text-purple-600 underline underline-offset-1"
-              href="#"
+              href="/inscription"
               aria-label="suivre pour réinitialisier votre mot de passe"
             >
-              <p class="text-center md:text-right">mot de passe oublié?</p>
+              <p class="text-center pb-4">Nouveau ? Vous souhaitez vous inscrire ?</p>
             </a>
           </div>
           <button
