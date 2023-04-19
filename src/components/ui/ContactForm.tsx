@@ -2,6 +2,7 @@ import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@buil
 import { server$ } from "@builder.io/qwik-city";
 
 import { GraphQLClient } from "graphql-request";
+import { Toaster } from "./Toaster";
 
 type ContactCategory = {
   id: string;
@@ -10,6 +11,7 @@ type ContactCategory = {
 
 type CounterStore = {
   count: number;
+  toaster: boolean;
   categories: ContactCategory[];
   categoryId: Signal<string>;
   companyName: Signal<string>;
@@ -74,6 +76,7 @@ export const ContactForm = component$(() => {
 
   const store = useStore<CounterStore>({
     count: 0,
+    toaster: false,
     categories: [],
     categoryId: _categoryId,
     companyName: _companyName,
@@ -86,6 +89,10 @@ export const ContactForm = component$(() => {
 
   const counter$ = $((event: Event) => {
     store.count = (event.target as HTMLTextAreaElement).value.length;
+  });
+
+  const resetCounter$ = $(() => {
+    store.count = 0;
   });
 
   useTask$(async () => {
@@ -105,6 +112,9 @@ export const ContactForm = component$(() => {
 
   return (
     <form class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10">
+      <div hidden={store.toaster}>
+        <Toaster store={store} />
+      </div>
       <select
         bind:value={store.categoryId}
         class="col-span-5 col-start-1 col-end-5 row-start-1 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-end-3 md:mr-5 md:mb-3"
@@ -205,6 +215,7 @@ export const ContactForm = component$(() => {
         aria-label="zone pour écrire les détails de votre demande"
       ></textarea>
       <button
+        onClick$={resetCounter$}
         type="reset"
         class=" col-span-2 col-start-1 col-end-2 row-start-9 mr-2 h-14 rounded-md hover:border-2 hover:border-[#0B3168] md:col-start-3  md:col-end-4 md:row-start-7 md:mt-14"
         aria-label="Effacer le formulaire"
@@ -221,7 +232,6 @@ export const ContactForm = component$(() => {
       >
         Envoyer
       </button>
-      <p class="col-start-1 col-end-4 row-start-10 mr-2 h-14 mt-6 md:row-start-8 md:mt-8">* Champs obligatoire</p>
     </form>
   );
 });
