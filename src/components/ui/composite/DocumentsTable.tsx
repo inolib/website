@@ -38,7 +38,6 @@ export const DocumentsTable = component$(() => {
       }
     `);
     store.docDatas = results.documents;
-    console.log(results.documents);
   });
 
   return (
