@@ -13,7 +13,6 @@ type document = {
 };
 
 type DocStore = {
-  count: number;
   docDatas: document[];
 };
 
