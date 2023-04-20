@@ -1,10 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 
 type LineProps = {
-  categorie: string;
+  category: string;
   date: string;
   information: string;
-  nom: string;
+  name: string;
   type: string;
 };
 
@@ -13,9 +13,9 @@ export const DocumentTableLine = component$((props: LineProps) => {
     <>
       <tr class="h-14 border-b-[1px] border-[#E1E1E1]">
         <td class="px-5 py-3 md:py-0" scope="row">
-          {props.nom}
+          {props.name}
         </td>
-        <td class="hidden px-5 py-3 sm:table-cell md:py-0">{props.categorie}</td>
+        <td class="hidden px-5 py-3 sm:table-cell md:py-0">{props.category}</td>
         <td class="hidden px-5 py-3 sm:table-cell md:py-0">{props.date}</td>
         <td class="hidden px-5 py-3 sm:table-cell md:py-0">{props.type}</td>
         <td

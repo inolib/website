@@ -2,12 +2,11 @@ import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { Tabs, TabsTabs, TabsPanels, TabsPanel, TabsTab } from "~/ui/Tabs";
-import { ServicesCard } from "~/components/cards/ServicesCard";
-import { Button } from "~/components/ui/buttons/Button";
 import { ButtonBackLobby } from "~/components/ui/buttons/ButtonBackLobby";
 import { ChangePasswordForm } from "~/components/ui/composite/ChangePasswordForm";
 import { DocumentsTable } from "~/components/ui/composite/DocumentsTable";
 import { UserInformationForm } from "~/components/ui/composite/UserInformationForm";
+import { Qcm } from "~/components/ui/composite/Qcm";
 
 const tabs = [
   { id: "1", name: "Mes informations", selected: true, controls: "1", label: "Mes informations" },
@@ -64,101 +63,7 @@ export default component$(() => {
               <span
                 class={`mx-[2rem] flex flex-col justify-center md:mx-[8rem] md:mb-[5rem] md:grid md:grid-cols-3 md:grid-rows-2 md:gap-10`}
               >
-                <ServicesCard
-                  image="/images/logo-formation.png"
-                  label="Description"
-                  title="QCM sur l'accessibilité numérique"
-                  styles="md:mx-[3rem]"
-                >
-                  <p q:slot="content" class="text-[#0B3168]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
-                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
-                    autem! Molestias, facilis?
-                  </p>
-                  <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
-                    <p class="border-r-2 px-5 ">Moyen</p>
-                    <p class="px-5">10 minutes</p>
-                  </span>
-                  <span q:slot="button" class="mt-[6rem] ml-[5rem] md:mt-[10rem] md:ml-[6rem]">
-                    <Button styles="" color="blue" href="/services" label="Jouer !" />
-                  </span>
-                </ServicesCard>
-                <ServicesCard
-                  image="/images/logo-formation.png"
-                  label="Description"
-                  title="QCM sur l'accessibilité numérique"
-                  styles="md:mx-[3rem]"
-                >
-                  <p q:slot="content" class="text-[#0B3168]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
-                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
-                    autem! Molestias, facilis?
-                  </p>
-                  <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
-                    <p class="border-r-2 px-5 ">Moyen</p>
-                    <p class="px-5">10 minutes</p>
-                  </span>
-                  <span q:slot="button" class="mt-[6rem] ml-[5rem] md:mt-[10rem] md:ml-[6rem]">
-                    <Button styles="" color="blue" href="/services" label="Jouer !" />
-                  </span>
-                </ServicesCard>
-                <ServicesCard
-                  image="/images/logo-formation.png"
-                  label="Description"
-                  title="QCM sur l'accessibilité numérique"
-                  styles="md:mx-[3rem]"
-                >
-                  <p q:slot="content" class="text-[#0B3168]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
-                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
-                    autem! Molestias, facilis?
-                  </p>
-                  <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
-                    <p class="border-r-2 px-5 ">Moyen</p>
-                    <p class="px-5">10 minutes</p>
-                  </span>
-                  <span q:slot="button" class="mt-[6rem] ml-[5rem] md:mt-[10rem] md:ml-[6rem]">
-                    <Button styles="" color="blue" href="/services" label="Jouer !" />
-                  </span>
-                </ServicesCard>
-                <ServicesCard
-                  image="/images/logo-formation.png"
-                  label="Description"
-                  title="QCM sur l'accessibilité numérique"
-                  styles="md:mx-[3rem]"
-                >
-                  <p q:slot="content" class="text-[#0B3168]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
-                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
-                    autem! Molestias, facilis?
-                  </p>
-                  <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
-                    <p class="border-r-2 px-5 ">Moyen</p>
-                    <p class="px-5">10 minutes</p>
-                  </span>
-                  <span q:slot="button" class="mt-[6rem] ml-[5rem] md:mt-[10rem] md:ml-[6rem]">
-                    <Button styles="" color="blue" href="/services" label="Jouer !" />
-                  </span>
-                </ServicesCard>
-                <ServicesCard
-                  image="/images/logo-formation.png"
-                  label="Description"
-                  title="QCM sur l'accessibilité numérique"
-                  styles="md:mx-[3rem]"
-                >
-                  <p q:slot="content" class="text-[#0B3168]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione
-                    optio, modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur
-                    autem! Molestias, facilis?
-                  </p>
-                  <span q:slot="services" class="flex justify-center text-[12px] font-medium text-[#0B3168]">
-                    <p class="border-r-2 px-5 ">Moyen</p>
-                    <p class="px-5">10 minutes</p>
-                  </span>
-                  <span q:slot="button" class="mt-[6rem] ml-[5rem] md:ml-[6rem] md:mt-[10rem]">
-                    <Button styles="" color="blue" href="/services" label="Jouer !" />
-                  </span>
-                </ServicesCard>
+                <Qcm />
               </span>
             </TabsPanel>
           </TabsPanels>
