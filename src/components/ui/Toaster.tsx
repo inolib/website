@@ -29,7 +29,7 @@ export const Toaster = component$<ToasterProps>(({ store }) => {
         </svg>
         <span class="sr-only">Check icon</span>
       </div>
-      <div class="ml-3 text-sm font-normal">Formulaire envoyé !</div>
+      <div class="ml-3 text-sm font-normal">Formulaire soumis !</div>
       <button
         onClick$={() => (store.showToaster = false)}
         type="button"

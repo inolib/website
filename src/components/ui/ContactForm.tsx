@@ -1,4 +1,4 @@
-import { $, type Signal, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
+import { $, type Signal, component$, useSignal, useStore, useTask$, useComputed$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
 import { GraphQLClient } from "graphql-request";
@@ -12,6 +12,7 @@ type ContactCategory = {
 type CounterStore = {
   count: number;
   showToaster: boolean;
+  isDisabled: boolean;
   categories: ContactCategory[];
   categoryId: Signal<string>;
   companyName: Signal<string>;
@@ -23,6 +24,38 @@ type CounterStore = {
 };
 
 const API_URL = "https://api-inolib.vercel.app/api";
+
+export const veryfyInpup = $((store: CounterStore) => {
+  if (
+    store.lastName.value !== "" &&
+    store.firstName.value !== "" &&
+    store.message.value !== "" &&
+    store.phone.value !== "" &&
+    store.email.value !== "" &&
+    store.companyName.value !== "" &&
+    store.categoryId.value !== ""
+  ) {
+    store.isDisabled = false;
+    console.log(
+      "lastName :",
+      store.lastName.value,
+      "firstName :",
+      store.firstName.value,
+      "message :",
+      store.message.value
+    );
+  } else {
+    console.log(
+      "lastName :",
+      store.lastName.value,
+      "firstName :",
+      store.firstName.value,
+      "message :",
+      store.message.value
+    );
+    store.isDisabled = true;
+  }
+});
 
 export const registerRequestQrl = server$(async (store: CounterStore) => {
   const client = new GraphQLClient(API_URL, { fetch });
@@ -69,6 +102,8 @@ export const registerRequestQrl = server$(async (store: CounterStore) => {
   } catch (error) {
     console.error(error);
   }
+
+  return store;
 });
 
 export const ContactForm = component$(() => {
@@ -84,6 +119,7 @@ export const ContactForm = component$(() => {
     {
       count: 0,
       showToaster: false,
+      isDisabled: true,
       categories: [],
       categoryId: _categoryId,
       companyName: _companyName,
@@ -99,8 +135,6 @@ export const ContactForm = component$(() => {
   const counter$ = $((event: Event) => {
     store.count = (event.target as HTMLTextAreaElement).value.length;
   });
-
-  console.log("before:", store.showToaster);
 
   const resetCounter$ = $(() => {
     store.count = 0;
@@ -123,8 +157,9 @@ export const ContactForm = component$(() => {
 
   return (
     <form class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10">
-      <div>{store.showToaster && <Toaster store={store} />}</div>
+      {store.showToaster && <Toaster store={store} />}
       <select
+        onChange$={async () => await veryfyInpup(store)}
         bind:value={store.categoryId}
         class="col-span-5 col-start-1 col-end-5 row-start-1 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-end-3 md:mr-5 md:mb-3"
         name="Type de la demande"
@@ -159,6 +194,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-3 mb-3 flex flex-col md:row-start-2  md:col-span-2 md:col-end-3 md:pr-5">
         Nom de l'entreprise
         <input
+          onInput$={async () => await veryfyInpup(store)}
           bind:value={store.companyName}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
           type="text"
@@ -170,6 +206,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 row-start-4 mb-3  flex flex-col md:col-span-2 md:col-end-3 md:row-start-3 md:pr-5">
         Nom*
         <input
+          onInput$={async () => await veryfyInpup(store)}
           bind:value={store.lastName}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
           required
@@ -181,6 +218,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-5 mb-3 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-3 md:pl-5">
         Prénom*
         <input
+          onInput$={async () => await veryfyInpup(store)}
           bind:value={store.firstName}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
@@ -192,6 +230,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-6 flex flex-col md:col-span-2 md:col-end-3 md:row-start-4 md:pr-5">
         Mail*
         <input
+          onInput$={async () => await veryfyInpup(store)}
           bind:value={store.email}
           class="mb-3 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
@@ -203,6 +242,7 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-7 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-4 md:pl-5">
         Téléphone*
         <input
+          onInput$={async () => await veryfyInpup(store)}
           bind:value={store.phone}
           class="mb-6 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
@@ -214,6 +254,7 @@ export const ContactForm = component$(() => {
         <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
       </div>
       <textarea
+        onInput$={async () => await veryfyInpup(store)}
         bind:value={store.message}
         onInput$={counter$}
         placeholder="Sujet de votre demande"
@@ -233,10 +274,12 @@ export const ContactForm = component$(() => {
       </button>
       <button
         type="button"
+        disabled={store.isDisabled}
         class="col-span-2 col-start-3 col-end-5 row-start-9 h-14 rounded-md bg-[#0B3168] text-white md:col-start-4 md:col-end-4  md:row-start-7 md:mt-14"
         aria-label="Envoyer le formulaire"
         onClick$={async () => {
-          await registerRequestQrl(store);
+          const _store = await registerRequestQrl(store);
+          store.showToaster = _store.showToaster;
         }}
       >
         Envoyer
