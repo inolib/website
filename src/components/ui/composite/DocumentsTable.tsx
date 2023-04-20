@@ -10,6 +10,7 @@ type document = {
   type: string;
   category: string;
   date: string;
+  information: string;
 };
 
 type DocStore = {
@@ -68,6 +69,7 @@ export const DocumentsTable = component$(() => {
                 category={data.category}
                 type={data.type}
                 date={data.date}
+                information={data.information}
               />
             ))}
 
