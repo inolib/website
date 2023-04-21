@@ -1,4 +1,4 @@
-import { $, type Signal, component$, useSignal, useStore } from "@builder.io/qwik";
+import { type Signal, component$, useSignal, useStore } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
 import { GraphQLClient } from "graphql-request";
@@ -67,7 +67,7 @@ export default component$(() => {
             </div>
 
             <div class="mb-[2rem] flex flex-col items-center justify-center text-[#0B3168]">
-              <label class="mb-1 w-3/5 text-center">
+              <label class="mb-1 w-3/5 text-center flex flex-col items-center justify-center md:block">
                 Nom
                 <div class="relative flex items-center">
                   <input
@@ -82,7 +82,7 @@ export default component$(() => {
             </div>
 
             <div class="mb-[2rem] flex flex-col items-center justify-center text-[#0B3168]">
-              <label class="mb-1 w-3/5 text-center">
+              <label class="mb-1 w-3/5 text-center flex flex-col items-center justify-center md:block">
                 Prénom
                 <div class="relative flex items-center">
                   <img alt="" class="absolute right-2 h-8 w-auto hover:scale-100 scale-75" />

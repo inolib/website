@@ -29,7 +29,7 @@ export default component$(() => {
             </div>
 
             <div class="mb-[2rem] flex flex-col items-center justify-center text-[#0B3168]">
-              <label class="mb-1 w-3/5 text-center" for="password">
+              <label class="mb-1 w-3/5 text-center flex flex-col items-center justify-center md:block" for="password">
                 Mot de passe
                 <div class="relative flex items-center">
                   <img
@@ -45,7 +45,7 @@ export default component$(() => {
                     type={passwordVisible.value ? "text" : "password"}
                     required
                     name="password"
-                    class="form-control h-10  w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
+                    class="form-control h-10 w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
                   />
                 </div>
               </label>
