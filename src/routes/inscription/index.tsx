@@ -4,17 +4,23 @@ import { server$ } from "@builder.io/qwik-city";
 import { GraphQLClient } from "graphql-request";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
+import { SignUpModal } from "~/components/modal/SignUpModal";
+
 type SignUpStore = {
   email: Signal<string>;
   firstName: Signal<string>;
   lastName: Signal<string>;
+  modal: boolean;
 };
 
 const API_URL = "https://api-inolib.vercel.app/api";
 
 export const signUpRequestQrl = server$(async (store: SignUpStore) => {
   const client = new GraphQLClient(API_URL, { fetch });
-
+  // TODO
+  // const toogleModal$ = $(() => {
+  //   store.modal = !store.modal;
+  // });
   const result: { newSignUpRequest: { id: string } } = await client.request(
     /* GraphQL */ `
       mutation newSignUpRequest($email: String!, $firstName: String!, $lastName: String!) {
@@ -29,7 +35,8 @@ export const signUpRequestQrl = server$(async (store: SignUpStore) => {
       lastName: store.lastName.value,
     }
   );
-
+  //TODO
+  // toogleModal$
   console.log(result);
 });
 
@@ -38,11 +45,17 @@ export default component$(() => {
   const _firstName = useSignal<string>("");
   const _lastName = useSignal<string>("");
 
-  const store = useStore<SignUpStore>({
-    email: _email,
-    firstName: _firstName,
-    lastName: _lastName,
-  });
+  const store = useStore<SignUpStore>(
+    {
+      email: _email,
+      firstName: _firstName,
+      lastName: _lastName,
+      modal: true,
+    },
+    {
+      deep: true,
+    }
+  );
 
   return (
     <>
@@ -115,6 +128,9 @@ export default component$(() => {
             </button>
           </div>
         </form>
+      </div>
+      <div hidden={store.modal}>
+        <SignUpModal />
       </div>
     </>
   );
