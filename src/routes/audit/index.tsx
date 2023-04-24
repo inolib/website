@@ -5,6 +5,7 @@ import ArticleTemoignage2 from "~/components/articles/ArticleTemoignage2";
 import { Banner } from "~/components/header/Banner";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { Button } from "~/components/ui/buttons/Button";
+import { Article } from "~/components/Article";
 
 export default component$(() => {
   return (
@@ -15,30 +16,32 @@ export default component$(() => {
         imageSrc="/images/banner-accessibilite.png"
       />
 
-      <h1 class="px-28">Audit : titre a trouver</h1>
+      <h1 class="px-5 md:px-28">Audit : titre a trouver</h1>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
-        <span class="mx-5 mt-10 flex md:mx-[8rem] ">
-          <ul class="mt-10 flex flex-col md:ml-20">
-            <li class="mb-[2.5rem] flex md:w-[40rem] items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>Élargir</strong> votre audience en incluant tous les utilisateurs,
-              </p>
-            </li>
-            <li class="mb-[2.5rem] flex items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>Améliorer</strong> l'expérience utilisateur pour tous,
-              </p>
-            </li>
-            <li class="mb-[2.5rem] flex items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>Respecter</strong> les obligations en matière d'accessibilité numérique,
-              </p>
-            </li>
-          </ul>
-        </span>
+        <Article imageSrc="/images/actualitehome1.png" stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end">
+          <span q:slot="check-box" class="mx-5 mt-16 flex flex-col md:mx-0 md:mt-0 md:flex-row-reverse">
+            <ul class="flex flex-col ">
+              <li class="mb-[2.5rem] flex items-center">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 text-lg">
+                  <strong>Élargir</strong> votre audience en incluant tous les utilisateurs,
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 text-lg">
+                  <strong>Améliorer</strong> l'expérience utilisateur pour tous,
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4">
+                  <strong>Respecter</strong> les obligations en matière d'accessibilité numérique,
+                </p>
+              </li>
+            </ul>
+          </span>
+        </Article>
         <div class="mx-5 md:px-28 mb-8">
           <p class="mb-2 md:mb-0">
             ...Inolib est VOTRE partenaire ! Découvrez notre service d'audit en accessibilité numérique pour une
@@ -73,79 +76,96 @@ export default component$(() => {
           </p>
         </div>
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nos offres d'audit irrésistibles :</h2>
-        <span class="mx-5 mt-8 flex md:mx-[8rem] md:mt-10">
-          <ul class="mt-4 flex flex-col md:ml-20">
-            <li class="mb-[2.5rem] flex md:w-[40rem] items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2">
-                <strong>1. Audit Express :</strong> Un diagnostic précis pour identifier les faiblesses de
-                l'accessibilité de vos outils digitaux et déterminer les axes d'amélioration (fonctionnels, techniques,
-                graphiques et éditoriaux).
-              </p>
-            </li>
-            <li class="mb-[2.5rem] flex items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>2. Audit Approfondi :</strong> Une analyse complète de vos supports numériques, avec un rapport
-                détaillé et des recommandations sur-mesure pour être conforme aux normes d'accessibilité.
-              </p>
-            </li>
-          </ul>
-        </span>
+        <Article
+          imageSrc="/images/conseilservice.png"
+          styles="mt-1 md:-mt-[1rem]"
+          stylesArticleGaucheFlex="md:flex-row"
+        >
+          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
+            <ul class="mt-10 flex flex-col">
+              <li class="mb-[2.5rem] flex md:w-[40rem]">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 font-normal">
+                  <strong>1. Audit Express :</strong> Un diagnostic précis pour identifier les faiblesses de
+                  l'accessibilité de vos outils digitaux et déterminer les axes d'amélioration (fonctionnels,
+                  techniques, graphiques et éditoriaux).
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 font-normal">
+                  <strong>2. Audit Approfondi :</strong> Une analyse complète de vos supports numériques, avec un
+                  rapport détaillé et des recommandations sur-mesure pour être conforme aux normes d'accessibilité.
+                </p>
+              </li>
+            </ul>
+          </span>
+        </Article>
         <p class="mb-8 mx-5 md:px-28 md:mb-20">
           Chaque audit inclut 3 heures de coaching en accessibilité numérique pour sensibiliser et booster vos équipes.
         </p>
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Le processus d'audit Inolib en 4 étapes clés :</h2>
-        <span q:slot="check-box" class="mx-5 mt-4 flex md:mx-[8rem] ">
-          <ul class="mt-10 flex flex-col md:ml-20">
-            <li class="mb-[2.5rem] flex md:w-[40rem] items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>1. Co-construction :</strong> Sélection d'un échantillon représentatif en collaboration avec
-                vous.
-              </p>
-            </li>
-            <li class="mb-[2.5rem] flex items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>2. Investigation :</strong> Audit de conformité réalisé par nos experts, grâce à une grille de
-                test exclusive.
-              </p>
-            </li>
-            <li class="mb-[2.5rem] flex items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>3. Synthèse :</strong> Rédaction d'un rapport d'audit détaillé, incluant nos recommandations
-                d'accessibilité..
-              </p>
-            </li>
-            <li class="mb-[2.5rem] flex items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>4. Partage :</strong> Restitution des résultats pour vous offrir une vision globale et répondre
-                à vos interrogations.
-              </p>
-            </li>
-          </ul>
-        </span>
+
+        <Article imageSrc="/images/actualitehome1.png" stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end">
+          <span q:slot="check-box" class="mx-5 mt-16 flex flex-col md:mx-0 md:mt-0 md:flex-row-reverse">
+            <ul class="flex flex-col md:pl-10">
+              <li class="mb-[2.5rem] flex items-center">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 text-lg">
+                  <strong>1. Co-construction :</strong> Sélection d'un échantillon représentatif en collaboration avec
+                  vous.
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex ">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 text-lg">
+                  <strong>2. Investigation :</strong> Audit de conformité réalisé par nos experts, grâce à une grille de
+                  test exclusive.
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex ">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4">
+                  <strong>3. Synthèse :</strong> Rédaction d'un rapport d'audit détaillé, incluant nos recommandations
+                  d'accessibilité..
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex ">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4">
+                  <strong>4. Partage :</strong> Restitution des résultats pour vous offrir une vision globale et
+                  répondre à vos interrogations.
+                </p>
+              </li>
+            </ul>
+          </span>
+        </Article>
         <h3 class="mx-5 md:px-28 md:mt-12 text-3xl">Services complémentaires pour passer à la vitesse supérieure :</h3>
-        <span q:slot="check-box" class="mx-5 my-4 flex md:mx-[8rem] ">
-          <ul class="mt-10 flex flex-col md:ml-20">
-            <li class="mb-[2.5rem] flex md:w-[40rem] items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>1. Accompagnement :</strong> Intégration de nos conseils dans votre stratégie de développement.
-              </p>
-            </li>
-            <li class="mb-[2.5rem] flex items-center">
-              <img src="/images/checkservice.svg" alt="" />
-              <p class="ml-2 font-normal">
-                <strong>2. Coordination :</strong> Création et suivi des tickets d'anomalies dans votre outil de gestion
-                de projets (Redmine, Jira, Trello, Asana, etc.) pour une conformité optimale.
-              </p>
-            </li>
-          </ul>
-        </span>
+
+        <Article
+          imageSrc="/images/conseilservice.png"
+          styles="mt-1 md:-mt-[1rem]"
+          stylesArticleGaucheFlex="md:flex-row"
+        >
+          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
+            <ul class="mt-10 flex flex-col">
+              <li class="mb-[2.5rem] flex md:w-[40rem]">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 font-normal">
+                  <strong>1. Accompagnement :</strong> Intégration de nos conseils dans votre stratégie de
+                  développement.
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 font-normal">
+                  <strong>2. Coordination :</strong> Création et suivi des tickets d'anomalies dans votre outil de
+                  gestion de projets (Redmine, Jira, Trello, Asana, etc.) pour une conformité optimale.
+                </p>
+              </li>
+            </ul>
+          </span>
+        </Article>
       </section>
       <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
         <div class="flex justify-between items-center w-full">
