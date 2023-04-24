@@ -43,22 +43,20 @@ export default component$(() => {
           </span>
         </Article>
         <div class="mx-5 md:px-28 mb-8">
-          <p class="mb-2 md:mb-0">
-            ...Inolib est VOTRE partenaire ! Découvrez notre service d'audit en accessibilité numérique pour une
-            approche innovante et performante.
-          </p>
-          <p class="text-xl mb-2 md:mb-0">Mais qu'est-ce qu'un audit en accessibilité numérique ?</p>
+          <p class="mb-2 md:mb-0">Inolib est là pour vous accompagner !</p>
+          <p class="text-xl mb-2 md:mb-0">Audit d'accessibilité numérique : de quoi s'agit-il ?</p>
           <p>
-            C'est l'évaluation de vos outils digitaux (sites web, logiciels, applications mobiles, etc.) pour garantir
-            leur accessibilité à tous, conformément aux normes{" "}
+            Un audit en accessibilité numérique évalue vos outils digitaux (sites web, logiciels, applications mobiles,
+            documents, etc.) afin de garantir leur niveau d'accessibilité. Nos audits suivent les référentiels
+            techniques{" "}
             <a
               href="https://design.numerique.gouv.fr/accessibilite-numerique/rgaa/"
               aria-label="référentiel RGAA du gouvernement"
               class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
             >
               RGAA
-            </a>
-            ,{" "}
+            </a>{" "}
+            4.1.1 (référentiel pour l'amélioration de l'accessibilité), les normes internationales{" "}
             <a
               href="https://www.w3.org/TR/WCAG21/"
               class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
@@ -66,16 +64,19 @@ export default component$(() => {
             >
               WCAG
             </a>{" "}
+            2.1 (Web Content Accessibility Guidelines) éditées par le W3C. Pour les applications mobiles, nous nous
+            appuyons sur le référentiel{" "}
             <a
               href="https://accessibilite.public.lu/fr/raam1/referentiel-technique.html"
               class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
               aria-label="référentiel RAAM"
             >
               et RAAM.
-            </a>
+            </a>{" "}
+            1 et la norme européenne EN 301-549. Nos offres d'audit sont disponibles en français et en anglais. ,{" "}
           </p>
         </div>
-        <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nos offres d'audit irrésistibles :</h2>
+        <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nous proposons trois offres d'audit :</h2>
         <Article
           imageSrc="/images/conseilservice.png"
           styles="mt-1 md:-mt-[1rem]"
@@ -86,23 +87,33 @@ export default component$(() => {
               <li class="mb-[2.5rem] flex md:w-[40rem]">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">
-                  <strong>1. Audit Express :</strong> Un diagnostic précis pour identifier les faiblesses de
-                  l'accessibilité de vos outils digitaux et déterminer les axes d'amélioration (fonctionnels,
-                  techniques, graphiques et éditoriaux).
+                  <strong>1. Audit Express</strong> : Diagnostic précis pour cibler les points faibles de
+                  l'accessibilité de vos outils digitaux et définir les pistes d'amélioration. Grille d'audit et
+                  déclaration d'accessibilité incluses..
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">
-                  <strong>2. Audit Approfondi :</strong> Une analyse complète de vos supports numériques, avec un
-                  rapport détaillé et des recommandations sur-mesure pour être conforme aux normes d'accessibilité.
+                  <strong>2. Audit Approfondi</strong> : Une analyse complète de vos supports numériques, avec un
+                  rapport détaillé incluant des recommandations (fonctionnelles, techniques, graphiques et éditoriales),
+                  accompagné d'une déclaration légale d'accessibilité.
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <img src="/images/checkservice.svg" alt="" />
+                <p class="ml-4 font-normal">
+                  <strong>3. Audit de Contrôle</strong> : Suite à l'audit initial et aux corrections apportées, l'audit
+                  de contrôle intervient pour valider la conformité aux normes d'accessibilité et actualiser la
+                  déclaration légale.
                 </p>
               </li>
             </ul>
           </span>
         </Article>
         <p class="mb-8 mx-5 md:px-28 md:mb-20">
-          Chaque audit inclut 3 heures de coaching en accessibilité numérique pour sensibiliser et booster vos équipes.
+          Bonus ! Chez Inolib, chaque audit comprend trois heures de coaching en accessibilité numérique pour
+          sensibiliser et booster vos équipes.
         </p>
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Le processus d'audit Inolib en 4 étapes clés :</h2>
 
@@ -112,35 +123,35 @@ export default component$(() => {
               <li class="mb-[2.5rem] flex items-center">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 text-lg">
-                  <strong>1. Co-construction :</strong> Sélection d'un échantillon représentatif en collaboration avec
+                  <strong>1. Co-construction</strong> : Sélection d'un échantillon représentatif en collaboration avec
                   vous.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 text-lg">
-                  <strong>2. Investigation :</strong> Audit de conformité réalisé par nos experts, grâce à une grille de
-                  test exclusive.
+                  <strong>2. Investigation</strong> : Audit de conformité réalisé par nos experts, grâce à une grille de
+                  test spécifique.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-4">
-                  <strong>3. Synthèse :</strong> Rédaction d'un rapport d'audit détaillé, incluant nos recommandations
-                  d'accessibilité..
+                  <strong>3. Synthèse</strong> : Rédaction d'un rapport d'audit détaillé, incluant nos recommandations
+                  d'accessibilité.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-4">
-                  <strong>4. Partage :</strong> Restitution des résultats pour vous offrir une vision globale et
-                  répondre à vos interrogations.
+                  <strong>4. Échange</strong> : Restitution des résultats pour vous offrir une vue d'ensemble et
+                  répondre à vos questions.
                 </p>
               </li>
             </ul>
           </span>
         </Article>
-        <h3 class="mx-5 md:px-28 md:mt-12 text-3xl">Services complémentaires pour passer à la vitesse supérieure :</h3>
+        <h3 class="mx-5 md:px-28 md:mt-12 text-3xl">Services complémentaires pour propulser votre projet :</h3>
 
         <Article
           imageSrc="/images/conseilservice.png"
@@ -152,14 +163,14 @@ export default component$(() => {
               <li class="mb-[2.5rem] flex md:w-[40rem]">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">
-                  <strong>1. Accompagnement :</strong> Intégration de nos conseils dans votre stratégie de
-                  développement.
+                  <strong>1. Accompagnement</strong> : Intégration de nos conseils dans votre stratégie de développement
+                  et la mise en œuvre des corrections.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex">
                 <img src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">
-                  <strong>2. Coordination :</strong> Création et suivi des tickets d'anomalies dans votre outil de
+                  <strong>2. Coordination</strong> : Création et suivi des tickets d'anomalies dans votre outil de
                   gestion de projets (Redmine, Jira, Trello, Asana, etc.) pour une conformité optimale.
                 </p>
               </li>
