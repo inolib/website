@@ -59,12 +59,14 @@ export default component$(() => {
             <a
               href="https://www.w3.org/TR/WCAG21/"
               class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
+              aria-label="référentiel WCAG"
             >
               WCAG
             </a>{" "}
             <a
               href="https://accessibilite.public.lu/fr/raam1/referentiel-technique.html"
               class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
+              aria-label="référentiel RAAM"
             >
               et RAAM.
             </a>
@@ -157,7 +159,7 @@ export default component$(() => {
         <ArticleTemoignage1 />
         <ArticleTemoignage2 />
         <section class="mx-5 md:px-28">
-          <h3 class="text-3xl my-0 md:mb-5">Passez à l'action ! :</h3>
+          <h3 class="text-3xl mb-5">Passez à l'action ! :</h3>
           <p>
             Cliquez ici pour profiter d'une première consultation offerte et discuter de vos besoins en accessibilité
             numérique avec l'un de nos experts!
