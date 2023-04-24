@@ -39,12 +39,12 @@ export default component$(() => {
             </li>
           </ul>
         </span>
-        <div class="px-28">
-          <p>
+        <div class="mx-5 md:px-28 mb-8">
+          <p class="mb-2 md:mb-0">
             ...Inolib est VOTRE partenaire ! Découvrez notre service d'audit en accessibilité numérique pour une
             approche innovante et performante.
           </p>
-          <p class="text-xl">Mais qu'est-ce qu'un audit en accessibilité numérique ?</p>
+          <p class="text-xl mb-2 md:mb-0">Mais qu'est-ce qu'un audit en accessibilité numérique ?</p>
           <p>
             C'est l'évaluation de vos outils digitaux (sites web, logiciels, applications mobiles, etc.) pour garantir
             leur accessibilité à tous, conformément aux normes{" "}
@@ -70,9 +70,9 @@ export default component$(() => {
             </a>
           </p>
         </div>
-        <h2 class="md:px-28 text-4xl md:mt-32">Nos offres d'audit irrésistibles :</h2>
-        <span class="mx-5 mt-10 flex md:mx-[8rem] ">
-          <ul class="mt-4 flex flex-col ml-20">
+        <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nos offres d'audit irrésistibles :</h2>
+        <span class="mx-5 mt-8 flex md:mx-[8rem] md:mt-10">
+          <ul class="mt-4 flex flex-col md:ml-20">
             <li class="mb-[2.5rem] flex md:w-[40rem] items-center">
               <img src="/images/checkservice.svg" alt="" />
               <p class="ml-2">
@@ -90,10 +90,10 @@ export default component$(() => {
             </li>
           </ul>
         </span>
-        <p class="md:px-28 md:mb-20">
+        <p class="mb-8 mx-5 md:px-28 md:mb-20">
           Chaque audit inclut 3 heures de coaching en accessibilité numérique pour sensibiliser et booster vos équipes.
         </p>
-        <h2 class="md:pl-28 text-4xl md:mt-32">Le processus d'audit Inolib en 4 étapes clés :</h2>
+        <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Le processus d'audit Inolib en 4 étapes clés :</h2>
         <span q:slot="check-box" class="mx-5 mt-4 flex md:mx-[8rem] ">
           <ul class="mt-10 flex flex-col md:ml-20">
             <li class="mb-[2.5rem] flex md:w-[40rem] items-center">
@@ -126,7 +126,7 @@ export default component$(() => {
             </li>
           </ul>
         </span>
-        <h3 class="md:px-28 md:mt-12 text-3xl">Services complémentaires pour passer à la vitesse supérieure :</h3>
+        <h3 class="mx-5 md:px-28 md:mt-12 text-3xl">Services complémentaires pour passer à la vitesse supérieure :</h3>
         <span q:slot="check-box" class="mx-5 my-4 flex md:mx-[8rem] ">
           <ul class="mt-10 flex flex-col md:ml-20">
             <li class="mb-[2.5rem] flex md:w-[40rem] items-center">
@@ -145,7 +145,7 @@ export default component$(() => {
           </ul>
         </span>
       </section>
-      <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-28 py-4 md:mb-2 text-white">
+      <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
         <div class="flex justify-between items-center w-full">
           <strong>
             <h2 class="text-4xl">Témoignages clients</h2>
@@ -153,10 +153,10 @@ export default component$(() => {
         </div>
         <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
       </section>
-      <section class="text-[#0B3168]">
+      <section class="text-[#0B3168] mt-10 md:mt-0">
         <ArticleTemoignage1 />
         <ArticleTemoignage2 />
-        <section class="md:px-28">
+        <section class="mx-5 md:px-28">
           <h3 class="text-3xl my-0 md:mb-5">Passez à l'action ! :</h3>
           <p>
             Cliquez ici pour profiter d'une première consultation offerte et discuter de vos besoins en accessibilité
@@ -172,7 +172,7 @@ export default component$(() => {
           <img class="h-[14rem] w-[14rem]" src="/images/purple-logo.png" alt="" />
         </span>
         <span class="flex justify-center"></span>
-        <span class="flex justify-center">
+        <span class="flex justify-center mb-2 md:mb-0">
           <Button href="/services" color="blue" label="Demander un devis" styles="mt-[2rem]" />
         </span>
       </section>
