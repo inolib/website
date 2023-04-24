@@ -2,7 +2,7 @@ import { component$, Slot } from "@builder.io/qwik";
 import { Button } from "../ui/buttons/Button";
 
 type BannerProps = {
-  content: string;
+  content?: string;
   imageSrc?: string;
   styles?: string;
   title: string;
