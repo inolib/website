@@ -1,62 +1,61 @@
-import { $, type Signal, component$, useSignal, useStore } from "@builder.io/qwik";
+import { type Signal, component$, useSignal, useStore } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 
 import { GraphQLClient } from "graphql-request";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
+import { SignUpModal } from "~/components/modal/SignUpModal";
+
 type SignUpStore = {
   email: Signal<string>;
-  password: Signal<string>;
-  verifypassword: Signal<string>;
+  firstName: Signal<string>;
+  lastName: Signal<string>;
+  modal: boolean;
 };
 
 const API_URL = "https://api-inolib.vercel.app/api";
 
 export const signUpRequestQrl = server$(async (store: SignUpStore) => {
-  if (store.password.value == store.verifypassword.value) {
-    const client = new GraphQLClient(API_URL, { fetch });
-
-    const result: { newSignUpRequest: { id: string } } = await client.request(
-      /* GraphQL */ `
-        mutation newSignUpRequest($email: String!, $password: String!) {
-          newSignUpRequest(email: $email, password: $password) {
-            id
-          }
+  const client = new GraphQLClient(API_URL, { fetch });
+  // TODO
+  // const toogleModal$ = $(() => {
+  //   store.modal = !store.modal;
+  // });
+  const result: { newSignUpRequest: { id: string } } = await client.request(
+    /* GraphQL */ `
+      mutation newSignUpRequest($email: String!, $firstName: String!, $lastName: String!) {
+        newSignUpRequest(email: $email, firstName: $firstName, lastName: $lastName) {
+          id
         }
-      `,
-      {
-        email: store.email.value,
-        password: store.password.value,
       }
-    );
-
-    console.log(result);
-  } else if (store.password.value != store.verifypassword.value) {
-    console.error("mot de passe différents");
-  }
+    `,
+    {
+      email: store.email.value,
+      firstName: store.firstName.value,
+      lastName: store.lastName.value,
+    }
+  );
+  //TODO
+  // toogleModal$
+  console.log(result);
 });
 
 export default component$(() => {
   const _email = useSignal<string>("");
-  const _password = useSignal<string>("");
-  const _verifypassword = useSignal<string>("");
+  const _firstName = useSignal<string>("");
+  const _lastName = useSignal<string>("");
 
-  const store = useStore<SignUpStore>({
-    email: _email,
-    password: _password,
-    verifypassword: _verifypassword,
-  });
-
-  const passwordVisible = useSignal<boolean>(false);
-  const verifyPasswordVisible = useSignal<boolean>(false);
-
-  const togglePasswordVisible$ = $((passwordVisible: Signal<boolean>) => {
-    passwordVisible.value = !passwordVisible.value;
-  });
-
-  const toggleVerifyPasswordVisible$ = $((verifyPasswordVisible: Signal<boolean>) => {
-    verifyPasswordVisible.value = !verifyPasswordVisible.value;
-  });
+  const store = useStore<SignUpStore>(
+    {
+      email: _email,
+      firstName: _firstName,
+      lastName: _lastName,
+      modal: true,
+    },
+    {
+      deep: true,
+    }
+  );
 
   return (
     <>
@@ -81,25 +80,14 @@ export default component$(() => {
             </div>
 
             <div class="mb-[2rem] flex flex-col items-center justify-center text-[#0B3168]">
-              <label class="mb-1 w-3/5 text-center">
-                Mot de passe
+              <label class="mb-1 w-3/5 text-center flex flex-col items-center justify-center md:block">
+                Nom
                 <div class="relative flex items-center">
-                  <img
-                    alt=""
-                    class="absolute right-2 h-8 w-auto hover:scale-100 scale-75"
-                    src="\images\hide-icon.png"
-                    id="eye1"
-                    onClick$={async () => {
-                      await togglePasswordVisible$(passwordVisible);
-                    }}
-                  />
-
                   <input
-                    aria-label="Entrez votre mot de passe"
-                    bind:value={store.password}
-                    type={passwordVisible.value ? "text" : "password"}
+                    aria-label="Entrez votre nom"
+                    bind:value={store.lastName}
+                    type="text"
                     required
-                    id="password"
                     class="form-control h-10  w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
                   />
                 </div>
@@ -107,24 +95,15 @@ export default component$(() => {
             </div>
 
             <div class="mb-[2rem] flex flex-col items-center justify-center text-[#0B3168]">
-              <label class="mb-1 w-3/5 text-center">
-                Confirmez votre mot de passe
+              <label class="mb-1 w-3/5 text-center flex flex-col items-center justify-center md:block">
+                Prénom
                 <div class="relative flex items-center">
-                  <img
-                    alt=""
-                    class="absolute right-2 h-8 w-auto hover:scale-100 scale-75"
-                    src="\images\hide-icon.png"
-                    id="eye2"
-                    onClick$={async () => {
-                      await toggleVerifyPasswordVisible$(verifyPasswordVisible);
-                    }}
-                  />
+                  <img alt="" class="absolute right-2 h-8 w-auto hover:scale-100 scale-75" />
                   <input
-                    aria-label="Confirmez votre mot de passe"
-                    bind:value={store.verifypassword}
-                    type={verifyPasswordVisible.value ? "text" : "password"}
+                    aria-label="Entrez votre prénom"
+                    bind:value={store.firstName}
+                    type="text"
                     required
-                    id="verifyPassword"
                     class="form-control h-10 w-56 rounded-2xl border bg-gray-200 py-2 px-4 text-gray-600 md:h-14 md:w-full"
                   />
                 </div>
@@ -149,6 +128,9 @@ export default component$(() => {
             </button>
           </div>
         </form>
+      </div>
+      <div hidden={store.modal}>
+        <SignUpModal />
       </div>
     </>
   );

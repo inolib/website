@@ -2,13 +2,14 @@ import { component$ } from "@builder.io/qwik";
 import { Menu, MenuButton, MenuItemLink, MenuItems } from "~/ui/Menu";
 
 const page = [
-  { id: 1, name: "Actualité", href: "/actualites" },
-  { id: 2, name: "Accessibilite", href: "/accessibilite" },
-  { id: 3, name: "Présentation", href: "/presentation" },
-  { id: 4, name: "Services", href: "/services" },
-  { id: 5, name: "Témoignages", href: "/temoignages" },
-  { id: 6, name: "Contact", href: "/contact" },
-  { id: 7, name: "Connexion", href: "/profile" },
+  { id: 1, name: "Audit", href: "/audit" },
+  { id: 2, name: "Développement", href: "/" },
+  { id: 3, name: "Formation", href: "/" },
+  { id: 4, name: "Marketing digital", href: "/" },
+  { id: 5, name: "Présentation", href: "/presentation" },
+  { id: 6, name: "Actualité", href: "/actualites" },
+  { id: 7, name: "Contact", href: "/contact" },
+  { id: 8, name: "Connexion", href: "/connexion" },
 ];
 
 export const BurgerMenu = component$(() => {
