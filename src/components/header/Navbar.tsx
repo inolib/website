@@ -11,7 +11,7 @@ export const Navbar = component$(() => {
   return (
     <>
       <FastAccessMenu />
-      <nav class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white">
+      <nav role="menu" class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white">
         <div class="px-2 sm:px-6 lg:px-8">
           <div class="flex h-16 items-center justify-between">
             <div class="flex items-center justify-center">
