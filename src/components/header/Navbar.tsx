@@ -11,14 +11,13 @@ export const Navbar = component$(() => {
   return (
     <>
       <FastAccessMenu />
-      <nav class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-          <div class="relative flex h-16 items-center justify-between">
-            <div class="absolute inset-y-0 right-0 flex items-center sm:hidden"></div>
-            <div class="flex flex-1 items-center justify-start sm:items-stretch sm:justify-start">
+      <nav role="menu" class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white">
+        <div class="px-2 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex items-center justify-center">
               <a
                 href="/"
-                class="flex h-10 w-10 flex-shrink-0 items-center sm:absolute sm:-ml-[10rem] z-10"
+                class="flex h-10 w-10 flex-shrink-0 items-center sm:absolute z-10"
                 {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
                 aria-label="Accueil"
               >
@@ -26,45 +25,52 @@ export const Navbar = component$(() => {
                 <img class="hidden h-10 w-auto lg:block z-10" src="/images/logo-blue.svg" alt="Accueil" />
                 <h1 class="mx-4 text-4xl font-medium text-[#0B3168] z-10">inolib</h1>
               </a>
-              <div class="hidden sm:block">
-                <div class="flex space-x-4 sm:ml-[36rem] sm:space-x-0">
+              <div class="hidden md:block absolute top-3 right-3">
+                <div class="flex sm:space-x-0">
                   <a
-                    href="/actualites"
+                    href="/audit"
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
+                    {...(location.url.pathname === "/audit" ? { "aria-current": "page" } : {})}
                   >
-                    ACTUALITÉ
+                    AUDIT
                   </a>
 
                   <a
-                    href="/accessibilite"
+                    href="/"
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/accessibilite" ? { "aria-current": "page" } : {})}
+                    {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
                   >
-                    ACCESSIBILITÉ
+                    DEVELOPPEMENT
                   </a>
 
                   <a
-                    href="/presentation"
+                    href="/"
                     class="rounded-md  px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
+                    {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
                   >
-                    PRÉSENTATION
+                    FORMATION
                   </a>
 
                   <a
-                    href="/services"
+                    href="/"
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/services" ? { "aria-current": "page" } : {})}
+                    {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
                   >
-                    SERVICES
+                    MARKETING DIGITAL
                   </a>
                   <a
                     href="/temoignages"
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/temoignages" ? { "aria-current": "page" } : {})}
+                    {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
                   >
-                    TÉMOIGNAGES
+                    PRÉSENTATION
+                  </a>
+                  <a
+                    href="/actualite"
+                    class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                    {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
+                  >
+                    ACTUALITÉS
                   </a>
                   <a
                     href="/contact"
@@ -73,7 +79,6 @@ export const Navbar = component$(() => {
                   >
                     CONTACT
                   </a>
-
                   <a
                     href="/connexion"
                     class="rounded-md px-3 py-2 font-normal text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
@@ -83,9 +88,6 @@ export const Navbar = component$(() => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-              <div class="relative ml-3"></div>
             </div>
           </div>
           <div class="sm:hidden absolute top-0 right-0" id="mobile-menu">

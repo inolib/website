@@ -36,9 +36,9 @@ export const Article = component$((props: ArticleProps) => {
       <div class={`flex flex-col ${stylesArticleGaucheFlex} md:pt-6`}>
         <span class="mx-5 md:mx-0">
           <span class={`flex ${articleTestimonyStyles} items-center`}>
-            <h3 class={`mb-2 text-xl font-bold md:mb-0 ${stylesTestimony}`}>{props.testimony}</h3>
+            <h3 class={`mb-2 text-2xl font-bold md:mb-0 ${stylesTestimony}`}>{props.testimony}</h3>
             <img class="px-2 md:px-4" src={props.imgSeparator} alt="" />
-            <p class="md:text-l">{props.titleQuote}</p>
+            <p class="md:text-xl">{props.titleQuote}</p>
           </span>
           <div
             class={`mb-14 w-full text-justify md:mb-0 md:w-[47rem] md:px-4 md:pr-10 md:pl-0 md:text-left ${stylesContent}`}
@@ -48,8 +48,8 @@ export const Article = component$((props: ArticleProps) => {
             <Slot name="check-box" />
           </div>
 
-          <strong class="-mt-10 mb-3 flex justify-center  text-justify md:mb-0 md:mt-16 md:text-xl">
-            <p class="text-center md:w-[25rem]">{props.contentQuote}</p>
+          <strong class="-mt-10 mb-3 flex justify-center  text-justify md:mb-0 md:mt-16 md:text-2xl">
+            <p class="text-center md:w-[40rem]">{props.contentQuote}</p>
           </strong>
         </span>
         <div class={`flex flex-col ${stylesImgArticle}`}>

@@ -1,8 +1,7 @@
 import { component$, Slot } from "@builder.io/qwik";
-import { Button } from "../ui/buttons/Button";
 
 type BannerProps = {
-  content: string;
+  content?: string;
   imageSrc?: string;
   styles?: string;
   title: string;
@@ -21,9 +20,6 @@ export const Banner = component$((props: BannerProps) => {
         <h1 class="my-7 max-w-sm text-3xl font-semibold md:mb-5 md:mt-0 md:text-5xl">{props.title}</h1>
         <p class="mb-3 max-w-md text-justify md:mb-0 md:text-left">{props.content}</p>
         <Slot name="services" />
-        <span class={`mt-10 mb-4 flex justify-center md:hidden`}>
-          <Button color="white" href="/temoignages" label="Découvrir" />
-        </span>
       </div>
     </header>
   );

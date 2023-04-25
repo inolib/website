@@ -1,8 +1,45 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, useTask$, useStore } from "@builder.io/qwik";
 
 import { DocumentTableLine } from "./DocumentTableLine";
 
+import { GraphQLClient } from "graphql-request";
+
+type document = {
+  id: string;
+  name: string;
+  type: string;
+  category: string;
+  date: string;
+  information: string;
+};
+
+type DocStore = {
+  docDatas: document[];
+};
+
+const API_URL = "https://api-inolib.vercel.app/api";
 export const DocumentsTable = component$(() => {
+  const store = useStore<DocStore>({
+    docDatas: [],
+  });
+
+  useTask$(async () => {
+    const client = new GraphQLClient(API_URL, { fetch });
+
+    const results = await client.request<{ documents: document[] }>(/* GraphQL */ `
+      query GetDocuments {
+        documents {
+          id
+          name
+          type
+          category
+          date
+        }
+      }
+    `);
+    store.docDatas = results.documents;
+  });
+
   return (
     <span class="mb-[10rem] flex flex-col">
       <span class="relative justify-center text-[#0B3168] md:flex">
@@ -25,41 +62,16 @@ export const DocumentsTable = component$(() => {
             </th>
           </thead>
           <tbody>
-            <DocumentTableLine
-              nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
-              categorie="Accessibilité"
-              date="2023.05.10"
-              type="PDF"
-              information="plus d'info"
-            />
-            <DocumentTableLine
-              nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
-              categorie="Accessibilité"
-              date="2023.05.10"
-              type="PDF"
-              information="plus d'info"
-            />
-            <DocumentTableLine
-              nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
-              categorie="Accessibilité"
-              date="2023.05.10"
-              type="PDF"
-              information="plus d'info"
-            />
-            <DocumentTableLine
-              nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
-              categorie="Accessibilité"
-              date="2023.05.10"
-              type="PDF"
-              information="plus d'info"
-            />
-            <DocumentTableLine
-              nom="Lorem ipsum dolor sit amet, consectetur adipiscing"
-              categorie="Accessibilité"
-              date="2023.05.10"
-              type="PDF"
-              information="plus d'info"
-            />
+            {store.docDatas.map((data) => (
+              <DocumentTableLine
+                key={data.id}
+                name={data.name}
+                category={data.category}
+                type={data.type}
+                date={data.date}
+                information={data.information}
+              />
+            ))}
 
             <button
               class="absolute -bottom-10 right-1/4 h-[3rem] w-[12rem]  rounded-md border-[1px] border-[#0B3168] bg-white text-xl text-[#0B3168]  md:right-32"

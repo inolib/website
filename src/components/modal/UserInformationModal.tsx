@@ -1,7 +1,7 @@
 import { $, component$, useContext } from "@builder.io/qwik";
 import { contextId } from "../ui/composite/UserInformationForm";
 
-export const Modal = component$(() => {
+export const UserInformationModal = component$(() => {
   const context = useContext(contextId);
 
   const closeModal$ = $(() => {

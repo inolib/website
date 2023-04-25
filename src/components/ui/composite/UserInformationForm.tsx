@@ -1,5 +1,5 @@
 import { $, component$, useStore, useContextProvider, createContextId } from "@builder.io/qwik";
-import { Modal } from "~/components/modal/Modal";
+import { UserInformationModal } from "~/components/modal/UserInformationModal";
 
 export type ModalContext = {
   Modal: ModalStore;
@@ -120,7 +120,7 @@ export const UserInformationForm = component$(() => {
         {...store.modal.attributes}
         class="absolute z-20 top-1/4 right-[15%] left-[15%] md:right-1/4 md:left-1/4 bottom-1/4"
       >
-        <Modal />
+        <UserInformationModal />
       </div>
     </div>
   );
