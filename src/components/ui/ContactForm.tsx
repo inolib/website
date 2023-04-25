@@ -1,63 +1,66 @@
-import { $, type Signal, component$, useSignal, useStore, useTask$, useComputed$ } from "@builder.io/qwik";
+import { $, component$, useStore, useTask$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
-
 import { GraphQLClient } from "graphql-request";
-import { Toaster } from "./Toaster";
+
+import { Toaster, type ToasterStore } from "./Toaster";
 
 type ContactCategory = {
   id: string;
   name: string;
 };
 
-type CounterStore = {
+type FormStore = {
   count: number;
-  showToaster: boolean;
   isDisabled: boolean;
   categories: ContactCategory[];
-  categoryId: Signal<string>;
-  companyName: Signal<string>;
-  lastName: Signal<string>;
-  firstName: Signal<string>;
-  email: Signal<string>;
-  phone: Signal<string>;
-  message: Signal<string>;
+  categoryId: string;
+  companyName: string;
+  lastName: string;
+  firstName: string;
+  email: string;
+  phone: string;
+  message: string;
 };
 
 const API_URL = "https://api-inolib.vercel.app/api";
 
-export const veryfyInpup = $((store: CounterStore) => {
+export const verifyInput = $((store: FormStore) => {
   if (
-    store.lastName.value !== "" &&
-    store.firstName.value !== "" &&
-    store.message.value !== "" &&
-    store.phone.value !== "" &&
-    store.email.value !== "" &&
-    store.companyName.value !== "" &&
-    store.categoryId.value !== ""
+    store.lastName !== "" &&
+    store.firstName !== "" &&
+    store.message !== "" &&
+    store.phone !== "" &&
+    store.email !== "" &&
+    store.companyName !== "" &&
+    store.categoryId !== ""
   ) {
     store.isDisabled = false;
     console.log(
       "lastName :",
-      store.lastName.value,
+      store.lastName,
       "firstName :",
-      store.firstName.value,
+      store.firstName,
       "message :",
-      store.message.value
+      store.message,
+      "isDisabled :",
+      store.isDisabled
     );
   } else {
     console.log(
       "lastName :",
-      store.lastName.value,
+      store.lastName,
       "firstName :",
-      store.firstName.value,
+      store.firstName,
       "message :",
-      store.message.value
+      store.message,
+      "isDisabled :",
+      store.isDisabled
     );
     store.isDisabled = true;
   }
 });
 
-export const registerRequestQrl = server$(async (store: CounterStore) => {
+export const registerRequestQrl = server$(async (formStore: FormStore, toasterStore: ToasterStore) => {
   const client = new GraphQLClient(API_URL, { fetch });
 
   try {
@@ -86,48 +89,47 @@ export const registerRequestQrl = server$(async (store: CounterStore) => {
         }
       `,
       {
-        categoryId: store.categoryId.value,
-        companyName: store.companyName.value,
-        firstName: store.firstName.value,
-        lastName: store.lastName.value,
-        email: store.email.value,
-        phone: store.phone.value,
-        message: store.message.value,
+        categoryId: formStore.categoryId,
+        companyName: formStore.companyName,
+        firstName: formStore.firstName,
+        lastName: formStore.lastName,
+        email: formStore.email,
+        phone: formStore.phone,
+        message: formStore.message,
       }
     );
 
-    store.showToaster = true;
+    toasterStore.show = true;
     console.log("result:", result);
-    console.log("after:", store.showToaster);
+    console.log("after:", toasterStore.show);
   } catch (error) {
     console.error(error);
   }
 
-  return store;
+  return { formStore, toasterStore };
 });
 
 export const ContactForm = component$(() => {
-  const _categoryId = useSignal<string>("");
-  const _companyName = useSignal<string>("");
-  const _email = useSignal<string>("");
-  const _firstName = useSignal<string>("");
-  const _lastName = useSignal<string>("");
-  const _message = useSignal<string>("");
-  const _phone = useSignal<string>("");
-
-  const store = useStore<CounterStore>(
+  const store = useStore<FormStore>(
     {
       count: 0,
-      showToaster: false,
       isDisabled: true,
       categories: [],
-      categoryId: _categoryId,
-      companyName: _companyName,
-      email: _email,
-      firstName: _firstName,
-      lastName: _lastName,
-      message: _message,
-      phone: _phone,
+      categoryId: "",
+      companyName: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      message: "",
+      phone: "",
+    },
+    { deep: true }
+  );
+
+  const toasterStore = useStore<ToasterStore>(
+    {
+      animation: "toaster-in",
+      show: false,
     },
     { deep: true }
   );
@@ -157,10 +159,15 @@ export const ContactForm = component$(() => {
 
   return (
     <form class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10">
-      {store.showToaster && <Toaster store={store} />}
+      <Toaster icon="success" store={toasterStore}>
+        Votre demande a bien été enregistrée.
+      </Toaster>
+
       <select
-        onChange$={async () => await veryfyInpup(store)}
-        bind:value={store.categoryId}
+        onChange$={async (_, element) => {
+          store.categoryId = element.value;
+          await verifyInput(store);
+        }}
         class="col-span-5 col-start-1 col-end-5 row-start-1 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-end-3 md:mr-5 md:mb-3"
         name="Type de la demande"
         aria-label="type de votre demande"
@@ -194,8 +201,10 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-3 mb-3 flex flex-col md:row-start-2  md:col-span-2 md:col-end-3 md:pr-5">
         Nom de l'entreprise
         <input
-          onInput$={async () => await veryfyInpup(store)}
-          bind:value={store.companyName}
+          onInput$={async (_, element) => {
+            store.companyName = element.value;
+            await verifyInput(store);
+          }}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
           type="text"
           aria-label="entrez votre nom"
@@ -204,10 +213,12 @@ export const ContactForm = component$(() => {
       </label>
 
       <label class="col-span-4 col-start-1 row-start-4 mb-3  flex flex-col md:col-span-2 md:col-end-3 md:row-start-3 md:pr-5">
-        Nom*
+        Nom de famille*
         <input
-          onInput$={async () => await veryfyInpup(store)}
-          bind:value={store.lastName}
+          onInput$={async (_, element) => {
+            store.lastName = element.value;
+            await verifyInput(store);
+          }}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
           required
           type="text"
@@ -218,8 +229,10 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-5 mb-3 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-3 md:pl-5">
         Prénom*
         <input
-          onInput$={async () => await veryfyInpup(store)}
-          bind:value={store.firstName}
+          onInput$={async (_, element) => {
+            store.firstName = element.value;
+            await verifyInput(store);
+          }}
           class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
           type="text"
@@ -230,8 +243,10 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-6 flex flex-col md:col-span-2 md:col-end-3 md:row-start-4 md:pr-5">
         Mail*
         <input
-          onInput$={async () => await veryfyInpup(store)}
-          bind:value={store.email}
+          onInput$={async (_, element) => {
+            store.email = element.value;
+            await verifyInput(store);
+          }}
           class="mb-3 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
           type="email"
@@ -242,8 +257,10 @@ export const ContactForm = component$(() => {
       <label class="col-span-4 col-start-1 col-end-5 row-start-7 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-4 md:pl-5">
         Téléphone*
         <input
-          onInput$={async () => await veryfyInpup(store)}
-          bind:value={store.phone}
+          onInput$={async (_, element) => {
+            store.phone = element.value;
+            await verifyInput(store);
+          }}
           class="mb-6 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
           required
           type="tel"
@@ -254,9 +271,12 @@ export const ContactForm = component$(() => {
         <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
       </div>
       <textarea
-        onInput$={async () => await veryfyInpup(store)}
-        bind:value={store.message}
-        onInput$={counter$}
+        onInput$={async (event, element) => {
+          store.message = element.value;
+
+          await verifyInput(store);
+          await counter$(event);
+        }}
         placeholder="Sujet de votre demande"
         class="col-span-4 col-start-1 col-end-5 row-start-8 mb-6 border-[1px] border-solid border-[#0B3168] md:row-start-5 md:row-span-2 md:pl-2 md:mt-6"
         id="textarea"
@@ -278,8 +298,8 @@ export const ContactForm = component$(() => {
         class="col-span-2 col-start-3 col-end-5 row-start-9 h-14 rounded-md bg-[#0B3168] text-white md:col-start-4 md:col-end-4  md:row-start-7 md:mt-14"
         aria-label="Envoyer le formulaire"
         onClick$={async () => {
-          const _store = await registerRequestQrl(store);
-          store.showToaster = _store.showToaster;
+          const { toasterStore: _toasterStore } = await registerRequestQrl(store, toasterStore);
+          toasterStore.show = _toasterStore.show;
         }}
       >
         Envoyer
