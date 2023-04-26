@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 
 type ButtonProps = {
+  arialabel?: string;
   color: "blue" | "white";
   href: string;
   label: string;
@@ -16,6 +17,7 @@ export const Button = component$((props: ButtonProps) => {
     <a
       class={`bg-${primaryColor} rounded-md px-8 py-4 text-${secondaryColor} text-xl ${styles} hover:scale-105`}
       href={props.href}
+      aria-label={props.arialabel}
     >
       {props.label}
     </a>

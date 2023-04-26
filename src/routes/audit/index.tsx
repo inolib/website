@@ -206,7 +206,13 @@ export default component$(() => {
         </span>
         <span class="flex justify-center"></span>
         <span class="flex justify-center mb-2 md:mb-0">
-          <Button href="/services" color="blue" label="Demander un devis" styles="mt-[2rem]" />
+          <Button
+            href="/services"
+            color="blue"
+            label="Demander un devis"
+            styles="mt-[2rem]"
+            arialabel="vers la page contact"
+          />
         </span>
       </section>
       <div class="mb-[3rem]">

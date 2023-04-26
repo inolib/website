@@ -10,84 +10,80 @@ export const Navbar = component$(() => {
 
   return (
     <>
-      <FastAccessMenu />
-      <nav role="menu" class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white">
-        <div class="px-2 sm:px-6 lg:px-8">
-          <div class="flex h-16 items-center justify-between">
-            <div class="flex items-center justify-center">
+      <nav role="menu" class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white flex justify-start w-full">
+        <a
+          href="/"
+          class="flex justify-start items-center"
+          {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+          aria-label="Accueil"
+        >
+          <img class="block h-10 w-auto lg:hidden z-10" src="/images/logo-blue.svg" alt="Accueil" />
+          <img class="hidden h-20 w-auto lg:block z-10" src="/images/logo-blue.svg" alt="Accueil" />
+          <h1 class="mx-4 text-6xl font-medium text-[#0B3168] z-10">inolib</h1>
+        </a>
+        <div class="flex flex-col w-full pl-10">
+          <FastAccessMenu />
+          <div class="hidden md:block">
+            <div class="flex justify-around border-t-2">
+              <a
+                href="/audit"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                {...(location.url.pathname === "/audit" ? { "aria-current": "page" } : {})}
+              >
+                AUDIT
+              </a>
+
               <a
                 href="/"
-                class="flex h-10 w-10 flex-shrink-0 items-center sm:absolute z-10"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
                 {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
-                aria-label="Accueil"
               >
-                <img class="block h-10 w-auto lg:hidden z-10" src="/images/logo-blue.svg" alt="Accueil" />
-                <img class="hidden h-10 w-auto lg:block z-10" src="/images/logo-blue.svg" alt="Accueil" />
-                <h1 class="mx-4 text-4xl font-medium text-[#0B3168] z-10">inolib</h1>
+                DEVELOPPEMENT
               </a>
-              <div class="hidden md:block absolute top-3 right-3">
-                <div class="flex sm:space-x-0">
-                  <a
-                    href="/audit"
-                    class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/audit" ? { "aria-current": "page" } : {})}
-                  >
-                    AUDIT
-                  </a>
 
-                  <a
-                    href="/"
-                    class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
-                  >
-                    DEVELOPPEMENT
-                  </a>
+              <a
+                href="/"
+                class="rounded-md  px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+              >
+                FORMATION
+              </a>
 
-                  <a
-                    href="/"
-                    class="rounded-md  px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
-                  >
-                    FORMATION
-                  </a>
-
-                  <a
-                    href="/"
-                    class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
-                  >
-                    MARKETING DIGITAL
-                  </a>
-                  <a
-                    href="/temoignages"
-                    class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
-                  >
-                    PRÉSENTATION
-                  </a>
-                  <a
-                    href="/actualite"
-                    class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
-                  >
-                    ACTUALITÉS
-                  </a>
-                  <a
-                    href="/contact"
-                    class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
-                  >
-                    CONTACT
-                  </a>
-                  <a
-                    href="/connexion"
-                    class="rounded-md px-3 py-2 font-normal text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
-                    {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
-                  >
-                    Connexion
-                  </a>
-                </div>
-              </div>
+              <a
+                href="/"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+              >
+                MARKETING DIGITAL
+              </a>
+              <a
+                href="/temoignages"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
+              >
+                PRÉSENTATION
+              </a>
+              <a
+                href="/actualite"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
+              >
+                ACTUALITÉS
+              </a>
+              <a
+                href="/contact"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
+              >
+                CONTACT
+              </a>
+              <a
+                href="/connexion"
+                class="rounded-md px-3 py-2 font-normal text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
+                {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
+              >
+                Connexion
+              </a>
             </div>
           </div>
           <div class="sm:hidden absolute top-0 right-0" id="mobile-menu">
