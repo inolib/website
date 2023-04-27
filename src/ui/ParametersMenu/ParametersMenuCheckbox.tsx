@@ -1,5 +1,4 @@
 import { component$, Slot, useContext, useSignal, useStore, useTask$ } from "@builder.io/qwik";
-import { useLocation } from "@builder.io/qwik-city";
 
 import type { Reference } from "../../types";
 
@@ -12,13 +11,24 @@ type ParametersMenuCheckboxProps = {
 
 export type ParametersMenuCheckboxStore = {
   readonly ref: Reference;
-  readonly selected: boolean;
+  readonly selected: {
+    readonly police: boolean;
+    readonly interlignage: boolean;
+    readonly image: boolean;
+  };
 };
 
-export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(({ href, styles }) => {
+export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(({ styles }) => {
   const context = useContext(contextId);
-
-  const store = useStore<ParametersMenuCheckboxStore>({}, { deep: true });
+  const _ref = useSignal<HTMLElement>();
+  const _selected = true; //TODO
+  const store = useStore<ParametersMenuCheckboxStore>(
+    {
+      ref: _ref,
+      selected: _selected,
+    },
+    { deep: true }
+  );
 
   useTask$(() => {
     if (context.ParametersMenuCheckbox === undefined) {
@@ -35,11 +45,13 @@ export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(({
         <div class="flex ml-2 text-l">
           <label>
             Défault
-            <input class="ml-1" type="checkbox" />
+            <input class="ml-1" checked type="radio" name="police" value={store.selected ? true : false} />
+            {console.log(store.selected)}
           </label>
           <label class="ml-2">
             Taille supérieur
-            <input class="ml-1" type="checkbox" />
+            <input class="ml-1" type="radio" name="police" value={store.selected ? true : false} />
+            {console.log(store.selected)}
           </label>
         </div>
       </div>
@@ -48,11 +60,11 @@ export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(({
         <div class="flex text-l">
           <label class="ml-2">
             Défault
-            <input class="ml-1" type="checkbox" />
+            <input class="ml-1" checked type="radio" name="interlignage" value={store.selected ? true : false} />
           </label>
           <label class="ml-2">
             Taille supérieur
-            <input class="ml-1" type="checkbox" />
+            <input class="ml-1" type="radio" name="interlignage" value={store.selected ? true : false} />
           </label>
         </div>
       </div>
@@ -61,11 +73,11 @@ export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(({
         <div class="flex text-l">
           <label>
             Défault
-            <input class="ml-1" type="checkbox" />
+            <input class="ml-1" checked type="radio" name="image" value={store.selected ? true : false} />
           </label>
           <label class="ml-2">
             Format textuel
-            <input class="ml-1" type="checkbox" />
+            <input class="ml-1" type="radio" name="image" value={store.selected ? true : false} />
           </label>
         </div>
         <Slot />

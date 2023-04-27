@@ -66,9 +66,9 @@ export const ParametersMenuItems = component$<ParametersMenuItemsProps>(({ style
   return (
     <>
       {context.ParametersMenuButton?.expanded ? (
-        <ul class={styles} id={store.id} preventdefault:keydown preventdefault:keyup role="menu">
+        <div class={styles} id={store.id} preventdefault:keydown preventdefault:keyup role="menu">
           <Slot />
-        </ul>
+        </div>
       ) : null}
     </>
   );
