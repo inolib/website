@@ -15,7 +15,7 @@ export const ServicesHomeCard = component$((props: CardProps) => {
         >
           <img class="md:mb-[3rem]" src={props.image} alt="" />
         </span>
-        <span
+        <div
           class={`flex h-[6rem] w-[14rem] items-center justify-center md:h-[25rem] md:w-[17.5rem] md:flex-col md:px-4 md:pb-[10rem] md:shadow-xl`}
         >
           <h3 class={`ml-[5rem] text-xl font-semibold text-[#0B3168] md:my-5 md:ml-[0rem] md:text-2xl`}>
@@ -24,7 +24,7 @@ export const ServicesHomeCard = component$((props: CardProps) => {
           <span class={"invisible md:visible"}>
             <Slot name="content" />
           </span>
-        </span>
+        </div>
       </article>
     </>
   );

@@ -15,10 +15,10 @@ type ArticleProps = {
 export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
   return (
     <>
-      <span class="ml-[1rem] flex justify-start md:mt-20 md:ml-[9rem]">
+      <div class="ml-[1rem] flex justify-start md:mt-20 md:ml-[9rem]">
         <h2 class="mt-10 text-4xl font-medium text-[#0B3168]">{props.title}</h2>
-      </span>
-      <span class="md:grid-md:col-2 md:grid-row-2- md:mt-14 md:grid">
+      </div>
+      <div class="md:grid-md:col-2 md:grid-row-2- md:mt-14 md:grid">
         <ArticleHomePage
           src="/images/home1.png"
           styles="md:col-end-1 md:ml-[8vw] md:w-[40vw]"
@@ -60,7 +60,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
             alt="lien vers page accessibilité"
           />
         </a>
-      </span>
+      </div>
     </>
   );
 });

@@ -7,9 +7,9 @@ import { Button } from "../ui/buttons/Button";
 export const CardsRowDisplay = component$(() => {
   return (
     <>
-      <span class="mt-10 ml-5 flex justify-start md:ml-[10rem]">
+      <div class="mt-10 ml-5 flex justify-start md:ml-[10rem]">
         <h2 class="text-2xl font-semibold text-[#0B3168] md:text-4xl">Nos services</h2>
-      </span>
+      </div>
       <section class="flex flex-col justify-around md:my-[4rem] md:mx-[10rem] md:flex-row">
         <ServicesHomeCard label="Conseil/et/Audit" image="/images/logo-audit.png">
           <p q:slot="content" class="text-[#0B3168]">
