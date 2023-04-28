@@ -15,10 +15,10 @@ type ParametersMenuCheckboxProps = {
 
 export type ParametersMenuCheckboxStore = {
   readonly ref: Reference;
-  readonly selected: {
-    readonly police: boolean;
-    readonly interlignage: boolean;
-    readonly image: boolean;
+  selected: {
+    police: boolean;
+    interlignage: boolean;
+    image: boolean;
   };
 };
 
@@ -78,7 +78,6 @@ export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(
                   onChange={() => (store.selected = { ...store.selected, inputName: false })}
                 />
               </label>
-              {console.log(store.selected)}
             </div>
           </div>
         </li>
