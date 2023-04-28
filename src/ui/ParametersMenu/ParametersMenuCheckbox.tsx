@@ -1,16 +1,19 @@
-import { component$, useContext, useSignal, useStore, useTask$ } from "@builder.io/qwik";
+import { type QRL, component$, useContext, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 
 import type { Reference } from "../../types";
 
 import { contextId } from "./ParametersMenu";
 
 type ParametersMenuCheckboxProps = {
-  readonly defaultName: string;
+  defaultName: string;
   readonly styles?: string;
-  readonly inputName: string;
-  readonly defaultOption: string;
-  readonly secondOption: string;
-  readonly ariallabel: string;
+  inputName: string;
+  defaultOption: string;
+  secondOption: string;
+  ariallabel: string;
+  readonly defaultOptionValue: boolean;
+  readonly secondOptionValue: boolean;
+  readonly onChange: QRL<(event: InputEvent) => void>;
 };
 
 export type ParametersMenuCheckboxStore = {
@@ -23,7 +26,7 @@ export type ParametersMenuCheckboxStore = {
 };
 
 export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(
-  ({ ariallabel, inputName, defaultOption, secondOption, styles }) => {
+  ({ ariallabel, inputName, defaultOption, secondOption, defaultOptionValue, onChange, secondOptionValue, styles }) => {
     const context = useContext(contextId);
     const _ref = useSignal<HTMLElement>();
     const store = useStore<ParametersMenuCheckboxStore>(
@@ -62,21 +65,16 @@ export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(
                 {defaultOption}
                 <input
                   class="ml-1"
-                  checked={store.selected}
+                  checked
                   type="radio"
                   name={inputName}
-                  onChange={() => (store.selected = { ...store.selected, inputName: true })}
+                  value={defaultOptionValue}
+                  onChange$={onChange}
                 />
               </label>
               <label class="ml-2">
                 {secondOption}
-                <input
-                  class="ml-1"
-                  type="radio"
-                  checked={!store.selected}
-                  name={inputName}
-                  onChange={() => (store.selected = { ...store.selected, inputName: false })}
-                />
+                <input class="ml-1" type="radio" name={inputName} value={secondOptionValue} onChange$={onChange} />
               </label>
             </div>
           </div>
