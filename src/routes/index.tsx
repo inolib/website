@@ -3,7 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { ArticlesHomeDisplay } from "~/components/articles/ArticleHomeDisplay";
 import { BannerHome } from "~/components/header/BannerHome";
-import { Banner2 } from "~/components/header/Banner2";
+
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { CardsRowDisplay } from "~/components/cards/CardsRowDisplay";
 import { SplitedImage } from "~/components/cards/SplitedImage";
@@ -33,19 +33,7 @@ export default component$(() => {
             voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
             iure eum! Minima facilis earum unde repellat quo nisi."
         />
-        <Banner2
-          src="/images/temoignage-homme.png"
-          styles="justify-center hidden md:block md:justify-start -mt-[30rem] md:mt-[0rem] md:mr-[0rem] "
-          title="Témoignages"
-          quote="Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim quaerat rerum iure eum! Minima facilis
-              earum unde repellat quo nisi."
-        >
-          <p q:slot="content" class="mt-[9rem] max-w-xl text-[#0F3069]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
-            voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
-            iure eum! Minima facilis earum unde repellat quo nisi.
-          </p>
-        </Banner2>
+
         <section class="mx-4 mb-[4.5rem]">
           <ArticlesHomeDisplay title="Actualités" />
           <div class="flex justify-center">

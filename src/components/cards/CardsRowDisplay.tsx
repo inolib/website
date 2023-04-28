@@ -33,16 +33,18 @@ export const CardsRowDisplay = component$(() => {
           </p>
         </ServicesHomeCard>
 
-        <ServicesHomeCardBlank
-          styles="my-[10rem]"
-          content="Découvrez tout nos services en détails ! Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        >
-          <Button q:slot="button" color="blue" href="/services" label="En savoir plus" styles="hidden md:block" />
-        </ServicesHomeCardBlank>
         <span class={`mt-[2rem] flex justify-center`}>
           <Button color="blue" href="/services" label="Tous nos services" styles="md:hidden flex justify-center" />
         </span>
       </section>
+      <div class="mt-5 flex justify-center">
+        <ServicesHomeCardBlank
+          styles="my-[3rem]"
+          content="Découvrez tout nos services en détails ! Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        >
+          <Button q:slot="button" color="blue" href="/services" label="En savoir plus" styles="hidden md:block" />
+        </ServicesHomeCardBlank>
+      </div>
     </>
   );
 });
