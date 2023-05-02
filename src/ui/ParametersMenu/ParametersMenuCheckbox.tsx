@@ -25,6 +25,27 @@ export type ParametersMenuCheckboxStore = {
   };
 };
 
+function toggleImages(condition: boolean): void {
+  const images = document.getElementsByTagName("img");
+  for (let i = 0; i < images.length; i++) {
+    const image = images[i];
+    if (condition) {
+      {
+        input.name === "police" && input.value === "true";
+      }
+      image.style.display = "block";
+    } else {
+      const altText = image.getAttribute("alt");
+      if (altText) {
+        image.style.display = "none";
+        const altTextContainer = document.createElement("span");
+        altTextContainer.innerText = altText;
+        image.parentNode?.insertBefore(altTextContainer, image);
+      }
+    }
+  }
+}
+
 export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(
   ({ ariallabel, inputName, defaultOption, secondOption, defaultOptionValue, onChange, secondOptionValue, styles }) => {
     const context = useContext(contextId);

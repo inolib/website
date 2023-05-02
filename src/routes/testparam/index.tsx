@@ -47,6 +47,28 @@ const options = [
   },
 ];
 
+function toggleImages(condition: boolean): void {
+  const images = document.getElementsByTagName("img");
+  for (let i = 0; i < images.length; i++) {
+    const image = images[i];
+    if (condition) {
+      {
+        options.inputName === "police" && options.defaultOptionValue === "true";
+      }
+      image.style.display = "block";
+    } else {
+      // Sinon, afficher le texte alternatif
+      const altText = image.getAttribute("alt");
+      if (altText) {
+        image.style.display = "none";
+        const altTextContainer = document.createElement("span");
+        altTextContainer.innerText = altText;
+        image.parentNode?.insertBefore(altTextContainer, image);
+      }
+    }
+  }
+}
+
 export default component$(() => {
   return (
     <ParametersMenu>
