@@ -63,7 +63,7 @@ export const Navbar = component$(() => {
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
                     {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
                   >
-                    PRÉSENTATION
+                    ACOMPAGNEMENT
                   </a>
                   <a
                     href="/actualite"

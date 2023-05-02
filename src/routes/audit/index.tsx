@@ -16,13 +16,16 @@ export default component$(() => {
         imageSrc="/images/banner-accessibilite.png"
       />
 
-      <h1 class="px-5 md:px-28">Audit : titre a trouver</h1>
+      <h1 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">
+        Bienvenue chez votre partenaire en <strong>accessibilité</strong> !
+      </h1>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
           imageSrc="/images/actualitehome1.png"
-          stylesArticleGaucheFlex="mb-8 bg-[#0B3168] text-white rounded-lg md:flex-row-reverse md:justify-end md:mb-0"
+          stylesArticleGaucheFlex="mb-8  bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
+          stylesImage=" mr-[6rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-10 md:mt-0">
+          <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around ">
               <li class="mb-[2.5rem] flex items-center">
                 <img src="/images/checkservice.svg" alt="" />
@@ -84,8 +87,8 @@ export default component$(() => {
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nous proposons trois offres d'audit :</h2>
         <Article
           imageSrc="/images/conseilservice.png"
-          styles="mt-1 md:-mt-[1rem]"
-          stylesArticleGaucheFlex="mb-8 bg-[#0B3168] bg-[#0B3168] text-white rounded-lg md:flex-row md:mb-0"
+          stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
+          stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >
           <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col md:mt-0">
@@ -124,9 +127,10 @@ export default component$(() => {
 
         <Article
           imageSrc="/images/actualitehome1.png"
-          stylesArticleGaucheFlex="mb-8 md:mb-0 md:flex-row-reverse md:justify-end bg-[#0B3168] text-white rounded-lg"
+          stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row "
+          stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mx-5 mt-16 flex flex-col md:mx-0 md:mt-0 md:flex-row-reverse">
+          <span q:slot="check-box" class="mx-5 mt-16 flex flex-col md:mx-0 md:mt-[3rem] md:flex-row-reverse">
             <ul class="flex flex-col md:pl-10">
               <li class="mb-[2.5rem] flex items-center">
                 <img src="/images/checkservice.svg" alt="" />
@@ -163,8 +167,8 @@ export default component$(() => {
 
         <Article
           imageSrc="/images/conseilservice.png"
-          styles="mt-1 md:-mt-[1rem]"
-          stylesArticleGaucheFlex=" bg-[#0B3168] text-white rounded-lg md:flex-row"
+          stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
+          stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >
           <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col">
