@@ -52,16 +52,16 @@ export const Navbar = component$(() => {
                   </a>
 
                   <a
-                    href="/"
+                    href="/testing"
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+                    {...(location.url.pathname === "/testing" ? { "aria-current": "page" } : {})}
                   >
-                    MARKETING DIGITAL
+                    TESTING
                   </a>
                   <a
-                    href="/temoignages"
+                    href="/acompagnement"
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
-                    {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
+                    {...(location.url.pathname === "/acompagnement" ? { "aria-current": "page" } : {})}
                   >
                     ACOMPAGNEMENT
                   </a>

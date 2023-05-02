@@ -5,9 +5,9 @@ const page = [
   { id: 1, name: "Audit", href: "/audit" },
   { id: 2, name: "Développement", href: "/" },
   { id: 3, name: "Formation", href: "/" },
-  { id: 4, name: "Marketing digital", href: "/" },
+  { id: 4, name: "Testing", href: "/testing" },
   { id: 5, name: "Présentation", href: "/presentation" },
-  { id: 6, name: "Actualité", href: "/actualites" },
+  { id: 6, name: "Acompagnement", href: "/acompagnement" },
   { id: 7, name: "Contact", href: "/contact" },
   { id: 8, name: "Connexion", href: "/connexion" },
 ];
