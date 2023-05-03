@@ -53,7 +53,7 @@ export const Article = component$((props: ArticleProps) => {
           </div>
 
           <strong class="-mt-10 mb-3 flex justify-center text-justify md:mb-0 md:mt-16 md:text-2xl">
-            <p class="text-center md:w-[40rem] text-base"></p>
+            <p class="text-center md:w-[40rem]"></p>
             {props.contentQuote} <Slot name="content2" />
           </strong>
         </span>
