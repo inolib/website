@@ -27,7 +27,7 @@ export default component$(() => {
         >
           <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around ">
-              <li class="mb-[2.5rem] flex items-center">
+              <li class="mb-[2.5rem] flex">
                 <div class={"hidden md:flex"}>
                   <img src="/images/checkservice.svg" alt="" />
                 </div>
@@ -35,7 +35,7 @@ export default component$(() => {
                   <strong class="text-xl">Élargir</strong> votre audience en incluant tous les utilisateurs,
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex items-center">
+              <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
                   <img src="/images/checkservice.svg" alt="" />
                 </div>
@@ -43,7 +43,7 @@ export default component$(() => {
                   <strong class="text-xl">Améliorer</strong> l'expérience utilisateur pour tous,
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex items-center">
+              <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
                   <img src="/images/checkservice.svg" alt="" />
                 </div>
@@ -98,9 +98,9 @@ export default component$(() => {
         >
           <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col md:mt-0">
-              <li class="mb-[2.5rem] flex md:w-[40rem]">
+              <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">1. Audit Express</strong> : Diagnostic précis pour cibler les points faibles
@@ -108,9 +108,9 @@ export default component$(() => {
                   déclaration d'accessibilité incluses..
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex items-center">
+              <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">2. Audit Approfondi</strong> : Une analyse complète de vos supports
@@ -118,9 +118,9 @@ export default component$(() => {
                   graphiques et éditoriales), accompagné d'une déclaration légale d'accessibilité.
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex items-center">
+              <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">3. Audit de Contrôle</strong> : Suite à l'audit initial et aux corrections
@@ -146,34 +146,34 @@ export default component$(() => {
             <ul class="flex flex-col md:pl-10">
               <li class="mb-[2.5rem] flex items-center">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 text-lg">
                   <strong class="text-xl">1. Co-construction</strong> : Sélection d'un échantillon représentatif en
                   collaboration avec vous.
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex ">
+              <li class="mb-[2rem] flex items-center">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 text-lg">
                   <strong class="text-xl">2. Investigation</strong> : Audit de conformité réalisé par nos experts, grâce
                   à une grille de test spécifique.
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex ">
+              <li class="mb-[2rem] flex items-center ">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4">
                   <strong class="text-xl">3. Synthèse</strong> : Rédaction d'un rapport d'audit détaillé, incluant nos
                   recommandations d'accessibilité.
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex ">
+              <li class="mb-[2rem] flex items-center ">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4">
                   <strong class="text-xl">4. Échange</strong> : Restitution des résultats pour vous offrir une vue
@@ -192,18 +192,18 @@ export default component$(() => {
         >
           <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col">
-              <li class="mb-[2.5rem] flex md:w-[40rem]">
+              <li class="mb-[2.5rem] flex items-center">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">1. Accompagnement</strong> : Intégration de nos conseils dans votre stratégie
                   de développement et la mise en œuvre des corrections.
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex">
+              <li class="mb-[2.5rem] flex items-center">
                 <div class={"hidden md:flex"}>
-                  <img src="/images/checkservice.svg" alt="" />
+                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">2. Coordination</strong> : Création et suivi des tickets d'anomalies dans

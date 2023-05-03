@@ -52,8 +52,9 @@ export const Article = component$((props: ArticleProps) => {
             <Slot name="check-box" />
           </div>
 
-          <strong class="-mt-10 mb-3 flex justify-center  text-justify md:mb-0 md:mt-16 md:text-2xl">
-            <p class="text-center md:w-[40rem]">{props.contentQuote}</p>
+          <strong class="-mt-10 mb-3 flex justify-center text-justify md:mb-0 md:mt-16 md:text-2xl">
+            <p class="text-center md:w-[40rem] text-base"></p>
+            {props.contentQuote} <Slot name="content2" />
           </strong>
         </span>
         <div class={`flex flex-col ${stylesImgArticle}`}>

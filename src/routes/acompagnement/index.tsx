@@ -17,22 +17,22 @@ export default component$(() => {
 
       <section class="text-[#0B3168]">
         <Article
-          stylesTitle="md:mb-[5rem]"
-          stylesImage=" md:mr-[4rem] shadow mt-[13rem]"
+          stylesTitle="md:mb-[2rem]"
+          stylesImage=" md:mr-[4rem] shadow mt-[8rem]"
           stylesArticleGaucheFlex="mb-8 shadow bg-slate-100 text-[#0B3168] rounded md:flex-row "
           imageSrc="/images/photoArticle.png"
           title="Notre stratégie centrée sur vous :"
         >
-          <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+          <span q:slot="check-box" class="flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around ">
               <li class="mb-[2.5rem] flex items-center">
-                <p class="ml-4 text-lg">
+                <p class="ml-4">
                   1️⃣ Écoute et compréhension de vos besoins : Nous commençons par évaluer l'accessibilité de vos
                   supports numériques pour identifier vos points forts et axes d'amélioration.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
-                <p class="ml-4 text-lg">
+                <p class="ml-4">
                   2️⃣ Élaboration d'une stratégie d'accessibilité sur mesure : En adéquation avec vos objectifs, vos
                   ressources internes, votre budget et les contraintes réglementaires, nous développons ensemble un plan
                   d'action personnalisé.
@@ -51,7 +51,7 @@ export default component$(() => {
                   les normes d'accessibilité en vigueur.
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex items-center">
+              <li class="flex items-center">
                 <p class="ml-4">
                   5️⃣ Support continu pour une accessibilité numérique durable : Nos experts restent à votre disposition
                   pour vous assister et vous conseiller dans le maintien d'une accessibilité numérique optimale et
@@ -63,23 +63,23 @@ export default component$(() => {
         </Article>
 
         <Article
-          stylesTitle="md:mb-[5rem]"
-          stylesImage=" ml-[4rem] shadow mt-[13rem]"
+          stylesTitle="md:mb-[2rem]"
+          stylesImage=" ml-[4rem] shadow mt-[8rem]"
           stylesArticleGaucheFlex="mb-8 -py-[-10rem] shadow bg-slate-100 text-[#0B3168] rounded md:flex-row-reverse "
           imageSrc="/images/home4.png"
           title="Nos services adaptés à votre réalité :"
         >
-          <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+          <span q:slot="check-box" class="mt-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around ">
               <li class="mb-[2.5rem] flex items-center">
-                <p class="ml-4 text-lg">
+                <p class="ml-4">
                   🔹 Accompagnement stratégique : Sensibilisation aux enjeux de l'accessibilité, définition de votre
                   politique d'accessibilité et analyse des cahiers des charges pour évaluer la prise en compte des
                   critères de l'accessibilité.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
-                <p class="ml-4 text-lg">
+                <p class="ml-4">
                   🔹 Accompagnement en mode projet : Clarification des besoins, détermination du périmètre de
                   l'accompagnement, aide à la rédaction des spécifications techniques et sélection des technologies
                   adaptées.
@@ -98,7 +98,7 @@ export default component$(() => {
                   éditoriales en collaboration avec vos équipes techniques.
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex items-center">
+              <li class="flex items-center">
                 <p class="ml-4">
                   🔹 Formules d'accompagnement : Forfait temps pour les modifications nécessaires ou accompagnement au
                   temps passé pour plus de flexibilité et d'adaptabilité dans votre projet d'accessibilité.
@@ -108,7 +108,7 @@ export default component$(() => {
           </span>
         </Article>
         <Article
-          stylesContent="leading-7"
+          stylesContent="leading-7  mt-[2rem] mr-[5rem]"
           stylesImage="shadow"
           stylesTitle="md:mb-[5rem]"
           title="Passez à l'action et boostez votre accessibilité numérique :"
@@ -124,7 +124,7 @@ export default component$(() => {
           pages correspondantes) pour maximiser votre impact et votre performance en ligne. Faites de l'accessibilité
           numérique une priorité et un atout pour votre entreprise avec Inolib.
         </p>
-        <span class="flex justify-center mb-2 md:mb-0">
+        <span class="flex justify-center mt-8 mb-2 md:mb-0">
           <Button
             href="/services"
             color="blue"
