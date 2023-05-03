@@ -1,9 +1,14 @@
-import { $, component$ } from "@builder.io/qwik";
+import { $, component$, useStore } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 import { ParametersMenu } from "~/ui/ParametersMenu/ParametersMenu";
 import { ParametersMenuButton } from "~/ui/ParametersMenu/ParametersMenuButton";
 import { ParametersMenuCheckbox } from "~/ui/ParametersMenu/ParametersMenuCheckbox";
 import { ParametersMenuItems } from "~/ui/ParametersMenu/ParametersMenuItems";
+
+export type ParamsStore = {
+  images: string;
+  altTextContainer: string;
+};
 
 const options = [
   {
@@ -15,8 +20,31 @@ const options = [
     defaultOptionValue: "true",
     secondOptionValue: "false",
     onChange: $((event: InputEvent) => {
-      console.log("police :", event.target.value);
-      //on peut changer la taille de la police (fontsize) de la police de base de la balise HTML racine voir doc, faire changement via des event ou des documentqueryselectore
+      console.log("police", event.target);
+      //remplacer toute les balise img par span avec le contenu du alt comme contenu a l'interieur (contenu alt placé dans une variable avant suppréssion de la balise img puis replacer dans sapn)
+
+      const css = document.querySelector<HTMLStyleElement>("*");
+      if (css === null) {
+        console.error("Le fichier CSS Tailwind n'est pas chargé");
+        return;
+      }
+      // const content = css.textContent;
+      // const newContent = content.replace(/text-(sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl)/g, (match, size) => {
+      //   if (size === "sm") {
+      //     return "text-lg";
+      //   } else if (size === "base") {
+      //     return "text-lg";
+      //   } else if (size === "lg") {
+      //     return "text-xl";
+      //   } else if (size === "xl") {
+      //     return "text-2xl";
+      //   } else if (size === "2xl") {
+      //     return "text-3xl";
+      //   } else {
+      //     ("");
+      //   }
+      // });
+      // css.textContent = newContent;
     }),
   },
   {
@@ -28,8 +56,15 @@ const options = [
     defaultOptionValue: "true",
     secondOptionValue: "false",
     onChange: $((event: InputEvent) => {
-      console.log("interlignage :", event.target.value);
-      //modifier la propriéte lineheight de l'élément racine html
+      if (event.target.value === "true") {
+        console.log("interlignage :", event.target.value);
+        //modifier la propriéte lineheight de l'élément racine html
+        const rootElement = document.documentElement;
+        rootElement.setAttribute("style", `line-height: 1.5`);
+      } else {
+        const rootElement = document.documentElement;
+        rootElement.setAttribute("style", `line-height: 3`);
+      }
     }),
   },
   {
@@ -41,35 +76,40 @@ const options = [
     defaultOptionValue: "true",
     secondOptionValue: "false",
     onChange: $((event: InputEvent) => {
-      console.log("image", event.target.value);
+      console.log("image", event.target);
       //remplacer toute les balise img par span avec le contenu du alt comme contenu a l'interieur (contenu alt placé dans une variable avant suppréssion de la balise img puis replacer dans sapn)
+      const images = document.getElementsByTagName("img");
+      for (let i = 0; i < images.length; i++) {
+        const image = images[i];
+        const altTextContainer = document.getElementById("span");
+        if (altTextContainer != undefined) {
+          altTextContainer.style.display = "none";
+        }
+        if (event.target.value == "true") {
+          // image.style.display = "block";
+        } else {
+          // Sinon, remplacer image par texte
+          const altText = image.getAttribute("alt");
+
+          image.style.display = "none";
+          const altTextContainer = document.createElement("span");
+          altTextContainer.innerText = altText;
+          image.parentNode?.insertBefore(altTextContainer, image);
+        }
+      }
     }),
   },
 ];
 
-function toggleImages(condition: boolean): void {
-  const images = document.getElementsByTagName("img");
-  for (let i = 0; i < images.length; i++) {
-    const image = images[i];
-    if (condition) {
-      {
-        options.inputName === "police" && options.defaultOptionValue === "true";
-      }
-      image.style.display = "block";
-    } else {
-      // Sinon, afficher le texte alternatif
-      const altText = image.getAttribute("alt");
-      if (altText) {
-        image.style.display = "none";
-        const altTextContainer = document.createElement("span");
-        altTextContainer.innerText = altText;
-        image.parentNode?.insertBefore(altTextContainer, image);
-      }
-    }
-  }
-}
-
 export default component$(() => {
+  const store = useStore<ParamsStore>(
+    {
+      images: "",
+      altTextContainer: "",
+    },
+
+    { deep: true }
+  );
   return (
     <ParametersMenu>
       <ParametersMenuButton>

@@ -5,14 +5,13 @@ import type { Reference } from "../../types";
 import { contextId } from "./ParametersMenu";
 
 type ParametersMenuCheckboxProps = {
-  defaultName: string;
   readonly styles?: string;
   inputName: string;
   defaultOption: string;
   secondOption: string;
   ariallabel: string;
-  readonly defaultOptionValue: boolean;
-  readonly secondOptionValue: boolean;
+  readonly defaultOptionValue: string;
+  readonly secondOptionValue: string;
   readonly onChange: QRL<(event: InputEvent) => void>;
 };
 
@@ -24,27 +23,6 @@ export type ParametersMenuCheckboxStore = {
     image: boolean;
   };
 };
-
-function toggleImages(condition: boolean): void {
-  const images = document.getElementsByTagName("img");
-  for (let i = 0; i < images.length; i++) {
-    const image = images[i];
-    if (condition) {
-      {
-        input.name === "police" && input.value === "true";
-      }
-      image.style.display = "block";
-    } else {
-      const altText = image.getAttribute("alt");
-      if (altText) {
-        image.style.display = "none";
-        const altTextContainer = document.createElement("span");
-        altTextContainer.innerText = altText;
-        image.parentNode?.insertBefore(altTextContainer, image);
-      }
-    }
-  }
-}
 
 export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(
   ({ ariallabel, inputName, defaultOption, secondOption, defaultOptionValue, onChange, secondOptionValue, styles }) => {
@@ -74,7 +52,6 @@ export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(
       <>
         <li
           class={styles}
-          role="presentation"
           ref={store.ref}
           role="menuitem"
           tabIndex={store.ref === context.ParametersMenu.focusable ? 0 : -1}

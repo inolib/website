@@ -22,7 +22,7 @@ type FormStore = {
   message: string;
 };
 
-const API_URL = "https://api-inolib.vercel.app/api";
+const API_URL = "https://api-inolib.vercel.app";
 
 export const verifyInput = $((store: FormStore) => {
   if (
