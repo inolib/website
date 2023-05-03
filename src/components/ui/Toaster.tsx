@@ -95,7 +95,7 @@ export const Toaster = component$<ToasterProps>(({ icon, store }) => {
   });
 
   return (
-    <>
+    <div>
       {store.show ? (
         <div id="toast-success" class={className} role="alert">
           {iconJSX}
@@ -127,6 +127,6 @@ export const Toaster = component$<ToasterProps>(({ icon, store }) => {
           </button>
         </div>
       ) : null}
-    </>
+    </div>
   );
 });
