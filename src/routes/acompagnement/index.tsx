@@ -18,7 +18,7 @@ export default component$(() => {
       <section class="text-[#0B3168]">
         <Article
           stylesTitle="md:mb-[5rem]"
-          stylesImage=" mr-[4rem] shadow mt-[13rem]"
+          stylesImage=" md:mr-[4rem] shadow mt-[13rem]"
           stylesArticleGaucheFlex="mb-8 shadow bg-slate-100 text-[#0B3168] rounded md:flex-row "
           imageSrc="/images/photoArticle.png"
           title="Notre stratégie centrée sur vous :"

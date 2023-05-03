@@ -1,0 +1,166 @@
+import { component$ } from "@builder.io/qwik";
+import { type DocumentHead } from "@builder.io/qwik-city";
+
+import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
+import { Banner } from "~/components/header/Banner";
+import { Article } from "~/components/Article";
+import { Button } from "~/components/ui/buttons/Button";
+
+export default component$(() => {
+  return (
+    <>
+      <Banner
+        content="Visez l'excellence, subjuguez l'expérience, pour un numérique responsable et inclusif."
+        imageSrc="\images\temoignage-homme-header.png"
+        title="Testing"
+      />
+
+      <section class="text-[#0B3168]">
+        <Article
+          stylesTitle="md:mb-[5rem]"
+          stylesImage=" md:mr-[4rem] shadow "
+          stylesArticleGaucheFlex=" text-[#0B3168] rounded md:flex-row "
+          imageSrc="/images/home4.png "
+          title=" Plongez au cœur de l'univers Inolib :"
+        >
+          <span q:slot="check-box" class="mt-5 md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+            <p class="md:ml-4 ml-2 text-lg leading-7">
+              Chez Inolib, tout tourne autour de vous, car notre passion est de rendre vos produits digitaux
+              performants, <strong>accessibles</strong> et attrayants pour tous les utilisateurs.l'excellence et
+              l'expérience sont les maîtres-mots pour créer un numérique responsable et inclusif.
+            </p>
+            <br />
+            <p class="md:ml-4 ml-2 text-lg leading-7">
+              Nous comprenons que l'accessibilité numérique et l'UX design ne sont pas juste des tendances à la mode,
+              mais des éléments clés pour créer une expérience utilisateur inoubliable. C'est pourquoi nous offrons une
+              gamme de services pour répondre à vos besoins, incluant des <strong>tests automatisés</strong>, des tests
+              manuels réalisés par des experts UX, et des professionnels du testing ainsi que des tests avec des
+              utilisateurs en situation de handicap, garantissant une <strong>accessibilité</strong> et une inclusivité
+              maximales.
+            </p>
+          </span>
+        </Article>
+        <Article
+          stylesTitle="md:mb-[5rem]"
+          stylesImage=" md:ml-[4rem] shadow "
+          stylesArticleGaucheFlex="text-[#0B3168] rounded md:flex-row-reverse "
+          imageSrc="/images/homme-fauteuil.png"
+          title=""
+        >
+          <span q:slot="check-box" class="mt-5 md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+            <p class="md:ml-4 ml-2 text-lg leading-7">
+              Notre approche flexible nous permet de personnaliser nos tests en fonction de vos besoins. Nous pouvons
+              cibler un groupe d'utilisateurs spécifique, comme les personnes en situation de handicap, ou un
+              échantillon plus large avec des critères variés, tels que l'âge et la profession. L'offre d'Inolib se
+              distingue par sa complémentarité entre audit d'accessibilité et tests utilisateurs. L'audit
+              d'accessibilité permet de se conformer au <strong>référentiel RGAA</strong>, tandis que les tests
+              utilisateurs plongent au cœur des besoins et attentes des utilisateurs, en les mettant en situation réelle
+              et en observant leurs réactions, performances et interactions dans un contexte prédéfini.
+            </p>
+          </span>
+        </Article>
+        <Article
+          stylesImage="shadow md:ml-6"
+          stylesTitle="md:mb-[5rem]"
+          title="Notre gamme de tests prends en compte des aspects suivants :"
+          content=""
+          imageSrc="/images/homme-fauteuil.png"
+          stylesArticleGaucheFlex="md:flex-row "
+        >
+          <span q:slot="check-box" class=" md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+            <ul class="flex flex-col md:justify-around ">
+              <li class="mb-[2.5rem] flex items-center">
+                <p class="md:ml-4 ml-2 text-lg">
+                  1️⃣ Tests de régression : Vérification de l'absence d'impact négatif des nouvelles fonctionnalités sur
+                  les fonctionnalités existantes.
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <p class="md:ml-4 ml-2 text-lg">
+                  2️⃣ Tests d'utilisabilité : Évaluation de la facilité d'utilisation de votre système ou application web
+                  pour réaliser une tâche..
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <p class="md:ml-4 ml-2 text-lg">
+                  3️⃣Tests fonctionnels : Contrôle des fonctions de votre application à travers des basés sur les
+                  exigences fonctionnelles.
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <p class="md:ml-4 ml-2 text-lg">
+                  4️⃣ Tests unitaires : Vérification du bon fonctionnement de chaque unité logicielle (le plus petit
+                  composant testable d'une application).
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <p class="md:ml-4 ml-2 text-lg">
+                  5️⃣ Tests d'intégration : Validation de la bonne interaction entre les composants ou fonctions de votre
+                  logiciel.
+                </p>
+              </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <p class="md:ml-4 ml-2 text-lg">
+                  6️⃣ Tests de réception : Contrôle global du système pour s'assurer qu'il fonctionne comme prévu.
+                </p>
+              </li>
+              <li class="mb-[1rem] flex items-center">
+                <p class="md:ml-4 ml-2 text-lg">
+                  7️⃣ Tests de performance : Évaluation de la réactivité et de la stabilité de votre application sous une
+                  charge de travail spécifique.
+                </p>
+              </li>
+            </ul>
+          </span>
+        </Article>
+        <Article
+          title="Nos méthodes :"
+          stylesContent=" md:ml-[5rem] text-lg"
+          stylesTitle="md:mb-[2rem]"
+          stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end leading-7"
+          stylesArticleGauchePadding="md:pl-10 "
+          content="Inolib s'articule autour de quatre étapes clés :
+
+      Accueil et sélection des participants : Présentation des objectifs, consignes, profils des candidats et validation de leur maîtrise des aides techniques.
+      Mise en situation : Tests basés sur des scénarios prédéfinis pour évaluer l'expérience d'usage de l'application ou du site.
+      Retours d'expérience : Recueil des impressions des utilisateurs, identification des difficultés rencontrées, suggestions d'amélioration et évaluation des qualités ergonomiques.
+      Synthèse et recommandations : Analyse des résultats pour proposer des axes d'amélioration en matière d'accessibilité et d'ergonomie.
+      "
+          imageSrc="\images\presentation-article-2.png"
+          stylesImgArticle="md:pr-10"
+        ></Article>
+        <section>
+          <p class={"text-lg leading-7 mx-[1rem] my-10 md:mx-[15rem] md:my-[2rem]"}>
+            Notre objectif est d'améliorer l'expérience utilisateur, assurer la compatibilité multiplateforme, réduire
+            les coûts de maintenance et optimiser la performance. Nous travaillons en étroite collaboration avec vous
+            pour définir une stratégie de test adaptée à vos besoins, incluant un plan de test et une analyse de
+            l'accessibilité numérique. Nous avons une approche inclusive qui prend en compte les besoins de tous les
+            utilisateurs, y compris ceux en situation de handicap.
+          </p>
+          <p class={"text-lg leading-7 mx-[1rem] my-10 md:mx-[15rem] md:my-[2rem]"}>
+            Nous sommes engagés dans la création d'un numérique responsable et inclusif, et nous voulons faire la
+            différence. N'attendez plus pour travailler avec un partenaire engagé dans la création d'un avenir numérique
+            accessible à tous. Contactez Inolib dès aujourd'hui pour une consultation gratuite et découvrez comment nous
+            pouvons améliorer vos projets digitaux. Ensemble, créons un numérique accessible à tous pour un avenir
+            meilleur.
+          </p>
+        </section>
+        <span class="flex justify-center mb-2 md:mb-0">
+          <Button
+            href="/services"
+            color="blue"
+            label="Demander un devis"
+            styles="mt-[2rem] transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300"
+          />
+        </span>
+        <div class="my-10 flex w-full justify-center">
+          <ButtonTopPage />
+        </div>
+      </section>
+    </>
+  );
+});
+
+export const head: DocumentHead = {
+  title: "Acompagnement",
+};

@@ -23,24 +23,30 @@ export default component$(() => {
         <Article
           imageSrc="/images/actualitehome1.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
-          stylesImage=" mr-[6rem] mt-[3rem]"
+          stylesImage=" md:mr-[6rem] mt-[3rem]"
         >
           <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around ">
               <li class="mb-[2.5rem] flex items-center">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 text-lg">
                   <strong class="text-xl">Élargir</strong> votre audience en incluant tous les utilisateurs,
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 text-lg">
                   <strong class="text-xl">Améliorer</strong> l'expérience utilisateur pour tous,
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4">
                   <strong class="text-xl">Respecter</strong> les obligations en matière d'accessibilité numérique,
                 </p>
@@ -93,7 +99,9 @@ export default component$(() => {
           <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col md:mt-0">
               <li class="mb-[2.5rem] flex md:w-[40rem]">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">1. Audit Express</strong> : Diagnostic précis pour cibler les points faibles
                   de l'accessibilité de vos outils digitaux et définir les pistes d'amélioration. Grille d'audit et
@@ -101,7 +109,9 @@ export default component$(() => {
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">2. Audit Approfondi</strong> : Une analyse complète de vos supports
                   numériques, avec un rapport détaillé incluant des recommandations (fonctionnelles, techniques,
@@ -109,7 +119,9 @@ export default component$(() => {
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">3. Audit de Contrôle</strong> : Suite à l'audit initial et aux corrections
                   apportées, l'audit de contrôle intervient pour valider la conformité aux normes d'accessibilité et
@@ -133,28 +145,36 @@ export default component$(() => {
           <span q:slot="check-box" class="mx-5 mt-16 flex flex-col md:mx-0 md:mt-[3rem] md:flex-row-reverse">
             <ul class="flex flex-col md:pl-10">
               <li class="mb-[2.5rem] flex items-center">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 text-lg">
                   <strong class="text-xl">1. Co-construction</strong> : Sélection d'un échantillon représentatif en
                   collaboration avec vous.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 text-lg">
                   <strong class="text-xl">2. Investigation</strong> : Audit de conformité réalisé par nos experts, grâce
                   à une grille de test spécifique.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4">
                   <strong class="text-xl">3. Synthèse</strong> : Rédaction d'un rapport d'audit détaillé, incluant nos
                   recommandations d'accessibilité.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4">
                   <strong class="text-xl">4. Échange</strong> : Restitution des résultats pour vous offrir une vue
                   d'ensemble et répondre à vos questions.
@@ -173,14 +193,18 @@ export default component$(() => {
           <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col">
               <li class="mb-[2.5rem] flex md:w-[40rem]">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">1. Accompagnement</strong> : Intégration de nos conseils dans votre stratégie
                   de développement et la mise en œuvre des corrections.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex">
-                <img src="/images/checkservice.svg" alt="" />
+                <div class={"hidden md:flex"}>
+                  <img src="/images/checkservice.svg" alt="" />
+                </div>
                 <p class="ml-4 font-normal">
                   <strong class="text-xl">2. Coordination</strong> : Création et suivi des tickets d'anomalies dans
                   votre outil de gestion de projets (Redmine, Jira, Trello, Asana, etc.) pour une conformité optimale.
