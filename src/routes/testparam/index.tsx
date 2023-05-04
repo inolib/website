@@ -20,31 +20,30 @@ const options = [
     defaultOptionValue: "true",
     secondOptionValue: "false",
     onChange: $((event: InputEvent) => {
-      console.log("police", event.target);
-      //remplacer toute les balise img par span avec le contenu du alt comme contenu a l'interieur (contenu alt placé dans une variable avant suppréssion de la balise img puis replacer dans sapn)
+      if (event.target.value === "false") {
+        console.log("police", event.target);
 
-      const css = document.querySelector<HTMLStyleElement>("*");
-      if (css === null) {
-        console.error("Le fichier CSS Tailwind n'est pas chargé");
-        return;
+        // sélectionner tous les éléments de texte sur la page
+        const textElements = document.querySelectorAll("body *");
+
+        // doubler la taille de police de chaque élément
+        textElements.forEach((el) => {
+          const currentSize = window.getComputedStyle(el).fontSize;
+          const newSize = parseInt(currentSize) * 1.1;
+          const newSizeStr = newSize.toString() + "px";
+          (el as HTMLElement).style.fontSize = newSizeStr;
+        });
+      } else {
+        console.log("police", event.target);
+
+        // sélectionner tous les éléments de texte sur la page
+        const textElements = document.querySelectorAll("body *");
+
+        // réinitialiser la taille de police de chaque élément
+        textElements.forEach((el) => {
+          (el as HTMLElement).style.fontSize = null;
+        });
       }
-      // const content = css.textContent;
-      // const newContent = content.replace(/text-(sm|base|lg|xl|2xl|3xl|4xl|5xl|6xl)/g, (match, size) => {
-      //   if (size === "sm") {
-      //     return "text-lg";
-      //   } else if (size === "base") {
-      //     return "text-lg";
-      //   } else if (size === "lg") {
-      //     return "text-xl";
-      //   } else if (size === "xl") {
-      //     return "text-2xl";
-      //   } else if (size === "2xl") {
-      //     return "text-3xl";
-      //   } else {
-      //     ("");
-      //   }
-      // });
-      // css.textContent = newContent;
     }),
   },
   {
