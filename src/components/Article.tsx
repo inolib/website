@@ -34,7 +34,7 @@ export const Article = component$((props: ArticleProps) => {
   const stylesTitle = props.stylesTitle !== undefined ? props.stylesTitle : "";
 
   return (
-    <article class="text-[#0B3168] md:mx-[8rem] md:py-8">
+    <section class="text-[#0B3168] md:mx-[8rem] md:py-8">
       <h2 class={`mx-5 my-7 text-3xl ${stylesTitle} font-semibold md:m-0`}>{props.title}</h2>
 
       <div class={`flex flex-col ${stylesArticleGaucheFlex} md:pt-6`}>
@@ -63,6 +63,6 @@ export const Article = component$((props: ArticleProps) => {
           <p class={`max-w-content text-center ${styles} ${imgQuoteSize} md:mt-6`}>{props.imageText}</p>
         </div>
       </div>
-    </article>
+    </section>
   );
 });
