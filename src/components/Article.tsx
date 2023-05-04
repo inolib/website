@@ -9,6 +9,8 @@ type ArticleProps = {
   imgSeparator?: string;
   imageText?: string;
   styles?: string;
+  stylesTitle?: string;
+  stylesImage?: string;
   stylesTestimony?: string;
   stylesContent?: string;
   stylesArticleGaucheFlex?: string;
@@ -28,10 +30,12 @@ export const Article = component$((props: ArticleProps) => {
   const stylesContent = props.stylesContent !== undefined ? props.stylesContent : "";
   const stylesImgArticle = props.stylesImgArticle !== undefined ? props.stylesImgArticle : "";
   const stylesTestimony = props.stylesTestimony !== undefined ? props.stylesTestimony : "";
+  const stylesImage = props.stylesImage !== undefined ? props.stylesImage : "";
+  const stylesTitle = props.stylesTitle !== undefined ? props.stylesTitle : "";
 
   return (
-    <article class="text-[#0B3168] md:mx-[8rem] md:py-8">
-      <h2 class={`mx-5 my-7 text-2xl font-semibold md:m-0`}>{props.title}</h2>
+    <section class="text-[#0B3168] md:mx-[8rem] md:py-8">
+      <h2 class={`mx-5 my-7 text-3xl ${stylesTitle} font-semibold md:m-0`}>{props.title}</h2>
 
       <div class={`flex flex-col ${stylesArticleGaucheFlex} md:pt-6`}>
         <span class="mx-5 md:mx-0">
@@ -48,16 +52,17 @@ export const Article = component$((props: ArticleProps) => {
             <Slot name="check-box" />
           </div>
 
-          <strong class="-mt-10 mb-3 flex justify-center  text-justify md:mb-0 md:mt-16 md:text-2xl">
-            <p class="text-center md:w-[40rem]">{props.contentQuote}</p>
+          <strong class="-mt-10 mb-3 flex justify-center text-justify md:mb-0 md:mt-16 md:text-2xl">
+            <p class="text-center md:w-[40rem]"></p>
+            {props.contentQuote} <Slot name="content2" />
           </strong>
         </span>
         <div class={`flex flex-col ${stylesImgArticle}`}>
-          <img class="h-auto max-w-full" src={props.imageSrc} alt="" />
+          <img class={`h-auto ${stylesImage} max-w-full`} src={props.imageSrc} alt="" />
           <blockquote class={`max-w-content my-6 text-center ${imgQuoteSize}`}>{props.imageQuote}</blockquote>
           <p class={`max-w-content text-center ${styles} ${imgQuoteSize} md:mt-6`}>{props.imageText}</p>
         </div>
       </div>
-    </article>
+    </section>
   );
 });

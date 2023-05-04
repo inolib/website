@@ -25,15 +25,3 @@
     transform: translateY(-20px);
   }
 }
-
-/*
-#modal.open {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-#modal.open #modal-content {
-  animation: fade-in 0.5s ease-in-out;
-}
-*/
