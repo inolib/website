@@ -56,13 +56,13 @@ export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(
           role="menuitem"
           tabIndex={store.ref === context.ParametersMenu.focusable ? 0 : -1}
         >
-          <div class="flex flex-col" aria-label={ariallabel}>
-            <p>{inputName}</p>
-            <div class="flex ml-2 text-l">
+          <div class="flex flex-col m-4" aria-label={ariallabel}>
+            <p class="text-3xl">{inputName}</p>
+            <div class="flex mx-3 text-2xl">
               <label>
                 {defaultOption}
                 <input
-                  class="ml-1"
+                  class="ml-2"
                   checked
                   type="radio"
                   name={inputName}
@@ -72,7 +72,7 @@ export const ParametersMenuCheckbox = component$<ParametersMenuCheckboxProps>(
               </label>
               <label class="ml-2">
                 {secondOption}
-                <input class="ml-1" type="radio" name={inputName} value={secondOptionValue} onChange$={onChange} />
+                <input class="ml-2" type="radio" name={inputName} value={secondOptionValue} onChange$={onChange} />
               </label>
             </div>
           </div>

@@ -27,7 +27,7 @@ export const Navbar = component$(() => {
             <div class="flex justify-around border-t-2">
               <a
                 href="/audit"
-                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/audit" ? { "aria-current": "page" } : {})}
               >
                 AUDIT
@@ -35,7 +35,7 @@ export const Navbar = component$(() => {
 
               <a
                 href="/"
-                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
               >
                 DEVELOPPEMENT
@@ -43,7 +43,7 @@ export const Navbar = component$(() => {
 
               <a
                 href="/"
-                class="rounded-md  px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                class="rounded-md  px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
               >
                 FORMATION
@@ -51,35 +51,35 @@ export const Navbar = component$(() => {
 
               <a
                 href="/"
-                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white "
                 {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
               >
                 MARKETING DIGITAL
               </a>
               <a
                 href="/temoignages"
-                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
               >
                 PRÉSENTATION
               </a>
               <a
                 href="/actualite"
-                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
               >
                 ACTUALITÉS
               </a>
               <a
                 href="/contact"
-                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
               >
                 CONTACT
               </a>
               <a
                 href="/connexion"
-                class="rounded-md px-3 py-2 font-normal text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
+                class="rounded-md px-3 py-2 font-normal text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168] md:max-h-14"
                 {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
               >
                 Connexion

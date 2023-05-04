@@ -1,5 +1,4 @@
 import { $, component$, useStore } from "@builder.io/qwik";
-import { type DocumentHead } from "@builder.io/qwik-city";
 import { ParametersMenu } from "~/ui/ParametersMenu/ParametersMenu";
 import { ParametersMenuButton } from "~/ui/ParametersMenu/ParametersMenuButton";
 import { ParametersMenuCheckbox } from "~/ui/ParametersMenu/ParametersMenuCheckbox";
@@ -89,7 +88,7 @@ const options = [
   },
 ];
 
-export default component$(() => {
+export const AccessibilityMenu = component$(() => {
   const store = useStore<ParamsStore>(
     {
       images: "",
@@ -126,7 +125,3 @@ export default component$(() => {
     </>
   );
 });
-
-export const head: DocumentHead = {
-  title: "test",
-};
