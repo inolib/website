@@ -30,7 +30,7 @@ export const Toaster = component$<ToasterProps>(({ icon, store }) => {
       close$().catch((error) => {
         console.error(error);
       });
-    }, 6000);
+    }, 4000);
 
     store.animation = "toaster-in";
   });
