@@ -34,7 +34,6 @@ export const Navbar = component$(() => {
                   >
                     AUDIT
                   </a>
-
                   <a
                     href="/"
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
@@ -42,7 +41,6 @@ export const Navbar = component$(() => {
                   >
                     DEVELOPPEMENT
                   </a>
-
                   <a
                     href="/"
                     class="rounded-md  px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
@@ -50,7 +48,6 @@ export const Navbar = component$(() => {
                   >
                     FORMATION
                   </a>
-
                   <a
                     href="/testing"
                     class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
@@ -79,13 +76,19 @@ export const Navbar = component$(() => {
                   >
                     CONTACT
                   </a>
-                  <a
-                    href="/connexion"
-                    class="rounded-md px-3 py-2 font-normal text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
-                    {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
-                  >
-                    Connexion
-                  </a>
+                  <span>
+                    <p aria-label="numéro de téléphone" class="text-[#0B3168] text-xs -mt-2 mb-3">
+                      {" "}
+                      Contact : 06 70 86 50 32
+                    </p>
+                    <a
+                      href="/connexion"
+                      class="rounded-md px-3 py-2 font-normal text-sm mb-2 ml-5 text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
+                      {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
+                    >
+                      Connexion
+                    </a>
+                  </span>
                 </div>
               </div>
             </div>
