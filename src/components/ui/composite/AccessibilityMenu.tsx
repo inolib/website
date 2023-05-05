@@ -20,7 +20,7 @@ const options = [
     secondOptionValue: "false",
     onChange: $((event: InputEvent) => {
       if (event.target.value === "false") {
-        const textElements = document.querySelectorAll("body");
+        const textElements = document.querySelectorAll("*");
         textElements.forEach((el) => {
           const currentSize = window.getComputedStyle(el).fontSize;
           const newSize = parseInt(currentSize) * 1.5;
@@ -41,16 +41,25 @@ const options = [
     defaultOption: "défault",
     inputName: "interlignage :",
     secondOption: "supérieur",
-    defaultOptionValue: "true",
-    secondOptionValue: "false",
+    defaultOptionValue: "false",
+    secondOptionValue: "true",
     onChange: $((event: InputEvent) => {
       if (event.target.value === "true") {
         console.log("interlignage :", event.target.value);
-        const rootElement = document.documentElement;
-        rootElement.setAttribute("style", `line-height: 1.5`);
+        // const rootElement = document.documentElement;
+        // rootElement.setAttribute("style", `line-height: 1.5`);
+        const rootElement = document.querySelectorAll("body");
+        rootElement.forEach((el) => {
+          const currentLineHeight = window.getComputedStyle(el).lineHeight;
+          const newLineHeight = parseInt(currentLineHeight) * 3;
+          const newLineHeightStr = newLineHeight.toString() + "px";
+          (el as HTMLElement).style.lineHeight = newLineHeightStr;
+        });
       } else {
-        const rootElement = document.documentElement;
-        rootElement.setAttribute("style", `line-height: 3`);
+        const rootElements = document.querySelectorAll("body");
+        rootElements.forEach((el) => {
+          (el as HTMLElement).style.lineHeight = null;
+        });
       }
     }),
   },
