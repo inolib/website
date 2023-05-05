@@ -11,9 +11,8 @@ export default component$(() => {
   return (
     <>
       <Banner
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna. Aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua."
+        content="Nous sommes heureux de pouvoir communiquer avec vous et sommes à votre disposition pour répondre à toutes vos questions
+         ou remarques concernant notre site web ou nos services. Vous pouvez nous contacter en remplissant le formulaire de contact ci-dessous."
         imageSrc="\images\contact-banner.png"
         title="Contacts"
       />

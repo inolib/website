@@ -8,10 +8,7 @@ export const ContactCard = component$(() => {
           Une information ?<br />
           Un devis ?
         </p>
-        <p class="mb-5 md:mb-10">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur fermentum odio orci, id accumsan est
-          eleifend va lucum.
-        </p>
+        <p class="mb-5 md:mb-10">N'hésitez pas à nous contacter via notre formulaire ou encore sur les réseaux !</p>
         <div class="mb-4 md:hidden">
           <p>Appelez-nous!</p>
           <p>06 70 86 50 32</p>
