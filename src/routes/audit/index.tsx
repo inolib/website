@@ -11,7 +11,7 @@ export default component$(() => {
   return (
     <>
       <Banner
-        content="votre tremplin vers l'inclusion digitale"
+        content="Votre tremplin vers l'inclusion digitale !"
         title="Audits d'accessibilité numérique"
         imageSrc="/images/banner-accessibilite.png"
       />
