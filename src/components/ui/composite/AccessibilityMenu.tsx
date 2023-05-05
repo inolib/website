@@ -20,15 +20,19 @@ const options = [
     secondOptionValue: "false",
     onChange: $((event: InputEvent) => {
       if (event.target.value === "false") {
-        const textElements = document.querySelectorAll("*");
+        const textElements = document.querySelectorAll(
+          "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
+        );
         textElements.forEach((el) => {
           const currentSize = window.getComputedStyle(el).fontSize;
-          const newSize = parseInt(currentSize) * 1.5;
+          const newSize = parseInt(currentSize) * 1.3;
           const newSizeStr = newSize.toString() + "px";
           (el as HTMLElement).style.fontSize = newSizeStr;
         });
       } else {
-        const textElements = document.querySelectorAll("body");
+        const textElements = document.querySelectorAll(
+          "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
+        );
         textElements.forEach((el) => {
           (el as HTMLElement).style.fontSize = null;
         });
@@ -46,17 +50,20 @@ const options = [
     onChange: $((event: InputEvent) => {
       if (event.target.value === "true") {
         console.log("interlignage :", event.target.value);
-        // const rootElement = document.documentElement;
-        // rootElement.setAttribute("style", `line-height: 1.5`);
-        const rootElement = document.querySelectorAll("body");
+
+        const rootElement = document.querySelectorAll(
+          "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
+        );
         rootElement.forEach((el) => {
           const currentLineHeight = window.getComputedStyle(el).lineHeight;
-          const newLineHeight = parseInt(currentLineHeight) * 3;
+          const newLineHeight = parseInt(currentLineHeight) * 1.7;
           const newLineHeightStr = newLineHeight.toString() + "px";
           (el as HTMLElement).style.lineHeight = newLineHeightStr;
         });
       } else {
-        const rootElements = document.querySelectorAll("body");
+        const rootElements = document.querySelectorAll(
+          "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
+        );
         rootElements.forEach((el) => {
           (el as HTMLElement).style.lineHeight = null;
         });
