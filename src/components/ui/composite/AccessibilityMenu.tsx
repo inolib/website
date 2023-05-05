@@ -19,7 +19,7 @@ const options = [
     defaultOptionValue: "true",
     secondOptionValue: "false",
     onChange: $((event: InputEvent) => {
-      if (event.target.value === "false") {
+      if ((event?.target as HTMLInputElement).value === "false") {
         const textElements = document.querySelectorAll(
           "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
         );
@@ -34,7 +34,7 @@ const options = [
           "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
         );
         textElements.forEach((el) => {
-          (el as HTMLElement).style.fontSize = null;
+          (el as HTMLElement).style.fontSize = "";
         });
       }
     }),
@@ -48,8 +48,8 @@ const options = [
     defaultOptionValue: "false",
     secondOptionValue: "true",
     onChange: $((event: InputEvent) => {
-      if (event.target.value === "true") {
-        console.log("interlignage :", event.target.value);
+      if ((event?.target as HTMLInputElement).value === "true") {
+        console.log("interlignage :", (event?.target as HTMLInputElement).value);
 
         const rootElement = document.querySelectorAll(
           "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
@@ -65,7 +65,7 @@ const options = [
           "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
         );
         rootElements.forEach((el) => {
-          (el as HTMLElement).style.lineHeight = null;
+          (el as HTMLElement).style.lineHeight = "";
         });
       }
     }),
@@ -81,25 +81,25 @@ const options = [
     onChange: $((event: InputEvent) => {
       console.log("image", event.target);
       //remplacer toute les balise img par span avec le contenu du alt comme contenu a l'interieur (contenu alt placé dans une variable avant suppréssion de la balise img puis replacer dans sapn)
-      const images = document.getElementsByTagName("img");
-      for (let i = 0; i < images.length; i++) {
-        const image = images[i];
-        const altTextContainer = document.getElementById("span");
-        if (altTextContainer != undefined) {
-          altTextContainer.style.display = "none";
-        }
-        if (event.target.value == "true") {
-          image.style.display = "block";
-        } else {
-          // Sinon, remplacer image par texte
-          const altText = image.getAttribute("alt");
+      // const images = document.getElementsByTagName("img");
+      // for (let i = 0; i < images.length; i++) {
+      //   const image = images[i];
+      //   const altTextContainer = document.getElementById("span");
+      //   if (altTextContainer != undefined) {
+      //     altTextContainer.style.display = "none";
+      //   }
+      //   if (event?.target.value == "true") {
+      //     image.style.display = "block";
+      //   } else {
+      //     // Sinon, remplacer image par texte
+      //     const altText = image.getAttribute("alt");
 
-          image.style.display = "none";
-          const altTextContainer = document.createElement("span");
-          altTextContainer.innerText = altText;
-          image.parentNode?.insertBefore(altTextContainer, image);
-        }
-      }
+      //     image.style.display = "none";
+      //     const altTextContainer = document.createElement("span");
+      //     altTextContainer.innerText = altText;
+      //     image.parentNode?.insertBefore(altTextContainer, image);
+      //   }
+      // }
     }),
   },
 ];

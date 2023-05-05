@@ -22,9 +22,9 @@ export const Navbar = component$(() => {
           <h1 class="mx-4 text-6xl font-medium text-[#0B3168] z-10">inolib</h1>
         </a>
         <div class="flex flex-col w-full pl-10">
-          <div class="flex justify-between items-center whitespace-nowrap mr-4">
+          <div class="flex justify-between items-center mr-4 sr-only md:whitespace-nowrap md:not-sr-only">
             <FastAccessMenu />
-            <a href="tel:+33670865032" class="text-[#0B3168]">
+            <a href="tel:+33670865032" class="text-[#0B3168] mr-4">
               {" "}
               Contact : 06 70 86 50 32
             </a>
@@ -42,13 +42,13 @@ export const Navbar = component$(() => {
               <a
                 href="/"
                 class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
-                {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/developpement" ? { "aria-current": "page" } : {})}
               >
                 DEVELOPPEMENT
               </a>
 
               <a
-                href="/"
+                href="/testing"
                 class="rounded-md  px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/testing" ? { "aria-current": "page" } : {})}
               >
@@ -58,28 +58,28 @@ export const Navbar = component$(() => {
               <a
                 href="/"
                 class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white "
-                {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/formation" ? { "aria-current": "page" } : {})}
               >
                 FORMATION
               </a>
               <a
-                href="/temoignages"
+                href="/marketing"
                 class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
-                {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/mmarketing" ? { "aria-current": "page" } : {})}
               >
                 MARKETING DIGITAL
               </a>
               <a
                 href="/actualite"
                 class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
-                {...(location.url.pathname === "/actualites" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
               >
                 PRÉSENTATION
               </a>
               <a
                 href="/contact"
                 class="rounded-md px-3 py-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
-                {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/actualite" ? { "aria-current": "page" } : {})}
               >
                 ACTUALITÉ
               </a>
@@ -100,7 +100,7 @@ export const Navbar = component$(() => {
               </a>
             </div>
           </div>
-          <div class="sm:hidden absolute top-0 right-0" id="mobile-menu">
+          <div class="md:hidden absolute top-0 right-0" id="mobile-menu">
             <BurgerMenu />
           </div>
         </div>

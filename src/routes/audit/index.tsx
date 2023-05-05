@@ -55,9 +55,9 @@ export default component$(() => {
           </span>
         </Article>
         <div class="mx-5 md:px-28 mb-8">
-          <p class="mb-2  text-2xl md:mb-6">
+          <h3 class="mb-2  text-2xl md:mb-6">
             <strong>Inolib</strong> est là pour vous accompagner !
-          </p>
+          </h3>
           <p class="text-xl mb-2 md:mb-0">Audit d'accessibilité numérique : de quoi s'agit-il ?</p>
           <p class="text-lg">
             Un audit en accessibilité numérique évalue vos outils digitaux (sites web, logiciels, applications mobiles,

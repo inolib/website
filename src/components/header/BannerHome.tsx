@@ -5,7 +5,7 @@ import { Button } from "~/components/ui/buttons/Button";
 export const BannerHome = component$(() => {
   return (
     <header class="overflow-x-auto">
-      <section class="h-[44rem] bg-[url('/images/home-banner.png')] bg-no-repeat md:mb-[-10rem] md:h-[37rem] md:bg-[length:100rem_36rem]">
+      <section class="h-[44rem] bg-[url('/images/home-banner.png')] bg-no-repeat md:mb-[-10rem] md:h-[37rem] md:bg-cover">
         <div class=" flex md:h-[25rem] md:w-[85rem] md:pt-[6rem]">
           <img
             class="mt-[6rem] ml-[2rem] mr-[-9rem] h-[23%] w-[23%] md:mt-4 md:mr-[-19rem] md:h-[35%] md:w-[35%]"
