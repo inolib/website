@@ -40,6 +40,9 @@ export const Contentinfo = component$(() => {
             <li class="m-2">
               <a href="/glossaire">Glossaire</a>
             </li>
+            <li class="m-2">
+              <a href="/faq">Faq</a>
+            </li>
           </ul>
           <ul
             class="flex justify-between border-y-2 border-[#9A35AD] py-8 md:row-start-1 md:columns-1 md:items-center md:border-y-0 md:py-0 md:w-3/5 "
@@ -47,22 +50,22 @@ export const Contentinfo = component$(() => {
           >
             <li>
               <a href="https://www.facebook.com/people/Inolib/100075572787282/" aria-label="facebook">
-                <img alt="facebook INOLIB" src="\images\logo-facebook-violet.svg" aria-label="facebook"></img>
+                <img alt="facebook INOLIB" src="/images/logo-facebook-violet.svg" aria-label="facebook"></img>
               </a>
             </li>
             <li>
               <a href="https://twitter.com/_inolib" aria-label="twitter">
-                <img alt="twitter INOLIB" src="\images\logo-twiter.svg" aria-label="twitter"></img>
+                <img alt="twitter INOLIB" src="/images/logo-twiter.svg" aria-label="twitter"></img>
               </a>
             </li>
             <li>
               <a href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr" aria-label="linkedin">
-                <img alt="LinkedIn INOLIB" src="\images\logo-linkedin.svg" aria-label="Linkedin"></img>
+                <img alt="LinkedIn INOLIB" src="/images/logo-linkedin.svg" aria-label="Linkedin"></img>
               </a>
             </li>
             <li>
               <a href="#" aria-label="instagram">
-                <img alt="instagram INOLIB" src="\images\logo-instagram.svg" aria-label="Instagram"></img>
+                <img alt="instagram INOLIB" src="/images/logo-instagram.svg" aria-label="Instagram"></img>
               </a>
             </li>
           </ul>

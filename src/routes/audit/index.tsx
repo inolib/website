@@ -14,7 +14,7 @@ export default component$(() => {
         imageSrc="/images/banner-accessibilite.png"
       />
 
-      <h1 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : !</h1>
+      <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : !</h2>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
           imageSrc="/images/actualitehome1.png"
@@ -61,7 +61,6 @@ export default component$(() => {
             techniques{" "}
             <a
               href="https://accessibilite.numerique.gouv.fr/obligations/"
-              aria-label="référentiel RGAA du gouvernement"
               class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
             >
               RGAA
@@ -70,7 +69,6 @@ export default component$(() => {
             <a
               href="https://www.w3.org/TR/WCAG21/"
               class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
-              aria-label="référentiel WCAG"
             >
               WCAG
             </a>{" "}
@@ -79,7 +77,6 @@ export default component$(() => {
             <a
               href="https://accessibilite.public.lu/fr/raam1/referentiel-technique.html"
               class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
-              aria-label="référentiel RAAM"
             >
               et RAAM.
             </a>{" "}
