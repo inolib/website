@@ -16,7 +16,7 @@ export const BurgerMenu = component$(() => {
   return (
     <div class="w-full">
       <Menu styles="md:hidden w-full flex flex-col items-end bg-white relative">
-        <MenuButton styles="rounded-md p-2 m-3 text-[#0B3168] hover:bg-[#0B3168] hover:text-white focus:outline-none focus:bg-[#0B3168] focus:text-white focus:ring-2 focus:ring-inset focus:ring-white">
+        <MenuButton styles="rounded-md p-1  m-3 text-[#0B3168] hover:bg-[#0B3168] hover:text-white focus:outline-none focus:bg-[#0B3168] focus:text-white focus:ring-2 focus:ring-inset focus:ring-white md:p-2">
           <svg
             class="h-6 w-6"
             fill="none"

@@ -1,7 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
-import ArticleTemoignage1 from "~/components/articles/ArticleTemoignage1";
-import ArticleTemoignage2 from "~/components/articles/ArticleTemoignage2";
 import { Banner } from "~/components/header/Banner";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { Button } from "~/components/ui/buttons/Button";
@@ -16,9 +14,7 @@ export default component$(() => {
         imageSrc="/images/banner-accessibilite.png"
       />
 
-      <h1 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">
-        Bienvenue chez votre partenaire en <strong>accessibilité</strong> !
-      </h1>
+      <h1 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : !</h1>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
           imageSrc="/images/actualitehome1.png"
@@ -64,16 +60,16 @@ export default component$(() => {
             documents, etc.) afin de garantir leur niveau d'accessibilité. Nos audits suivent les référentiels
             techniques{" "}
             <a
-              href="https://design.numerique.gouv.fr/accessibilite-numerique/rgaa/"
+              href="https://accessibilite.numerique.gouv.fr/obligations/"
               aria-label="référentiel RGAA du gouvernement"
-              class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
+              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
             >
               RGAA
             </a>{" "}
             4.1.1 (référentiel pour l'amélioration de l'accessibilité), les normes internationales{" "}
             <a
               href="https://www.w3.org/TR/WCAG21/"
-              class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
+              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
               aria-label="référentiel WCAG"
             >
               WCAG
@@ -82,7 +78,7 @@ export default component$(() => {
             appuyons sur le référentiel{" "}
             <a
               href="https://accessibilite.public.lu/fr/raam1/referentiel-technique.html"
-              class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
+              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
               aria-label="référentiel RAAM"
             >
               et RAAM.
@@ -103,9 +99,11 @@ export default component$(() => {
                   <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 font-normal">
-                  <strong class="text-xl">1. Audit Express</strong> : Diagnostic précis pour cibler les points faibles
-                  de l'accessibilité de vos outils digitaux et définir les pistes d'amélioration. Grille d'audit et
-                  déclaration d'accessibilité incluses..
+                  <strong class="text-xl">
+                    <span aria-hidden="true">1.</span> Audit Express
+                  </strong>{" "}
+                  : Diagnostic précis pour cibler les points faibles de l'accessibilité de vos outils digitaux et
+                  définir les pistes d'amélioration. Grille d'audit et déclaration d'accessibilité incluses..
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
@@ -214,27 +212,61 @@ export default component$(() => {
           </span>
         </Article>
       </section>
-      <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
+      {/* <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
         <div class="flex justify-between items-center w-full">
           <strong>
             <h2 class="text-4xl">Témoignages clients</h2>
           </strong>
         </div>
         <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
-      </section>
+      </section> */}
       <section class="text-[#0B3168] mt-10 md:mt-0">
-        <ArticleTemoignage1 />
-        <ArticleTemoignage2 />
+        {/* <ArticleTemoignage1 />
+        <ArticleTemoignage2 /> */}
         <section class="mx-5 md:px-28">
           <h3 class="text-3xl mb-5">Passez à l'action ! :</h3>
           <p>
-            Cliquez ici pour profiter d'une première consultation offerte et discuter de vos besoins en accessibilité
-            numérique avec l'un de nos experts!
+            <a
+              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              href="/contact"
+              aria-label="page contact"
+            >
+              Cliquez ici
+            </a>{" "}
+            pour bénéficier d'une première consultation gratuite et échanger sur vos besoins en accessibilité numérique
+            avec l'un de nos spécialistes
           </p>
           <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
           <p>
             Faites de <strong>l'accessibilité numérique</strong> une priorité avec Inolib.
           </p>
+          <ul class="flex flex-col mt-10 items-center">
+            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
+              <a href="/developpement" aria-label="offres de développement">
+                Développement
+              </a>
+            </li>
+            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
+              <a href="/testing" aria-label="offres de testing">
+                Testing
+              </a>
+            </li>
+            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
+              <a href="/formation" aria-label="offres de formation">
+                Formation
+              </a>
+            </li>
+            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
+              <a href="/accompagnement" aria-label="offres d'accompaggnement">
+                Accompagnement
+              </a>
+            </li>
+            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
+              <a href="/actualite" aria-label="nos actualités">
+                Actualités
+              </a>
+            </li>
+          </ul>
         </section>
 
         <span class="flex justify-center">
