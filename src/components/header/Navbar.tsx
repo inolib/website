@@ -33,7 +33,7 @@ export const Navbar = component$(() => {
             <div class="flex justify-around items-center border-t-2">
               <a
                 href="/audit"
-                class="rounded-md px-3 pt-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
+                class=" rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/audit" ? { "aria-current": "page" } : {})}
               >
                 AUDIT
@@ -41,7 +41,7 @@ export const Navbar = component$(() => {
 
               <a
                 href="/"
-                class="rounded-md px-3 pt-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
+                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/developpement" ? { "aria-current": "page" } : {})}
               >
                 DEVELOPPEMENT
@@ -49,7 +49,7 @@ export const Navbar = component$(() => {
 
               <a
                 href="/testing"
-                class="rounded-md  px-3 pt-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
+                class="rounded-md  px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/testing" ? { "aria-current": "page" } : {})}
               >
                 TESTING
@@ -57,35 +57,35 @@ export const Navbar = component$(() => {
 
               <a
                 href="/"
-                class="rounded-md px-3 pt-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white "
+                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white "
                 {...(location.url.pathname === "/formation" ? { "aria-current": "page" } : {})}
               >
                 FORMATION
               </a>
               <a
                 href="/marketing"
-                class="rounded-md px-3 pt-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
+                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/mmarketing" ? { "aria-current": "page" } : {})}
               >
                 MARKETING DIGITAL
               </a>
               <a
                 href="/actualite"
-                class="rounded-md px-3 pt-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
+                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
               >
                 PRÉSENTATION
               </a>
               <a
                 href="/contact"
-                class="rounded-md px-3 pt-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
+                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/actualite" ? { "aria-current": "page" } : {})}
               >
                 ACTUALITÉ
               </a>
               <a
                 href="/contact"
-                class="rounded-md px-3 pt-2 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
+                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white"
                 {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
               >
                 CONTACT
@@ -93,7 +93,7 @@ export const Navbar = component$(() => {
 
               <a
                 href="/connexion"
-                class="rounded-md px-3 pt-2 font-normal text-sm  md:ml-5 md:my-2 text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
+                class="rounded-md px-3 p-1 font-normal text-sm  md:ml-5 md:my-2 text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
                 {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
               >
                 Connexion
