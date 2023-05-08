@@ -7,7 +7,6 @@ export const Head = component$(() => {
   return (
     <head>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-
       <title>{head.title}</title>
     </head>
   );
