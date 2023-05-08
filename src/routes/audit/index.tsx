@@ -56,9 +56,9 @@ export default component$(() => {
           </p>
           <p class="text-xl mb-2 md:mb-0">Audit d'accessibilité numérique : de quoi s'agit-il ?</p>
           <p class="text-lg">
-            Un audit en accessibilité numérique évalue vos outils digitaux (sites web, logiciels, applications mobiles,
-            documents, etc.) afin de garantir leur niveau d'accessibilité. Nos audits suivent les référentiels
-            techniques{" "}
+            <dfn>Un audit en accessibilité numérique</dfn> évalue vos outils digitaux (sites web, logiciels,
+            applications mobiles, documents, etc.) afin de garantir leur niveau d'accessibilité. Nos audits suivent les
+            référentiels techniques{" "}
             <a
               href="https://accessibilite.numerique.gouv.fr/obligations/"
               class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
@@ -282,5 +282,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "audit",
+  title: "Inolib : Audits d'accessibilité numérique - Inclusion digitale",
 };
