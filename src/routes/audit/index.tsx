@@ -13,7 +13,6 @@ export default component$(() => {
         title="Audits d'accessibilité numérique"
         imageSrc="/images/banner-accessibilite.png"
       />
-      <img src="/images/logoinolibvf.png" />
 
       <h1 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : !</h1>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
