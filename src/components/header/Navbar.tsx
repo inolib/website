@@ -79,7 +79,7 @@ export const Navbar = component$(() => {
                   <span>
                     <p aria-label="numéro de téléphone" class="text-[#0B3168] text-xs -mt-2 mb-3">
                       {" "}
-                      Contact : 06 70 86 50 32
+                      Contact : 06 47 21 86 69
                     </p>
                     <a
                       href="/connexion"

@@ -1,7 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
-import ArticleTemoignage1 from "~/components/articles/ArticleTemoignage1";
-import ArticleTemoignage2 from "~/components/articles/ArticleTemoignage2";
 import { Banner } from "~/components/header/Banner";
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { Button } from "~/components/ui/buttons/Button";
@@ -16,9 +14,7 @@ export default component$(() => {
         imageSrc="/images/banner-accessibilite.png"
       />
 
-      <h1 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">
-        Bienvenue chez votre partenaire en <strong>accessibilité</strong> !
-      </h1>
+      <h1 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : !</h1>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
           imageSrc="/images/actualitehome1.png"
@@ -64,7 +60,7 @@ export default component$(() => {
             documents, etc.) afin de garantir leur niveau d'accessibilité. Nos audits suivent les référentiels
             techniques{" "}
             <a
-              href="https://design.numerique.gouv.fr/accessibilite-numerique/rgaa/"
+              href="https://accessibilite.numerique.gouv.fr/obligations/"
               aria-label="référentiel RGAA du gouvernement"
               class="underline underline-offset-1 text-blue-400 visited:text-purple-500"
             >
@@ -214,17 +210,17 @@ export default component$(() => {
           </span>
         </Article>
       </section>
-      <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
+      {/* <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
         <div class="flex justify-between items-center w-full">
           <strong>
             <h2 class="text-4xl">Témoignages clients</h2>
           </strong>
         </div>
         <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
-      </section>
+      </section> */}
       <section class="text-[#0B3168] mt-10 md:mt-0">
-        <ArticleTemoignage1 />
-        <ArticleTemoignage2 />
+        {/* <ArticleTemoignage1 />
+        <ArticleTemoignage2 /> */}
         <section class="mx-5 md:px-28">
           <h3 class="text-3xl mb-5">Passez à l'action ! :</h3>
           <p>
