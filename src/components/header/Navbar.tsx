@@ -21,8 +21,8 @@ export const Navbar = component$(() => {
                 {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
                 aria-label="Accueil"
               >
-                <img class="block h-10 w-auto lg:hidden z-10" src="/images/logo-blue.svg" alt="Accueil" />
-                <img class="hidden h-10 w-auto lg:block z-10" src="/images/logo-blue.svg" alt="Accueil" />
+                <img class="block h-10 w-auto lg:hidden z-10" src="/images/logoinolibvf.png" alt="Accueil" />
+                <img class="hidden h-10 w-auto lg:block z-10" src="/images/logoinolibvf.png" alt="Accueil" />
                 <h1 class="mx-4 text-4xl font-medium text-[#0B3168] z-10">inolib</h1>
               </a>
               <div class="hidden md:block absolute top-3 right-3">
