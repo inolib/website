@@ -56,7 +56,6 @@ export const Navbar = component$(() => {
 
               <a
                 href="/formation"
-                href="/formation"
                 class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white "
                 {...(location.url.pathname === "/formation" ? { "aria-current": "page" } : {})}
               >
