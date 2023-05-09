@@ -18,9 +18,8 @@ export const CardsRowDisplay = component$(() => {
         </ServicesHomeCard>
         <ServicesHomeCard label="Formation" image="/images/logo-formation.png">
           <p q:slot="content" class="text-[#0B3168]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-            Molestias, facilis?
+            Nos formations et sessions de sensibilisation, interactives et pratiques, sont conçues pour répondre aux
+            besoins de tout public, tels que les managers, chefs de projet, développeurs, designers et webmasters.
           </p>
         </ServicesHomeCard>
         <ServicesHomeCard label="Développement" image="/images/logo-dev.png">

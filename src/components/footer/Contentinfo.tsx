@@ -11,12 +11,8 @@ export const Contentinfo = component$(() => {
             <div class="flex">
               <img alt="" src="/images/logoinolibblancvf.png" class="h-32 w-auto" />
             </div>
-            <p class="mb-6 border-t-2 border-[#9A35AD] pt-4 font-bold md:border-t-0">Des questions?</p>
             <h3 class="mb-3 text-2xl font-bold">Contactez-nous!</h3>
-            <p class="mb-5">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, magnam accusamus dolores soluta deserunt
-              nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas.
-            </p>
+            <p class="mb-5">Besoin d'un devis ? D'une information ?</p>
             <span class="mb-7 flex justify-center md:mb-0 md:justify-start">
               <Button color="white" href="/contact" label="Nous contacter" />
             </span>
