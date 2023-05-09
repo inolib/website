@@ -39,7 +39,7 @@ export const Navbar = component$(() => {
               </a>
 
               <a
-                href="/"
+                href="/developpement"
                 class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
                 {...(location.url.pathname === "/developpement" ? { "aria-current": "page" } : {})}
               >
@@ -62,25 +62,18 @@ export const Navbar = component$(() => {
                 FORMATION
               </a>
               <a
-                href="/marketing"
+                href="/acompagnement"
                 class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
-                {...(location.url.pathname === "/mmarketing" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/acompagnement" ? { "aria-current": "page" } : {})}
               >
-                MARKETING DIGITAL
+                ACOMPAGNEMENT
               </a>
               <a
-                href="/actualite"
+                href="/recrutement"
                 class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
-                {...(location.url.pathname === "/presentation" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/recrutement" ? { "aria-current": "page" } : {})}
               >
-                PRÉSENTATION
-              </a>
-              <a
-                href="/contact"
-                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
-                {...(location.url.pathname === "/actualite" ? { "aria-current": "page" } : {})}
-              >
-                ACTUALITÉ
+                RECRUTEMENT
               </a>
               <a
                 href="/contact"
@@ -90,13 +83,13 @@ export const Navbar = component$(() => {
                 CONTACT
               </a>
 
-              <a
+              {/* <a
                 href="/connexion"
                 class="rounded-md px-3 p-1 font-normal text-sm  md:ml-5 md:my-2 text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
                 {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
               >
                 Connexion
-              </a>
+              </a> */}
             </div>
           </div>
           <div class="md:hidden absolute top-0 right-0" id="mobile-menu">

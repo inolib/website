@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
 
-import { ArticlesHomeDisplay } from "~/components/articles/ArticleHomeDisplay";
 import { BannerHome } from "~/components/header/BannerHome";
 
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
@@ -35,7 +34,7 @@ export default component$(() => {
         />
 
         <section class="mx-4 mb-[4.5rem]">
-          <ArticlesHomeDisplay title="Actualités" />
+          {/* <ArticlesHomeDisplay title="Actualités" /> */}
           <div class="flex justify-center">
             <ButtonTopPage />
           </div>
