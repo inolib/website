@@ -3,11 +3,11 @@ import { Menu, MenuButton, MenuItemLink, MenuItems } from "~/ui/Menu";
 
 const page = [
   { id: 1, name: "Audit", href: "/audit" },
-  { id: 2, name: "Développement", href: "/" },
-  { id: 3, name: "Formation", href: "/" },
-  { id: 4, name: "Testing", href: "/testing" },
-  { id: 5, name: "Acompagnement", href: "/Acompagnement" },
-  { id: 6, name: "Recrutement", href: "/Recrutement" },
+  { id: 2, name: "Développement", href: "/developpement" },
+  { id: 3, name: "Testing", href: "/testing" },
+  { id: 4, name: "Formation", href: "/formation" },
+  { id: 5, name: "Acompagnement", href: "/acompagnement" },
+  { id: 6, name: "Recrutement", href: "/recrutement" },
   { id: 7, name: "Contact", href: "/contact" },
   { id: 8, name: "Connexion", href: "/connexion" },
 ];

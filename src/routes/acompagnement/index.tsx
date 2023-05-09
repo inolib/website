@@ -118,7 +118,7 @@ export default component$(() => {
           typoImgQuote="bold"
           stylesArticleGaucheFlex="md:flex-row md:-py-[-10rem]"
         ></Article>
-        <p class={`mx-[20rem] leading-7`}>
+        <p class={`mx-5 md:mx-[20rem] leading-7`}>
           🔍 Prêt à aller plus loin ? Explorez nos services d'audit en <strong>accessibilité</strong> numérique et nos
           solutions de développement pour sites web, applications mobiles et logiciels sur-mesure (hyperliens vers les
           pages correspondantes) pour maximiser votre impact et votre performance en ligne. Faites de l'accessibilité
