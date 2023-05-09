@@ -62,7 +62,7 @@ export default component$(() => {
           typoImgQuote="bold"
           stylesArticleGaucheFlex="md:flex-row md:-py-[-10rem]"
         ></Article>
-        <p class={`mx-[20rem] leading-7`}>
+        <p class={`mx-5 md:mx-[20rem] leading-7`}>
           🔍 Pour aller encore plus loin, explorez nos services de <strong>formation</strong>, d'audit, de conseil et
           d'accompagnement personnalisé en matière d'accessibilité numérique. Ensemble, rendons vos outils numériques
           accessibles à tous !
