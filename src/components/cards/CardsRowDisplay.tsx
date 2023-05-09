@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 
 import { ServicesHomeCard } from "~/components/cards/ServicesHomeCard";
-import { ServicesHomeCardBlank } from "~/components/cards/ServicesHomeCardBlank";
 import { Button } from "../ui/buttons/Button";
 
 export const CardsRowDisplay = component$(() => {
@@ -13,9 +12,8 @@ export const CardsRowDisplay = component$(() => {
       <section class="flex flex-col justify-around md:my-[4rem] md:mx-[10rem] md:flex-row">
         <ServicesHomeCard label="Conseil/et/Audit" image="/images/logo-audit.png">
           <p q:slot="content" class="text-[#0B3168]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-            Molestias, facilis?
+            <dfn>Un audit en accessibilité numérique</dfn> évalue vos outils digitaux (sites web, logiciels,
+            applications mobiles, documents, etc.) afin de garantir leur niveau d'accessibilité.
           </p>
         </ServicesHomeCard>
         <ServicesHomeCard label="Formation" image="/images/logo-formation.png">
@@ -27,24 +25,11 @@ export const CardsRowDisplay = component$(() => {
         </ServicesHomeCard>
         <ServicesHomeCard label="Développement" image="/images/logo-dev.png">
           <p q:slot="content" class="text-[#0B3168]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae aperiam amet fuga, obcaecati ratione optio,
-            modi nostrum magnam tenetur assumenda labore aliquam accusamus nemo hic corporis consequatur autem!
-            Molestias, facilis?
+            Chez Inolib, nous mettons en œuvre notre savoir-faire en développement web et mobile pour vous offrir des
+            solutions sur mesure, centrées sur l'accessibilité et la qualité logicielle.
           </p>
         </ServicesHomeCard>
-
-        <span class={`mt-[2rem] flex justify-center`}>
-          <Button color="blue" href="/services" label="Tous nos services" styles="md:hidden flex justify-center" />
-        </span>
       </section>
-      <div class="mt-5 flex justify-center">
-        <ServicesHomeCardBlank
-          styles="my-[3rem]"
-          content="Découvrez tout nos services en détails ! Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        >
-          <Button q:slot="button" color="blue" href="/services" label="En savoir plus" styles="hidden md:block" />
-        </ServicesHomeCardBlank>
-      </div>
     </>
   );
 });

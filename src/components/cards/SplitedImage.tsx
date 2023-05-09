@@ -16,10 +16,9 @@ export const SplitedImage = component$((props: ImageProps) => {
           <DiscoverAcessCard
             styles="md:ml-[35rem] md:mt-[5rem]"
             alt="aller vers page accessibilité"
-            href="/accessibilite"
+            href="/audit"
             title="Découvrir l'accessibilité"
-            content="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, magnam accusamus dolores soluta deserunt
-          nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas odit."
+            content="Audit d'accessibilité numérique : de quoi s'agit-il ?"
           />
         </span>
         <img class=" hidden md:flex md:w-[40rem]" src="images/bg-cards.png" alt="" />

@@ -6,8 +6,8 @@ const page = [
   { id: 2, name: "Développement", href: "/" },
   { id: 3, name: "Formation", href: "/" },
   { id: 4, name: "Testing", href: "/testing" },
-  { id: 5, name: "Présentation", href: "/presentation" },
-  { id: 6, name: "Acompagnement", href: "/acompagnement" },
+  { id: 5, name: "Acompagnement", href: "/Acompagnement" },
+  { id: 6, name: "Recrutement", href: "/Recrutement" },
   { id: 7, name: "Contact", href: "/contact" },
   { id: 8, name: "Connexion", href: "/connexion" },
 ];

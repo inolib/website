@@ -14,7 +14,7 @@ export default component$(() => {
         imageSrc="/images/banner-accessibilite.png"
       />
 
-      <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : !</h2>
+      <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : </h2>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
           imageSrc="/images/actualitehome1.png"
@@ -28,7 +28,7 @@ export default component$(() => {
                   <img src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 text-lg">
-                  <strong class="text-xl">Élargir</strong> votre audience en incluant tous les utilisateurs,
+                  <strong class="text-xl">Élargir</strong> votre audience en incluant tous les utilisateurs
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
@@ -36,7 +36,7 @@ export default component$(() => {
                   <img src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 text-lg">
-                  <strong class="text-xl">Améliorer</strong> l'expérience utilisateur pour tous,
+                  <strong class="text-xl">Améliorer</strong> l'expérience utilisateur pour tous
                 </p>
               </li>
               <li class="mb-[2.5rem] flex ">
@@ -44,7 +44,7 @@ export default component$(() => {
                   <img src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4">
-                  <strong class="text-xl">Respecter</strong> les obligations en matière d'accessibilité numérique,
+                  <strong class="text-xl">Respecter</strong> les obligations en matière d'accessibilité numérique
                 </p>
               </li>
             </ul>
@@ -58,7 +58,7 @@ export default component$(() => {
           <p class="text-lg">
             <dfn>Un audit en accessibilité numérique</dfn> évalue vos outils digitaux (sites web, logiciels,
             applications mobiles, documents, etc.) afin de garantir leur niveau d'accessibilité. Nos audits suivent les
-            référentiels techniques{" "}
+            référentiels techniques.
             <a
               href="https://accessibilite.numerique.gouv.fr/obligations/"
               class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
@@ -80,7 +80,7 @@ export default component$(() => {
             >
               et RAAM.
             </a>{" "}
-            1 et la norme européenne EN 301-549. Nos offres d'audit sont disponibles en français et en anglais. ,{" "}
+            1 et la norme européenne EN 301-549. Nos offres d'audit sont disponibles en français et en anglais.
           </p>
         </div>
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nous proposons trois offres d'audit :</h2>
