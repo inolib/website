@@ -16,17 +16,17 @@ export const BannerHome = component$(() => {
           <img class={`scale-[1.4] md:hidden`} src="/images/vector-23.svg" alt="aller au contenu principal" />
         </span>
         <div class="hidden md:block">
-          <span class="flex justify-center  md:-mt-[8rem]">
+          {/* <span class="flex justify-center  md:-mt-[8rem]">
             <Button
               color="white"
               href="/presentation"
               label="Découvrir"
               styles="flex font-medium justify-center w-[20rem] md:block md:w-[10rem]"
             />
-          </span>
+          </span> */}
         </div>
       </section>
-      <section class="flex justify-around md:mt-[8rem]" aria-label="Nos partenaire">
+      <section class="flex justify-around md:mt-[1rem]" aria-label="Nos partenaire">
         <a href="https://h-up.fr/" aria-label="HUP">
           <img
             alt="HUP"
