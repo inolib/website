@@ -55,7 +55,7 @@ export const Navbar = component$(() => {
               </a>
 
               <a
-                href="/"
+                href="/formation"
                 class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white "
                 {...(location.url.pathname === "/formation" ? { "aria-current": "page" } : {})}
               >
@@ -64,7 +64,7 @@ export const Navbar = component$(() => {
               <a
                 href="/marketing"
                 class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14"
-                {...(location.url.pathname === "/mmarketing" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/marketing" ? { "aria-current": "page" } : {})}
               >
                 MARKETING DIGITAL
               </a>

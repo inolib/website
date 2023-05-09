@@ -9,7 +9,7 @@ export const Contentinfo = component$(() => {
         <section class="md:flex md:w-1/2 md:flex-col md:items-end md:px-8">
           <div class="md:w-2/3">
             <div class="flex">
-              <img alt="" src="/images/logoinolibblancvf.png" class="h-32 w-auto" aria-aria-label="INOLIB" />
+              <img alt="" src="/images/logoinolibblancvf.png" class="h-32 w-auto" />
             </div>
             <p class="mb-6 border-t-2 border-[#9A35AD] pt-4 font-bold md:border-t-0">Des questions?</p>
             <h3 class="mb-3 text-2xl font-bold">Contactez-nous!</h3>
