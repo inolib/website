@@ -14,14 +14,14 @@ export default component$(() => {
       <BannerHome />
       <section class="flex flex-col justify-center overflow-x-hidden">
         <SplitedImage src="/images/decouvriraccess.png" styles="hidden md:block" />
-        <Banner
+        {/* <Banner
           imageSrc="/images/decouvriraccess.png"
           styles="md:hidden block"
           title="Découvrir l'accessiblité"
           content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
             voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
             iure eum! Minima facilis earum unde repellat quo nisi."
-        />
+        /> */}
         <CardsRowDisplay />
         {/* <Banner
           q:slot="button"
