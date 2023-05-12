@@ -14,14 +14,16 @@ export default component$(() => {
         title="Formation - L'atelier de l'accessibilité numérique"
       />
       <section class="text-[#0B3168] text-l">
-        <p class="px-28 pt-10">
+        <p class="px-5 md:px-28 pt-10">
           <strong class="text-xl">Inolib</strong> vous accompagne dans la création d'expériences numériques accessibles
           et conviviales pour tous, conformément aux normes RGAA et WCAG. Nos formations et sessions de sensibilisation,
           interactives et pratiques, sont conçues pour répondre aux besoins de tout public, tels que les managers, chefs
           de projet, développeurs, designers et webmasters.
         </p>
-        <h2 class="px-28 mt-10 font-bold text-3xl">Nos domaines d'expertise</h2>
-        <h3 class="px-28 mt-4">Nos formations couvrent les sujets clés de l'accessibilité numérique, notamment :</h3>
+        <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Nos domaines d'expertise</h2>
+        <h3 class="px-5 md:px-28 mt-4">
+          Nos formations couvrent les sujets clés de l'accessibilité numérique, notamment :
+        </h3>
         <Article
           imageSrc="/images/actualitehome1.png"
           stylesArticleGaucheFlex="mb-8 bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
@@ -52,20 +54,20 @@ export default component$(() => {
             </ul>
           </span>
         </Article>
-        <h2 class="px-28 mt-10 font-bold text-3xl">Chiffres clés sur l'accessibilité numérique :</h2>
-        <p class="px-28 mt-2">
+        <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Chiffres clés sur l'accessibilité numérique :</h2>
+        <p class="px-5 md:px-28 mt-2">
           Entre 15 et 20% de la population mondiale est concernée par un handicap. En France, le dernier rapport du
           gouvernement publié en 2023 indique que 19% de la population est concernée. Cela inclut les handicaps visuels
           (cécité, malvoyance), moteurs (problèmes de dextérité avec une souris), auditifs (surdité, malentendance) et
           mentaux (dyslexie).
         </p>
-        <h2 class="px-28 mt-10 font-bold text-3xl">Formations et sensibilisation adaptées à vos besoins</h2>
-        <p class="px-28 mt-2">
+        <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Formations et sensibilisation adaptées à vos besoins</h2>
+        <p class="px-5 md:px-28 mt-2">
           Nos formations et séances de sensibilisation sont disponibles en présentiel ou en ligne, pour répondre aux
           besoins de tous nos clients. Nous proposons également des formations sur mesure pour répondre aux besoins
           spécifiques de chaque entreprise.
         </p>
-        <h2 class="px-28 mt-10 font-bold text-3xl">Pourquoi choisir Inolib Formations</h2>
+        <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Pourquoi choisir Inolib Formations</h2>
         <Article
           imageSrc="/images/conseilservice.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
@@ -108,8 +110,8 @@ export default component$(() => {
             </ul>
           </span>
         </Article>
-        <h2 class="px-28 mt-10 font-bold text-3xl">Contactez-nous dès aujourd'hui</h2>
-        <p class="px-28 mt-2">
+        <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Contactez-nous dès aujourd'hui</h2>
+        <p class="px-5 md:px-28 mt-2">
           Discutez de vos besoins en matière de formation et sensibilisation à l'accessibilité numérique avec l'un de
           nos experts. Profitez d'une{" "}
           <a href="/contact" class="underline underline-offset-1 text-blue-500 visited:text-purple-600">
@@ -117,11 +119,11 @@ export default component$(() => {
           </a>{" "}
           et laissez- nous vous aider à vous mettre en conformité avec les normes RGAA et WCAG.
         </p>
-        <p class="px-28 mt-2">
+        <p class="px-5 md:px-28 mt-2">
           Ensemble, faisons de léaccessibilité numérique une priorité et un atout pour votre entreprise avec Inolib
           Formations.
         </p>
-        <p class="px-28 mt-2">
+        <p class="px-5 md:px-28 mt-2">
           Prêt à aller plus loin ? Explorez nos services{" "}
           <a href="/audit" class="underline underline-offset-1 text-blue-500 visited:text-purple-600">
             d'audit

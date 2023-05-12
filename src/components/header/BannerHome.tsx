@@ -13,7 +13,7 @@ export const BannerHome = component$(() => {
           </h1>
         </span>
         <span class={`my-[7rem] flex justify-center`}>
-          <img class={`scale-[1.4] md:hidden`} src="/images/vector-23.svg" alt="aller au contenu principal" />
+          <img class={`scale-[1.4] md:hidden`} src="/images/vector-23.svg" alt="" />
         </span>
         <div class="hidden md:block">
           {/* <span class="flex justify-center  md:-mt-[8rem]">
