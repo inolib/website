@@ -233,38 +233,11 @@ export default component$(() => {
             pour bénéficier d'une première consultation gratuite et échanger sur vos besoins en accessibilité numérique
             avec l'un de nos spécialistes
           </p>
-          <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
-          <p>
+          <>
             Faites de <strong>l'accessibilité numérique</strong> une priorité avec Inolib.
-          </p>
-          <ul class="flex flex-col mt-10 items-center">
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/developpement" aria-label="offres de développement">
-                Développement
-              </a>
-            </li>
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/testing" aria-label="offres de testing">
-                Testing
-              </a>
-            </li>
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/formation" aria-label="offres de formation">
-                Formation
-              </a>
-            </li>
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/accompagnement" aria-label="offres d'accompaggnement">
-                Accompagnement
-              </a>
-            </li>
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/actualite" aria-label="nos actualités">
-                Actualités
-              </a>
-            </li>
-          </ul>
+          </>
         </section>
+        <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
 
         <span class="flex justify-center">
           <img class="h-[14rem] w-[14rem]" src="/images/purple-logo.png" alt="" />
