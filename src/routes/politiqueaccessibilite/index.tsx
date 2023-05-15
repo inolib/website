@@ -3,43 +3,49 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <section class="px-10">
-      <h1 class="mb-4 text-[#0B3168] text-3xl text-center font-bold">Déclaration d'accessibilité</h1>
-      <p>
+    <section class="px-10 text-[#0B3168] text-l">
+      <h1 class="mb-10 text-3xl text-center font-bold">Déclaration d'accessibilité</h1>
+      <p class="mb-4">
         Nous avons comme volonté de proposer un site conforme aux normes d'accessibilité numérique en vigueur et
         accessible à tous.
         <br />
         Si malgré nos efforts, vous rencontrez une difficulté, n'hésitez pas à nous faire part à l'adresse suivante :
-        <a href="mailto:contact@inolib.com">contact@inolib.com</a>
+        <a class="font-bold" href="mailto:contact@inolib.com">
+          contact@inolib.com
+        </a>
         <br />
-        Où par téléphone au <a href="tel:+33670865032">06 70 86 50 32</a>.
+        Où par téléphone au{" "}
+        <a class="font-bold" href="tel:+33670865032">
+          06 70 86 50 32
+        </a>
+        .
         <br />
         Cette déclaration d'accessibilité à la version 4.1 du référentiel général d'amélioration de l'accessibilité
         numérique (RGAA) s'applique au présent site et a été établie le 24 mai 2022 par INOLIB.
       </p>
       <section class="text-l">
         <section class="mb-10">
-          <h2>Etat de conformité</h2>
+          <h2 class="font-bold text-2xl">Etat de conformité</h2>
           <p>
             Le site est en totale conformité avec le Référentiel général d'amélioration de l'accessibilité, RGAA version
             4.1.
             <br />
-            Résultats des tests
+            <span class="mt-4 mb-2 font-bold">Résultats des tests</span>
             <br />
             L'audit de conformité réalisé en interne, par une personne non impliquée dans le développement du site,
             révèle que 100% des critères RGAA applicables sont respectés.
           </p>
         </section>
         <section>
-          <h2>Etablissement de cette déclaration d'accessibilité</h2>
-          <p>Cette déclaration a été établie le 24/05/2022.</p>
+          <h2 class="font-bold text-2xl mb-2">Etablissement de cette déclaration d'accessibilité</h2>
+          <p class="mb-2">Cette déclaration a été établie le 24/05/2022.</p>
           <section>
-            <h2></h2>
-            Technologies, utilisées pour la réalisation du site web
+            <h2 class="font-bold text-2xl mb-2">Technologies, utilisées pour la réalisation du site web</h2>
+
             <ul>
               <li>
                 <img />
-                <p>HTML5, CSS, QwikJs.</p>
+                <p>HTML5, CSS, QwikJs, GraphQL.</p>
               </li>
               <li>
                 <img />

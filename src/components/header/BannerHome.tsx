@@ -11,7 +11,7 @@ export const BannerHome = component$(() => {
           <h1 class="flex w-min flex-col border-l text-[185%] font-semibold text-white md:text-[300%] pl-[2rem]">
             HUMAN NOBLE TECHNOLOGY
           </h1>
-        </div>
+        </span>
         <span class={`my-[7rem] flex justify-center`}>
           <img class={`scale-[1.4] md:hidden`} src="/images/vector-23.svg" alt="" />
         </span>
