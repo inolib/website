@@ -79,27 +79,56 @@ const options = [
     defaultOptionValue: "true",
     secondOptionValue: "false",
     onChange: $((event: InputEvent) => {
-      console.log("image", event.target);
       //remplacer toute les balise img par span avec le contenu du alt comme contenu a l'interieur (contenu alt placé dans une variable avant suppréssion de la balise img puis replacer dans sapn)
-      // const images = document.getElementsByTagName("img");
-      // for (let i = 0; i < images.length; i++) {
-      //   const image = images[i];
-      //   const altTextContainer = document.getElementById("span");
-      //   if (altTextContainer != undefined) {
-      //     altTextContainer.style.display = "none";
-      //   }
-      //   if (event?.target.value == "true") {
-      //     image.style.display = "block";
-      //   } else {
-      //     // Sinon, remplacer image par texte
-      //     const altText = image.getAttribute("alt");
+      if (event.target.value === "true") {
+        const spans = document.querySelectorAll("span[data-imagereplacement]");
 
-      //     image.style.display = "none";
-      //     const altTextContainer = document.createElement("span");
-      //     altTextContainer.innerText = altText;
-      //     image.parentNode?.insertBefore(altTextContainer, image);
-      //   }
-      // }
+        for (const span of spans) {
+          const img = document.createElement("img");
+          img.setAttribute("src", span.getAttribute("data-src"));
+          img.setAttribute("class", span.getAttribute("data-class"));
+          img.setAttribute("alt", span.textContent);
+
+          const parent = span.parentNode;
+          parent.replaceChild(img, span);
+          span.remove();
+        }
+      } else if (event.target.value === "false") {
+        const images = document.querySelectorAll("img");
+
+        for (const image of images) {
+          const parent = image.parentElement;
+
+          if (image.hasAttribute("alt") && image.getAttribute("alt") !== "") {
+            const span = document.createElement("span");
+            span.setAttribute("data-imagereplacement", "true");
+            span.setAttribute("data-src", image.getAttribute("src"));
+            span.setAttribute("data-class", image.getAttribute("class"));
+            span.textContent = image.getAttribute("alt");
+
+            parent.replaceChild(span, image);
+            image.remove();
+          } else if (parent.hasAttribute("aria-label")) {
+            const span = document.createElement("span");
+            span.setAttribute("data-imagereplacement", "true");
+            span.setAttribute("data-src", image.getAttribute("src"));
+            span.setAttribute("data-class", image.getAttribute("class"));
+            span.textContent = parent.getAttribute("aria-label");
+
+            parent.replaceChild(span, image);
+            image.remove();
+          } else if (parent.hasAttribute("aria-labelledby")) {
+            const span = document.createElement("span");
+            span.setAttribute("data-imagereplacement", "true");
+            span.setAttribute("data-src", image.getAttribute("src"));
+            span.setAttribute("data-class", image.getAttribute("class"));
+            span.textContent = document.querySelector(`#${parent.getAttribute("aria-labelledby")}`)?.textContent;
+
+            parent.replaceChild(span, image);
+            image.remove();
+          }
+        }
+      }
     }),
   },
 ];
