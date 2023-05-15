@@ -185,28 +185,7 @@ export default component$(() => {
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
-            <ul class="mt-10 flex flex-col">
-              <li class="mb-[2.5rem] flex items-center">
-                <div class={"hidden md:flex"}>
-                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
-                </div>
-                <p class="ml-4 font-normal">
-                  <strong class="text-xl">1. Accompagnement</strong> : Intégration de nos conseils dans votre stratégie
-                  de développement et la mise en œuvre des corrections.
-                </p>
-              </li>
-              <li class="mb-[2.5rem] flex items-center">
-                <div class={"hidden md:flex"}>
-                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
-                </div>
-                <p class="ml-4 font-normal">
-                  <strong class="text-xl">2. Coordination</strong> : Création et suivi des tickets d'anomalies dans
-                  votre outil de gestion de projets (Redmine, Jira, Trello, Asana, etc.) pour une conformité optimale.
-                </p>
-              </li>
-            </ul>
-          </span>
+          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] "></span>
         </Article>
       </section>
       {/* <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
