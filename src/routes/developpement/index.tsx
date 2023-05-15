@@ -69,7 +69,7 @@ export default component$(() => {
         </p>
         <span class="flex justify-center mt-8 mb-2 md:mb-0">
           <Button
-            href="/services"
+            href="/contact"
             color="blue"
             label="Demander un devis"
             styles="mt-[2rem] transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300"
