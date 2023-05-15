@@ -6,18 +6,17 @@ const page = [
   { id: 2, name: "Développement", href: "/developpement" },
   { id: 3, name: "Testing", href: "/testing" },
   { id: 4, name: "Formation", href: "/formation" },
-  { id: 5, name: "Marketing Digital", href: "/marketing" },
-  { id: 6, name: "Présentation", href: "/presentation" },
-  { id: 7, name: "Actualité", href: "/actualite" },
-  { id: 8, name: "Contact", href: "/conatct" },
-  { id: 9, name: "Connexion", href: "/connexion" },
+  { id: 5, name: "Acompagnement", href: "/acompagnement" },
+  { id: 6, name: "Recrutement", href: "/recrutement" },
+  { id: 7, name: "Contact", href: "/contact" },
+  { id: 8, name: "Connexion", href: "/connexion" },
 ];
 
 export const BurgerMenu = component$(() => {
   return (
     <div class="w-full">
       <Menu styles="md:hidden w-full flex flex-col items-end bg-white relative">
-        <MenuButton styles="rounded-md p-2 m-2 text-[#0B3168] hover:bg-[#0B3168] hover:text-white focus:outline-none focus:bg-[#0B3168] focus:text-white focus:ring-2 focus:ring-inset focus:ring-white">
+        <MenuButton styles="rounded-md p-1  m-3 text-[#0B3168] hover:bg-[#0B3168] hover:text-white focus:outline-none focus:bg-[#0B3168] focus:text-white focus:ring-2 focus:ring-inset focus:ring-white md:p-2">
           <svg
             class="h-6 w-6"
             fill="none"

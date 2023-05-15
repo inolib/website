@@ -5,19 +5,14 @@ import { Button } from "~/components/ui/buttons/Button";
 export const Contentinfo = component$(() => {
   return (
     <footer id="footer" role="contentinfo">
-      <section class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-4 py-8 text-white md:flex">
+      <section class="bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-4 py-6 text-white md:flex">
         <section class="md:flex md:w-1/2 md:flex-col md:items-end md:px-8">
           <div class="md:w-2/3">
-            <div class="mb-3 flex">
-              <img alt="" src="/images/logo-white.svg" class="h-10 w-auto" />
-              <h3 class="flex items-center pl-2 text-2xl font-bold">INOLIB</h3>
+            <div class="flex">
+              <img alt="" src="/images/logoinolibblancvf.png" class="h-32 w-auto" />
             </div>
-            <p class="mb-6 border-t-2 border-[#9A35AD] pt-4 font-bold md:border-t-0">Des questions?</p>
             <h3 class="mb-3 text-2xl font-bold">Contactez-nous!</h3>
-            <p class="mb-5">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, magnam accusamus dolores soluta deserunt
-              nesciunt, molestiae, architecto velit ex doloremque voluptatum eos itaque veritatis quas.
-            </p>
+            <p class="mb-5">Besoin d'un devis ? D'une information ?</p>
             <span class="mb-7 flex justify-center md:mb-0 md:justify-start">
               <Button color="white" href="/contact" label="Nous contacter" />
             </span>
@@ -40,6 +35,9 @@ export const Contentinfo = component$(() => {
             </li>
             <li class="m-2">
               <a href="/glossaire">Glossaire</a>
+            </li>
+            <li class="m-2">
+              <a href="/faq">Faq</a>
             </li>
           </ul>
           <ul
