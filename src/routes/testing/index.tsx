@@ -11,13 +11,13 @@ export default component$(() => {
     <>
       <Banner
         content="Visez l'excellence, subjuguez l'expérience, pour un numérique responsable et inclusif."
-        imageSrc="\images\temoignage-homme-header.png"
+        imageStyle="md:w-3/5 md:max-w-2xl"
+        imageSrc="\images\testing.jpg"
         title="Testing"
       />
 
       <section class="text-[#0B3168]">
         <Article
-          stylesTitle="md:mb-[5rem]"
           stylesImage=" md:mr-[4rem] shadow "
           stylesArticleGaucheFlex=" text-[#0B3168] rounded md:flex-row "
           imageSrc="/images/home4.png "
@@ -41,7 +41,6 @@ export default component$(() => {
           </span>
         </Article>
         <Article
-          stylesTitle="md:mb-[5rem]"
           stylesImage=" md:ml-[4rem] shadow "
           stylesArticleGaucheFlex="text-[#0B3168] rounded md:flex-row-reverse "
           imageSrc="/images/homme-fauteuil.png"
@@ -61,7 +60,6 @@ export default component$(() => {
         </Article>
         <Article
           stylesImage="shadow md:ml-6"
-          stylesTitle="md:mb-[5rem]"
           title="Notre gamme de tests prends en compte des aspects suivants :"
           content=""
           imageSrc="/images/homme-fauteuil.png"
@@ -116,7 +114,6 @@ export default component$(() => {
         <Article
           title="Nos méthodes :"
           stylesContent=" md:ml-[5rem] text-lg"
-          stylesTitle="md:mb-[2rem]"
           stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end leading-7"
           stylesArticleGauchePadding="md:pl-10 "
           content="Inolib s'articule autour de quatre étapes clés :
