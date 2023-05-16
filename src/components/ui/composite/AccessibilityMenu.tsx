@@ -1,4 +1,4 @@
-import { $, component$, useStore } from "@builder.io/qwik";
+import { $, component$ } from "@builder.io/qwik";
 import { ParametersMenu } from "~/ui/ParametersMenu/ParametersMenu";
 import { ParametersMenuButton } from "~/ui/ParametersMenu/ParametersMenuButton";
 import { ParametersMenuCheckbox } from "~/ui/ParametersMenu/ParametersMenuCheckbox";
@@ -134,14 +134,6 @@ const options = [
 ];
 
 export const AccessibilityMenu = component$(() => {
-  const store = useStore<ParamsStore>(
-    {
-      images: "",
-      altTextContainer: "",
-    },
-
-    { deep: true }
-  );
   return (
     <>
       <div class="flex justify-center">
@@ -151,7 +143,7 @@ export const AccessibilityMenu = component$(() => {
               personnaliser la page
             </p>
           </ParametersMenuButton>
-          <ParametersMenuItems styles="md:flex md:justify-around md:items-center text-[#0B3168] border-2 border-[#0B3168] rounded bg-gray-100">
+          <ParametersMenuItems styles="md:flex md:justify-around md:items-center text-[#0B3168] border-2 border-[#0B3168] rounded bg-gray-100 ">
             {options.map((option) => (
               <ParametersMenuCheckbox
                 onChange={option.onChange}

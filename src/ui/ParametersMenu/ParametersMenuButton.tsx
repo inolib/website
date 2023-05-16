@@ -24,6 +24,12 @@ export type ParametersMenuButtonStore = {
   readonly ref: Reference;
 };
 
+export const openModalQrl = $(() => {
+  const dialog = document.querySelector<HTMLDialogElement>("#accessibilityDialog");
+
+  dialog?.showModal();
+});
+
 export const ParametersMenuButton = component$<ParametersMenuButtonProps>(({ styles }) => {
   const _ref = useSignal<HTMLElement>();
 
@@ -98,6 +104,7 @@ export const ParametersMenuButton = component$<ParametersMenuButtonProps>(({ sty
       ref={store.ref}
       tabIndex={store.ref === context.ParametersMenu.focusable ? 0 : -1}
       type="button"
+      onClick$={openModalQrl}
     >
       <Slot />
     </button>
