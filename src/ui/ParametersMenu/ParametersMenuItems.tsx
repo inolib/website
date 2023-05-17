@@ -16,7 +16,22 @@ export type ParametersMenuItemsStore = {
 export const closeModalQrl = $(() => {
   const dialog = document.querySelector<HTMLDialogElement>("#accessibilityDialog");
 
-  dialog?.close();
+  const closeDialog = () => {
+    dialog?.close();
+  };
+
+  const handleClickOrKeyPress = (event: MouseEvent | KeyboardEvent) => {
+    if (
+      event instanceof MouseEvent ||
+      (event instanceof KeyboardEvent && (event.key === "Enter" || event.key === " "))
+    ) {
+      closeDialog();
+    }
+  };
+
+  const closeButton = document.querySelector<HTMLButtonElement>("#closeButton");
+  closeButton?.addEventListener("click", handleClickOrKeyPress);
+  closeButton?.addEventListener("keydown", handleClickOrKeyPress);
 });
 
 export const ParametersMenuItems = component$<ParametersMenuItemsProps>(({ styles }) => {
@@ -78,7 +93,7 @@ export const ParametersMenuItems = component$<ParametersMenuItemsProps>(({ style
           <Slot />
         </ul>
 
-        <button class="top-2 right-2" value="cancel" onClick$={closeModalQrl}>
+        <button id="closeButton" class="top-2 right-2" value="cancel" onClick$={closeModalQrl}>
           Fermer
         </button>
       </dialog>
