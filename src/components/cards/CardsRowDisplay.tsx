@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 
 import { ServicesHomeCard } from "~/components/cards/ServicesHomeCard";
-import { Button } from "../ui/buttons/Button";
 
 export const CardsRowDisplay = component$(() => {
   return (
