@@ -13,7 +13,7 @@ export const ServicesHomeCard = component$((props: CardProps) => {
         <span
           class={`flex h-[full] w-[8rem] items-center justify-center bg-[url(/images/bg-cards.png)] bg-no-repeat md:h-[15rem] md:w-[17.5rem] md:flex-col`}
         >
-          <img class="md:mb-[3rem]" src={props.image} alt="" />
+          <img class="scale-75" src={props.image} alt="" />
         </span>
         <span
           class={`flex h-[6rem] w-[14rem] items-center justify-center md:h-[25rem] md:w-[17.5rem] md:flex-col md:px-4 md:pb-[10rem] md:shadow-xl`}

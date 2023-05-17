@@ -11,8 +11,8 @@ export default component$(() => {
     <>
       <Banner
         content="Visez l'excellence, subjuguez l'expérience, pour un numérique responsable et inclusif."
-        imageStyle="md:w-3/5 md:max-w-2xl"
-        imageSrc="\images\testing.jpg"
+        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
+        imageSrc="\images\testing-raw.jpg"
         title="Testing"
       />
 

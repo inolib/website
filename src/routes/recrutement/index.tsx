@@ -10,7 +10,8 @@ export default component$(() => {
       <Banner
         content="﻿Rejoignez Inolib - Ensemble pour un monde numérique plus inclusif."
         title="Recrutement"
-        imageSrc="/images/banner-accessibilite.png"
+        imageSrc="/images/recrutement-raw.jpg"
+        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
       />
       <h2 class="md:mt-[10rem] mt-8 ml-8 md:ml-[5rem] mb-10 text-3xl text-[#0B3168]">Pourquoi choisir Inolib ?</h2>
       <p class="mx-4 text-lg md:mx-[8rem] mb-10 text-[#0B3168]">

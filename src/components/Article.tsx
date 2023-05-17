@@ -45,7 +45,7 @@ export const Article = component$((props: ArticleProps) => {
             <p class="md:text-lg">{props.titleQuote}</p>
           </span>
           <div
-            class={`mb-14 w-full text-justify md:mb-0 md:w-[42rem] md:px-4 md:pr-10 md:pl-0 md:text-left ${stylesContent}`}
+            class={`mb-14 w-full text-justify md:mb-0 md:w-[38rem] md:px-4 md:pr-10 md:pl-0 md:text-left ${stylesContent}`}
           >
             {props.content}
             <Slot name="date&category" />

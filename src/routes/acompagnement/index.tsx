@@ -12,6 +12,7 @@ export default component$(() => {
       <Banner
         content="  Vous rencontrez des défis en matière d'accessibilité numérique et souhaitez transformer ces enjeux en opportunités pour votre organisation ? Vous êtes au bon endroit ! Chez Inolib, nous mettons l'accent sur VOS besoins et VOS objectifs pour vous offrir un accompagnement personnalisé et dynamique."
         imageSrc="\images\temoignage-homme-header.png"
+        imageStyle="md:w-3/5 md:max-w-2xl"
         title="Acompagnement"
       />
 
