@@ -9,7 +9,7 @@ export const CardsRowDisplay = component$(() => {
         <h2 class="text-2xl font-semibold text-[#0B3168] md:text-4xl">Nos services</h2>
       </span>
       <section class="flex flex-col justify-around md:my-[4rem] md:mx-[10rem] md:flex-row">
-        <ServicesHomeCard label="Conseil et Audit" image="/images/auditV2-icon.svg">
+        <ServicesHomeCard label="Conseil et Audit" image="/images/auditv2-icon.svg">
           <p q:slot="content" class="text-[#0B3168] text-center">
             Un audit en accessibilité numérique évalue vos outils digitaux (sites web, logiciels,
             applications mobiles, documents, etc.) afin de garantir leur niveau d'accessibilité.
