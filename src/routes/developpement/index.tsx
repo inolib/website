@@ -11,7 +11,7 @@ export default component$(() => {
     <>
       <Banner
         content=" Vous cherchez une agence de développement web et mobile qui allie expertise, passion et engagement ? Découvrez Inolib Tech, votre partenaire agile pour des solutions digitales accessibles et performantes."
-        imageSrc="\images\dev.jpg"
+        imageSrc="\images\dev-raw.jpg"
         imageStyle="md:w-3/5 md:max-w-2xl"
         title="Développement"
       />
@@ -54,12 +54,12 @@ export default component$(() => {
         </div>
 
         <Article
-          stylesContent=" leading-20 md:text-lg mt-[2rem] mr-[5rem]"
+          stylesContent=" leading-20 md:text-base mt-[2rem] mr-[5rem]"
           stylesImage="shadow md:scale-125 md:mt-8"
           stylesTitle="md:mb-[3rem] md:mt-8"
           title="Ensemble, faisons de l'accessibilité numérique une réalité pour votre entreprise:"
           content="Nous réalisons des MVP, des prototypes de sites web et d'applications mobiles adaptés à tous les secteurs : e-commerce, vitrines et autres. Nous respectons les règles Opquast et appliquons les processus de gestion ISO 9001 pour garantir la qualité de nos réalisations. Vous avez un projet ambitieux ? N'attendez plus et contactez-nous dès aujourd'hui pour une première consultation gratuite ! Discutons ensemble de vos objectifs et découvrez comment Inolib peut vous aider à réussir dans le monde numérique."
-          imageSrc="/images/dev-1.jpg"
+          imageSrc="/images/dev-1-raw.jpg"
           typoImgQuote="bold"
           stylesArticleGaucheFlex="md:flex-row md:-py-[-10rem]"
         ></Article>

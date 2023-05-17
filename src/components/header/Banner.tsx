@@ -18,9 +18,9 @@ export const Banner = component$((props: BannerProps) => {
       role="banner"
       id="header"
     >
-      <img class={`md:mt-48 ${imageStyle}`} src={props.imageSrc} alt="" />
+      <img class={`md:mt-56 md:mb-12 ${imageStyle}`} src={props.imageSrc} alt="" />
       <div class="md:ml-[5rem]">
-        <h1 class="my-7 max-w-sm text-3xl font-semibold md:mb-5 md:mt-0 md:text-5xl">{props.title}</h1>
+        <h1 class="my-7 max-w-sm text-3xl font-semibold md:mb-5 md:mt-0 md:text-3xl">{props.title}</h1>
         <p class="text-sm mb-3 max-w-md text-justify leading-7 md:mb-0 md:text-left">{props.content}</p>
         <Slot name="services" />
       </div>

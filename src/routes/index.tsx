@@ -13,7 +13,7 @@ export default component$(() => {
     <>
       <BannerHome />
       <section class="flex flex-col justify-center overflow-x-hidden">
-        <SplitedImage src="/images/decouvriraccess.png" styles="hidden md:block" />
+        <SplitedImage src="/images/accueil-raw.jpg" styles="hidden md:block md:w-fit md:scale-90" />
         {/* <Banner
           imageSrc="/images/decouvriraccess.png"
           styles="md:hidden block"

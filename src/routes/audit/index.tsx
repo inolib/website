@@ -11,7 +11,8 @@ export default component$(() => {
       <Banner
         content="Votre tremplin vers l'inclusion digitale !"
         title="Audits d'accessibilité numérique"
-        imageSrc="/images/banner-accessibilite.png"
+        imageSrc="/images/audit-raw.jpg"
+        imageStyle="md:w-3/5 md:max-w-2xl"
       />
 
       <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : </h2>
