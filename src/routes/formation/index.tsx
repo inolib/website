@@ -8,11 +8,13 @@ import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 export default component$(() => {
   return (
     <>
-      <Banner
-        content="Apprenez, innovez et façonnez un avenir digital où chacun trouve sa place."
-        imageSrc="\images\contact-banner.png"
-        title="Formation - L'atelier de l'accessibilité numérique"
-      />
+      <header>
+        <Banner
+          content="Apprenez, innovez et façonnez un avenir digital où chacun trouve sa place."
+          imageSrc="\images\contact-banner.png"
+          title="Formation - L'atelier de l'accessibilité numérique"
+        />
+      </header>
       <section class="text-[#0B3168] text-l">
         <p class="px-5 md:px-28 pt-10">
           <strong class="text-xl">Inolib</strong> vous accompagne dans la création d'expériences numériques accessibles

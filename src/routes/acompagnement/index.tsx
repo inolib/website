@@ -9,11 +9,13 @@ import { Button } from "~/components/ui/buttons/Button";
 export default component$(() => {
   return (
     <>
-      <Banner
-        content="  Vous rencontrez des défis en matière d'accessibilité numérique et souhaitez transformer ces enjeux en opportunités pour votre organisation ? Vous êtes au bon endroit ! Chez Inolib, nous mettons l'accent sur VOS besoins et VOS objectifs pour vous offrir un accompagnement personnalisé et dynamique."
-        imageSrc="\images\temoignage-homme-header.png"
-        title="Acompagnement"
-      />
+      <header>
+        <Banner
+          content="  Vous rencontrez des défis en matière d'accessibilité numérique et souhaitez transformer ces enjeux en opportunités pour votre organisation ? Vous êtes au bon endroit ! Chez Inolib, nous mettons l'accent sur VOS besoins et VOS objectifs pour vous offrir un accompagnement personnalisé et dynamique."
+          imageSrc="\images\temoignage-homme-header.png"
+          title="Acompagnement"
+        />
+      </header>
 
       <section class="text-[#0B3168]">
         <Article

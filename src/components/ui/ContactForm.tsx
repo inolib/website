@@ -1,4 +1,4 @@
-import { $, component$, useSignal, useStore, useTask$, type Signal } from "@builder.io/qwik";
+import { $, component$, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 import { GraphQLClient } from "graphql-request";
 import { z, ZodType, type ZodError } from "zod";
@@ -61,7 +61,7 @@ export const verifyInput = $((store: FormStore) => {
       "message :",
       store.fields.message.value,
       "isDisabled :",
-      store.fields.isDisabled
+      store.isDisabled
     );
   } else {
     console.log(
@@ -72,7 +72,7 @@ export const verifyInput = $((store: FormStore) => {
       "message :",
       store.fields.message.value,
       "isDisabled :",
-      store.fields.isDisabled
+      store.isDisabled
     );
     store.isDisabled = true;
   }
@@ -146,38 +146,36 @@ const FormSchema: ZodType<FormData> = z.object({
   categoryId: z.string(),
 });
 
-export const handleSubmitQrl = $(
-  async (store: FormStore, toasterStore: ToasterStore, resetButton: Signal<HTMLElement>) => {
-    for (const fieldName in store.fields) {
-      (store.fields[fieldName] as FormField).error = "";
-    }
-
-    try {
-      FormSchema.parse({
-        companyName: store.fields.companyName.value,
-        firstName: store.fields.firstName.value,
-        lastName: store.fields.lastName.value,
-        email: store.fields.email.value,
-        message: store.fields.message.value,
-        phone: store.fields.phone.value.replaceAll(/ |-|\./g, ""),
-        categoryId: store.fields.categoryId.value,
-      });
-
-      const { toasterStore: _toasterStore } = await registerRequestQrl(store, toasterStore);
-      toasterStore.show = _toasterStore.show;
-
-      resetButton.value.click();
-    } catch (error) {
-      console.log(error);
-
-      (error as ZodError).issues.forEach((issue) => {
-        const fieldName = issue.path[0];
-
-        (store.fields[fieldName] as FormField).error = issue.message;
-      });
-    }
+export const handleSubmitQrl = $(async (store: FormStore, toasterStore: ToasterStore, resetButton: HTMLElement) => {
+  for (const fieldName in store.fields) {
+    (store.fields[fieldName] as FormField).error = "";
   }
-);
+
+  try {
+    FormSchema.parse({
+      companyName: store.fields.companyName.value,
+      firstName: store.fields.firstName.value,
+      lastName: store.fields.lastName.value,
+      email: store.fields.email.value,
+      message: store.fields.message.value,
+      phone: store.fields.phone.value.replaceAll(/ |-|\./g, ""),
+      categoryId: store.fields.categoryId.value,
+    });
+
+    const { toasterStore: _toasterStore } = await registerRequestQrl(store, toasterStore);
+    toasterStore.show = _toasterStore.show;
+
+    resetButton.click();
+  } catch (error) {
+    console.log(error);
+
+    (error as ZodError).issues.forEach((issue) => {
+      const fieldName = issue.path[0] as string;
+
+      (store.fields[fieldName] as FormField).error = issue.message;
+    });
+  }
+});
 
 export const ContactForm = component$(() => {
   const resetButton = useSignal<HTMLElement>();
@@ -262,7 +260,7 @@ export const ContactForm = component$(() => {
 
       <form
         onSubmit$={async () => {
-          await handleSubmitQrl(store, toasterStore, resetButton);
+          await handleSubmitQrl(store, toasterStore, resetButton.value as HTMLElement);
         }}
         preventdefault:submit
         class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10"
@@ -274,11 +272,10 @@ export const ContactForm = component$(() => {
           }}
           class="col-span-5 col-start-1 col-end-5 row-start-1 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-end-3 md:mr-5 md:mb-3"
           name="Type de la demande"
-          aria-label="type de votre demande"
           required
         >
           <option value="" disabled selected hidden>
-            Type de la demande*
+            Sujet de la demande *
           </option>
 
           {store.categories.map((category) => (
@@ -291,11 +288,10 @@ export const ContactForm = component$(() => {
         <select
           class="col-span-5 col-start-1 col-end-5 row-start-2 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-1 md:ml-5"
           name="Choix de votre civilité"
-          aria-label="Choix de votre civilité"
           required
         >
           <option value="" disabled selected hidden>
-            Choix de votre civilité*
+            Choix de votre civilité
           </option>
           <option>Monsieur</option>
           <option>Madame</option>
@@ -303,7 +299,7 @@ export const ContactForm = component$(() => {
         </select>
 
         <label class="col-span-4 col-start-1 col-end-5 row-start-3 mb-3 flex flex-col md:row-start-2  md:col-span-2 md:col-end-3 md:pr-5">
-          Nom de l'entreprise
+          Nom de l'entreprise *
           <input
             onInput$={async (_, element) => {
               store.fields.companyName.value = element.value;
@@ -311,14 +307,13 @@ export const ContactForm = component$(() => {
             }}
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
             type="text"
-            aria-label="entrez votre nom"
             maxLength={20}
           />
           <span class="text-[#FF0000] text-xs">{store.fields.companyName.error}</span>
         </label>
 
         <label class="col-span-4 col-start-1 row-start-4 mb-3  flex flex-col md:col-span-2 md:col-end-3 md:row-start-3 md:pr-5">
-          Nom de famille*
+          Nom de famille *
           <input
             onInput$={async (_, element) => {
               store.fields.lastName.value = element.value;
@@ -327,13 +322,13 @@ export const ContactForm = component$(() => {
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
             required
             type="text"
-            aria-label="entrez votre nom"
             maxLength={50}
           />
           <span class="text-[#FF0000] text-xs">{store.fields.lastName.error}</span>
         </label>
+
         <label class="col-span-4 col-start-1 col-end-5 row-start-5 mb-3 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-3 md:pl-5">
-          Prénom*
+          Prénom *
           <input
             onInput$={async (_, element) => {
               store.fields.firstName.value = element.value;
@@ -342,13 +337,13 @@ export const ContactForm = component$(() => {
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="text"
-            aria-label="entrez votre prénom"
             maxLength={50}
           />
           <span class="text-[#FF0000] text-xs">{store.fields.firstName.error}</span>
         </label>
+
         <label class="col-span-4 col-start-1 col-end-5 row-start-6 flex flex-col md:col-span-2 md:col-end-3 md:row-start-4 md:pr-5">
-          Mail*
+          e-mail *
           <input
             onInput$={async (_, element) => {
               store.fields.email.value = element.value;
@@ -357,13 +352,13 @@ export const ContactForm = component$(() => {
             class="mb-3 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="email"
-            aria-label="entrez votre e-mail"
             maxLength={50}
           />
           <span class="text-[#FF0000] text-xs">{store.fields.email.error}</span>
         </label>
-        <label class="col-span-4 col-start-1 col-end-5 row-start-7 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-4 md:pl-5">
-          Téléphone*
+
+        <label class="col-start-1 col-end-5 row-start-7 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-4 md:pl-5">
+          Téléphone *
           <input
             onInput$={async (_, element) => {
               store.fields.phone.value = element.value;
@@ -372,12 +367,12 @@ export const ContactForm = component$(() => {
             class="mb-6 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="tel"
-            aria-label="entrez votre numéro de téléphone"
           />
-          <span class="text-[#FF0000] text-xs">{store.fields.phone.error}</span>
+          <span class="text-[#FF0000] mt-[-1.5rem] text-xs">{store.fields.phone.error}</span>
         </label>
-        <div class="col-span-2 col-start-1 flex ">
+        <div class="col-span-2 col-start-1 flex flex-col h-6 ">
           <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
+          <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
         </div>
         <textarea
           onInput$={async (event, element) => {
@@ -386,15 +381,14 @@ export const ContactForm = component$(() => {
             await verifyInput(store);
             await counter$(event);
           }}
-          placeholder="Sujet de votre demande"
-          class="col-span-4 col-start-1 col-end-5 row-start-8 mb-6 border-[1px] border-solid border-[#0B3168] md:row-start-5 md:row-span-2 md:pl-2 md:mt-6"
+          placeholder="Message *"
+          class="col-span-4 col-start-1 col-end-5 row-start-8  border-[1px] border-solid border-[#0B3168] md:row-start-5 md:row-span-2 md:pl-2 md:mt-6"
           id="textarea"
-          maxLength={1500}
+          maxLength={1000}
           required
-          aria-label="zone pour écrire les détails de votre demande"
-        >
-          <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
-        </textarea>
+        ></textarea>
+        <p class="italic text-xs text-[#0B3168] w-[20rem]">* Les champs marqués d'une astérisque sont obligatoire</p>
+
         <button
           ref={resetButton}
           onClick$={resetCounter$}
@@ -404,6 +398,7 @@ export const ContactForm = component$(() => {
         >
           Effacer
         </button>
+
         <button
           type="submit"
           disabled={store.isDisabled}

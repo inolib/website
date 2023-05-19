@@ -9,11 +9,13 @@ import { Button } from "~/components/ui/buttons/Button";
 export default component$(() => {
   return (
     <>
-      <Banner
-        content=" Vous cherchez une agence de développement web et mobile qui allie expertise, passion et engagement ? Découvrez Inolib Tech, votre partenaire agile pour des solutions digitales accessibles et performantes."
-        imageSrc="\images\temoignage-homme-header.png"
-        title="Développement"
-      />
+      <header>
+        <Banner
+          content=" Vous cherchez une agence de développement web et mobile qui allie expertise, passion et engagement ? Découvrez Inolib Tech, votre partenaire agile pour des solutions digitales accessibles et performantes."
+          imageSrc="\images\temoignage-homme-header.png"
+          title="Développement"
+        />
+      </header>
       <h2 class="md:mt-[10rem] mt-8 ml-8 md:ml-[5rem] mb-10 text-3xl text-[#0B3168]">Développement</h2>
       <p class="text-lg md:mx-[8rem] mb-10 text-[#0B3168]">
         Chez Inolib, nous mettons tout notre cœur dans votre projet. Nous sommes convaincus que chaque projet mérite une

@@ -1,7 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 
-import { Button } from "~/components/ui/buttons/Button";
-
 export const BannerHome = component$(() => {
   return (
     <header class="overflow-x-auto">

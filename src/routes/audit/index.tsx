@@ -8,11 +8,13 @@ import { Article } from "~/components/Article";
 export default component$(() => {
   return (
     <>
-      <Banner
-        content="Votre tremplin vers l'inclusion digitale !"
-        title="Audits d'accessibilité numérique"
-        imageSrc="/images/banner-accessibilite.png"
-      />
+      <header>
+        <Banner
+          content="Votre tremplin vers l'inclusion digitale !"
+          title="Audits d'accessibilité numérique"
+          imageSrc="/images/banner-accessibilite.png"
+        />
+      </header>
 
       <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : </h2>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">

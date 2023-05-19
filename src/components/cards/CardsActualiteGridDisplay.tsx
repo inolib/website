@@ -12,7 +12,6 @@ export const CardsActualiteGridDisplay = component$(() => {
           category="Accessibilité"
           date="10.Mars.2023"
           imgStyles="h-[14rem]"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           src="/images/home7.png"
           styles="h-[10rem]"
         />
@@ -23,7 +22,6 @@ export const CardsActualiteGridDisplay = component$(() => {
           category="Accessibilité"
           date="10.Mars.2023"
           imgStyles="h-[14rem]"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           src="/images/home2.png"
           styles="h-[10rem]"
         />
@@ -44,7 +42,6 @@ export const CardsActualiteGridDisplay = component$(() => {
           alt="article 4"
           category="Inolib"
           date="10.Mars.2023"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           src="/images/home5.png"
           styles="h-[14rem]"
         />
@@ -54,7 +51,6 @@ export const CardsActualiteGridDisplay = component$(() => {
           alt="article 5"
           category="Accessibilité"
           date="10.Mars.2023"
-          label="Lorem ipsum dolor sit amet consectetur adipisicing elit."
           src="/images/home3.png"
           styles="h-[14rem]"
         />

@@ -11,7 +11,9 @@ import { SplitedImage } from "~/components/cards/SplitedImage";
 export default component$(() => {
   return (
     <>
-      <BannerHome />
+      <header>
+        <BannerHome id="#header" />
+      </header>
       <section class="flex flex-col justify-center overflow-x-hidden">
         <SplitedImage src="/images/decouvriraccess.png" styles="hidden md:block" />
         {/* <Banner
