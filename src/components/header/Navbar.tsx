@@ -11,6 +11,7 @@ export const Navbar = component$(() => {
   return (
     <>
       <nav role="menu" class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white flex justify-start w-full">
+        <FastAccessMenu />
         <a
           href="/"
           class="flex justify-start items-center"
@@ -21,8 +22,7 @@ export const Navbar = component$(() => {
           <img class="hidden h-32 w-auto my-[-2rem] lg:block z-10" src="/images/logoinolibvf.png" alt="Inolib" />
         </a>
         <div class="flex flex-col w-full pl-10">
-          <div class="flex justify-between items-center mr-4 sr-only md:whitespace-nowrap md:not-sr-only">
-            <FastAccessMenu />
+          <div class="flex justify-end items-center mr-4 sr-only md:whitespace-nowrap md:not-sr-only">
             <a href="tel:+33670865032" class="text-[#0B3168] mr-4 py-2">
               {" "}
               Contact : 06 47 21 86 69

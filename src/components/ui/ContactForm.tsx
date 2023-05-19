@@ -17,6 +17,7 @@ type FormField = {
 
 type FormStore = {
   count: number;
+  checked: boolean;
   isDisabled: boolean;
   categories: ContactCategory[];
   fields: {
@@ -50,7 +51,8 @@ export const verifyInput = $((store: FormStore) => {
     store.fields.phone.value !== "" &&
     store.fields.email.value !== "" &&
     store.fields.companyName.value !== "" &&
-    store.fields.categoryId.value !== ""
+    store.fields.categoryId.value !== "" &&
+    store.checked == true
   ) {
     store.isDisabled = false;
     console.log(
@@ -183,6 +185,7 @@ export const ContactForm = component$(() => {
   const store = useStore<FormStore>(
     {
       count: 0,
+      checked: false,
       isDisabled: true,
       categories: [],
       fields: {
@@ -250,6 +253,8 @@ export const ContactForm = component$(() => {
     store.categories = result.contactCategories;
   });
 
+  console.log(store.checked);
+
   return (
     <>
       <div class=" fixed inset-0 z-50 w-10 h-10 top-[5rem] left-[50vw] right-[50vw] bottom-10 flex items-center justify-center">
@@ -305,6 +310,7 @@ export const ContactForm = component$(() => {
               store.fields.companyName.value = element.value;
               await verifyInput(store);
             }}
+            autoComplete="organization"
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
             type="text"
             maxLength={20}
@@ -319,6 +325,7 @@ export const ContactForm = component$(() => {
               store.fields.lastName.value = element.value;
               await verifyInput(store);
             }}
+            autoComplete="family-name"
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
             required
             type="text"
@@ -334,6 +341,7 @@ export const ContactForm = component$(() => {
               store.fields.firstName.value = element.value;
               await verifyInput(store);
             }}
+            autoComplete="given-name"
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="text"
@@ -349,6 +357,7 @@ export const ContactForm = component$(() => {
               store.fields.email.value = element.value;
               await verifyInput(store);
             }}
+            autoComplete="email"
             class="mb-3 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="email"
@@ -364,15 +373,30 @@ export const ContactForm = component$(() => {
               store.fields.phone.value = element.value;
               await verifyInput(store);
             }}
+            autoComplete="tel"
             class="mb-6 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="tel"
           />
           <span class="text-[#FF0000] mt-[-1.5rem] text-xs">{store.fields.phone.error}</span>
         </label>
-        <div class="col-span-2 col-start-1 flex flex-col h-6 ">
+        <div class="col-start-1 flex flex-col h-6 ">
           <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
           <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
+          <div class={`flex flex-row-reverse w-[14rem] mt-10`}>
+            <label class={`italic text-xs text-[#0B3168] ml-2`}>
+              <a class={`hover:font-extrabold`} href="/legal">
+                Accepter nos conditions générales *
+              </a>
+            </label>
+            <input
+              type="checkbox"
+              onChange$={async () => {
+                store.checked = !store.checked;
+                await verifyInput(store);
+              }}
+            />
+          </div>
         </div>
         <textarea
           onInput$={async (event, element) => {
@@ -387,7 +411,9 @@ export const ContactForm = component$(() => {
           maxLength={1000}
           required
         ></textarea>
-        <p class="italic text-xs text-[#0B3168] w-[20rem]">* Les champs marqués d'une astérisque sont obligatoire</p>
+        <div class={`flex flex-col`}>
+          <p class="italic text-xs text-[#0B3168] w-[20rem]">* Les champs marqués d'une astérisque sont obligatoire</p>
+        </div>
 
         <button
           ref={resetButton}
@@ -398,7 +424,6 @@ export const ContactForm = component$(() => {
         >
           Effacer
         </button>
-
         <button
           type="submit"
           disabled={store.isDisabled}
