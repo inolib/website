@@ -3,20 +3,22 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { Banner } from "~/components/header/Banner";
-import { Article } from "~/components/Article";
+import { NewArticle } from "~/components/articles/NewArticle";
 import { Button } from "~/components/ui/buttons/Button";
 
 export default component$(() => {
   return (
     <>
-      <header>
-        <Banner
-          content=" Vous cherchez une agence de développement web et mobile qui allie expertise, passion et engagement ? Découvrez Inolib Tech, votre partenaire agile pour des solutions digitales accessibles et performantes."
-          imageSrc="\images\temoignage-homme-header.png"
-          title="Développement"
-        />
-      </header>
-      <h2 class="md:mt-[10rem] mt-8 ml-8 md:ml-[5rem] mb-10 text-3xl text-[#0B3168]">Développement</h2>
+  <header>
+      <Banner
+        content=" Vous cherchez une agence de développement web et mobile qui allie expertise, passion et engagement ? Découvrez Inolib Tech, votre partenaire agile pour des solutions digitales accessibles et performantes."
+        imageSrc="\images\dev-raw.jpg"
+        imageStyle="md:w-3/5 md:max-w-2xl"
+        title="Développement"
+      />
+    </header>
+      <h2 class="md:mt-[11.5rem] mt-8 ml-8 md:ml-[5rem] mb-10 text-3xl text-[#0B3168]">Développement</h2>
+
       <p class="text-lg md:mx-[8rem] mb-10 text-[#0B3168]">
         Chez Inolib, nous mettons tout notre cœur dans votre projet. Nous sommes convaincus que chaque projet mérite une
         expertise pointue et les dernières technologies en la matière. C'est pourquoi notre équipe d'experts est animée
@@ -54,16 +56,16 @@ export default component$(() => {
           </ul>
         </div>
 
-        <Article
-          stylesContent=" leading-20 md:text-xl mt-[2rem] mr-[5rem]"
-          stylesImage="shadow"
-          stylesTitle="md:mb-[3rem] md:mt-8"
+        <NewArticle
           title="Ensemble, faisons de l'accessibilité numérique une réalité pour votre entreprise:"
           content="Nous réalisons des MVP, des prototypes de sites web et d'applications mobiles adaptés à tous les secteurs : e-commerce, vitrines et autres. Nous respectons les règles Opquast et appliquons les processus de gestion ISO 9001 pour garantir la qualité de nos réalisations. Vous avez un projet ambitieux ? N'attendez plus et contactez-nous dès aujourd'hui pour une première consultation gratuite ! Discutons ensemble de vos objectifs et découvrez comment Inolib peut vous aider à réussir dans le monde numérique."
-          imageSrc="/images/homme-fauteuil.png"
-          typoImgQuote="bold"
-          stylesArticleGaucheFlex="md:flex-row md:-py-[-10rem]"
-        ></Article>
+          imageSrc="/images/dev-1-raw.jpg"
+          style="md:mx-[8rem] md:py-8"
+          styleArticle="flex flex-col md:pt-6 md:flex-row md:-py-[-10rem]"
+          styleImage="shadow md:scale-100 h-auto max-w-full"
+          styleTitle="md:mb-[3rem] md:mt-8 mx-5 my-7 text-3xl md:mb-[1rem] font-semibold"
+          styleContent=" leading-20 md:text-base mt-[2rem] mr-[5rem]"
+        ></NewArticle>
         <p class={`mx-5 md:mx-[20rem] leading-7`}>
           🔍 Pour aller encore plus loin, explorez nos services de <strong>formation</strong>, d'audit, de conseil et
           d'accompagnement personnalisé en matière d'accessibilité numérique. Ensemble, rendons vos outils numériques

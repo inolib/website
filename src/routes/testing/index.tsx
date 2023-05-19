@@ -11,14 +11,14 @@ export default component$(() => {
     <>
       <Banner
         content="Visez l'excellence, subjuguez l'expérience, pour un numérique responsable et inclusif."
-        imageSrc="\images\temoignage-homme-header.png"
+        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
+        imageSrc="\images\testing-raw.jpg"
         title="Testing"
       />
 
       <section class="text-[#0B3168]">
         <Article
-          stylesTitle="md:mb-[5rem]"
-          stylesImage=" md:mr-[4rem] shadow "
+          stylesImage="shadow "
           stylesArticleGaucheFlex=" text-[#0B3168] rounded md:flex-row "
           imageSrc="/images/home4.png "
           title=" Plongez au cœur de l'univers Inolib :"
@@ -41,8 +41,7 @@ export default component$(() => {
           </span>
         </Article>
         <Article
-          stylesTitle="md:mb-[5rem]"
-          stylesImage=" md:ml-[4rem] shadow "
+          stylesImage="shadow "
           stylesArticleGaucheFlex="text-[#0B3168] rounded md:flex-row-reverse "
           imageSrc="/images/homme-fauteuil.png"
           title=""
@@ -61,7 +60,6 @@ export default component$(() => {
         </Article>
         <Article
           stylesImage="shadow md:ml-6"
-          stylesTitle="md:mb-[5rem]"
           title="Notre gamme de tests prends en compte des aspects suivants :"
           content=""
           imageSrc="/images/homme-fauteuil.png"
@@ -71,42 +69,42 @@ export default component$(() => {
             <ul class="flex flex-col md:justify-around ">
               <li class="mb-[2.5rem] flex items-center">
                 <p class="md:ml-4 ml-2 text-lg">
-                  1️⃣ Tests de régression : Vérification de l'absence d'impact négatif des nouvelles fonctionnalités sur
+                🔹Tests de régression : Vérification de l'absence d'impact négatif des nouvelles fonctionnalités sur
                   les fonctionnalités existantes.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
                 <p class="md:ml-4 ml-2 text-lg">
-                  2️⃣ Tests d'utilisabilité : Évaluation de la facilité d'utilisation de votre système ou application web
+                🔹Tests d'utilisabilité : Évaluation de la facilité d'utilisation de votre système ou application web
                   pour réaliser une tâche..
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
                 <p class="md:ml-4 ml-2 text-lg">
-                  3️⃣Tests fonctionnels : Contrôle des fonctions de votre application à travers des basés sur les
+                🔹Tests fonctionnels : Contrôle des fonctions de votre application à travers des basés sur les
                   exigences fonctionnelles.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
                 <p class="md:ml-4 ml-2 text-lg">
-                  4️⃣ Tests unitaires : Vérification du bon fonctionnement de chaque unité logicielle (le plus petit
+                🔹Tests unitaires : Vérification du bon fonctionnement de chaque unité logicielle (le plus petit
                   composant testable d'une application).
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
                 <p class="md:ml-4 ml-2 text-lg">
-                  5️⃣ Tests d'intégration : Validation de la bonne interaction entre les composants ou fonctions de votre
+                🔹Tests d'intégration : Validation de la bonne interaction entre les composants ou fonctions de votre
                   logiciel.
                 </p>
               </li>
               <li class="mb-[2.5rem] flex items-center">
                 <p class="md:ml-4 ml-2 text-lg">
-                  6️⃣ Tests de réception : Contrôle global du système pour s'assurer qu'il fonctionne comme prévu.
+                🔹Tests de réception : Contrôle global du système pour s'assurer qu'il fonctionne comme prévu.
                 </p>
               </li>
               <li class="mb-[1rem] flex items-center">
                 <p class="md:ml-4 ml-2 text-lg">
-                  7️⃣ Tests de performance : Évaluation de la réactivité et de la stabilité de votre application sous une
+                🔹Tests de performance : Évaluation de la réactivité et de la stabilité de votre application sous une
                   charge de travail spécifique.
                 </p>
               </li>
@@ -116,7 +114,6 @@ export default component$(() => {
         <Article
           title="Nos méthodes :"
           stylesContent=" md:ml-[5rem] text-lg"
-          stylesTitle="md:mb-[2rem]"
           stylesArticleGaucheFlex="md:flex-row-reverse md:justify-end leading-7"
           stylesArticleGauchePadding="md:pl-10 "
           content="Inolib s'articule autour de quatre étapes clés :

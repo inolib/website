@@ -10,9 +10,9 @@ export const LocalisationCard = component$(() => {
           <p class="text-center">
             INOLIB
             <br />
-            254 RUE VENDÔME
+            2 AVENUE TONY GARNIER
             <br />
-            69003 LYON
+            69007 LYON
           </p>
         </div>
         <img alt="" class="p-2" src="\images\map.png" />

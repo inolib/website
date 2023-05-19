@@ -14,7 +14,7 @@ export const Button = component$((props: ButtonProps) => {
 
   return (
     <a
-      class={`bg-${primaryColor} rounded-md px-8 py-4 text-${secondaryColor} text-xl ${styles} hover:scale-105`}
+      class={`bg-${primaryColor} rounded-md px-8 py-4 text-${secondaryColor} text-xl ${styles} hover:scale-105 transition ease-in delay-75`}
       href={props.href}
     >
       {props.label}
