@@ -18,6 +18,7 @@ export default component$(() => {
       <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : </h2>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
+          imgSeparator=""
           imageSrc="/images/actualitehome1.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
           stylesImage=" md:mr-[6rem] mt-[3rem]"
@@ -86,6 +87,7 @@ export default component$(() => {
         </div>
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nous proposons trois offres d'audit :</h2>
         <Article
+          imgSeparator=""
           imageSrc="/images/conseilservice.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[3rem] mt-[3rem]"
@@ -134,6 +136,7 @@ export default component$(() => {
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Le processus d'audit Inolib en 4 étapes clés :</h2>
 
         <Article
+          imgSeparator=""
           imageSrc="/images/actualitehome1.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
@@ -182,6 +185,7 @@ export default component$(() => {
         <h3 class="mx-5 md:px-28 md:mt-12 text-3xl">Services complémentaires pour propulser votre projet :</h3>
 
         <Article
+          imgSeparator=""
           imageSrc="/images/conseilservice.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
@@ -218,7 +222,7 @@ export default component$(() => {
         </div>
         <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
       </section> */}
-      <section class="text-[#0B3168] mt-10 md:mt-0">
+      <div class="text-[#0B3168] mt-10 md:mt-0">
         {/* <ArticleTemoignage1 />
         <ArticleTemoignage2 /> */}
         <section class="mx-5 md:px-28">
@@ -252,7 +256,7 @@ export default component$(() => {
             styles="mt-[2rem] transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300"
           />
         </span>
-      </section>
+      </div>
       <div class="my-10 flex w-full justify-center">
         <ButtonTopPage />
       </div>

@@ -26,6 +26,7 @@ export default component$(() => {
           Nos formations couvrent les sujets clés de l'accessibilité numérique, notamment :
         </h3>
         <Article
+          imgSeparator=""
           imageSrc="/images/actualitehome1.png"
           stylesArticleGaucheFlex="mb-8 bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
           stylesImage=" md:mr-[6rem] mt-[3rem]"
@@ -48,11 +49,14 @@ export default component$(() => {
                 <p class="ml-4">🔹L'accessibilité des applications mobiles</p>
               </li>
               <li class="mb-[2rem] flex ">
-                <p class="ml-4">🔹L'accessibilité pour les personnes en situation de handicap visuel, auditif, moteur et cognitif</p>
+                <p class="ml-4">
+                  🔹L'accessibilité pour les personnes en situation de handicap visuel, auditif, moteur et cognitif
+                </p>
               </li>
             </ul>
           </div>
         </Article>
+
         <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Chiffres clés sur l'accessibilité numérique :</h2>
         <p class="px-5 md:px-28 mt-2">
           Entre 15 et 20% de la population mondiale est concernée par un handicap. En France, le dernier rapport du
@@ -68,6 +72,7 @@ export default component$(() => {
         </p>
         <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Pourquoi choisir Inolib Formations</h2>
         <Article
+          imgSeparator=""
           imageSrc="/images/conseilservice.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
