@@ -149,19 +149,23 @@ const FormSchema: ZodType<FormData> = z.object({
 });
 
 export const handleSubmitQrl = $(async (store: FormStore, toasterStore: ToasterStore, resetButton: HTMLElement) => {
-  for (const fieldName in store.fields) {
-    (store.fields[fieldName] as FormField).error = "";
-  }
+  store.fields.categoryId.value = "";
+  store.fields.companyName.value = "";
+  store.fields.firstName.value = "";
+  store.fields.lastName.value = "";
+  store.fields.email.value = "";
+  store.fields.message.value = "";
+  store.fields.phone.value = "";
 
   try {
     FormSchema.parse({
+      categoryId: store.fields.categoryId.value,
       companyName: store.fields.companyName.value,
       firstName: store.fields.firstName.value,
       lastName: store.fields.lastName.value,
       email: store.fields.email.value,
       message: store.fields.message.value,
       phone: store.fields.phone.value.replaceAll(/ |-|\./g, ""),
-      categoryId: store.fields.categoryId.value,
     });
 
     const { toasterStore: _toasterStore } = await registerRequestQrl(store, toasterStore);
@@ -171,10 +175,15 @@ export const handleSubmitQrl = $(async (store: FormStore, toasterStore: ToasterS
   } catch (error) {
     console.log(error);
 
-    (error as ZodError).issues.forEach((issue) => {
-      const fieldName = issue.path[0] as string;
+    const errors = (error as ZodError).issues.map((issue) => {
+      return {
+        fieldName: issue.path[0] as string,
+        message: issue.message,
+      };
+    });
 
-      (store.fields[fieldName] as FormField).error = issue.message;
+    errors.forEach((error) => {
+      (store.fields[error.fieldName] as FormField).error = error.message;
     });
   }
 });

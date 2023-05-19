@@ -12,7 +12,7 @@ export default component$(() => {
   return (
     <>
       <header>
-        <BannerHome id="#header" />
+        <BannerHome />
       </header>
       <section class="flex flex-col justify-center overflow-x-hidden">
         <SplitedImage src="/images/accueil-raw.jpg" styles="hidden md:block md:w-fit md:scale-90" />
