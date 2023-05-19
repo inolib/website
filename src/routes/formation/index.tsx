@@ -8,13 +8,15 @@ import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 export default component$(() => {
   return (
     <>
-      <header>
-        <Banner
-          content="Apprenez, innovez et façonnez un avenir digital où chacun trouve sa place."
-          imageSrc="\images\contact-banner.png"
-          title="Formation - L'atelier de l'accessibilité numérique"
-        />
+    <header>
+      <Banner
+        content="Apprenez, innovez et façonnez un avenir digital où chacun trouve sa place."
+        imageSrc="\images\formation-raw.jpg"
+        imageStyle="md:w-3/5 md:max-w-2xl"
+        title="Formation - L'atelier de l'accessibilité numérique"
+      />
       </header>
+
       <section class="text-[#0B3168] text-l">
         <p class="px-5 md:px-28 pt-10">
           <strong class="text-xl">Inolib</strong> vous accompagne dans la création d'expériences numériques accessibles
@@ -34,24 +36,22 @@ export default component$(() => {
           <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around text-lg ">
               <li class="mb-[2rem] flex">
-                <p class="ml-4">● Les fondamentaux de l'accessibilité numérique</p>
+                <p class="ml-4">🔹Les fondamentaux de l'accessibilité numérique</p>
               </li>
               <li class="mb-[2rem] flex ">
-                <p class="ml-4">● Les normes et réglementations en matière d'accessibilité numérique</p>
+                <p class="ml-4">🔹Les normes et réglementations en matière d'accessibilité numérique</p>
               </li>
               <li class="mb-[2rem] flex ">
-                <p class="ml-4">● Les techniques pour rendre un site web accessible</p>
+                <p class="ml-4">🔹Les techniques pour rendre un site web accessible</p>
               </li>
               <li class="mb-[2rem] flex ">
-                <p class="ml-4">● Les outils pour tester l'accessibilité d'un site web</p>
+                <p class="ml-4">🔹Les outils pour tester l'accessibilité d'un site web</p>
               </li>
               <li class="mb-[2rem] flex ">
-                <p class="ml-4">● L'accessibilité des applications mobiles</p>
+                <p class="ml-4">🔹L'accessibilité des applications mobiles</p>
               </li>
               <li class="mb-[2rem] flex ">
-                <p class="ml-4">
-                  ● L'accessibilité pour les personnes en situation de handicap visuel, auditif, moteur et cognitif
-                </p>
+                <p class="ml-4">🔹L'accessibilité pour les personnes en situation de handicap visuel, auditif, moteur et cognitif</p>
               </li>
             </ul>
           </span>

@@ -39,22 +39,22 @@ export const ContactCard = component$(() => {
           aria-label="liste des reseau sociaux d'Inolib"
         >
           <li>
-            <a href="https://www.facebook.com/people/Inolib/100075572787282/" aria-label="Facebook d'Inolib">
+            <a href="https://www.facebook.com/people/Inolib/100075572787282/" target="_blank" aria-label="Facebook d'Inolib">
               <img alt="" class="scale-50" src="\images\logo-facebook-violet.svg"></img>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/_inolib" aria-label="Twitter d'Inolib">
+            <a href="https://twitter.com/_inolib" target="_blank" aria-label="Twitter d'Inolib">
               <img alt="" class="scale-50" src="\images\logo-twiter.svg"></img>
             </a>
           </li>
           <li>
-            <a href="#" aria-label="https://www.linkedin.com/company/inolib/?originalSubdomain=fr">
+            <a href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr" target="_blank" aria-label="Linkedin d'Inolib">
               <img alt="" class="scale-50" src="\images\logo-linkedin.svg"></img>
             </a>
           </li>
           <li>
-            <a href="#" aria-label="l'Instagram d'Inolib">
+            <a href="#" target="_blank" aria-label="Instagram d'Inolib">
               <img alt="" class="scale-50" src="\images\logo-instagram.svg"></img>
             </a>
           </li>

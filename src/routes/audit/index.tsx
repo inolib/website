@@ -8,13 +8,15 @@ import { Article } from "~/components/Article";
 export default component$(() => {
   return (
     <>
-      <header>
-        <Banner
-          content="Votre tremplin vers l'inclusion digitale !"
-          title="Audits d'accessibilité numérique"
-          imageSrc="/images/banner-accessibilite.png"
-        />
-      </header>
+<header>
+      <Banner
+        content="Votre tremplin vers l'inclusion digitale !"
+        title="Audits d'accessibilité numérique"
+        imageSrc="/images/audit-raw.jpg"
+        imageStyle="md:w-3/5 md:max-w-2xl"
+      />
+  </header>
+
 
       <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : </h2>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
@@ -89,9 +91,9 @@ export default component$(() => {
         <Article
           imageSrc="/images/conseilservice.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
-          stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
+          stylesImage="ml-[3rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
+          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:ml-[8rem] md:mr-[3rem]">
             <ul class="mt-10 flex flex-col md:mt-0">
               <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
@@ -239,39 +241,8 @@ export default component$(() => {
           <p>
             Faites de <strong>l'accessibilité numérique</strong> une priorité avec Inolib.
           </p>
-          <ul class="flex flex-col mt-10 items-center">
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/developpement" aria-label="offres de développement">
-                Développement
-              </a>
-            </li>
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/testing" aria-label="offres de testing">
-                Testing
-              </a>
-            </li>
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/formation" aria-label="offres de formation">
-                Formation
-              </a>
-            </li>
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/accompagnement" aria-label="offres d'accompaggnement">
-                Accompagnement
-              </a>
-            </li>
-            <li class=" hover:bg-[#0B3168] hover:text-white p-2 rounded-md">
-              <a href="/actualite" aria-label="nos actualités">
-                Actualités
-              </a>
-            </li>
-          </ul>
         </section>
 
-        <span class="flex justify-center">
-          <img class="h-[14rem] w-[14rem]" src="/images/purple-logo.png" alt="" />
-        </span>
-        <span class="flex justify-center"></span>
         <span class="flex justify-center mb-2 md:mb-0">
           <Button
             href="/contact"
