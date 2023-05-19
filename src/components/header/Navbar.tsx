@@ -11,7 +11,7 @@ export const Navbar = component$(() => {
   return (
     <>
       <nav role="menu" class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white flex justify-start w-full">
-        <div flex justify-start items-center>
+        <div>
           <img class="block h-16 w-auto lg:hidden z-10" src="/images/logoinolibvf.png" alt="Inolib" />
           <img class="hidden h-32 w-auto my-[-2rem] lg:block z-10 p-4" src="/images/logoinolibvf.png" alt="Inolib" />
         </div>
