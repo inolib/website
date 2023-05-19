@@ -251,7 +251,7 @@ export default component$(() => {
             label="Demander un devis"
             styles="mt-[2rem] transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300"
           />
-        </div>
+        </span>
       </section>
       <div class="my-10 flex w-full justify-center">
         <ButtonTopPage />
