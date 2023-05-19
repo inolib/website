@@ -22,22 +22,19 @@ export const Contentinfo = component$(() => {
         <section class="md:grid md:grid-cols-1 md:grid-rows-1 md:border-l-2 md:pl-10">
           <ul class="flex flex-wrap justify-center border-y-2 border-[#9A35AD] py-8 md:justify-start md:items-start md:border-y-0 md:py-0">
             <li class="m-2">
-              <a href="#">Plan du site</a>
-            </li>
-            <li class="m-2">
               <a href="/politiqueaccessibilite">Politique d'accessibilité</a>
             </li>
             <li class="m-2">
-              <a href="#">Mentions légales</a>
+              <a href="/legal">Mentions légales</a>
             </li>
             <li class="m-2">
-              <a href="/legal">Politique de confidentialité</a>
+              <a href="/politiqueconfidentialite">Politique de confidentialité</a>
             </li>
             <li class="m-2">
               <a href="/glossaire">Glossaire</a>
             </li>
             <li class="m-2">
-              <a href="/faq">Faq</a>
+              <a href="/faq">FAQ</a>
             </li>
           </ul>
           <ul
