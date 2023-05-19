@@ -3,7 +3,6 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 import { Banner } from "~/components/header/Banner";
-import { Article } from "~/components/Article";
 import { NewArticle } from "~/components/articles/NewArticle";
 import { Button } from "~/components/ui/buttons/Button";
 

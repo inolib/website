@@ -11,7 +11,7 @@ type NewArticleProps = {
   styleImageText?: string;
   styleImageQuote?: string;
   title: string;
-  content: string;
+  content?: string;
   imageSrc?: string;
 };
 
