@@ -32,22 +32,12 @@ export const NewArticle = component$((props: NewArticleProps) => {
 
     <div class={`${styleArticle}`}>
       <div class={`${styleArticleContent}`}>
-        <div>
-          <h3></h3>
-          <img/>
-          <p></p>
-        </div>
         <div class={`${styleContent}`}>
-        {props.content}
+          {props.content}
           <Slot name="slot1" />
-          <Slot name="slot2" />
         </div>
-
-        <strong>
-          <p></p>
-          <Slot name="slot3" />
-        </strong>
       </div>
+
       <div class={`${styleImageArticle}`}>
         <img class={`${styleImage}`} src={props.imageSrc}/>
         <blockquote class={`${styleImageQuote}`}></blockquote>
