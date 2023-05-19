@@ -57,7 +57,7 @@ export const Article = component$((props: ArticleProps) => {
             {props.contentQuote} <Slot name="content2" />
           </strong>
         </div>
-        <div class={`flex flex-col md:w-[35rem] ${stylesImgArticle}`}>
+        <div class={`flex flex-col md:w-[100rem] ${stylesImgArticle}`}>
           <img class={`h-auto ${stylesImage} max-w-full`} src={props.imageSrc} alt="" />
           <blockquote class={`max-w-content my-6 text-center ${imgQuoteSize}`}>{props.imageQuote}</blockquote>
           <p class={`max-w-content text-center ${styles} ${imgQuoteSize} md:mt-6`}>{props.imageText}</p>
