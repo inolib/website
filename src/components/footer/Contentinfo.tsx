@@ -45,22 +45,22 @@ export const Contentinfo = component$(() => {
             aria-label="reseau sociaux d'Inolib"
           >
             <li>
-              <a href="https://www.facebook.com/people/Inolib/100075572787282/" aria-label="facebook">
+              <a href="https://www.facebook.com/people/Inolib/100075572787282/" target="_blank" aria-label="Facebook">
                 <img alt="facebook INOLIB" src="/images/logo-facebook-violet.svg" aria-label="facebook"></img>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/_inolib" aria-label="twitter">
+              <a href="https://twitter.com/_inolib" target="_blank" aria-label="twitter">
                 <img alt="twitter INOLIB" src="/images/logo-twiter.svg" aria-label="twitter"></img>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr" aria-label="linkedin">
+              <a href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr" target="_blank" aria-label="linkedin">
                 <img alt="LinkedIn INOLIB" src="/images/logo-linkedin.svg" aria-label="Linkedin"></img>
               </a>
             </li>
             <li>
-              <a href="#" aria-label="instagram">
+              <a href="#" target="_blank" aria-label="instagram">
                 <img alt="instagram INOLIB" src="/images/logo-instagram.svg" aria-label="Instagram"></img>
               </a>
             </li>
