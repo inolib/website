@@ -21,12 +21,17 @@ export const Navbar = component$(() => {
           <img class="hidden h-32 w-auto my-[-2rem] lg:block z-10" src="/images/logoinolibvf.png" alt="Inolib" />
         </a>
         <div class="flex flex-col w-full pl-10">
-          <div class="flex justify-between items-center mr-4 sr-only md:whitespace-nowrap md:not-sr-only">
+          <div class="flex justify-end items-center mr-4 sr-only md:whitespace-nowrap md:not-sr-only">
             <FastAccessMenu />
-            <a href="tel:+33670865032" class="text-[#0B3168] mr-4 py-2">
+            <p class="text-[#0B3168] text-xs mr-2 py-2">
               {" "}
-              Contact : 06 47 21 86 69
-            </a>
+              contact@inolib.com
+            </p>
+            <p class="text-[#0B3168] text-xs mr-2 py-2"> / </p>
+            <p class="text-[#0B3168] text-xs mr-2 py-2">
+              {" "}
+              06 47 21 86 69
+            </p>
           </div>
           <div class="hidden md:block">
             <div class="flex justify-around items-center border-t-2">
