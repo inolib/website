@@ -68,14 +68,14 @@ export default component$(() => {
           d'accompagnement personnalisé en matière d'accessibilité numérique. Ensemble, rendons vos outils numériques
           accessibles à tous !
         </p>
-        <span class="flex justify-center mt-8 mb-2 md:mb-0">
+        <div class="flex justify-center mt-8 mb-2 md:mb-0">
           <Button
             href="/contact"
             color="blue"
             label="Demander un devis"
             styles="mt-[2rem] transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300"
           />
-        </span>
+        </div>
 
         <div class="my-10 flex w-full justify-center">
           <ButtonTopPage />

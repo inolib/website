@@ -5,28 +5,28 @@ export const BannerHome = component$(() => {
     <header class="overflow-x-auto">
       <section class="flex flex-col md:flex-row justify-center md:justify-start md:items-center h-[30rem] md:h-[40rem] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] md:bg-[url('/images/accueil-1.jpg')] bg-cover bg-center bg-no-repeat">
         <div class="flex flex-col ml-4 md:ml-[4rem]">
-          <span class="md:flex items-center">
+          <div class="md:flex items-center">
             <img class="h-32 w-auto mr-1 md:h-40 md:mr-2" alt="INOLIB" src="/images/inolibblancvf.svg" />
             <h1 class="flex w-[50%] md:w-[55%] flex-col pt-3 border-t text-[120%] md:border-l md:border-t-0 font-semibold text-white md:pl-3 md:text-[200%]">
               Votre allié en accessibilité numérique et solutions digitales
             </h1>
-          </span>
+          </div>
           <p class="w-[75%] text-white md:text-[150%] pt-4 md:pt-0 text-lg">
             Ensemble, rendons le numérique accessible à tous
           </p>
         </div>
-        {/* <span class={`m-[7rem] flex justify-center`}>
+        <div class={`m-[7rem] flex justify-center`}>
           <img class={`scale-[1.4] md:hidden`} src="/images/vector-23.svg" alt="" />
-        </span>
-        <div class="hidden md:block">
-          <span class="flex justify-center  md:-mt-[8rem]">
+        </div>
+        {/* <div class="hidden md:block">
+          <div class="flex justify-center  md:-mt-[8rem]">
             <Button
               color="white"
               href="/presentation"
               label="Découvrir"
               styles="flex font-medium justify-center w-[20rem] md:block md:w-[10rem]"
             />
-          </span>
+          </div>
         </div> */}
       </section>
       <section class="flex justify-around md:mt-[1rem]" aria-label="Nos partenaire">
