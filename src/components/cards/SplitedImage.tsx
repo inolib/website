@@ -9,10 +9,10 @@ type ImageProps = {
 export const SplitedImage = component$((props: ImageProps) => {
   const styles = props.styles !== undefined ? props.styles : "";
   return (
-    <span class={`${styles}`}>
+    <div class={`${styles}`}>
       <section class="relative flex md:mx-[6rem]">
         <img src={props.src} alt="" />
-        <span class="absolute flex flex-col md:flex md:flex-row">
+        <div class="absolute flex flex-col md:flex md:flex-row">
           <DiscoverAcessCard
             styles="md:ml-[35rem] md:mt-[5rem]"
             alt="aller vers page accessibilité"
@@ -20,10 +20,10 @@ export const SplitedImage = component$((props: ImageProps) => {
             title="Découvrir l'accessibilité"
             content="Audit d'accessibilité numérique : de quoi s'agit-il ?"
           />
-        </span>
+        </div>
         <img class=" hidden md:flex md:w-[40rem]" src="images/bg-cards.png" alt="" />
       </section>
       ;
-    </span>
+    </div>
   );
 });

@@ -23,7 +23,7 @@ export default component$(() => {
           imageSrc="/images/home4.png "
           title=" Plongez au cœur de l'univers Inolib :"
         >
-          <span q:slot="check-box" class="mt-5 md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+          <div q:slot="check-box" class="mt-5 md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <p class="md:ml-4 ml-2 text-lg leading-7">
               Chez Inolib, tout tourne autour de vous, car notre passion est de rendre vos produits digitaux
               performants, <strong>accessibles</strong> et attrayants pour tous les utilisateurs.l'excellence et
@@ -38,7 +38,7 @@ export default component$(() => {
               utilisateurs en situation de handicap, garantissant une <strong>accessibilité</strong> et une inclusivité
               maximales.
             </p>
-          </span>
+          </div>
         </Article>
         <Article
           stylesImage=" md:ml-[4rem] shadow "
@@ -46,7 +46,7 @@ export default component$(() => {
           imageSrc="/images/homme-fauteuil.png"
           title=""
         >
-          <span q:slot="check-box" class="mt-5 md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+          <div q:slot="check-box" class="mt-5 md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <p class="md:ml-4 ml-2 text-lg leading-7">
               Notre approche flexible nous permet de personnaliser nos tests en fonction de vos besoins. Nous pouvons
               cibler un groupe d'utilisateurs spécifique, comme les personnes en situation de handicap, ou un
@@ -56,7 +56,7 @@ export default component$(() => {
               utilisateurs plongent au cœur des besoins et attentes des utilisateurs, en les mettant en situation réelle
               et en observant leurs réactions, performances et interactions dans un contexte prédéfini.
             </p>
-          </span>
+          </div>
         </Article>
         <Article
           stylesImage="shadow md:ml-6"
@@ -65,7 +65,7 @@ export default component$(() => {
           imageSrc="/images/homme-fauteuil.png"
           stylesArticleGaucheFlex="md:flex-row "
         >
-          <span q:slot="check-box" class=" md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+          <div q:slot="check-box" class=" md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:justify-around ">
               <li class="mb-[2.5rem] flex items-center">
                 <p class="md:ml-4 ml-2 text-lg">
@@ -109,7 +109,7 @@ export default component$(() => {
                 </p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
         <Article
           title="Nos méthodes :"
@@ -142,14 +142,14 @@ export default component$(() => {
             meilleur.
           </p>
         </section>
-        <span class="flex justify-center mb-2 md:mb-0">
+        <div class="flex justify-center mb-2 md:mb-0">
           <Button
             href="/contact"
             color="blue"
             label="Demander un devis"
             styles="mt-[2rem] transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300"
           />
-        </span>
+        </div>
         <div class="my-10 flex w-full justify-center">
           <ButtonTopPage />
         </div>

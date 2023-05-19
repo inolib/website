@@ -30,7 +30,7 @@ export default component$(() => {
           stylesArticleGaucheFlex="mb-8 bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
           stylesImage=" md:mr-[6rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+          <div q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around text-lg ">
               <li class="mb-[2rem] flex">
                 <p class="ml-4">● Les fondamentaux de l'accessibilité numérique</p>
@@ -53,7 +53,7 @@ export default component$(() => {
                 </p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
         <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Chiffres clés sur l'accessibilité numérique :</h2>
         <p class="px-5 md:px-28 mt-2">
@@ -74,7 +74,7 @@ export default component$(() => {
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
+          <div q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col md:mt-0">
               <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
@@ -109,7 +109,7 @@ export default component$(() => {
                 <p class="ml-4 font-normal">Des tarifs compétitifs</p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
         <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Contactez-nous dès aujourd'hui</h2>
         <p class="px-5 md:px-28 mt-2">
