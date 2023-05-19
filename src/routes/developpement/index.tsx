@@ -11,7 +11,7 @@ export default component$(() => {
     <>
       <Banner
         content=" Vous cherchez une agence de développement web et mobile qui allie expertise, passion et engagement ? Découvrez Inolib Tech, votre partenaire agile pour des solutions digitales accessibles et performantes."
-        imageSrc="\images\dev-raw.jpg"
+        imageSrc="/images/dev-raw.jpg"
         imageStyle="md:w-3/5 md:max-w-2xl"
         title="Développement"
       />
