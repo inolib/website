@@ -4,7 +4,7 @@ export const BannerHome = component$(() => {
   return (
     <header class="overflow-x-auto">
       <section class="flex flex-col md:flex-row justify-center md:justify-start md:items-center h-[30rem] md:h-[40rem] bg-gradient-to-b from-[#5A0C69] to-[#0F3069] md:bg-[url('/images/accueil-1.jpg')] bg-cover bg-center bg-no-repeat">
-        <div class="flex flex-col ml-4 md:ml-[4rem]">
+        <div class="flex flex-col ml-4 pt-16 md:pt-0 md:ml-[4rem]">
           <div class="md:flex items-center">
             <img class="h-32 w-auto mr-1 md:h-40 md:mr-2" alt="INOLIB" src="/images/inolibblancvf.svg" />
             <h1 class="flex w-[50%] md:w-[55%] flex-col pt-3 border-t text-[120%] md:border-l md:border-t-0 font-semibold text-white md:pl-3 md:text-[200%]">
