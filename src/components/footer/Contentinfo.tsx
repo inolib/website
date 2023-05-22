@@ -9,7 +9,7 @@ export const Contentinfo = component$(() => {
         <section class="md:flex md:w-1/2 md:flex-col md:items-end md:px-8">
           <div class="md:w-2/3">
             <div class="flex">
-              <img alt="" src="/images/logoinolibblancvf.png" class="h-32 w-auto" />
+              <img alt="" src="/images/inolibblancvf.svg" class="h-32 w-auto" />
             </div>
             <h3 class="mb-3 text-2xl font-bold">Contactez-nous!</h3>
             <p class="mb-5">Besoin d'un devis ? D'une information ?</p>
@@ -28,10 +28,13 @@ export const Contentinfo = component$(() => {
               <a href="/legal">Mentions légales</a>
             </li>
             <li class="m-2">
+              <a href="/politiqueconfidentialite">Politique de confidentialité</a>
+            </li>
+            <li class="m-2">
               <a href="/glossaire">Glossaire</a>
             </li>
             <li class="m-2">
-              <a href="/faq">Faq</a>
+              <a href="/faq">FAQ</a>
             </li>
           </ul>
           <ul
@@ -39,22 +42,26 @@ export const Contentinfo = component$(() => {
             aria-label="reseau sociaux d'Inolib"
           >
             <li>
-              <a href="https://www.facebook.com/people/Inolib/100075572787282/" aria-label="facebook">
+              <a href="https://www.facebook.com/people/Inolib/100075572787282/" target="_blank" aria-label="Facebook">
                 <img alt="facebook INOLIB" src="/images/logo-facebook-violet.svg" aria-label="facebook"></img>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/_inolib" aria-label="twitter">
+              <a href="https://twitter.com/_inolib" target="_blank" aria-label="twitter">
                 <img alt="twitter INOLIB" src="/images/logo-twiter.svg" aria-label="twitter"></img>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr" aria-label="linkedin">
+              <a
+                href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr"
+                target="_blank"
+                aria-label="linkedin"
+              >
                 <img alt="LinkedIn INOLIB" src="/images/logo-linkedin.svg" aria-label="Linkedin"></img>
               </a>
             </li>
             <li>
-              <a href="#" aria-label="instagram">
+              <a href="#" target="_blank" aria-label="instagram">
                 <img alt="instagram INOLIB" src="/images/logo-instagram.svg" aria-label="Instagram"></img>
               </a>
             </li>

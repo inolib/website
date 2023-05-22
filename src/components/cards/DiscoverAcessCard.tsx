@@ -14,7 +14,7 @@ export const DiscoverAcessCard = component$((props: CardProps) => {
   return (
     <>
       <div class={`bg-white pr-10 md:h-[18rem] md:w-[37rem] ${styles}`}>
-        <div class="">
+        <div>
           <h2 class="font-semibold text-[#0B3168] md:ml-10 md:mt-10 md:text-3xl">{props.title}</h2>
           <p class="flex font-extralight text-lg text-[#0B3168] md:ml-10 md:mt-10">
             {props.content}
