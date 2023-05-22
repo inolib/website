@@ -19,10 +19,7 @@ export const CardsRowDisplay = component$(() => {
             </a>
           </p>
         </ServicesHomeCard>
-        <ServicesHomeCard
-          label="Formation et sensibilisation en accessibilité numérique"
-          image="/images/formation-icon.svg"
-        >
+        <ServicesHomeCard label="Formation en accessibilité numérique" image="/images/formation-icon.svg">
           <p q:slot="content" class="text-[#0B3168] text-center">
             Participez à des sessions de formation adaptées à votre secteur et à vos besoins, sensibilisez vos équipes
             aux enjeux de l'accessibilité et acquérez les compétences nécessaires pour améliorer vos supports digitaux.{" "}
@@ -40,7 +37,7 @@ export const CardsRowDisplay = component$(() => {
             </a>
           </p>
         </ServicesHomeCard>
-        <ServicesHomeCard label="Marketing digital" image="/images/digital-marketing.png" styles="pb-20 scale-[50%]">
+        <ServicesHomeCard label="Marketing digital" image="/images/digital-marketing.png" styles="md:pb-20 scale-[50%]">
           <p q:slot="content" class="text-[#0B3168] text-center">
             Misez sur une gestion des réseaux sociaux, une stratégie de contenu et une image de marque (Branding)
             inclusives, des campagnes publicitaires adaptées à tous les publics et une visibilité en ligne optimisée

@@ -209,7 +209,6 @@ export const ContactForm = component$(() => {
             }}
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
             type="text"
-            aria-label="entrez votre nom"
             maxLength={50}
           />
         </label>
@@ -224,7 +223,6 @@ export const ContactForm = component$(() => {
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
             required
             type="text"
-            aria-label="entrez votre nom"
             maxLength={50}
           />
         </label>
@@ -238,7 +236,6 @@ export const ContactForm = component$(() => {
             class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="text"
-            aria-label="entrez votre prénom"
             maxLength={50}
           />
         </label>
@@ -252,7 +249,6 @@ export const ContactForm = component$(() => {
             class="mb-3 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="email"
-            aria-label="entrez votre e-mail"
             maxLength={50}
           />
         </label>
@@ -266,7 +262,6 @@ export const ContactForm = component$(() => {
             class="mb-6 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
             required
             type="tel"
-            aria-label="entrez votre numéro de téléphone"
           />
         </label>
         <div class="col-span-2 col-start-1 flex ">
@@ -284,7 +279,6 @@ export const ContactForm = component$(() => {
           id="textarea"
           maxLength={1500}
           required
-          aria-label="zone pour écrire les détails de votre demande"
         ></textarea>
         <button
           onClick$={resetCounter$}

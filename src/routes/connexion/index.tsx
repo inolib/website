@@ -18,7 +18,6 @@ export default component$(() => {
               <label class="mb-1 flex flex-col items-center justify-center" for="email">
                 Email
                 <input
-                  aria-label="entrez votre e-mail"
                   type="email"
                   required
                   id="email"
@@ -41,7 +40,6 @@ export default component$(() => {
                     src="\images\hide-icon.png"
                   />
                   <input
-                    aria-label="Entrez votre mot de passe"
                     type={passwordVisible.value ? "text" : "password"}
                     required
                     name="password"

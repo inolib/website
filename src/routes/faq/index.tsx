@@ -180,7 +180,7 @@ export default component$(() => {
             R: Inolib propose des sessions de formations et de sensibilisations sur mesure adaptées à votre secteur et
             vos besoins, afin d’aider votre équipe à développer ses compétences en matière d'accessibilité numérique.
             <a
-              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              class="underline underline-offset-1 text-blue-600 visited:text-purple-700"
               href="/contact"
               aria-label="page contact"
             >

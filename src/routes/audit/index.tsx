@@ -53,9 +53,9 @@ export default component$(() => {
           </div>
         </Article>
         <div class="mx-5 md:px-28 mb-8">
-          <p class="mb-2  text-2xl md:mb-6">
+          <h3 class="mb-2  text-2xl md:mb-6">
             <strong>Inolib</strong> est là pour vous accompagner !
-          </p>
+          </h3>
           <p class="text-xl mb-2 md:mb-0">Audit d'accessibilité numérique : de quoi s'agit-il ?</p>
           <p class="text-lg">
             <dfn>Un audit en accessibilité numérique</dfn> évalue vos outils digitaux (sites web, logiciels,
@@ -238,11 +238,11 @@ export default component$(() => {
             pour bénéficier d'une première consultation gratuite et échanger sur vos besoins en accessibilité numérique
             avec l'un de nos spécialistes
           </p>
-          <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
           <p>
             Faites de <strong>l'accessibilité numérique</strong> une priorité avec Inolib.
           </p>
         </section>
+        <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
 
         <span class="flex justify-center">
           <img class="h-[14rem] w-[14rem]" src="/images/purple-logo.png" alt="" />
