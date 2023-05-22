@@ -25,8 +25,8 @@ export default component$(() => {
           numérique (RGAA) s'applique au présent site et a été établie le 24 mai 2022 par INOLIB.
         </p>
         <section class="text-l">
-          <section class="mb-10">
-            <h2 class="font-bold text-2xl">Etat de conformité</h2>
+          <section class="mb-8">
+            <h2 class="font-bold text-xl mb-4">Etat de conformité</h2>
             <p>
               Le site est en totale conformité avec le Référentiel général d'amélioration de l'accessibilité, RGAA
               version 4.1.
@@ -38,10 +38,10 @@ export default component$(() => {
             </p>
           </section>
           <section>
-            <h2 class="font-bold text-2xl mb-2">Etablissement de cette déclaration d'accessibilité</h2>
-            <p class="mb-2">Cette déclaration a été établie le 24/05/2022.</p>
-            <section>
-              <h2 class="font-bold text-2xl mb-2">Technologies, utilisées pour la réalisation du site web</h2>
+            <h2 class="font-bold text-xl mb-4">Etablissement de cette déclaration d'accessibilité</h2>
+            <p class="mb-8">Cette déclaration a été établie le 24/05/2022.</p>
+            <section class="mb-8">
+              <h2 class="font-bold text-xl mb-4">Technologies, utilisées pour la réalisation du site web</h2>
 
               <ul>
                 <li class="mb-1">
@@ -52,8 +52,10 @@ export default component$(() => {
                 </li>
               </ul>
             </section>
-            <section>
-              <h2>Agents utilisateurs, technologies d'assistance et outils utilisés pour vérifier l'accessibilité</h2>
+            <section class="mb-8">
+              <h2 class="font-bold text-xl mb-4">
+                Agents utilisateurs, technologies d'assistance et outils utilisés pour vérifier l'accessibilité
+              </h2>
               <p>
                 Les tests des pages web ont été effectués avec les combinaisons de navigateurs web et lecteurs d'écran
                 suivants :
@@ -76,8 +78,8 @@ export default component$(() => {
                 </li>
               </ul>
             </section>
-            <section>
-              <h2>Les outils suivants ont été utilisés lors de l'évaluation</h2>
+            <section class="mb-8">
+              <h2 class="font-bold text-xl mb-4">Les outils suivants ont été utilisés lors de l'évaluation</h2>
               <ul>
                 <li class="mb-1">
                   <p>🔹Colour Contrast Analyser ;</p>
@@ -87,8 +89,8 @@ export default component$(() => {
                 </li>
               </ul>
             </section>
-            <section>
-              <h2>Pages du site ayant fait l'objet de la vérification de conformité</h2>
+            <section class="mb-8">
+              <h2 class="font-bold text-xl mb-4">Pages du site ayant fait l'objet de la vérification de conformité</h2>
               <p>L'audit a porté sur un échantillon de 11 pages du site à savoir :</p>
               <ul>
                 <li class="mb-1">
@@ -114,8 +116,8 @@ export default component$(() => {
                 </li>
               </ul>
             </section>
-            <section>
-              <h2>Nous contacter pour un retour d'information</h2>
+            <section class="mb-8">
+              <h2 class="font-bold text-xl mb-4">Nous contacter pour un retour d'information</h2>
               <p>
                 N'hésitez pas à nous signaler les problèmes éventuels que vous rencontrez et qui peuvent vous empêcher
                 d'accéder à un contenu du site. Pour cela, vous pouvez nous laisser un message à l'adresse suivante :
@@ -123,8 +125,8 @@ export default component$(() => {
                 dans les plus brefs délais.
               </p>
             </section>
-            <section>
-              <h2>Rappel de la loi et recours</h2>
+            <section class="mb-8">
+              <h2 class="font-bold text-xl mb-4">Rappel de la loi et recours</h2>
               <p>
                 Depuis la loi du 11 février 2005, l'accessibilité des sites internet, intranet et extranet des
                 organismes publics est devenue une obligation répondant au droit à l'accessibilité des personnes
