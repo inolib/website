@@ -118,7 +118,7 @@ export default component$(() => {
         <p class="px-5 md:px-28 mt-2">
           Discutez de vos besoins en matière de formation et sensibilisation à l'accessibilité numérique avec l'un de
           nos experts. Profitez d'une{" "}
-          <a href="/contact" class="underline underline-offset-1 text-blue-500 visited:text-purple-600">
+          <a href="/contact" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
             première consultation offerte
           </a>{" "}
           et laissez- nous vous aider à vous mettre en conformité avec les normes RGAA et WCAG.
@@ -129,16 +129,16 @@ export default component$(() => {
         </p>
         <p class="px-5 md:px-28 mt-2">
           Prêt à aller plus loin ? Explorez nos services{" "}
-          <a href="/audit" class="underline underline-offset-1 text-blue-500 visited:text-purple-600">
+          <a href="/audit" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
             d'audit
           </a>{" "}
           en accessibilité numérique et nos solutions de{" "}
-          <a href="/developpement" class="underline underline-offset-1 text-blue-500 visited:text-purple-600">
+          <a href="/developpement" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
             {" "}
             développement{" "}
           </a>{" "}
-          pour sites web, applications mobiles et logiciels sur-mesure (hyperliens vers les pages correspondantes).
-          Faites de l'accessibilité numérique une priorité et un atout pour votre entreprise avec Inolib.
+          pour sites web, applications mobiles et logiciels sur-mesure. Faites de l'accessibilité numérique une priorité
+          et un atout pour votre entreprise avec Inolib.
         </p>
       </section>
       <div class="my-10 flex w-full justify-center">
