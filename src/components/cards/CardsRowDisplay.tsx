@@ -9,22 +9,45 @@ export const CardsRowDisplay = component$(() => {
         <h2 class="text-2xl font-semibold text-[#0B3168] md:text-4xl">Nos services</h2>
       </div>
       <section class="flex flex-col justify-around md:my-[4rem] md:mx-[10rem] md:flex-row">
-        <ServicesHomeCard label="Conseil et Audit" image="/images/auditv2-icon.svg">
+        <ServicesHomeCard label="Audit Conseil & Accompagnement" image="/images/auditv2-icon.svg">
           <p q:slot="content" class="text-[#0B3168] text-center">
-            Un audit en accessibilité numérique évalue vos outils digitaux (sites web, logiciels, applications mobiles,
-            documents, etc.) afin de garantir leur niveau d'accessibilité.
+            Bénéficiez d''audits d'accessibilité approfondis (RGAA, W3C, RAAM), de conseils personnalisés et d'un
+            accompagnement sur-mesure pour élaborer votre schéma pluriannuel. Profitez de tests utilisateurs, manuels et
+            automatisés pour une expérience utilisateur optimale.
+            <a href="/audit" class="underline underline-offset-1 text-blue-600 visited:text-purple-700">
+              [En savoir plus]
+            </a>
           </p>
         </ServicesHomeCard>
-        <ServicesHomeCard label="Formation" image="/images/formation-icon.svg">
+        <ServicesHomeCard
+          label="Formation et sensibilisation en accessibilité numérique"
+          image="/images/formation-icon.svg"
+        >
           <p q:slot="content" class="text-[#0B3168] text-center">
-            Nos formations et sessions de sensibilisation, interactives et pratiques, sont conçues pour répondre aux
-            besoins de tout public, tels que les managers, chefs de projet, développeurs, designers et webmasters.
+            Participez à des sessions de formation adaptées à votre secteur et à vos besoins, sensibilisez vos équipes
+            aux enjeux de l'accessibilité et acquérez les compétences nécessaires pour améliorer vos supports digitaux.{" "}
+            <a href="/formation" class="underline underline-offset-1 text-blue-600 visited:text-purple-700">
+              [En savoir plus]
+            </a>
           </p>
         </ServicesHomeCard>
-        <ServicesHomeCard label="Développement" image="/images/dev-icon.svg">
+        <ServicesHomeCard label="Développement web et mobile" image="/images/dev-icon.svg">
           <p q:slot="content" class="text-[#0B3168] text-center">
-            Chez Inolib, nous mettons en œuvre notre savoir-faire en développement web et mobile pour vous offrir des
-            solutions sur mesure, centrées sur l'accessibilité et la qualité logicielle.
+            Optez pour des sites web et applications conformes aux normes d'accessibilité, une expérience utilisateur
+            optimisée pour tous et des solutions sur-mesure adaptées à vos besoins spécifiques.{" "}
+            <a href="/developpement" class="underline underline-offset-1 text-blue-600 visited:text-purple-700">
+              [En savoir plus]
+            </a>
+          </p>
+        </ServicesHomeCard>
+        <ServicesHomeCard label="Marketing digital" image="/images/digital-marketing.png" styles="pb-20 scale-[50%]">
+          <p q:slot="content" class="text-[#0B3168] text-center">
+            Misez sur une gestion des réseaux sociaux, une stratégie de contenu et une image de marque (Branding)
+            inclusives, des campagnes publicitaires adaptées à tous les publics et une visibilité en ligne optimisée
+            (SEO, Copywriting, Traduction et Design).
+            <a href="/marketing" class="underline underline-offset-1 text-blue-600 visited:text-purple-700">
+              [En savoir plus]
+            </a>
           </p>
         </ServicesHomeCard>
       </section>
