@@ -4,7 +4,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 export default component$(() => {
   return (
     <>
-      <section class="px-10 text-[#0B3168] text-l my-20">
+      <section class="px-5 md:px-10 text-[#0B3168] text-l my-20">
         <h1 class="mb-10 text-3xl text-center font-bold">Déclaration d'accessibilité</h1>
         <p class="mb-4">
           Nous avons comme volonté de proposer un site conforme aux normes d'accessibilité numérique en vigueur et
