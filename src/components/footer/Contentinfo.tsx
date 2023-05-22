@@ -9,7 +9,7 @@ export const Contentinfo = component$(() => {
         <section class="md:flex md:w-1/2 md:flex-col md:items-end md:px-8">
           <div class="md:w-2/3">
             <div class="flex">
-              <img alt="" src="/images/logoinolibblancvf.png" class="h-32 w-auto" />
+              <img alt="" src="/images/inolibblancvf.svg" class="h-32 w-auto" />
             </div>
             <h3 class="mb-3 text-2xl font-bold">Contactez-nous!</h3>
             <p class="mb-5">Besoin d'un devis ? D'une information ?</p>
@@ -52,7 +52,11 @@ export const Contentinfo = component$(() => {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr" target="_blank" aria-label="linkedin">
+              <a
+                href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr"
+                target="_blank"
+                aria-label="linkedin"
+              >
                 <img alt="LinkedIn INOLIB" src="/images/logo-linkedin.svg" aria-label="Linkedin"></img>
               </a>
             </li>

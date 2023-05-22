@@ -98,8 +98,8 @@ export default component$(() => {
 
         <NewArticle
           title="Passez à l'action et boostez votre accessibilité numérique :"
-          content="Cliquez ici pour profiter d'une première consultation offerte et discuter de vos besoins en accessibilité numérique avec l'un de nos experts (hyperlien page contact). Ne manquez pas cette occasion de vous démarquer sur le marché et d'élargir votre audience.
-          Ensemble, nous transformerons vos défis en matière d'accessibilité numérique en opportunités de croissance et de développement pour votre organisation. Contactez-nous dès aujourd'hui (hyperlien page de contact) et découvrez comment Inolib peut vous aider à atteindre vos objectifs stratégiques et renforcer votre gestion de projet en matière d'accessibilité "
+          content="Cliquez ici pour profiter d'une première consultation offerte et discuter de vos besoins en accessibilité numérique avec l'un de nos experts. Ne manquez pas cette occasion de vous démarquer sur le marché et d'élargir votre audience.
+          Ensemble, nous transformerons vos défis en matière d'accessibilité numérique en opportunités de croissance et de développement pour votre organisation. Contactez-nous dès aujourd'hui et découvrez comment Inolib peut vous aider à atteindre vos objectifs stratégiques et renforcer votre gestion de projet en matière d'accessibilité "
           styleTitle="mx-5 my-7 text-3xl md:mb-[1rem] font-semibold md:m-0 md:mb-[5rem]"
           styleArticle="md:flex-row flex flex-col mb-12"
           styleArticleContent="mx-5 md:mx-0"
@@ -110,9 +110,9 @@ export default component$(() => {
 
         <p class={`mx-5 md:mx-[20rem] leading-7`}>
           🔍 Prêt à aller plus loin ? Explorez nos services d'audit en <strong>accessibilité</strong> numérique et nos
-          solutions de développement pour sites web, applications mobiles et logiciels sur-mesure (hyperliens vers les
-          pages correspondantes) pour maximiser votre impact et votre performance en ligne. Faites de l'accessibilité
-          numérique une priorité et un atout pour votre entreprise avec Inolib.
+          solutions de développement pour sites web, applications mobiles et logiciels sur-mesure pour maximiser votre
+          impact et votre performance en ligne. Faites de l'accessibilité numérique une priorité et un atout pour votre
+          entreprise avec Inolib.
         </p>
         <div class="flex justify-center mt-8 mb-2 md:mb-0">
           <Button
