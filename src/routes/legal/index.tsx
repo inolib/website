@@ -3,7 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <section class="px-10 text-[#0B3168]">
+    <section class="px-5 md:px-10 text-[#0B3168]">
       <h1 class="mb-4 text-3xl text-center font-bold">Mention Légales</h1>
       <ul class="text-l leading-7">
         <li class="mb-10">

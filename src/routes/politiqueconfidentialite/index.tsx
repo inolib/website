@@ -3,7 +3,7 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <section class="px-10 text-[#0B3168]">
+    <section class="px-5 md:px-10 text-[#0B3168]">
       <h1 class="mb-4 text-3xl text-center font-bold">Politique de confidentialité</h1>
       <p class="text-lg mb-10">
         La présente politique de confidentialité décrit la manière dont Inolib collecte, utilise et protège les
