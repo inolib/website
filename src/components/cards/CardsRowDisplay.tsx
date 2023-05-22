@@ -40,7 +40,7 @@ export const CardsRowDisplay = component$(() => {
             </a>
           </p>
         </ServicesHomeCard>
-        <ServicesHomeCard label="Marketing digital" image="/images/dev-icon.svg">
+        <ServicesHomeCard label="Marketing digital" image="/images/digital-marketing.png" styles="pb-20 scale-[50%]">
           <p q:slot="content" class="text-[#0B3168] text-center">
             Misez sur une gestion des réseaux sociaux, une stratégie de contenu et une image de marque (Branding)
             inclusives, des campagnes publicitaires adaptées à tous les publics et une visibilité en ligne optimisée
