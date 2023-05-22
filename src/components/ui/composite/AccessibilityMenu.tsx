@@ -1,4 +1,4 @@
-import { $, component$ } from "@builder.io/qwik";
+import { $, component$, type QRL, type QwikChangeEvent } from "@builder.io/qwik";
 import { ParametersMenu } from "~/ui/ParametersMenu/ParametersMenu";
 import { ParametersMenuButton } from "~/ui/ParametersMenu/ParametersMenuButton";
 import { ParametersMenuCheckbox } from "~/ui/ParametersMenu/ParametersMenuCheckbox";
@@ -9,7 +9,20 @@ export type ParamsStore = {
   altTextContainer: string;
 };
 
-const options = [
+type Options = Option[];
+
+export type Option = {
+  id: number;
+  ariallabel: string;
+  defaultOption: string;
+  inputName: string;
+  secondOption: string;
+  defaultOptionValue: string;
+  secondOptionValue: string;
+  onChange: QRL<(event: QwikChangeEvent<HTMLElement>) => void>;
+};
+
+const options: Options = [
   {
     id: 1,
     ariallabel: "taille de la police",
@@ -18,7 +31,7 @@ const options = [
     secondOption: "supérieur",
     defaultOptionValue: "true",
     secondOptionValue: "false",
-    onChange: $((event: InputEvent) => {
+    onChange: $((event: QwikChangeEvent<HTMLElement>) => {
       if ((event?.target as HTMLInputElement).value === "false") {
         const textElements = document.querySelectorAll(
           "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
@@ -47,7 +60,7 @@ const options = [
     secondOption: "supérieur",
     defaultOptionValue: "false",
     secondOptionValue: "true",
-    onChange: $((event: InputEvent) => {
+    onChange: $((event: QwikChangeEvent<HTMLElement>) => {
       if ((event?.target as HTMLInputElement).value === "true") {
         console.log("interlignage :", (event?.target as HTMLInputElement).value);
 
@@ -78,32 +91,34 @@ const options = [
     secondOption: "texte",
     defaultOptionValue: "true",
     secondOptionValue: "false",
-    onChange: $((event: InputEvent) => {
+    onChange: $((event: QwikChangeEvent<HTMLElement>) => {
+      const target = event.target as HTMLInputElement;
+
       //remplacer toute les balise img par span avec le contenu du alt comme contenu a l'interieur (contenu alt placé dans une variable avant suppréssion de la balise img puis replacer dans sapn)
-      if (event.target.value === "true") {
+      if (target.value === "true") {
         const spans = document.querySelectorAll("span[data-imagereplacement]");
 
-        for (const span of spans) {
+        spans.forEach((span) => {
           const img = document.createElement("img");
-          img.setAttribute("src", span.getAttribute("data-src"));
-          img.setAttribute("class", span.getAttribute("data-class"));
-          img.setAttribute("alt", span.textContent);
+          img.setAttribute("src", span.getAttribute("data-src") as string);
+          img.setAttribute("class", span.getAttribute("data-class") as string);
+          img.setAttribute("alt", span.textContent as string);
 
           const parent = span.parentNode;
-          parent.replaceChild(img, span);
+          parent?.replaceChild(img, span);
           span.remove();
-        }
-      } else if (event.target.value === "false") {
+        });
+      } else if (target.value === "false") {
         const images = document.querySelectorAll("img");
 
-        for (const image of images) {
-          const parent = image.parentElement;
+        images.forEach((image) => {
+          const parent = image.parentElement as Element;
 
           if (image.hasAttribute("alt") && image.getAttribute("alt") !== "") {
             const span = document.createElement("span");
             span.setAttribute("data-imagereplacement", "true");
-            span.setAttribute("data-src", image.getAttribute("src"));
-            span.setAttribute("data-class", image.getAttribute("class"));
+            span.setAttribute("data-src", image.getAttribute("src") as string);
+            span.setAttribute("data-class", image.getAttribute("class") as string);
             span.textContent = image.getAttribute("alt");
 
             parent.replaceChild(span, image);
@@ -111,8 +126,8 @@ const options = [
           } else if (parent.hasAttribute("aria-label")) {
             const span = document.createElement("span");
             span.setAttribute("data-imagereplacement", "true");
-            span.setAttribute("data-src", image.getAttribute("src"));
-            span.setAttribute("data-class", image.getAttribute("class"));
+            span.setAttribute("data-src", image.getAttribute("src") as string);
+            span.setAttribute("data-class", image.getAttribute("class") as string);
             span.textContent = parent.getAttribute("aria-label");
 
             parent.replaceChild(span, image);
@@ -120,14 +135,15 @@ const options = [
           } else if (parent.hasAttribute("aria-labelledby")) {
             const span = document.createElement("span");
             span.setAttribute("data-imagereplacement", "true");
-            span.setAttribute("data-src", image.getAttribute("src"));
-            span.setAttribute("data-class", image.getAttribute("class"));
-            span.textContent = document.querySelector(`#${parent.getAttribute("aria-labelledby")}`)?.textContent;
+            span.setAttribute("data-src", image.getAttribute("src") as string);
+            span.setAttribute("data-class", image.getAttribute("class") as string);
+            span.textContent = document.querySelector(`#${parent.getAttribute("aria-labelledby") as string}`)
+              ?.textContent as string | null;
 
             parent.replaceChild(span, image);
             image.remove();
           }
-        }
+        });
       }
     }),
   },

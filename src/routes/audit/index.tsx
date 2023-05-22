@@ -238,7 +238,7 @@ export default component$(() => {
             pour bénéficier d'une première consultation gratuite et échanger sur vos besoins en accessibilité numérique
             avec l'un de nos spécialistes
           </p>
-          <>
+          <p>
             Faites de <strong>l'accessibilité numérique</strong> une priorité avec Inolib.
           </p>
         </section>

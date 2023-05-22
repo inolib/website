@@ -2,7 +2,6 @@ import { $, component$, Slot, useContext, useOn, useStore, useTask$ } from "@bui
 import { nanoid } from "nanoid";
 
 import { contextId, moveFocusQrl } from "./ParametersMenu";
-import type { Reference } from "../../types";
 
 type ParametersMenuItemsProps = {
   readonly styles?: string;
@@ -10,7 +9,6 @@ type ParametersMenuItemsProps = {
 
 export type ParametersMenuItemsStore = {
   readonly id: string;
-  readonly ref: Reference;
 };
 
 export const closeModalQrl = $(() => {
@@ -83,7 +81,7 @@ export const ParametersMenuItems = component$<ParametersMenuItemsProps>(({ style
   );
 
   useTask$(() => {
-    context.ParametersMenuButton = store;
+    context.ParametersMenuItems = store;
   });
 
   return (

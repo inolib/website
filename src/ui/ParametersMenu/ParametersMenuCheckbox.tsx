@@ -1,7 +1,7 @@
-import { type QRL, component$, useContext, useSignal, useStore, useTask$ } from "@builder.io/qwik";
+import { component$, useContext, useSignal, useStore, useTask$ } from "@builder.io/qwik";
 
+import type { Option } from "../../components/ui/composite/AccessibilityMenu";
 import type { Reference } from "../../types";
-
 import { contextId } from "./ParametersMenu";
 
 type ParametersMenuCheckboxProps = {
@@ -12,7 +12,7 @@ type ParametersMenuCheckboxProps = {
   ariallabel: string;
   readonly defaultOptionValue: string;
   readonly secondOptionValue: string;
-  readonly onChange: QRL<(event: InputEvent) => void>;
+  readonly onChange: Option["onChange"];
 };
 
 export type ParametersMenuCheckboxStore = {
