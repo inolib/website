@@ -11,7 +11,7 @@ export default component$(() => {
           <strong>Foire aux questions</strong>
         </h1>
       </header>
-      <section class="text-[#0B3168] px-28 text-l">
+      <section class="text-[#0B3168] px-5 md:px-28 text-l">
         <h2 class="text-4xl my-6">Sommaire</h2>
         <ul class="text-2xl">
           <li class="my-2">I. Comprendre l'accessibilité numérique et son importance</li>
