@@ -25,6 +25,17 @@ export default component$(() => {
             iure eum! Minima facilis earum unde repellat quo nisi."
         /> */}
         <CardsRowDisplay />
+        <h3 class=" mx-5 mt-8 mb-10 text-[#0B3168] md:mt-10 md:ml-[5rem]">
+          Contactez-nous pour une première consultation offerte
+        </h3>
+        <p class="mt-4 mx-5 md:ml-[5rem] text-[#0B3168] mb-8">
+          Profitez de notre expertise et de notre accompagnement personnalisé en accessibilité numérique.{" "}
+          <a class="underline underline-offset-1 text-blue-600 visited:text-purple-700" href="/contact">
+            Contactez-nous{" "}
+          </a>
+          dès maintenant pour bénéficier d'une première consultation gratuite et découvrez comment nous pouvons
+          contribuer au succès de votre entreprise.
+        </p>
         {/* <Banner
           q:slot="button"
           styles="md:hidden block mt-[4rem] "
