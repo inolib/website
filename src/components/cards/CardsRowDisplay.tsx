@@ -14,7 +14,8 @@ export const CardsRowDisplay = component$(() => {
             Bénéficiez d''audits d'accessibilité approfondis (RGAA, W3C, RAAM), de conseils personnalisés et d'un
             accompagnement sur-mesure pour élaborer votre schéma pluriannuel. Profitez de tests utilisateurs, manuels et
             automatisés pour une expérience utilisateur optimale.
-            <a href="/audit" class="underline underline-offset-1 text-blue-600 visited:text-purple-700">
+            <br />
+            <a href="/audit" class="underline underline-offset-1 text-blue-600 visited:text-purple-700 mt-4">
               [En savoir plus]
             </a>
           </p>
@@ -23,7 +24,8 @@ export const CardsRowDisplay = component$(() => {
           <p q:slot="content" class="text-[#0B3168] text-center">
             Participez à des sessions de formation adaptées à votre secteur et à vos besoins, sensibilisez vos équipes
             aux enjeux de l'accessibilité et acquérez les compétences nécessaires pour améliorer vos supports digitaux.{" "}
-            <a href="/formation" class="underline underline-offset-1 text-blue-600 visited:text-purple-700">
+            <br />
+            <a href="/formation" class="underline underline-offset-1 text-blue-600 visited:text-purple-700 mt-4">
               [En savoir plus]
             </a>
           </p>
@@ -31,8 +33,8 @@ export const CardsRowDisplay = component$(() => {
         <ServicesHomeCard label="Développement web et mobile" image="/images/dev-icon.svg">
           <p q:slot="content" class="text-[#0B3168] text-center">
             Optez pour des sites web et applications conformes aux normes d'accessibilité, une expérience utilisateur
-            optimisée pour tous et des solutions sur-mesure adaptées à vos besoins spécifiques.{" "}
-            <a href="/developpement" class="underline underline-offset-1 text-blue-600 visited:text-purple-700">
+            optimisée pour tous et des solutions sur-mesure adaptées à vos besoins spécifiques. <br />
+            <a href="/developpement" class="underline underline-offset-1 text-blue-600 visited:text-purple-700 mt-4">
               [En savoir plus]
             </a>
           </p>
@@ -42,7 +44,8 @@ export const CardsRowDisplay = component$(() => {
             Misez sur une gestion des réseaux sociaux, une stratégie de contenu et une image de marque (Branding)
             inclusives, des campagnes publicitaires adaptées à tous les publics et une visibilité en ligne optimisée
             (SEO, Copywriting, Traduction et Design).
-            <a href="/marketing" class="underline underline-offset-1 text-blue-600 visited:text-purple-700">
+            <br />
+            <a href="/marketing" class="underline underline-offset-1 text-blue-600 visited:text-purple-700 mt-4">
               [En savoir plus]
             </a>
           </p>
