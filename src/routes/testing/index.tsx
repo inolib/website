@@ -21,7 +21,7 @@ export default component$(() => {
           imgSeparator=""
           stylesImage="shadow "
           stylesArticleGaucheFlex=" text-[#0B3168] rounded md:flex-row "
-          imageSrc="/images/home4.png "
+          imageSrc="/images/testing-article-1.jpeg"
           title=" Plongez au cœur de l'univers Inolib :"
         >
           <div q:slot="check-box" class="mt-5 md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
@@ -45,7 +45,7 @@ export default component$(() => {
           imgSeparator=""
           stylesImage="shadow "
           stylesArticleGaucheFlex="text-[#0B3168] rounded md:flex-row-reverse "
-          imageSrc="/images/homme-fauteuil.png"
+          imageSrc="/images/testing-article-2.jpeg"
           title=""
         >
           <div q:slot="check-box" class="mt-5 md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
@@ -65,7 +65,7 @@ export default component$(() => {
           stylesImage="shadow md:ml-6"
           title="Notre gamme de tests prends en compte des aspects suivants :"
           content=""
-          imageSrc="/images/homme-fauteuil.png"
+          imageSrc="/images/testing-article-3.JPG"
           stylesArticleGaucheFlex="md:flex-row "
         >
           <div q:slot="check-box" class=" md:mx-5 flex flex-col md:ml-[5rem] md:mt-0">
@@ -127,7 +127,7 @@ export default component$(() => {
       Retours d'expérience : Recueil des impressions des utilisateurs, identification des difficultés rencontrées, suggestions d'amélioration et évaluation des qualités ergonomiques.
       Synthèse et recommandations : Analyse des résultats pour proposer des axes d'amélioration en matière d'accessibilité et d'ergonomie.
       "
-          imageSrc="\images\presentation-article-2.png"
+          imageSrc="/images/testing-article-4.jpg"
           stylesImgArticle="md:pr-10"
         ></Article>
         <section>

@@ -8,7 +8,8 @@ export default component$(() => {
       <Banner
         title="Inolib - Marketing et communication digitale"
         content="Votre solution accessible et engagée"
-        imageSrc="/images/serviceheader.png"
+        imageSrc="/images/marketing-banner.jpg"
+        imageStyle="md:h-96 md:w-auto"
       />
       <h2 class="md:mt-[10rem] mt-8 ml-8 md:mx-[5rem] mb-10 text-3xl text-[#0B3168]">
         Du référencement à l'engagement, découvrez nos solutions sur-mesure pour booster votre présence en ligne

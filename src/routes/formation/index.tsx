@@ -27,7 +27,7 @@ export default component$(() => {
         </h3>
         <Article
           imgSeparator=""
-          imageSrc="/images/actualitehome1.png"
+          imageSrc="/images/formation-article-1.jpg"
           stylesArticleGaucheFlex="mb-8 bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
           stylesImage=" md:mr-[6rem] mt-[3rem]"
         >
@@ -73,7 +73,7 @@ export default component$(() => {
         <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Pourquoi choisir Inolib Formations</h2>
         <Article
           imgSeparator=""
-          imageSrc="/images/conseilservice.png"
+          imageSrc="/images/formation-article-2.JPG"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >

@@ -13,7 +13,7 @@ export default component$(() => {
       <Banner
         content="Nous sommes heureux de pouvoir communiquer avec vous et sommes à votre disposition pour répondre à toutes vos questions
          ou remarques concernant notre site web ou nos services. Vous pouvez nous contacter en remplissant le formulaire de contact ci-dessous."
-        imageSrc="\images\contact-banner.png"
+        imageSrc="/images/contact-banner.jpeg"
         imageStyle="md:w-3/5 md:max-w-2xl"
         title="Contacts"
       />

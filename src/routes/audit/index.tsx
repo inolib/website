@@ -19,7 +19,7 @@ export default component$(() => {
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
           imgSeparator=""
-          imageSrc="/images/actualitehome1.png"
+          imageSrc="/images/audit-article-1.jpeg"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
           stylesImage=" md:mr-[6rem] mt-[3rem]"
         >
@@ -88,7 +88,7 @@ export default component$(() => {
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nous proposons trois offres d'audit :</h2>
         <Article
           imgSeparator=""
-          imageSrc="/images/conseilservice.png"
+          imageSrc="/images/audit-article-2.JPG"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[3rem] mt-[3rem]"
         >
@@ -137,7 +137,7 @@ export default component$(() => {
 
         <Article
           imgSeparator=""
-          imageSrc="/images/actualitehome1.png"
+          imageSrc="/images/audit-article-3.JPG"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >
@@ -238,11 +238,11 @@ export default component$(() => {
             pour bénéficier d'une première consultation gratuite et échanger sur vos besoins en accessibilité numérique
             avec l'un de nos spécialistes
           </p>
-          <p>
+          <p class="mb-4">
             Faites de <strong>l'accessibilité numérique</strong> une priorité avec Inolib.
           </p>
+          <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
         </section>
-        <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
 
         <span class="flex justify-center">
           <img class="h-[14rem] w-[14rem]" src="/images/purple-logo.png" alt="" />
