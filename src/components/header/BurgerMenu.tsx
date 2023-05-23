@@ -10,7 +10,6 @@ const page = [
   { id: 6, name: "Acompagnement", href: "/acompagnement" },
   { id: 7, name: "Recrutement", href: "/recrutement" },
   { id: 8, name: "Contact", href: "/contact" },
-  { id: 9, name: "Connexion", href: "/connexion" },
 ];
 
 export const BurgerMenu = component$(() => {
