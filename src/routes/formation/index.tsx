@@ -75,7 +75,7 @@ export default component$(() => {
           imgSeparator=""
           imageSrc="/images/formation-article-2.JPG"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
-          stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
+          stylesImage="md:ml-[5rem] md:mr-[3rem] mt-[3rem]"
         >
           <div q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col md:mt-0">
@@ -87,7 +87,7 @@ export default component$(() => {
               </li>
               <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
-                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
+                  <img class="md:mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 font-normal">Des formations et sensibilisation adaptées à tous les niveaux</p>
               </li>

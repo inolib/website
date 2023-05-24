@@ -29,7 +29,7 @@ export default component$(() => {
             <img
               src="/images/dev.jpg"
               alt=""
-              class="col-start-2 row-start-1 row-span-2 col-span-2 scale-75 rounded-lg"
+              class="col-start-2 row-start-1 row-span-2 col-span-2 md:scale-75 md:rounded-lg"
             />
             <p class="col-start-1 row-start-1">
               🔹Écoute et compréhension de vos besoins : Nous commençons par évaluer l'accessibilité de vos supports
@@ -68,7 +68,7 @@ export default component$(() => {
             <img
               src="/images/dev-1.jpg"
               alt=""
-              class="col-start-1 row-start-1 row-span-2 col-span-2 scale-75 rounded-lg"
+              class="col-start-1 row-start-1 row-span-2 col-span-2 md:scale-75 md:rounded-lg"
             />
             <p class="col-start-3 row-start-1">
               🔹 Accompagnement stratégique : Sensibilisation aux enjeux de l'accessibilité, définition de votre
@@ -104,7 +104,7 @@ export default component$(() => {
           styleArticle="md:flex-row flex flex-col mb-12"
           styleArticleContent="mx-5 md:mx-0"
           styleContent="leading-7 mr-[5rem] mb-14 w-full text-justify text-lg md:mb-0 md:px-4 md:pr-10 md:pl-0 md:text-left md:w-[45rem]"
-          styleImage="shadow flex flex-col sm:justify-center md:w-[35rem] mb-14 rounded-md"
+          styleImage="shadow flex flex-col sm:justify-center md:w-[35rem] mb-14 md:rounded-md"
           imageSrc="/images/accompagnement-article-3.JPG"
         ></NewArticle>
 
