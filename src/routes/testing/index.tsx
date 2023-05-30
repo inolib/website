@@ -18,7 +18,6 @@ export default component$(() => {
 
       <section class="text-[#0B3168]">
         <Article
-          stylesImage="shadow"
           imgSeparator=""
           stylesImage="shadow "
           stylesArticleGaucheFlex=" text-[#0B3168] rounded md:flex-row "
