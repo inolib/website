@@ -11,7 +11,7 @@ export default component$(() => {
       <Banner
         content="Apprenez, innovez et façonnez un avenir digital où chacun trouve sa place."
         imageSrc="\images\formation-raw.jpg"
-        imageStyle="md:w-3/5 md:max-w-2xl"
+        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
         title="Formation - L'atelier de l'accessibilité numérique"
       />
       <section class="text-[#0B3168] text-l">
