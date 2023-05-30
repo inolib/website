@@ -64,6 +64,7 @@ export default component$(() => {
             <a
               href="https://accessibilite.numerique.gouv.fr/obligations/"
               class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              target="_blank"
             >
               RGAA
             </a>{" "}
@@ -71,6 +72,7 @@ export default component$(() => {
             <a
               href="https://www.w3.org/TR/WCAG21/"
               class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              target="_blank"
             >
               WCAG
             </a>{" "}
@@ -79,6 +81,7 @@ export default component$(() => {
             <a
               href="https://accessibilite.public.lu/fr/raam1/referentiel-technique.html"
               class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              target="_blank"
             >
               et RAAM.
             </a>{" "}

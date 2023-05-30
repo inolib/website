@@ -6,6 +6,7 @@ export const Head = component$(() => {
 
   return (
     <head>
+      <link rel="icon" type="image/svg+xml" href="./public/images/logoinolib.png" />
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <title>{head.title}</title>
     </head>
