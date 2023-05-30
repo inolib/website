@@ -15,7 +15,7 @@ export const ContactCard = component$(() => {
         </div>
         <div class="hidden md:block md:mb-6">
           <div class="flex">
-            <img alt="" src="\images\icon-phone.svg" />
+            <img alt="" src="/images/icon-phone.svg" />
             <a href="tel:+33670865032" class="pl-3">
               06 70 86 50 32
             </a>
@@ -27,7 +27,7 @@ export const ContactCard = component$(() => {
         </div>
         <div class="hidden md:block mb-4 md:mb-6">
           <div class="flex">
-            <img alt="" src="\images\icon-mail.svg" />
+            <img alt="" src="/images/icon-mail.svg" />
             <a href="mailto:contact@inolib.com" class="pl-3">
               contact@inolib.com
             </a>
@@ -39,23 +39,31 @@ export const ContactCard = component$(() => {
           aria-label="liste des reseau sociaux d'Inolib"
         >
           <li>
-            <a href="https://www.facebook.com/people/Inolib/100075572787282/" target="_blank" aria-label="Facebook d'Inolib">
-              <img alt="" class="scale-50" src="\images\logo-facebook-violet.svg"></img>
+            <a
+              href="https://www.facebook.com/people/Inolib/100075572787282/"
+              target="_blank"
+              aria-label="Facebook d'Inolib"
+            >
+              <img alt="" class="scale-50" src="/images/logo-facebook-violet.svg"></img>
             </a>
           </li>
           <li>
             <a href="https://twitter.com/_inolib" target="_blank" aria-label="Twitter d'Inolib">
-              <img alt="" class="scale-50" src="\images\logo-twiter.svg"></img>
+              <img alt="" class="scale-50" src="/images/logo-twiter.svg"></img>
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr" target="_blank" aria-label="Linkedin d'Inolib">
-              <img alt="" class="scale-50" src="\images\logo-linkedin.svg"></img>
+            <a
+              href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr"
+              target="_blank"
+              aria-label="Linkedin d'Inolib"
+            >
+              <img alt="" class="scale-50" src="/images/logo-linkedin.svg"></img>
             </a>
           </li>
           <li>
             <a href="#" target="_blank" aria-label="Instagram d'Inolib">
-              <img alt="" class="scale-50" src="\images\logo-instagram.svg"></img>
+              <img alt="" class="scale-50" src="/images/logo-instagram.svg"></img>
             </a>
           </li>
         </ul>
@@ -63,7 +71,7 @@ export const ContactCard = component$(() => {
       <img
         alt=""
         class="absolute bottom-0 right-0 hidden h-auto w-1/5 md:block md:w-3/5"
-        src="\images\background-card.svg"
+        src="/images/background-card.svg"
       />
     </section>
   );

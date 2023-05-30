@@ -15,7 +15,7 @@ export const LocalisationCard = component$(() => {
             69007 LYON
           </p>
         </div>
-        <img alt="" class="p-2" src="\images\map.png" />
+        <img alt="" class="p-2" src="/images/map.png" />
       </div>
     </section>
   );

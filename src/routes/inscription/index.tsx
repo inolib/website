@@ -69,7 +69,6 @@ export default component$(() => {
               <label class="mb-1 flex flex-col items-center justify-center">
                 Email
                 <input
-                  aria-label="entrez votre e-mail"
                   bind:value={store.email}
                   type="email"
                   required
@@ -84,7 +83,6 @@ export default component$(() => {
                 Nom
                 <div class="relative flex items-center">
                   <input
-                    aria-label="Entrez votre nom"
                     bind:value={store.lastName}
                     type="text"
                     required
@@ -100,7 +98,6 @@ export default component$(() => {
                 <div class="relative flex items-center">
                   <img alt="" class="absolute right-2 h-8 w-auto hover:scale-100 scale-75" />
                   <input
-                    aria-label="Entrez votre prénom"
                     bind:value={store.firstName}
                     type="text"
                     required

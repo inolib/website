@@ -117,12 +117,12 @@ export default component$(() => {
         <span class="flex justify-center">
           <img class="h-[14rem] w-[14rem]" src="/images/purple-logo.png" alt="" />
         </span>
-        <span class="flex justify-center">
+        <div class="flex justify-center">
           <p class="max-w-[70vw] text-center text-2xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolore labore commodi.culpa voluptas
             rerum provident blanditiis sunt esse praesentium.
           </p>
-        </span>
+        </div>
         <span class="flex justify-center">
           <Button href="/services" color="blue" label="Demander un devis" styles="mt-[2rem]" />
         </span>
@@ -187,12 +187,12 @@ export default component$(() => {
           </span>
         </Article>
 
-        <span class="flex justify-center">
+        <div class="flex justify-center">
           <p class="max-w-[70vw] px-2 text-center text-xl md:px-0 md:text-2xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam dolore labore commodi.culpa voluptas
             rerum provident blanditiis sunt esse praesentium.
           </p>
-        </span>
+        </div>
         <span class="flex justify-center">
           <Button href="/services" label="Demander un devis" color="blue" styles="mt-[2rem]" />
         </span>

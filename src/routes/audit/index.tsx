@@ -18,11 +18,12 @@ export default component$(() => {
       <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : </h2>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
-          imageSrc="/images/actualitehome1.png"
+          imgSeparator=""
+          imageSrc="/images/audit-article-1.jpeg"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
           stylesImage=" md:mr-[6rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+          <div q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around ">
               <li class="mb-[2.5rem] flex">
                 <div class={"hidden md:flex"}>
@@ -49,12 +50,12 @@ export default component$(() => {
                 </p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
         <div class="mx-5 md:px-28 mb-8">
-          <p class="mb-2  text-2xl md:mb-6">
+          <h3 class="mb-2  text-2xl md:mb-6">
             <strong>Inolib</strong> est là pour vous accompagner !
-          </p>
+          </h3>
           <p class="text-xl mb-2 md:mb-0">Audit d'accessibilité numérique : de quoi s'agit-il ?</p>
           <p class="text-lg">
             <dfn>Un audit en accessibilité numérique</dfn> évalue vos outils digitaux (sites web, logiciels,
@@ -86,11 +87,12 @@ export default component$(() => {
         </div>
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Nous proposons trois offres d'audit :</h2>
         <Article
-          imageSrc="/images/conseilservice.png"
+          imgSeparator=""
+          imageSrc="/images/audit-article-2.JPG"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[3rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:ml-[8rem] md:mr-[3rem]">
+          <div q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[3rem] ">
             <ul class="mt-10 flex flex-col md:mt-0">
               <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
@@ -125,7 +127,7 @@ export default component$(() => {
                 </p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
         <p class="mb-8 mx-5 md:px-28 md:mb-20 text-xl">
           <strong>Bonus</strong> ! Chez Inolib, chaque audit comprend trois heures de coaching en accessibilité
@@ -134,11 +136,12 @@ export default component$(() => {
         <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Le processus d'audit Inolib en 4 étapes clés :</h2>
 
         <Article
-          imageSrc="/images/actualitehome1.png"
+          imgSeparator=""
+          imageSrc="/images/audit-article-3.JPG"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mx-5 mt-16 flex flex-col md:mx-0 md:mt-[3rem] md:flex-row-reverse">
+          <div q:slot="check-box" class="mx-5 mt-16 flex flex-col md:mx-0 md:mt-[3rem] md:flex-row-reverse">
             <ul class="flex flex-col md:pl-10">
               <li class="mb-[2.5rem] flex items-center">
                 <div class={"hidden md:flex"}>
@@ -177,16 +180,17 @@ export default component$(() => {
                 </p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
         <h3 class="mx-5 md:px-28 md:mt-12 text-3xl">Services complémentaires pour propulser votre projet :</h3>
 
         <Article
+          imgSeparator=""
           imageSrc="/images/conseilservice.png"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
           stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
+          <div q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col">
               <li class="mb-[2.5rem] flex items-center">
                 <div class={"hidden md:flex"}>
@@ -207,7 +211,7 @@ export default component$(() => {
                 </p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
       </section>
       {/* <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
@@ -218,7 +222,7 @@ export default component$(() => {
         </div>
         <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
       </section> */}
-      <section class="text-[#0B3168] mt-10 md:mt-0">
+      <div class="text-[#0B3168] mt-10 md:mt-0">
         {/* <ArticleTemoignage1 />
         <ArticleTemoignage2 /> */}
         <section class="mx-5 md:px-28">
@@ -234,12 +238,16 @@ export default component$(() => {
             pour bénéficier d'une première consultation gratuite et échanger sur vos besoins en accessibilité numérique
             avec l'un de nos spécialistes
           </p>
-          <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
-          <p>
+          <p class="mb-4">
             Faites de <strong>l'accessibilité numérique</strong> une priorité avec Inolib.
           </p>
+          <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
         </section>
 
+        <span class="flex justify-center">
+          <img class="h-[14rem] w-[14rem]" src="/images/purple-logo.png" alt="" />
+        </span>
+        <span class="flex justify-center"></span>
         <span class="flex justify-center mb-2 md:mb-0">
           <Button
             href="/contact"
@@ -248,7 +256,7 @@ export default component$(() => {
             styles="mt-[2rem] transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 duration-300"
           />
         </span>
-      </section>
+      </div>
       <div class="my-10 flex w-full justify-center">
         <ButtonTopPage />
       </div>

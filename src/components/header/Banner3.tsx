@@ -17,10 +17,10 @@ export const Banner3 = component$((props: BannerProps) => {
         id={props.id}
       >
         <span class="flex flex-col md:w-1/2 ">
-          <span class="flex flex-col py-5 px-5 md:ml-[8rem] md:mt-[4rem] md:px-0 md:py-0">
+          <div class="flex flex-col py-5 px-5 md:ml-[8rem] md:mt-[4rem] md:px-0 md:py-0">
             <h3 class="pb-[2rem] text-4xl text-white">{props.title}</h3>
             <p class="text-l  text-white">{props.content}</p>
-          </span>
+          </div>
         </span>
         <span class="w-[100vw] md:flex md:flex-row-reverse md:pr-[7rem]">
           <img class="md:-mt-[10rem] md:h-[25rem]" src={props.src} alt="" />

@@ -26,11 +26,12 @@ export default component$(() => {
           Nos formations couvrent les sujets clés de l'accessibilité numérique, notamment :
         </h3>
         <Article
-          imageSrc="/images/actualitehome1.png"
+          imgSeparator=""
+          imageSrc="/images/formation-article-1.jpg"
           stylesArticleGaucheFlex="mb-8 bg-slate-100 shadow text-[#0B3168] rounded md:flex-row "
           stylesImage=" md:mr-[6rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
+          <div q:slot="check-box" class="mt-5 mx-5 flex flex-col md:ml-[5rem] md:mt-0">
             <ul class="flex flex-col md:mt-20 md:justify-around text-lg ">
               <li class="mb-[2rem] flex">
                 <p class="ml-4">🔹Les fondamentaux de l'accessibilité numérique</p>
@@ -48,11 +49,14 @@ export default component$(() => {
                 <p class="ml-4">🔹L'accessibilité des applications mobiles</p>
               </li>
               <li class="mb-[2rem] flex ">
-                <p class="ml-4">🔹L'accessibilité pour les personnes en situation de handicap visuel, auditif, moteur et cognitif</p>
+                <p class="ml-4">
+                  🔹L'accessibilité pour les personnes en situation de handicap visuel, auditif, moteur et cognitif
+                </p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
+
         <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Chiffres clés sur l'accessibilité numérique :</h2>
         <p class="px-5 md:px-28 mt-2">
           Entre 15 et 20% de la population mondiale est concernée par un handicap. En France, le dernier rapport du
@@ -68,11 +72,12 @@ export default component$(() => {
         </p>
         <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Pourquoi choisir Inolib Formations</h2>
         <Article
-          imageSrc="/images/conseilservice.png"
+          imgSeparator=""
+          imageSrc="/images/formation-article-2.JPG"
           stylesArticleGaucheFlex="mb-8  bg-slate-100 text-[#0B3168] shadow rounded md:flex-row-reverse "
-          stylesImage="ml-[5rem] mr-[3rem] mt-[3rem]"
+          stylesImage="md:ml-[5rem] md:mr-[3rem] mt-[3rem]"
         >
-          <span q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
+          <div q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
             <ul class="mt-10 flex flex-col md:mt-0">
               <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
@@ -82,7 +87,7 @@ export default component$(() => {
               </li>
               <li class="mb-[2.5rem] flex ">
                 <div class={"hidden md:flex"}>
-                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
+                  <img class="md:mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
                 </div>
                 <p class="ml-4 font-normal">Des formations et sensibilisation adaptées à tous les niveaux</p>
               </li>
@@ -107,13 +112,13 @@ export default component$(() => {
                 <p class="ml-4 font-normal">Des tarifs compétitifs</p>
               </li>
             </ul>
-          </span>
+          </div>
         </Article>
         <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Contactez-nous dès aujourd'hui</h2>
         <p class="px-5 md:px-28 mt-2">
           Discutez de vos besoins en matière de formation et sensibilisation à l'accessibilité numérique avec l'un de
           nos experts. Profitez d'une{" "}
-          <a href="/contact" class="underline underline-offset-1 text-blue-500 visited:text-purple-600">
+          <a href="/contact" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
             première consultation offerte
           </a>{" "}
           et laissez- nous vous aider à vous mettre en conformité avec les normes RGAA et WCAG.
@@ -124,16 +129,16 @@ export default component$(() => {
         </p>
         <p class="px-5 md:px-28 mt-2">
           Prêt à aller plus loin ? Explorez nos services{" "}
-          <a href="/audit" class="underline underline-offset-1 text-blue-500 visited:text-purple-600">
+          <a href="/audit" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
             d'audit
           </a>{" "}
           en accessibilité numérique et nos solutions de{" "}
-          <a href="/developpement" class="underline underline-offset-1 text-blue-500 visited:text-purple-600">
+          <a href="/developpement" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
             {" "}
             développement{" "}
           </a>{" "}
-          pour sites web, applications mobiles et logiciels sur-mesure (hyperliens vers les pages correspondantes).
-          Faites de l'accessibilité numérique une priorité et un atout pour votre entreprise avec Inolib.
+          pour sites web, applications mobiles et logiciels sur-mesure. Faites de l'accessibilité numérique une priorité
+          et un atout pour votre entreprise avec Inolib.
         </p>
       </section>
       <div class="my-10 flex w-full justify-center">
