@@ -12,10 +12,10 @@ export default component$(() => {
       <Banner
         content=" Vous cherchez une agence de développement web et mobile qui allie expertise, passion et engagement ? Découvrez Inolib Tech, votre partenaire agile pour des solutions digitales accessibles et performantes."
         imageSrc="\images\dev-raw.jpg"
-        imageStyle="md:w-3/5 md:max-w-2xl"
+        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
         title="Développement"
       />
-      <h2 class="md:mt-[11.5rem] mt-8 ml-8 md:ml-[5rem] mb-10 text-3xl text-[#0B3168]">Développement</h2>
+      <h2 class="md:mt-[11.5rem] mt-8 ml-8 md:ml-[5rem] mb-10 text-3xl text-[#0B3168] mx-5 my-7 font-semibold">Développement :</h2>
       <p class="text-lg md:mx-[8rem] mb-10 text-[#0B3168]">
         Chez Inolib, nous mettons tout notre cœur dans votre projet. Nous sommes convaincus que chaque projet mérite une
         expertise pointue et les dernières technologies en la matière. C'est pourquoi notre équipe d'experts est animée

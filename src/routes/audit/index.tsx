@@ -12,10 +12,10 @@ export default component$(() => {
         content="Votre tremplin vers l'inclusion digitale !"
         title="Audits d'accessibilité numérique"
         imageSrc="/images/audit-raw.jpg"
-        imageStyle="md:w-3/5 md:max-w-2xl"
+        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
       />
 
-      <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168]">Vous souhaitez : </h2>
+      <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168] font-semibold">Vous souhaitez : </h2>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
         <Article
           imageSrc="/images/actualitehome1.png"

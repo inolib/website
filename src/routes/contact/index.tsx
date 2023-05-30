@@ -14,12 +14,12 @@ export default component$(() => {
         content="Nous sommes heureux de pouvoir communiquer avec vous et sommes à votre disposition pour répondre à toutes vos questions
          ou remarques concernant notre site web ou nos services. Vous pouvez nous contacter en remplissant le formulaire de contact ci-dessous."
         imageSrc="\images\contact-banner.png"
-        imageStyle="md:w-3/5 md:max-w-2xl"
+        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
         title="Contacts"
       />
 
       <section class="text-[#0B3168] md:px-28">
-        <h2 class="my-6 text-2xl font-bold md:mb-14 md:pt-10">Nous écrire</h2>
+        <h2 class="my-6 md:mb-10 md:pt-10 text-3xl font-semibold">Nous écrire :</h2>
         <section class="mb-10 flex flex-col-reverse shadow-xl md:h-[100vh] md:w-full md:flex-row-reverse md:px-0">
           <ContactForm />
           <ContactCard />

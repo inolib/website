@@ -18,7 +18,7 @@ export default component$(() => {
 
       <section class="text-[#0B3168]  md:mx-[8rem] md:py-8">
         <NewArticle
-          title="Notre stratégie centrée sur vous:"
+          title="Notre stratégie centrée sur vous :"
           styleTitle="mx-5 my-7 text-3xl md:mb-[1rem] md:mb-[2rem] font-semibold md:m-0"
         >
           <div q:slot="slot1" class="md:grid grid-cols-3 grid-rows-3 gap-y-5 gap-x-9 bg-slate-100 md:p-12 md:text-lg mb-6">

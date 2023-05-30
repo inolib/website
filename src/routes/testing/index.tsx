@@ -18,7 +18,7 @@ export default component$(() => {
 
       <section class="text-[#0B3168]">
         <Article
-          stylesImage="shadow "
+          stylesImage="shadow"
           stylesArticleGaucheFlex=" text-[#0B3168] rounded md:flex-row "
           imageSrc="/images/home4.png "
           title=" Plongez au cœur de l'univers Inolib :"
