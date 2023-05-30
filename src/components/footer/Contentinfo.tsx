@@ -60,11 +60,6 @@ export const Contentinfo = component$(() => {
                 <img alt="LinkedIn INOLIB" src="/images/logo-linkedin.svg" aria-label="Linkedin"></img>
               </a>
             </li>
-            <li>
-              <a href="#" target="_blank" aria-label="instagram">
-                <img alt="instagram INOLIB" src="/images/logo-instagram.svg" aria-label="Instagram"></img>
-              </a>
-            </li>
           </ul>
           <p class="md:row-start- mt-8 md:columns-1 md:items-end">© 2023 Inolib</p>
         </section>

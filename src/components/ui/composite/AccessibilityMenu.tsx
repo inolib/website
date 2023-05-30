@@ -25,10 +25,10 @@ export type Option = {
 const options: Options = [
   {
     id: 1,
-    ariallabel: "taille de la police",
-    defaultOption: "défault",
-    inputName: "police :",
-    secondOption: "supérieur",
+    ariallabel: "Taille de la police",
+    defaultOption: "Défault",
+    inputName: "Police :",
+    secondOption: "Supérieur",
     defaultOptionValue: "true",
     secondOptionValue: "false",
     onChange: $((event: QwikChangeEvent<HTMLElement>) => {
@@ -54,10 +54,10 @@ const options: Options = [
   },
   {
     id: 2,
-    ariallabel: "taille de l'interlignage",
-    defaultOption: "défault",
-    inputName: "interlignage :",
-    secondOption: "supérieur",
+    ariallabel: "Taille de l'interlignage",
+    defaultOption: "Défault",
+    inputName: "Interlignage :",
+    secondOption: "Supérieur",
     defaultOptionValue: "false",
     secondOptionValue: "true",
     onChange: $((event: QwikChangeEvent<HTMLElement>) => {
@@ -85,10 +85,10 @@ const options: Options = [
   },
   {
     id: 3,
-    ariallabel: "option image ou texte",
-    defaultOption: "image",
-    inputName: "image :",
-    secondOption: "texte",
+    ariallabel: "Option image ou texte",
+    defaultOption: "Image",
+    inputName: "Image :",
+    secondOption: "Texte",
     defaultOptionValue: "true",
     secondOptionValue: "false",
     onChange: $((event: QwikChangeEvent<HTMLElement>) => {
@@ -156,7 +156,7 @@ export const AccessibilityMenu = component$(() => {
         <ParametersMenu>
           <ParametersMenuButton>
             <p class="focus:bg-[#0B3168] focus:text-white hover:bg-[#0B3168] hover:text-white rounded-md p-1 m-1">
-              personnaliser la page
+              Personnaliser la page
             </p>
           </ParametersMenuButton>
           <ParametersMenuItems styles="md:flex md:justify-around md:items-center text-[#0B3168] border-2 border-[#0B3168] rounded bg-gray-100 ">

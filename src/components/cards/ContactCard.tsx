@@ -61,11 +61,6 @@ export const ContactCard = component$(() => {
               <img alt="" class="scale-50" src="/images/logo-linkedin.svg"></img>
             </a>
           </li>
-          <li>
-            <a href="#" target="_blank" aria-label="Instagram d'Inolib">
-              <img alt="" class="scale-50" src="/images/logo-instagram.svg"></img>
-            </a>
-          </li>
         </ul>
       </div>
       <img

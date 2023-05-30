@@ -30,17 +30,17 @@ export const BannerHome = component$(() => {
         </div> */}
       </section>
       <section class="flex justify-around md:mt-[1rem]" aria-label="Nos partenaire">
-        <a href="https://h-up.fr/" aria-label="HUP">
+        <a href="https://h-up.fr/" aria-label="HUP" target="_blank">
           <img
             alt="HUP"
             class="h-[5rem] w-[5rem] md:ml-[20rem] md:h-[10rem] md:w-[10rem]"
             src="/images/logo-hup-violet.svg"
           />
         </a>
-        <a href="https://www.fidev.asso.fr/" aria-label="FIDEV">
+        <a href="http://www.fidev.asso.fr/" aria-label="FIDEV" target="_blank">
           <img alt="FIDEV" class="h-[5rem] w-[5rem] md:h-[10rem] md:w-[10rem]" src="/images/logo-fidev-violet.svg" />
         </a>
-        <a href="https://www.apside.com/" aria-label="APSIDE">
+        <a href="https://www.apside.com/" aria-label="APSIDE" target="_blank">
           <img
             alt="Apside"
             class="h-[5rem] w-[5rem] md:mr-[20rem] md:h-[10rem] md:w-[10rem]"
