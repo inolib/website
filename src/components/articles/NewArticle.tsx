@@ -28,22 +28,22 @@ export const NewArticle = component$((props: NewArticleProps) => {
 
   return (
     <section class={`${style}`}>
-    <h2 class={`${styleTitle}`}>{props.title}</h2>
+      <h2 class={`${styleTitle}`}>{props.title}</h2>
 
-    <div class={`${styleArticle}`}>
-      <div class={`${styleArticleContent}`}>
-        <div class={`${styleContent}`}>
-          {props.content}
-          <Slot name="slot1" />
+      <div class={`${styleArticle}`}>
+        <div class={`${styleArticleContent}`}>
+          <div class={`${styleContent}`}>
+            {props.content}
+            <Slot name="slot1" />
+          </div>
+        </div>
+
+        <div class={`${styleImageArticle}`}>
+          <img class={`${styleImage}`} src={props.imageSrc} />
+          <blockquote class={`${styleImageQuote}`}></blockquote>
+          <p class={`${styleImageText}`}></p>
         </div>
       </div>
-
-      <div class={`${styleImageArticle}`}>
-        <img class={`${styleImage}`} src={props.imageSrc}/>
-        <blockquote class={`${styleImageQuote}`}></blockquote>
-        <p class={`${styleImageText}`}></p>
-      </div>
-    </div>
-  </section>
+    </section>
   );
 });

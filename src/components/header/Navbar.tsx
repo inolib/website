@@ -18,19 +18,13 @@ export const Navbar = component$(() => {
         <div class="flex flex-col w-full pl-10">
           <div class="flex justify-end items-center mr-4 sr-only md:whitespace-nowrap md:not-sr-only">
             <FastAccessMenu />
-            <p class="text-[#0B3168] text-xs mr-2 py-2">
-              {" "}
-              contact@inolib.com
-            </p>
+            <p class="text-[#0B3168] text-xs mr-2 py-2"> contact@inolib.com</p>
             <p class="text-[#0B3168] text-xs mr-2 py-2"> / </p>
-            <p class="text-[#0B3168] text-xs mr-2 py-2">
-              {" "}
-              06 47 21 86 69
-            </p>
+            <p class="text-[#0B3168] text-xs mr-2 py-2"> 06 47 21 86 69</p>
           </div>
           <div class="hidden md:block">
             <div class="flex justify-around items-center border-t-2">
-            <a
+              <a
                 href="/"
                 class=" rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14 transition ease-in delay-75"
                 {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
@@ -68,6 +62,13 @@ export const Navbar = component$(() => {
                 {...(location.url.pathname === "/formation" ? { "aria-current": "page" } : {})}
               >
                 FORMATION
+              </a>
+              <a
+                href="/marketing"
+                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14 transition ease-in delay-75"
+                {...(location.url.pathname === "/marketing" ? { "aria-current": "page" } : {})}
+              >
+                MARKETING
               </a>
               <a
                 href="/acompagnement"

@@ -50,9 +50,9 @@ export default component$(() => {
             </TabsPanel>
             <TabsPanel styles="" id="2">
               <ButtonBackLobby title="Mot de passe" />
-              <span class="my-12 flex flex-col md:w-{screen} md:flex-row md:justify-center  ">
+              <div class="my-12 flex flex-col md:w-{screen} md:flex-row md:justify-center  ">
                 <ChangePasswordForm />
-              </span>
+              </div>
             </TabsPanel>
             <TabsPanel id="3">
               <ButtonBackLobby title="Mes documents" />
@@ -60,11 +60,11 @@ export default component$(() => {
             </TabsPanel>
             <TabsPanel id="4">
               <ButtonBackLobby title="Mes QCM" />
-              <span
+              <div
                 class={`mx-[2rem] flex flex-col justify-center md:mx-[8rem] md:mb-[5rem] md:grid md:grid-cols-3 md:grid-rows-2 md:gap-10`}
               >
                 <Qcm />
-              </span>
+              </div>
             </TabsPanel>
           </TabsPanels>
         </div>

@@ -11,7 +11,7 @@ export default component$(() => {
           <strong>Foire aux questions</strong>
         </h1>
       </header>
-      <section class="text-[#0B3168] px-28 text-l">
+      <section class="text-[#0B3168] px-5 md:px-28 text-l">
         <h2 class="text-4xl my-6">Sommaire</h2>
         <ul class="text-2xl">
           <li class="my-2">I. Comprendre l'accessibilité numérique et son importance</li>
@@ -180,7 +180,7 @@ export default component$(() => {
             R: Inolib propose des sessions de formations et de sensibilisations sur mesure adaptées à votre secteur et
             vos besoins, afin d’aider votre équipe à développer ses compétences en matière d'accessibilité numérique.
             <a
-              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              class="underline underline-offset-1 text-blue-600 visited:text-purple-700"
               href="/contact"
               aria-label="page contact"
             >

@@ -3,11 +3,11 @@ import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <section class="px-10">
-      <h1 class="mb-4 text-[#0B3168] text-3xl text-center font-bold">Mention Légales</h1>
-      <ul class="text-l">
+    <section class="px-5 md:px-10 text-[#0B3168]">
+      <h1 class="mb-4 text-3xl text-center font-bold">Mention Légales</h1>
+      <ul class="text-l leading-7">
         <li class="mb-10">
-          <p class="text-xl">
+          <p class="text-lg">
             Merci de lire avec attention les différentes modalités d'utilisation du présent site avant d'y parcourir ses
             pages. En vous connectant sur ce site, vous acceptez, sans réserves, les présentes modalités. Aussi,
             conformément à l'article n°6 de la Loi n°2004-575 du 21 juin 2004 pour la confiance dans l'économie
@@ -15,7 +15,7 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Editeur du site :</h2>
+          <h2 class="mb-4 text-xl font-bold">Editeur du site :</h2>
           <p>
             Société INOLIB SAS
             <br /> Numéro Siret : 909 129 454 00015
@@ -30,11 +30,11 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Hébergement :</h2>
+          <h2 class="mb-4 text-xl font-bold">Hébergement :</h2>
           <p> Firebase, Hostinger</p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Contact service clients, Aide et accessibilité :</h2>
+          <h2 class="mb-4 text-xl font-bold">Contact service clients, Aide et accessibilité :</h2>
           <p>
             Tél : 0670865032
             <br /> Du lundi au vendredi de 9h00 à 12h00 et de 14h00 à 18h00
@@ -43,7 +43,7 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Conditions d'utilisation :</h2>
+          <h2 class="mb-4 text-xl font-bold">Conditions d'utilisation :</h2>
           <p>
             Ce site (www.inolib.com) est proposé en différents langages web (HTML, HTML5, ReactJS, TailwindCSS,
             Firebase) pour un meilleur confort d’utilisation et un graphisme plus agréable. Nous vous recommandons de
@@ -57,7 +57,7 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Liens hypertextes :</h2>
+          <h2 class="mb-4 text-xl font-bold">Liens hypertextes :</h2>
           <p>
             Les sites internet de peuvent offrir des liens vers d’autres sites internet ou d’autres ressources
             disponibles sur Internet. La société INOLIB ne dispose d’aucun moyen pour contrôler les sites en connexion
@@ -77,7 +77,7 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Limitation contractuelles sur les données :</h2>
+          <h2 class="mb-4 text-xl font-bold">Limitation contractuelles sur les données :</h2>
           <p>
             Les informations contenues sur ce site sont aussi précises que possible et le site remis à jour à
             différentes périodes de l’année, mais peut toutefois contenir des inexactitudes ou des omissions.
@@ -95,7 +95,7 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Propriété intellectuelle :</h2>
+          <h2 class="mb-4 text-xl font-bold">Propriété intellectuelle :</h2>
           <p>
             Tout le contenu du présent site www.inolib.com, incluant, de façon non limitative, les graphismes, images,
             textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété
@@ -111,7 +111,7 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Déclaration à la CNIL :</h2>
+          <h2 class="mb-4 text-xl font-bold">Déclaration à la CNIL :</h2>
           <p>
             Conformément à la loi 78-17 du 6 janvier 1978 (modifiée par la loi 2004-801 du 6 août 2004 relative à la
             protection des personnes physiques à l’égard des traitements de données à caractère personnel) relative à
@@ -120,7 +120,7 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Litiges :</h2>
+          <h2 class="mb-4 text-xl font-bold">Litiges :</h2>
           <p>
             Les présentes conditions du site www.inolib.com sont régies par les lois françaises et toute contestation ou
             litiges qui pourraient naître de l’interprétation ou de l’exécution de celles-ci seront de la compétence
@@ -129,7 +129,7 @@ export default component$(() => {
           </p>
         </li>
         <li class="mb-10">
-          <h2 class="mb-4 text-[#0B3168]">Données personnelles :</h2>
+          <h2 class="mb-4 text-xl font-bold">Données personnelles :</h2>
           <p>
             De manière générale, vous n’êtes pas tenu de nous communiquer vos données personnelles lorsque vous visitez
             notre site Internet www.inolib.com. Cependant, ce principe comporte certaines exceptions. En effet, pour
