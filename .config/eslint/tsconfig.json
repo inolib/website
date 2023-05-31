@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["."],
+  "include": ["../.."],
   "files": [
     "../../.eslintrc.cjs",
     "../../.prettierrc.cjs",
