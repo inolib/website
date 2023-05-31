@@ -18,9 +18,13 @@ export const Navbar = component$(() => {
           aria-label="Accueil"
         />
         <div>
-          <a href="/" {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}>
-            <img class="block h-16 w-auto lg:hidden z-10" src="/images/logoinolibvf.png" alt="Inolib" />
-            <img class="hidden h-32 w-auto my-[-2rem] lg:block z-10 p-4" src="/images/logoinolibvf.png" alt="Inolib" />
+          <a
+            href="/"
+            {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+            {...(location.url.pathname === "/" ? { "aria-label": "Inolib" } : { "aria-label": "Accueil" })}
+          >
+            <img class="block h-16 w-auto lg:hidden z-10" src="/images/logoinolibvf.png" alt="" />
+            <img class="hidden h-32 w-auto my-[-2rem] lg:block z-10 p-4" src="/images/logoinolibvf.png" alt="" />
           </a>
         </div>
         <div class="flex flex-col w-full pl-10">

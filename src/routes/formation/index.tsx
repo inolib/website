@@ -127,7 +127,7 @@ export default component$(() => {
           et laissez- nous vous aider à vous mettre en conformité avec les normes RGAA et WCAG.
         </p>
         <p class="px-5 md:px-28 mt-2">
-          Ensemble, faisons de léaccessibilité numérique une priorité et un atout pour votre entreprise avec Inolib
+          Ensemble, faisons de l'accessibilité numérique une priorité et un atout pour votre entreprise avec Inolib
           Formations.
         </p>
         <p class="px-5 md:px-28 mt-2">
