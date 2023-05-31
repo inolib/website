@@ -1,7 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 
-import { ArticleHomePage } from "./ArticleHomePage";
-
 type ArticleProps = {
   category?: string;
   content?: string;

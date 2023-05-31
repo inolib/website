@@ -11,18 +11,21 @@ export const Navbar = component$(() => {
   return (
     <>
       <nav role="menu" class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white flex justify-start w-full">
+        <FastAccessMenu />
+        <a
+          href="/"
+          class="flex justify-start items-center"
+          {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+          aria-label="Accueil"
+        />
         <div>
-          <a
-                href="/"
-                {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
-              >
-          <img class="block h-16 w-auto lg:hidden z-10" src="/images/logoinolibvf.png" alt="Inolib" />
-          <img class="hidden h-32 w-auto my-[-2rem] lg:block z-10 p-4" src="/images/logoinolibvf.png" alt="Inolib" />
+          <a href="/" {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}>
+            <img class="block h-16 w-auto lg:hidden z-10" src="/images/logoinolibvf.png" alt="Inolib" />
+            <img class="hidden h-32 w-auto my-[-2rem] lg:block z-10 p-4" src="/images/logoinolibvf.png" alt="Inolib" />
           </a>
         </div>
         <div class="flex flex-col w-full pl-10">
           <div class="flex justify-end items-center mr-4 sr-only md:whitespace-nowrap md:not-sr-only">
-            <FastAccessMenu />
             <p class="text-[#0B3168] text-xs mr-2 py-2"> contact@inolib.com</p>
             <p class="text-[#0B3168] text-xs mr-2 py-2"> / </p>
             <p class="text-[#0B3168] text-xs mr-2 py-2"> 06 47 21 86 69</p>
@@ -96,14 +99,6 @@ export const Navbar = component$(() => {
               >
                 CONTACT
               </a>
-
-              {/* <a
-                href="/connexion"
-                class="rounded-md px-3 p-1 font-normal text-sm  md:ml-5 md:my-2 text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
-                {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
-              >
-                Connexion
-              </a> */}
             </div>
           </div>
           <div class="md:hidden absolute top-0 right-0" id="mobile-menu">
