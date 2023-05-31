@@ -1,4 +1,4 @@
-import { $, component$, Slot, useComputed$, useTask$, QwikJSX } from "@builder.io/qwik";
+import { $, component$, Slot, useComputed$, useTask$, type QwikJSX } from "@builder.io/qwik";
 
 type ToasterProps = {
   icon: "error" | "success";

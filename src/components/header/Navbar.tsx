@@ -11,6 +11,12 @@ export const Navbar = component$(() => {
   return (
     <>
       <nav role="menu" class="sticky top-0 z-50 border-b-[1px] border-slate-200 bg-white flex justify-start w-full">
+        <a
+          href="/"
+          class="flex justify-start items-center"
+          {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
+          aria-label="Accueil"
+        />
         <div>
           <a
             href="/"
@@ -97,14 +103,6 @@ export const Navbar = component$(() => {
               >
                 CONTACT
               </a>
-
-              {/* <a
-                href="/connexion"
-                class="rounded-md px-3 p-1 font-normal text-sm  md:ml-5 md:my-2 text-[#0B3168] hover:bg-[#0B3168] hover:text-white sm:border-[1px] sm:border-[#0B3168]"
-                {...(location.url.pathname === "/connexion" ? { "aria-current": "page" } : {})}
-              >
-                Connexion
-              </a> */}
             </div>
           </div>
           <div class="md:hidden absolute top-0 right-0" id="mobile-menu">
