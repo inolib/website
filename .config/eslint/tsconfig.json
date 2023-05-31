@@ -10,6 +10,7 @@
     "../prettier/jsxattribute-sort/.prettierrc.cjs",
     "../prettier/packagejson/.prettierrc.cjs",
     "../prettier/sort-imports/.prettierrc.cjs",
-    "../prettier/tailwindcss/.prettierrc.cjs"
+    "../prettier/tailwindcss/.prettierrc.cjs",
+    "../vercel-edge/vite.config.ts"
   ]
 }
