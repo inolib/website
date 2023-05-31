@@ -53,27 +53,7 @@ export const verifyInput = $((store: FormStore) => {
     store.fields.categoryId.value !== ""
   ) {
     store.isDisabled = false;
-    console.log(
-      "lastName :",
-      store.fields.lastName.value,
-      "firstName :",
-      store.fields.firstName.value,
-      "message :",
-      store.fields.message.value,
-      "isDisabled :",
-      store.fields.isDisabled
-    );
   } else {
-    console.log(
-      "lastName :",
-      store.fields.lastName.value,
-      "firstName :",
-      store.fields.firstName.value,
-      "message :",
-      store.fields.message.value,
-      "isDisabled :",
-      store.fields.isDisabled
-    );
     store.isDisabled = true;
   }
 });
@@ -118,8 +98,6 @@ export const registerRequestQrl = server$(async (formStore: FormStore, toasterSt
     );
 
     toasterStore.show = true;
-    console.log("result:", result);
-    console.log("after:", toasterStore.show);
   } catch (error) {
     console.error(error);
   }
@@ -147,10 +125,10 @@ const FormSchema: ZodType<FormData> = z.object({
 });
 
 export const handleSubmitQrl = $(
-  async (store: FormStore, toasterStore: ToasterStore, resetButton: Signal<HTMLElement>) => {
-    for (const fieldName in store.fields) {
-      (store.fields[fieldName] as FormField).error = "";
-    }
+  async (store: FormStore, toasterStore: ToasterStore, resetButton: Signal<HTMLElement | undefined>) => {
+    Object.values(store.fields).forEach((field) => {
+      field.error = "";
+    });
 
     try {
       FormSchema.parse({
@@ -166,14 +144,14 @@ export const handleSubmitQrl = $(
       const { toasterStore: _toasterStore } = await registerRequestQrl(store, toasterStore);
       toasterStore.show = _toasterStore.show;
 
-      resetButton.value.click();
+      resetButton.value?.click();
     } catch (error) {
       console.log(error);
 
       (error as ZodError).issues.forEach((issue) => {
-        const fieldName = issue.path[0];
+        const fieldName = issue.path[0] as keyof FormStore["fields"];
 
-        (store.fields[fieldName] as FormField).error = issue.message;
+        store.fields[fieldName].error = issue.message;
       });
     }
   }
@@ -372,7 +350,7 @@ export const ContactForm = component$(() => {
           <span class="text-[#FF0000] text-xs">{store.fields.phone.error}</span>
         </label>
         <div class="col-span-2 col-start-1 flex ">
-          <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
+          <p class="italic text-xs">Caratères maximum : {store.count} / 1500</p>
         </div>
         <textarea
           onInput$={async (event, element) => {
@@ -387,9 +365,8 @@ export const ContactForm = component$(() => {
           maxLength={1500}
           required
           aria-label="zone pour écrire les détails de votre demande"
-        >
-          <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
-        </textarea>
+        ></textarea>
+        <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
         <button
           ref={resetButton}
           onClick$={resetCounter$}
