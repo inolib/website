@@ -11,13 +11,13 @@ export const ContactCard = component$(() => {
         <p class="mb-5 md:mb-10">N'hésitez pas à nous contacter via notre formulaire ou encore sur les réseaux !</p>
         <div class="mb-4 md:hidden">
           <p>Appelez-nous!</p>
-          <p>06 70 86 50 32</p>
+          <p>06 47 21 86 69</p>
         </div>
         <div class="hidden md:block md:mb-6">
           <div class="flex">
             <img alt="" src="/images/icon-phone.svg" />
-            <a href="tel:+33670865032" class="pl-3">
-              06 70 86 50 32
+            <a href="tel:+33647218669" class="pl-3">
+              06 47 21 86 69
             </a>
           </div>
         </div>
