@@ -10,7 +10,7 @@ type NewArticleProps = {
   styleImageArticle?: string;
   styleImageText?: string;
   styleImageQuote?: string;
-  title: string;
+  title?: string;
   content?: string;
   imageSrc?: string;
 };
@@ -39,7 +39,7 @@ export const NewArticle = component$((props: NewArticleProps) => {
         </div>
 
         <div class={`${styleImageArticle}`}>
-          <img class={`${styleImage}`} src={props.imageSrc} />
+          <img class={`${styleImage}`} src={props.imageSrc} alt="" />
           <blockquote class={`${styleImageQuote}`}></blockquote>
           <p class={`${styleImageText}`}></p>
         </div>

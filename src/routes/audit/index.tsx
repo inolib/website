@@ -63,7 +63,7 @@ export default component$(() => {
             référentiels techniques.
             <a
               href="https://accessibilite.numerique.gouv.fr/obligations/"
-              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              class="underline underline-offset-1 text-blue-600 visited:text-purple-700"
               target="_blank"
             >
               RGAA
@@ -71,7 +71,7 @@ export default component$(() => {
             4.1.1 (référentiel pour l'amélioration de l'accessibilité), les normes internationales{" "}
             <a
               href="https://www.w3.org/TR/WCAG21/"
-              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              class="underline underline-offset-1 text-blue-600 visited:text-purple-700"
               target="_blank"
             >
               WCAG
@@ -80,7 +80,7 @@ export default component$(() => {
             appuyons sur le référentiel{" "}
             <a
               href="https://accessibilite.public.lu/fr/raam1/referentiel-technique.html"
-              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              class="underline underline-offset-1 text-blue-600 visited:text-purple-700"
               target="_blank"
             >
               et RAAM.
@@ -232,7 +232,7 @@ export default component$(() => {
           <h3 class="text-3xl mb-5">Passez à l'action ! :</h3>
           <p>
             <a
-              class="underline underline-offset-1 text-blue-500 visited:text-purple-600"
+              class="underline underline-offset-1 text-blue-600 visited:text-purple-700"
               href="/contact"
               aria-label="page contact"
             >
