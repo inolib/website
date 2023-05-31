@@ -1,7 +1,6 @@
 {
-  "include": ["./src"],
+  "include": ["./src", "./tests"],
   "compilerOptions": {
-    "composite": true,
     "esModuleInterop": true,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
@@ -10,14 +9,13 @@
     "jsxImportSource": "@builder.io/qwik",
     "lib": ["DOM", "ESNext", "WebWorker"],
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "noEmit": true,
     "paths": {
       "~/*": ["./src/*"]
     },
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext",
-    "tsBuildInfoFile": "./.cache/tsbuildinfo.json"
+    "verbatimModuleSyntax": true
   }
 }

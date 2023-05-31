@@ -8,17 +8,18 @@ module.exports = {
     "prettier",
   ],
   env: {
+    browser: true,
     node: true,
   },
   plugins: ["@typescript-eslint"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    sourceType: "module",
-    ecmaVersion: "latest",
     ecmaFeatures: {
       jsx: true,
     },
-    project: ["./tsconfig.eslint.json"],
+    ecmaVersion: "latest",
+    project: ["./.config/eslint/tsconfig.json"],
+    sourceType: "module",
     tsconfigRootDir: __dirname,
   },
 };
