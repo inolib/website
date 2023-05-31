@@ -127,13 +127,9 @@ const FormSchema: ZodType<FormData> = z.object({
 });
 
 export const handleSubmitQrl = $(async (store: FormStore, toasterStore: ToasterStore, resetButton: HTMLElement) => {
-  store.fields.categoryId.value = "";
-  store.fields.companyName.value = "";
-  store.fields.firstName.value = "";
-  store.fields.lastName.value = "";
-  store.fields.email.value = "";
-  store.fields.message.value = "";
-  store.fields.phone.value = "";
+  Object.values(store.fields).forEach((field) => {
+    field.value = "";
+  });
 
   try {
     FormSchema.parse({
@@ -151,17 +147,8 @@ export const handleSubmitQrl = $(async (store: FormStore, toasterStore: ToasterS
 
     resetButton.click();
   } catch (error) {
-    console.log(error);
-
-    const errors = (error as ZodError).issues.map((issue) => {
-      return {
-        fieldName: issue.path[0] as string,
-        message: issue.message,
-      };
-    });
-
-    errors.forEach((error) => {
-      (store.fields[error.fieldName] as FormField).error = error.message;
+    (error as ZodError).issues.map((issue) => {
+      store.fields[issue.path[0] as keyof FormStore["fields"]].error = issue.message;
     });
   }
 });
