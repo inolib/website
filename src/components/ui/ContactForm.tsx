@@ -357,7 +357,7 @@ export const ContactForm = component$(() => {
         <div class="col-start-1 flex flex-col h-6 ">
           <p class="italic text-xs">Caratères maximum : {store.count}/1000</p>
           <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
-          <div class={`flex flex-row-reverse w-[14rem] mt-10`}>
+          <div class={`flex flex-row-reverse w-[14rem] mt-24 md:mt-10`}>
             <label class={`italic text-xs text-[#0B3168] ml-2`}>
               <a class={`hover:font-extrabold`} href="/legal">
                 Accepter nos conditions générales *
@@ -380,7 +380,7 @@ export const ContactForm = component$(() => {
             await counter$(event);
           }}
           placeholder="Message *"
-          class="col-span-4 col-start-1 col-end-5 row-start-8  border-[1px] border-solid border-[#0B3168] md:row-start-5 md:row-span-2 md:pl-2 md:mt-6"
+          class="col-span-4 col-start-1 col-end-5 row-start-8  border-[1px] border-solid border-[#0B3168] mt-6 md:row-start-5 md:row-span-2 md:pl-2"
           id="textarea"
           maxLength={1000}
           required
@@ -394,7 +394,7 @@ export const ContactForm = component$(() => {
           ref={resetButton}
           onClick$={resetCounter$}
           type="reset"
-          class=" col-span-2 col-start-1 col-end-2 row-start-9 mr-2 h-14 rounded-md hover:border-2 hover:border-[#0B3168] md:col-start-3  md:col-end-4 md:row-start-7 md:mt-14"
+          class=" col-span-2 col-start-1 col-end-3 row-start-9 mr-2 h-14 rounded-md hover:border-2 hover:border-[#0B3168] mt-10 md:col-start-3  md:col-end-4 md:row-start-7 md:mt-14"
           aria-label="Effacer le formulaire"
         >
           Effacer
@@ -402,7 +402,7 @@ export const ContactForm = component$(() => {
         <button
           type="submit"
           disabled={store.isDisabled}
-          class="col-span-2 col-start-3 col-end-5 row-start-9 h-14 rounded-md bg-[#0B3168] text-white md:col-start-4 md:col-end-4  md:row-start-7 md:mt-14"
+          class="col-span-2 col-start-3 col-end-5 row-start-9 h-14 rounded-md bg-[#0B3168] text-white mt-10 md:col-start-4 md:col-end-4  md:row-start-7 md:mt-14"
           aria-label="Envoyer le formulaire"
         >
           Envoyer
