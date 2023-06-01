@@ -1,7 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 
-import { ArticleHomePage } from "./ArticleHomePage";
-
 type ArticleProps = {
   category?: string;
   content?: string;
@@ -19,6 +17,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
         <h2 class="mt-10 text-4xl font-medium text-[#0B3168]">{props.title}</h2>
       </div>
       <div class="md:grid-md:col-2 md:grid-row-2- md:mt-14 md:grid">
+        {/*
         <ArticleHomePage
           src="/images/home1.png"
           styles="md:col-end-1 md:ml-[8vw] md:w-[40vw]"
@@ -48,6 +47,7 @@ export const ArticlesHomeDisplay = component$((props: ArticleProps) => {
           date="03.02.2023"
           alt=""
         />
+        */}
         <a
           aria-label="lien vers notre actualité"
           class="mr-[8rem] -mt-[18rem] ml-[8rem] hidden justify-end border-t border-slate-300 pt-8 font-normal text-[#0B3168] md:flex"

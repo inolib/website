@@ -29,7 +29,7 @@ export default component$(() => {
             <img
               src="/images/dev.jpg"
               alt=""
-              class="col-start-2 row-start-1 row-span-2 col-span-2 md:scale-75 md:rounded-lg"
+              class="col-start-2 row-start-1 row-span-2 col-span-2 scale-75 rounded-lg"
             />
             <p class="col-start-1 row-start-1">
               🔹Écoute et compréhension de vos besoins : Nous commençons par évaluer l'accessibilité de vos supports

@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["../.."],
+  "files": [
+    "../../.eslintrc.cjs",
+    "../../.prettierrc.cjs",
+    "../../postcss.config.cjs",
+    "../../tailwind.config.cjs",
+    "../prettier/jsdoc/.prettierrc.cjs",
+    "../prettier/jsxattribute-sort/.prettierrc.cjs",
+    "../prettier/packagejson/.prettierrc.cjs",
+    "../prettier/sort-imports/.prettierrc.cjs",
+    "../prettier/tailwindcss/.prettierrc.cjs",
+    "../vercel-edge/vite.config.ts"
+  ]
+}

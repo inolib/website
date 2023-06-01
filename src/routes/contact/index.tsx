@@ -10,13 +10,16 @@ import { LocalisationCard } from "~/components/cards/LocalisationCard";
 export default component$(() => {
   return (
     <>
-      <Banner
-        content="Nous sommes heureux de pouvoir communiquer avec vous et sommes à votre disposition pour répondre à toutes vos questions
+      <header>
+        <Banner
+          content="Nous sommes heureux de pouvoir communiquer avec vous et sommes à votre disposition pour répondre à toutes vos questions
          ou remarques concernant notre site web ou nos services. Vous pouvez nous contacter en remplissant le formulaire de contact ci-dessous."
-        imageSrc="\images\contact-banner.png"
         imageStyle="md:w-3/5 md:max-w-2xl"
-        title="Contacts"
-      />
+          imageSrc="\images\contact-banner.png"
+          title="Contacts"
+        />
+      </header>
+
 
       <section class="text-[#0B3168] md:px-28">
         <h2 class="my-6 md:mb-10 md:pt-10 text-3xl font-semibold">Nous écrire :</h2>
