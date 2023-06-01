@@ -104,5 +104,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Carrières en Accessibilité Numérique et Solutions Digitales",
+  title: "Inolib : Carrières en Accessibilité Numérique et Solutions Digitales",
 };

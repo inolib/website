@@ -227,5 +227,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "glossaire",
+  title: "Glossaire | Inolib",
 };

@@ -205,5 +205,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "services",
+  title: "Inolib | Services",
 };

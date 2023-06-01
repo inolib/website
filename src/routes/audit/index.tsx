@@ -8,15 +8,14 @@ import { Article } from "~/components/Article";
 export default component$(() => {
   return (
     <>
-<header>
-      <Banner
-        content="Votre tremplin vers l'inclusion digitale !"
-        title="Audits d'accessibilité numérique"
-        imageSrc="/images/audit-raw.jpg"
-        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
-      />
-  </header>
-
+      <header>
+        <Banner
+          content="Votre tremplin vers l'inclusion digitale !"
+          title="Audits d'accessibilité numérique"
+          imageSrc="/images/audit-raw.jpg"
+          imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
+        />
+      </header>
 
       <h2 class="mt-[10rem] ml-[5rem] text-3xl text-[#0B3168] font-semibold">Vous souhaitez : </h2>
       <section class="text-[#0B3168]" aria-label="tous les services d'audits">
@@ -271,5 +270,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Inolib : Audits d'accessibilité numérique - Inclusion digitale",
+  title: "Audits d'accessibilité numérique - Inolib : Inclusion digitale",
 };

@@ -89,5 +89,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Développement : Agence Agile de Développement Web & Mobile Accessibles",
+  title: "Développement: Inolib Agence Agile de Développement Web & Mobile Accessibles",
 };

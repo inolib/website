@@ -127,5 +127,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "politiqueacessibilite",
+  title: "Politique de confidentialité | Inolib",
 };
