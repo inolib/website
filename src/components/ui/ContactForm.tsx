@@ -165,41 +165,42 @@ export const ContactForm = component$(() => {
         </Toaster>
       </div>
       <form class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10">
-        <select
-          onChange$={async (_, element) => {
-            store.categoryId = element.value;
-            await verifyInput(store);
-          }}
-          class="col-span-5 col-start-1 col-end-5 row-start-1 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-end-3 md:mr-5 md:mb-3"
-          name="Type de la demande"
-          aria-label="type de votre demande"
-          required
-        >
-          <option value="" disabled selected hidden>
-            Type de la demande*
-          </option>
-
-          {store.categories.map((category) => (
-            <option key={category.id} value={category.id}>
-              {category.name}
+        <fieldset class="flex flex-col md:flex-row md:justify-between col-span-4 col-start-1 col-end-5 row-start-1">
+          <select
+            onChange$={async (_, element) => {
+              store.categoryId = element.value;
+              await verifyInput(store);
+            }}
+            class="mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:mr-5 md:mb-3 md:w-1/2"
+            name="Type de la demande"
+            aria-label="type de votre demande"
+            required
+          >
+            <option value="" disabled selected hidden>
+              Type de la demande*
             </option>
-          ))}
-        </select>
 
-        <select
-          class="col-span-5 col-start-1 col-end-5 row-start-2 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-1 md:ml-5"
-          name="Choix de votre civilité"
-          aria-label="Choix de votre civilité"
-          required
-        >
-          <option value="" disabled selected hidden>
-            Choix de votre civilité*
-          </option>
-          <option>Monsieur</option>
-          <option>Madame</option>
-          <option>Autre</option>
-        </select>
+            {store.categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
 
+          <select
+            class="mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:w-1/2 md:ml-5"
+            name="Choix de votre civilité"
+            aria-label="Choix de votre civilité"
+            required
+          >
+            <option value="" disabled selected hidden>
+              Choix de votre civilité*
+            </option>
+            <option>Monsieur</option>
+            <option>Madame</option>
+            <option>Autre</option>
+          </select>
+        </fieldset>
         <label class="col-span-4 col-start-1 col-end-5 row-start-3 mb-3 flex flex-col md:row-start-2  md:col-span-2 md:col-end-3 md:pr-5">
           Nom de l'entreprise
           <input
