@@ -83,5 +83,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "presentation",
+  title: "Inolib | Présentation",
 };

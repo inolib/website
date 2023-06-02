@@ -423,5 +423,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "foire aux questions",
+  title: "Foire aux questions | Inolib",
 };

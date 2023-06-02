@@ -53,5 +53,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Inolib : Agence de marketing digital engagée | Accessibilité & Performance",
+  title: "Agence de marketing digital engagée | Accessibilité & Performance",
 };

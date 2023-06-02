@@ -8,13 +8,13 @@ import { ButtonTopPage } from "~/components/ui/buttons/ButtonTopPage";
 export default component$(() => {
   return (
     <>
-    <header>
-      <Banner
-        content="Apprenez, innovez et façonnez un avenir digital où chacun trouve sa place."
-        imageSrc="\images\formation-raw.jpg"
-        imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
-        title="Formation - L'atelier de l'accessibilité numérique"
-      />
+      <header>
+        <Banner
+          content="Apprenez, innovez et façonnez un avenir digital où chacun trouve sa place."
+          imageSrc="\images\formation-raw.jpg"
+          imageStyle="md:w-3/5 md:max-w-xl md:mb-16"
+          title="Formation - L'atelier de l'accessibilité numérique"
+        />
       </header>
 
       <section class="text-[#0B3168] text-l">
@@ -152,5 +152,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Inolib Formation | Accessibilité Numérique &amp; Sensibilisation | Formation RGAA & WCAG",
+  title: "Formation | Accessibilité Numérique & Sensibilisation | Formation RGAA & WCAG",
 };
