@@ -227,8 +227,6 @@ export const ContactForm = component$(() => {
     store.categories = result.contactCategories;
   });
 
-  console.log(store.checked);
-
   return (
     <>
       <>
@@ -406,9 +404,9 @@ export const ContactForm = component$(() => {
           >
             Effacer
           </button>
+
           <button
             type="submit"
-            disabled={store.isDisabled}
             class="col-span-2 col-start-3 col-end-5 row-start-9 h-14 rounded-md bg-[#0B3168] text-white mt-10 md:col-start-4 md:col-end-4  md:row-start-7 md:mt-14"
             aria-label="Envoyer le formulaire"
           >
