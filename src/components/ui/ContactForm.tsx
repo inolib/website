@@ -127,20 +127,20 @@ const FormSchema: ZodType<FormData> = z.object({
 });
 
 export const handleSubmitQrl = $(async (store: FormStore, toasterStore: ToasterStore, resetButton: HTMLElement) => {
-  Object.values(store.fields).forEach((field) => {
-    field.value = "";
-  });
+  // Object.values(store.fields).forEach((field) => {
+  //   field.value = "";
+  // });
 
   try {
-    FormSchema.parse({
-      categoryId: store.fields.categoryId.value,
-      companyName: store.fields.companyName.value,
-      firstName: store.fields.firstName.value,
-      lastName: store.fields.lastName.value,
-      email: store.fields.email.value,
-      message: store.fields.message.value,
-      phone: store.fields.phone.value.replaceAll(/ |-|\./g, ""),
-    });
+    // FormSchema.parse({
+    //   categoryId: store.fields.categoryId.value,
+    //   companyName: store.fields.companyName.value,
+    //   firstName: store.fields.firstName.value,
+    //   lastName: store.fields.lastName.value,
+    //   email: store.fields.email.value,
+    //   message: store.fields.message.value,
+    //   phone: store.fields.phone.value.replaceAll(/ |-|\./g, ""),
+    // });
 
     const { toasterStore: _toasterStore } = await registerRequestQrl(store, toasterStore);
     toasterStore.show = _toasterStore.show;
@@ -232,7 +232,7 @@ export const ContactForm = component$(() => {
   return (
     <>
       <>
-        <div class=" fixed inset-0 z-50 w-10 h-10 top-[5rem] left-[50vw] right-[50vw] bottom-10 flex items-center justify-center">
+        <div class="fixed inset-0 z-50 w-10 h-10 top-[5rem] left-[50vw] right-[50vw] bottom-10 flex items-center justify-center">
           <Toaster icon="success" store={toasterStore}>
             Votre demande a bien été enregistrée.
           </Toaster>
