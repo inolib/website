@@ -41,7 +41,7 @@ type FormData = {
   categoryId: string;
 };
 
-const API_URL = "https://api-inolib.vercel.app";
+const API_URL = "https://api.inolib.com/graphql";
 
 export const verifyInput = $((store: FormStore) => {
   if (
