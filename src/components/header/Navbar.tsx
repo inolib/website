@@ -83,13 +83,6 @@ export const Navbar = component$(() => {
                 ACOMPAGNEMENT
               </a>
               <a
-                href="/recrutement"
-                class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14 transition ease-in delay-75"
-                {...(location.url.pathname === "/recrutement" ? { "aria-current": "page" } : {})}
-              >
-                RECRUTEMENT
-              </a>
-              <a
                 href="/contact"
                 class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white transition ease-in delay-75"
                 {...(location.url.pathname === "/contact" ? { "aria-current": "page" } : {})}
