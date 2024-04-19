@@ -10,10 +10,10 @@ export default component$(() => {
   return (
     <>
       <Banner
-        content="  Vous rencontrez des défis en matière d'accessibilité numérique et souhaitez transformer ces enjeux en opportunités pour votre organisation ? Vous êtes au bon endroit ! Chez Inolib, nous mettons l'accent sur VOS besoins et VOS objectifs pour vous offrir un accompagnement personnalisé et dynamique."
+        content="  Vous rencontrez des défis en matière d'accessibilité numérique et souhaitez transformer ces enjeux en opportunités pour votre organisation ? Vous êtes au bon endroit ! Chez INOLIB, nous mettons l'accent sur VOS besoins et VOS objectifs pour vous offrir un accompagnement personnalisé et dynamique."
         imageSrc="/images/accompagnement-banner.JPG"
         imageStyle="md:w-3/5 md:max-w-xl"
-        title="Acompagnement"
+        title="Accompagnement"
       />
 
       <section class="text-[#0B3168]  md:mx-[8rem] md:py-8">
@@ -96,24 +96,6 @@ export default component$(() => {
           </div>
         </NewArticle>
 
-        <NewArticle
-          title="Passez à l'action et boostez votre accessibilité numérique :"
-          content="Cliquez ici pour profiter d'une première consultation offerte et discuter de vos besoins en accessibilité numérique avec l'un de nos experts. Ne manquez pas cette occasion de vous démarquer sur le marché et d'élargir votre audience.
-          Ensemble, nous transformerons vos défis en matière d'accessibilité numérique en opportunités de croissance et de développement pour votre organisation. Contactez-nous dès aujourd'hui et découvrez comment Inolib peut vous aider à atteindre vos objectifs stratégiques et renforcer votre gestion de projet en matière d'accessibilité "
-          styleTitle="mx-5 my-7 text-3xl md:mb-[1rem] font-semibold md:m-0 md:mb-[5rem]"
-          styleArticle="md:flex-row flex flex-col mb-12"
-          styleArticleContent="mx-5 md:mx-0"
-          styleContent="leading-7 mr-[5rem] mb-14 w-full text-justify text-lg md:mb-0 md:px-4 md:pr-10 md:pl-0 md:text-left md:w-[45rem]"
-          styleImage="shadow flex flex-col sm:justify-center md:w-[35rem] mb-14 md:rounded-md"
-          imageSrc="/images/accompagnement-article-3.JPG"
-        ></NewArticle>
-
-        <p class={`mx-5 md:mx-[20rem] leading-7`}>
-          🔍 Prêt à aller plus loin ? Explorez nos services d'audit en <strong>accessibilité</strong> numérique et nos
-          solutions de développement pour sites web, applications mobiles et logiciels sur-mesure pour maximiser votre
-          impact et votre performance en ligne. Faites de l'accessibilité numérique une priorité et un atout pour votre
-          entreprise avec Inolib.
-        </p>
         <div class="flex justify-center mt-8 mb-2 md:mb-0">
           <Button
             href="/contact"
@@ -132,5 +114,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Acompagnement | Inolib",
+  title: "Accompagnement | INOLIB",
 };

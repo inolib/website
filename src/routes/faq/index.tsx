@@ -21,7 +21,7 @@ export default component$(() => {
           </li>
           <li class="my-2">IV. Utilisation de logiciels tiers et d'outils pour l'accessibilité numérique</li>
           <li class="my-2">V. Les références techniques en matière d'accessibilité numérique : RGAA vs WCAG vs RAAM</li>
-          <li>VI. Les solutions digitales proposées par Inolib</li>
+          <li>VI. Les solutions digitales proposées par INOLIB</li>
         </ul>
         <h3 class="mt-8 mb-4 text-2xl">I. Comprendre l'accessibilité numérique et son importance</h3>
         <details>
@@ -149,13 +149,13 @@ export default component$(() => {
               nécessaire.
             </li>
             <li>
-              * Audit d'accessibilité : Faites appel à des experts en accessibilité, comme Inolib, pour réaliser un
+              * Audit d'accessibilité : Faites appel à des experts en accessibilité, comme INOLIB, pour réaliser un
               audit complet de votre site Web ou de votre application mobile. Un audit professionnel vous fournira un
               rapport détaillé des problèmes d'accessibilité, ainsi que des recommandations pour les corriger.
             </li>
           </ul>
           <p>
-            En faisant appel aux services d'Inolib, vous bénéficierez d'un accompagnement et de conseils personnalisés
+            En faisant appel aux services d'INOLIB, vous bénéficierez d'un accompagnement et de conseils personnalisés
             pour vous aider à atteindre et maintenir la conformité d'accessibilité de votre site Web ou application
             mobile.
           </p>
@@ -177,7 +177,7 @@ export default component$(() => {
         <details>
           <summary class="my-2">Q: Comment puis-je former mon équipe à l'accessibilité numérique ?</summary>
           <p>
-            R: Inolib propose des sessions de formations et de sensibilisations sur mesure adaptées à votre secteur et
+            R: INOLIB propose des sessions de formations et de sensibilisations sur mesure adaptées à votre secteur et
             vos besoins, afin d’aider votre équipe à développer ses compétences en matière d'accessibilité numérique.
             <a
               class="underline underline-offset-1 text-blue-600 visited:text-purple-700"
@@ -192,7 +192,7 @@ export default component$(() => {
             organisations spécialisées.
             <br />
             En outre, envisagez de participer à des conférences ou à des ateliers sur l'accessibilité numérique
-            organisés par Inolib pour échanger des connaissances et des expériences avec d'autres professionnels du
+            organisés par INOLIB pour échanger des connaissances et des expériences avec d'autres professionnels du
             secteur. Inscrivez-vous à notre newsletter pour ne rien manquer !
           </p>
         </details>
@@ -346,7 +346,7 @@ export default component$(() => {
             référentiel suivi.
           </p>
         </details>
-        <h3 class="my-4 text-2xl">VI. Les solutions digitales proposées par Inolib</h3>
+        <h3 class="my-4 text-2xl">VI. Les solutions digitales proposées par INOLIB</h3>
         <details>
           <summary class="my-2">
             Q: Quelles sont les différentes solutions digitales que vous proposez en plus des audits d'accessibilité
@@ -399,20 +399,20 @@ export default component$(() => {
           >
             Contactez
           </a>{" "}
-          Inolib dès maintenant
+          INOLIB dès maintenant
           <br />
           Si vous avez d'autres questions concernant l'accessibilité numérique ou nos services, n'hésitez pas à prendre
-          contact avec notre équipe d'experts. Chez Inolib, nous sommes toujours prêts à vous aider et à répondre à vos
+          contact avec notre équipe d'experts. Chez INOLIB, nous sommes toujours prêts à vous aider et à répondre à vos
           interrogations pour vous guider vers un web plus accessible et inclusif.{" "}
         </p>
         <p class="mb-4">Prenez rendez-vous pour une consultation gratuite.</p>
         <p class="mb-4">
-          Découvrez comment Inolib peut vous accompagner dans votre projet d'accessibilité numérique en planifiant une
+          Découvrez comment INOLIB peut vous accompagner dans votre projet d'accessibilité numérique en planifiant une
           consultation avec nos experts. Ensemble, nous pourrons déterminer les meilleures solutions pour répondre à vos
           besoins et garantir une expérience utilisateur optimale pour tous.
         </p>
         <p class="mb-4">
-          Inolib, votre allié en accessibilité numérique et en solutions digitales, pour un monde inclusif.
+          INOLIB, votre allié en accessibilité numérique et en solutions digitales, pour un monde inclusif.
         </p>
       </section>
       <div class="my-10 flex w-full justify-center">
@@ -423,5 +423,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Foire aux questions | Inolib",
+  title: "Foire aux questions | INOLIB",
 };

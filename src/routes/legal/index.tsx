@@ -25,7 +25,7 @@ export default component$(() => {
             Lyon
             <br /> Immatriculé au RCS de Lyon sous le numéro B 909 129 454 Numéro de tva intracommunautaire :
             FR89909129454
-            <br /> Téléphone : 0670865032
+            <br /> Téléphone : 06 47 21 86 69
             <br /> Email : contact@inolib.com
           </p>
         </li>
@@ -36,7 +36,7 @@ export default component$(() => {
         <li class="mb-10">
           <h2 class="mb-4 text-xl font-bold">Contact service clients, Aide et accessibilité :</h2>
           <p>
-            Tél : 0670865032
+            Tél : 06 47 21 86 69
             <br /> Du lundi au vendredi de 9h00 à 12h00 et de 14h00 à 18h00
             <br /> Courrier : 254 rue vendôme - 69003 Lyon
             <br /> Mail : contact@inolib.com
@@ -156,5 +156,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Mentions legales | Inolib",
+  title: "Mentions legales | INOLIB",
 };

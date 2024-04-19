@@ -56,7 +56,7 @@ export default component$(() => {
         </Article>
         <div class="mx-5 md:px-28 mb-8">
           <h3 class="mb-2  text-2xl md:mb-6">
-            <strong>Inolib</strong> est là pour vous accompagner !
+            <strong>INOLIB</strong> est là pour vous accompagner !
           </h3>
           <p class="text-xl mb-2 md:mb-0">Audit d'accessibilité numérique : de quoi s'agit-il ?</p>
           <p class="text-lg">
@@ -134,11 +134,8 @@ export default component$(() => {
             </ul>
           </div>
         </Article>
-        <p class="mb-8 mx-5 md:px-28 md:mb-20 text-xl">
-          <strong>Bonus</strong> ! Chez Inolib, chaque audit comprend trois heures de coaching en accessibilité
-          numérique pour sensibiliser et booster vos équipes.
-        </p>
-        <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Le processus d'audit Inolib en 4 étapes clés :</h2>
+
+        <h2 class="mx-5 md:px-28 text-4xl md:mt-32">Le processus d'audit INOLIB en 4 étapes clés :</h2>
 
         <Article
           imgSeparator=""
@@ -170,7 +167,7 @@ export default component$(() => {
                 <div class={"hidden md:flex"}>
                   <img class="mr-[2rem]" src="/images/checkservice.svg" alt="" />
                 </div>
-                <p class="ml-4">
+                <p class="ml-4 text-lg">
                   <strong class="text-xl">3. Synthèse</strong> : Rédaction d'un rapport d'audit détaillé, incluant nos
                   recommandations d'accessibilité.
                 </p>
@@ -179,7 +176,7 @@ export default component$(() => {
                 <div class={"hidden md:flex"}>
                   <img class="mr-[2rem]" src="/images/checkservice.svg" alt="" />
                 </div>
-                <p class="ml-4">
+                <p class="ml-4 text-lg">
                   <strong class="text-xl">4. Échange</strong> : Restitution des résultats pour vous offrir une vue
                   d'ensemble et répondre à vos questions.
                 </p>
@@ -215,44 +212,21 @@ export default component$(() => {
                   votre outil de gestion de projets (Redmine, Jira, Trello, Asana, etc.) pour une conformité optimale.
                 </p>
               </li>
+              <li class="mb-[2.5rem] flex items-center">
+                <div class={"hidden md:flex"}>
+                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
+                </div>
+                <p class="ml-4 font-normal">
+                  <strong class="text-xl">3. Coaching</strong> : Profitez pour chaque réalisation d'audit de trois
+                  heures de coaching en accessibilité numérique pour sensibiliser et booster vos équipes.
+                </p>
+              </li>
             </ul>
           </div>
         </Article>
       </section>
-      {/* <section class="flex bg-gradient-to-b from-[#5A0C69] to-[#0F3069] px-5 md:px-28 py-4 md:mb-2 text-white text-center md:text-left">
-        <div class="flex justify-between items-center w-full">
-          <strong>
-            <h2 class="text-4xl">Témoignages clients</h2>
-          </strong>
-        </div>
-        <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
-      </section> */}
-      <div class="text-[#0B3168] mt-10 md:mt-0">
-        {/* <ArticleTemoignage1 />
-        <ArticleTemoignage2 /> */}
-        <section class="mx-5 md:px-28">
-          <h3 class="text-3xl mb-5">Passez à l'action ! :</h3>
-          <p>
-            <a
-              class="underline underline-offset-1 text-blue-600 visited:text-purple-700"
-              href="/contact"
-              aria-label="page contact"
-            >
-              Cliquez ici
-            </a>{" "}
-            pour bénéficier d'une première consultation gratuite et échanger sur vos besoins en accessibilité numérique
-            avec l'un de nos spécialistes
-          </p>
-          <p class="mb-4">
-            Faites de <strong>l'accessibilité numérique</strong> une priorité avec Inolib.
-          </p>
-          <p>Prêt à aller plus loin ? Explorez nos services d'accompagnement et de développements sur-mesure</p>
-        </section>
 
-        <span class="flex justify-center">
-          <img class="h-[14rem] w-[14rem]" src="/images/purple-logo.png" alt="" />
-        </span>
-        <span class="flex justify-center"></span>
+      <div class="text-[#0B3168] mt-10 md:mt-0">
         <span class="flex justify-center mb-2 md:mb-0">
           <Button
             href="/contact"
@@ -262,6 +236,7 @@ export default component$(() => {
           />
         </span>
       </div>
+
       <div class="my-10 flex w-full justify-center">
         <ButtonTopPage />
       </div>
@@ -270,5 +245,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Audits d'accessibilité numérique - Inolib : Inclusion digitale",
+  title: "Audits d'accessibilité numérique - INOLIB : Inclusion digitale",
 };

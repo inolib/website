@@ -74,5 +74,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Profile | Inolib",
+  title: "Profile | INOLIB",
 };

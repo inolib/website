@@ -16,8 +16,8 @@ export default component$(() => {
           </a>
           <br />
           Où par téléphone au{" "}
-          <a class="font-bold" href="tel:+33670865032">
-            06 70 86 50 32
+          <a class="font-bold" href="tel:+33647218669">
+            06 47 21 86 69
           </a>
           .
           <br />
@@ -159,5 +159,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: " Politique d'acessibilite | Inolib",
+  title: " Politique d'acessibilite | INOLIB",
 };

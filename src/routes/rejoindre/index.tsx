@@ -124,5 +124,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Rejoindre | Inolib",
+  title: "Rejoindre | INOLIB",
 };

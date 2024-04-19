@@ -6,8 +6,8 @@ export default component$(() => {
     <section class="px-5 md:px-10 text-[#0B3168]">
       <h1 class="mb-4 text-3xl text-center font-bold">Politique de confidentialité</h1>
       <p class="text-lg mb-10">
-        La présente politique de confidentialité décrit la manière dont Inolib collecte, utilise et protège les
-        informations personnelles que vous fournissez lorsque vous utilisez notre site web. Inolib s'engage à protéger
+        La présente politique de confidentialité décrit la manière dont INOLIB collecte, utilise et protège les
+        informations personnelles que vous fournissez lorsque vous utilisez notre site web. INOLIB s'engage à protéger
         votre vie privée. Si nous vous demandons de fournir certaines informations permettant de vous identifier lors de
         l'utilisation de ce site, soyez assuré qu'elles ne seront utilisées que conformément à cette politique de
         confidentialité.
@@ -59,7 +59,7 @@ export default component$(() => {
             recueillant et mémorisant des informations sur vos préférences.
           </p>
           <p class="mb-10">
-            Inolib utilise des cookies pour identifier les pages utilisées et analyser le trafic. Cela nous aide à
+            INOLIB utilise des cookies pour identifier les pages utilisées et analyser le trafic. Cela nous aide à
             améliorer notre site web afin qu'il réponde mieux aux besoins des utilisateurs. Les données recueillies sont
             utilisées uniquement à des fins d'analyse statistique et sont ensuite supprimées de notre système.
           </p>
@@ -107,7 +107,7 @@ export default component$(() => {
         <section>
           <h2 class="mb-4 text-xl font-bold">Article 7 : Mise à jour de la politique de confidentialité</h2>
           <p>
-            Inolib se réserve le droit de modifier cette politique de confidentialité à tout moment. Les changements
+            INOLIB se réserve le droit de modifier cette politique de confidentialité à tout moment. Les changements
             seront affichés sur cette page, et votre utilisation du site après toute modification indiquera votre
             acceptation de ces modifications. Nous vous encourageons à consulter régulièrement cette politique de
             confidentialité pour vous assurer que vous êtes informé de la manière dont nous protégeons vos informations.
@@ -127,5 +127,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Politique de confidentialité | Inolib",
+  title: "Politique de confidentialité | INOLIB",
 };

@@ -22,6 +22,9 @@ export const Contentinfo = component$(() => {
         <section class="md:grid md:grid-cols-1 md:grid-rows-1 md:border-l-2 md:pl-10">
           <ul class="flex flex-wrap justify-center border-y-2 border-[#9A35AD] py-8 md:justify-start md:items-start md:border-y-0 md:py-0">
             <li class="m-2">
+              <a href="/recrutement">Nous rejoindre</a>
+            </li>
+            <li class="m-2">
               <a href="/politiqueaccessibilite">Politique d'accessibilité</a>
             </li>
             <li class="m-2">
@@ -39,7 +42,7 @@ export const Contentinfo = component$(() => {
           </ul>
           <ul
             class="flex justify-between border-y-2 border-[#9A35AD] py-8 md:row-start-1 md:columns-1 md:items-center md:border-y-0 md:py-0 md:w-3/5 "
-            aria-label="reseau sociaux d'Inolib"
+            aria-label="reseau sociaux d'INOLIB"
           >
             <li>
               <a href="https://www.facebook.com/people/Inolib/100075572787282/" target="_blank" aria-label="Facebook">
@@ -61,7 +64,7 @@ export const Contentinfo = component$(() => {
               </a>
             </li>
           </ul>
-          <p class="md:row-start- mt-8 md:columns-1 md:items-end">© 2023 Inolib</p>
+          <p class="md:row-start- mt-8 md:columns-1 md:items-end">© 2021 - 2024 INOLIB</p>
         </section>
       </section>
     </footer>

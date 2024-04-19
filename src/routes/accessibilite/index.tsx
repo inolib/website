@@ -69,5 +69,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "accessibilité | Inolib",
+  title: "accessibilité | INOLIB",
 };

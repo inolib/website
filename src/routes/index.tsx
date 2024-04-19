@@ -14,40 +14,20 @@ export default component$(() => {
       <header id="header">
         <BannerHome />
       </header>
+
       <section class="flex flex-col justify-center overflow-x-hidden">
         <SplitedImage src="/images/accueil-raw.jpg" styles="hidden md:block md:w-fit md:scale-90" />
-        {/* <Banner
-          imageSrc="/images/decouvriraccess.png"
-          styles="md:hidden block"
-          title="Découvrir l'accessiblité"
-          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
-            voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
-            iure eum! Minima facilis earum unde repellat quo nisi."
-        /> */}
+
         <CardsRowDisplay />
-        <h3 class=" mx-5 mt-8 mb-10 text-[#0B3168] md:mt-10 md:ml-[5rem]">
-          Contactez-nous pour une première consultation offerte
-        </h3>
+
         <p class="mt-4 mx-5 md:ml-[5rem] text-[#0B3168] mb-8">
-          Profitez de notre expertise et de notre accompagnement personnalisé en accessibilité numérique.{" "}
           <a class="underline underline-offset-1 text-blue-600 visited:text-purple-700" href="/contact">
-            Contactez-nous{" "}
-          </a>
-          dès maintenant pour bénéficier d'une première consultation gratuite et découvrez comment nous pouvons
-          contribuer au succès de votre entreprise.
+            Contactez-nous
+          </a>{" "}
+          pour la réalisation de votre devis personnalisé.
         </p>
-        {/* <Banner
-          q:slot="button"
-          styles="md:hidden block mt-[4rem] "
-          title="Témoignages"
-          imageSrc="/images/temoignage-homme.png"
-          content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde soluta, laborum inventore a maxime
-            voluptatibus cum et quidem magni? Nihil, laudantium obcaecati. Minus, ullam quibusdam ? Enim quaerat rerum
-            iure eum! Minima facilis earum unde repellat quo nisi."
-        /> */}
 
         <section class="mx-4 mb-[4.5rem]">
-          {/* <ArticlesHomeDisplay title="Actualités" /> */}
           <div class="flex justify-center">
             <ButtonTopPage />
           </div>
