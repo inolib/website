@@ -21,7 +21,7 @@ export const Navbar = component$(() => {
           <a
             href="/"
             {...(location.url.pathname === "/" ? { "aria-current": "page" } : {})}
-            {...(location.url.pathname === "/" ? { "aria-label": "Inolib" } : { "aria-label": "Accueil" })}
+            {...(location.url.pathname === "/" ? { "aria-label": "INOLIB" } : { "aria-label": "Accueil" })}
           >
             <img class="block h-16 w-auto lg:hidden z-10" src="/images/logoinolibvf.png" alt="" />
             <img class="hidden h-32 w-auto my-[-2rem] lg:block z-10 p-4" src="/images/logoinolibvf.png" alt="" />
@@ -76,11 +76,11 @@ export const Navbar = component$(() => {
                 FORMATION
               </a>
               <a
-                href="/acompagnement"
+                href="/accompagnement"
                 class="rounded-md px-3 p-1 font-medium text-[#0B3168] hover:bg-[#0B3168] hover:text-white md:max-h-14 transition ease-in delay-75"
-                {...(location.url.pathname === "/acompagnement" ? { "aria-current": "page" } : {})}
+                {...(location.url.pathname === "/accompagnement" ? { "aria-current": "page" } : {})}
               >
-                ACOMPAGNEMENT
+                ACCOMPAGNEMENT
               </a>
               <a
                 href="/contact"

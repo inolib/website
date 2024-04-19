@@ -10,12 +10,12 @@ export default component$(() => {
       <Banner
         content="Rester à la pointe de l'accessibilité numérique et du digital"
         imageSrc="/images/banner-actualites.png"
-        title="Actualités Inolib"
+        title="Actualités INOLIB"
       />
       <section class="mt-[3rem] overflow-x-hidden md:mt-[10rem] text-[#0B3168] mx-5 md:mx-[8rem] md:text-l">
         <p>
           Découvrez les dernières tendances, <strong>innovations</strong> et actualités en{" "}
-          <strong>accessibilité numérique</strong> et solutions digitales avec Inolib. Nos articles couvrent l'audit, le
+          <strong>accessibilité numérique</strong> et solutions digitales avec INOLIB. Nos articles couvrent l'audit, le
           conseil, la formation, le développement web et mobile, et le marketing digital. Restez informé et à jour sur
           les enjeux et évolutions du secteur.
         </p>
@@ -28,7 +28,7 @@ export default component$(() => {
           <ul class="mt-10 flex flex-col md:mt-0">
             <li class="mb-[2.5rem] flex ">
               <p class="ml-4">
-                1. <strong>Nouvelle régulation européenne</strong> sur l'accessibilité numérique : Inolib vous guide à
+                1. <strong>Nouvelle régulation européenne</strong> sur l'accessibilité numérique : INOLIB vous guide à
                 travers les mises à jour de la régulation européenne et leurs impacts sur votre entreprise. Mettez-vous
                 en conformité avec notre aide.
               </p>
@@ -43,7 +43,7 @@ export default component$(() => {
             <li class="mb-[2.5rem] flex ">
               <p class="ml-4">
                 3. <strong>Bonnes pratiques</strong> pour un site web accessible : Apprenez les astuces et conseils pour
-                concevoir et optimiser l'accessibilité de votre site web. Inolib partage ses connaissances pour votre
+                concevoir et optimiser l'accessibilité de votre site web. INOLIB partage ses connaissances pour votre
                 succès.
               </p>
             </li>
@@ -51,7 +51,7 @@ export default component$(() => {
               <p class="ml-4">
                 4. <strong>L'impact</strong> de l'accessibilité numérique sur le <strong>SEO</strong> : Découvrez
                 comment un site accessible peut améliorer votre positionnement sur les moteurs de recherche et attirer
-                plus de visiteurs. Inolib révèle les secrets d'un SEO optimisé.
+                plus de visiteurs. INOLIB révèle les secrets d'un SEO optimisé.
               </p>
             </li>
             <li class="mb-[2.5rem] flex ">
@@ -72,7 +72,7 @@ export default component$(() => {
           </ul>
         </span>
 
-        <h3 class="text-2xl font-bold mt-2">Inolib, votre partenaire pour un avenir numérique accessible à tous</h3>
+        <h3 class="text-2xl font-bold mt-2">INOLIB, votre partenaire pour un avenir numérique accessible à tous</h3>
         <p class="mt-4">
           Nous nous engageons à vous fournir les informations les plus récentes et pertinentes en matière
           d'accessibilité numérique et digitale.
@@ -99,5 +99,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Actualités Inolib | Accessibilité Numérique et Solutions Digitales Tendances",
+  title: "Actualités INOLIB | Accessibilité Numérique et Solutions Digitales Tendances",
 };

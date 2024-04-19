@@ -19,7 +19,7 @@ export default component$(() => {
 
       <section class="text-[#0B3168] text-l">
         <p class="px-5 md:px-28 pt-10">
-          <strong class="text-xl">Inolib</strong> vous accompagne dans la création d'expériences numériques accessibles
+          <strong class="text-xl">INOLIB</strong> vous accompagne dans la création d'expériences numériques accessibles
           et conviviales pour tous, conformément aux normes RGAA et WCAG. Nos formations et sessions de sensibilisation,
           interactives et pratiques, sont conçues pour répondre aux besoins de tout public, tels que les managers, chefs
           de projet, développeurs, designers et webmasters.
@@ -73,7 +73,7 @@ export default component$(() => {
           besoins de tous nos clients. Nous proposons également des formations sur mesure pour répondre aux besoins
           spécifiques de chaque entreprise.
         </p>
-        <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Pourquoi choisir Inolib Formations</h2>
+        <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Pourquoi choisir INOLIB Formations</h2>
         <Article
           imgSeparator=""
           imageSrc="/images/formation-article-2.JPG"
@@ -81,69 +81,34 @@ export default component$(() => {
           stylesImage="md:ml-[5rem] md:mr-[3rem] mt-[3rem]"
         >
           <div q:slot="check-box" class="mx-5 mt-10 flex justify-around md:mx-[8rem] ">
-            <ul class="mt-10 flex flex-col md:mt-0">
-              <li class="mb-[2.5rem] flex ">
-                <div class={"hidden md:flex"}>
-                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
-                </div>
+            <ul class="mt-10 flex flex-col md:mt-0 gap-10">
+              <li class="flex gap-4 items-center">
+                <img class="hidden md:block" src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">Des formateurs experts en accessibilité numérique</p>
               </li>
-              <li class="mb-[2.5rem] flex ">
-                <div class={"hidden md:flex"}>
-                  <img class="md:mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
-                </div>
+              <li class="flex gap-4 items-center">
+                <img class="hidden md:block" src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">Des formations et sensibilisation adaptées à tous les niveaux</p>
               </li>
-              <li class="mb-[2.5rem] flex ">
-                <div class={"hidden md:flex"}>
-                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
-                </div>
+              <li class="flex gap-4 items-center">
+                <img class="hidden md:block" src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">Des formations disponibles en présentiel ou en ligne</p>
               </li>
-              <li class="mb-[2.5rem] flex ">
-                <div class={"hidden md:flex"}>
-                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
-                </div>
+              <li class="flex gap-4 items-center">
+                <img class="hidden md:block" src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">
                   Des formations sur mesure pour répondre aux besoins spécifiques de chaque entreprise
                 </p>
               </li>
-              <li class="mb-[2.5rem] flex ">
-                <div class={"hidden md:flex"}>
-                  <img class="mr-[2.5rem]" src="/images/checkservice.svg" alt="" />
-                </div>
+              <li class="flex gap-4 items-center">
+                <img class="hidden md:block" src="/images/checkservice.svg" alt="" />
                 <p class="ml-4 font-normal">Des tarifs compétitifs</p>
               </li>
             </ul>
           </div>
         </Article>
-        <h2 class="px-5 md:px-28 mt-10 font-bold text-3xl">Contactez-nous dès aujourd'hui</h2>
-        <p class="px-5 md:px-28 mt-2">
-          Discutez de vos besoins en matière de formation et sensibilisation à l'accessibilité numérique avec l'un de
-          nos experts. Profitez d'une{" "}
-          <a href="/contact" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
-            première consultation offerte
-          </a>{" "}
-          et laissez- nous vous aider à vous mettre en conformité avec les normes RGAA et WCAG.
-        </p>
-        <p class="px-5 md:px-28 mt-2">
-          Ensemble, faisons de l'accessibilité numérique une priorité et un atout pour votre entreprise avec Inolib
-          Formations.
-        </p>
-        <p class="px-5 md:px-28 mt-2">
-          Prêt à aller plus loin ? Explorez nos services{" "}
-          <a href="/audit" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
-            d'audit
-          </a>{" "}
-          en accessibilité numérique et nos solutions de{" "}
-          <a href="/developpement" class="underline underline-offset-1 text-blue-600 visited:text-purple-600">
-            {" "}
-            développement{" "}
-          </a>{" "}
-          pour sites web, applications mobiles et logiciels sur-mesure. Faites de l'accessibilité numérique une priorité
-          et un atout pour votre entreprise avec Inolib.
-        </p>
       </section>
+
       <div class="my-10 flex w-full justify-center">
         <ButtonTopPage />
       </div>

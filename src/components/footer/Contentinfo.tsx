@@ -42,7 +42,7 @@ export const Contentinfo = component$(() => {
           </ul>
           <ul
             class="flex justify-between border-y-2 border-[#9A35AD] py-8 md:row-start-1 md:columns-1 md:items-center md:border-y-0 md:py-0 md:w-3/5 "
-            aria-label="reseau sociaux d'Inolib"
+            aria-label="reseau sociaux d'INOLIB"
           >
             <li>
               <a href="https://www.facebook.com/people/Inolib/100075572787282/" target="_blank" aria-label="Facebook">

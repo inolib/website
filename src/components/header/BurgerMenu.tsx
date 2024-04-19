@@ -7,7 +7,7 @@ const page = [
   { id: 3, name: "Développement", href: "/developpement" },
   { id: 4, name: "Testing", href: "/testing" },
   { id: 5, name: "Formation", href: "/formation" },
-  { id: 6, name: "Acompagnement", href: "/acompagnement" },
+  { id: 6, name: "Accompagnement", href: "/accompagnement" },
   { id: 7, name: "Recrutement", href: "/recrutement" },
   { id: 8, name: "Contact", href: "/contact" },
 ];

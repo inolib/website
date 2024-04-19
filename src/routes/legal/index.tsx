@@ -156,5 +156,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Mentions legales | Inolib",
+  title: "Mentions legales | INOLIB",
 };

@@ -41,7 +41,7 @@ export default component$(() => {
           <img alt="" class="hidden md:block" src="..\images\background-team-bulles.svg" />
         </section>
         <section>
-          <ul class="md:flex md:flex-wrap md:px-28 md:pt-20" aria-label="liste des employés d'Inolib">
+          <ul class="md:flex md:flex-wrap md:px-28 md:pt-20" aria-label="liste des employés d'INOLIB">
             <PresentationCard
               name="Djebrine Aloui"
               position="CEO & Fondateur"
@@ -83,5 +83,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Inolib | Présentation",
+  title: "INOLIB | Présentation",
 };

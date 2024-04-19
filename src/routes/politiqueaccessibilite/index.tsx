@@ -159,5 +159,5 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: " Politique d'acessibilite | Inolib",
+  title: " Politique d'acessibilite | INOLIB",
 };

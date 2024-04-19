@@ -36,19 +36,19 @@ export const ContactCard = component$(() => {
 
         <ul
           class="mb-4 flex justify-between  md:mb-0 md:w-2/3 md:items-center md:border-y-0"
-          aria-label="liste des reseau sociaux d'Inolib"
+          aria-label="liste des reseau sociaux d'INOLIB"
         >
           <li>
             <a
               href="https://www.facebook.com/people/Inolib/100075572787282/"
               target="_blank"
-              aria-label="Facebook d'Inolib"
+              aria-label="Facebook d'INOLIB"
             >
               <img alt="" class="scale-50" src="/images/logo-facebook-violet.svg"></img>
             </a>
           </li>
           <li>
-            <a href="https://twitter.com/_inolib" target="_blank" aria-label="Twitter d'Inolib">
+            <a href="https://twitter.com/_inolib" target="_blank" aria-label="Twitter d'INOLIB">
               <img alt="" class="scale-50" src="/images/logo-twiter.svg"></img>
             </a>
           </li>
@@ -56,7 +56,7 @@ export const ContactCard = component$(() => {
             <a
               href="https://www.linkedin.com/company/inolib/?originalSubdomain=fr"
               target="_blank"
-              aria-label="Linkedin d'Inolib"
+              aria-label="LinkedIn d'INOLIB"
             >
               <img alt="" class="scale-50" src="/images/logo-linkedin.svg"></img>
             </a>
