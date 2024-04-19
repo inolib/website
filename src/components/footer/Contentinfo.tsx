@@ -61,7 +61,7 @@ export const Contentinfo = component$(() => {
               </a>
             </li>
           </ul>
-          <p class="md:row-start- mt-8 md:columns-1 md:items-end">© 2023 Inolib</p>
+          <p class="md:row-start- mt-8 md:columns-1 md:items-end">© 2021 - 2024 INOLIB</p>
         </section>
       </section>
     </footer>
