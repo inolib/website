@@ -39,17 +39,6 @@ export const CardsRowDisplay = component$(() => {
             </a>
           </p>
         </ServicesHomeCard>
-        <ServicesHomeCard label="Marketing digital" image="/images/digital-marketing.png" styles="md:pb-20 scale-[50%]">
-          <p q:slot="content" class="text-[#0B3168] text-center">
-            Misez sur une gestion des réseaux sociaux, une stratégie de contenu et une image de marque (Branding)
-            inclusives, des campagnes publicitaires adaptées à tous les publics et une visibilité en ligne optimisée
-            (SEO, Copywriting, Traduction et Design).
-            <br />
-            <a href="/marketing" class="underline underline-offset-1 text-blue-600 visited:text-purple-700 mt-4">
-              [En savoir plus]
-            </a>
-          </p>
-        </ServicesHomeCard>
       </section>
     </>
   );
