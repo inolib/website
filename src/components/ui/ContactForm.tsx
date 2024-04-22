@@ -175,8 +175,10 @@ export const ContactForm = component$(() => {
             await handleSubmitQrl(store, toasterStore, resetButton.value as HTMLElement);
           }}
           preventdefault:submit
-          class="mx-[3rem] grid grid-cols-1 py-14 md:w-2/3 md:px-10 md:grid-cols-2"
+          class="grid grid-cols-1 md:grid-cols-2"
         >
+          <p class="text-xs text-[#0B3168]">Les champs marqués d’une astérisque (*) sont obligatoires</p>
+
           <select
             onChange$={async (_, element) => {
               store.fields.category.value = element.value;
@@ -189,7 +191,6 @@ export const ContactForm = component$(() => {
             <option value="" disabled selected>
               Sujet de la demande *
             </option>
-
             <option value="AUDIT">Audit</option>
             <option value="DEVELOPMENT">Développement</option>
             <option value="TRAINING">Formation</option>
@@ -203,7 +204,7 @@ export const ContactForm = component$(() => {
                 await verifyInput(store);
               }}
               autoComplete="organization"
-              class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
+              class="rounded-md border-[1px] border-solid border-[#0B3168]"
               type="text"
             />
             <span class="text-[#FF0000] text-xs">{store.fields.organization.error}</span>
@@ -217,7 +218,7 @@ export const ContactForm = component$(() => {
                 await verifyInput(store);
               }}
               autoComplete="given-name"
-              class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
+              class="rounded-md border-[1px] border-solid border-[#0B3168]"
               required
               type="text"
             />
@@ -232,7 +233,7 @@ export const ContactForm = component$(() => {
                 await verifyInput(store);
               }}
               autoComplete="family-name"
-              class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
+              class="rounded-md border-[1px] border-solid border-[#0B3168]"
               required
               type="text"
             />
@@ -247,7 +248,7 @@ export const ContactForm = component$(() => {
                 await verifyInput(store);
               }}
               autoComplete="email"
-              class="mb-3 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
+              class="rounded-md border-[1px] border-solid border-[#0B3168]"
               required
               type="email"
             />
@@ -262,7 +263,7 @@ export const ContactForm = component$(() => {
                 await verifyInput(store);
               }}
               autoComplete="tel"
-              class="mb-6 rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:h-12"
+              class="rounded-md border-[1px] border-solid border-[#0B3168]"
               type="tel"
             />
             <span class="text-[#FF0000] mt-[-1.5rem] text-xs">{store.fields.tel.error}</span>
@@ -277,7 +278,7 @@ export const ContactForm = component$(() => {
                 await counter$(event);
               }}
               placeholder="Message *"
-              class="border-[1px] border-solid border-[#0B3168] pl-2 mt-4 w-full"
+              class="rounded-md border-[1px] border-solid border-[#0B3168]"
               id="textarea"
               maxLength={1000}
               required
@@ -289,7 +290,7 @@ export const ContactForm = component$(() => {
                 <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
               </div>
 
-              <label class={`italic text-xs text-[#0B3168] ml-2`}>
+              <label class="italic text-xs text-[#0B3168] ml-2">
                 <input
                   type="checkbox"
                   onChange$={async () => {
@@ -298,14 +299,10 @@ export const ContactForm = component$(() => {
                   }}
                 />
 
-                <a class={`hover:font-extrabold ml-2`} href="/legal">
+                <a class="hover:font-extrabold ml-2" href="/legal">
                   Accepter nos conditions générales *
                 </a>
               </label>
-
-              <p class="italic text-xs text-[#0B3168] w-[20rem] md:mb-36 mt-4">
-                * Les champs marqués d’une astérisque sont obligatoire
-              </p>
             </div>
           </div>
 
