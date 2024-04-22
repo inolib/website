@@ -20,8 +20,6 @@ export default component$(() => {
       </header>
 
       <section class="text-[#0B3168] md:px-28">
-        <h2 class="my-6 md:mb-10 md:pt-10 text-3xl font-semibold">Nous écrire :</h2>
-
         <section class="mb-10 flex flex-col-reverse shadow-xl md:h-[100vh] md:w-full md:flex-row-reverse md:px-0">
           <ContactForm />
           <ContactCard />
