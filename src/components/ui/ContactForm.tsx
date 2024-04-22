@@ -175,9 +175,9 @@ export const ContactForm = component$(() => {
             await handleSubmitQrl(store, toasterStore, resetButton.value as HTMLElement);
           }}
           preventdefault:submit
-          class="grid grid-cols-1 md:grid-cols-2"
+          class="grid grid-cols-1 md:grid-cols-2 w-full"
         >
-          <p class="text-xs text-[#0B3168]">Les champs marqués d’une astérisque (*) sont obligatoires</p>
+          <p class="text-xs text-[#0B3168] md:col-span-2">Les champs marqués d’une astérisque (*) sont obligatoires</p>
 
           <select
             onChange$={async (_, element) => {
