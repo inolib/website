@@ -46,7 +46,7 @@ export const registerRequestQrl = server$(async (formStore: FormStore, toasterSt
   const client = new GraphQLClient(API_URL, { fetch });
 
   try {
-    await client.request(
+    const result = await client.request(
       /* GraphQL */ `
         mutation CreateContactRequest(
           $category: String!
@@ -82,6 +82,8 @@ export const registerRequestQrl = server$(async (formStore: FormStore, toasterSt
     );
 
     toasterStore.show = true;
+
+    console.log(result);
   } catch (error) {
     console.error(error);
   }
@@ -93,7 +95,6 @@ export const handleSubmitQrl = $(async (store: FormStore, toasterStore: ToasterS
   try {
     const { toasterStore: _toasterStore } = await registerRequestQrl(store, toasterStore);
     toasterStore.show = _toasterStore.show;
-
     resetButton.click();
   } catch (error) {
     (error as ZodError).issues.map((issue) => {
@@ -174,18 +175,18 @@ export const ContactForm = component$(() => {
             await handleSubmitQrl(store, toasterStore, resetButton.value as HTMLElement);
           }}
           preventdefault:submit
-          class="grid-rows-10 mx-[3rem] grid grid-cols-4 py-14 md:w-2/3 md:grid-rows-8 md:px-10"
+          class="mx-[3rem] grid grid-cols-1 py-14 md:w-2/3 md:px-10 md:grid-cols-2"
         >
           <select
             onChange$={async (_, element) => {
               store.fields.category.value = element.value;
               await verifyInput(store);
             }}
-            class="col-span-5 col-start-1 col-end-5 row-start-1 mb-3 flex h-12 rounded-md border-[1px] border-solid border-[#0B3168] md:col-span-2 md:col-end-3 md:mr-5 md:mb-3"
+            class="flex h-12 rounded-md border-[1px] border-solid border-[#0B3168]"
             name="Type de la demande"
             required
           >
-            <option value="" disabled selected hidden>
+            <option value="" disabled selected>
               Sujet de la demande *
             </option>
 
@@ -194,7 +195,7 @@ export const ContactForm = component$(() => {
             <option value="TRAINING">Formation</option>
           </select>
 
-          <label class="col-span-4 col-start-1 col-end-5 row-start-3 mb-3 flex flex-col md:row-start-2  md:col-span-2 md:col-end-3 md:pr-5">
+          <label class="flex flex-col">
             Nom de l’entreprise
             <input
               onInput$={async (_, element) => {
@@ -208,22 +209,7 @@ export const ContactForm = component$(() => {
             <span class="text-[#FF0000] text-xs">{store.fields.organization.error}</span>
           </label>
 
-          <label class="col-span-4 col-start-1 row-start-4 mb-3  flex flex-col md:col-span-2 md:col-end-3 md:row-start-3 md:pr-5">
-            Nom de famille *
-            <input
-              onInput$={async (_, element) => {
-                store.fields.familyName.value = element.value;
-                await verifyInput(store);
-              }}
-              autoComplete="family-name"
-              class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
-              required
-              type="text"
-            />
-            <span class="text-[#FF0000] text-xs">{store.fields.familyName.error}</span>
-          </label>
-
-          <label class="col-span-4 col-start-1 col-end-5 row-start-5 mb-3 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-3 md:pl-5">
+          <label class="flex flex-col">
             Prénom *
             <input
               onInput$={async (_, element) => {
@@ -238,7 +224,22 @@ export const ContactForm = component$(() => {
             <span class="text-[#FF0000] text-xs">{store.fields.givenName.error}</span>
           </label>
 
-          <label class="col-span-4 col-start-1 col-end-5 row-start-6 flex flex-col md:col-span-2 md:col-end-3 md:row-start-4 md:pr-5">
+          <label class="flex flex-col">
+            Nom de famille *
+            <input
+              onInput$={async (_, element) => {
+                store.fields.familyName.value = element.value;
+                await verifyInput(store);
+              }}
+              autoComplete="family-name"
+              class="rounded-md border-[1px] border-solid border-[#0B3168] pl-2 md:mb-0 md:h-12"
+              required
+              type="text"
+            />
+            <span class="text-[#FF0000] text-xs">{store.fields.familyName.error}</span>
+          </label>
+
+          <label class="flex flex-col">
             Adresse e-mail *
             <input
               onInput$={async (_, element) => {
@@ -253,7 +254,7 @@ export const ContactForm = component$(() => {
             <span class="text-[#FF0000] text-xs">{store.fields.email.error}</span>
           </label>
 
-          <label class="col-start-1 col-end-5 row-start-7 flex flex-col md:col-span-2 md:col-start-3 md:col-end-5 md:row-start-4 md:pl-5">
+          <label class="flex flex-col">
             Numéro de téléphone
             <input
               onInput$={async (_, element) => {
@@ -267,7 +268,7 @@ export const ContactForm = component$(() => {
             <span class="text-[#FF0000] mt-[-1.5rem] text-xs">{store.fields.tel.error}</span>
           </label>
 
-          <div class="col-span-4 col-start-1 col-end-5 row-start-8  md:row-start-5 md:row-span-5">
+          <div class="">
             <textarea
               onInput$={async (event, element) => {
                 store.fields.message.value = element.value;
@@ -282,7 +283,7 @@ export const ContactForm = component$(() => {
               required
             />
 
-            <div class={`flex flex-col`}>
+            <div class="flex flex-col">
               <div class="flex">
                 <p class="italic text-xs mb-4">Caratères maximum : {store.count}/1000</p>
                 <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
