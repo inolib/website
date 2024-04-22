@@ -15,7 +15,7 @@ export default component$(() => {
           content="Nous serons ravis de discuter avec vous via ce formulaire ou les réseaux sociaux."
           imageStyle="md:w-3/5 md:max-w-2xl"
           imageSrc="\images\contact-banner.jpeg"
-          title="Contacts"
+          title="Contact"
         />
       </header>
 
