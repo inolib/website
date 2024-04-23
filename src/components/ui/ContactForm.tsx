@@ -1,46 +1,23 @@
-import { $, component$, useSignal, useStore } from "@builder.io/qwik";
+import { $, component$, useStore } from "@builder.io/qwik";
 import { server$ } from "@builder.io/qwik-city";
 import { GraphQLClient } from "graphql-request";
-import type { ZodError } from "zod";
 
 import { Toaster, type ToasterStore } from "./Toaster";
 
-type FormField = {
-  value: string;
-  error: string;
-};
-
 type FormStore = {
-  count: number;
   checked: boolean;
-  isDisabled: boolean;
   fields: {
-    category: FormField;
-    email: FormField;
-    familyName: FormField;
-    givenName: FormField;
-    message: FormField;
-    organization: FormField;
-    tel: FormField;
+    category: string;
+    email: string;
+    familyName: string;
+    givenName: string;
+    message: string;
+    organization: string;
+    tel: string;
   };
 };
 
 const API_URL = "https://api.inolib.com/graphql";
-
-export const verifyInput = $((store: FormStore) => {
-  if (
-    store.checked == true &&
-    store.fields.category.value !== "" &&
-    store.fields.email.value !== "" &&
-    store.fields.familyName.value !== "" &&
-    store.fields.givenName.value !== "" &&
-    store.fields.message.value !== ""
-  ) {
-    store.isDisabled = false;
-  } else {
-    store.isDisabled = true;
-  }
-});
 
 export const registerRequestQrl = server$(async (formStore: FormStore, toasterStore: ToasterStore) => {
   const client = new GraphQLClient(API_URL, { fetch });
@@ -71,13 +48,13 @@ export const registerRequestQrl = server$(async (formStore: FormStore, toasterSt
         }
       `,
       {
-        category: formStore.fields.category.value,
-        email: formStore.fields.email.value,
-        familyName: formStore.fields.familyName.value,
-        givenName: formStore.fields.givenName.value,
-        message: formStore.fields.message.value,
-        organization: formStore.fields.organization.value,
-        tel: formStore.fields.tel.value,
+        category: formStore.fields.category,
+        email: formStore.fields.email,
+        familyName: formStore.fields.familyName,
+        givenName: formStore.fields.givenName,
+        message: formStore.fields.message,
+        organization: formStore.fields.organization,
+        tel: formStore.fields.tel,
       }
     );
 
@@ -91,55 +68,23 @@ export const registerRequestQrl = server$(async (formStore: FormStore, toasterSt
   return { formStore, toasterStore };
 });
 
-export const handleSubmitQrl = $(async (store: FormStore, toasterStore: ToasterStore, resetButton: HTMLElement) => {
-  try {
-    const { toasterStore: _toasterStore } = await registerRequestQrl(store, toasterStore);
-    toasterStore.show = _toasterStore.show;
-    resetButton.click();
-  } catch (error) {
-    (error as ZodError).issues.map((issue) => {
-      store.fields[issue.path[0] as keyof FormStore["fields"]].error = issue.message;
-    });
-  }
+export const handleSubmitQrl = $(async (formStore: FormStore, toasterStore: ToasterStore) => {
+  const { toasterStore: _toasterStore } = await registerRequestQrl(formStore, toasterStore);
+  toasterStore.show = _toasterStore.show;
 });
 
 export const ContactForm = component$(() => {
-  const resetButton = useSignal<HTMLElement>();
-
   const store = useStore<FormStore>(
     {
-      count: 0,
       checked: false,
-      isDisabled: true,
       fields: {
-        category: {
-          value: "",
-          error: "",
-        },
-        email: {
-          value: "",
-          error: "",
-        },
-        familyName: {
-          value: "",
-          error: "",
-        },
-        givenName: {
-          value: "",
-          error: "",
-        },
-        message: {
-          value: "",
-          error: "",
-        },
-        organization: {
-          value: "",
-          error: "",
-        },
-        tel: {
-          value: "",
-          error: "",
-        },
+        category: "",
+        email: "",
+        familyName: "",
+        givenName: "",
+        message: "",
+        organization: "",
+        tel: "",
       },
     },
     { deep: true }
@@ -153,178 +98,163 @@ export const ContactForm = component$(() => {
     { deep: true }
   );
 
-  const counter$ = $((event: Event) => {
-    store.count = (event.target as HTMLTextAreaElement).value.length;
-  });
-
-  const resetCounter$ = $(() => {
-    store.count = 0;
-  });
-
   return (
     <>
-      <>
-        <div class="fixed inset-0 z-50 w-10 h-10 top-[5rem] left-[50vw] right-[50vw] bottom-10 flex items-center justify-center">
-          <Toaster icon="success" store={toasterStore}>
-            Votre demande a bien été enregistrée.
-          </Toaster>
-        </div>
+      <div class="fixed inset-0 z-50 w-10 h-10 top-[5rem] left-[50vw] right-[50vw] bottom-10 flex items-center justify-center">
+        <Toaster icon="success" store={toasterStore}>
+          Votre demande a bien été enregistrée.
+        </Toaster>
+      </div>
 
-        <form
-          onSubmit$={async () => {
-            await handleSubmitQrl(store, toasterStore, resetButton.value as HTMLElement);
-          }}
-          preventdefault:submit
-          class="grid grid-cols-1 md:grid-cols-2 w-full"
-        >
-          <p class="text-xs text-[#0B3168] md:col-span-2">Les champs marqués d’une astérisque (*) sont obligatoires</p>
+      <form
+        onSubmit$={async () => {
+          await handleSubmitQrl(store, toasterStore);
+        }}
+        preventdefault:submit
+        class="flex flex-col gap-6 w-full px-6 py-12"
+      >
+        <p class="text-xs text-[#0B3168]">Les champs marqués d’un astérisque (*) sont obligatoires.</p>
 
-          <select
-            onChange$={async (_, element) => {
-              store.fields.category.value = element.value;
-              await verifyInput(store);
-            }}
-            class="flex h-12 rounded-md border-[1px] border-solid border-[#0B3168]"
-            name="Type de la demande"
-            required
-          >
-            <option value="" disabled selected>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex flex-col w-full">
+            <label class="cursor-pointer" for="category">
               Sujet de la demande *
-            </option>
-            <option value="AUDIT">Audit</option>
-            <option value="DEVELOPMENT">Développement</option>
-            <option value="TRAINING">Formation</option>
-          </select>
+            </label>
+            <select
+              onChange$={(_, element) => {
+                store.fields.category = element.value;
+              }}
+              class="rounded-md border-[1px] border-solid border-[#0B3168] cursor-pointer"
+              id="category"
+              required
+            >
+              <option value="" disabled selected></option>
+              <option value="AUDIT">Audit</option>
+              <option value="DEVELOPMENT">Développement</option>
+              <option value="TRAINING">Formation</option>
+            </select>
+          </div>
 
-          <label class="flex flex-col">
-            Nom de l’entreprise
+          <div class="flex flex-col w-full">
+            <label class="cursor-pointer" for="organization">
+              Nom de l’entreprise
+            </label>
             <input
-              onInput$={async (_, element) => {
-                store.fields.organization.value = element.value;
-                await verifyInput(store);
+              onInput$={(_, element) => {
+                store.fields.organization = element.value;
               }}
               autoComplete="organization"
               class="rounded-md border-[1px] border-solid border-[#0B3168]"
+              id="organization"
               type="text"
             />
-            <span class="text-[#FF0000] text-xs">{store.fields.organization.error}</span>
-          </label>
+          </div>
+        </div>
 
-          <label class="flex flex-col">
-            Prénom *
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex flex-col w-full">
+            <label class="cursor-pointer" for="givenName">
+              Prénom *
+            </label>
             <input
-              onInput$={async (_, element) => {
-                store.fields.givenName.value = element.value;
-                await verifyInput(store);
+              onInput$={(_, element) => {
+                store.fields.givenName = element.value;
               }}
               autoComplete="given-name"
               class="rounded-md border-[1px] border-solid border-[#0B3168]"
-              required
+              id="givenName"
               type="text"
+              required
             />
-            <span class="text-[#FF0000] text-xs">{store.fields.givenName.error}</span>
-          </label>
+          </div>
 
-          <label class="flex flex-col">
-            Nom de famille *
+          <div class="flex flex-col w-full">
+            <label class="cursor-pointer" for="familyName">
+              Nom de famille *
+            </label>
             <input
-              onInput$={async (_, element) => {
-                store.fields.familyName.value = element.value;
-                await verifyInput(store);
+              onInput$={(_, element) => {
+                store.fields.familyName = element.value;
               }}
               autoComplete="family-name"
               class="rounded-md border-[1px] border-solid border-[#0B3168]"
-              required
+              id="familyName"
               type="text"
+              required
             />
-            <span class="text-[#FF0000] text-xs">{store.fields.familyName.error}</span>
-          </label>
+          </div>
+        </div>
 
-          <label class="flex flex-col">
-            Adresse e-mail *
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="flex flex-col w-full">
+            <label class="cursor-pointer" for="email">
+              Adresse e-mail *
+            </label>
             <input
-              onInput$={async (_, element) => {
-                store.fields.email.value = element.value;
-                await verifyInput(store);
+              onInput$={(_, element) => {
+                store.fields.email = element.value;
               }}
               autoComplete="email"
               class="rounded-md border-[1px] border-solid border-[#0B3168]"
-              required
+              id="email"
               type="email"
+              required
             />
-            <span class="text-[#FF0000] text-xs">{store.fields.email.error}</span>
-          </label>
+          </div>
 
-          <label class="flex flex-col">
-            Numéro de téléphone
+          <div class="flex flex-col w-full">
+            <label class="cursor-pointer" for="tel">
+              Numéro de téléphone
+            </label>
             <input
-              onInput$={async (_, element) => {
-                store.fields.tel.value = element.value;
-                await verifyInput(store);
+              onInput$={(_, element) => {
+                store.fields.tel = element.value;
               }}
               autoComplete="tel"
               class="rounded-md border-[1px] border-solid border-[#0B3168]"
+              id="tel"
               type="tel"
             />
-            <span class="text-[#FF0000] mt-[-1.5rem] text-xs">{store.fields.tel.error}</span>
-          </label>
-
-          <div class="">
-            <textarea
-              onInput$={async (event, element) => {
-                store.fields.message.value = element.value;
-
-                await verifyInput(store);
-                await counter$(event);
-              }}
-              placeholder="Message *"
-              class="rounded-md border-[1px] border-solid border-[#0B3168]"
-              id="textarea"
-              maxLength={1000}
-              required
-            />
-
-            <div class="flex flex-col">
-              <div class="flex">
-                <p class="italic text-xs mb-4">Caratères maximum : {store.count}/1000</p>
-                <span class="text-[#FF0000] text-xs">{store.fields.message.error}</span>
-              </div>
-
-              <label class="italic text-xs text-[#0B3168] ml-2">
-                <input
-                  type="checkbox"
-                  onChange$={async () => {
-                    store.checked = !store.checked;
-                    await verifyInput(store);
-                  }}
-                />
-
-                <a class="hover:font-extrabold ml-2" href="/legal">
-                  Accepter nos conditions générales *
-                </a>
-              </label>
-            </div>
           </div>
+        </div>
 
-          <button
-            ref={resetButton}
-            onClick$={resetCounter$}
-            type="reset"
-            class=" col-span-2 col-start-1 col-end- row-start-9 mr-2 h-14 rounded-md hover:border-2 hover:border-[#0B3168] mt-10 md:col-start-3  md:col-end-4 md:row-start-7 md:mt-14"
-            aria-label="Effacer le formulaire"
-          >
-            Effacer
-          </button>
+        <div class="flex flex-col">
+          <label class="cursor-pointer" for="message">
+            Message *
+          </label>
+          <textarea
+            onInput$={(_, element) => {
+              store.fields.message = element.value;
+            }}
+            class="rounded-md border-[1px] border-solid border-[#0B3168]"
+            id="message"
+            rows={5}
+            required
+          />
+        </div>
 
-          <button
-            type="submit"
-            class="col-span-2 col-start-3 col-end-5 row-start-9 h-14 rounded-md bg-[#0B3168] text-white mt-10 md:col-start-4 md:col-end-4  md:row-start-7 md:mt-14"
-            aria-label="Envoyer le formulaire"
-          >
-            Envoyer
-          </button>
-        </form>
-      </>
+        <div class="flex gap-2">
+          <input
+            onChange$={(_, element) => {
+              store.checked = element.checked;
+            }}
+            class="cursor-pointer"
+            id="legal"
+            type="checkbox"
+          />
+          <label class="text-xs text-[#0B3168] cursor-pointer" for="legal">
+            <span>En cochant cette case, vous acceptez nos</span>{" "}
+            <a class="hover:underline" href="/legal">
+              conditions générales
+            </a>{" "}
+            <span>*</span>
+          </label>
+        </div>
+
+        <button class="px-8 py-2 rounded-md bg-[#0B3168] text-white self-center" type="submit">
+          Envoyer votre message
+        </button>
+      </form>
     </>
   );
 });
