@@ -62,8 +62,6 @@ const options: Options = [
     secondOptionValue: "true",
     onChange: $((event: QwikChangeEvent<HTMLElement>) => {
       if ((event?.target as HTMLInputElement).value === "true") {
-        console.log("interlignage :", (event?.target as HTMLInputElement).value);
-
         const rootElement = document.querySelectorAll(
           "h1, h2, h3, h4, h5, h6, p, a, strong, label, button, img, svg, th, tbody"
         );

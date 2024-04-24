@@ -37,7 +37,6 @@ export const signUpRequestQrl = server$(async (store: SignUpStore) => {
   );
   //TODO
   // toogleModal$
-  console.log(result);
 });
 
 export default component$(() => {

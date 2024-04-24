@@ -14,8 +14,6 @@ export const Toaster = component$<ToasterProps>(({ icon, store }) => {
   let iconJSX: QwikJSX.Element;
 
   const close$ = $(() => {
-    console.log("close");
-
     setTimeout(() => {
       store.show = false;
     }, 2000);
@@ -24,8 +22,6 @@ export const Toaster = component$<ToasterProps>(({ icon, store }) => {
   });
 
   const open$ = $(() => {
-    console.log("open");
-
     setTimeout(() => {
       close$().catch((error) => {
         console.error(error);
