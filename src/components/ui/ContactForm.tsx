@@ -100,7 +100,7 @@ export const ContactForm = component$(() => {
     <>
       <div class="fixed inset-0 z-50 w-10 h-10 top-[5rem] left-[50vw] right-[50vw] bottom-10 flex items-center justify-center">
         <Toaster icon="success" store={toasterStore}>
-          Votre demande a bien été enregistrée.
+          Votre message a bien été envoyé.
         </Toaster>
       </div>
 
@@ -116,7 +116,7 @@ export const ContactForm = component$(() => {
         <div class="flex flex-col md:flex-row gap-6">
           <div class="flex flex-col w-full">
             <label class="cursor-pointer" for="category">
-              Sujet de la demande *
+              Sujet du message *
             </label>
             <select
               onChange$={(_, element) => {
