@@ -23,7 +23,7 @@ export const registerRequestQrl = server$(async (formStore: FormStore, toasterSt
   const client = new GraphQLClient(API_URL, { fetch });
 
   try {
-    const result = await client.request(
+    await client.request(
       /* GraphQL */ `
         mutation CreateContactRequest(
           $category: String!
@@ -59,8 +59,6 @@ export const registerRequestQrl = server$(async (formStore: FormStore, toasterSt
     );
 
     toasterStore.show = true;
-
-    console.log(result);
   } catch (error) {
     console.error(error);
   }
@@ -241,6 +239,7 @@ export const ContactForm = component$(() => {
             class="cursor-pointer"
             id="legal"
             type="checkbox"
+            required
           />
           <label class="text-xs text-[#0B3168] cursor-pointer" for="legal">
             <span>En cochant cette case, vous acceptez nos</span>{" "}
