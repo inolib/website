@@ -1,0 +1,30 @@
+name: "inolib-website"
+
+services:
+  mariadb:
+    build: "./mariadb"
+    restart: "unless-stopped"
+    volumes:
+      - "mariadb:/var/lib/mysql"
+
+  strapi:
+    build: "./strapi"
+    depends_on:
+      mariadb:
+        condition: "service_healthy"
+    ports:
+      - "1337:1337"
+    restart: "unless-stopped"
+    volumes:
+      - "../../..:/@inolib"
+
+  devcontainer:
+    build: "./devcontainer"
+    depends_on:
+      mariadb:
+        condition: "service_healthy"
+    volumes:
+      - "../../..:/@inolib"
+
+volumes:
+  mariadb:
