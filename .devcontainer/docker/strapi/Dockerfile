@@ -6,6 +6,8 @@ COPY ./usr/local/bin /usr/local/bin/
 
 CMD [ "startup.sh" ]
 
+HEALTHCHECK CMD [ "healthcheck.sh" ]
+
 USER root
 
 RUN apk add --no-cache autoconf

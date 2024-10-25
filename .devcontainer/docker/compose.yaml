@@ -21,7 +21,7 @@ services:
   devcontainer:
     build: "./devcontainer"
     depends_on:
-      mariadb:
+      strapi:
         condition: "service_healthy"
     volumes:
       - "../../..:/@inolib"

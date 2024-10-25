@@ -1,7 +1,8 @@
 {
-  "type": "module",
-  "name": "@inolib/app-strapi",
+  "name": "app-strapi",
+  "version": "0.1.0",
   "private": true,
+  "description": "A Strapi application",
   "scripts": {
     "build": "strapi build",
     "deploy": "strapi deploy",
@@ -30,6 +31,6 @@
     "npm": ">=6.0.0"
   },
   "strapi": {
-    "uuid": "a4d7eaf4-1805-4301-9f2c-9db969bcbf0d"
+    "uuid": "4a0f0a20-45de-499b-af34-092f8076bb9f"
   }
 }

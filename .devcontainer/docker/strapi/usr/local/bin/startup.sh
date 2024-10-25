@@ -6,11 +6,19 @@ set -u
 
 cd /@inolib/website/packages/app-strapi
 
+if [ -f '.done' ]
+then
+  rm .done
+fi
+
 if [ ! -f './package.json' ]
 then
-  pnpm create strapi --dbclient mysql --dbhost mariadb --dbname rule2835_strapi --dbpassword root --dbport 3306 --dbusername root --no-example --no-git-init --no-install --skip-cloud --typescript .
+  pnpm create strapi --dbclient mysql --dbhost mariadb --dbname rule2835_strapi --dbpassword root --dbport 3306 --dbusername root --no-example --no-git-init --no-install --skip-cloud --typescript --use-pnpm .
 fi
 
 pnpm install
 pnpm run build
+
+touch .done
+
 pnpm run start
