@@ -28,8 +28,8 @@ const Page = () => {
         <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
 
-      <div className="flex">
-        <div className="flex basis-1/4 flex-col gap-8">
+      <div className="flex flex-col gap-16 lg:flex-row lg:gap-32">
+        <div className="flex flex-col gap-8 lg:basis-1/4">
           <Address />
 
           <Link _color="blue-900" _shape="button" className="self-center" href="/contact/rendez-vous">
@@ -37,7 +37,7 @@ const Page = () => {
           </Link>
         </div>
 
-        <div className="basis-3/4 pl-32">
+        <div className="lg:basis-3/4">
           <ContactForm />
         </div>
       </div>

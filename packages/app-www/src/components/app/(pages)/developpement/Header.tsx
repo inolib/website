@@ -4,6 +4,8 @@ import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { Section } from "~/components/section";
 
+import developmentIllustration from "#/images/illustrations/development.svg?url";
+
 export const Header = () => {
   return (
     <Section className="flex flex-col gap-24">
@@ -22,8 +24,8 @@ export const Header = () => {
           </p>
         </TwoColumnsFlexLayoutColumn>
 
-        <TwoColumnsFlexLayoutColumn>
-          <Image alt="" className="rounded-3xl" src="/images/photos/stock-photo.png" />
+        <TwoColumnsFlexLayoutColumn className="flex items-center justify-center">
+          <Image alt="" src={developmentIllustration} />
         </TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
     </Section>

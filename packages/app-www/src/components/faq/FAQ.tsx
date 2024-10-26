@@ -4,7 +4,7 @@ export type FAQProps = BaseFAQProps;
 
 export const FAQ = ({ children, ...passthru }: FAQProps) => {
   return (
-    <BaseFAQ className="flex max-w-prose flex-col gap-8" {...passthru}>
+    <BaseFAQ className="flex w-full max-w-prose flex-col gap-8" {...passthru}>
       {children}
     </BaseFAQ>
   );

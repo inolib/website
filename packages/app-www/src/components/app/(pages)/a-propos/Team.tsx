@@ -1,3 +1,5 @@
+import { initials } from "@dicebear/collection";
+import { createAvatar } from "@dicebear/core";
 import Image from "next/image";
 import type { VariantProps } from "tailwind-variants";
 
@@ -56,15 +58,19 @@ export const Team = ({ _color }: TeamProps) => {
       description: "",
     },
     {
-      photo: "/images/photos/team/nadjemati-abdallah.jpg",
       name: "Amina HURIC",
       role: "",
       description: "",
     },
     {
-      photo: "/images/photos/team/nadjemati-abdallah.jpg",
       name: "Brice MENDEZ",
       role: "Développeur web",
+      description: "",
+    },
+    {
+      photo: "/images/photos/team/maria-grairi.jpg",
+      name: "Maria GRAIRI",
+      role: "Développeuse web",
       description: "",
     },
   ];
@@ -75,13 +81,24 @@ export const Team = ({ _color }: TeamProps) => {
         <HeadingContent _level={2}>Notre équipe</HeadingContent>
       </Heading>
 
-      <div className="grid grid-cols-1 gap-16 self-center text-center sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid grid-cols-1 gap-16 self-center text-center sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         {team.map((item, index) => (
-          <div
-            className="flex h-[22rem] w-64 flex-col items-center gap-4 rounded-t-full bg-blue-50 p-4 pt-12"
-            key={index}
-          >
-            <Image alt="" className="size-24 rounded-full" height={96} src={item.photo} width={96} />
+          <div className="flex aspect-n flex-col items-center gap-4 rounded-t-full bg-blue-50 p-4 pt-12" key={index}>
+            {item.photo === undefined ? (
+              <Image
+                alt=""
+                className="size-24 rounded-full"
+                height={96}
+                src={createAvatar(initials, {
+                  backgroundColor: ["254147"],
+                  fontFamily: ["sans-serif"],
+                  seed: item.name,
+                }).toDataUri()}
+                width={96}
+              />
+            ) : (
+              <Image alt="" className="size-24 rounded-full" height={96} src={item.photo} width={96} />
+            )}
 
             <div className="flex flex-col gap-2">
               <p className="font-bold">{item.name}</p>

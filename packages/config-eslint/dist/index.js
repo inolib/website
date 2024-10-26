@@ -54,6 +54,13 @@ export default typescriptESLint.config(
     ],
   },
   {
+    extends: [
+      ...fixupConfigRules(
+        compat.config({
+          extends: "plugin:@next/next/recommended",
+        }),
+      ),
+    ],
     languageOptions: {
       ecmaVersion: "latest",
       globals: {

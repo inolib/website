@@ -11,6 +11,7 @@ export type MenuLink = {
 
 export type MenuSubmenu = {
   label: string;
+  segment: string;
   submenu: Array<
     | {
         icon: ReactNode;
@@ -33,6 +34,7 @@ export type Menu = Array<MenuLink | MenuSubmenu>;
 export const useMenu = (): Menu => [
   {
     label: "Audit",
+    segment: "/audit",
     submenu: [
       // {
       //   label: "Accueil de l’audit",
@@ -53,6 +55,7 @@ export const useMenu = (): Menu => [
   },
   {
     label: "Accompagnement",
+    segment: "/accompagnement",
     submenu: [
       // {
       //   label: "Accueil de l’accompagnement",
@@ -73,6 +76,7 @@ export const useMenu = (): Menu => [
   },
   {
     label: "Développement",
+    segment: "/developpement",
     submenu: [
       {
         label: "Développement web et mobile",

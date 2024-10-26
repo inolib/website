@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <html lang="fr">
-      <body className="mx-auto min-w-80 font-manrope text-lg font-medium" tabIndex={-1}>
+      <body className="mx-auto min-w-80 max-w-[120rem] font-manrope text-lg font-medium" tabIndex={-1}>
         <div id="app">
           <Banner />
 

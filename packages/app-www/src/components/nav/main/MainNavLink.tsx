@@ -16,6 +16,7 @@ export const MainNavLink = ({ _link }: MainNavLinkProps) => {
   const menuBar = useMenuBar();
   const pathname = usePathname();
 
+  const isCurrentPage = _link.href === pathname;
   const isHomePage = useMemo(() => pathname === "/", [pathname]);
 
   const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(() => {
@@ -26,8 +27,9 @@ export const MainNavLink = ({ _link }: MainNavLinkProps) => {
     <Link
       _color={isHomePage ? "blue-900" : "white"}
       _shape="button"
-      aria-current={_link.href === pathname ? "page" : undefined}
+      aria-current={isCurrentPage ? "page" : undefined}
       className={cn("focus-visible:outline-black", {
+        "font-extrabold underline": isCurrentPage,
         "hover:bg-white hover:text-black focus-visible:outline-white": isHomePage,
       })}
       href={_link.href}

@@ -3,10 +3,12 @@ import type { VariantProps } from "tailwind-variants";
 
 import { BorderCard } from "~/components/card";
 import { Heading, HeadingContent, HeadingSubheading } from "~/components/heading";
+import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
+import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
 import educationIllustration from "#/images/illustrations/education.svg?url";
 
 const variants = tv({
@@ -67,17 +69,30 @@ export const Qualiopi = ({ _color }: QualiopiProps) => {
         <HeadingSubheading>Une garantie de confiance et de qualité.</HeadingSubheading>
       </Heading>
 
-      <Verbose>
-        <VerboseContent>
-          {paragraphs.map((item, index) => (
-            <BorderCard key={index}>{item}</BorderCard>
-          ))}
-        </VerboseContent>
+      <div className="flex flex-col gap-8">
+        <Verbose>
+          <VerboseContent>
+            {paragraphs.map((item, index) => (
+              <BorderCard key={index}>{item}</BorderCard>
+            ))}
+          </VerboseContent>
 
-        <VerboseIllustration>
-          <Image alt="" className="h-96" src={educationIllustration} />
-        </VerboseIllustration>
-      </Verbose>
+          <VerboseIllustration>
+            <Image alt="" className="h-96" src={educationIllustration} />
+          </VerboseIllustration>
+        </Verbose>
+
+        <Link
+          _border="black"
+          _color="white"
+          _shape="button"
+          aria-label="En savoir plus sur notre certificat Qualiopi"
+          href="/certificat-qualiopi"
+        >
+          <span>En savoir plus</span>
+          <ArrowNarrowRightIcon className="stroke-black" />
+        </Link>
+      </div>
     </Section>
   );
 };

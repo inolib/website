@@ -37,7 +37,9 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
           },
         )}
       >
-        <span>{_submenu.label}</span>
+        <span className={cn({ "font-extrabold underline": pathname.startsWith(_submenu.segment) })}>
+          {_submenu.label}
+        </span>
 
         <ChevronUpIcon className="stroke-black [[aria-expanded=false]>&]:hidden" />
         <ChevronDownIcon
@@ -74,7 +76,10 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
                 _color="white"
                 _shape="button"
                 aria-current={isCurrentPage ? "page" : undefined}
-                className={cn("w-full justify-start focus-visible:outline-black", { "hover:bg-sand-50": isHomePage })}
+                className={cn("w-full justify-start focus-visible:outline-black", {
+                  "font-extrabold underline": isCurrentPage,
+                  "hover:bg-sand-50": isHomePage,
+                })}
                 href={item.href}
               >
                 {item.icon}

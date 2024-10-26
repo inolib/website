@@ -1,8 +1,5 @@
 /** @type {import("next").NextConfig} */
 export default {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   experimental: {
     cpus: 12,
     workerThreads: false,

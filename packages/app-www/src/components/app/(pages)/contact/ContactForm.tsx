@@ -92,7 +92,7 @@ export const ContactForm = () => {
   );
 
   return (
-    <Form className="flex flex-col gap-8" onSubmit={handleSubmit}>
+    <Form className="flex max-w-prose flex-col gap-8" onSubmit={handleSubmit}>
       <div className="flex flex-col gap-16">
         <fieldset>
           <legend className="text-2xl font-bold">Sujets qui vous intéressent</legend>
@@ -144,7 +144,7 @@ export const ContactForm = () => {
 
           <p className="mt-4">Tous les champs sont obligatoires.</p>
 
-          <div className="flex gap-8 [&_[data-field]]:basis-1/2">
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-8 sm:[&_[data-field]]:basis-1/2">
             <Field name="firstname" transform={toTrimmed({ on: "blur" })}>
               {(field, passthru) => (
                 <TextInputField
@@ -222,15 +222,17 @@ export const ContactForm = () => {
                 _label={
                   <>
                     En cochant cette case, vous acceptez notre{" "}
-                    <Link
-                      _color="transparent"
-                      _shape="link"
-                      className="underline focus-visible:outline-black"
-                      href="/politique-de-confidentialite"
-                    >
-                      politique de confidentialité
-                    </Link>
-                    .
+                    <span className="text-nowrap">
+                      <Link
+                        _color="transparent"
+                        _shape="link"
+                        className="underline focus-visible:outline-black"
+                        href="/politique-de-confidentialite"
+                      >
+                        politique de confidentialité
+                      </Link>
+                      .
+                    </span>
                   </>
                 }
                 checked={field.value.value ?? false}

@@ -18,7 +18,7 @@ export const BreadcrumbNavSegment = ({ _href }: BreadcrumbNavSegmentProps) => {
   const isCurrentPage = useMemo(() => _href === pathname, [_href, pathname]);
 
   return (
-    <li className={cn("px-2 py-1", { "font-bold": isCurrentPage })}>
+    <li className={cn("px-2 py-1", { "font-bold underline": isCurrentPage })}>
       {routes[_href].isActive ? (
         <Link
           _color="transparent"

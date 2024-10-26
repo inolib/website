@@ -57,7 +57,7 @@ export const Address = () => {
   ];
 
   return (
-    <address className="flex flex-col gap-4 not-italic">
+    <address className="flex flex-col gap-4 not-italic md:grid md:grid-cols-3 lg:flex lg:flex-col">
       {address.map((item, index) => (
         <div className="flex flex-col gap-4 rounded-3xl bg-blue-50 p-6" key={index}>
           <div>{item.icon}</div>
