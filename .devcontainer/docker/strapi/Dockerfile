@@ -14,6 +14,7 @@ RUN apk add --no-cache autoconf
 RUN apk add --no-cache automake
 RUN apk add --no-cache bash
 RUN apk add --no-cache build-base
+RUN apk add --no-cache curl
 RUN apk add --no-cache gcc
 RUN apk add --no-cache git
 RUN apk add --no-cache libpng-dev
