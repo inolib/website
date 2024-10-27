@@ -4,6 +4,6 @@ set -e
 set -o pipefail
 set -u
 
-mariadb --password='root' --user 'root' <<-EOSQL
+mariadb --password='root' --user='root' <<-EOSQL
   CREATE DATABASE rule2835_strapi;
 EOSQL
