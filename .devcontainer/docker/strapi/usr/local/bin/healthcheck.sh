@@ -4,4 +4,4 @@ set -e
 set -o pipefail
 set -u
 
-curl --head --request HEAD localhost:1337
+curl --request OPTIONS localhost:1337
