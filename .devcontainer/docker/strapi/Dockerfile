@@ -2,6 +2,13 @@ FROM node:20.18-alpine
 
 ENV NODE_ENV="development"
 
+ENV DATABASE_CLIENT="mysql"
+ENV DATABASE_HOST="mariadb"
+ENV DATABASE_PORT=3306
+ENV DATABASE_NAME="rule2835_strapi"
+ENV DATABASE_USERNAME="root"
+ENV DATABASE_PASSWORD="root"
+
 COPY ./usr/local/bin /usr/local/bin/
 
 USER root
