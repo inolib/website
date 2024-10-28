@@ -1,7 +1,7 @@
 /** @type {import("next").NextConfig} */
 export default {
   experimental: {
-    cpus: 12,
+    cpus: 1,
     workerThreads: false,
   },
   images: {
