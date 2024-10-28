@@ -5,7 +5,6 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 
 import inolibYellowLogo from "#/images/logos/inolib/inolib-yellow.svg?url";
-import qualiopiLogo from "#/images/logos/qualiopi/qualiopi.png";
 import facebookLogo from "#/images/logos/social-networks/facebook.svg?url";
 import facebookWhiteLogo from "#/images/logos/social-networks/facebook-white.svg?url";
 import linkedinLogo from "#/images/logos/social-networks/linkedin.svg?url";
@@ -120,11 +119,17 @@ export const ContentInfo = () => {
             <Link
               _color="transparent"
               _shape="link"
-              className="h-24 bg-white p-4 focus-visible:outline-white"
-              href="/certificat-qualiopi"
+              className="h-24 focus-visible:outline-white"
+              href="/inolib-academy/certificat-qualiopi"
               title="Certificat Qualiopi"
             >
-              <Image alt="Certificat Qualiopi" className="size-full" height={150} src={qualiopiLogo} width={300} />
+              <Image
+                alt="Certificat Qualiopi"
+                className="size-full"
+                height={150}
+                src="/images/logos/qualiopi/qualiopi.png"
+                width={300}
+              />
             </Link>
 
             <p className="max-w-40 text-xs">

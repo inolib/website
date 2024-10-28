@@ -43,10 +43,6 @@ export const useRoutes = (): Routes => ({
     isActive: true,
     title: "Blog",
   },
-  "/certificat-qualiopi": {
-    isActive: true,
-    title: "Certification Qualiopi",
-  },
   "/contact": {
     isActive: true,
     title: "Contact",
@@ -66,6 +62,10 @@ export const useRoutes = (): Routes => ({
   "/inolib-academy": {
     isActive: true,
     title: "INOLIB Academy",
+  },
+  "/inolib-academy/certificat-qualiopi": {
+    isActive: true,
+    title: "Certificat Qualiopi",
   },
   "/mentions-legales": {
     isActive: true,

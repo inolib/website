@@ -71,8 +71,13 @@ const Page = () => {
             </UnorderedList>
           </UnorderedListItem>
 
-          <UnorderedListItem>
+          <UnorderedListItem className="flex flex-col gap-2">
             <Link href="/inolib-academy">INOLIB Academy</Link>
+            <UnorderedList className="flex flex-col gap-2">
+              <UnorderedListItem>
+                <Link href="/inolib-academy/certificat-qualiopi">Certificat Qualiopi</Link>
+              </UnorderedListItem>
+            </UnorderedList>
           </UnorderedListItem>
 
           {/* <UnorderedListItem>
@@ -81,10 +86,6 @@ const Page = () => {
 
           <UnorderedListItem>
             <Link href="/a-propos">À propos</Link>
-          </UnorderedListItem>
-
-          <UnorderedListItem>
-            <Link href="/certificat-qualiopi">Certificat Qualiopi</Link>
           </UnorderedListItem>
 
           <UnorderedListItem>
