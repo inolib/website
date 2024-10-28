@@ -2,13 +2,15 @@
 
 import { reset, toTrimmed, useForm, valiForm, type SubmitHandler } from "@modular-forms/react";
 import { useSignals } from "@preact/signals-react/runtime";
-import { useCallback } from "react";
+import { useCallback, useState, type ReactEventHandler } from "react";
 import * as v from "valibot";
 
 import { Button } from "~/components/button";
 import { CheckboxField, TextAreaField, TextInputField, ToggleField } from "~/components/form";
 import { Link } from "~/components/link";
 import { getCookie } from "~/helpers";
+
+import { Dialog } from "./Dialog";
 
 const schema = v.object({
   subject: v.array(v.pipe(v.string(), v.trim())),
@@ -36,11 +38,19 @@ type HubSpotField = {
 export const ContactForm = () => {
   useSignals();
 
+  const [isError, setIsError] = useState<boolean>(false);
+  const [message, setMessage] = useState<string>("");
+
   const [form, { Field, Form }] = useForm<Schema>({
     validate: valiForm(schema),
     validateOn: "submit",
     revalidateOn: "change",
   });
+
+  const handleCloseDialog: ReactEventHandler<HTMLDialogElement> = useCallback(() => {
+    setIsError(false);
+    setMessage("");
+  }, []);
 
   const handleSubmit: SubmitHandler<Schema> = useCallback(
     async (values) => {
@@ -75,17 +85,18 @@ export const ContactForm = () => {
           },
         );
 
-        if (!response.ok) {
-          console.error("error:", response.status);
+        if (response.ok) {
+          reset(form);
+
+          setIsError(false);
+          setMessage(((await response.json()) as { inlineMessage: string }).inlineMessage);
+        } else {
+          setIsError(true);
+          setMessage("Une erreur s’est produite durant l’envoi de votre message, veuillez réessayer.");
         }
-
-        const json = (await response.json()) as {};
-
-        console.log("json:", json);
-
-        reset(form);
-      } catch (error) {
-        console.error("error:", error);
+      } catch {
+        setIsError(true);
+        setMessage("Une erreur s’est produite durant l’envoi de votre message, veuillez réessayer.");
       }
     },
     [form],
@@ -248,6 +259,8 @@ export const ContactForm = () => {
       <Button _color="blue-900" className="self-center" type="submit">
         Envoyer votre message
       </Button>
+
+      <Dialog _message={message} onClose={handleCloseDialog} role={isError ? "alertdialog" : "dialog"} />
     </Form>
   );
 };
