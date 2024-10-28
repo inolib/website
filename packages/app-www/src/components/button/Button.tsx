@@ -20,8 +20,10 @@ export type ButtonProps = {
   _color: NonNullable<Variants["_color"]>;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({ _color, className, ...passthru }, ref) => {
-  return <button className={variants({ _color, className })} ref={ref} {...passthru} />;
-});
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ _color, className, type = "button", ...passthru }, ref) => {
+    return <button className={variants({ _color, className })} ref={ref} type={type} {...passthru} />;
+  },
+);
 
 Button.displayName = "Button";
