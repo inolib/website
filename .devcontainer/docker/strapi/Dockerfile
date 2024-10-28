@@ -4,10 +4,6 @@ ENV NODE_ENV="development"
 
 COPY ./usr/local/bin /usr/local/bin/
 
-CMD [ "startup.sh" ]
-
-HEALTHCHECK CMD [ "healthcheck.sh" ]
-
 USER root
 
 RUN apk add --no-cache autoconf
@@ -25,3 +21,7 @@ RUN apk add --no-cache zlib-dev
 RUN corepack enable pnpm
 
 USER node
+
+CMD [ "startup.sh" ]
+
+HEALTHCHECK CMD [ "healthcheck.sh" ]

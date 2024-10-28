@@ -3,8 +3,6 @@ FROM node:22.8-alpine
 COPY ./home/node /home/node/
 COPY ./usr/local/bin /usr/local/bin/
 
-CMD [ "startup.sh" ]
-
 USER root
 
 RUN chown --recursive node:node /home/node
@@ -26,3 +24,5 @@ RUN fish --command="curl --location --silent 'https://raw.githubusercontent.com/
 RUN fish --command="fisher install 'jorgebucaran/autopair.fish'"
 RUN fish --command="fisher install 'nickeb96/puffer-fish'"
 RUN fish --command="fisher install 'meaningful-ooo/sponge'"
+
+CMD [ "startup.sh" ]
