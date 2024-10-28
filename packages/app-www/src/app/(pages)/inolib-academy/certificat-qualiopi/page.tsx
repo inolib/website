@@ -27,7 +27,7 @@ const Page = () => {
 
             <p>Ce certificat, délivré par Alticert, est valide jusqu’au 06/10/2027.</p>
 
-            <p>
+            <p className="text-nowrap">
               <Link href="/assets/certificat-qualiopi-inolib-2024.pdf">
                 Télécharger le certificat Qualiopi d’INOLIB (PDF, 280 Ko)
               </Link>
