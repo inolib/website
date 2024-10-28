@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   ],
   manifest: "/manifest.webmanifest",
   robots: {
-    index: false,
+    index: process.env.NODE_ENV === "production",
   },
 };
 
