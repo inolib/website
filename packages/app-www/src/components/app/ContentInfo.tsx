@@ -127,7 +127,7 @@ export const ContentInfo = () => {
                 alt="Certificat Qualiopi"
                 className="size-full"
                 height={150}
-                src="/images/logos/qualiopi/qualiopi.jpg"
+                src="/images/logos/qualiopi/qualiopi.png"
                 width={300}
               />
             </Link>
