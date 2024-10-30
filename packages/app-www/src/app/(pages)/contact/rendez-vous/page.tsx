@@ -24,6 +24,8 @@ const Page = () => {
 
       <iframe
         className="h-[43.125rem] w-full"
+        loading="lazy"
+        sandbox="allow-scripts"
         src="https://meetings-eu1.hubspot.com/djeberine?embed=true"
         title="Calendrier"
         allowFullScreen
