@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_component_privacy_policy_sections",
+  "info": {
+    "displayName": "PrivacyPolicySection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ListItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.list-item"
+    },
+    "contactInfo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.contact-info"
+    }
+  }
+}

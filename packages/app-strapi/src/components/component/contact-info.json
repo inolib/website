@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_component_contact_infos",
+  "info": {
+    "displayName": "contactInfo"
+  },
+  "options": {},
+  "attributes": {
+    "adresseEmail": {
+      "type": "string",
+      "required": true
+    },
+    "adressePostale": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
