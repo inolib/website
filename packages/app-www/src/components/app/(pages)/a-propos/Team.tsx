@@ -4,8 +4,11 @@ import Image from "next/image";
 import type { VariantProps } from "tailwind-variants";
 
 import { Heading, HeadingContent } from "~/components/heading";
+import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
+
+import LinkedInIcon from "#/images/logos/social-networks/linkedin.svg";
 
 const variants = tv({
   slots: {
@@ -37,41 +40,125 @@ export const Team = ({ _color }: TeamProps) => {
       photo: "/images/photos/team/djebrine-aloui.jpg",
       name: "Djebrine ALOUI",
       role: "Dirigeant et fondateur",
-      description: "",
+      socialNetworks: [
+        {
+          label: "Djebrine ALOUI sur LinkedIn",
+          href: "https://www.linkedin.com/in/djebrinealoui",
+          icon: (
+            <LinkedInIcon
+              aria-label="Djebrine ALOUI sur LinkedIn"
+              className="size-8 fill-black group-hover/link:fill-[#0B66C2] group-hover/link:transition-all group-hover/link:duration-500"
+              key={0}
+            />
+          ),
+        },
+      ],
     },
     {
       photo: "/images/photos/team/aurore-mauve-voeltzel.jpg",
       name: "Aurore-Mauve VOELTZEL",
       role: "Développeuse économique",
-      description: "",
+      socialNetworks: [
+        {
+          label: "Aurore-Mauve VOELTZEL sur LinkedIn",
+          href: "https://www.linkedin.com/in/aurore-mauve-voeltzel-a23a1314",
+          icon: (
+            <LinkedInIcon
+              aria-label="Aurore-Mauve VOELTZEL sur LinkedIn"
+              className="size-8 fill-black group-hover/link:fill-[#0B66C2] group-hover/link:transition-all group-hover/link:duration-500"
+              key={0}
+            />
+          ),
+        },
+      ],
     },
     {
       photo: "/images/photos/team/matthieu-meignan.jpg",
       name: "Matthieu MEIGNAN",
       role: "Directeur technique",
-      description: "",
+      socialNetworks: [
+        {
+          label: "Matthieu MEIGNAN sur LinkedIn",
+          href: "https://www.linkedin.com/in/matthieu-meignan-5b3756330",
+          icon: (
+            <LinkedInIcon
+              aria-label="Matthieu MEIGNAN sur LinkedIn"
+              className="size-8 fill-black group-hover/link:fill-[#0B66C2] group-hover/link:transition-all group-hover/link:duration-500"
+              key={0}
+            />
+          ),
+        },
+      ],
     },
     {
       photo: "/images/photos/team/nadjemati-abdallah.jpg",
       name: "Nadjemati ABDALLAH",
       role: "",
-      description: "",
+      socialNetworks: [
+        {
+          label: "Nadjemati ABDALLAH sur LinkedIn",
+          href: "https://www.linkedin.com/in/nadjemati-abdallah-2a57921a0",
+          icon: (
+            <LinkedInIcon
+              aria-label="Nadjemati ABDALLAH sur LinkedIn"
+              className="size-8 fill-black group-hover/link:fill-[#0B66C2] group-hover/link:transition-all group-hover/link:duration-500"
+              key={0}
+            />
+          ),
+        },
+      ],
     },
     {
       name: "Amina HURIC",
       role: "",
-      description: "",
+      socialNetworks: [
+        {
+          label: "Amina HURIC sur LinkedIn",
+          href: "https://www.linkedin.com/in/amina-huric-331799252",
+          icon: (
+            <LinkedInIcon
+              aria-label="Amina HURIC sur LinkedIn"
+              className="size-8 fill-black group-hover/link:fill-[#0B66C2] group-hover/link:transition-all group-hover/link:duration-500"
+              key={0}
+            />
+          ),
+        },
+      ],
     },
     {
       name: "Brice MENDEZ",
       role: "Développeur web",
-      description: "",
+      socialNetworks: [
+        {
+          label: "Brice MENDEZ sur LinkedIn",
+          href: "https://www.linkedin.com/in/brice-m-6b844a2a1",
+          icon: (
+            <LinkedInIcon
+              aria-label="Brice MENDEZ sur LinkedIn"
+              className="size-8 fill-black group-hover/link:fill-[#0B66C2] group-hover/link:transition-all group-hover/link:duration-500"
+              key={0}
+            />
+          ),
+        },
+      ],
     },
     {
       photo: "/images/photos/team/maria-grairi.jpg",
       name: "Maria GRAIRI",
       role: "Développeuse web",
-      description: "",
+      socialNetworks: [
+        {
+          label: "Maria GRAIRI sur LinkedIn",
+          href: "https://www.linkedin.com/in/maria-grairi-787a8b136",
+          icon: (
+            <LinkedInIcon
+              aria-label="Maria GRAIRI sur LinkedIn"
+              className="size-8 fill-black group-hover/link:fill-[#0B66C2] group-hover/link:transition-all group-hover/link:duration-500"
+              key={0}
+            />
+          ),
+        },
+      ],
     },
   ];
 
@@ -105,7 +192,21 @@ export const Team = ({ _color }: TeamProps) => {
               <p className="font-semibold text-blue-700">{item.role}</p>
             </div>
 
-            <p>{item.description}</p>
+            <ul className="flex gap-4">
+              {item.socialNetworks.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    _color="transparent"
+                    _shape="button"
+                    className="group/link p-2 hover:bg-white hover:transition-all hover:duration-500 focus-visible:outline-black"
+                    href={item.href}
+                    title={item.label}
+                  >
+                    {item.icon}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         ))}
       </div>
