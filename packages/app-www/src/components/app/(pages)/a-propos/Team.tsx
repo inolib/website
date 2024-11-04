@@ -170,26 +170,28 @@ export const Team = ({ _color }: TeamProps) => {
 
       <div className="grid grid-cols-1 gap-16 self-center text-center sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         {team.map((item, index) => (
-          <div className="flex aspect-n flex-col items-center gap-4 rounded-t-full bg-blue-50 p-4 pt-12" key={index}>
-            {item.photo === undefined ? (
-              <Image
-                alt=""
-                className="size-24 rounded-full"
-                height={96}
-                src={createAvatar(initials, {
-                  backgroundColor: ["254147"],
-                  fontFamily: ["sans-serif"],
-                  seed: item.name,
-                }).toDataUri()}
-                width={96}
-              />
-            ) : (
-              <Image alt="" className="size-24 rounded-full" height={96} src={item.photo} width={96} />
-            )}
+          <div className="flex aspect-n flex-col items-center gap-8 rounded-t-full bg-blue-50 p-4 pt-12" key={index}>
+            <div className="flex flex-col items-center gap-4">
+              {item.photo === undefined ? (
+                <Image
+                  alt=""
+                  className="size-24 rounded-full"
+                  height={96}
+                  src={createAvatar(initials, {
+                    backgroundColor: ["254147"],
+                    fontFamily: ["sans-serif"],
+                    seed: item.name,
+                  }).toDataUri()}
+                  width={96}
+                />
+              ) : (
+                <Image alt="" className="size-24 rounded-full" height={96} src={item.photo} width={96} />
+              )}
 
-            <div className="flex flex-col gap-2">
-              <p className="font-bold">{item.name}</p>
-              <p className="font-semibold text-blue-700">{item.role}</p>
+              <div className="flex flex-col gap-2">
+                <p className="font-bold">{item.name}</p>
+                <p className="font-semibold text-blue-700">{item.role}</p>
+              </div>
             </div>
 
             <ul className="flex gap-4">
