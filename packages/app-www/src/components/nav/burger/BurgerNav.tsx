@@ -114,12 +114,20 @@ export const BurgerNav = () => {
           {burgerNav.isExpanded() ? (
             <BurgerNavButton aria-label="Fermer le menu">
               <span>Fermer</span>
-              <XCloseIcon className={cn("stroke-black", { "stroke-white [:hover>&]:stroke-black": isHomePage })} />
+              <XCloseIcon
+                className={cn("stroke-black", {
+                  "stroke-white [:hover>&]:stroke-black [:hover>&]:transition-all [:hover>&]:duration-500": isHomePage,
+                })}
+              />
             </BurgerNavButton>
           ) : (
             <BurgerNavButton aria-label="Ouvrir le menu">
               <span>Menu</span>
-              <MenuIcon className={cn("stroke-black", { "stroke-white [:hover>&]:stroke-black": isHomePage })} />
+              <MenuIcon
+                className={cn("stroke-black", {
+                  "stroke-white [:hover>&]:stroke-black [:hover>&]:transition-all [:hover>&]:duration-500": isHomePage,
+                })}
+              />
             </BurgerNavButton>
           )}
         </div>
