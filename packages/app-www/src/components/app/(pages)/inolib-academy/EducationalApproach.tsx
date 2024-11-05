@@ -7,7 +7,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import educationIllustration from "#/images/illustrations/education.svg?url";
+import educationalApproachIllustration from "#/images/illustrations/app/(pages)/inolib-academy/educational-approach.svg?url";
 
 const variants = tv({
   slots: {
@@ -73,7 +73,7 @@ export const EducationalApproach = ({ _color }: EducationalApproachProps) => {
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={educationIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={educationalApproachIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

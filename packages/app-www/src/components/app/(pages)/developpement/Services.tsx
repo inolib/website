@@ -15,7 +15,10 @@ import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
 import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
-import developmentIllustration from "#/images/illustrations/development.svg?url";
+import designIllustration from "#/images/illustrations/app/(pages)/developpement/design.svg?url";
+import mobileAppIllustration from "#/images/illustrations/app/(pages)/developpement/mobile-app.svg?url";
+import saasIllustration from "#/images/illustrations/app/(pages)/developpement/saas.svg?url";
+import websiteIllustration from "#/images/illustrations/app/(pages)/developpement/website.svg?url";
 
 const variants = tv({
   slots: {
@@ -73,7 +76,7 @@ export const Services = ({ _color }: ServicesProps) => {
             "Lancez une boutique en ligne performante avec des fonctionnalités adaptées à vos besoins. Chaque solution est optimisée pour une expérience d’achat fluide et une augmentation des conversions.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: websiteIllustration,
     },
     {
       title: "Développement d’applications mobiles",
@@ -85,7 +88,7 @@ export const Services = ({ _color }: ServicesProps) => {
             "Créez des applications mobiles sur mesure pour iOS et Android. Nos solutions allient performance et facilité d’utilisation.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: mobileAppIllustration,
     },
     {
       title: "Développement de solutions SaaS",
@@ -97,7 +100,7 @@ export const Services = ({ _color }: ServicesProps) => {
             "Optimisez vos processus avec des logiciels SaaS personnalisés, conçus pour soutenir la croissance de votre entreprise.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: saasIllustration,
     },
     {
       title: "Design et branding",
@@ -109,7 +112,7 @@ export const Services = ({ _color }: ServicesProps) => {
             "Renforcez votre identité visuelle avec des interfaces marquantes. Nous créons des expériences utilisateur intuitives et attractives.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: designIllustration,
     },
   ];
 
@@ -162,7 +165,7 @@ export const Services = ({ _color }: ServicesProps) => {
           </HighlightsContent>
 
           <HighlightsIllustration>
-            <Image alt="" className="h-96" src={item.illustration} />
+            <Image alt="" className="max-h-96 w-auto" src={item.illustration} />
           </HighlightsIllustration>
         </Highlights>
       ))}

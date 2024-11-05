@@ -5,7 +5,7 @@ import {
   AccessibilityAudit,
   Header,
   Monitoring,
-  Recommandations,
+  Recommendations,
   Referent,
   TechnicalSupport,
 } from "~/components/app/(pages)/accompagnement/(subpages)/accompagnement-technique";
@@ -34,7 +34,7 @@ const Page = () => {
       <TechnicalSupport _color="white" />
       <Monitoring _color="neutral-50" />
       <Referent _color="white" />
-      <Recommandations _color="neutral-50" />
+      <Recommendations _color="neutral-50" />
       <GoFurther _color="white" />
     </>
   );

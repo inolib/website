@@ -8,7 +8,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import developmentIllustration from "#/images/illustrations/development.svg?url";
+import institutionalWebsiteIllustration from "#/images/illustrations/app/(pages)/developpement/(subpages)/sites-vitrines-et-institutionnels/institutional-website.svg?url";
 
 const variants = tv({
   slots: {
@@ -86,7 +86,7 @@ export const InstitutionalWebsites = ({ _color }: InstitutionalWebsitesProps) =>
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={developmentIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={institutionalWebsiteIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

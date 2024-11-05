@@ -13,7 +13,7 @@ import {
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import developmentIllustration from "#/images/illustrations/development.svg?url";
+import approachIllustration from "#/images/illustrations/app/(pages)/developpement/approach.svg?url";
 
 const variants = tv({
   slots: {
@@ -66,7 +66,7 @@ export const Approach = ({ _color }: ApproachProps) => {
           description: "Analyse prédictive et apprentissage continu pour des décisions plus stratégiques.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: approachIllustration,
     },
   ];
 
@@ -105,7 +105,7 @@ export const Approach = ({ _color }: ApproachProps) => {
           </HighlightsContent>
 
           <HighlightsIllustration>
-            <Image alt="" className="h-96" src={item.illustration} />
+            <Image alt="" className="max-h-96 w-auto" src={item.illustration} />
           </HighlightsIllustration>
         </Highlights>
       ))}

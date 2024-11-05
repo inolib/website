@@ -8,7 +8,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import supportIllustration from "#/images/illustrations/support.svg?url";
+import operationalSupportIllustration from "#/images/illustrations/app/(pages)/accompagnement/(subpages)/accompagnement-de-projet/operational-support.svg?url";
 
 const variants = tv({
   slots: {
@@ -90,7 +90,7 @@ export const OperationalSupport = ({ _color }: OperationalSupportProps) => {
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={supportIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={operationalSupportIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

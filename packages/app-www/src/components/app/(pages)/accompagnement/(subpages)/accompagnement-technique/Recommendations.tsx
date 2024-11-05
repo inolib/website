@@ -8,7 +8,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import supportIllustration from "#/images/illustrations/support.svg?url";
+import recommendationsIllustration from "#/images/illustrations/app/(pages)/accompagnement/(subpages)/accompagnement-technique/recommendations.svg?url";
 
 const variants = tv({
   slots: {
@@ -28,11 +28,11 @@ const variants = tv({
 
 type Variants = VariantProps<typeof variants>;
 
-type RecommandationsProps = {
+type RecommendationsProps = {
   _color: NonNullable<Variants["_color"]>;
 };
 
-export const Recommandations = ({ _color }: RecommandationsProps) => {
+export const Recommendations = ({ _color }: RecommendationsProps) => {
   const { sectionClassName } = variants({ _color });
 
   const paragraphs = [
@@ -87,7 +87,7 @@ export const Recommandations = ({ _color }: RecommandationsProps) => {
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={supportIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={recommendationsIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

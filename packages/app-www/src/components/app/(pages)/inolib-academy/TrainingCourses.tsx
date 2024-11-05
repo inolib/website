@@ -14,7 +14,8 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import educationIllustration from "#/images/illustrations/education.svg?url";
+import accessibilityCoursesIllustration from "#/images/illustrations/app/(pages)/inolib-academy/accessibility-courses.svg?url";
+import generalCoursesIllustration from "#/images/illustrations/app/(pages)/inolib-academy/general-courses.svg?url";
 
 const variants = tv({
   slots: {
@@ -88,7 +89,7 @@ export const TrainingCourses = ({ _color }: TrainingCoursesProps) => {
           description: "Évaluer et améliorer l’accessibilité de vos projets.",
         },
       ],
-      illustration: educationIllustration,
+      illustration: accessibilityCoursesIllustration,
     },
     {
       title: "Formations aux métiers du numérique",
@@ -114,7 +115,7 @@ export const TrainingCourses = ({ _color }: TrainingCoursesProps) => {
             "Formez-vous aux outils numériques les plus récents, que ce soit pour la gestion de contenu, le marketing, ou l’analyse de données.",
         },
       ],
-      illustration: educationIllustration,
+      illustration: generalCoursesIllustration,
     },
   ];
 
@@ -157,7 +158,7 @@ export const TrainingCourses = ({ _color }: TrainingCoursesProps) => {
           </HighlightsContent>
 
           <HighlightsIllustration>
-            <Image alt="" className="h-96" src={item.illustration} />
+            <Image alt="" className="max-h-96 w-auto" src={item.illustration} />
           </HighlightsIllustration>
         </Highlights>
       ))}

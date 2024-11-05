@@ -4,7 +4,7 @@ import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { Section } from "~/components/section";
 
-import developmentIllustration from "#/images/illustrations/development.svg?url";
+import headerIllustration from "#/images/illustrations/app/(pages)/developpement/header.svg?url";
 
 export const Header = () => {
   return (
@@ -25,7 +25,7 @@ export const Header = () => {
         </TwoColumnsFlexLayoutColumn>
 
         <TwoColumnsFlexLayoutColumn className="flex items-center justify-center">
-          <Image alt="" src={developmentIllustration} />
+          <Image alt="" src={headerIllustration} />
         </TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
     </Section>

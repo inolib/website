@@ -12,10 +12,10 @@ import FileCheckFramedIcon from "#/images/icons/framed/file-check-02.svg";
 import FlagFramedIcon from "#/images/icons/framed/flag-03.svg";
 import GraduationHatFramedIcon from "#/images/icons/framed/graduation-hat-02.svg";
 import TerminalBrowserFramedIcon from "#/images/icons/framed/terminal-browser.svg";
-import auditIllustration from "#/images/illustrations/audit.svg?url";
-import developmentIllustration from "#/images/illustrations/development.svg?url";
-import educationIllustration from "#/images/illustrations/education.svg?url";
-import supportIllustration from "#/images/illustrations/support.svg?url";
+import supportIllustration from "#/images/illustrations/app/(pages)/accompagnement/header.svg?url";
+import auditIllustration from "#/images/illustrations/app/(pages)/audit/header.svg?url";
+import developmentIllustration from "#/images/illustrations/app/(pages)/developpement/header.svg?url";
+import trainingIllustration from "#/images/illustrations/app/(pages)/inolib-academy/header.svg?url";
 
 const variants = tv({
   slots: {
@@ -119,7 +119,7 @@ export const Services = ({ _color }: ServicesProps) => {
         label: "En savoir plus sur INOLIB Academy",
         href: "/inolib-academy",
       },
-      illustration: educationIllustration,
+      illustration: trainingIllustration,
     },
   ];
 
@@ -149,7 +149,7 @@ export const Services = ({ _color }: ServicesProps) => {
           </TwoColumnsFlexLayoutColumn>
 
           <TwoColumnsFlexLayoutColumn className="flex items-center justify-center">
-            <Image alt="" className="h-96" src={item.illustration} />
+            <Image alt="" className="max-h-96 w-auto" src={item.illustration} />
           </TwoColumnsFlexLayoutColumn>
         </TwoColumnsFlexLayout>
       ))}

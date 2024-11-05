@@ -8,7 +8,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import supportIllustration from "#/images/illustrations/support.svg?url";
+import accessibilityAuditIllustration from "#/images/illustrations/app/(pages)/accompagnement/(subpages)/accompagnement-technique/accessibility-audit.svg?url";
 
 const variants = tv({
   slots: {
@@ -77,7 +77,7 @@ export const AccessibilityAudit = ({ _color }: AccessibilityAuditProps) => {
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={supportIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={accessibilityAuditIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

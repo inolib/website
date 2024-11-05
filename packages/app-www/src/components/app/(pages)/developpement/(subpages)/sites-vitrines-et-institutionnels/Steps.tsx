@@ -13,7 +13,7 @@ import {
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import developmentIllustration from "#/images/illustrations/development.svg?url";
+import stepsIllustration from "#/images/illustrations/app/(pages)/developpement/(subpages)/sites-vitrines-et-institutionnels/steps.svg?url";
 
 const variants = tv({
   slots: {
@@ -108,7 +108,7 @@ export const Steps = ({ _color }: StepsProps) => {
         </HighlightsContent>
 
         <HighlightsIllustration>
-          <Image alt="" className="h-96" src={developmentIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={stepsIllustration} />
         </HighlightsIllustration>
       </Highlights>
     </Section>

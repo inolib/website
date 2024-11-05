@@ -9,7 +9,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import auditIllustration from "#/images/illustrations/audit.svg?url";
+import inclusiveApproachIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/tests-utilisateurs/inclusive-approach.svg?url";
 
 const variants = tv({
   slots: {
@@ -104,7 +104,7 @@ export const InclusiveApproach = ({ _color }: InclusiveApproachProps) => {
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={auditIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={inclusiveApproachIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

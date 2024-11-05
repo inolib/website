@@ -13,7 +13,7 @@ import {
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import auditIllustration from "#/images/illustrations/audit.svg?url";
+import methodologyIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audit-de-conformite/methodology.svg?url";
 
 const variants = tv({
   slots: {
@@ -94,7 +94,7 @@ export const Methodology = ({ _color }: MethodologyProps) => {
         </HighlightsContent>
 
         <HighlightsIllustration>
-          <Image alt="" className="h-96" src={auditIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={methodologyIllustration} />
         </HighlightsIllustration>
       </Highlights>
     </Section>
