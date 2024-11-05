@@ -101,7 +101,7 @@ export const BurgerNav = () => {
     <BurgerNavContext.Provider value={burgerNav}>
       <MenuBar
         aria-label="Menu principal"
-        className={cn("relative flex flex-col gap-4 px-[4dvw] py-4 text-2xl lg:hidden", {
+        className={cn("relative flex flex-col gap-4 px-[4dvw] py-4 text-2xl transition-all duration-500 lg:hidden", {
           "bg-blue-900": isHomePage,
         })}
         onBlurCapture={handleBlurCapture}
@@ -115,8 +115,8 @@ export const BurgerNav = () => {
             <BurgerNavButton aria-label="Fermer le menu">
               <span>Fermer</span>
               <XCloseIcon
-                className={cn("stroke-black", {
-                  "stroke-white transition-all duration-500 [:hover>&]:stroke-black": isHomePage,
+                className={cn("stroke-black transition-all duration-500", {
+                  "stroke-white [:hover>&]:stroke-black": isHomePage,
                 })}
               />
             </BurgerNavButton>
@@ -124,8 +124,8 @@ export const BurgerNav = () => {
             <BurgerNavButton aria-label="Ouvrir le menu">
               <span>Menu</span>
               <MenuIcon
-                className={cn("stroke-black", {
-                  "stroke-white transition-all duration-500 [:hover>&]:stroke-black": isHomePage,
+                className={cn("stroke-black transition-all duration-500", {
+                  "stroke-white [:hover>&]:stroke-black": isHomePage,
                 })}
               />
             </BurgerNavButton>

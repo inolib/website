@@ -47,8 +47,8 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
 
         <ChevronUpIcon className="stroke-black [[aria-expanded=false]>&]:hidden" />
         <ChevronDownIcon
-          className={cn("stroke-black [[aria-expanded=true]>&]:hidden", {
-            "stroke-white transition-all duration-500 [:hover>&]:stroke-black": isHomePage,
+          className={cn("stroke-black transition-all duration-500 [[aria-expanded=true]>&]:hidden", {
+            "stroke-white [:hover>&]:stroke-black": isHomePage,
           })}
         />
       </MenuBarSubmenuButton>
