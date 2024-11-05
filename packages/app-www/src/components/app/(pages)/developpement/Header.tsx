@@ -12,7 +12,7 @@ export const Header = () => {
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn className="flex flex-col gap-16">
           <Heading _alignment="left" _size="4xl">
-            <HeadingContent _level={1}>Votre partenaire en développement web et mobile</HeadingContent>
+            <HeadingContent _level={1}>Développement web et mobile sur mesure</HeadingContent>
           </Heading>
 
           <p>

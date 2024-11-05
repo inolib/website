@@ -11,7 +11,19 @@ import {
 } from "~/components/app/(pages)/accompagnement/(subpages)/accompagnement-technique";
 
 export const metadata: Metadata = {
-  title: "Accompagnement technique | INOLIB",
+  title: "Accompagnement technique pour l’accessibilité numérique | INOLIB",
+  description:
+    "INOLIB vous accompagne vers l’accessibilité numérique de vos outils numériques. Nous réalisons des audits, fournissons des recommandations, assurons un support technique et offrons un suivi continu pour garantir la conformité RGAA et WCAG.",
+  openGraph: {
+    type: "website",
+    siteName: "INOLIB",
+    locale: "fr_FR",
+    title: "Accompagnement technique pour l’accessibilité numérique",
+    description:
+      "INOLIB vous accompagne vers l’accessibilité numérique de vos outils numériques. Nous réalisons des audits, fournissons des recommandations, assurons un support technique et offrons un suivi continu pour garantir la conformité RGAA et WCAG.",
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/accompagnement/header.svg`,
+    url: `${process.env.SITE_URL}/accompagnement/accompagnement-technique`,
+  },
 };
 
 const Page = () => {
