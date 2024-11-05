@@ -11,10 +11,10 @@ const variants = tv({
     slideshowClassName:
       "flex flex-wrap items-center justify-between gap-x-16 gap-y-8 px-[4dvw] py-24 md:flex-nowrap xl:px-[8dvw]",
     slideshowNextButtonClassName:
-      "rounded-full border p-4 outline-none hover:transition-all hover:duration-500 focus-visible:outline-4 focus-visible:outline-offset-4",
+      "rounded-full border p-4 outline-none transition-all duration-500 focus-visible:outline-4 focus-visible:outline-offset-4",
     slideshowNextButtonIconClassName: "size-6",
     slideshowPreviousButtonClassName:
-      "rounded-full border p-4 outline-none hover:transition-all hover:duration-500 focus-visible:outline-4 focus-visible:outline-offset-4 md:order-first",
+      "rounded-full border p-4 outline-none transition-all duration-500 focus-visible:outline-4 focus-visible:outline-offset-4 md:order-first",
     slideshowPreviousButtonIconClassName: "size-6",
     slideshowSlideClassName: "flex flex-col gap-8",
     slideshowSlideRoleClassName: "",

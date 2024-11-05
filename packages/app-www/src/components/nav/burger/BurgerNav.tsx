@@ -116,7 +116,7 @@ export const BurgerNav = () => {
               <span>Fermer</span>
               <XCloseIcon
                 className={cn("stroke-black", {
-                  "stroke-white [:hover>&]:stroke-black [:hover>&]:transition-all [:hover>&]:duration-500": isHomePage,
+                  "stroke-white transition-all duration-500 [:hover>&]:stroke-black": isHomePage,
                 })}
               />
             </BurgerNavButton>
@@ -125,7 +125,7 @@ export const BurgerNav = () => {
               <span>Menu</span>
               <MenuIcon
                 className={cn("stroke-black", {
-                  "stroke-white [:hover>&]:stroke-black [:hover>&]:transition-all [:hover>&]:duration-500": isHomePage,
+                  "stroke-white transition-all duration-500 [:hover>&]:stroke-black": isHomePage,
                 })}
               />
             </BurgerNavButton>

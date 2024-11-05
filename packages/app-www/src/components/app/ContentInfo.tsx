@@ -45,7 +45,7 @@ export const ContentInfo = () => {
       icon: (
         <FacebookLogo
           aria-label="INOLIB sur Facebook"
-          className="size-8 fill-white group-hover/link:fill-[#0766FF] group-hover/link:transition-all group-hover/link:duration-500"
+          className="size-8 fill-white transition-all duration-500 group-hover/link:fill-[#0766FF]"
         />
       ),
     },
@@ -55,7 +55,7 @@ export const ContentInfo = () => {
       icon: (
         <LinkedInLogo
           aria-label="INOLIB sur LinkedIn"
-          className="size-8 fill-white group-hover/link:fill-[#0B66C2] group-hover/link:transition-all group-hover/link:duration-500"
+          className="size-8 fill-white transition-all duration-500 group-hover/link:fill-[#0B66C2]"
         />
       ),
     },
@@ -65,7 +65,7 @@ export const ContentInfo = () => {
       icon: (
         <XLogo
           aria-label="INOLIB sur X"
-          className="size-8 fill-white group-hover/link:fill-black group-hover/link:transition-all group-hover/link:duration-500"
+          className="size-8 fill-white transition-all duration-500 group-hover/link:fill-black"
         />
       ),
     },
@@ -75,7 +75,7 @@ export const ContentInfo = () => {
       icon: (
         <YouTubeLogo
           aria-label="INOLIB sur YouTube"
-          className="size-8 fill-white group-hover/link:fill-[#FF0000] group-hover/link:transition-all group-hover/link:duration-500"
+          className="size-8 fill-white transition-all duration-500 group-hover/link:fill-[#FF0000]"
         />
       ),
     },
@@ -114,7 +114,7 @@ export const ContentInfo = () => {
                     <Link
                       _color="transparent"
                       _shape="button"
-                      className="group/link p-2 hover:bg-white hover:transition-all hover:duration-500 focus-visible:outline-white"
+                      className="group/link p-2 transition-all duration-500 hover:bg-white focus-visible:outline-white"
                       href={item.href}
                       title={item.label}
                     >

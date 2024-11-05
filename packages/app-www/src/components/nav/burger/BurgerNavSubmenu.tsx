@@ -30,7 +30,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
     <MenuBarSubmenu className="flex flex-col gap-2">
       <MenuBarSubmenuButton
         className={cn(
-          "flex w-full items-center justify-between gap-8 rounded-lg bg-white px-4 py-2 font-semibold text-black outline-none hover:bg-blue-50 hover:transition-all hover:duration-500 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-black [&[aria-expanded=true]]:bg-blue-50",
+          "flex w-full items-center justify-between gap-8 rounded-lg bg-white px-4 py-2 font-semibold text-black outline-none transition-all duration-500 hover:bg-blue-50 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-black [&[aria-expanded=true]]:bg-blue-50",
           {
             "bg-blue-900 text-white hover:bg-white hover:text-black focus-visible:outline-white [&[aria-expanded=true]]:bg-white [&[aria-expanded=true]]:text-black":
               isHomePage,
@@ -49,8 +49,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
           <ChevronUpIcon className="stroke-black [[aria-expanded=false]_&]:hidden" />
           <ChevronDownIcon
             className={cn("stroke-black [[aria-expanded=true]_&]:hidden", {
-              "stroke-white [[aria-expanded=false]:hover_&]:stroke-black [[aria-expanded=false]:hover_&]:transition-all [[aria-expanded=false]:hover_&]:duration-500":
-                isHomePage,
+              "stroke-white transition-all duration-500 [[aria-expanded=false]:hover_&]:stroke-black": isHomePage,
             })}
           />
         </span>
