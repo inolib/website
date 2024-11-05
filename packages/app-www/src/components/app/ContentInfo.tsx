@@ -126,26 +126,29 @@ export const ContentInfo = () => {
             </div>
           </ThreeColumnsFlexLayoutColumn>
 
-          <ThreeColumnsFlexLayoutColumn className="flex flex-col items-end gap-4">
-            <Link
-              _color="transparent"
-              _shape="link"
-              className="h-24 focus-visible:outline-white"
-              href="/inolib-academy/certificat-qualiopi"
-              title="Certificat Qualiopi"
-            >
-              <Image
-                alt="Certificat Qualiopi"
-                className="size-full"
-                height={150}
-                src="/images/logos/qualiopi/qualiopi.png"
-                width={300}
-              />
-            </Link>
+          <ThreeColumnsFlexLayoutColumn className="flex justify-end">
+            <div className="flex flex-col gap-4">
+              <Link
+                _color="transparent"
+                _shape="link"
+                className="h-24 w-auto focus-visible:outline-white"
+                href="/inolib-academy/certificat-qualiopi"
+                title="Certificat Qualiopi"
+              >
+                <Image
+                  alt="Certificat Qualiopi"
+                  className="size-full"
+                  height={150}
+                  src="/images/logos/qualiopi/qualiopi.png"
+                  width={300}
+                />
+              </Link>
 
-            <p className="max-w-40 text-xs">
-              La certification qualité a été délivrée au titre de la catégorie d’action suivante : actions de formation.
-            </p>
+              <p className="max-w-40 text-xs">
+                La certification qualité a été délivrée au titre de la catégorie d’action suivante : actions de
+                formation.
+              </p>
+            </div>
           </ThreeColumnsFlexLayoutColumn>
         </ThreeColumnsFlexLayout>
 
@@ -156,7 +159,7 @@ export const ContentInfo = () => {
 
           <p className="hidden md:block">Accessibilité : totalement accessible</p>
 
-          <p className="text-neutral-400">© 2024 INOLIB</p>
+          <p>© 2024 INOLIB</p>
         </div>
       </Section>
     </footer>
