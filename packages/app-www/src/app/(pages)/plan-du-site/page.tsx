@@ -54,7 +54,7 @@ const Page = () => {
             <p>Accompagnement</p>
             <UnorderedList className="flex flex-col gap-2">
               <UnorderedListItem>
-                <Link href="/accompagnement/accompagnement-de-projet">Accompagnement de projet</Link>
+                <Link href="/accompagnement/pilotage-de-projet">Pilotage de projet</Link>
               </UnorderedListItem>
               <UnorderedListItem>
                 <Link href="/accompagnement/accompagnement-technique">Accompagnement technique</Link>

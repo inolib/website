@@ -58,8 +58,8 @@ export const GoFurther = ({ _color }: GoFurtherProps) => {
                 _border="black"
                 _color="blue-50"
                 _shape="button"
-                aria-label="En savoir plus sur l’accompagnement de projet"
-                href="/accompagnement/accompagnement-de-projet"
+                aria-label="En savoir plus sur le pilotage de projet"
+                href="/accompagnement/pilotage-de-projet"
               >
                 <span>En savoir plus</span>
                 <ArrowNarrowRightIcon className="stroke-black" />

@@ -64,8 +64,8 @@ export const useMenu = (): Menu => [
       // },
       {
         icon: <FileCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
-        label: "Accompagnement de projet",
-        href: "/accompagnement/accompagnement-de-projet",
+        label: "Pilotage de projet",
+        href: "/accompagnement/pilotage-de-projet",
       },
       {
         icon: <UserCheckIcon className="size-6 shrink-0 stroke-blue-600" />,

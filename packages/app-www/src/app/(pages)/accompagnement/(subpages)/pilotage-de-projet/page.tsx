@@ -6,21 +6,21 @@ import {
   Header,
   OperationalSupport,
   StrategicSupport,
-} from "~/components/app/(pages)/accompagnement/(subpages)/accompagnement-de-projet";
+} from "~/components/app/(pages)/accompagnement/(subpages)/pilotage-de-projet";
 
 export const metadata: Metadata = {
-  title: "Accompagnement de projet pour l’accessibilité numérique | INOLIB",
+  title: "Pilotage de projet pour l’accessibilité numérique | INOLIB",
   description:
     "INOLIB vous accompagne dans vos projets en intégrant l’accessibilité numérique à chaque étape. De la stratégie à l’opérationnel, nous assurons des solutions performantes et conformes aux normes RGAA et WCAG.",
   openGraph: {
     type: "website",
     siteName: "INOLIB",
     locale: "fr_FR",
-    title: "Accompagnement de projet pour l’accessibilité numérique",
+    title: "Pilotage de projet pour l’accessibilité numérique",
     description:
       "INOLIB vous accompagne dans vos projets en intégrant l’accessibilité numérique à chaque étape. De la stratégie à l’opérationnel, nous assurons des solutions performantes et conformes aux normes RGAA et WCAG.",
     images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/accompagnement/header.svg`,
-    url: `${process.env.SITE_URL}/accompagnement/accompagnement-de-projet`,
+    url: `${process.env.SITE_URL}/accompagnement/pilotage-de-projet`,
   },
 };
 

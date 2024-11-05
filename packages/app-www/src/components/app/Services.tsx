@@ -76,8 +76,8 @@ export const Services = ({ _color }: ServicesProps) => {
         </>
       ),
       link: {
-        label: "En savoir plus sur l’accompagnement de projet",
-        href: "/accompagnement/accompagnement-de-projet",
+        label: "En savoir plus sur le pilotage de projet",
+        href: "/accompagnement/pilotage-de-projet",
       },
       illustration: supportIllustration,
     },

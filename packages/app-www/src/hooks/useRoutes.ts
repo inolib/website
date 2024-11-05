@@ -19,9 +19,9 @@ export const useRoutes = (): Routes => ({
     isActive: false,
     title: "Accompagnement",
   },
-  "/accompagnement/accompagnement-de-projet": {
+  "/accompagnement/pilotage-de-projet": {
     isActive: true,
-    title: "Accompagnement de projet",
+    title: "Pilotage de projet",
   },
   "/accompagnement/accompagnement-technique": {
     isActive: true,

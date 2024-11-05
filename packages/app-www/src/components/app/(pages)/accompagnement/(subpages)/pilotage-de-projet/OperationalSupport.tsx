@@ -8,7 +8,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import operationalSupportIllustration from "#/images/illustrations/app/(pages)/accompagnement/(subpages)/accompagnement-de-projet/operational-support.svg?url";
+import operationalSupportIllustration from "#/images/illustrations/app/(pages)/accompagnement/(subpages)/pilotage-de-projet/operational-support.svg?url";
 
 const variants = tv({
   slots: {
