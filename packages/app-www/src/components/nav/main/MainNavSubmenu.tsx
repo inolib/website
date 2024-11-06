@@ -53,46 +53,48 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
         />
       </MenuBarSubmenuButton>
 
-      <MenuBarSubmenuList className="invisible absolute top-[3.1875rem] -z-10 flex size-max -translate-y-full flex-col gap-2 overflow-hidden rounded-xl border border-black bg-white p-2 transition-all duration-500 [[data-expanded=true]_&]:visible [[data-expanded=true]_&]:translate-y-0">
-        {_submenu.submenu.map((item, index) => {
-          const isCurrentPage = item.href === pathname;
+      <div className="invisible absolute top-[3.1875rem] h-0 overflow-hidden transition-all duration-500 [[data-expanded=true]_&]:visible [[data-expanded=true]_&]:h-[8.1875rem]">
+        <MenuBarSubmenuList className="flex w-max flex-col gap-2 rounded-xl border border-black bg-white p-2">
+          {_submenu.submenu.map((item, index) => {
+            const isCurrentPage = item.href === pathname;
 
-          // if (index === 0) {
-          //   return (
-          //     <MenuBarSubmenuListItem key={index}>
-          //       <MainNavSubmenuLink
-          //         aria-current={isCurrentPage ? "page" : undefined}
-          //         className={cn("flex flex-col rounded-xl p-4 hover:bg-blue-50", {
-          //           "hover:bg-sand-50": isHomePage,
-          //         })}
-          //         href={item.href}
-          //       >
-          //         <span className="font-bold">{item.label}</span>
-          //         <span className="text-sm">{item.description}</span>
-          //       </MainNavSubmenuLink>
-          //     </MenuBarSubmenuListItem>
-          //   );
-          // }
+            // if (index === 0) {
+            //   return (
+            //     <MenuBarSubmenuListItem key={index}>
+            //       <MainNavSubmenuLink
+            //         aria-current={isCurrentPage ? "page" : undefined}
+            //         className={cn("flex flex-col rounded-xl p-4 hover:bg-blue-50", {
+            //           "hover:bg-sand-50": isHomePage,
+            //         })}
+            //         href={item.href}
+            //       >
+            //         <span className="font-bold">{item.label}</span>
+            //         <span className="text-sm">{item.description}</span>
+            //       </MainNavSubmenuLink>
+            //     </MenuBarSubmenuListItem>
+            //   );
+            // }
 
-          return (
-            <MenuBarSubmenuListItem key={index}>
-              <MainNavSubmenuLink
-                _color="white"
-                _shape="button"
-                aria-current={isCurrentPage ? "page" : undefined}
-                className={cn("w-full justify-start focus-visible:outline-black", {
-                  "font-extrabold underline": isCurrentPage,
-                  "hover:bg-sand-50": isHomePage,
-                })}
-                href={item.href}
-              >
-                {item.icon}
-                <span>{item.label}</span>
-              </MainNavSubmenuLink>
-            </MenuBarSubmenuListItem>
-          );
-        })}
-      </MenuBarSubmenuList>
+            return (
+              <MenuBarSubmenuListItem key={index}>
+                <MainNavSubmenuLink
+                  _color="white"
+                  _shape="button"
+                  aria-current={isCurrentPage ? "page" : undefined}
+                  className={cn("w-full justify-start focus-visible:outline-black", {
+                    "font-extrabold underline": isCurrentPage,
+                    "hover:bg-sand-50": isHomePage,
+                  })}
+                  href={item.href}
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                </MainNavSubmenuLink>
+              </MenuBarSubmenuListItem>
+            );
+          })}
+        </MenuBarSubmenuList>
+      </div>
     </MenuBarSubmenu>
   );
 };

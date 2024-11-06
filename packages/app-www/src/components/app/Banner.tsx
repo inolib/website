@@ -19,7 +19,7 @@ export const Banner = () => {
   const isHomePage = useMemo(() => pathname === "/", [pathname]);
 
   return (
-    <header className="lg:relative lg:z-0" role="banner">
+    <header role="banner">
       <Section
         className={cn(
           "flex items-center justify-between gap-8 bg-blue-50 transition-all duration-500 first-of-type:py-4",
@@ -61,12 +61,9 @@ export const Banner = () => {
       </Section>
 
       <Section
-        className={cn(
-          "relative -z-20 hidden items-center justify-center pb-2 pt-0 transition-all duration-500 lg:flex",
-          {
-            "bg-blue-900": isHomePage,
-          },
-        )}
+        className={cn("hidden items-center justify-center bg-white py-4 transition-all duration-500 lg:flex", {
+          "bg-blue-900": isHomePage,
+        })}
       >
         <MainNav />
       </Section>

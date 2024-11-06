@@ -19,7 +19,7 @@ export const MainNav = () => {
   return (
     <MenuBar aria-label="Menu principal">
       <MenuBarList
-        className={cn("flex items-center gap-4 bg-white pb-2 pt-4 transition-all duration-500", {
+        className={cn("flex items-center gap-4 bg-white transition-all duration-500", {
           "bg-blue-900": isHomePage,
         })}
       >
