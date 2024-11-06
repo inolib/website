@@ -53,7 +53,7 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
         />
       </MenuBarSubmenuButton>
 
-      <MenuBarSubmenuList className="absolute top-[3.1875rem] flex w-max flex-col gap-2 rounded-xl border border-black bg-white p-2">
+      <MenuBarSubmenuList className="invisible absolute top-[3.1875rem] -z-10 flex size-max -translate-y-full flex-col gap-2 overflow-hidden rounded-xl border border-black bg-white p-2 transition-all duration-500 [[data-expanded=true]_&]:visible [[data-expanded=true]_&]:translate-y-0">
         {_submenu.submenu.map((item, index) => {
           const isCurrentPage = item.href === pathname;
 

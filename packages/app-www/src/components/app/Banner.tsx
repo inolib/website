@@ -19,10 +19,10 @@ export const Banner = () => {
   const isHomePage = useMemo(() => pathname === "/", [pathname]);
 
   return (
-    <header role="banner">
+    <header className="relative z-0" role="banner">
       <Section
         className={cn(
-          "flex h-[5.25rem] items-center justify-between gap-8 bg-blue-50 transition-all duration-500 first-of-type:py-4",
+          "flex items-center justify-between gap-8 bg-blue-50 transition-all duration-500 first-of-type:py-4",
           {
             "bg-blue-950": isHomePage,
           },
@@ -52,7 +52,7 @@ export const Banner = () => {
           href="/"
           title="Accueil"
         >
-          <Image alt="Accueil" className="h-9 w-fit" src={isHomePage ? inolibYellowLogo : inolibBlueLogo} />
+          <Image alt="Accueil" className="h-[1.6875rem] w-auto" src={isHomePage ? inolibYellowLogo : inolibBlueLogo} />
         </Link>
 
         <Link _color={isHomePage ? "yellow-500" : "blue-900"} _shape="button" href="/contact">
@@ -61,9 +61,12 @@ export const Banner = () => {
       </Section>
 
       <Section
-        className={cn("hidden h-[5.25rem] items-center justify-center py-4 transition-all duration-500 lg:flex", {
-          "bg-blue-900": isHomePage,
-        })}
+        className={cn(
+          "relative -z-20 hidden items-center justify-center pb-2 pt-0 transition-all duration-500 lg:flex",
+          {
+            "bg-blue-900": isHomePage,
+          },
+        )}
       >
         <MainNav />
       </Section>

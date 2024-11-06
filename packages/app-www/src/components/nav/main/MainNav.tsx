@@ -1,4 +1,10 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import { useMemo } from "react";
+
 import { MenuBar, MenuBarList, MenuBarListItem } from "~/components/headless";
+import { cn } from "~/helpers";
 import { useMenu } from "~/hooks";
 
 import { MainNavLink } from "./MainNavLink";
@@ -6,10 +12,17 @@ import { MainNavSubmenu } from "./MainNavSubmenu";
 
 export const MainNav = () => {
   const menu = useMenu();
+  const pathname = usePathname();
+
+  const isHomePage = useMemo(() => pathname === "/", [pathname]);
 
   return (
     <MenuBar aria-label="Menu principal">
-      <MenuBarList className="flex items-center gap-4">
+      <MenuBarList
+        className={cn("flex items-center gap-4 bg-white pb-2 pt-4 transition-all duration-500", {
+          "bg-blue-900": isHomePage,
+        })}
+      >
         {menu.map((item, index) => (
           <MenuBarListItem key={index}>
             {item.submenu === undefined ? <MainNavLink _link={item} /> : <MainNavSubmenu _submenu={item} />}
