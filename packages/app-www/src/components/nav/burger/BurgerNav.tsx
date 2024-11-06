@@ -101,9 +101,12 @@ export const BurgerNav = () => {
     <BurgerNavContext.Provider value={burgerNav}>
       <MenuBar
         aria-label="Menu principal"
-        className={cn("relative flex flex-col gap-4 px-[4dvw] py-4 text-2xl transition-all duration-500 lg:hidden", {
-          "bg-blue-900": isHomePage,
-        })}
+        className={cn(
+          "relative z-10 flex flex-col gap-4 px-[4dvw] py-4 text-2xl transition-all duration-500 lg:hidden",
+          {
+            "bg-blue-900": isHomePage,
+          },
+        )}
         onBlurCapture={handleBlurCapture}
         onKeyDownCapture={handleKeyDownCapture}
         ref={ref}
@@ -133,7 +136,7 @@ export const BurgerNav = () => {
         </div>
 
         <div
-          className={cn("absolute left-0 top-20 z-10 flex w-full justify-center bg-white px-[4dvw] pb-24 pt-4", {
+          className={cn("absolute left-0 top-20 flex w-full justify-center bg-white px-[4dvw] pb-24 pt-4", {
             hidden: !burgerNav.isExpanded(),
             "bg-blue-900": isHomePage,
           })}

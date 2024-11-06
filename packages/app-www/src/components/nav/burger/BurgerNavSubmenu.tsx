@@ -27,7 +27,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
   const isHomePage = useMemo(() => pathname === "/", [pathname]);
 
   return (
-    <MenuBarSubmenu className="flex flex-col gap-2">
+    <MenuBarSubmenu className="flex flex-col">
       <MenuBarSubmenuButton
         className={cn(
           "flex w-full items-center justify-between gap-8 rounded-lg bg-white px-4 py-2 font-semibold text-black outline-none transition-all duration-500 hover:bg-blue-50 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-black [&[aria-expanded=true]]:bg-blue-50",
@@ -55,46 +55,48 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
         </span>
       </MenuBarSubmenuButton>
 
-      <MenuBarSubmenuList className="top-[3.1875rem] flex flex-col gap-2 rounded-xl border border-black bg-white p-2">
-        {_submenu.submenu.map((item, index) => {
-          const isCurrentPage = item.href === pathname;
+      <div className="invisible mt-0 h-0 overflow-hidden transition-all duration-500 [[data-expanded=true]_&]:visible [[data-expanded=true]_&]:mt-2 [[data-expanded=true]_&]:h-[8.1875rem]">
+        <MenuBarSubmenuList className="top-[3.1875rem] flex flex-col gap-2 rounded-xl border border-black bg-white p-2">
+          {_submenu.submenu.map((item, index) => {
+            const isCurrentPage = item.href === pathname;
 
-          // if (index === 0) {
-          //   return (
-          //     <MenuBarSubmenuListItem key={index}>
-          //       <BurgerNavSubmenuLink
-          //         aria-current={isCurrentPage ? "page" : undefined}
-          //         className={cn("flex flex-col rounded-xl p-4 hover:bg-blue-50", {
-          //           "hover:bg-sand-50": isHomePage,
-          //         })}
-          //         href={item.href}
-          //       >
-          //         <span className="font-bold">{item.label}</span>
-          //         <span className="text-sm">{item.description}</span>
-          //       </BurgerNavSubmenuLink>
-          //     </MenuBarSubmenuListItem>
-          //   );
-          // }
+            // if (index === 0) {
+            //   return (
+            //     <MenuBarSubmenuListItem key={index}>
+            //       <BurgerNavSubmenuLink
+            //         aria-current={isCurrentPage ? "page" : undefined}
+            //         className={cn("flex flex-col rounded-xl p-4 hover:bg-blue-50", {
+            //           "hover:bg-sand-50": isHomePage,
+            //         })}
+            //         href={item.href}
+            //       >
+            //         <span className="font-bold">{item.label}</span>
+            //         <span className="text-sm">{item.description}</span>
+            //       </BurgerNavSubmenuLink>
+            //     </MenuBarSubmenuListItem>
+            //   );
+            // }
 
-          return (
-            <MenuBarSubmenuListItem key={index}>
-              <BurgerNavSubmenuLink
-                _color="white"
-                _shape="button"
-                aria-current={isCurrentPage ? "page" : undefined}
-                className={cn("w-full justify-start gap-4 text-left focus-visible:outline-black", {
-                  "font-extrabold underline": isCurrentPage,
-                  "hover:bg-sand-50": isHomePage,
-                })}
-                href={item.href}
-              >
-                {item.icon}
-                <span>{item.label}</span>
-              </BurgerNavSubmenuLink>
-            </MenuBarSubmenuListItem>
-          );
-        })}
-      </MenuBarSubmenuList>
+            return (
+              <MenuBarSubmenuListItem key={index}>
+                <BurgerNavSubmenuLink
+                  _color="white"
+                  _shape="button"
+                  aria-current={isCurrentPage ? "page" : undefined}
+                  className={cn("w-full justify-start gap-4 text-left focus-visible:outline-black", {
+                    "font-extrabold underline": isCurrentPage,
+                    "hover:bg-sand-50": isHomePage,
+                  })}
+                  href={item.href}
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                </BurgerNavSubmenuLink>
+              </MenuBarSubmenuListItem>
+            );
+          })}
+        </MenuBarSubmenuList>
+      </div>
     </MenuBarSubmenu>
   );
 };
