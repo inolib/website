@@ -1,11 +1,13 @@
 "use client";
+import { useEffect, useState } from "react";
 import type { VariantProps } from "tailwind-variants";
 
+import { fetchValue } from "~/app/utils/fetchPolicy";
+import { Loader2 } from "lucide-react";
 import { Heading, HeadingContent, HeadingSubheading } from "~/components/heading";
 import { FlexGridList, FlexGridListItem } from "~/components/list";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
-import { useValues } from "~/hooks/useValue";
 
 const variants = tv({
   slots: {
@@ -31,16 +33,52 @@ type ValuesProps = {
 
 export const Values = ({ _color }: ValuesProps) => {
   const { sectionClassName } = variants({ _color });
-  const { values, isLoading, error } = useValues();
+  const [values, setValues] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    /**
+     *
+     */
+    async function loadValues() {
+      try {
+        setIsLoading(true);
+        const data = await fetchValue();
+
+        setValues(data);
+        console.log("affichage valeurs c", data);
+      } catch {
+        setError("Failed to load values");
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    loadValues();
+  }, []);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return (
+      <Section className={`py-16 ${sectionClassName}`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-center py-12">
+            <Loader2 className="animate-spin size-8 text-blue-600" />
+          </div>
+        </div>
+      </Section>
+    );
   }
 
   if (error) {
-    return <p>Error loading values: {error}</p>;
+    return (
+      <Section className={`py-16 ${sectionClassName}`}>
+        <div className="container mx-auto px-4">
+          <p className="text-center text-red-600">{error}</p>
+        </div>
+      </Section>
+    );
   }
-
   return (
     <Section className={sectionClassName()}>
       <Heading _alignment="center" _size="4xl">

@@ -1,10 +1,10 @@
 import { fetchPolicyData } from "~/app/utils/fetchPolicy";
-import { Team } from "~/components/(test)/team";
+import { Team } from "~/components/(test)/a-propos/team";
 import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { UnorderedList, UnorderedListItem } from "~/components/list";
 import { Section } from "~/components/section";
-import { Values } from "~/components/(test)/Team/valeur";
+import { Values } from "~/components/(test)/a-propos/valeur";
 
 /**
  *

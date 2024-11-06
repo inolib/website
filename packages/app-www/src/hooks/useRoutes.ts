@@ -11,9 +11,9 @@ export const useRoutes = (): Routes => ({
     isActive: true,
     title: "test",
   },
-  "/testAprops": {
+  "/Apropos": {
     isActive: true,
-    title: "test",
+    title: "Apropos",
   },
   "/testMention": {
     isActive: true,

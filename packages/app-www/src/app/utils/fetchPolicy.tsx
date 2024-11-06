@@ -27,8 +27,8 @@ export async function fetchValue() {
   }
 
   const data = await res.json();
-  console.log("fetched data", data);
-  return data.data;
+  console.log("afficher les valeurs", data);
+  return data;
 }
 
 /**
@@ -72,3 +72,20 @@ export async function fetchMention() {
 /**
  *
  */
+export async function fetchMembers() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://strapi:1337";
+  const res = await fetch("http://localhost:1337/api/membres?populate=*", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch policy data");
+  }
+
+  const data = await res.json();
+
+  return data.data.map((member) => ({
+    ...member,
+    photoUrl: member.photo?.url ? `${apiUrl}${member.photo.url}` : null,
+  }));
+}
