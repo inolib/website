@@ -7,7 +7,7 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { cn, tv } from "~/helpers";
 
-import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
+import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
 import FileCheckFramedIcon from "#/images/icons/framed/file-check-02.svg";
 import FlagFramedIcon from "#/images/icons/framed/flag-03.svg";
 import GraduationHatFramedIcon from "#/images/icons/framed/graduation-hat-02.svg";
@@ -144,7 +144,7 @@ export const Services = ({ _color }: ServicesProps) => {
 
             <Link _border="black" _color="white" _shape="button" aria-label={item.link.label} href={item.link.href}>
               <span>En savoir plus</span>
-              <ArrowNarrowRightIcon className="stroke-black" />
+              <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
             </Link>
           </TwoColumnsFlexLayoutColumn>
 

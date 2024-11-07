@@ -7,7 +7,7 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
+import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
 
 const variants = tv({
   slots: {
@@ -62,7 +62,7 @@ export const GoFurther = ({ _color }: GoFurtherProps) => {
                 href="/audit/audit-de-conformite"
               >
                 <span>En savoir plus</span>
-                <ArrowNarrowRightIcon className="stroke-black" />
+                <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
               </Link>
             </BoxCardContent>
           </BoxCard>
@@ -89,7 +89,7 @@ export const GoFurther = ({ _color }: GoFurtherProps) => {
                 href="/accompagnement/pilotage-de-projet"
               >
                 <span>En savoir plus</span>
-                <ArrowNarrowRightIcon className="stroke-black" />
+                <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
               </Link>
             </BoxCardContent>
           </BoxCard>

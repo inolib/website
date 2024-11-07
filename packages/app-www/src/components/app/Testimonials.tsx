@@ -3,8 +3,7 @@ import type { VariantProps } from "tailwind-variants";
 import { Slideshow, SlideshowNextButton, SlideshowPreviousButton, SlideshowSlide } from "~/components/headless";
 import { tv } from "~/helpers";
 
-import ArrowNarrowLeftIcon from "#/images/icons/arrow-narrow-left.svg";
-import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
+import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
 
 const variants = tv({
   slots: {
@@ -12,10 +11,10 @@ const variants = tv({
       "flex flex-wrap items-center justify-between gap-x-16 gap-y-8 px-[4dvw] py-24 md:flex-nowrap xl:px-[8dvw]",
     slideshowNextButtonClassName:
       "rounded-full border p-4 outline-none transition-all duration-500 focus-visible:outline-4 focus-visible:outline-offset-4",
-    slideshowNextButtonIconClassName: "size-6",
+    slideshowNextButtonIconClassName: "size-6 -rotate-90",
     slideshowPreviousButtonClassName:
       "rounded-full border p-4 outline-none transition-all duration-500 focus-visible:outline-4 focus-visible:outline-offset-4 md:order-first",
-    slideshowPreviousButtonIconClassName: "size-6",
+    slideshowPreviousButtonIconClassName: "size-6 rotate-90",
     slideshowSlideClassName: "flex flex-col gap-8",
     slideshowSlideRoleClassName: "",
   },
@@ -87,7 +86,7 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
 
       {testimonials.length > 1 ? (
         <SlideshowPreviousButton className={slideshowPreviousButtonClassName()} title="Témoignage précédent">
-          <ArrowNarrowLeftIcon aria-label="Témoignage précédent" className={slideshowPreviousButtonIconClassName()} />
+          <ArrowNarrowDownIcon aria-label="Témoignage précédent" className={slideshowPreviousButtonIconClassName()} />
         </SlideshowPreviousButton>
       ) : (
         <div className="border border-transparent p-7 md:order-first" />
@@ -95,7 +94,7 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
 
       {testimonials.length > 1 ? (
         <SlideshowNextButton className={slideshowNextButtonClassName()} title="Témoignage suivant">
-          <ArrowNarrowRightIcon aria-label="Témoignage suivant" className={slideshowNextButtonIconClassName()} />
+          <ArrowNarrowDownIcon aria-label="Témoignage suivant" className={slideshowNextButtonIconClassName()} />
         </SlideshowNextButton>
       ) : (
         <div className="border border-transparent p-7" />

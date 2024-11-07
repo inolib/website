@@ -6,7 +6,7 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
+import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
 
 const variants = tv({
   slots: {
@@ -76,7 +76,7 @@ export const Qualiopi = ({ _color }: QualiopiProps) => {
           href="/inolib-academy/certificat-qualiopi"
         >
           <span>En savoir plus</span>
-          <ArrowNarrowRightIcon className="stroke-black" />
+          <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
         </Link>
       </div>
     </Section>

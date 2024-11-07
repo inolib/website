@@ -14,7 +14,7 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
+import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
 import designIllustration from "#/images/illustrations/app/(pages)/developpement/design.svg?url";
 import mobileAppIllustration from "#/images/illustrations/app/(pages)/developpement/mobile-app.svg?url";
 import saasIllustration from "#/images/illustrations/app/(pages)/developpement/saas.svg?url";
@@ -150,7 +150,7 @@ export const Services = ({ _color }: ServicesProps) => {
                           href={item.link.href}
                         >
                           <span>En savoir plus</span>
-                          <ArrowNarrowRightIcon className="stroke-black" />
+                          <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
                         </Link>
                       )}
                     </BoxCardContent>
