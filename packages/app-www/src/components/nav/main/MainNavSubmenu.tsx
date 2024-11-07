@@ -13,7 +13,6 @@ import { cn } from "~/helpers";
 import type { MenuSubmenu } from "~/hooks";
 
 import ChevronDownIcon from "#/images/icons/chevron-down.svg";
-import ChevronUpIcon from "#/images/icons/chevron-up.svg";
 
 import { MainNavSubmenuLink } from "./MainNavSubmenuLink";
 
@@ -45,11 +44,13 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
           {_submenu.label}
         </span>
 
-        <ChevronUpIcon className="stroke-black [[aria-expanded=false]>&]:hidden" />
         <ChevronDownIcon
-          className={cn("stroke-black transition-all duration-500 [[aria-expanded=true]>&]:hidden", {
-            "stroke-white [:hover>&]:stroke-black": isHomePage,
-          })}
+          className={cn(
+            "stroke-black transition-all duration-500 [[aria-expanded=true]>&]:rotate-180 [[aria-expanded=true]>&]:stroke-black",
+            {
+              "stroke-white [:hover>&]:stroke-black": isHomePage,
+            },
+          )}
         />
       </MenuBarSubmenuButton>
 
