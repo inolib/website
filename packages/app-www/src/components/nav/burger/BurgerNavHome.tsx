@@ -35,7 +35,7 @@ export const BurgerNavHome = () => {
       onClick={handleClick}
       title="Accueil"
     >
-      <Image alt="Accueil" className="h-[1.6875rem] w-auto" src={isHomePage ? inolibYellowLogo : inolibBlueLogo} />
+      <Image alt="Accueil" className="h-9 w-auto" src={isHomePage ? inolibYellowLogo : inolibBlueLogo} />
     </Link>
   );
 };
