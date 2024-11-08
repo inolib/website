@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
+
 import { Link } from "~/components/app";
 import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { UnorderedList, UnorderedListItem } from "~/components/list";
 import { Section } from "~/components/section";
+
+export const metadata: Metadata = {
+  title: "Politique de confidentialité",
+};
 
 const Page = () => {
   return (
