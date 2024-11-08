@@ -56,7 +56,7 @@ export const TrainingCourses = ({ _color }: TrainingCoursesProps) => {
         {
           icon: <></>,
           title: "Normes et réglementations",
-          description: "Saisir le cadre normatif et législatif en France et à l’international (RGAA, WCAG).",
+          description: "Saisir le cadre normatif et législatif en France et à l’international (RGAA, WCAG, RAWeb).",
         },
         {
           icon: <></>,

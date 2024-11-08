@@ -45,17 +45,19 @@ export const Services = ({ _color }: ServicesProps) => {
   const services = [
     {
       icon: <FileCheckFramedIcon className="size-12" />,
-      title: "Audit de conformité RGAA et WCAG",
+      title: "Audits d’accessibilité conformes aux normes RGAA, WCAG, et RAWeb",
       description: (
-        <p>
-          Nos services d’audit vous aident à identifier les obstacles à l’accessibilité de vos sites et applications.
-          Nous vous accompagnons pour assurer votre conformité aux normes RGAA et WCAG. Que ce soit pour répondre aux
-          exigences légales ou améliorer l’expérience utilisateur, nous apportons des solutions adaptées à vos besoins.
-        </p>
+        <>
+          <p>
+            Nous réalisons des audits de vos supports numériques pour identifier les obstacles à l’accessibilité. En
+            conformité aux normes RGAA, WCAG, et RAWeb.
+          </p>
+          <p>Nous rédigeons votre déclaration d’accessibilité et vous accompagnons vers une accessibilité optimale.</p>
+        </>
       ),
       link: {
-        label: "En savoir plus sur l’audit de conformité",
-        href: "/audit/audit-de-conformite",
+        label: "En savoir plus sur les audits d’accessibilité",
+        href: "/audit/audits-accessibilite",
       },
       illustration: auditIllustration,
     },
@@ -126,7 +128,7 @@ export const Services = ({ _color }: ServicesProps) => {
   return (
     <Section className={sectionClassName()} id="services" tabIndex={-1}>
       <Heading _alignment="center" _size="4xl">
-        <HeadingContent _level={2}>Découvrez nos services proposés autour de l’accessibilité numérique</HeadingContent>
+        <HeadingContent _level={2}>Nos services</HeadingContent>
       </Heading>
 
       {services.map((item, index) => (

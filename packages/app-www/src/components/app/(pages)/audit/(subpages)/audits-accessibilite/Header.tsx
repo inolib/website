@@ -20,7 +20,7 @@ export const Header = () => {
             <p>
               L’audit d’accessibilité numérique permet d’évaluer l’accessibilité de vos sites web, applications, ou
               logiciels, en identifiant les obstacles rencontrés par les utilisateurs. Nos experts analysent vos
-              supports en s’appuyant sur les référentiels RGAA, WCAG, RAAM, et la norme EN 301 549.
+              supports en s’appuyant sur les référentiels RGAA, WCAG, RAWeb, et la norme EN 301 549.
             </p>
 
             <p>

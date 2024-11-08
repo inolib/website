@@ -46,8 +46,8 @@ export const useMenu = (): Menu => [
       // },
       {
         icon: <FileCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
-        label: "Audit de conformité",
-        href: "/audit/audit-de-conformite",
+        label: "Audits d’accessibilité",
+        href: "/audit/audits-accessibilite",
       },
       {
         icon: <UsersCheckIcon className="size-6 shrink-0 stroke-blue-600" />,

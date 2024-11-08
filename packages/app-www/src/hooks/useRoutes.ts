@@ -31,9 +31,9 @@ export const useRoutes = (): Routes => ({
     isActive: false,
     title: "Audit",
   },
-  "/audit/audit-de-conformite": {
+  "/audit/audits-accessibilite": {
     isActive: true,
-    title: "Audit de conformité",
+    title: "Audits d’accessibilité",
   },
   "/audit/tests-utilisateurs": {
     isActive: true,

@@ -54,7 +54,7 @@ export const Why = ({ _color }: WhyProps) => {
     {
       icon: <FileFramedIcon className="size-12" />,
       title: "Accessibilité numérique",
-      description: "Nos solutions respectent les critères RGAA et WCAG, garantissant une accessibilité à tous.",
+      description: "Nos solutions respectent les critères RGAA, WCAG, et RAWeb, garantissant une accessibilité à tous.",
     },
     {
       icon: <FileFramedIcon className="size-12" />,

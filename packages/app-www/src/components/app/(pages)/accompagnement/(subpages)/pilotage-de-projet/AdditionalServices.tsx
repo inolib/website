@@ -52,7 +52,8 @@ export const AdditionalServices = ({ _color }: AdditionalServicesProps) => {
 
           <p>
             Tout au long du projet, nous réalisons des points de contrôle pour évaluer la conformité aux normes
-            d’accessibilité RGAA et WCAG. Des tests exhaustifs sont effectués pour valider la qualité des livrables.
+            d’accessibilité RGAA, WCAG, et RAWeb. Des tests exhaustifs sont effectués pour valider la qualité des
+            livrables.
           </p>
 
           <p>

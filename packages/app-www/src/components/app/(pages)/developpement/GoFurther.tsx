@@ -48,18 +48,18 @@ export const GoFurther = ({ _color }: GoFurtherProps) => {
             <BoxCardContent className="justify-between">
               <div className="flex flex-col gap-4">
                 <Heading _alignment="left" _size="2xl">
-                  <HeadingContent _level={3}>Audit de conformité</HeadingContent>
+                  <HeadingContent _level={3}>Audits d’accessibilité</HeadingContent>
                 </Heading>
 
-                <p>Nous évaluons votre niveau de conformité aux référentiels en vigueur (RGAA, WCAG).</p>
+                <p>Nous évaluons votre niveau de conformité aux référentiels en vigueur (RGAA, WCAG, RAWeb).</p>
               </div>
 
               <Link
                 _border="black"
                 _color="blue-50"
                 _shape="button"
-                aria-label="En savoir plus sur l’audit de conformité"
-                href="/audit/audit-de-conformite"
+                aria-label="En savoir plus sur les audits d’accessibilité"
+                href="/audit/audits-accessibilite"
               >
                 <span>En savoir plus</span>
                 <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />

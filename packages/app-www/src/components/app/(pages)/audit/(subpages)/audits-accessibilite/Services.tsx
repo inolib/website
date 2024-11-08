@@ -14,9 +14,9 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import certificationAuditIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audit-de-conformite/certification-audit.svg?url";
-import conformityAuditIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audit-de-conformite/conformity-audit.svg?url";
-import controlAuditIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audit-de-conformite/control-audit.svg?url";
+import certificationAuditIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audits-accessibilite/certification-audit.svg?url";
+import conformityAuditIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audits-accessibilite/conformity-audit.svg?url";
+import controlAuditIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audits-accessibilite/control-audit.svg?url";
 
 const variants = tv({
   slots: {

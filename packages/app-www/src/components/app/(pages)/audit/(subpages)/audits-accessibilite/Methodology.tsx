@@ -13,7 +13,7 @@ import {
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import methodologyIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audit-de-conformite/methodology.svg?url";
+import methodologyIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audits-accessibilite/methodology.svg?url";
 
 const variants = tv({
   slots: {

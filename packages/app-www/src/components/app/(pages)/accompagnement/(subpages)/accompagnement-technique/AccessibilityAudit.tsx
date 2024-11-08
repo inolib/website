@@ -43,8 +43,8 @@ export const AccessibilityAudit = ({ _color }: AccessibilityAuditProps) => {
 
       <p>
         Nous réalisons des audits approfondis pour identifier les problématiques d’accessibilité sur vos outils
-        numériques. En nous basant sur les standards RGAA, WCAG et autres normes internationales, nous repérons les
-        points bloquants et évaluons la conformité de vos solutions.
+        numériques. En nous basant sur les standards RGAA, WCAG, RAWeb, et autres normes internationales, nous repérons
+        les points bloquants et évaluons la conformité de vos solutions.
       </p>
     </div>,
     <div className="flex flex-col gap-4" key={1}>
