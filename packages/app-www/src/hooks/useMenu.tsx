@@ -91,8 +91,8 @@ export const useMenu = (): Menu => [
     ],
   },
   {
-    label: "INOLIB Academy",
-    href: "/inolib-academy",
+    label: "Formations",
+    href: "/formations",
   },
   {
     label: "À propos",

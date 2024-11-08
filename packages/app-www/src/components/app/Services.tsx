@@ -15,7 +15,7 @@ import TerminalBrowserFramedIcon from "#/images/icons/framed/terminal-browser.sv
 import supportIllustration from "#/images/illustrations/app/(pages)/accompagnement/header.svg?url";
 import auditIllustration from "#/images/illustrations/app/(pages)/audit/header.svg?url";
 import developmentIllustration from "#/images/illustrations/app/(pages)/developpement/header.svg?url";
-import trainingIllustration from "#/images/illustrations/app/(pages)/inolib-academy/header.svg?url";
+import trainingIllustration from "#/images/illustrations/app/(pages)/formations/header.svg?url";
 
 const variants = tv({
   slots: {
@@ -117,7 +117,7 @@ export const Services = ({ _color }: ServicesProps) => {
       ),
       link: {
         label: "En savoir plus sur INOLIB Academy",
-        href: "/inolib-academy",
+        href: "/formations",
       },
       illustration: trainingIllustration,
     },

@@ -73,7 +73,7 @@ export const Qualiopi = ({ _color }: QualiopiProps) => {
           _color="white"
           _shape="button"
           aria-label="En savoir plus sur notre certificat Qualiopi"
-          href="/inolib-academy/certificat-qualiopi"
+          href="/formations/certificat-qualiopi"
         >
           <span>En savoir plus</span>
           <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />

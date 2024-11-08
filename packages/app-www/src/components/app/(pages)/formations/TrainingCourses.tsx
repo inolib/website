@@ -14,8 +14,8 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import accessibilityCoursesIllustration from "#/images/illustrations/app/(pages)/inolib-academy/accessibility-courses.svg?url";
-import generalCoursesIllustration from "#/images/illustrations/app/(pages)/inolib-academy/general-courses.svg?url";
+import accessibilityCoursesIllustration from "#/images/illustrations/app/(pages)/formations/accessibility-courses.svg?url";
+import generalCoursesIllustration from "#/images/illustrations/app/(pages)/formations/general-courses.svg?url";
 
 const variants = tv({
   slots: {

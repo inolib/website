@@ -7,7 +7,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import educationalApproachIllustration from "#/images/illustrations/app/(pages)/inolib-academy/educational-approach.svg?url";
+import educationalApproachIllustration from "#/images/illustrations/app/(pages)/formations/educational-approach.svg?url";
 
 const variants = tv({
   slots: {

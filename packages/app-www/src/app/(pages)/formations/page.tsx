@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { EducationalApproach, Header, Qualiopi, TrainingCourses, Why } from "~/components/app/(pages)/inolib-academy";
+import { EducationalApproach, Header, Qualiopi, TrainingCourses, Why } from "~/components/app/(pages)/formations";
 
 export const metadata: Metadata = {
   title: "INOLIB Academy – Formations aux métiers du numérique et à l’accessibilité numérique | INOLIB",
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     title: "INOLIB Academy – Formations aux métiers du numérique et à l’accessibilité numérique",
     description:
       "INOLIB Academy est un centre de formation dédié aux compétences numériques et à l’accessibilité numérique. Nos parcours, conçus pour répondre aux besoins des entreprises, allient théorie et pratique afin de garantir l’acquisition de compétences directement applicables en milieu professionnel.",
-    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/inolib-academy/header.svg`,
-    url: `${process.env.SITE_URL}/inolib-academy`,
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/formations/header.svg`,
+    url: `${process.env.SITE_URL}/formations`,
   },
 };
 

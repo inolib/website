@@ -72,10 +72,10 @@ const Page = () => {
           </UnorderedListItem>
 
           <UnorderedListItem className="flex flex-col gap-2">
-            <Link href="/inolib-academy">INOLIB Academy</Link>
+            <Link href="/formations">Formations</Link>
             <UnorderedList className="flex flex-col gap-2">
               <UnorderedListItem>
-                <Link href="/inolib-academy/certificat-qualiopi">Certificat Qualiopi</Link>
+                <Link href="/formations/certificat-qualiopi">Certificat Qualiopi</Link>
               </UnorderedListItem>
             </UnorderedList>
           </UnorderedListItem>

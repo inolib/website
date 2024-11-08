@@ -132,7 +132,7 @@ export const ContentInfo = () => {
                 _color="transparent"
                 _shape="link"
                 className="h-24 w-auto focus-visible:outline-white"
-                href="/inolib-academy/certificat-qualiopi"
+                href="/formations/certificat-qualiopi"
                 title="Certificat Qualiopi"
               >
                 <Image

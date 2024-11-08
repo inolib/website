@@ -59,11 +59,11 @@ export const useRoutes = (): Routes => ({
     isActive: true,
     title: "Sites vitrines et institutionnels",
   },
-  "/inolib-academy": {
+  "/formations": {
     isActive: true,
-    title: "INOLIB Academy",
+    title: "Formations",
   },
-  "/inolib-academy/certificat-qualiopi": {
+  "/formations/certificat-qualiopi": {
     isActive: true,
     title: "Certificat Qualiopi",
   },

@@ -4,7 +4,7 @@ import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { Section } from "~/components/section";
 
-import headerIllustration from "#/images/illustrations/app/(pages)/inolib-academy/header.svg?url";
+import headerIllustration from "#/images/illustrations/app/(pages)/formations/header.svg?url";
 
 export const Header = () => {
   return (
