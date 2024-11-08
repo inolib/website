@@ -7,7 +7,7 @@
     "build": "pnpm run build:app && pnpm run build:server && pnpm run build:sitemap",
     "build:app": "next build",
     "build:server": "tsup",
-    "build:sitemap": "next-sitemap",
+    "build:sitemap": "dotenvx run -- next-sitemap",
     "format": "pnpm run format:prettier && pnpm run format:eslint",
     "format:eslint": "eslint --fix --format silent .",
     "format:prettier": "prettier --log-level warn --write .",
