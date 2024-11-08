@@ -54,27 +54,10 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
         />
       </MenuBarSubmenuButton>
 
-      <div className="invisible absolute top-[3.1875rem] h-0 overflow-hidden transition-all duration-500 [[data-expanded=true]_&]:visible [[data-expanded=true]_&]:h-[8.1875rem]">
+      <div className="invisible absolute top-[3.1875rem] h-0 overflow-hidden transition-all duration-500 [[data-expanded=true]_&]:visible [[data-expanded=true]_&]:h-[8.375rem]">
         <MenuBarSubmenuList className="flex w-max flex-col gap-2 rounded-xl border border-black bg-white p-2">
           {_submenu.submenu.map((item, index) => {
             const isCurrentPage = item.href === pathname;
-
-            // if (index === 0) {
-            //   return (
-            //     <MenuBarSubmenuListItem key={index}>
-            //       <MainNavSubmenuLink
-            //         aria-current={isCurrentPage ? "page" : undefined}
-            //         className={cn("flex flex-col rounded-xl p-4 hover:bg-blue-50", {
-            //           "hover:bg-sand-50": isHomePage,
-            //         })}
-            //         href={item.href}
-            //       >
-            //         <span className="font-bold">{item.label}</span>
-            //         <span className="text-sm">{item.description}</span>
-            //       </MainNavSubmenuLink>
-            //     </MenuBarSubmenuListItem>
-            //   );
-            // }
 
             return (
               <MenuBarSubmenuListItem key={index}>
@@ -82,14 +65,18 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
                   _color="white"
                   _shape="button"
                   aria-current={isCurrentPage ? "page" : undefined}
-                  className={cn("w-full justify-start focus-visible:outline-black", {
+                  className={cn("w-full justify-start text-left focus-visible:outline-black", {
                     "font-extrabold underline": isCurrentPage,
                     "hover:bg-sand-50": isHomePage,
                   })}
                   href={item.href}
                 >
                   {item.icon}
-                  <span>{item.label}</span>
+
+                  <div className="flex flex-col">
+                    <span>{item.label}</span>
+                    <span className="text-sm font-semibold">{item.description}</span>
+                  </div>
                 </MainNavSubmenuLink>
               </MenuBarSubmenuListItem>
             );

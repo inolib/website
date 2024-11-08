@@ -1,7 +1,10 @@
 import type { ReactNode } from "react";
 
+import BuildingIcon from "#/images/icons/building-02.svg";
+import CompassIcon from "#/images/icons/compass-03.svg";
 import FileCheckIcon from "#/images/icons/file-check-02.svg";
-import UserCheckIcon from "#/images/icons/user-check-01.svg";
+import ToolIcon from "#/images/icons/tool-01.svg";
+import UsersCheckIcon from "#/images/icons/users-check.svg";
 
 export type MenuLink = {
   label: string;
@@ -47,7 +50,7 @@ export const useMenu = (): Menu => [
         href: "/audit/audit-de-conformite",
       },
       {
-        icon: <UserCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <UsersCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Tests utilisateurs",
         href: "/audit/tests-utilisateurs",
       },
@@ -63,12 +66,12 @@ export const useMenu = (): Menu => [
       //   href: "/accompagnement",
       // },
       {
-        icon: <FileCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <CompassIcon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Pilotage de projet",
         href: "/accompagnement/pilotage-de-projet",
       },
       {
-        icon: <UserCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <ToolIcon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Accompagnement technique",
         href: "/accompagnement/accompagnement-technique",
       },
@@ -84,7 +87,7 @@ export const useMenu = (): Menu => [
         href: "/developpement",
       },
       {
-        icon: <UserCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <BuildingIcon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Sites vitrines et institutionnels",
         href: "/developpement/sites-vitrines-et-institutionnels",
       },
