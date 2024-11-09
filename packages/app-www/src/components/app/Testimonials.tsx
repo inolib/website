@@ -64,7 +64,7 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
       <div>
         {testimonials.map((item, index) => (
           <SlideshowSlide aria-roledescription="diapositive" className={slideshowSlideClassName()} key={index}>
-            <p className="text-3xl sm:h-[5.625rem] sm:text-4xl">{item.testimony}</p>
+            <p className="text-3xl sm:text-4xl">{item.testimony}</p>
 
             <div>
               <p className="text-2xl">{item.name}</p>
