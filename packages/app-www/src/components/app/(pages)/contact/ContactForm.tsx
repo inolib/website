@@ -16,6 +16,7 @@ const schema = v.object({
   subject: v.array(v.pipe(v.string(), v.trim())),
   firstname: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre prénom.")),
   lastname: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre nom de famille.")),
+  company: v.pipe(v.string(), v.trim()),
   email: v.pipe(
     v.string(),
     v.trim(),
@@ -106,54 +107,27 @@ export const ContactForm = () => {
     <Form className="flex max-w-prose flex-col gap-8" onSubmit={handleSubmit}>
       <div className="flex flex-col gap-16">
         <fieldset>
-          <legend className="text-2xl font-bold">Sujets qui vous intéressent</legend>
+          <legend className="text-2xl font-bold">Sujet</legend>
 
           <Field name="subject" type="string[]">
             {(field, passthru) => (
               <ul className="mt-4 flex flex-wrap gap-4">
-                <li>
-                  <ToggleField
-                    _label="Accompagnement"
-                    checked={field.value.value?.includes("Accompagnement") ?? false}
-                    {...passthru}
-                  />
-                </li>
-                <li>
-                  <ToggleField _label="Audit" checked={field.value.value?.includes("Audit") ?? false} {...passthru} />
-                </li>
-                <li>
-                  <ToggleField
-                    _label="Développement"
-                    checked={field.value.value?.includes("Développement") ?? false}
-                    {...passthru}
-                  />
-                </li>
-                <li>
-                  <ToggleField
-                    _label="Formations"
-                    checked={field.value.value?.includes("Formations") ?? false}
-                    {...passthru}
-                  />
-                </li>
-                <li>
-                  <ToggleField
-                    _label="Partenariat"
-                    checked={field.value.value?.includes("Partenariat") ?? false}
-                    {...passthru}
-                  />
-                </li>
-                <li>
-                  <ToggleField _label="Autre" checked={field.value.value?.includes("Autre") ?? false} {...passthru} />
-                </li>
+                {["Audit", "Accompagnement", "Développement", "Formations", "Partenariat", "Autre"].map(
+                  (item, index) => (
+                    <li key={index}>
+                      <ToggleField _label={item} checked={field.value.value?.includes(item) ?? false} {...passthru} />
+                    </li>
+                  ),
+                )}
               </ul>
             )}
           </Field>
         </fieldset>
 
         <fieldset className="flex flex-col gap-4">
-          <legend className="text-2xl font-bold">Dites-nous en plus sur vous</legend>
+          <legend className="text-2xl font-bold">Coordonnées</legend>
 
-          <p className="mt-4">Tous les champs sont obligatoires.</p>
+          <p className="mt-4">Sauf mention contraire, tous les champs sont obligatoires.</p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-8 sm:[&_[data-field]]:basis-1/2">
             <Field name="firstname" transform={toTrimmed({ on: "blur" })}>
@@ -185,6 +159,19 @@ export const ContactForm = () => {
             </Field>
           </div>
 
+          <Field name="company" transform={toTrimmed({ on: "blur" })}>
+            {(field, passthru) => (
+              <TextInputField
+                _error={field.error}
+                _label="Entreprise (optionnel)"
+                autoComplete=""
+                type="text"
+                value={field.value.value ?? ""}
+                {...passthru}
+              />
+            )}
+          </Field>
+
           <Field name="email" transform={toTrimmed({ on: "blur" })}>
             {(field, passthru) => (
               <TextInputField
@@ -212,19 +199,25 @@ export const ContactForm = () => {
               />
             )}
           </Field>
+        </fieldset>
 
-          <Field name="message" transform={toTrimmed({ on: "blur" })}>
-            {(field, passthru) => (
-              <TextAreaField
-                _error={field.error}
-                _label="Message"
-                rows={5}
-                value={field.value.value ?? ""}
-                required
-                {...passthru}
-              />
-            )}
-          </Field>
+        <fieldset className="flex flex-col gap-4">
+          <legend className="text-2xl font-bold">Message</legend>
+
+          <div className="mt-4">
+            <Field name="message" transform={toTrimmed({ on: "blur" })}>
+              {(field, passthru) => (
+                <TextAreaField
+                  _error={field.error}
+                  _label="Dites-nous en plus"
+                  rows={5}
+                  value={field.value.value ?? ""}
+                  required
+                  {...passthru}
+                />
+              )}
+            </Field>
+          </div>
 
           <Field name="consent" type="boolean">
             {(field, passthru) => (
@@ -232,7 +225,7 @@ export const ContactForm = () => {
                 _error={field.error}
                 _label={
                   <>
-                    En cochant cette case, vous acceptez notre{" "}
+                    En envoyant votre message, vous acceptez notre{" "}
                     <span className="text-nowrap">
                       <Link
                         _color="transparent"

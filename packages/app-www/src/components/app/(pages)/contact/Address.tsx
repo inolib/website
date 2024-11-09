@@ -8,7 +8,7 @@ export const Address = () => {
   const address = [
     {
       icon: <MessageSmileCircleSquaredIcon className="size-12" />,
-      title: "Écrivez-nous à",
+      title: "E-mail",
       content: (
         <Link
           _color="transparent"
@@ -22,7 +22,7 @@ export const Address = () => {
     },
     {
       icon: <PhoneSquaredIcon className="size-12" />,
-      title: "Appelez-nous au",
+      title: "Téléphone",
       content: (
         <div className="flex flex-col gap-4">
           <p>
@@ -36,7 +36,7 @@ export const Address = () => {
             </Link>
           </p>
 
-          <p>Du lundi au vendredi de 8 h à 17 h.</p>
+          <p>Horaires : du lundi au vendredi de 9 h à 18 h.</p>
         </div>
       ),
     },

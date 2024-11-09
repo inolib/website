@@ -7,7 +7,7 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 
 export const metadata: Metadata = {
-  title: "Contact | INOLIB",
+  title: "Contactez-nous | INOLIB",
 };
 
 const Page = () => {
@@ -16,13 +16,13 @@ const Page = () => {
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn className="flex flex-col gap-16">
           <Heading _alignment="left" _size="4xl">
-            <HeadingContent _level={1}>Contact</HeadingContent>
+            <HeadingContent _level={1}>Contactez-nous</HeadingContent>
           </Heading>
 
-          <p>
-            Vous pouvez nous soumettre des suggestions, des remarques, ou des demandes de devis en utilisant notre
-            formulaire ou nos coordonnées.
-          </p>
+          <div className="flex flex-col gap-4">
+            <p>Besoin d’aide, envie de collaborer, ou simplement prendre un café ?</p>
+            <p>Nous sommes à votre écoute.</p>
+          </div>
         </TwoColumnsFlexLayoutColumn>
 
         <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
