@@ -4,3 +4,4 @@ export * from "./BurgerNavHome";
 export * from "./BurgerNavLink";
 export * from "./BurgerNavSubmenu";
 export * from "./BurgerNavSubmenuLink";
+export * from "./BurgerNavSubmenuList";

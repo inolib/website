@@ -3,18 +3,14 @@
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
-import {
-  MenuBarSubmenu,
-  MenuBarSubmenuButton,
-  MenuBarSubmenuList,
-  MenuBarSubmenuListItem,
-} from "~/components/headless";
+import { MenuBarSubmenu, MenuBarSubmenuButton, MenuBarSubmenuListItem } from "~/components/headless";
 import { cn } from "~/helpers";
 import type { MenuSubmenu } from "~/hooks";
 
 import ChevronDownIcon from "#/images/icons/chevron-down.svg";
 
 import { BurgerNavSubmenuLink } from "./BurgerNavSubmenuLink";
+import { BurgerNavSubmenuList } from "./BurgerNavSubmenuList";
 
 export type BurgerNavSubmenuProps = {
   _submenu: MenuSubmenu;
@@ -54,27 +50,10 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
         </span>
       </MenuBarSubmenuButton>
 
-      <div className="invisible mt-0 h-0 overflow-hidden transition-all duration-200 ease-linear [[data-expanded=true]_&]:visible [[data-expanded=true]_&]:mt-2 [[data-expanded=true]_&]:h-[8.1875rem]">
-        <MenuBarSubmenuList className="top-[3.1875rem] flex flex-col gap-2 rounded-xl border border-black bg-white p-2">
+      <div className="mt-0 grid grid-rows-[0fr] transition-all duration-200 ease-linear [[data-expanded=true]_&]:mt-2 [[data-expanded=true]_&]:grid-rows-[1fr]">
+        <BurgerNavSubmenuList className="top-[3.1875rem] flex flex-col gap-2 overflow-hidden rounded-xl border-black bg-white transition-all duration-200 ease-linear [[data-expanded=true]_&]:border [[data-expanded=true]_&]:p-2">
           {_submenu.submenu.map((item, index) => {
             const isCurrentPage = item.href === pathname;
-
-            // if (index === 0) {
-            //   return (
-            //     <MenuBarSubmenuListItem key={index}>
-            //       <BurgerNavSubmenuLink
-            //         aria-current={isCurrentPage ? "page" : undefined}
-            //         className={cn("flex flex-col rounded-xl p-4 hover:bg-blue-50", {
-            //           "hover:bg-sand-50": isHomePage,
-            //         })}
-            //         href={item.href}
-            //       >
-            //         <span className="font-bold">{item.label}</span>
-            //         <span className="text-sm">{item.description}</span>
-            //       </BurgerNavSubmenuLink>
-            //     </MenuBarSubmenuListItem>
-            //   );
-            // }
 
             return (
               <MenuBarSubmenuListItem key={index}>
@@ -89,12 +68,16 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
                   href={item.href}
                 >
                   {item.icon}
-                  <span>{item.label}</span>
+
+                  <div className="flex flex-col">
+                    <span>{item.label}</span>
+                    <span className="text-lg font-semibold">{item.description}</span>
+                  </div>
                 </BurgerNavSubmenuLink>
               </MenuBarSubmenuListItem>
             );
           })}
-        </MenuBarSubmenuList>
+        </BurgerNavSubmenuList>
       </div>
     </MenuBarSubmenu>
   );
