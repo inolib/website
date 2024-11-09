@@ -36,13 +36,10 @@ export const useMenuBarSubmenu = () => {
   return menuBarSubmenu;
 };
 
-export type MenuBarSubmenuProps = {
-  _onClose?: (() => void) | undefined;
-  _onOpen?: (() => void) | undefined;
-} & Omit<HTMLAttributes<HTMLDivElement>, "data-expanded" | "data-id">;
+export type MenuBarSubmenuProps = Omit<HTMLAttributes<HTMLDivElement>, "data-expanded" | "data-id">;
 
 export const MenuBarSubmenu = forwardRef<HTMLDivElement, MenuBarSubmenuProps>(
-  ({ _onClose, _onOpen, children, onKeyDownCapture, ...passthru }, ref) => {
+  ({ children, onKeyDownCapture, ...passthru }, ref) => {
     const id = useId();
     const menuBar = useMenuBar();
 
@@ -52,20 +49,18 @@ export const MenuBarSubmenu = forwardRef<HTMLDivElement, MenuBarSubmenuProps>(
     const menuBarSubmenu: MenuBarSubmenuObject = useMemo(
       () => ({
         close: () => {
-          _onClose?.();
           setIsExpanded(false);
         },
         getButtonRef: () => buttonRef,
         isExpanded: () => isExpanded,
         open: () => {
-          _onOpen?.();
           setIsExpanded(true);
         },
         setButtonRef: (ref) => {
           setButtonRef(ref);
         },
       }),
-      [_onClose, _onOpen, buttonRef, isExpanded],
+      [buttonRef, isExpanded],
     );
 
     const handleKeyDownCapture: KeyboardEventHandler<HTMLDivElement> = useCallback(
