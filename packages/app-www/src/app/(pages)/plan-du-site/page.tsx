@@ -24,7 +24,7 @@ const Page = () => {
       </TwoColumnsFlexLayout>
 
       <nav aria-label="Plan du site">
-        <UnorderedList className="flex flex-col gap-2">
+        <UnorderedList className="flex list-none flex-col gap-2 pl-0">
           <UnorderedListItem>
             <Link href="/">Accueil</Link>
           </UnorderedListItem>

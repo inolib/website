@@ -68,7 +68,7 @@ export const InclusiveApproach = ({ _color }: InclusiveApproachProps) => {
 
       <p>Nous collaborons avec vous pour définir une stratégie de test qui répond à vos enjeux :</p>
 
-      <UnorderedList className="-mt-4 pl-8">
+      <UnorderedList className="-mt-4">
         <UnorderedListItem>
           Plan de test adapté à vos objectifs. Nous organisons des entretiens, des workshop pour mieux répondre à vos
           attentes.

@@ -63,7 +63,7 @@ const Page = () => {
               NDA nº 84692290269 – Nº Siren 909129454), et atteste de leur conformité aux :
             </p>
 
-            <UnorderedList className="pl-8">
+            <UnorderedList>
               <UnorderedListItem>décret 2019-564 relatif à la qualité des actions de la formation ;</UnorderedListItem>
               <UnorderedListItem>
                 décret 2019-565 relatif au référentiel national sur la qualité des actions concourant au développement

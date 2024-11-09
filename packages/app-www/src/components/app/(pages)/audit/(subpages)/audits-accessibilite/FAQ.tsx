@@ -46,7 +46,7 @@ export const FAQ = ({ _color }: FAQProps) => {
 
           <p>La loi de 2005 sur l’accessibilité numérique s’applique aux entités suivantes :</p>
 
-          <UnorderedList className="-mt-4 pl-8">
+          <UnorderedList className="-mt-4">
             <UnorderedListItem>les personnes morales de droit public ;</UnorderedListItem>
             <UnorderedListItem>
               les personnes morales de droit privé exerçant une mission de service public ou d’intérêt général ;
