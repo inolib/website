@@ -63,7 +63,7 @@ export const InstitutionalWebsites = ({ _color }: InstitutionalWebsitesProps) =>
 
       <p>
         Offrez un accès centralisé à des ressources et informations précieuses. Convient aux organisations ayant besoin
-        de diffuser des données complexes de ???
+        de diffuser des données complexes.
       </p>
     </div>,
   ];
