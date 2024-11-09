@@ -52,20 +52,10 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
 
   const testimonials = [
     {
-      testimony: "INOLIB nous a permis d’atteindre les standards d’accessibilité et ainsi améliorer notre SEO.",
-      name: "Sienna Hewitt",
-      role: "Project Manager, Layers",
-    },
-    {
-      testimony: "Un service exceptionnel qui a transformé notre approche de l’accessibilité.",
-      name: "John Doe",
-      role: "CEO, Company",
-    },
-    {
       testimony:
-        "Grâce à INOLIB, notre site est désormais accessible à tous et notre SEO s’est considérablement amélioré.",
-      name: "Jane Smith",
-      role: "Marketing Director, Brand",
+        "Nous recommandons INOLIB pour leurs compétences techniques et humaines. C’était un plaisir de travailler ensemble.",
+      name: "Dora BLASBERG",
+      role: "Psychologue et conférencière, cofondatrice de ProAdapt",
     },
   ];
 
@@ -74,7 +64,7 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
       <div>
         {testimonials.map((item, index) => (
           <SlideshowSlide aria-roledescription="diapositive" className={slideshowSlideClassName()} key={index}>
-            <p className="text-3xl sm:h-[11.25rem] sm:text-4xl lg:h-60 lg:text-5xl">{item.testimony}</p>
+            <p className="text-3xl sm:h-[5.625rem] sm:text-4xl">{item.testimony}</p>
 
             <div>
               <p className="text-2xl">{item.name}</p>
