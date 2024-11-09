@@ -164,7 +164,7 @@ export const ContactForm = () => {
               <TextInputField
                 _error={field.error}
                 _label="Entreprise (optionnel)"
-                autoComplete=""
+                autoComplete="organization"
                 type="text"
                 value={field.value.value ?? ""}
                 {...passthru}
