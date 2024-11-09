@@ -40,41 +40,38 @@ export const ContentInfo = () => {
 
   const socialNetworks = [
     {
-      label: "INOLIB sur Facebook",
+      label: "Facebook",
       href: "https://www.facebook.com/people/Inolib/100075572787282",
       icon: (
         <FacebookLogo
-          aria-label="INOLIB sur Facebook"
+          aria-label="Facebook"
           className="size-8 fill-white transition-all duration-500 group-hover/link:fill-[#0766FF]"
         />
       ),
     },
     {
-      label: "INOLIB sur LinkedIn",
+      label: "LinkedIn",
       href: "https://www.linkedin.com/company/inolib",
       icon: (
         <LinkedInLogo
-          aria-label="INOLIB sur LinkedIn"
+          aria-label="LinkedIn"
           className="size-8 fill-white transition-all duration-500 group-hover/link:fill-[#0B66C2]"
         />
       ),
     },
     {
-      label: "INOLIB sur X",
+      label: "X",
       href: "https://x.com/_inolib",
       icon: (
-        <XLogo
-          aria-label="INOLIB sur X"
-          className="size-8 fill-white transition-all duration-500 group-hover/link:fill-black"
-        />
+        <XLogo aria-label="X" className="size-8 fill-white transition-all duration-500 group-hover/link:fill-black" />
       ),
     },
     {
-      label: "INOLIB sur YouTube",
+      label: "YouTube",
       href: "https://www.youtube.com/channel/UC9yPUJFvQkKsxGeAJ3CJOTg",
       icon: (
         <YouTubeLogo
-          aria-label="INOLIB sur YouTube"
+          aria-label="YouTube"
           className="size-8 fill-white transition-all duration-500 group-hover/link:fill-[#FF0000]"
         />
       ),
