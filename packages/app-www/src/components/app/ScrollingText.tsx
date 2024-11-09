@@ -6,8 +6,8 @@ import { Button } from "~/components/button";
 import { FullBleedSection } from "~/components/section";
 import { cn } from "~/helpers";
 
+import ColumnsIcon from "#/images/icons/columns-01.svg";
 import PlayIcon from "#/images/icons/play.svg";
-import StopIcon from "#/images/icons/stop.svg";
 
 export const ScrollingText = () => {
   const [isRunning, setIsRunning] = useState<boolean>(true);
@@ -28,14 +28,14 @@ export const ScrollingText = () => {
           <PlayIcon
             aria-label="Démarrer l’animation"
             className={cn(
-              "size-9 rounded-md stroke-yellow-500 outline-none transition-all duration-500 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
+              "size-9 rounded-md fill-yellow-500 stroke-yellow-500 outline-none transition-all duration-500 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
               { hidden: isRunning },
             )}
           />
-          <StopIcon
+          <ColumnsIcon
             aria-label="Stopper l’animation"
             className={cn(
-              "size-9 rounded-md stroke-yellow-500 outline-none transition-all duration-500 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
+              "size-9 rounded-md fill-yellow-500 stroke-yellow-500 outline-none transition-all duration-500 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
               { hidden: !isRunning },
             )}
           />
