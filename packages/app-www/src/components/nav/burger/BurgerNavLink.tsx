@@ -38,6 +38,7 @@ export const BurgerNavLink = ({ _link }: BurgerNavLinkProps) => {
       })}
       href={_link.href}
       onClick={handleClick}
+      tabIndex={burgerNav.isExpanded() ? 0 : -1}
     >
       {_link.label}
     </Link>

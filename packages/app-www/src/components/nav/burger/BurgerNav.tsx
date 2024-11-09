@@ -13,7 +13,7 @@ import {
   type RefObject,
 } from "react";
 
-import { MenuBar, MenuBarList, MenuBarListItem } from "~/components/headless";
+import { MenuBar, MenuBarListItem } from "~/components/headless";
 import { cn } from "~/helpers";
 import { useMenu } from "~/hooks";
 
@@ -23,6 +23,7 @@ import XCloseIcon from "#/images/icons/x-close.svg";
 import { BurgerNavButton } from "./BurgerNavButton";
 import { BurgerNavHome } from "./BurgerNavHome";
 import { BurgerNavLink } from "./BurgerNavLink";
+import { BurgerNavList } from "./BurgerNavList";
 import { BurgerNavSubmenu } from "./BurgerNavSubmenu";
 
 export type BurgerNavObject = {
@@ -136,18 +137,28 @@ export const BurgerNav = () => {
         </div>
 
         <div
-          className={cn("absolute left-0 top-20 flex w-full justify-center bg-white px-[4dvw] pb-24 pt-4", {
-            hidden: !burgerNav.isExpanded(),
-            "bg-blue-900": isHomePage,
-          })}
+          className={cn(
+            "absolute left-0 top-[5.25rem] flex grid w-full grid-rows-[0fr] justify-center bg-white px-[4dvw] transition-all duration-200 ease-linear",
+            {
+              "grid-rows-[1fr] pb-24": burgerNav.isExpanded(),
+              "bg-blue-900": isHomePage,
+            },
+          )}
         >
-          <MenuBarList className="flex w-full max-w-[30rem] flex-col gap-2">
+          <BurgerNavList
+            className={cn(
+              "flex w-full max-w-[30rem] flex-col gap-2 overflow-hidden transition-all duration-200 ease-linear",
+              {
+                "p-2": burgerNav.isExpanded(),
+              },
+            )}
+          >
             {menu.map((item, index) => (
               <MenuBarListItem key={index}>
                 {item.submenu === undefined ? <BurgerNavLink _link={item} /> : <BurgerNavSubmenu _submenu={item} />}
               </MenuBarListItem>
             ))}
-          </MenuBarList>
+          </BurgerNavList>
         </div>
       </MenuBar>
     </BurgerNavContext.Provider>

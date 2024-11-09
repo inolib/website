@@ -9,6 +9,7 @@ import type { MenuSubmenu } from "~/hooks";
 
 import ChevronDownIcon from "#/images/icons/chevron-down.svg";
 
+import { useBurgerNav } from "./BurgerNav";
 import { BurgerNavSubmenuLink } from "./BurgerNavSubmenuLink";
 import { BurgerNavSubmenuList } from "./BurgerNavSubmenuList";
 
@@ -17,6 +18,7 @@ export type BurgerNavSubmenuProps = {
 };
 
 export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
+  const burgerNav = useBurgerNav();
   const pathname = usePathname();
 
   const isHomePage = useMemo(() => pathname === "/", [pathname]);
@@ -31,6 +33,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
               isHomePage,
           },
         )}
+        tabIndex={burgerNav.isExpanded() ? 0 : -1}
       >
         <span
           className={cn({
