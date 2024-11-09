@@ -19,8 +19,6 @@ const Page = () => {
             <HeadingContent _level={1}>Politique de confidentialité</HeadingContent>
           </Heading>
         </TwoColumnsFlexLayoutColumn>
-
-        <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
 
       <div className="flex max-w-prose flex-col gap-8">

@@ -24,8 +24,6 @@ const Page = () => {
             <p>Nous sommes à votre écoute.</p>
           </div>
         </TwoColumnsFlexLayoutColumn>
-
-        <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
 
       <div className="flex flex-col gap-16 lg:flex-row lg:gap-32">

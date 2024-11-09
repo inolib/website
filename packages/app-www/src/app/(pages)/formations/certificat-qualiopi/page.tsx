@@ -36,8 +36,6 @@ const Page = () => {
             <p>La transcription accessible de ce certificat se trouve ci-après.</p>
           </div>
         </TwoColumnsFlexLayoutColumn>
-
-        <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
 
       <div className="self-center border border-black p-8 md:px-[5.68rem] md:py-16">

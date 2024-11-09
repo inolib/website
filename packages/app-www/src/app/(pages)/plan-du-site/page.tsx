@@ -19,8 +19,6 @@ const Page = () => {
             <HeadingContent _level={1}>Plan du site</HeadingContent>
           </Heading>
         </TwoColumnsFlexLayoutColumn>
-
-        <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
 
       <nav aria-label="Plan du site">
