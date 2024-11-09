@@ -53,7 +53,7 @@ export const SocialProof = ({ _color }: SocialProofProps) => {
   return (
     <Section className={sectionClassName()}>
       <Heading _alignment="center" _size="4xl">
-        <HeadingContent _level={2}>Rejoignez nos clients satisfaits</HeadingContent>
+        <HeadingContent _level={2}>Ils nous font confiance</HeadingContent>
       </Heading>
 
       <ul className="grid grid-cols-2 place-items-center gap-x-16 gap-y-8 lg:grid-cols-4">
