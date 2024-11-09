@@ -54,7 +54,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
       </MenuBarSubmenuButton>
 
       <div className="mt-0 grid grid-rows-[0fr] transition-all duration-200 ease-linear [[data-expanded=true]_&]:mt-2 [[data-expanded=true]_&]:grid-rows-[1fr]">
-        <BurgerNavSubmenuList className="top-[3.1875rem] flex flex-col gap-2 overflow-hidden rounded-xl border-black bg-white transition-all duration-200 ease-linear [[data-expanded=true]_&]:border [[data-expanded=true]_&]:p-2">
+        <BurgerNavSubmenuList className="top-[3.1875rem] flex flex-col gap-2 overflow-hidden rounded-xl border-x border-black bg-white px-2 transition-all duration-200 ease-linear [[data-expanded=true]_&]:border-y [[data-expanded=true]_&]:py-2">
           {_submenu.submenu.map((item, index) => {
             const isCurrentPage = item.href === pathname;
 
