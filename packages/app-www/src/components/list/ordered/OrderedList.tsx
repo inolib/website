@@ -1,7 +1,9 @@
 import type { HTMLAttributes } from "react";
 
-export type OrderedListProps = HTMLAttributes<HTMLUListElement>;
+import { cn } from "~/helpers";
 
-export const OrderedList = ({ ...passthru }: OrderedListProps) => {
-  return <ul {...passthru} />;
+export type OrderedListProps = HTMLAttributes<HTMLOListElement>;
+
+export const OrderedList = ({ className, ...passthru }: OrderedListProps) => {
+  return <ol className={cn("list-outside list-decimal pl-[1.125rem]", className)} {...passthru} />;
 };
