@@ -52,7 +52,7 @@ export const SocialProof = ({ _color }: SocialProofProps) => {
 
   return (
     <Section className={sectionClassName()}>
-      <Heading _alignment="center" _size="2xl">
+      <Heading _alignment="center" _size="4xl">
         <HeadingContent _level={2}>Rejoignez nos clients satisfaits</HeadingContent>
       </Heading>
 
