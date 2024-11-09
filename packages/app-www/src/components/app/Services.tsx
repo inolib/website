@@ -45,7 +45,7 @@ export const Services = ({ _color }: ServicesProps) => {
   const services = [
     {
       icon: <FileCheckFramedIcon className="size-12" />,
-      title: "Audits d’accessibilité conformes aux normes RGAA, WCAG, et RAWeb",
+      title: "Audits d’accessibilité numérique",
       description: (
         <>
           <p>
@@ -55,72 +55,89 @@ export const Services = ({ _color }: ServicesProps) => {
           <p>Nous rédigeons votre déclaration d’accessibilité et vous accompagnons vers une accessibilité optimale.</p>
         </>
       ),
-      link: {
-        label: "En savoir plus sur les audits d’accessibilité",
-        href: "/audit/audits-accessibilite",
-      },
+      links: [
+        {
+          label: "Audits d’accessibilité",
+          "aria-label": "Découvrir nos audits d’accessibilité",
+          href: "/audit/audits-accessibilite",
+        },
+      ],
       illustration: auditIllustration,
     },
     {
       icon: <FlagFramedIcon className="size-12" />,
-      title: "Pilotage de projet et accompagnement technique",
+      title: "Accompagnement et conseil",
       description: (
         <>
+          <p>Nous intégrons l’accessibilité à chaque étape de votre projet.</p>
           <p>
-            Nous offrons un service complet de pilotage de projet numérique, en intégrant l’accessibilité dès la
-            conception et à chaque étape du développement. Notre approche combine gestion de projet et accompagnement
-            technique pour garantir la mise en œuvre efficace de l’accessibilité.
+            En combinant gestion de projet et expertise technique, nous assurons une mise en œuvre efficace de
+            l’accessibilité.
           </p>
           <p>
-            Nous vous appuyons également dans l’élaboration d’un schéma pluriannuel, vous permettant de planifier et
-            structurer vos actions pour assurer une mise en place durable de l’accessibilité numérique.
+            Nous vous aidons également à élaborer un schéma pluriannuel pour planifier vos actions et garantir une
+            accessibilité numérique dans le temps.
           </p>
         </>
       ),
-      link: {
-        label: "En savoir plus sur le pilotage de projet",
-        href: "/accompagnement/pilotage-de-projet",
-      },
+      links: [
+        {
+          label: "Pilotage de projet",
+          "aria-label": "Découvrir notre service de pilotage de projet",
+          href: "/accompagnement/pilotage-de-projet",
+        },
+        {
+          label: "Accompagnement technique",
+          "aria-label": "Découvrir notre service d’accompagnement technique",
+          href: "/accompagnement/accompagnement-technique",
+        },
+      ],
       illustration: supportIllustration,
     },
     {
       icon: <TerminalBrowserFramedIcon className="size-12" />,
       title: "Développement de solutions web et mobiles",
       description: (
-        <p>
-          Chez INOLIB, nous transformons vos idées en solutions numériques sur mesure. Que ce soit pour des sites web,
-          des applications mobiles ou des logiciels SaaS, notre équipe pluridisciplinaire vous accompagne à chaque étape
-          de votre projet, de la conception à la mise en ligne, pour des solutions accessibles, performantes et
-          modernes.
-        </p>
+        <>
+          <p>Chez INOLIB, vos idées prennent vie avec des solutions sur mesure.</p>
+          <p>
+            Un projet de site web, une application, ou une plateforme SaaS, nous concevons et développons des solutions
+            modernes, performantes et accessibles.
+          </p>
+        </>
       ),
-      link: {
-        label: "En savoir plus sur nos services de développement",
-        href: "/developpement",
-      },
+      links: [
+        {
+          label: "Développement web et mobile",
+          "aria-label": "Découvrir nos services de développement web et mobile",
+          href: "/developpement",
+        },
+      ],
       illustration: developmentIllustration,
     },
     {
       icon: <GraduationHatFramedIcon className="size-12" />,
-      title: "INOLIB Academy – Formations aux métiers du numérique et à l’accessibilité numérique",
+      title: "Formations",
       description: (
         <>
           <p>
-            En tant que centre de formation certifié Qualiopi, INOLIB Academy vous propose des programmes variés pour
-            développer les compétences essentielles aux métiers du numérique et en accessibilité numérique. Nos
-            formations, conçues pour s’adapter à tous les niveaux et profils, permettent à vos équipes de monter en
-            compétences et d’optimiser leurs projets, tout en répondant aux exigences actuelles du marché.
+            En tant que centre de formation certifié Qualiopi, INOLIB Academy vous propose des programmes dans les
+            métiers du numérique et en accessibilité.
           </p>
           <p>
-            Disponibles en présentiel ou en ligne, nos formations vous offrent flexibilité et expertise, pour des
-            services numériques performants et inclusifs.
+            Nos formations permettent à vos équipes de sensibiliser et de faire monter en compétences les équipes
+            projet : décideurs, chefs de projet, product owners, designers UX/UI, développeurs, rédacteurs, community
+            managers.
           </p>
         </>
       ),
-      link: {
-        label: "En savoir plus sur INOLIB Academy",
-        href: "/formations",
-      },
+      links: [
+        {
+          label: "INOLIB Academy",
+          "aria-label": "Découvrir nos formations INOLIB Academy",
+          href: "/formations",
+        },
+      ],
       illustration: trainingIllustration,
     },
   ];
@@ -135,19 +152,32 @@ export const Services = ({ _color }: ServicesProps) => {
         <TwoColumnsFlexLayout className={cn({ "md:flex-row-reverse": index % 2 === 0 })} key={index}>
           <TwoColumnsFlexLayoutColumn className="flex flex-col justify-center gap-8">
             <div className="flex flex-col gap-4">
-              {item.icon}
-
               <Heading _alignment="left" _size="2xl">
-                <HeadingContent _level={3}>{item.title}</HeadingContent>
+                <div className="flex items-center gap-4">
+                  <div>{item.icon}</div>
+                  <HeadingContent _level={3}>{item.title}</HeadingContent>
+                </div>
               </Heading>
 
               {item.description}
             </div>
 
-            <Link _border="black" _color="white" _shape="button" aria-label={item.link.label} href={item.link.href}>
-              <span>En savoir plus</span>
-              <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              {item.links.map((item, index) => (
+                <Link
+                  _border="black"
+                  _color="white"
+                  _shape="button"
+                  aria-label={item["aria-label"]}
+                  className="text-left"
+                  href={item.href}
+                  key={index}
+                >
+                  <span>{item.label}</span>
+                  <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
+                </Link>
+              ))}
+            </div>
           </TwoColumnsFlexLayoutColumn>
 
           <TwoColumnsFlexLayoutColumn className="flex items-center justify-center">
