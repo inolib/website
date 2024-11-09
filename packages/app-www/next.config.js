@@ -33,17 +33,7 @@ export default {
             options: {
               icon: true,
               svgoConfig: {
-                plugins: [
-                  {
-                    name: "removeUselessStrokeAndFill",
-                    params: {
-                      stroke: false,
-                      fill: false,
-                      removeNone: false,
-                    },
-                  },
-                  "removeXMLNS",
-                ],
+                plugins: ["removeXMLNS"],
               },
             },
           },
