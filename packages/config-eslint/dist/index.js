@@ -164,6 +164,7 @@ export default typescriptESLint.config(
         {
           callees: ["cn", "tv"],
           cssFiles: [],
+          whitelist: ["meetings-iframe-container"],
         },
       ],
 
