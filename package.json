@@ -16,7 +16,7 @@
     "@eslint/js": "^9.14.0",
     "@inolib/config-eslint": "workspace:^",
     "@inolib/config-prettier": "workspace:^",
-    "@next/eslint-plugin-next": "^15.0.2",
+    "@next/eslint-plugin-next": "^15.0.3",
     "eslint": "^9.14.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-formatter-silent": "^1.0.0",
