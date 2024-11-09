@@ -48,19 +48,19 @@ export const FAQ = ({ _color }: FAQProps) => {
       question: "Comment se déroulent les tests utilisateurs avec des personnes en situation de handicap ?",
       answer: (
         <OrderedList className="flex flex-col gap-4">
-          <OrderedListItem _order={1}>
+          <OrderedListItem>
             Recrutement et sélection de testeurs : présentation des objectifs, consignes, profils des candidats, et
             validation de leur maîtrise des aides techniques.
           </OrderedListItem>
-          <OrderedListItem _order={2}>
+          <OrderedListItem>
             Mise en situation : tests basés sur des scénarios prédéfinis pour évaluer l’expérience d’usage de
             l’application ou du site.
           </OrderedListItem>
-          <OrderedListItem _order={3}>
+          <OrderedListItem>
             Retours d’expérience : recueil des impressions des utilisateurs, identification des difficultés rencontrées,
             suggestions d’amélioration, et évaluation des qualités ergonomiques.
           </OrderedListItem>
-          <OrderedListItem _order={4}>
+          <OrderedListItem>
             Analyse des résultats pour proposer des axes d’amélioration, d’accessibilité, et d’utilisabilité.
           </OrderedListItem>
         </OrderedList>
