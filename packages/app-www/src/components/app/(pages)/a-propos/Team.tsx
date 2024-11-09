@@ -47,7 +47,7 @@ export const Team = ({ _color }: TeamProps) => {
           icon: (
             <LinkedInIcon
               aria-label="Djebrine ALOUI sur LinkedIn"
-              className="size-8 fill-black transition-all duration-500 group-hover/link:fill-[#0B66C2]"
+              className="size-8 fill-black transition-all duration-200 ease-linear group-hover/link:fill-[#0B66C2]"
               key={0}
             />
           ),
@@ -65,7 +65,7 @@ export const Team = ({ _color }: TeamProps) => {
           icon: (
             <LinkedInIcon
               aria-label="Aurore-Mauve VOELTZEL sur LinkedIn"
-              className="size-8 fill-black transition-all duration-500 group-hover/link:fill-[#0B66C2]"
+              className="size-8 fill-black transition-all duration-200 ease-linear group-hover/link:fill-[#0B66C2]"
               key={0}
             />
           ),
@@ -83,7 +83,7 @@ export const Team = ({ _color }: TeamProps) => {
           icon: (
             <LinkedInIcon
               aria-label="Matthieu MEIGNAN sur LinkedIn"
-              className="size-8 fill-black transition-all duration-500 group-hover/link:fill-[#0B66C2]"
+              className="size-8 fill-black transition-all duration-200 ease-linear group-hover/link:fill-[#0B66C2]"
               key={0}
             />
           ),
@@ -101,7 +101,7 @@ export const Team = ({ _color }: TeamProps) => {
           icon: (
             <LinkedInIcon
               aria-label="Nadjemati ABDALLAH sur LinkedIn"
-              className="size-8 fill-black transition-all duration-500 group-hover/link:fill-[#0B66C2]"
+              className="size-8 fill-black transition-all duration-200 ease-linear group-hover/link:fill-[#0B66C2]"
               key={0}
             />
           ),
@@ -118,7 +118,7 @@ export const Team = ({ _color }: TeamProps) => {
           icon: (
             <LinkedInIcon
               aria-label="Amina HURIC sur LinkedIn"
-              className="size-8 fill-black transition-all duration-500 group-hover/link:fill-[#0B66C2]"
+              className="size-8 fill-black transition-all duration-200 ease-linear group-hover/link:fill-[#0B66C2]"
               key={0}
             />
           ),
@@ -135,7 +135,7 @@ export const Team = ({ _color }: TeamProps) => {
           icon: (
             <LinkedInIcon
               aria-label="Brice MENDEZ sur LinkedIn"
-              className="size-8 fill-black transition-all duration-500 group-hover/link:fill-[#0B66C2]"
+              className="size-8 fill-black transition-all duration-200 ease-linear group-hover/link:fill-[#0B66C2]"
               key={0}
             />
           ),
@@ -153,7 +153,7 @@ export const Team = ({ _color }: TeamProps) => {
           icon: (
             <LinkedInIcon
               aria-label="Maria GRAIRI sur LinkedIn"
-              className="size-8 fill-black transition-all duration-500 group-hover/link:fill-[#0B66C2]"
+              className="size-8 fill-black transition-all duration-200 ease-linear group-hover/link:fill-[#0B66C2]"
               key={0}
             />
           ),
@@ -200,7 +200,7 @@ export const Team = ({ _color }: TeamProps) => {
                   <Link
                     _color="transparent"
                     _shape="button"
-                    className="group/link p-2 transition-all duration-500 hover:bg-white focus-visible:outline-black"
+                    className="group/link p-2 transition-all duration-200 ease-linear hover:bg-white focus-visible:outline-black"
                     href={item.href}
                     title={item.label}
                   >

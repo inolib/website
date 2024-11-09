@@ -102,7 +102,7 @@ export const BurgerNav = () => {
       <MenuBar
         aria-label="Menu principal"
         className={cn(
-          "relative z-10 flex flex-col gap-4 px-[4dvw] py-4 text-2xl transition-all duration-500 lg:hidden",
+          "relative z-10 flex flex-col gap-4 px-[4dvw] py-4 text-2xl transition-all duration-200 ease-linear lg:hidden",
           {
             "bg-blue-900": isHomePage,
           },
@@ -118,7 +118,7 @@ export const BurgerNav = () => {
             <BurgerNavButton aria-label="Fermer le menu">
               <span>Fermer</span>
               <XCloseIcon
-                className={cn("stroke-black transition-all duration-500", {
+                className={cn("stroke-black transition-all duration-200 ease-linear", {
                   "stroke-white [:hover>&]:stroke-black": isHomePage,
                 })}
               />
@@ -127,7 +127,7 @@ export const BurgerNav = () => {
             <BurgerNavButton aria-label="Ouvrir le menu">
               <span>Menu</span>
               <MenuIcon
-                className={cn("stroke-black transition-all duration-500", {
+                className={cn("stroke-black transition-all duration-200 ease-linear", {
                   "stroke-white [:hover>&]:stroke-black": isHomePage,
                 })}
               />

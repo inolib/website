@@ -4,7 +4,7 @@ import type { VariantProps } from "tailwind-variants";
 import { tv } from "~/helpers";
 
 const variants = tv({
-  base: "flex w-fit items-center gap-2 rounded-lg px-4 py-2 font-semibold outline-none transition-all duration-500 focus-visible:outline-4 focus-visible:outline-offset-4",
+  base: "flex w-fit items-center gap-2 rounded-lg px-4 py-2 font-semibold outline-none transition-all duration-200 ease-linear focus-visible:outline-4 focus-visible:outline-offset-4",
   variants: {
     _color: {
       "blue-900": "bg-blue-900 text-white hover:bg-blue-950 focus-visible:outline-blue-900",

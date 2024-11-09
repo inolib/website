@@ -22,7 +22,7 @@ export const TextInputField = forwardRef<HTMLInputElement, TextInputFieldProps>(
           aria-describedby={`${id}-error`}
           aria-invalid={_error.value !== ""}
           className={cn(
-            "rounded-lg border border-blue-600 p-2 outline-none transition-all duration-500 hover:bg-blue-50 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-600",
+            "rounded-lg border border-blue-600 p-2 outline-none transition-all duration-200 ease-linear hover:bg-blue-50 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-600",
             {
               "border-red-600 focus-visible:outline-red-600": _error.value !== "",
             },

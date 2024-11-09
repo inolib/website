@@ -22,7 +22,7 @@ export const Banner = () => {
     <header role="banner">
       <Section
         className={cn(
-          "flex items-center justify-between gap-8 bg-blue-50 transition-all duration-500 first-of-type:py-4",
+          "flex items-center justify-between gap-8 bg-blue-50 transition-all duration-200 ease-linear first-of-type:py-4",
           {
             "bg-blue-950": isHomePage,
           },
@@ -36,7 +36,7 @@ export const Banner = () => {
         >
           <span>Accéder au contenu</span>
           <ArrowNarrowDownIcon
-            className={cn("shrink-0 stroke-blue-900 transition-all duration-500", {
+            className={cn("shrink-0 stroke-blue-900 transition-all duration-200 ease-linear", {
               "stroke-sand-50": isHomePage,
             })}
           />
@@ -61,9 +61,12 @@ export const Banner = () => {
       </Section>
 
       <Section
-        className={cn("hidden items-center justify-center bg-white py-4 transition-all duration-500 lg:flex", {
-          "bg-blue-900": isHomePage,
-        })}
+        className={cn(
+          "hidden items-center justify-center bg-white py-4 transition-all duration-200 ease-linear lg:flex",
+          {
+            "bg-blue-900": isHomePage,
+          },
+        )}
       >
         <MainNav />
       </Section>
