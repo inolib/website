@@ -19,8 +19,8 @@ const variants = tv({
       white: {
         sectionClassName: "bg-white",
       },
-      "neutral-50": {
-        sectionClassName: "bg-neutral-50",
+      "sand-50": {
+        sectionClassName: "bg-sand-50",
       },
     },
   },
