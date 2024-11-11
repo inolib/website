@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
 import { Link } from "~/components/link";
-import { BurgerNav, MainNav } from "~/components/nav";
 import { Section } from "~/components/section";
 import { cn } from "~/helpers";
 
@@ -59,19 +58,6 @@ export const Banner = () => {
           Demander un devis
         </Link>
       </Section>
-
-      <Section
-        className={cn(
-          "hidden items-center justify-center bg-white py-4 transition-all duration-200 ease-linear lg:flex",
-          {
-            "bg-blue-900": isHomePage,
-          },
-        )}
-      >
-        <MainNav />
-      </Section>
-
-      <BurgerNav />
     </header>
   );
 };

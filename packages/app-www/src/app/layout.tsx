@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
-import { Banner, ContentInfo, Orejime } from "~/components/app";
+import { Banner, ContentInfo, Nav, Orejime } from "~/components/app";
 
 import "@fontsource-variable/manrope";
 import "./globals.css";
@@ -36,6 +36,8 @@ const Layout = ({ children }: PropsWithChildren) => {
       <body className="mx-auto min-w-80 max-w-[120rem] font-manrope text-lg font-medium" tabIndex={-1}>
         <div id="app">
           <Banner />
+
+          <Nav />
 
           <main id="main" tabIndex={-1}>
             {children}

@@ -17,7 +17,15 @@ export const MainNav = () => {
   const isHomePage = useMemo(() => pathname === "/", [pathname]);
 
   return (
-    <MenuBar aria-label="Menu principal">
+    <MenuBar
+      aria-label="Menu principal"
+      className={cn(
+        "sticky top-[-0.0625rem] z-[1000] hidden items-center justify-center bg-white px-[4dvw] py-4 transition-all duration-200 ease-linear lg:flex xl:px-[8dvw]",
+        {
+          "bg-blue-900": isHomePage,
+        },
+      )}
+    >
       <MenuBarList
         className={cn("flex items-center gap-4 bg-white transition-all duration-200 ease-linear", {
           "bg-blue-900": isHomePage,

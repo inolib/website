@@ -103,7 +103,7 @@ export const BurgerNav = () => {
       <MenuBar
         aria-label="Menu principal"
         className={cn(
-          "relative z-10 flex flex-col gap-4 px-[4dvw] py-4 text-2xl transition-all duration-200 ease-linear lg:hidden",
+          "sticky top-[-0.0625rem] z-[1000] flex flex-col gap-4 bg-white px-[4dvw] py-4 text-2xl transition-all duration-200 ease-linear lg:hidden",
           {
             "bg-blue-900": isHomePage,
           },
