@@ -45,10 +45,12 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
 
         <span>
           <ChevronDownIcon
-            className={cn("stroke-black [[aria-expanded=true]_&]:rotate-180 [[aria-expanded=true]_&]:stroke-black", {
-              "stroke-white transition-all duration-200 ease-linear [[aria-expanded=false]:hover_&]:stroke-black":
-                isHomePage,
-            })}
+            className={cn(
+              "stroke-black transition-all duration-200 ease-linear [[aria-expanded=true]_&]:rotate-180 [[aria-expanded=true]_&]:stroke-black",
+              {
+                "stroke-white [[aria-expanded=false]:hover_&]:stroke-black": isHomePage,
+              },
+            )}
           />
         </span>
       </MenuBarSubmenuButton>
