@@ -5,5 +5,5 @@ import { cn } from "~/helpers";
 export type BoxCardProps = HTMLAttributes<HTMLDivElement>;
 
 export const BoxCard = ({ className, ...passthru }: BoxCardProps) => {
-  return <div className={cn("flex gap-4 rounded-3xl bg-blue-50 p-6", className)} {...passthru} />;
+  return <div className={cn("flex gap-8 rounded-3xl bg-blue-50 px-8 py-4", className)} {...passthru} />;
 };

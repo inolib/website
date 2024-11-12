@@ -13,6 +13,13 @@ import {
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
+import CodeBrowserIcon from "#/images/icons/code-browser.svg";
+import FileCheck02Icon from "#/images/icons/file-check-02.svg";
+import Image05Icon from "#/images/icons/image-05.svg";
+import Map01Icon from "#/images/icons/map-01.svg";
+import Rocket02Icon from "#/images/icons/rocket-02.svg";
+import SearchSmIcon from "#/images/icons/search-sm.svg";
+import Tool02Icon from "#/images/icons/tool-02.svg";
 import stepsIllustration from "#/images/illustrations/app/(pages)/developpement/(subpages)/sites-vitrines-et-institutionnels/steps.svg?url";
 
 const variants = tv({
@@ -42,37 +49,37 @@ export const Steps = ({ _color }: StepsProps) => {
 
   const highlights = [
     {
-      icon: <></>,
+      icon: <SearchSmIcon className="size-12 stroke-blue-600" />,
       title: "1. Découverte",
       description: "Analyse de vos besoins et définition de vos objectifs.",
     },
     {
-      icon: <></>,
+      icon: <Map01Icon className="size-12 stroke-blue-600" />,
       title: "2. Stratégie",
       description: "Élaboration d’une stratégie de contenu et d’un plan de site.",
     },
     {
-      icon: <></>,
+      icon: <Image05Icon className="size-12 stroke-blue-600" />,
       title: "3. Design",
       description: "Création d’un design sur mesure, reflet de votre identité.",
     },
     {
-      icon: <></>,
+      icon: <CodeBrowserIcon className="size-12 stroke-blue-600" />,
       title: "4. Développement",
       description: "Intégration des fonctionnalités et développement technique.",
     },
     {
-      icon: <></>,
+      icon: <FileCheck02Icon className="size-12 stroke-blue-600" />,
       title: "5. Tests et validation",
       description: "Vérification de la performance, de l'accessibilité, et de la sécurité.",
     },
     {
-      icon: <></>,
+      icon: <Rocket02Icon className="size-12 stroke-blue-600" />,
       title: "6. Lancement",
       description: "Mise en ligne et formation à l’utilisation du site.",
     },
     {
-      icon: <></>,
+      icon: <Tool02Icon className="size-12 stroke-blue-600" />,
       title: "7. Suivi et optimisation",
       description: "Support continu et améliorations régulières.",
     },
@@ -95,7 +102,7 @@ export const Steps = ({ _color }: StepsProps) => {
             {highlights.map((item, index) => (
               <HighlightsListItem key={index}>
                 <BoxCard>
-                  <BoxCardIcon className="my-auto">{item.icon}</BoxCardIcon>
+                  <BoxCardIcon>{item.icon}</BoxCardIcon>
 
                   <BoxCardContent className="gap-4">
                     <p className="text-xl font-bold">{item.title}</p>

@@ -6,7 +6,7 @@ import { Button } from "~/components/button";
 import { FullBleedSection } from "~/components/section";
 import { cn } from "~/helpers";
 
-import ColumnsIcon from "#/images/icons/columns-01.svg";
+import Columns01Icon from "#/images/icons/columns-01.svg";
 import PlayIcon from "#/images/icons/play.svg";
 
 export const ScrollingText = () => {
@@ -32,7 +32,7 @@ export const ScrollingText = () => {
               { hidden: isRunning },
             )}
           />
-          <ColumnsIcon
+          <Columns01Icon
             aria-label="Stopper l’animation"
             className={cn(
               "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-200 ease-linear group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",

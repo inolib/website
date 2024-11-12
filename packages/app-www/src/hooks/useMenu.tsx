@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
-import BuildingIcon from "#/images/icons/building-02.svg";
-import CompassIcon from "#/images/icons/compass-03.svg";
-import FileCheckIcon from "#/images/icons/file-check-02.svg";
-import ToolIcon from "#/images/icons/tool-01.svg";
+import Building01Icon from "#/images/icons/building-01.svg";
+import FileCheck02Icon from "#/images/icons/file-check-02.svg";
+import RouteIcon from "#/images/icons/route.svg";
+import Tool02Icon from "#/images/icons/tool-02.svg";
 import UsersCheckIcon from "#/images/icons/users-check.svg";
 
 export type MenuLink = {
@@ -45,7 +45,7 @@ export const useMenu = (): Menu => [
       //   href: "/audit",
       // },
       {
-        icon: <FileCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <FileCheck02Icon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Audits d’accessibilité",
         href: "/audit/audits-accessibilite",
       },
@@ -66,12 +66,12 @@ export const useMenu = (): Menu => [
       //   href: "/accompagnement",
       // },
       {
-        icon: <CompassIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <RouteIcon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Pilotage de projet",
         href: "/accompagnement/pilotage-de-projet",
       },
       {
-        icon: <ToolIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <Tool02Icon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Accompagnement technique",
         href: "/accompagnement/accompagnement-technique",
       },
@@ -87,7 +87,7 @@ export const useMenu = (): Menu => [
         href: "/developpement",
       },
       {
-        icon: <BuildingIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <Building01Icon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Sites vitrines et institutionnels",
         href: "/developpement/sites-vitrines-et-institutionnels",
       },

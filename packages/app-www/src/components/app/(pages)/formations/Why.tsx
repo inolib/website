@@ -1,13 +1,16 @@
 import type { VariantProps } from "tailwind-variants";
 
 import { Heading, HeadingContent, HeadingSubheading } from "~/components/heading";
+import { RoundedIcon } from "~/components/icon";
 import { FlexGridList, FlexGridListItem } from "~/components/list";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import FileFramedIcon from "#/images/icons/framed/file-05.svg";
-import FileSearchFramedIcon from "#/images/icons/framed/file-search-02.svg";
-import SwitchHorizontalFramedIcon from "#/images/icons/framed/switch-horizontal-01.svg";
+import Certificate01Icon from "#/images/icons/certificate-01.svg";
+import FileCheck02Icon from "#/images/icons/file-check-02.svg";
+import GraduationHat02Icon from "#/images/icons/graduation-hat-02.svg";
+import Scales02Icon from "#/images/icons/scales-02.svg";
+import Users01Icon from "#/images/icons/users-01.svg";
 
 const variants = tv({
   slots: {
@@ -36,29 +39,29 @@ export const Why = ({ _color }: WhyProps) => {
 
   const why = [
     {
-      icon: <SwitchHorizontalFramedIcon className="size-12" />,
+      icon: <Scales02Icon className="size-6 stroke-yellow-500" />,
       title: "Méthode équilibrée",
       description: "Une alliance de théorie et de pratique pour une montée en compétences progressive.",
     },
     {
-      icon: <FileSearchFramedIcon className="size-12" />,
+      icon: <Users01Icon className="size-6 stroke-yellow-500" />,
       title: "Accompagnement personnalisé",
       description:
         "Un suivi pendant et après la formation, avec un suivi cohérent post-formation pour assurer la bonne mise en pratique des acquis.",
     },
     {
-      icon: <FileFramedIcon className="size-12" />,
+      icon: <GraduationHat02Icon className="size-6 stroke-yellow-500" />,
       title: "Formateurs experts",
       description:
         "Nos formateurs sont des experts reconnus dans leurs domaines, garantissant un enseignement de qualité.",
     },
     {
-      icon: <FileFramedIcon className="size-12" />,
+      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" />,
       title: "Expertise en accessibilité numérique",
       description: "Des formations spécialisées et adaptées aux exigences actuelles des entreprises.",
     },
     {
-      icon: <FileFramedIcon className="size-12" />,
+      icon: <Certificate01Icon className="size-6 stroke-yellow-500" />,
       title: "Certification Qualiopi",
       description: "Des formations de qualité reconnue par un organisme de certification indépendant.",
     },
@@ -74,7 +77,9 @@ export const Why = ({ _color }: WhyProps) => {
       <FlexGridList>
         {why.map((item, index) => (
           <FlexGridListItem key={index}>
-            {item.icon}
+            <RoundedIcon className="size-12 bg-blue-300">
+              <RoundedIcon className="size-9 bg-blue-900">{item.icon}</RoundedIcon>
+            </RoundedIcon>
 
             <p className="text-2xl font-bold">{item.title}</p>
             <p>{item.description}</p>

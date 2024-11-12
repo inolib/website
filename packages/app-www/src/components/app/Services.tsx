@@ -2,16 +2,17 @@ import Image from "next/image";
 import type { VariantProps } from "tailwind-variants";
 
 import { Heading, HeadingContent } from "~/components/heading";
+import { RoundedIcon } from "~/components/icon";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { cn, tv } from "~/helpers";
 
 import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
-import FileCheckFramedIcon from "#/images/icons/framed/file-check-02.svg";
-import FlagFramedIcon from "#/images/icons/framed/flag-03.svg";
-import GraduationHatFramedIcon from "#/images/icons/framed/graduation-hat-02.svg";
-import TerminalBrowserFramedIcon from "#/images/icons/framed/terminal-browser.svg";
+import CodeBrowserIcon from "#/images/icons/code-browser.svg";
+import FileCheck02Icon from "#/images/icons/file-check-02.svg";
+import GraduationHat02Icon from "#/images/icons/graduation-hat-02.svg";
+import Map01Icon from "#/images/icons/map-01.svg";
 import supportIllustration from "#/images/illustrations/app/(pages)/accompagnement/header.svg?url";
 import auditIllustration from "#/images/illustrations/app/(pages)/audit/header.svg?url";
 import developmentIllustration from "#/images/illustrations/app/(pages)/developpement/header.svg?url";
@@ -44,7 +45,7 @@ export const Services = ({ _color }: ServicesProps) => {
 
   const services = [
     {
-      icon: <FileCheckFramedIcon className="size-12" />,
+      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" />,
       title: "Audits d’accessibilité numérique",
       description: (
         <>
@@ -65,7 +66,7 @@ export const Services = ({ _color }: ServicesProps) => {
       illustration: auditIllustration,
     },
     {
-      icon: <FlagFramedIcon className="size-12" />,
+      icon: <Map01Icon className="size-6 stroke-yellow-500" />,
       title: "Accompagnement et conseil",
       description: (
         <>
@@ -95,7 +96,7 @@ export const Services = ({ _color }: ServicesProps) => {
       illustration: supportIllustration,
     },
     {
-      icon: <TerminalBrowserFramedIcon className="size-12" />,
+      icon: <CodeBrowserIcon className="size-6 stroke-yellow-500" />,
       title: "Développement de solutions web et mobiles",
       description: (
         <>
@@ -116,7 +117,7 @@ export const Services = ({ _color }: ServicesProps) => {
       illustration: developmentIllustration,
     },
     {
-      icon: <GraduationHatFramedIcon className="size-12" />,
+      icon: <GraduationHat02Icon className="size-6 stroke-yellow-500" />,
       title: "Formations",
       description: (
         <>
@@ -154,7 +155,10 @@ export const Services = ({ _color }: ServicesProps) => {
             <div className="flex flex-col gap-4">
               <Heading _alignment="left" _size="2xl">
                 <div className="flex items-center gap-4">
-                  <div>{item.icon}</div>
+                  <RoundedIcon className="size-12 bg-blue-300">
+                    <RoundedIcon className="size-9 bg-blue-900">{item.icon}</RoundedIcon>
+                  </RoundedIcon>
+
                   <HeadingContent _level={3}>{item.title}</HeadingContent>
                 </div>
               </Heading>

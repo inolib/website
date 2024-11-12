@@ -61,7 +61,7 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
                   _color="white"
                   _shape="button"
                   aria-current={isCurrentPage ? "page" : undefined}
-                  className={cn("w-full justify-start text-left focus-visible:outline-black", {
+                  className={cn("w-full justify-start gap-4 text-left focus-visible:outline-black", {
                     "font-extrabold underline": isCurrentPage,
                     "hover:bg-sand-50": isHomePage,
                   })}

@@ -1,13 +1,16 @@
 import type { VariantProps } from "tailwind-variants";
 
-import { BoxCard, BoxCardContent, BoxCardIcon } from "~/components/card";
+import { BoxCard, BoxCardContent } from "~/components/card";
 import { Heading, HeadingContent } from "~/components/heading";
+import { RoundedIcon } from "~/components/icon";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
 import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
+import CodeBrowserIcon from "#/images/icons/code-browser.svg";
+import FileCheck02Icon from "#/images/icons/file-check-02.svg";
 
 const variants = tv({
   slots: {
@@ -43,12 +46,18 @@ export const GoFurther = ({ _color }: GoFurtherProps) => {
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn>
           <BoxCard className="h-full">
-            <BoxCardIcon></BoxCardIcon>
-
             <BoxCardContent className="justify-between">
               <div className="flex flex-col gap-4">
                 <Heading _alignment="left" _size="2xl">
-                  <HeadingContent _level={3}>Audits d’accessibilité</HeadingContent>
+                  <div className="flex items-center gap-4">
+                    <RoundedIcon className="size-12 bg-blue-300">
+                      <RoundedIcon className="size-9 bg-blue-900">
+                        <FileCheck02Icon className="size-6 stroke-yellow-500" />
+                      </RoundedIcon>
+                    </RoundedIcon>
+
+                    <HeadingContent _level={3}>Audits d’accessibilité</HeadingContent>
+                  </div>
                 </Heading>
 
                 <p>Nous évaluons votre niveau de conformité aux référentiels en vigueur (RGAA, WCAG, RAWeb).</p>
@@ -70,12 +79,18 @@ export const GoFurther = ({ _color }: GoFurtherProps) => {
 
         <TwoColumnsFlexLayoutColumn>
           <BoxCard className="h-full">
-            <BoxCardIcon></BoxCardIcon>
-
             <BoxCardContent className="justify-between">
               <div className="flex flex-col gap-4">
                 <Heading _alignment="left" _size="2xl">
-                  <HeadingContent _level={3}>Développement web et mobile</HeadingContent>
+                  <div className="flex items-center gap-4">
+                    <RoundedIcon className="size-12 bg-blue-300">
+                      <RoundedIcon className="size-9 bg-blue-900">
+                        <CodeBrowserIcon className="size-6 stroke-yellow-500" />
+                      </RoundedIcon>
+                    </RoundedIcon>
+
+                    <HeadingContent _level={3}>Développement web et mobile</HeadingContent>
+                  </div>
                 </Heading>
 
                 <p>Nous transformons vos idées en solutions numériques.</p>

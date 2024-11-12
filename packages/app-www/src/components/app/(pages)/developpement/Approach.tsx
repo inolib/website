@@ -13,6 +13,10 @@ import {
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
+import CodeBrowserIcon from "#/images/icons/code-browser.svg";
+import CpuChip01Icon from "#/images/icons/cpu-chip-01.svg";
+import MagicWand02Icon from "#/images/icons/magic-wand-02.svg";
+import PuzzlePiece01Icon from "#/images/icons/puzzle-piece-01.svg";
 import approachIllustration from "#/images/illustrations/app/(pages)/developpement/approach.svg?url";
 
 const variants = tv({
@@ -45,23 +49,23 @@ export const Approach = ({ _color }: ApproachProps) => {
       title: "Technologies utilisées",
       highlights: [
         {
-          icon: <></>,
+          icon: <CodeBrowserIcon className="size-12 stroke-blue-600" />,
           title: "Développement web et mobile",
           description: "Next.js, React, Node.js, headless CMS, React Native.",
         },
         {
-          icon: <></>,
+          icon: <MagicWand02Icon className="size-12 stroke-blue-600" />,
           title: "Intelligence Artificielle (IA)",
           description: "Automatisation et optimisation des processus pour une meilleure productivité.",
         },
         {
-          icon: <></>,
+          icon: <PuzzlePiece01Icon className="size-12 stroke-blue-600" />,
           title: "APIs",
           description:
             "Intégration fluide et sécurisée avec vos systèmes existants pour garantir une compatibilité et des échanges de données efficaces.",
         },
         {
-          icon: <></>,
+          icon: <CpuChip01Icon className="size-12 stroke-blue-600" />,
           title: "Machine learning",
           description: "Analyse prédictive et apprentissage continu pour des décisions plus stratégiques.",
         },
@@ -92,7 +96,7 @@ export const Approach = ({ _color }: ApproachProps) => {
               {item.highlights.map((item, index) => (
                 <HighlightsListItem key={index}>
                   <BoxCard>
-                    <BoxCardIcon className="my-auto">{item.icon}</BoxCardIcon>
+                    <BoxCardIcon>{item.icon}</BoxCardIcon>
 
                     <BoxCardContent className="gap-4">
                       <p className="text-xl font-bold">{item.title}</p>

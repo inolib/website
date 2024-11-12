@@ -17,7 +17,7 @@ import { MenuBar, MenuBarListItem } from "~/components/headless";
 import { cn } from "~/helpers";
 import { useMenu } from "~/hooks";
 
-import MenuIcon from "#/images/icons/menu-01.svg";
+import Menu01Icon from "#/images/icons/menu-01.svg";
 import XCloseIcon from "#/images/icons/x-close.svg";
 
 import { BurgerNavButton } from "./BurgerNavButton";
@@ -127,7 +127,7 @@ export const BurgerNav = () => {
           ) : (
             <BurgerNavButton aria-label="Ouvrir le menu">
               <span>Menu</span>
-              <MenuIcon
+              <Menu01Icon
                 className={cn("stroke-black transition-all duration-200 ease-linear", {
                   "stroke-white [:hover>&]:stroke-black": isHomePage,
                 })}

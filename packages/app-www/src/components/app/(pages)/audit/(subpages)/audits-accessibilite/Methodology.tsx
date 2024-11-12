@@ -13,6 +13,11 @@ import {
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
+import CompassIcon from "#/images/icons/compass.svg";
+import MessageChatSquareIcon from "#/images/icons/message-chat-square.svg";
+import PackageIcon from "#/images/icons/package.svg";
+import Pencil01Icon from "#/images/icons/pencil-01.svg";
+import SearchSmIcon from "#/images/icons/search-sm.svg";
 import methodologyIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/audits-accessibilite/methodology.svg?url";
 
 const variants = tv({
@@ -42,28 +47,28 @@ export const Methodology = ({ _color }: MethodologyProps) => {
 
   const highlights = [
     {
-      icon: <></>,
+      icon: <CompassIcon className="size-12 stroke-blue-600" />,
       title: "1. Co-construction",
       description: "Sélection d’un échantillon représentatif avec vous.",
     },
     {
-      icon: <></>,
+      icon: <SearchSmIcon className="size-12 stroke-blue-600" />,
       title: "2. Investigation",
       description: "Analyse de l’échantillon au regard du référentiel choisi.",
     },
     {
-      icon: <></>,
+      icon: <Pencil01Icon className="size-12 stroke-blue-600" />,
       title: "3. Synthèse",
       description: "Rédaction d’un rapport détaillé avec recommandations.",
     },
     {
-      icon: <></>,
+      icon: <MessageChatSquareIcon className="size-12 stroke-blue-600" />,
       title: "4. Échange",
       description:
         "Restitution des résultats en visioconférence, avec explication des non-conformités, des solutions, et des priorités d’action.",
     },
     {
-      icon: <></>,
+      icon: <PackageIcon className="size-12 stroke-blue-600" />,
       title: "5. Livraison",
       description: "Grille technique, rapport détaillé, déclaration d’accessibilité.",
     },
