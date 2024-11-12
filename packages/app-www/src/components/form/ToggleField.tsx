@@ -23,10 +23,10 @@ export const ToggleField = forwardRef<HTMLInputElement, ToggleField>(({ _label, 
       />
 
       <label
-        className="flex w-fit cursor-pointer items-center rounded-full border border-blue-600 bg-blue-50 px-4 py-1 outline-none transition-all duration-200 ease-linear hover:bg-blue-100 peer-checked/input:bg-blue-900 peer-checked/input:text-white peer-focus-visible/input:outline-4 peer-focus-visible/input:outline-offset-4 peer-focus-visible/input:outline-blue-600"
+        className="flex w-fit cursor-pointer items-center rounded-full border border-blue-600 bg-blue-50 px-4 py-1 outline-none transition-all duration-200 hover:bg-blue-100 peer-checked/input:bg-blue-900 peer-checked/input:text-white peer-focus-visible/input:outline-4 peer-focus-visible/input:outline-offset-4 peer-focus-visible/input:outline-blue-600"
         htmlFor={id}
       >
-        <CheckIcon className="size-0 stroke-white opacity-0 transition-all duration-200 ease-linear [:checked+label>&]:mr-2 [:checked+label>&]:size-[1.125rem] [:checked+label>&]:opacity-100" />
+        <CheckIcon className="size-0 stroke-white opacity-0 transition-all duration-200 [:checked+label>&]:mr-2 [:checked+label>&]:size-[1.125rem] [:checked+label>&]:opacity-100" />
         <span>{_label}</span>
       </label>
     </div>
