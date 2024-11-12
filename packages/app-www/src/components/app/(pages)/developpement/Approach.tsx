@@ -55,7 +55,7 @@ export const Approach = ({ _color }: ApproachProps) => {
         },
         {
           icon: <MagicWand02Icon className="size-12 stroke-blue-600" />,
-          title: "Intelligence Artificielle (IA)",
+          title: "Intelligence artificielle (IA)",
           description: "Automatisation et optimisation des processus pour une meilleure productivité.",
         },
         {
