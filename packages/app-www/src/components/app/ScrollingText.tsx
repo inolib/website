@@ -42,7 +42,7 @@ export const ScrollingText = () => {
         </span>
       </Button>
 
-      {[...Array.from({ length: 5 }).keys()].map((index) => (
+      {[...Array.from({ length: 3 }).keys()].map((index) => (
         <div
           aria-hidden={index > 0 ? true : undefined}
           className={cn("shrink-0 animate-marquee", { "[animation-play-state:paused]": !isRunning })}
