@@ -5,5 +5,7 @@ import { cn } from "~/helpers";
 export type RoundedIconProps = HTMLAttributes<HTMLDivElement>;
 
 export const RoundedIcon = ({ className, ...passthru }: RoundedIconProps) => {
-  return <div className={cn("flex items-center justify-center rounded-full", className)} {...passthru} />;
+  return (
+    <div className={cn("flex shrink-0 grow-0 items-center justify-center rounded-full", className)} {...passthru} />
+  );
 };
