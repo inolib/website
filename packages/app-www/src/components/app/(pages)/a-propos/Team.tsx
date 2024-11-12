@@ -57,7 +57,7 @@ export const Team = ({ _color }: TeamProps) => {
     {
       photo: "/images/photos/team/aurore-mauve-voeltzel.jpg",
       name: "Aurore-Mauve VOELTZEL",
-      role: "Développeuse économique",
+      role: "Responsable administrative et financière",
       socialNetworks: [
         {
           label: "Aurore-Mauve VOELTZEL sur LinkedIn",
@@ -93,7 +93,7 @@ export const Team = ({ _color }: TeamProps) => {
     {
       photo: "/images/photos/team/nadjemati-abdallah.jpg",
       name: "Nadjemati ABDALLAH",
-      role: "",
+      role: "Chargée de communication",
       socialNetworks: [
         {
           label: "Nadjemati ABDALLAH sur LinkedIn",
@@ -110,7 +110,7 @@ export const Team = ({ _color }: TeamProps) => {
     },
     {
       name: "Amina HURIC",
-      role: "",
+      role: "Assistante commerciale",
       socialNetworks: [
         {
           label: "Amina HURIC sur LinkedIn",
@@ -170,7 +170,7 @@ export const Team = ({ _color }: TeamProps) => {
 
       <div className="grid grid-cols-1 gap-16 self-center text-center sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
         {team.map((item, index) => (
-          <div className="flex aspect-n flex-col items-center gap-8 rounded-t-full bg-blue-50 p-4 pt-12" key={index}>
+          <div className="flex aspect-n flex-col items-center gap-8 rounded-t-full bg-blue-50 px-8 py-16" key={index}>
             <div className="flex flex-col items-center gap-4">
               {item.photo === undefined ? (
                 <Image

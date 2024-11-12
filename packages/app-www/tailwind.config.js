@@ -7,7 +7,7 @@ export default {
       marquee: "10s linear infinite marquee",
     },
     aspectRatio: {
-      n: "2 / 3",
+      n: "3 / 4",
       thumbnail: "2 / 1",
     },
     borderWidth: {
