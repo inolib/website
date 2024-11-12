@@ -10,7 +10,7 @@ export const FAQQuestion = ({ children, className, ...passthru }: FAQQuestionPro
   return (
     <BaseFAQQuestion
       className={cn(
-        "flex w-full justify-between gap-8 rounded-3xl p-6 text-left text-2xl font-bold outline-none hover:bg-blue-50 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-black",
+        "flex w-full justify-between gap-8 rounded-3xl p-6 text-left text-2xl font-bold outline-none transition-all duration-300 hover:bg-blue-50 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-black",
         className,
       )}
       {...passthru}
