@@ -1,5 +1,6 @@
 /** @type {import("next").NextConfig} */
 export default {
+  compress: false,
   experimental: {
     cpus: 1,
     workerThreads: false,
