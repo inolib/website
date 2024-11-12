@@ -1,6 +1,7 @@
-import { createServer } from "node:http";
 import { parse } from "node:url";
 
+import { fastifyCompress } from "@fastify/compress";
+import { fastify } from "fastify";
 import next from "next";
 
 void (async () => {
@@ -12,11 +13,15 @@ void (async () => {
 
   await app.prepare();
 
-  createServer((req, res) => {
-    void (async () => {
-      await app.getRequestHandler()(req, res, parse(req.url as string, true));
-    })();
-  }).listen(port);
+  const server = fastify();
 
-  console.log(`Server listening on http://${hostname}:${port} (${env})`);
+  server.register(fastifyCompress);
+
+  server.all("/*", async (request, reply) => {
+    await app.getRequestHandler()(request.raw, reply.raw, parse(request.url, true));
+  });
+
+  const address = await server.listen({ port });
+
+  console.log(`Server listening at ${address} (${env})`);
 })();
