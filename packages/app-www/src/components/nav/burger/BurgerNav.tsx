@@ -146,8 +146,8 @@ export const BurgerNav = () => {
           )}
         >
           <BurgerNavList
-            className={cn("flex w-full max-w-[30rem] flex-col gap-2 overflow-hidden transition-all duration-300", {
-              "p-2": burgerNav.isExpanded(),
+            className={cn("flex w-full max-w-[30rem] flex-col gap-2 overflow-hidden px-2 transition-all duration-300", {
+              "py-2": burgerNav.isExpanded(),
             })}
           >
             {menu.map((item, index) => (
