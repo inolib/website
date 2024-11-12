@@ -103,7 +103,7 @@ export const BurgerNav = () => {
       <MenuBar
         aria-label="Menu principal"
         className={cn(
-          "sticky top-[-0.0625rem] z-[1000] flex flex-col gap-4 bg-white px-[4dvw] py-4 text-2xl transition-all duration-200 lg:hidden",
+          "sticky top-[-0.0625rem] z-[1000] flex flex-col gap-4 bg-white px-[4dvw] py-4 text-2xl transition-all duration-300 lg:hidden",
           {
             "bg-blue-900": isHomePage,
           },
@@ -119,7 +119,7 @@ export const BurgerNav = () => {
             <BurgerNavButton aria-label="Fermer le menu">
               <span>Fermer</span>
               <XCloseIcon
-                className={cn("stroke-black transition-all duration-200", {
+                className={cn("stroke-black transition-all duration-300", {
                   "stroke-white [:hover>&]:stroke-black": isHomePage,
                 })}
               />
@@ -128,7 +128,7 @@ export const BurgerNav = () => {
             <BurgerNavButton aria-label="Ouvrir le menu">
               <span>Menu</span>
               <Menu01Icon
-                className={cn("stroke-black transition-all duration-200", {
+                className={cn("stroke-black transition-all duration-300", {
                   "stroke-white [:hover>&]:stroke-black": isHomePage,
                 })}
               />
@@ -138,7 +138,7 @@ export const BurgerNav = () => {
 
         <div
           className={cn(
-            "absolute left-0 top-[5.25rem] flex grid w-full grid-rows-[0fr] justify-center bg-white px-[4dvw] transition-all duration-200",
+            "absolute left-0 top-[5.25rem] flex grid w-full grid-rows-[0fr] justify-center bg-white px-[4dvw] transition-all duration-300",
             {
               "grid-rows-[1fr] pb-24": burgerNav.isExpanded(),
               "bg-blue-900": isHomePage,
@@ -146,7 +146,7 @@ export const BurgerNav = () => {
           )}
         >
           <BurgerNavList
-            className={cn("flex w-full max-w-[30rem] flex-col gap-2 overflow-hidden transition-all duration-200", {
+            className={cn("flex w-full max-w-[30rem] flex-col gap-2 overflow-hidden transition-all duration-300", {
               "p-2": burgerNav.isExpanded(),
             })}
           >

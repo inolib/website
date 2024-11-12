@@ -45,7 +45,7 @@ export const ContentInfo = () => {
       icon: (
         <FacebookLogo
           aria-label="Facebook"
-          className="size-8 fill-white transition-all duration-200 group-hover/link:fill-[#0766FF]"
+          className="size-8 fill-white transition-all duration-300 group-hover/link:fill-[#0766FF]"
         />
       ),
     },
@@ -55,7 +55,7 @@ export const ContentInfo = () => {
       icon: (
         <LinkedInLogo
           aria-label="LinkedIn"
-          className="size-8 fill-white transition-all duration-200 group-hover/link:fill-[#0B66C2]"
+          className="size-8 fill-white transition-all duration-300 group-hover/link:fill-[#0B66C2]"
         />
       ),
     },
@@ -63,7 +63,7 @@ export const ContentInfo = () => {
       label: "X",
       href: "https://x.com/_inolib",
       icon: (
-        <XLogo aria-label="X" className="size-8 fill-white transition-all duration-200 group-hover/link:fill-black" />
+        <XLogo aria-label="X" className="size-8 fill-white transition-all duration-300 group-hover/link:fill-black" />
       ),
     },
     {
@@ -72,7 +72,7 @@ export const ContentInfo = () => {
       icon: (
         <YouTubeLogo
           aria-label="YouTube"
-          className="size-8 fill-white transition-all duration-200 group-hover/link:fill-[#FF0000]"
+          className="size-8 fill-white transition-all duration-300 group-hover/link:fill-[#FF0000]"
         />
       ),
     },
@@ -111,7 +111,7 @@ export const ContentInfo = () => {
                     <Link
                       _color="transparent"
                       _shape="button"
-                      className="group/link p-2 transition-all duration-200 hover:bg-white focus-visible:outline-white"
+                      className="group/link p-2 transition-all duration-300 hover:bg-white focus-visible:outline-white"
                       href={item.href}
                       title={item.label}
                     >

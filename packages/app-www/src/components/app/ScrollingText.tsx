@@ -28,14 +28,14 @@ export const ScrollingText = () => {
           <PlayIcon
             aria-label="Démarrer l’animation"
             className={cn(
-              "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-200 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
+              "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-300 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
               { hidden: isRunning },
             )}
           />
           <Columns01Icon
             aria-label="Stopper l’animation"
             className={cn(
-              "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-200 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
+              "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-300 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
               { hidden: !isRunning },
             )}
           />

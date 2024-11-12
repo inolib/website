@@ -21,7 +21,7 @@ export const Banner = () => {
     <header role="banner">
       <Section
         className={cn(
-          "flex items-center justify-between gap-8 bg-blue-50 transition-all duration-200 first-of-type:py-4",
+          "flex items-center justify-between gap-8 bg-blue-50 transition-all duration-300 first-of-type:py-4",
           {
             "bg-blue-950": isHomePage,
           },
@@ -35,7 +35,7 @@ export const Banner = () => {
         >
           <span>Accéder au contenu</span>
           <ArrowNarrowDownIcon
-            className={cn("shrink-0 stroke-blue-900 transition-all duration-200", {
+            className={cn("shrink-0 stroke-blue-900 transition-all duration-300", {
               "stroke-sand-50": isHomePage,
             })}
           />
