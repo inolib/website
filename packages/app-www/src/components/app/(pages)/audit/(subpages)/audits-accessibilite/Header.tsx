@@ -12,7 +12,7 @@ export const Header = () => {
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn className="flex flex-col gap-16">
           <Heading _alignment="left" _size="4xl">
-            <HeadingContent _level={1}>Audit de conformité en accessibilité numérique</HeadingContent>
+            <HeadingContent _level={1}>Audits de conformité en accessibilité numérique</HeadingContent>
             <HeadingSubheading>Votre site web ou votre application mobile sont-ils accessibles ?</HeadingSubheading>
           </Heading>
 
