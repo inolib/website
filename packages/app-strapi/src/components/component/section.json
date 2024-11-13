@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_component_sections",
+  "info": {
+    "displayName": "section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "lien": {
+      "type": "string"
+    },
+    "sousLiens": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.sous-lien"
+    }
+  }
+}

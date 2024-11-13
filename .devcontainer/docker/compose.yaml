@@ -6,6 +6,8 @@ services:
     restart: "unless-stopped"
     volumes:
       - "mariadb:/var/lib/mysql"
+    networks:
+      - my-network
 
   strapi:
     build: "./strapi"

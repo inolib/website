@@ -13,4 +13,4 @@ fi
 
 pnpm install
 pnpm run build
-pnpm run start
+pnpm run develop

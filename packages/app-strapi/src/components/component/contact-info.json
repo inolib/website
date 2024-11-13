@@ -1,7 +1,8 @@
 {
   "collectionName": "components_component_contact_infos",
   "info": {
-    "displayName": "contactInfo"
+    "displayName": "contactInfo",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -12,6 +13,27 @@
     "adressePostale": {
       "type": "string",
       "required": true
+    },
+    "forme": {
+      "type": "string"
+    },
+    "Societe": {
+      "type": "string"
+    },
+    "SIRET": {
+      "type": "string"
+    },
+    "Responsable": {
+      "type": "string"
+    },
+    "Immatriculation": {
+      "type": "string"
+    },
+    "Tva": {
+      "type": "string"
+    },
+    "numero": {
+      "type": "string"
     }
   }
 }

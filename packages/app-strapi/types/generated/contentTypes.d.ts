@@ -328,6 +328,83 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMembreMembre extends Struct.CollectionTypeSchema {
+  collectionName: "membres";
+  info: {
+    description: "";
+    displayName: "Membre";
+    pluralName: "membres";
+    singularName: "membre";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    Linkdin: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::membre.membre"> & Schema.Attribute.Private;
+    Nom: Schema.Attribute.String;
+    photo: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    publishedAt: Schema.Attribute.DateTime;
+    Role: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMentionLegaleMentionLegale extends Struct.SingleTypeSchema {
+  collectionName: "mention_legales";
+  info: {
+    description: "";
+    displayName: "Mention l\u00E9gale";
+    pluralName: "mention-legales";
+    singularName: "mention-legale";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contactInfo: Schema.Attribute.Component<"component.contact-info", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    introduction: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    list: Schema.Attribute.Component<"component.list-item", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::mention-legale.mention-legale"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlanDuSitePlanDuSite extends Struct.SingleTypeSchema {
+  collectionName: "plan_du_sites";
+  info: {
+    description: "";
+    displayName: "plan du site ";
+    pluralName: "plan-du-sites";
+    singularName: "plan-du-site";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    lien: Schema.Attribute.Component<"component.section", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::plan-du-site.plan-du-site"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPolitiqueDeConfidentialitePolitiqueDeConfidentialite extends Struct.SingleTypeSchema {
   collectionName: "politique_de_confidentialites";
   info: {
@@ -353,6 +430,30 @@ export interface ApiPolitiqueDeConfidentialitePolitiqueDeConfidentialite extends
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiValeurValeur extends Struct.CollectionTypeSchema {
+  collectionName: "valeurs";
+  info: {
+    displayName: "Valeur";
+    pluralName: "valeurs";
+    singularName: "valeur";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    introduction: Schema.Attribute.String;
+    list: Schema.Attribute.Component<"component.list-item", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::valeur.valeur"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -766,7 +867,11 @@ declare module "@strapi/strapi" {
       "admin::transfer-token": AdminTransferToken;
       "admin::transfer-token-permission": AdminTransferTokenPermission;
       "admin::user": AdminUser;
+      "api::membre.membre": ApiMembreMembre;
+      "api::mention-legale.mention-legale": ApiMentionLegaleMentionLegale;
+      "api::plan-du-site.plan-du-site": ApiPlanDuSitePlanDuSite;
       "api::politique-de-confidentialite.politique-de-confidentialite": ApiPolitiqueDeConfidentialitePolitiqueDeConfidentialite;
+      "api::valeur.valeur": ApiValeurValeur;
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;
       "plugin::i18n.locale": PluginI18NLocale;
