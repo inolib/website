@@ -328,6 +328,80 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEngagementEngagement extends Struct.CollectionTypeSchema {
+  collectionName: "engagements";
+  info: {
+    displayName: "Engagement";
+    pluralName: "engagements";
+    singularName: "engagement";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    list: Schema.Attribute.Component<"component.list-item", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::engagement.engagement"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiInolibAcademyInolibAcademy extends Struct.CollectionTypeSchema {
+  collectionName: "inolib_academies";
+  info: {
+    description: "";
+    displayName: "inolibAcademy";
+    pluralName: "inolib-academies";
+    singularName: "inolib-academy";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    introduction: Schema.Attribute.String;
+    list: Schema.Attribute.Component<"component.list-item", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::inolib-academy.inolib-academy"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIntroAIntroA extends Struct.CollectionTypeSchema {
+  collectionName: "intro_as";
+  info: {
+    description: "";
+    displayName: "introA";
+    pluralName: "intro-as";
+    singularName: "intro-a";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    introduction: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::intro-a.intro-a"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMembreMembre extends Struct.CollectionTypeSchema {
   collectionName: "membres";
   info: {
@@ -376,6 +450,31 @@ export interface ApiMentionLegaleMentionLegale extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMissionMission extends Struct.CollectionTypeSchema {
+  collectionName: "missions";
+  info: {
+    displayName: "Mission";
+    pluralName: "missions";
+    singularName: "mission";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    Description1: Schema.Attribute.Text;
+    Description2: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::mission.mission"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre1: Schema.Attribute.String;
+    titre2: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -430,6 +529,31 @@ export interface ApiPolitiqueDeConfidentialitePolitiqueDeConfidentialite extends
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiQualiopiQualiopi extends Struct.CollectionTypeSchema {
+  collectionName: "qualiopis";
+  info: {
+    displayName: "qualiopi";
+    pluralName: "qualiopis";
+    singularName: "qualiopi";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    introduction: Schema.Attribute.String;
+    list: Schema.Attribute.Component<"component.list-item", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::qualiopi.qualiopi"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -867,10 +991,15 @@ declare module "@strapi/strapi" {
       "admin::transfer-token": AdminTransferToken;
       "admin::transfer-token-permission": AdminTransferTokenPermission;
       "admin::user": AdminUser;
+      "api::engagement.engagement": ApiEngagementEngagement;
+      "api::inolib-academy.inolib-academy": ApiInolibAcademyInolibAcademy;
+      "api::intro-a.intro-a": ApiIntroAIntroA;
       "api::membre.membre": ApiMembreMembre;
       "api::mention-legale.mention-legale": ApiMentionLegaleMentionLegale;
+      "api::mission.mission": ApiMissionMission;
       "api::plan-du-site.plan-du-site": ApiPlanDuSitePlanDuSite;
       "api::politique-de-confidentialite.politique-de-confidentialite": ApiPolitiqueDeConfidentialitePolitiqueDeConfidentialite;
+      "api::qualiopi.qualiopi": ApiQualiopiQualiopi;
       "api::valeur.valeur": ApiValeurValeur;
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;

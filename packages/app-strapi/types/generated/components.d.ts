@@ -26,7 +26,6 @@ export interface ComponentListItem extends Struct.ComponentSchema {
     displayName: "ListItem";
   };
   attributes: {
-    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     ListItem: Schema.Attribute.Blocks & Schema.Attribute.Required;
   };
 }

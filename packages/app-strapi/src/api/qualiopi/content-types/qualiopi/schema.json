@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "qualiopis",
+  "info": {
+    "singularName": "qualiopi",
+    "pluralName": "qualiopis",
+    "displayName": "qualiopi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "introduction": {
+      "type": "string"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.list-item"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
