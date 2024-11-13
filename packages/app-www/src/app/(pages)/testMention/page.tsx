@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Children } from "react";
+import ReactMarkdown from "react-markdown";
 
 import { fetchMention } from "~/app/utils/fetchPolicy";
 import { Link } from "~/components/app";
@@ -33,9 +34,7 @@ export default async function Page() {
         </TwoColumnsFlexLayout>
 
         <div className="flex max-w-prose flex-col gap-8">
-          {introduction.map((item, index) => (
-            <p key={index}>{item.children[0].text}</p>
-          ))}
+          <ReactMarkdown>{introduction[0].children[0].text}</ReactMarkdown>
 
           <div className="flex flex-col gap-4">
             <Heading _alignment="left" _size="2xl">

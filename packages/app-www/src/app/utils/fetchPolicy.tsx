@@ -14,11 +14,9 @@ export async function fetchPolicyData() {
   console.log("fetched data", data);
   return data.data;
 }
-/**
- *fetch valeu
- */
-export async function fetchValue() {
-  const res = await fetch("http://strapi:1337/api/valeurs?populate=*", {
+
+export const fetchValue = async () => {
+  const res = await fetch("http://strapi:1337/api/valeurs?populate[list][populate][0]=image", {
     cache: "no-store",
   });
 
@@ -27,15 +25,14 @@ export async function fetchValue() {
   }
 
   const data = await res.json();
-  console.log("afficher les valeurs", data);
-  return data;
-}
+  return { ...data.data[0], list: data.data[0].list || [] }; // Définir `list` par défaut comme tableau vide
+};
 
 /**
  *
  */
 export async function fetchPlan() {
-  const res = await fetch("http://strapi:1337/api/plan-du-site?populate=*", {
+  const res = await fetch("http://strapi:1337/api/plan-du-site?populate[lien][populate][0]=sousLiens", {
     cache: "no-store",
   });
 
@@ -84,8 +81,11 @@ export async function fetchMembers() {
 
   const data = await res.json();
 
-  return data.data.map((member) => ({
-    ...member,
-    photoUrl: member.photo?.url ? `${apiUrl}${member.photo.url}` : null,
-  }));
+  return data.data.map((member) => {
+    console.log("voir membres", member);
+    return {
+      ...member,
+      photoUrl: member.photo?.url ? `${apiUrl}${member.photo.url}` : null,
+    };
+  });
 }

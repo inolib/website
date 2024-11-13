@@ -6,7 +6,7 @@ import next from "next";
 void (async () => {
   const env = process.env.NODE_ENV;
   const hostname = "localhost";
-  const port = Number.parseInt(process.env.PORT ?? "8000", 10);
+  const port = Number.parseInt(process.env.PORT ?? "3000", 10);
 
   const app = next({ dev: env === "development", hostname, port });
 

@@ -1,10 +1,8 @@
 import { fetchPolicyData } from "~/app/utils/fetchPolicy";
-import { Team } from "~/components/(test)/a-propos/team";
 import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { UnorderedList, UnorderedListItem } from "~/components/list";
 import { Section } from "~/components/section";
-import { Values } from "~/components/(test)/a-propos/valeur";
 
 /**
  *
@@ -23,8 +21,7 @@ export default async function Page() {
         </TwoColumnsFlexLayoutColumn>
         <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
-      <Team _color="white" />
-      <Values _color="white" />
+
       <div className="flex max-w-prose flex-col gap-8">
         {introduction.map((item, index) => (
           <p key={index}>{item.children[0].text}</p>

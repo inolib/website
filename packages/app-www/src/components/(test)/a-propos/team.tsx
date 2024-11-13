@@ -91,7 +91,7 @@ export const Team = ({ _color }: TeamProps) => {
             key={member.id}
           >
             {member.photoUrl ? (
-              <img src={member.photoUrl} alt={member.Nom} className="h-24 w-24 rounded-full object-cover" />
+              <img src={member.photoUrl} alt="" className="h-24 w-24 rounded-full object-cover" />
             ) : (
               <div className="from-blue-500 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br to-blue-600 text-white">
                 <span className="text-2xl font-bold">
