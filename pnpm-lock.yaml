@@ -108,6 +108,9 @@ importers:
         specifier: ^6.1.13
         version: 6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
+      '@strapi/types':
+        specifier: ^5.4.0
+        version: 5.4.0(@types/node@22.9.0)(mysql2@3.9.8)(typescript@5.6.3)
       '@types/node':
         specifier: ^22.9.0
         version: 22.9.0
@@ -3027,6 +3030,10 @@ packages:
     resolution: {integrity: sha512-YOI7zy9LM9HIsYVlM+Jz2c3lZOt/xSLxbwIhB87VbJ1QRn1SkmyDh/jiiCx0J7TI0qJ6Q+PRXQw1aStNY3xd8A==}
     engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
 
+  '@strapi/database@5.4.0':
+    resolution: {integrity: sha512-3ZKxZqtr404axU+DLxTiIUcnTfU+KowKYZpGAydswvNc48E/hsGEiipYZW62Lo7fxnuOMCdQBgONMWQ/VfX4Kw==}
+    engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
+
   '@strapi/design-system@2.0.0-rc.11':
     resolution: {integrity: sha512-myHSOqRsWpXsM9jp9Jx/d8cj/K4MNs+LzAqAwE4+Sd9MuKnIfnOhe6J9hAT29TtimMerymScjOE8b1uyYy3l7w==}
     peerDependencies:
@@ -3072,6 +3079,10 @@ packages:
     resolution: {integrity: sha512-INJRZr8lXmdpwReLaV+OcKuBF2b2DrWkrd1bFwYi5DchhKqSKW+bv79bHubyMiIJbkpzZDZcQNGrAuVoiWKrTg==}
     engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
 
+  '@strapi/logger@5.4.0':
+    resolution: {integrity: sha512-OwcE4gyKSeokGxetKYJQMDSl3PbYA7h0NJoZhh8zVnqt7mRrXBwIPDfeF4mqq9TTqBT50DQkWKn8RQyHE1sKTg==}
+    engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
+
   '@strapi/pack-up@5.0.0':
     resolution: {integrity: sha512-XN00SUwiR/rFTXxA3TMyuPt6SN4r6vuhUtx3y2D0NTzgVToNi++MyspPQ/jHbolHhQxUWnet6X/2JRprtE/YpQ==}
     engines: {node: '>=18.0.0 <=20.x.x', npm: '>=6.0.0'}
@@ -3079,6 +3090,10 @@ packages:
 
   '@strapi/permissions@5.1.1':
     resolution: {integrity: sha512-wQnw16nnmeHidwa0pPgG9Qb9jfzoMdIwWooJnMMXNkIZNuuP4yWkCaocb22uyuqsWYJcFxuEg1clc9frVcXnGQ==}
+    engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
+
+  '@strapi/permissions@5.4.0':
+    resolution: {integrity: sha512-tYWE0cfqLpqcnKcH18Ngi5mRU0a+o/nIyy7zux3KY2ErXySISx7YpL9KIiZ+Jmet6HTmpoybwrUIS2UyK/HVww==}
     engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
 
   '@strapi/plugin-cloud@5.1.1':
@@ -3134,6 +3149,10 @@ packages:
     resolution: {integrity: sha512-p6EsRUnhCRw3xY23gmjUCV6Barb5Nr2X1Yj0ETbkV3Ai6v2hON2K9yS0u3QkgY3bdNmixHTCrEh6f/opV76RJw==}
     engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
 
+  '@strapi/types@5.4.0':
+    resolution: {integrity: sha512-jJoDQ6xRlzhWmP5KiqY23Rlpb0lkwcXMld8bQllYjKuoCSRavk87yOxZgJphPW5Wg3NPZWa+r1q4jhkzPo8wOw==}
+    engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
+
   '@strapi/typescript-utils@5.1.1':
     resolution: {integrity: sha512-a3U8AjTA3miDPZ/OnJ6BIxTjmBeve4lOvIvcsXkjuqj1aWFXELi1LD+M76ema8tOFZOsJ4cGhTjsIOKDqF6kvw==}
     engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
@@ -3156,6 +3175,10 @@ packages:
 
   '@strapi/utils@5.1.1':
     resolution: {integrity: sha512-w12aOwWZnIbueVVMUc6iq5+Ybc0Ili35tOmJKcl0lH3FkmQRSCqeeEapnswyn/QJ0w8cMGoUCFlRdnalc3p+vw==}
+    engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
+
+  '@strapi/utils@5.4.0':
+    resolution: {integrity: sha512-aLKiVKxi6HUW5tYWxGz8O1h+PuFCXLsO/p4XRbUbXS5nZcL4WGvHa5CmTi7FKWQLq0IgG8vo7ZDWAMvzfW3Wnw==}
     engines: {node: '>=18.0.0 <=22.x.x', npm: '>=6.0.0'}
 
   '@svgr/babel-plugin-add-jsx-attribute@8.0.0':
@@ -4730,8 +4753,8 @@ packages:
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
 
-  electron-to-chromium@1.5.57:
-    resolution: {integrity: sha512-xS65H/tqgOwUBa5UmOuNSLuslDo7zho0y/lgQw35pnrqiZh7UOWHCeL/Bt6noJATbA6tpQJGCifsFsIRZj1Fqg==}
+  electron-to-chromium@1.5.58:
+    resolution: {integrity: sha512-al2l4r+24ZFL7WzyPTlyD0fC33LLzvxqLCwurtBibVPghRGO9hSTl+tis8t1kD7biPiH/en4U0I7o/nQbYeoVA==}
 
   elliptic@6.6.1:
     resolution: {integrity: sha512-RaddvvMatK2LJHqFJ+YA4WysVN5Ita9E35botqIYspQ4TkRAlCicdzKOjlyv/1Za5RyTNn7di//eEV0uTAfe3g==}
@@ -10597,6 +10620,18 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@formatjs/intl@2.10.0(typescript@5.3.2)':
+    dependencies:
+      '@formatjs/ecma402-abstract': 1.18.2
+      '@formatjs/fast-memoize': 2.2.0
+      '@formatjs/icu-messageformat-parser': 2.7.6
+      '@formatjs/intl-displaynames': 6.6.6
+      '@formatjs/intl-listformat': 7.5.5
+      intl-messageformat: 10.5.11
+      tslib: 2.8.1
+    optionalDependencies:
+      typescript: 5.3.2
+
   '@formatjs/intl@2.10.0(typescript@5.6.3)':
     dependencies:
       '@formatjs/ecma402-abstract': 1.18.2
@@ -10748,7 +10783,7 @@ snapshots:
 
   '@koa/router@12.0.2':
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.7(supports-color@5.5.0)
       http-errors: 2.0.0
       koa-compose: 4.1.0
       methods: 1.1.2
@@ -12010,6 +12045,29 @@ snapshots:
       - supports-color
       - tedious
 
+  '@strapi/database@5.4.0(@types/node@22.9.0)(mysql2@3.9.8)':
+    dependencies:
+      '@paralleldrive/cuid2': 2.2.2
+      '@strapi/utils': 5.4.0
+      ajv: 8.16.0
+      date-fns: 2.30.0
+      debug: 4.3.4
+      fs-extra: 11.2.0
+      knex: 3.0.1(mysql2@3.9.8)
+      lodash: 4.17.21
+      semver: 7.5.4
+      umzug: 3.8.1(@types/node@22.9.0)
+    transitivePeerDependencies:
+      - '@types/node'
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+
   '@strapi/design-system@2.0.0-rc.11(@babel/runtime@7.26.0)(@codemirror/autocomplete@6.18.3(@codemirror/language@6.10.3)(@codemirror/state@6.4.1)(@codemirror/view@6.34.2)(@lezer/common@1.2.3))(@codemirror/language@6.10.3)(@codemirror/lint@6.8.2)(@codemirror/search@6.5.7)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.34.2)(@strapi/icons@2.0.0-rc.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1)))(@types/react-dom@18.3.1)(@types/react@18.3.12)(codemirror@5.65.18)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))':
     dependencies:
       '@codemirror/lang-json': 6.0.1
@@ -12138,6 +12196,11 @@ snapshots:
       lodash: 4.17.21
       winston: 3.10.0
 
+  '@strapi/logger@5.4.0':
+    dependencies:
+      lodash: 4.17.21
+      winston: 3.10.0
+
   '@strapi/pack-up@5.0.0(@swc/helpers@0.5.15)(@types/node@22.9.0)(debug@4.3.4)(terser@5.36.0)':
     dependencies:
       '@vitejs/plugin-react-swc': 3.6.0(@swc/helpers@0.5.15)(vite@5.2.8(@types/node@22.9.0)(terser@5.36.0))
@@ -12177,6 +12240,14 @@ snapshots:
     dependencies:
       '@casl/ability': 6.5.0
       '@strapi/utils': 5.1.1
+      lodash: 4.17.21
+      qs: 6.11.1
+      sift: 16.0.1
+
+  '@strapi/permissions@5.4.0':
+    dependencies:
+      '@casl/ability': 6.5.0
+      '@strapi/utils': 5.4.0
       lodash: 4.17.21
       qs: 6.11.1
       sift: 16.0.1
@@ -12474,6 +12545,34 @@ snapshots:
       - tedious
       - typescript
 
+  '@strapi/types@5.4.0(@types/node@22.9.0)(mysql2@3.9.8)(typescript@5.6.3)':
+    dependencies:
+      '@casl/ability': 6.5.0
+      '@koa/cors': 5.0.0
+      '@koa/router': 12.0.2
+      '@strapi/database': 5.4.0(@types/node@22.9.0)(mysql2@3.9.8)
+      '@strapi/logger': 5.4.0
+      '@strapi/permissions': 5.4.0
+      '@strapi/utils': 5.4.0
+      commander: 8.3.0
+      koa: 2.15.2
+      koa-body: 6.0.1
+      node-schedule: 2.1.1
+      typedoc: 0.25.10(typescript@5.6.3)
+      typedoc-github-wiki-theme: 1.1.0(typedoc-plugin-markdown@3.17.1(typedoc@0.25.10(typescript@5.6.3)))(typedoc@0.25.10(typescript@5.6.3))
+      typedoc-plugin-markdown: 3.17.1(typedoc@0.25.10(typescript@5.6.3))
+    transitivePeerDependencies:
+      - '@types/node'
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+      - typescript
+
   '@strapi/typescript-utils@5.1.1':
     dependencies:
       chalk: 4.1.2
@@ -12562,6 +12661,19 @@ snapshots:
       - typescript
 
   '@strapi/utils@5.1.1':
+    dependencies:
+      '@sindresorhus/slugify': 1.1.0
+      date-fns: 2.30.0
+      execa: 5.1.1
+      http-errors: 2.0.0
+      lodash: 4.17.21
+      node-machine-id: 1.1.12
+      p-map: 4.0.0
+      preferred-pm: 3.1.2
+      yup: 0.32.9
+      zod: 3.23.8
+
+  '@strapi/utils@5.4.0':
     dependencies:
       '@sindresorhus/slugify': 1.1.0
       date-fns: 2.30.0
@@ -13592,7 +13704,7 @@ snapshots:
   browserslist@4.24.2:
     dependencies:
       caniuse-lite: 1.0.30001680
-      electron-to-chromium: 1.5.57
+      electron-to-chromium: 1.5.58
       node-releases: 2.0.18
       update-browserslist-db: 1.1.1(browserslist@4.24.2)
 
@@ -13832,7 +13944,7 @@ snapshots:
     dependencies:
       '@hapi/bourne': 3.0.0
       inflation: 2.1.0
-      qs: 6.11.1
+      qs: 6.13.0
       raw-body: 2.5.2
       type-is: 1.6.18
 
@@ -14338,7 +14450,7 @@ snapshots:
 
   ee-first@1.1.1: {}
 
-  electron-to-chromium@1.5.57: {}
+  electron-to-chromium@1.5.58: {}
 
   elliptic@6.6.1:
     dependencies:
@@ -15116,7 +15228,7 @@ snapshots:
       dezalgo: 1.0.4
       hexoid: 1.0.0
       once: 1.4.0
-      qs: 6.11.1
+      qs: 6.13.0
 
   formik@2.4.5(react@18.3.1):
     dependencies:
@@ -16121,7 +16233,7 @@ snapshots:
 
   koa-send@5.0.1:
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.7(supports-color@5.5.0)
       http-errors: 1.8.1
       resolve-path: 1.4.0
     transitivePeerDependencies:
@@ -17346,7 +17458,7 @@ snapshots:
     dependencies:
       '@formatjs/ecma402-abstract': 1.18.2
       '@formatjs/icu-messageformat-parser': 2.7.6
-      '@formatjs/intl': 2.10.0(typescript@5.6.3)
+      '@formatjs/intl': 2.10.0(typescript@5.3.2)
       '@formatjs/intl-displaynames': 6.6.6
       '@formatjs/intl-listformat': 7.5.5
       '@types/hoist-non-react-statics': 3.3.5
