@@ -77,7 +77,7 @@ export default typescriptESLint.config(
       reportUnusedDisableDirectives: "error",
     },
     rules: {
-      // ESLint
+      // eslint
       "no-irregular-whitespace": "off",
 
       // import-x
