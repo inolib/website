@@ -1,4 +1,2 @@
-**/vendor/
 /packages/
-/composer.lock
 /pnpm-lock.yaml
