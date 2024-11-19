@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
 
 import { Link } from "~/components/link";
 import { Section } from "~/components/section";
@@ -15,7 +14,7 @@ import inolibYellowLogo from "#/images/logos/inolib/inolib-yellow.svg?url";
 export const Banner = () => {
   const pathname = usePathname();
 
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   return (
     <header role="banner">

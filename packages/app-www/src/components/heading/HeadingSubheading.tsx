@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, type HTMLAttributes } from "react";
+import type { HTMLAttributes } from "react";
 
 import { tv } from "~/helpers";
 
@@ -22,7 +22,7 @@ export type HeadingSubheadingProps = HTMLAttributes<HTMLParagraphElement>;
 export const HeadingSubheading = ({ className, ...passthru }: HeadingSubheadingProps) => {
   const header = useHeading();
 
-  const _size = useMemo(() => header.getSize(), [header]);
+  const _size = header.getSize();
 
   return <p className={variants({ _size, className })} {...passthru} />;
 };

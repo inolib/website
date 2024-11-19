@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useCallback, useMemo, type MouseEventHandler } from "react";
+import { useCallback, type MouseEventHandler } from "react";
 
 import { useMenuBar } from "~/components/headless";
 import { Link } from "~/components/link";
@@ -18,7 +18,7 @@ export const BurgerNavHome = () => {
   const menuBar = useMenuBar();
   const pathname = usePathname();
 
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(() => {
     burgerNav.close();

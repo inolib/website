@@ -54,7 +54,7 @@ export const BurgerNav = () => {
   const [buttonRef, setButtonRef] = useState<RefObject<HTMLButtonElement>>({ current: null });
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   const burgerNav: BurgerNavObject = useMemo(
     () => ({

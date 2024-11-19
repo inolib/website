@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
 
 import { MenuBar, MenuBarList, MenuBarListItem } from "~/components/headless";
 import { cn } from "~/helpers";
@@ -14,7 +13,7 @@ export const MainNav = () => {
   const menu = useMenu();
   const pathname = usePathname();
 
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   return (
     <MenuBar

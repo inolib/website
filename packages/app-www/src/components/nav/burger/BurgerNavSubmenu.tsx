@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
 
 import { MenuBarSubmenu, MenuBarSubmenuButton, MenuBarSubmenuListItem } from "~/components/headless";
 import { cn } from "~/helpers";
@@ -21,7 +20,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
   const burgerNav = useBurgerNav();
   const pathname = usePathname();
 
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   return (
     <MenuBarSubmenu className="flex flex-col">

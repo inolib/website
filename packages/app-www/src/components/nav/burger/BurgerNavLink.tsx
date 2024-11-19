@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useCallback, useMemo, type MouseEventHandler } from "react";
+import { useCallback, type MouseEventHandler } from "react";
 
 import { useMenuBar } from "~/components/headless";
 import { Link } from "~/components/link";
@@ -20,7 +20,7 @@ export const BurgerNavLink = ({ _link }: BurgerNavLinkProps) => {
   const pathname = usePathname();
 
   const isCurrentPage = _link.href === pathname;
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(() => {
     burgerNav.close();

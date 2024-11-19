@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
 
 import { MenuBarSubmenu, MenuBarSubmenuButton, MenuBarSubmenuListItem } from "~/components/headless";
 import { cn } from "~/helpers";
@@ -19,7 +18,7 @@ export type MainNavSubmenuProps = {
 export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
   const pathname = usePathname();
 
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   return (
     <MenuBarSubmenu className="relative">
