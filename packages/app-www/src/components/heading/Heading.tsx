@@ -45,7 +45,7 @@ export type HeadingProps = {
 } & HTMLAttributes<HTMLElement>;
 
 export const Heading = ({ _alignment, _size, children, className, ...passthru }: HeadingProps) => {
-  const header: HeadingObject = useMemo(
+  const heading: HeadingObject = useMemo(
     () => ({
       getSize: () => _size,
     }),
@@ -53,7 +53,7 @@ export const Heading = ({ _alignment, _size, children, className, ...passthru }:
   );
 
   return (
-    <HeadingContext.Provider value={header}>
+    <HeadingContext.Provider value={heading}>
       <header className={variants({ _alignment, _size, className })} {...passthru}>
         {children}
       </header>

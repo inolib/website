@@ -28,7 +28,7 @@ export const Slideshow = forwardRef<HTMLElement, SlideshowProps>(({ children, ..
   const [selectedSlideIndex, setSelectedSlideIndex] = useState<number>(0);
   const [slides, setSlides] = useState<SlideshowSlideObject[]>([]);
 
-  const contextValue: SlideshowObject = useMemo(
+  const slideshow: SlideshowObject = useMemo(
     () => ({
       next: () => {
         setSelectedSlideIndex((selectedSlideIndex) =>
@@ -58,7 +58,7 @@ export const Slideshow = forwardRef<HTMLElement, SlideshowProps>(({ children, ..
   }, [selectedSlideIndex, slides]);
 
   return (
-    <SlideshowContext.Provider value={contextValue}>
+    <SlideshowContext.Provider value={slideshow}>
       <section aria-atomic={false} aria-live="polite" ref={ref} {...passthru}>
         {children}
       </section>
