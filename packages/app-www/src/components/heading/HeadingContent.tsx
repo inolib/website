@@ -19,9 +19,9 @@ const variants = tv({
 export type HeadingContentProps = HeadingProps;
 
 export const HeadingContent = ({ _level, className, ...passthru }: HeadingContentProps) => {
-  const header = useHeading();
+  const heading = useHeading();
 
-  const _size = header.getSize();
+  const _size = heading.getSize();
 
   return <Heading _level={_level} className={variants({ _size, className })} {...passthru} />;
 };

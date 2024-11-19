@@ -20,9 +20,9 @@ const variants = tv({
 export type HeadingSubheadingProps = HTMLAttributes<HTMLParagraphElement>;
 
 export const HeadingSubheading = ({ className, ...passthru }: HeadingSubheadingProps) => {
-  const header = useHeading();
+  const heading = useHeading();
 
-  const _size = header.getSize();
+  const _size = heading.getSize();
 
   return <p className={variants({ _size, className })} {...passthru} />;
 };
