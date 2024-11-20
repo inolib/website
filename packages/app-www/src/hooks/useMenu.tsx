@@ -6,6 +6,8 @@ import RouteIcon from "#/images/icons/route.svg";
 import Tool02Icon from "#/images/icons/tool-02.svg";
 import UsersCheckIcon from "#/images/icons/users-check.svg";
 
+export type Menu = Array<MenuLink | MenuSubmenu>;
+
 export type MenuLink = {
   label: string;
   href: string;
@@ -31,8 +33,6 @@ export type MenuSubmenu = {
   >;
   href?: never;
 };
-
-export type Menu = Array<MenuLink | MenuSubmenu>;
 
 export const useMenu = (): Menu => [
   {

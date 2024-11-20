@@ -5,9 +5,9 @@ import { cn } from "~/helpers";
 
 import XCloseIcon from "#/images/icons/x-close.svg";
 
-type DialogProps = {
+type DialogProps = Omit<DialogHTMLAttributes<HTMLDialogElement>, "aria-describedby" | "aria-label" | "aria-modal"> & {
   _message: string;
-} & Omit<DialogHTMLAttributes<HTMLDialogElement>, "aria-describedby" | "aria-label" | "aria-modal">;
+};
 
 export const Dialog = ({ _message, className, role = "dialog", ...passthru }: DialogProps) => {
   const id = useId();

@@ -26,11 +26,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type InstitutionalWebsitesProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const InstitutionalWebsites = ({ _color }: InstitutionalWebsitesProps) => {
   const { sectionClassName } = variants({ _color });

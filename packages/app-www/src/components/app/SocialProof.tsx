@@ -26,11 +26,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type SocialProofProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const SocialProof = ({ _color }: SocialProofProps) => {
   const { sectionClassName } = variants({ _color });

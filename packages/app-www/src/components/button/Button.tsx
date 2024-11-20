@@ -14,11 +14,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
-export type ButtonProps = {
+export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   _color: NonNullable<Variants["_color"]>;
-} & ButtonHTMLAttributes<HTMLButtonElement>;
+};
+
+type Variants = VariantProps<typeof variants>;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ _color, className, type = "button", ...passthru }, ref) => {

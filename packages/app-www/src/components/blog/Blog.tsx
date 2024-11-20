@@ -20,6 +20,11 @@ const fetchPosts = async (count: number) => {
   return (await response.json()) as Post[];
 };
 
+type BlogProps = {
+  _count: number;
+  _headingLevel: HeadingProps["_level"];
+};
+
 type Post = {
   content: {
     rendered: string;
@@ -52,11 +57,6 @@ type Post = {
       }>
     >;
   };
-};
-
-type BlogProps = {
-  _count: number;
-  _headingLevel: HeadingProps["_level"];
 };
 
 export const Blog = ({ _count, _headingLevel }: BlogProps) => {

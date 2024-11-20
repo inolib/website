@@ -28,11 +28,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type GoFurtherProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const GoFurther = ({ _color }: GoFurtherProps) => {
   const { sectionClassName } = variants({ _color });

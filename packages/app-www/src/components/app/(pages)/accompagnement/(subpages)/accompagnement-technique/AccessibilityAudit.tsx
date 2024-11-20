@@ -26,11 +26,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type AccessibilityAuditProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const AccessibilityAudit = ({ _color }: AccessibilityAuditProps) => {
   const { sectionClassName } = variants({ _color });

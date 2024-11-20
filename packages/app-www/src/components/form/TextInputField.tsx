@@ -3,10 +3,13 @@ import { forwardRef, useId, type InputHTMLAttributes } from "react";
 
 import { cn } from "~/helpers";
 
-export type TextInputFieldProps = {
+export type TextInputFieldProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "aria-describedby" | "aria-invalid" | "id"
+> & {
   _error: ReadonlySignal<string>;
   _label: string;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "aria-describedby" | "aria-invalid" | "id">;
+};
 
 export const TextInputField = forwardRef<HTMLInputElement, TextInputFieldProps>(
   ({ _error, _label, className, ...passthru }, ref) => {

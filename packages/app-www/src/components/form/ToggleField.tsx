@@ -4,9 +4,9 @@ import { cn } from "~/helpers";
 
 import CheckIcon from "#/images/icons/check.svg";
 
-export type ToggleField = {
+export type ToggleField = Omit<InputHTMLAttributes<HTMLInputElement>, "id" | "type" | "value"> & {
   _label: string;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "id" | "type" | "value">;
+};
 
 export const ToggleField = forwardRef<HTMLInputElement, ToggleField>(({ _label, className, ...passthru }, ref) => {
   const id = useId();

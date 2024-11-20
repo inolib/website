@@ -38,11 +38,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type StepsProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const Steps = ({ _color }: StepsProps) => {
   const { sectionClassName } = variants({ _color });

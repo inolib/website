@@ -5,10 +5,13 @@ import { cn } from "~/helpers";
 
 import CheckIcon from "#/images/icons/check.svg";
 
-export type CheckboxFieldProps = {
+export type CheckboxFieldProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "aria-describedby" | "aria-invalid" | "id" | "type"
+> & {
   _error: ReadonlySignal<string>;
   _label: ReactNode;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "aria-describedby" | "aria-invalid" | "id" | "type">;
+};
 
 export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
   ({ _error, _label, className, ...passthru }, ref) => {

@@ -27,11 +27,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type InclusiveApproachProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const InclusiveApproach = ({ _color }: InclusiveApproachProps) => {
   const { sectionClassName } = variants({ _color });

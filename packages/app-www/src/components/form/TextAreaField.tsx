@@ -3,10 +3,13 @@ import { forwardRef, useId, type TextareaHTMLAttributes } from "react";
 
 import { cn } from "~/helpers";
 
-export type TextAreaFieldProps = {
+export type TextAreaFieldProps = Omit<
+  TextareaHTMLAttributes<HTMLTextAreaElement>,
+  "aria-describedby" | "aria-invalid" | "id"
+> & {
   _error: ReadonlySignal<string>;
   _label: string;
-} & Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "aria-describedby" | "aria-invalid" | "id">;
+};
 
 export const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
   ({ _error, _label, className, ...passthru }, ref) => {
