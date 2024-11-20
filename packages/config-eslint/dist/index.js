@@ -101,7 +101,7 @@ export default typescriptESLint.config(
         {
           customGroups: {
             value: {
-              asset: "#/**",
+              asset: "#/.+",
             },
           },
           groups: [
@@ -121,6 +121,12 @@ export default typescriptESLint.config(
         "error",
         {
           groups: ["unknown", "shorthand"],
+          type: "natural",
+        },
+      ],
+      "perfectionist/sort-modules": [
+        "error",
+        {
           type: "natural",
         },
       ],
