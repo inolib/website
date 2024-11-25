@@ -1,5 +1,5 @@
 import type { ValidationError } from "@tanstack/react-form";
-import { forwardRef, useCallback, useId, type FocusEventHandler, type TextareaHTMLAttributes } from "react";
+import { forwardRef, useId, type ReactNode, type TextareaHTMLAttributes } from "react";
 
 import { cn } from "~/helpers";
 
@@ -8,21 +8,14 @@ export type TextAreaFieldProps = Omit<
   "aria-describedby" | "aria-invalid" | "id"
 > & {
   _errors: ValidationError[];
-  _label: string;
+  _label: ReactNode;
 };
 
 export const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>(
-  ({ _errors, _label, className, onBlur, ...passthru }, ref) => {
+  ({ _errors, _label, className, ...passthru }, ref) => {
     const id = useId();
 
     const hasError = _errors.length > 0;
-
-    const handleBlur: FocusEventHandler<HTMLTextAreaElement> = useCallback(
-      (event) => {
-        onBlur?.(event);
-      },
-      [onBlur],
-    );
 
     return (
       <div className="flex flex-col gap-2" data-field>
@@ -41,7 +34,6 @@ export const TextAreaField = forwardRef<HTMLTextAreaElement, TextAreaFieldProps>
             className,
           )}
           id={id}
-          onBlur={handleBlur}
           ref={ref}
           {...passthru}
         />

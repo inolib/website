@@ -1,34 +1,48 @@
 "use client";
 
 import { useForm } from "@tanstack/react-form";
-import { valibotValidator } from "@tanstack/valibot-form-adapter";
+import { valibotValidator, type ValibotValidator } from "@tanstack/valibot-form-adapter";
 import { useCallback, useState, type ReactEventHandler } from "react";
 import * as v from "valibot";
 
 import { Button } from "~/components/button";
 import { CheckboxField, TextAreaField, TextInputField, ToggleField } from "~/components/form";
-// import { getCookie } from "~/helpers";
 import { Link } from "~/components/link";
+import { getCookie } from "~/helpers";
 
 import { Dialog } from "./Dialog";
 
-// const schema = v.object({
-//   subject: v.array(v.pipe(v.string(), v.trim())),
-// });
+const schema = v.object({
+  subject: v.array(v.pipe(v.string(), v.trim())),
+  firstname: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre prénom.")),
+  lastname: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre nom de famille.")),
+  company: v.pipe(v.string(), v.trim()),
+  email: v.pipe(
+    v.string(),
+    v.trim(),
+    v.nonEmpty("Vous devez saisir votre adresse e-mail."),
+    v.email("Adresse e-mail invalide."),
+  ),
+  phone: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre numéro de téléphone.")),
+  message: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre message.")),
+  consent: v.literal(true, "Vous devez accepter notre politique de confidentialité."),
+});
 
-// type HubSpotField = {
-//   objectTypeId: string;
-//   name: keyof Schema;
-//   value: Schema[keyof Schema];
-// };
+export type Schema = Omit<v.InferOutput<typeof schema>, "consent"> & { consent: boolean };
+
+type HubSpotField = {
+  objectTypeId: string;
+  name: keyof Schema;
+  value: Schema[keyof Schema];
+};
 
 export const ContactForm = () => {
   const [isError, setIsError] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
 
-  const form = useForm({
+  const form = useForm<Schema, ValibotValidator>({
     defaultValues: {
-      subject: [] as string[],
+      subject: [],
       firstname: "",
       lastname: "",
       company: "",
@@ -38,8 +52,58 @@ export const ContactForm = () => {
       consent: false,
     },
     validatorAdapter: valibotValidator(),
-    onSubmit: (value) => {
-      console.log(value);
+    onSubmit: async ({ value: formData }) => {
+      const fields: HubSpotField[] = [];
+
+      for (const [name, value] of Object.entries(formData) as Array<[keyof Schema, Schema[keyof Schema]]>) {
+        if (Array.isArray(value)) {
+          for (const item of value) {
+            fields.push({ objectTypeId: "0-1", name, value: item });
+          }
+        } else {
+          fields.push({ objectTypeId: "0-1", name, value });
+        }
+      }
+
+      try {
+        const response = await fetch(
+          "https://api.hsforms.com/submissions/v3/integration/submit/26728987/8fbf4ed8-d4d5-4465-b6e2-6f5c112e9033",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              context: {
+                hutk: getCookie("hubspotutk"),
+                pageName: globalThis.document.title,
+                pageUri: globalThis.location.href,
+              },
+              fields,
+            }),
+          },
+        );
+
+        if (response.ok) {
+          form.reset();
+          setIsError(false);
+          setMessage(((await response.json()) as { inlineMessage: string }).inlineMessage);
+        } else {
+          setIsError(true);
+          setMessage("Une erreur s’est produite durant l’envoi de votre message, veuillez réessayer.");
+        }
+      } catch {
+        setIsError(true);
+        setMessage("Une erreur s’est produite durant l’envoi de votre message, veuillez réessayer.");
+      }
+    },
+    onSubmitInvalid: ({ formApi }) => {
+      for (const [name, field] of Object.entries(formApi.state.fieldMeta)) {
+        if (field.errors.length > 0) {
+          (globalThis.document.querySelector(`[name="${name}"]`) as HTMLElement).focus();
+          break;
+        }
+      }
     },
   });
 
@@ -48,56 +112,6 @@ export const ContactForm = () => {
     setMessage("");
   }, []);
 
-  // const handleSubmit: SubmitHandler<Schema> = useCallback(
-  //   async (values) => {
-  //     const fields: HubSpotField[] = [];
-
-  //     for (const [name, value] of Object.entries(values) as Array<[keyof Schema, Schema[keyof Schema]]>) {
-  //       if (Array.isArray(value)) {
-  //         for (const item of value) {
-  //           fields.push({ objectTypeId: "0-1", name, value: item });
-  //         }
-  //       } else {
-  //         fields.push({ objectTypeId: "0-1", name, value });
-  //       }
-  //     }
-
-  //     try {
-  //       const response = await fetch(
-  //         "https://api.hsforms.com/submissions/v3/integration/submit/26728987/8fbf4ed8-d4d5-4465-b6e2-6f5c112e9033",
-  //         {
-  //           method: "POST",
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //           body: JSON.stringify({
-  //             context: {
-  //               hutk: getCookie("hubspotutk"),
-  //               pageName: globalThis.document.title,
-  //               pageUri: globalThis.location.href,
-  //             },
-  //             fields,
-  //           }),
-  //         },
-  //       );
-
-  //       if (response.ok) {
-  //         reset(form);
-
-  //         setIsError(false);
-  //         setMessage(((await response.json()) as { inlineMessage: string }).inlineMessage);
-  //       } else {
-  //         setIsError(true);
-  //         setMessage("Une erreur s’est produite durant l’envoi de votre message, veuillez réessayer.");
-  //       }
-  //     } catch {
-  //       setIsError(true);
-  //       setMessage("Une erreur s’est produite durant l’envoi de votre message, veuillez réessayer.");
-  //     }
-  //   },
-  //   [form],
-  // );
-
   return (
     <form
       className="flex max-w-prose flex-col gap-8"
@@ -105,6 +119,13 @@ export const ContactForm = () => {
         event.preventDefault();
         event.stopPropagation();
         void form.handleSubmit();
+
+        for (const [name, field] of Object.entries(form.state.fieldMeta)) {
+          if (field.errors.length > 0) {
+            (globalThis.document.querySelector(`[name="${name}"]`) as HTMLElement).focus();
+            break;
+          }
+        }
       }}
       noValidate
     >
@@ -113,25 +134,25 @@ export const ContactForm = () => {
           <legend className="text-2xl font-bold">Sujet</legend>
 
           <form.Field mode="array" name="subject">
-            {() => (
+            {(field) => (
               <ul className="mt-2 flex flex-wrap gap-4">
                 {["Audit", "Accompagnement", "Développement", "Formations", "Partenariat", "Autre"].map(
                   (item, index) => (
-                    <form.Field key={index} name={`subject[${index}]`}>
-                      {(field) => (
-                        <li>
-                          <ToggleField
-                            _label={item}
-                            checked={field.state.value === item}
-                            name={field.name}
-                            onBlur={field.handleBlur}
-                            onChange={(event) => {
-                              field.handleChange(event.target.value);
-                            }}
-                          />
-                        </li>
-                      )}
-                    </form.Field>
+                    <li key={index}>
+                      <ToggleField
+                        _label={item}
+                        checked={field.state.value.includes(item)}
+                        name={field.name}
+                        onBlur={field.handleBlur}
+                        onChange={(event) => {
+                          field.handleChange(
+                            event.target.checked
+                              ? [...field.state.value, item]
+                              : field.state.value.filter((value) => value !== item),
+                          );
+                        }}
+                      />
+                    </li>
                   ),
                 )}
               </ul>
@@ -145,17 +166,17 @@ export const ContactForm = () => {
           <p className="mt-4">Sauf mention contraire, tous les champs sont obligatoires.</p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-8 sm:[&_[data-field]]:basis-1/2">
-            <form.Field
-              name="firstname"
-              validators={{ onBlur: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre prénom.")) }}
-            >
+            <form.Field name="firstname" validators={{ onBlur: schema.entries.firstname }}>
               {(field) => (
                 <TextInputField
                   _errors={field.state.meta.errors}
                   _label="Prénom"
                   autoComplete="given-name"
                   name={field.name}
-                  onBlur={field.handleBlur}
+                  onBlur={(event) => {
+                    field.setValue(event.target.value.trim());
+                    field.handleBlur();
+                  }}
                   onChange={(event) => {
                     field.handleChange(event.target.value);
                   }}
@@ -166,19 +187,17 @@ export const ContactForm = () => {
               )}
             </form.Field>
 
-            <form.Field
-              name="lastname"
-              validators={{
-                onBlur: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre nom de famille.")),
-              }}
-            >
+            <form.Field name="lastname" validators={{ onBlur: schema.entries.lastname }}>
               {(field) => (
                 <TextInputField
                   _errors={field.state.meta.errors}
                   _label="Nom de famille"
                   autoComplete="family-name"
                   name={field.name}
-                  onBlur={field.handleBlur}
+                  onBlur={(event) => {
+                    field.setValue(event.target.value.trim());
+                    field.handleBlur();
+                  }}
                   onChange={(event) => {
                     field.handleChange(event.target.value);
                   }}
@@ -190,14 +209,17 @@ export const ContactForm = () => {
             </form.Field>
           </div>
 
-          <form.Field name="company" validators={{ onBlur: v.pipe(v.string(), v.trim()) }}>
+          <form.Field name="company" validators={{ onBlur: schema.entries.company }}>
             {(field) => (
               <TextInputField
                 _errors={field.state.meta.errors}
                 _label="Entreprise (optionnel)"
                 autoComplete="organization"
                 name={field.name}
-                onBlur={field.handleBlur}
+                onBlur={(event) => {
+                  field.setValue(event.target.value.trim());
+                  field.handleBlur();
+                }}
                 onChange={(event) => {
                   field.handleChange(event.target.value);
                 }}
@@ -207,24 +229,17 @@ export const ContactForm = () => {
             )}
           </form.Field>
 
-          <form.Field
-            name="email"
-            validators={{
-              onBlur: v.pipe(
-                v.string(),
-                v.trim(),
-                v.nonEmpty("Vous devez saisir votre adresse e-mail."),
-                v.email("Adresse e-mail invalide."),
-              ),
-            }}
-          >
+          <form.Field name="email" validators={{ onBlur: schema.entries.email }}>
             {(field) => (
               <TextInputField
                 _errors={field.state.meta.errors}
                 _label="Adresse e-mail"
                 autoComplete="email"
                 name={field.name}
-                onBlur={field.handleBlur}
+                onBlur={(event) => {
+                  field.setValue(event.target.value.trim());
+                  field.handleBlur();
+                }}
                 onChange={(event) => {
                   field.handleChange(event.target.value);
                 }}
@@ -235,19 +250,17 @@ export const ContactForm = () => {
             )}
           </form.Field>
 
-          <form.Field
-            name="phone"
-            validators={{
-              onBlur: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre numéro de téléphone.")),
-            }}
-          >
+          <form.Field name="phone" validators={{ onBlur: schema.entries.phone }}>
             {(field) => (
               <TextInputField
                 _errors={field.state.meta.errors}
                 _label="Numéro de téléphone"
                 autoComplete="tel"
                 name={field.name}
-                onBlur={field.handleBlur}
+                onBlur={(event) => {
+                  field.setValue(event.target.value.trim());
+                  field.handleBlur();
+                }}
                 onChange={(event) => {
                   field.handleChange(event.target.value);
                 }}
@@ -263,16 +276,16 @@ export const ContactForm = () => {
           <legend className="text-2xl font-bold">Message</legend>
 
           <div className="mt-4">
-            <form.Field
-              name="message"
-              validators={{ onBlur: v.pipe(v.string(), v.trim(), v.nonEmpty("Vous devez saisir votre message.")) }}
-            >
+            <form.Field name="message" validators={{ onBlur: schema.entries.message }}>
               {(field) => (
                 <TextAreaField
                   _errors={field.state.meta.errors}
                   _label="Dites-nous en plus"
                   name={field.name}
-                  onBlur={field.handleBlur}
+                  onBlur={(event) => {
+                    field.setValue(event.target.value.trim());
+                    field.handleBlur();
+                  }}
                   onChange={(event) => {
                     field.handleChange(event.target.value);
                   }}
@@ -284,10 +297,7 @@ export const ContactForm = () => {
             </form.Field>
           </div>
 
-          <form.Field
-            name="consent"
-            validators={{ onBlur: v.literal(true, "Vous devez accepter notre politique de confidentialité.") }}
-          >
+          <form.Field name="consent" validators={{ onBlur: schema.entries.consent }}>
             {(field) => (
               <CheckboxField
                 _errors={field.state.meta.errors}
@@ -308,6 +318,7 @@ export const ContactForm = () => {
                   </>
                 }
                 checked={field.state.value}
+                name={field.name}
                 onBlur={field.handleBlur}
                 onChange={(event) => {
                   field.handleChange(event.target.checked);
@@ -323,8 +334,6 @@ export const ContactForm = () => {
       <Button _color="blue-900" className="self-center" type="submit">
         Envoyer votre message
       </Button>
-
-      <pre>{JSON.stringify(form.state.values, null, 2)}</pre>
 
       <Dialog _message={message} onClose={handleCloseDialog} role={isError ? "alertdialog" : "dialog"} />
     </form>
