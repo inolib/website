@@ -8,7 +8,7 @@ import * as v from "valibot";
 import { Button } from "~/components/button";
 import { CheckboxField, TextAreaField, TextInputField, ToggleField } from "~/components/form";
 import { Link } from "~/components/link";
-import { getCookie } from "~/helpers";
+import { formatHubspotFields, getCookie } from "~/helpers";
 
 import { Dialog } from "./Dialog";
 
@@ -30,12 +30,6 @@ const schema = v.object({
 
 export type Schema = Omit<v.InferOutput<typeof schema>, "consent"> & { consent: boolean };
 
-type HubSpotField = {
-  objectTypeId: string;
-  name: keyof Schema;
-  value: Schema[keyof Schema];
-};
-
 export const ContactForm = () => {
   const [isError, setIsError] = useState<boolean>(false);
   const [message, setMessage] = useState<string>("");
@@ -52,19 +46,7 @@ export const ContactForm = () => {
       consent: false,
     },
     validatorAdapter: valibotValidator(),
-    onSubmit: async ({ value: formData }) => {
-      const fields: HubSpotField[] = [];
-
-      for (const [name, value] of Object.entries(formData) as Array<[keyof Schema, Schema[keyof Schema]]>) {
-        if (Array.isArray(value)) {
-          for (const item of value) {
-            fields.push({ objectTypeId: "0-1", name, value: item });
-          }
-        } else {
-          fields.push({ objectTypeId: "0-1", name, value });
-        }
-      }
-
+    onSubmit: async ({ value }) => {
       try {
         const response = await fetch(
           "https://api.hsforms.com/submissions/v3/integration/submit/26728987/8fbf4ed8-d4d5-4465-b6e2-6f5c112e9033",
@@ -79,7 +61,7 @@ export const ContactForm = () => {
                 pageName: globalThis.document.title,
                 pageUri: globalThis.location.href,
               },
-              fields,
+              fields: formatHubspotFields(value, "0-1"),
             }),
           },
         );
