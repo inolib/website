@@ -1,6 +1,6 @@
 import type { VariantProps } from "tailwind-variants";
 
-import { fetchMission } from "~/app/utils/fetchPolicy";
+import { fetchApproachAccompagnement } from "~/app/utils/fetchPolicy";
 import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { Section } from "~/components/section";
@@ -24,32 +24,32 @@ const variants = tv({
 
 type Variants = VariantProps<typeof variants>;
 
-type MissionAndApproachProps = {
+type AdditionalServicesProps = {
   _color: NonNullable<Variants["_color"]>;
 };
 
-export const MissionAndApproach = async ({ _color }: MissionAndApproachProps) => {
+export const AdditionalServices = async ({ _color }: AdditionalServicesProps) => {
   const { sectionClassName } = variants({ _color });
+  const { titre1, titre2, text1, text2 } = await fetchApproachAccompagnement();
 
-  const mission = await fetchMission();
-
+  console.log("montre text2", text2);
   return (
     <Section className={sectionClassName()}>
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn className="flex flex-col gap-4">
           <Heading _alignment="left" _size="2xl">
-            <HeadingContent _level={2}>{mission.titre1}</HeadingContent>
+            <HeadingContent _level={2}>{titre1}</HeadingContent>
           </Heading>
 
-          <p>{mission.Description1}</p>
+          <p>{text1}</p>
         </TwoColumnsFlexLayoutColumn>
 
         <TwoColumnsFlexLayoutColumn className="flex flex-col gap-4">
           <Heading _alignment="left" _size="2xl">
-            <HeadingContent _level={2}>{mission.titre2}</HeadingContent>
+            <HeadingContent _level={2}>{titre2}</HeadingContent>
           </Heading>
 
-          <p>{mission.Description2}</p>
+          <p>{text2}</p>
         </TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
     </Section>

@@ -35,7 +35,7 @@ export const Values = async ({ _color }: ValuesProps) => {
   const { sectionClassName } = variants({ _color });
 
   const values = await fetchValue();
-
+  console.log("afficher les valeurs", values);
   return (
     <Section className={sectionClassName()}>
       <Heading _alignment="center" _size="4xl">
@@ -47,13 +47,7 @@ export const Values = async ({ _color }: ValuesProps) => {
         {values.list.map((item: any) => (
           <FlexGridListItem key={item.id}>
             {item.image && item.image.url ? (
-              <Image
-                alt={item.image.alternativeText || "Image"}
-                className="size-12"
-                height={200} // Ajustez la hauteur
-                src={`http://localhost:1337${item.image.url}`} // Assurez-vous d'avoir l'URL complète
-                width={200} // Ajustez la largeur
-              />
+              <Image alt="" className="size-12" height={30} src={item.imageUrl} width={30} />
             ) : null}
 
             <p className="text-2xl font-bold">

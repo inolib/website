@@ -4,13 +4,23 @@ export default {
     cpus: 1,
     workerThreads: false,
   },
+
   images: {
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "**.inolib.fr",
-        port: "",
-        search: "",
+        protocol: "http",
+        hostname: "strapi",
+        port: "1337",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "1337",
+      },
+      {
+        protocol: "http",
+        hostname: "host.docker.internal",
+        port: "1337",
       },
     ],
   },

@@ -1,13 +1,10 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { Loader2 } from "lucide-react";
-import { fetchMembers } from "~/app/utils/fetchPolicy";
 import { initials } from "@dicebear/collection";
 import { createAvatar } from "@dicebear/core";
-
+import { Loader2 } from "lucide-react";
+import { useEffect, useState } from "react";
 import type { VariantProps } from "tailwind-variants";
 
+import { fetchMembers } from "~/app/utils/fetchPolicy";
 import { Heading, HeadingContent } from "~/components/heading";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
@@ -34,49 +31,11 @@ type TeamProps = {
   _color: NonNullable<Variants["_color"]>;
 };
 
-export const Team = ({ _color }: TeamProps) => {
-  const [members, setMembers] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+export const Team = async ({ _color }: TeamProps) => {
   const { sectionClassName } = variants({ _color });
 
-  useEffect(() => {
-    async function loadMembers() {
-      try {
-        setIsLoading(true);
-        const data = await fetchMembers();
-        setMembers(data);
-      } catch (error_) {
-        setError("Failed to load members");
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    loadMembers();
-  }, []);
-
-  if (isLoading) {
-    return (
-      <Section className={`py-16 ${sectionClassName}`}>
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center py-12">
-            <Loader2 className="animate-spin size-8 text-blue-600" />
-          </div>
-        </div>
-      </Section>
-    );
-  }
-
-  if (error) {
-    return (
-      <Section className={`py-16 ${sectionClassName}`}>
-        <div className="container mx-auto px-4">
-          <p className="text-center text-red-600">{error}</p>
-        </div>
-      </Section>
-    );
-  }
+  const members = await fetchMembers();
+  console.log("afficher les membres", members);
 
   return (
     <Section className={sectionClassName()}>
@@ -91,9 +50,9 @@ export const Team = ({ _color }: TeamProps) => {
             key={member.id}
           >
             {member.photoUrl ? (
-              <img src={member.photoUrl} alt="" className="h-24 w-24 rounded-full object-cover" />
+              <img alt="" className="size-24 rounded-full object-cover" src={member.photoUrl} />
             ) : (
-              <div className="from-blue-500 flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br to-blue-600 text-white">
+              <div className="from-blue-500 flex size-24 items-center justify-center rounded-full bg-gradient-to-br to-blue-600 text-white">
                 <span className="text-2xl font-bold">
                   {member.Nom.split(" ")
                     .map((name) => name[0])

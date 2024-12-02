@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { VariantProps } from "tailwind-variants";
 
+import { fetchQualiopi } from "~/app/utils/fetchPolicy";
 import { BorderCard } from "~/components/card";
 import { Heading, HeadingContent, HeadingSubheading } from "~/components/heading";
 import { Link } from "~/components/link";
@@ -9,7 +10,7 @@ import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbo
 import { tv } from "~/helpers";
 
 import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
-import educationIllustration from "#/images/illustrations/education.svg?url";
+import educationIllustration from "#/images/logos/qualiopi/qualiopi.png";
 
 const variants = tv({
   slots: {
@@ -33,47 +34,32 @@ type QualiopiProps = {
   _color: NonNullable<Variants["_color"]>;
 };
 
-export const Qualiopi = ({ _color }: QualiopiProps) => {
+export const Qualiopi = async ({ _color }: QualiopiProps) => {
   const { sectionClassName } = variants({ _color });
 
-  const paragraphs = [
-    <div className="flex flex-col gap-4" key={0}>
-      <Heading _alignment="left" _size="2xl">
-        <HeadingContent _level={3}>Qualité reconnue</HeadingContent>
-      </Heading>
+  const qualiopi = await fetchQualiopi();
 
-      <p>
-        INOLIB est certifiée Qualiopi pour ses actions de formation. Cette certification, reconnue au niveau national,
-        atteste de la qualité de nos processus et de notre engagement à proposer des formations répondant aux plus hauts
-        standards.
-      </p>
-    </div>,
-    <div className="flex flex-col gap-4" key={1}>
-      <Heading _alignment="left" _size="2xl">
-        <HeadingContent _level={3}>Confiance de nos clients</HeadingContent>
-      </Heading>
-
-      <p>
-        En obtenant la certification Qualiopi, nous vous garantissons une formation conforme aux exigences du
-        Référentiel National Qualité, assurant ainsi des prestations fiables et adaptées à vos besoins professionnels.
-        Cette certification renforce la confiance de nos clients, partenaires et financeurs, en certifiant que vous
-        bénéficiez d’une formation sérieuse, structurée et en constante amélioration.
-      </p>
-    </div>,
-  ];
+  console.log("show qualiopi", qualiopi);
 
   return (
     <Section className={sectionClassName()}>
       <Heading _alignment="center" _size="4xl">
-        <HeadingContent _level={2}>Certification Qualiopi</HeadingContent>
-        <HeadingSubheading>Une garantie de confiance et de qualité.</HeadingSubheading>
+        <HeadingContent _level={2}>{qualiopi.titre}</HeadingContent>
+        <HeadingSubheading>{qualiopi.introduction}</HeadingSubheading>
       </Heading>
 
       <div className="flex flex-col gap-8">
         <Verbose>
           <VerboseContent>
-            {paragraphs.map((item, index) => (
-              <BorderCard key={index}>{item}</BorderCard>
+            {qualiopi.list.map((item, index) => (
+              <BorderCard key={index}>
+                {item.ListItem?.map((listItem, i) => (
+                  <div key={i}>
+                    {listItem.type === "heading" && <p className="text-xl font-bold">{listItem.children[0].text}</p>}
+                    {listItem.type === "paragraph" && <p>{listItem.children[0].text}</p>}
+                  </div>
+                ))}
+              </BorderCard>
             ))}
           </VerboseContent>
 
@@ -81,7 +67,6 @@ export const Qualiopi = ({ _color }: QualiopiProps) => {
             <Image alt="" className="h-96" src={educationIllustration} />
           </VerboseIllustration>
         </Verbose>
-
         <Link
           _border="black"
           _color="white"

@@ -7,6 +7,48 @@ export type Routes = Record<
 >;
 
 export const useRoutes = (): Routes => ({
+
+  "/pageTestUser": {
+    isActive: true,
+    title: "test",
+  },
+  "/TestAudit": {
+    isActive: true,
+    title: "test",
+  },
+
+  "/testU": {
+    isActive: true,
+    title: "test",
+  },
+  "/TestAccompagnement/accompagnement-technique": {
+    isActive: true,
+    title: "test",
+  },
+
+  "/TestAccompagnement/accopmagnement-de-projet": {
+    isActive: true,
+    title: "test",
+  },
+
+  "/TestDev/sites-vitrines": {
+    isActive: true,
+    title: "test",
+  },
+  "/TestDev": {
+    isActive: true,
+    title: "test",
+  },
+
+  "/TestAccompagnement": {
+    isActive: true,
+    title: "test",
+  },
+
+  "/TestFormation": {
+    isActive: true,
+    title: "test",
+  },
   "/testPlan": {
     isActive: true,
     title: "test",
