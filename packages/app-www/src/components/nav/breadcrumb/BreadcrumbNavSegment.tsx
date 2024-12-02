@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useMemo } from "react";
 
 import { Link } from "~/components/link";
 import { cn } from "~/helpers";
@@ -15,7 +14,7 @@ export const BreadcrumbNavSegment = ({ _href }: BreadcrumbNavSegmentProps) => {
   const pathname = usePathname();
   const routes = useRoutes();
 
-  const isCurrentPage = useMemo(() => _href === pathname, [_href, pathname]);
+  const isCurrentPage = _href === pathname;
 
   return (
     <li className={cn("px-2 py-1", { "font-bold underline": isCurrentPage })}>

@@ -1,3 +1,4 @@
+
 import type { Schema, Struct } from "@strapi/strapi";
 
 export interface ComponentContactInfo extends Struct.ComponentSchema {
@@ -77,3 +78,4 @@ declare module "@strapi/strapi" {
     }
   }
 }
+

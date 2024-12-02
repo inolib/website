@@ -1,5 +1,5 @@
 export default [
-  'strapi::logger',
+  'global::logger',
   'strapi::errors',
   'strapi::security',
   'strapi::cors',

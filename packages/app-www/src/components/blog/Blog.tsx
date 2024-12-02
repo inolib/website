@@ -8,7 +8,7 @@ import { Heading, type HeadingProps } from "~/components/headless";
 import { Link } from "~/components/link";
 import { formatDate } from "~/helpers";
 
-import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
+import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
 
 const fetchPosts = async (count: number) => {
   const response = await fetch(`https://backend.inolib.fr/wp-json/wp/v2/posts?per_page=${count}&_embed`);
@@ -18,6 +18,11 @@ const fetchPosts = async (count: number) => {
   }
 
   return (await response.json()) as Post[];
+};
+
+type BlogProps = {
+  _count: number;
+  _headingLevel: HeadingProps["_level"];
 };
 
 type Post = {
@@ -52,11 +57,6 @@ type Post = {
       }>
     >;
   };
-};
-
-type BlogProps = {
-  _count: number;
-  _headingLevel: HeadingProps["_level"];
 };
 
 export const Blog = ({ _count, _headingLevel }: BlogProps) => {
@@ -111,7 +111,7 @@ export const Blog = ({ _count, _headingLevel }: BlogProps) => {
 
             <Link _border="black" _color="white" _shape="button" href={`/actualites/${item.slug}`}>
               <span>Lire l’article</span>
-              <ArrowNarrowRightIcon className="stroke-black" />
+              <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
             </Link>
 
             <div>

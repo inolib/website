@@ -4,9 +4,9 @@ import { cn } from "~/helpers";
 
 import CheckIcon from "#/images/icons/check.svg";
 
-export type ToggleField = {
+export type ToggleField = Omit<InputHTMLAttributes<HTMLInputElement>, "id" | "type" | "value"> & {
   _label: string;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "id" | "type" | "value">;
+};
 
 export const ToggleField = forwardRef<HTMLInputElement, ToggleField>(({ _label, className, ...passthru }, ref) => {
   const id = useId();
@@ -23,10 +23,10 @@ export const ToggleField = forwardRef<HTMLInputElement, ToggleField>(({ _label, 
       />
 
       <label
-        className="flex w-fit cursor-pointer items-center gap-2 rounded-full border border-blue-600 bg-blue-50 px-4 py-1 outline-none hover:bg-blue-100 peer-checked/input:bg-blue-900 peer-checked/input:text-white peer-focus-visible/input:outline-4 peer-focus-visible/input:outline-offset-4 peer-focus-visible/input:outline-blue-600 [:checked+&>svg]:block"
+        className="flex w-fit cursor-pointer items-center rounded-full border border-blue-600 bg-blue-50 px-4 py-1 outline-none transition-all duration-300 hover:bg-blue-100 peer-checked/input:bg-blue-900 peer-checked/input:text-white peer-focus-visible/input:outline-4 peer-focus-visible/input:outline-offset-4 peer-focus-visible/input:outline-blue-600"
         htmlFor={id}
       >
-        <CheckIcon className="hidden stroke-white" />
+        <CheckIcon className="size-0 stroke-white opacity-0 transition-all duration-300 [:checked+label>&]:mr-2 [:checked+label>&]:size-[1.125rem] [:checked+label>&]:opacity-100" />
         <span>{_label}</span>
       </label>
     </div>

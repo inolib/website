@@ -328,6 +328,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+
 export interface ApiEngagementEngagement extends Struct.CollectionTypeSchema {
   collectionName: "engagements";
   info: {
@@ -582,6 +583,7 @@ export interface ApiValeurValeur extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
 }
+
 
 export interface PluginContentReleasesRelease extends Struct.CollectionTypeSchema {
   collectionName: "strapi_releases";
@@ -991,6 +993,7 @@ declare module "@strapi/strapi" {
       "admin::transfer-token": AdminTransferToken;
       "admin::transfer-token-permission": AdminTransferTokenPermission;
       "admin::user": AdminUser;
+
       "api::engagement.engagement": ApiEngagementEngagement;
       "api::inolib-academy.inolib-academy": ApiInolibAcademyInolibAcademy;
       "api::intro-a.intro-a": ApiIntroAIntroA;
@@ -1001,6 +1004,7 @@ declare module "@strapi/strapi" {
       "api::politique-de-confidentialite.politique-de-confidentialite": ApiPolitiqueDeConfidentialitePolitiqueDeConfidentialite;
       "api::qualiopi.qualiopi": ApiQualiopiQualiopi;
       "api::valeur.valeur": ApiValeurValeur;
+
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;
       "plugin::i18n.locale": PluginI18NLocale;

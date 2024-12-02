@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
+
 import { Link } from "~/components/app";
 import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { UnorderedList, UnorderedListItem } from "~/components/list";
 import { Section } from "~/components/section";
+
+export const metadata: Metadata = {
+  title: "Politique de confidentialité",
+};
 
 const Page = () => {
   return (
@@ -13,8 +19,6 @@ const Page = () => {
             <HeadingContent _level={1}>Politique de confidentialité</HeadingContent>
           </Heading>
         </TwoColumnsFlexLayoutColumn>
-
-        <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
 
       <div className="flex max-w-prose flex-col gap-8">
@@ -33,7 +37,7 @@ const Page = () => {
 
           <p>Nous pouvons collecter les informations suivantes :</p>
 
-          <UnorderedList className="-mt-4 pl-8">
+          <UnorderedList className="-mt-4">
             <UnorderedListItem>nom et prénom ;</UnorderedListItem>
             <UnorderedListItem>coordonnées, y compris adresse e-mail et numéro de téléphone ;</UnorderedListItem>
             <UnorderedListItem>
@@ -53,7 +57,7 @@ const Page = () => {
             notamment pour les raisons suivantes :
           </p>
 
-          <UnorderedList className="-mt-4 pl-8">
+          <UnorderedList className="-mt-4">
             <UnorderedListItem>tenue de dossiers internes ;</UnorderedListItem>
             <UnorderedListItem>amélioration de nos produits et services ;</UnorderedListItem>
             <UnorderedListItem>
@@ -162,7 +166,7 @@ const Page = () => {
             l’adresse e-mail ou postale indiquée sur notre site web :
           </p>
 
-          <UnorderedList className="-mt-4 pl-8">
+          <UnorderedList className="-mt-4">
             <UnorderedListItem>
               adresse e-mail : <Link href="mailto:contact@inolib.com">contact@inolib.com</Link> ;
             </UnorderedListItem>

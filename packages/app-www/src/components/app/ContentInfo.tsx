@@ -5,14 +5,10 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 
 import inolibYellowLogo from "#/images/logos/inolib/inolib-yellow.svg?url";
-import facebookLogo from "#/images/logos/social-networks/facebook.svg?url";
-import facebookWhiteLogo from "#/images/logos/social-networks/facebook-white.svg?url";
-import linkedinLogo from "#/images/logos/social-networks/linkedin.svg?url";
-import linkedinWhiteLogo from "#/images/logos/social-networks/linkedin-white.svg?url";
-import xLogo from "#/images/logos/social-networks/x.svg?url";
-import xWhiteLogo from "#/images/logos/social-networks/x-white.svg?url";
-import youtubeLogo from "#/images/logos/social-networks/youtube.svg?url";
-import youtubeWhiteLogo from "#/images/logos/social-networks/youtube-white.svg?url";
+import FacebookLogo from "#/images/logos/social-networks/facebook.svg";
+import LinkedInLogo from "#/images/logos/social-networks/linkedin.svg";
+import XLogo from "#/images/logos/social-networks/x.svg";
+import YouTubeLogo from "#/images/logos/social-networks/youtube.svg";
 
 export const ContentInfo = () => {
   const menu = [
@@ -44,28 +40,41 @@ export const ContentInfo = () => {
 
   const socialNetworks = [
     {
-      label: "INOLIB sur Facebook",
+      label: "Facebook",
       href: "https://www.facebook.com/people/Inolib/100075572787282",
-      src: facebookLogo,
-      whiteSrc: facebookWhiteLogo,
+      icon: (
+        <FacebookLogo
+          aria-label="Facebook"
+          className="size-8 fill-white transition-all duration-300 group-hover/link:fill-[#0766FF]"
+        />
+      ),
     },
     {
-      label: "INOLIB sur LinkedIn",
+      label: "LinkedIn",
       href: "https://www.linkedin.com/company/inolib",
-      src: linkedinLogo,
-      whiteSrc: linkedinWhiteLogo,
+      icon: (
+        <LinkedInLogo
+          aria-label="LinkedIn"
+          className="size-8 fill-white transition-all duration-300 group-hover/link:fill-[#0B66C2]"
+        />
+      ),
     },
     {
-      label: "INOLIB sur X",
+      label: "X",
       href: "https://x.com/_inolib",
-      src: xLogo,
-      whiteSrc: xWhiteLogo,
+      icon: (
+        <XLogo aria-label="X" className="size-8 fill-white transition-all duration-300 group-hover/link:fill-black" />
+      ),
     },
     {
-      label: "INOLIB sur YouTube",
+      label: "YouTube",
       href: "https://www.youtube.com/channel/UC9yPUJFvQkKsxGeAJ3CJOTg",
-      src: youtubeLogo,
-      whiteSrc: youtubeWhiteLogo,
+      icon: (
+        <YouTubeLogo
+          aria-label="YouTube"
+          className="size-8 fill-white transition-all duration-300 group-hover/link:fill-[#FF0000]"
+        />
+      ),
     },
   ];
 
@@ -102,12 +111,11 @@ export const ContentInfo = () => {
                     <Link
                       _color="transparent"
                       _shape="button"
-                      className="size-12 p-2 hover:bg-white focus-visible:outline-white [&:hover>:not([data-white])]:block [&:hover>[data-white]]:hidden [&>:not([data-white])]:hidden"
+                      className="group/link p-2 transition-all duration-300 hover:bg-white focus-visible:outline-white"
                       href={item.href}
                       title={item.label}
                     >
-                      <Image alt={item.label} className="size-fit" src={item.src} />
-                      <Image alt={item.label} className="size-fit" src={item.whiteSrc} data-white />
+                      {item.icon}
                     </Link>
                   </li>
                 ))}
@@ -115,26 +123,29 @@ export const ContentInfo = () => {
             </div>
           </ThreeColumnsFlexLayoutColumn>
 
-          <ThreeColumnsFlexLayoutColumn className="flex flex-col items-end gap-4">
-            <Link
-              _color="transparent"
-              _shape="link"
-              className="h-24 focus-visible:outline-white"
-              href="/inolib-academy/certificat-qualiopi"
-              title="Certificat Qualiopi"
-            >
-              <Image
-                alt="Certificat Qualiopi"
-                className="size-full"
-                height={150}
-                src="/images/logos/qualiopi/qualiopi.png"
-                width={300}
-              />
-            </Link>
+          <ThreeColumnsFlexLayoutColumn className="flex justify-end">
+            <div className="flex flex-col gap-4">
+              <Link
+                _color="transparent"
+                _shape="link"
+                className="h-24 w-auto focus-visible:outline-white"
+                href="/formations/certificat-qualiopi"
+                title="Certificat Qualiopi"
+              >
+                <Image
+                  alt="Certificat Qualiopi"
+                  className="size-full"
+                  height={384}
+                  src="/images/logos/qualiopi/qualiopi.png"
+                  width={768}
+                />
+              </Link>
 
-            <p className="max-w-40 text-xs">
-              La certification qualité a été délivrée au titre de la catégorie d’action suivante : actions de formation.
-            </p>
+              <p className="max-w-40 text-xs">
+                La certification qualité a été délivrée au titre de la catégorie d’action suivante : actions de
+                formation.
+              </p>
+            </div>
           </ThreeColumnsFlexLayoutColumn>
         </ThreeColumnsFlexLayout>
 
@@ -145,7 +156,7 @@ export const ContentInfo = () => {
 
           <p className="hidden md:block">Accessibilité : totalement accessible</p>
 
-          <p className="text-neutral-400">© 2024 INOLIB</p>
+          <p>© 2024 INOLIB</p>
         </div>
       </Section>
     </footer>

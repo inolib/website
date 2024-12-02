@@ -15,8 +15,6 @@ export const Header = () => {
             </HeadingSubheading>
           </Heading>
         </TwoColumnsFlexLayoutColumn>
-
-        <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
     </Section>
   );

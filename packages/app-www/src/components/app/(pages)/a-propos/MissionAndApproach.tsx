@@ -21,11 +21,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type MissionAndApproachProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const MissionAndApproach = ({ _color }: MissionAndApproachProps) => {
   const { sectionClassName } = variants({ _color });

@@ -1,9 +1,11 @@
 /** @type {import("next").NextConfig} */
 export default {
+  compress: false,
   experimental: {
     cpus: 1,
     workerThreads: false,
   },
+
 
   images: {
     remotePatterns: [
@@ -24,6 +26,7 @@ export default {
       },
     ],
   },
+
   webpack: (config) => {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.(".svg"));
 
@@ -43,17 +46,7 @@ export default {
             options: {
               icon: true,
               svgoConfig: {
-                plugins: [
-                  {
-                    name: "removeUselessStrokeAndFill",
-                    params: {
-                      stroke: false,
-                      fill: false,
-                      removeNone: false,
-                    },
-                  },
-                  "removeXMLNS",
-                ],
+                plugins: ["removeXMLNS"],
               },
             },
           },

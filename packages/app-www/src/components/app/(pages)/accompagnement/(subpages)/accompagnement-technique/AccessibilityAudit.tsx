@@ -8,7 +8,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import supportIllustration from "#/images/illustrations/support.svg?url";
+import accessibilityAuditIllustration from "#/images/illustrations/app/(pages)/accompagnement/(subpages)/accompagnement-technique/accessibility-audit.svg?url";
 
 const variants = tv({
   slots: {
@@ -26,11 +26,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type AccessibilityAuditProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const AccessibilityAudit = ({ _color }: AccessibilityAuditProps) => {
   const { sectionClassName } = variants({ _color });
@@ -43,8 +43,8 @@ export const AccessibilityAudit = ({ _color }: AccessibilityAuditProps) => {
 
       <p>
         Nous réalisons des audits approfondis pour identifier les problématiques d’accessibilité sur vos outils
-        numériques. En nous basant sur les standards RGAA, WCAG et autres normes internationales, nous repérons les
-        points bloquants et évaluons la conformité de vos solutions.
+        numériques. En nous basant sur les standards RGAA, WCAG, RAWeb, et autres normes internationales, nous repérons
+        les points bloquants et évaluons la conformité de vos solutions.
       </p>
     </div>,
     <div className="flex flex-col gap-4" key={1}>
@@ -77,7 +77,7 @@ export const AccessibilityAudit = ({ _color }: AccessibilityAuditProps) => {
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={supportIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={accessibilityAuditIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

@@ -77,7 +77,7 @@ export default typescriptESLint.config(
       reportUnusedDisableDirectives: "error",
     },
     rules: {
-      // ESLint
+      // eslint
       "no-irregular-whitespace": "off",
 
       // import-x
@@ -101,7 +101,7 @@ export default typescriptESLint.config(
         {
           customGroups: {
             value: {
-              asset: "#/**",
+              asset: "#/.+",
             },
           },
           groups: [
@@ -121,6 +121,12 @@ export default typescriptESLint.config(
         "error",
         {
           groups: ["unknown", "shorthand"],
+          type: "natural",
+        },
+      ],
+      "perfectionist/sort-modules": [
+        "error",
+        {
           type: "natural",
         },
       ],
@@ -164,6 +170,7 @@ export default typescriptESLint.config(
         {
           callees: ["cn", "tv"],
           cssFiles: [],
+          whitelist: ["meetings-iframe-container"],
         },
       ],
 

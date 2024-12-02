@@ -11,6 +11,16 @@ import {
 
 export const metadata: Metadata = {
   title: "Tests utilisateurs | INOLIB",
+  description: "Comprenez vos utilisateurs en profondeur et optimisez l’expérience qu’ils vivent avec votre produit.",
+  openGraph: {
+    type: "website",
+    siteName: "INOLIB",
+    locale: "fr_FR",
+    title: "Tests utilisateurs",
+    description: "Comprenez vos utilisateurs en profondeur et optimisez l’expérience qu’ils vivent avec votre produit.",
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/audit/header.svg`,
+    url: `${process.env.SITE_URL}/audit/tests-utilisateurs`,
+  },
 };
 
 const Page = () => {

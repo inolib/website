@@ -77,9 +77,9 @@ export const useRoutes = (): Routes => ({
     isActive: false,
     title: "Accompagnement",
   },
-  "/accompagnement/accompagnement-de-projet": {
+  "/accompagnement/pilotage-de-projet": {
     isActive: true,
-    title: "Accompagnement de projet",
+    title: "Pilotage de projet",
   },
   "/accompagnement/accompagnement-technique": {
     isActive: true,
@@ -89,9 +89,9 @@ export const useRoutes = (): Routes => ({
     isActive: false,
     title: "Audit",
   },
-  "/audit/audit-de-conformite": {
+  "/audit/audits-accessibilite": {
     isActive: true,
-    title: "Audit de conformité",
+    title: "Audits d’accessibilité",
   },
   "/audit/tests-utilisateurs": {
     isActive: true,
@@ -117,11 +117,11 @@ export const useRoutes = (): Routes => ({
     isActive: true,
     title: "Sites vitrines et institutionnels",
   },
-  "/inolib-academy": {
+  "/formations": {
     isActive: true,
-    title: "INOLIB Academy",
+    title: "Formations",
   },
-  "/inolib-academy/certificat-qualiopi": {
+  "/formations/certificat-qualiopi": {
     isActive: true,
     title: "Certificat Qualiopi",
   },

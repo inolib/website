@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <>
       <Header />
-      <SocialProof _color="neutral-50" />
+      <SocialProof _color="sand-50" />
       <ScrollingText />
       <Services _color="white" />
       <Testimonials _color="blue-950" />

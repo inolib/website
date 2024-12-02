@@ -8,7 +8,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import developmentIllustration from "#/images/illustrations/development.svg?url";
+import showcaseWebsiteIllustration from "#/images/illustrations/app/(pages)/developpement/(subpages)/sites-vitrines-et-institutionnels/showcase-website.svg?url";
 
 const variants = tv({
   slots: {
@@ -26,11 +26,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type ShowcaseWebsitesProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const ShowcaseWebsites = ({ _color }: ShowcaseWebsitesProps) => {
   const { sectionClassName } = variants({ _color });
@@ -67,7 +67,7 @@ export const ShowcaseWebsites = ({ _color }: ShowcaseWebsitesProps) => {
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={developmentIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={showcaseWebsiteIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

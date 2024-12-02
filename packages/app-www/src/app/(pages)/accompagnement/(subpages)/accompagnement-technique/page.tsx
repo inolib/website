@@ -5,13 +5,25 @@ import {
   AccessibilityAudit,
   Header,
   Monitoring,
-  Recommandations,
+  Recommendations,
   Referent,
   TechnicalSupport,
 } from "~/components/app/(pages)/accompagnement/(subpages)/accompagnement-technique";
 
 export const metadata: Metadata = {
-  title: "Accompagnement technique | INOLIB",
+  title: "Accompagnement technique pour l’accessibilité numérique | INOLIB",
+  description:
+    "INOLIB vous accompagne vers l’accessibilité numérique de vos outils numériques. Nous réalisons des audits, fournissons des recommandations, assurons un support technique et offrons un suivi continu pour garantir la conformité RGAA, WCAG, et RAWeb.",
+  openGraph: {
+    type: "website",
+    siteName: "INOLIB",
+    locale: "fr_FR",
+    title: "Accompagnement technique pour l’accessibilité numérique",
+    description:
+      "INOLIB vous accompagne vers l’accessibilité numérique de vos outils numériques. Nous réalisons des audits, fournissons des recommandations, assurons un support technique et offrons un suivi continu pour garantir la conformité RGAA, WCAG, et RAWeb.",
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/accompagnement/header.svg`,
+    url: `${process.env.SITE_URL}/accompagnement/accompagnement-technique`,
+  },
 };
 
 const Page = () => {
@@ -22,7 +34,7 @@ const Page = () => {
       <TechnicalSupport _color="white" />
       <Monitoring _color="neutral-50" />
       <Referent _color="white" />
-      <Recommandations _color="neutral-50" />
+      <Recommendations _color="neutral-50" />
       <GoFurther _color="white" />
     </>
   );

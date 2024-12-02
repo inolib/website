@@ -19,18 +19,18 @@ const variants = tv({
       white: {
         sectionClassName: "bg-white",
       },
-      "neutral-50": {
-        sectionClassName: "bg-neutral-50",
+      "sand-50": {
+        sectionClassName: "bg-sand-50",
       },
     },
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type SocialProofProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const SocialProof = ({ _color }: SocialProofProps) => {
   const { sectionClassName } = variants({ _color });
@@ -52,8 +52,8 @@ export const SocialProof = ({ _color }: SocialProofProps) => {
 
   return (
     <Section className={sectionClassName()}>
-      <Heading _alignment="center" _size="2xl">
-        <HeadingContent _level={2}>Rejoignez nos clients satisfaits</HeadingContent>
+      <Heading _alignment="center" _size="4xl">
+        <HeadingContent _level={2}>Ils nous font confiance</HeadingContent>
       </Heading>
 
       <ul className="grid grid-cols-2 place-items-center gap-x-16 gap-y-8 lg:grid-cols-4">

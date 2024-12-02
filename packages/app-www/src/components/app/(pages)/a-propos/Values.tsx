@@ -1,15 +1,17 @@
 import type { VariantProps } from "tailwind-variants";
 
 import { Heading, HeadingContent, HeadingSubheading } from "~/components/heading";
+import { RoundedIcon } from "~/components/icon";
 import { FlexGridList, FlexGridListItem } from "~/components/list";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import FileCheckFramedIcon from "#/images/icons/framed/file-check-02.svg";
-import FlagFramedIcon from "#/images/icons/framed/flag-03.svg";
-import GraduationHatFramedIcon from "#/images/icons/framed/graduation-hat-02.svg";
-import HeartFramedIcon from "#/images/icons/framed/heart.svg";
-import MessageSmileCircleFramedIcon from "#/images/icons/framed/message-smile-circle.svg";
+import HeartIcon from "#/images/icons/heart.svg";
+import Lightbulb05Icon from "#/images/icons/lightbulb-05.svg";
+import MessageChatSquareIcon from "#/images/icons/message-chat-square.svg";
+import ThumbsUpIcon from "#/images/icons/thumbs-up.svg";
+import Users01Icon from "#/images/icons/users-01.svg";
+import ZapFastIcon from "#/images/icons/zap-fast.svg";
 
 const variants = tv({
   slots: {
@@ -27,44 +29,44 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type ValuesProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const Values = ({ _color }: ValuesProps) => {
   const { sectionClassName } = variants({ _color });
 
   const values = [
     {
-      icon: <HeartFramedIcon className="size-12" />,
+      icon: <Lightbulb05Icon className="size-6 stroke-yellow-500" />,
       title: "Innovation et créativité",
       description: "Rechercher constamment des solutions créatives pour répondre aux défis actuels et futurs.",
     },
     {
-      icon: <MessageSmileCircleFramedIcon className="size-12" />,
+      icon: <MessageChatSquareIcon className="size-6 stroke-yellow-500" />,
       title: "Transparence et intégrité",
       description: "Privilégier une communication claire et des actions éthiques.",
     },
     {
-      icon: <FileCheckFramedIcon className="size-12" />,
+      icon: <ThumbsUpIcon className="size-6 stroke-yellow-500" />,
       title: "Fiabilité et confiance",
       description: "Établir des relations solides et durables, favorisant ainsi la confiance et le succès commun.",
     },
     {
-      icon: <GraduationHatFramedIcon className="size-12" />,
+      icon: <Users01Icon className="size-6 stroke-yellow-500" />,
       title: "Inclusion et diversité",
       description: "Valoriser l’inclusion et la diversité dans tous nos projets, ainsi que dans notre équipe.",
     },
     {
-      icon: <FlagFramedIcon className="size-12" />,
+      icon: <HeartIcon className="size-6 stroke-yellow-500" />,
       title: "Responsabilité et bienveillance",
       description:
         "Évaluer l’impact de nos choix sur la société et agir avec respect, en faisant preuve d’une réelle considération pour chacun.",
     },
     {
-      icon: <FlagFramedIcon className="size-12" />,
+      icon: <ZapFastIcon className="size-6 stroke-yellow-500" />,
       title: "Efficacité et proactivité",
       description: "Anticiper les besoins de nos clients et proposer des solutions innovantes et sur mesure.",
     },
@@ -80,7 +82,9 @@ export const Values = ({ _color }: ValuesProps) => {
       <FlexGridList>
         {values.map((item, index) => (
           <FlexGridListItem key={index}>
-            {item.icon}
+            <RoundedIcon className="size-12 bg-blue-300">
+              <RoundedIcon className="size-9 bg-blue-900">{item.icon}</RoundedIcon>
+            </RoundedIcon>
 
             <p className="text-2xl font-bold">{item.title}</p>
             <p>{item.description}</p>

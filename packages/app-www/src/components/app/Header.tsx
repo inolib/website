@@ -11,7 +11,7 @@ import inolibYellowLogo from "#/images/logos/inolib/inolib-yellow.svg?url";
 export const Header = () => {
   return (
     <div className="bg-blue-900">
-      <Section className="flex flex-col gap-8 bg-gradient-to-b from-blue-950 via-[#0E2F08] to-[#323909] first-of-type:pt-24 sm:rounded-tr-[18rem]">
+      <Section className="flex flex-col gap-8 bg-blue-950 bg-[radial-gradient(at_bottom_left,_#304825_0%,_rgb(17_31_34_/_0)_50%),_radial-gradient(at_bottom_right,_#304825_0%,_rgb(17_31_34_/_0)_50%)] first-of-type:pt-24 sm:rounded-tr-[18rem]">
         <TwoColumnsFlexLayout>
           <TwoColumnsFlexLayoutColumn className="flex flex-col gap-24">
             <div className="flex flex-col gap-8">

@@ -21,11 +21,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 export type HeadingObject = {
   getSize: () => NonNullable<Variants["_size"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 const HeadingContext = createContext<HeadingObject | undefined>(undefined);
 
@@ -39,13 +39,13 @@ export const useHeading = () => {
   return header;
 };
 
-export type HeadingProps = {
+export type HeadingProps = HTMLAttributes<HTMLElement> & {
   _alignment: NonNullable<Variants["_alignment"]>;
   _size: NonNullable<Variants["_size"]>;
-} & HTMLAttributes<HTMLElement>;
+};
 
 export const Heading = ({ _alignment, _size, children, className, ...passthru }: HeadingProps) => {
-  const header: HeadingObject = useMemo(
+  const heading: HeadingObject = useMemo(
     () => ({
       getSize: () => _size,
     }),
@@ -53,7 +53,7 @@ export const Heading = ({ _alignment, _size, children, className, ...passthru }:
   );
 
   return (
-    <HeadingContext.Provider value={header}>
+    <HeadingContext.Provider value={heading}>
       <header className={variants({ _alignment, _size, className })} {...passthru}>
         {children}
       </header>

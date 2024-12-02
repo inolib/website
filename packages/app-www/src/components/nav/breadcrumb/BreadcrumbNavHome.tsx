@@ -11,7 +11,7 @@ export const BreadcrumbNavHome = ({ _href }: BreadcrumbNavHomeProps) => {
   const routes = useRoutes();
 
   return (
-    <li className="px-2 py-1">
+    <li className="flex items-center px-2 py-1">
       <Link
         _color="transparent"
         _shape="link"
@@ -19,7 +19,7 @@ export const BreadcrumbNavHome = ({ _href }: BreadcrumbNavHomeProps) => {
         href={_href}
         title={routes[_href].title}
       >
-        <HomeLineIcon aria-label={routes[_href].title} className="size-5 stroke-black" />
+        <HomeLineIcon aria-label={routes[_href].title} className="size-[1.3125rem] stroke-black" />
       </Link>
     </li>
   );

@@ -1,16 +1,21 @@
-import type { ReadonlySignal } from "@preact/signals-react";
-import { forwardRef, useId, type InputHTMLAttributes } from "react";
+import type { ValidationError } from "@tanstack/react-form";
+import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "~/helpers";
 
-export type TextInputFieldProps = {
-  _error: ReadonlySignal<string>;
-  _label: string;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "aria-describedby" | "aria-invalid" | "id">;
+export type TextInputFieldProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "aria-describedby" | "aria-invalid" | "id"
+> & {
+  _errors: ValidationError[];
+  _label: ReactNode;
+};
 
 export const TextInputField = forwardRef<HTMLInputElement, TextInputFieldProps>(
-  ({ _error, _label, className, ...passthru }, ref) => {
+  ({ _errors, _label, className, ...passthru }, ref) => {
     const id = useId();
+
+    const hasError = _errors.length > 0;
 
     return (
       <div className="flex flex-col gap-2" data-field>
@@ -20,11 +25,11 @@ export const TextInputField = forwardRef<HTMLInputElement, TextInputFieldProps>(
 
         <input
           aria-describedby={`${id}-error`}
-          aria-invalid={_error.value !== ""}
+          aria-invalid={hasError}
           className={cn(
-            "rounded-lg border border-blue-600 p-2 outline-none hover:bg-blue-50 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-600",
+            "rounded-lg border border-blue-600 p-2 outline-none transition-all duration-300 hover:bg-blue-50 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-600",
             {
-              "border-red-600 focus-visible:outline-red-600": _error.value !== "",
+              "border-red-600 focus-visible:outline-red-600": hasError,
             },
             className,
           )}
@@ -34,7 +39,7 @@ export const TextInputField = forwardRef<HTMLInputElement, TextInputFieldProps>(
         />
 
         <p className="text-red-600" id={`${id}-error`}>
-          {_error.value}
+          {hasError ? (_errors[0] as string).split(", ")[0] : undefined}
         </p>
       </div>
     );
