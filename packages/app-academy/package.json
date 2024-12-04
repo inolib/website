@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@inolib/app-academy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm run build:app && pnpm run build:server && pnpm run build:sitemap",
+    "build:app": "next build",
+    "build:server": "tsup",
+    "build:sitemap": "dotenvx run -- next-sitemap",
+    "format": "pnpm run format:prettier && pnpm run format:eslint",
+    "format:eslint": "eslint --fix --format silent .",
+    "format:prettier": "prettier --log-level warn --write .",
+    "lint": "pnpm run lint:eslint && pnpm run lint:tsc",
+    "lint:eslint": "eslint .",
+    "lint:tsc": "tsc",
+    "serve:development": "dotenvx run -f ./.env.development -- tsx ./src/server.ts",
+    "serve:production": "dotenvx run -- node ./dist/server.cjs"
+  },
+  "dependencies": {
+    "@dicebear/collection": "^9.2.2",
+    "@dicebear/core": "^9.2.2",
+    "@fastify/compress": "^8.0.1",
+    "@fontsource-variable/manrope": "^5.1.0",
+    "@tanstack/react-form": "^0.39.0",
+    "@tanstack/valibot-form-adapter": "^0.39.0",
+    "clsx": "^2.1.1",
+    "fastify": "^5.1.0",
+    "next": "^15.0.3",
+    "orejime": "^2.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.33.5",
+    "tailwind-merge": "^2.5.5",
+    "tailwind-variants": "^0.3.0",
+    "valibot": "1.0.0-beta.9"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.28.0",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "next-sitemap": "^4.2.3",
+    "postcss": "^8.4.49",
+    "schema-dts": "^1.1.2",
+    "tailwindcss": "^3.4.16",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
+
