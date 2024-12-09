@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_component_titres",
+  "info": {
+    "displayName": "titre",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "cles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.list-item"
+    },
+    "text": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

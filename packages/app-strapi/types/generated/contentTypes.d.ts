@@ -328,6 +328,310 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAccompagnementOperationnelAccompagnementOperationnel extends Struct.SingleTypeSchema {
+  collectionName: "accompagnement_operationnels";
+  info: {
+    displayName: "Accompagnement op\u00E9rationnel";
+    pluralName: "accompagnement-operationnels";
+    singularName: "accompagnement-operationnel";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::accompagnement-operationnel.accompagnement-operationnel"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAccompagnementStrategiqueAccompagnementStrategique extends Struct.SingleTypeSchema {
+  collectionName: "accompagnement_strategiques";
+  info: {
+    displayName: "accompagnement strat\u00E9gique ";
+    pluralName: "accompagnement-strategiques";
+    singularName: "accompagnement-strategique";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::accompagnement-strategique.accompagnement-strategique"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiApprocheAccompagnementApprocheAccompagnement extends Struct.SingleTypeSchema {
+  collectionName: "approche_accompagnements";
+  info: {
+    displayName: "Approche Accompagnement";
+    pluralName: "approche-accompagnements";
+    singularName: "approche-accompagnement";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::approche-accompagnement.approche-accompagnement"> &
+      Schema.Attribute.Private;
+    paraghraphe1: Schema.Attribute.Text;
+    paragraphe2: Schema.Attribute.Text;
+    publishedAt: Schema.Attribute.DateTime;
+    titre1: Schema.Attribute.String;
+    titre2: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiApprocheDevelopmentApprocheDevelopment extends Struct.CollectionTypeSchema {
+  collectionName: "approche_developments";
+  info: {
+    description: "";
+    displayName: "Approche-d\u00E9veloppement";
+    pluralName: "approche-developments";
+    singularName: "approche-development";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    ListItems: Schema.Attribute.Component<"component.list-item", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::approche-development.approche-development"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subTitre: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiApprocheInclusifUtilisateurApprocheInclusifUtilisateur extends Struct.SingleTypeSchema {
+  collectionName: "approche_inclusif_utilisateurs";
+  info: {
+    description: "";
+    displayName: "Approche inclusive utilisateur";
+    pluralName: "approche-inclusif-utilisateurs";
+    singularName: "approche-inclusif-utilisateur";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::approche-inclusif-utilisateur.approche-inclusif-utilisateur"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiApprochePedagogiqueApprochePedagogique extends Struct.CollectionTypeSchema {
+  collectionName: "approche_pedagogiques";
+  info: {
+    description: "";
+    displayName: "Approche p\u00E9dagogique";
+    pluralName: "approche-pedagogiques";
+    singularName: "approche-pedagogique";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::approche-pedagogique.approche-pedagogique"> &
+      Schema.Attribute.Private;
+    paragraph1: Schema.Attribute.Text;
+    paragraph2: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Titre: Schema.Attribute.String;
+    titre1: Schema.Attribute.String;
+    titre2: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiApprocheTestUtilisateurApprocheTestUtilisateur extends Struct.SingleTypeSchema {
+  collectionName: "approche_test_utilisateurs";
+  info: {
+    description: "";
+    displayName: "Approche test utilisateur";
+    pluralName: "approche-test-utilisateurs";
+    singularName: "approche-test-utilisateur";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::approche-test-utilisateur.approche-test-utilisateur"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAssistanceTechniqueEtCorrectionAssistanceTechniqueEtCorrection extends Struct.SingleTypeSchema {
+  collectionName: "assistance_technique_et_corrections";
+  info: {
+    displayName: "Assistance technique et correction";
+    pluralName: "assistance-technique-et-corrections";
+    singularName: "assistance-technique-et-correction";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.list-item", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::assistance-technique-et-correction.assistance-technique-et-correction"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAuditDAccessibiliteAuditDAccessibilite extends Struct.SingleTypeSchema {
+  collectionName: "audit_d_accessibilites";
+  info: {
+    displayName: "Audit d\u2019accessibilit\u00E9";
+    pluralName: "audit-d-accessibilites";
+    singularName: "audit-d-accessibilite";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::audit-d-accessibilite.audit-d-accessibilite"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAuditsDeConformiteAuditsDeConformite extends Struct.SingleTypeSchema {
+  collectionName: "audits_de_conformites";
+  info: {
+    description: "";
+    displayName: "Intro Audits d'accessibilit\u00E9 ";
+    pluralName: "audits-de-conformites";
+    singularName: "audits-de-conformite";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::audits-de-conformite.audits-de-conformite"> &
+      Schema.Attribute.Private;
+    paragraphe: Schema.Attribute.Blocks;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCreationSiteInstitutionnelCreationSiteInstitutionnel extends Struct.SingleTypeSchema {
+  collectionName: "creation_site_institutionnels";
+  info: {
+    displayName: "creation site institutionnel";
+    pluralName: "creation-site-institutionnels";
+    singularName: "creation-site-institutionnel";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::creation-site-institutionnel.creation-site-institutionnel"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEngagementEngagement extends Struct.CollectionTypeSchema {
   collectionName: "engagements";
   info: {
@@ -344,6 +648,86 @@ export interface ApiEngagementEngagement extends Struct.CollectionTypeSchema {
     list: Schema.Attribute.Component<"component.list-item", true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::engagement.engagement"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFoireAuxQuestionsAuditFoireAuxQuestionsAudit extends Struct.SingleTypeSchema {
+  collectionName: "foire_aux_questions_audits";
+  info: {
+    description: "";
+    displayName: "Foire aux questions audit";
+    pluralName: "foire-aux-questions-audits";
+    singularName: "foire-aux-questions-audit";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    foire: Schema.Attribute.Component<"component.foire", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::foire-aux-questions-audit.foire-aux-questions-audit"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFoireAuxQuestionsUtilisateurFoireAuxQuestionsUtilisateur extends Struct.SingleTypeSchema {
+  collectionName: "foire_aux_questions_utilisateurs";
+  info: {
+    description: "";
+    displayName: "Foire aux questions utilisateur";
+    pluralName: "foire-aux-questions-utilisateurs";
+    singularName: "foire-aux-questions-utilisateur";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    foire: Schema.Attribute.Component<"component.foire", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::foire-aux-questions-utilisateur.foire-aux-questions-utilisateur"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
+  collectionName: "formations";
+  info: {
+    description: "";
+    displayName: "Formation";
+    pluralName: "formations";
+    singularName: "formation";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    introduction: Schema.Attribute.String;
+    ListItems: Schema.Attribute.Component<"component.titre", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::formation.formation"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -394,6 +778,186 @@ export interface ApiIntroAIntroA extends Struct.CollectionTypeSchema {
     introduction: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::intro-a.intro-a"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIntroAccompagnementTechniqueIntroAccompagnementTechnique extends Struct.SingleTypeSchema {
+  collectionName: "intro_accompagnement_techniques";
+  info: {
+    displayName: "intro Accompagnement technique";
+    pluralName: "intro-accompagnement-techniques";
+    singularName: "intro-accompagnement-technique";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::intro-accompagnement-technique.intro-accompagnement-technique"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIntroAccompagnementIntroAccompagnement extends Struct.SingleTypeSchema {
+  collectionName: "intro_accompagnements";
+  info: {
+    displayName: "intro Accompagnement";
+    pluralName: "intro-accompagnements";
+    singularName: "intro-accompagnement";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::intro-accompagnement.intro-accompagnement"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIntroDevelopmentIntroDevelopment extends Struct.CollectionTypeSchema {
+  collectionName: "intro_developments";
+  info: {
+    description: "";
+    displayName: "intro-d\u00E9veloppement";
+    pluralName: "intro-developments";
+    singularName: "intro-development";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    introduction: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::intro-development.intro-development"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIntroFormationIntroFormation extends Struct.CollectionTypeSchema {
+  collectionName: "intro_formations";
+  info: {
+    description: "";
+    displayName: "intro-formation";
+    pluralName: "intro-formations";
+    singularName: "intro-formation";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::intro-formation.intro-formation"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIntroPageAccueilleIntroPageAccueille extends Struct.SingleTypeSchema {
+  collectionName: "intro_page_accueilles";
+  info: {
+    displayName: "intro page accueil";
+    pluralName: "intro-page-accueilles";
+    singularName: "intro-page-accueille";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::intro-page-accueille.intro-page-accueille"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIntroSiteVitrineIntroSiteVitrine extends Struct.CollectionTypeSchema {
+  collectionName: "intro_site_vitrines";
+  info: {
+    displayName: "intro-site-vitrine";
+    pluralName: "intro-site-vitrines";
+    singularName: "intro-site-vitrine";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    introduction: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::intro-site-vitrine.intro-site-vitrine"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiIntroTestUtilisateurIntroTestUtilisateur extends Struct.SingleTypeSchema {
+  collectionName: "intro_test_utilisateurs";
+  info: {
+    displayName: "intro test utilisateur";
+    pluralName: "intro-test-utilisateurs";
+    singularName: "intro-test-utilisateur";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::intro-test-utilisateur.intro-test-utilisateur"> &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.Text;
     titre: Schema.Attribute.String;
@@ -455,6 +1019,31 @@ export interface ApiMentionLegaleMentionLegale extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMethodologieAuditMethodologieAudit extends Struct.SingleTypeSchema {
+  collectionName: "methodologie_audits";
+  info: {
+    displayName: "M\u00E9thodologie audit";
+    pluralName: "methodologie-audits";
+    singularName: "methodologie-audit";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.list-item", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::methodologie-audit.methodologie-audit"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMissionMission extends Struct.CollectionTypeSchema {
   collectionName: "missions";
   info: {
@@ -480,6 +1069,53 @@ export interface ApiMissionMission extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOffresDAuditOffresDAudit extends Struct.SingleTypeSchema {
+  collectionName: "offres_d_audits";
+  info: {
+    description: "";
+    displayName: "offres d\u2019audit";
+    pluralName: "offres-d-audits";
+    singularName: "offres-d-audit";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.titre", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::offres-d-audit.offres-d-audit"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPartenairePartenaire extends Struct.SingleTypeSchema {
+  collectionName: "partenaires";
+  info: {
+    displayName: "partenaire";
+    pluralName: "partenaires";
+    singularName: "partenaire";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::partenaire.partenaire"> & Schema.Attribute.Private;
+    logo: Schema.Attribute.Component<"component.image-partenaire", true>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPlanDuSitePlanDuSite extends Struct.SingleTypeSchema {
   collectionName: "plan_du_sites";
   info: {
@@ -499,6 +1135,54 @@ export interface ApiPlanDuSitePlanDuSite extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<"oneToMany", "api::plan-du-site.plan-du-site"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     Titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlusLoinAccompagnementPlusLoinAccompagnement extends Struct.SingleTypeSchema {
+  collectionName: "plus_loin_accompagnements";
+  info: {
+    description: "";
+    displayName: "plus loin Accompagnement";
+    pluralName: "plus-loin-accompagnements";
+    singularName: "plus-loin-accompagnement";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::plus-loin-accompagnement.plus-loin-accompagnement"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPlusLoinPlusLoin extends Struct.SingleTypeSchema {
+  collectionName: "plus_loins";
+  info: {
+    displayName: "plus loin ";
+    pluralName: "plus-loins";
+    singularName: "plus-loin";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::plus-loin.plus-loin"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -534,6 +1218,32 @@ export interface ApiPolitiqueDeConfidentialitePolitiqueDeConfidentialite extends
   };
 }
 
+export interface ApiPourquoiDevelopmentPourquoiDevelopment extends Struct.SingleTypeSchema {
+  collectionName: "pourquoi_developments";
+  info: {
+    description: "";
+    displayName: "choisir-Inolib-d\u00E9veloppement";
+    pluralName: "pourquoi-developments";
+    singularName: "pourquoi-development";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    ListItems: Schema.Attribute.Component<"component.list-item", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::pourquoi-development.pourquoi-development"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.String;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiQualiopiQualiopi extends Struct.CollectionTypeSchema {
   collectionName: "qualiopis";
   info: {
@@ -554,6 +1264,236 @@ export interface ApiQualiopiQualiopi extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<"oneToMany", "api::qualiopi.qualiopi"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiRecommandationAccompagnementRecommandationAccompagnement extends Struct.SingleTypeSchema {
+  collectionName: "recommandation_accompagnements";
+  info: {
+    displayName: "Recommandation accompagnement";
+    pluralName: "recommandation-accompagnements";
+    singularName: "recommandation-accompagnement";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::recommandation-accompagnement.recommandation-accompagnement"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiReferentEnAccessibiliteReferentEnAccessibilite extends Struct.SingleTypeSchema {
+  collectionName: "referent_en_accessibilites";
+  info: {
+    displayName: "R\u00E9f\u00E9rent en accessibilit\u00E9";
+    pluralName: "referent-en-accessibilites";
+    singularName: "referent-en-accessibilite";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::referent-en-accessibilite.referent-en-accessibilite"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiResultatsUtilisateurResultatsUtilisateur extends Struct.SingleTypeSchema {
+  collectionName: "resultats_utilisateurs";
+  info: {
+    description: "";
+    displayName: "R\u00E9sultats Utilisateur";
+    pluralName: "resultats-utilisateurs";
+    singularName: "resultats-utilisateur";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::resultats-utilisateur.resultats-utilisateur"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceAccueilServiceAccueil extends Struct.SingleTypeSchema {
+  collectionName: "service_accueils";
+  info: {
+    displayName: "Service-accueil";
+    pluralName: "service-accueils";
+    singularName: "service-accueil";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.titre", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::service-accueil.service-accueil"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceDevelopmentServiceDevelopment extends Struct.CollectionTypeSchema {
+  collectionName: "service_developments";
+  info: {
+    description: "";
+    displayName: "service-d\u00E9veloppement";
+    pluralName: "service-developments";
+    singularName: "service-development";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    ListItems: Schema.Attribute.Component<"component.titre", true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::service-development.service-development"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSiteInstitutionnelSiteInstitutionnel extends Struct.SingleTypeSchema {
+  collectionName: "site_institutionnels";
+  info: {
+    displayName: "Site institutionnel";
+    pluralName: "site-institutionnels";
+    singularName: "site-institutionnel";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::site-institutionnel.site-institutionnel"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSiteVitrineSiteVitrine extends Struct.SingleTypeSchema {
+  collectionName: "site_vitrines";
+  info: {
+    displayName: "site vitrine";
+    pluralName: "site-vitrines";
+    singularName: "site-vitrine";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::site-vitrine.site-vitrine"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sousTitre: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSuiviEtMaintienDeLAccessibiliteSuiviEtMaintienDeLAccessibilite extends Struct.SingleTypeSchema {
+  collectionName: "suivi_et_maintien_de_l_accessibilites";
+  info: {
+    displayName: "Suivi et maintien de l\u2019accessibilit\u00E9";
+    pluralName: "suivi-et-maintien-de-l-accessibilites";
+    singularName: "suivi-et-maintien-de-l-accessibilite";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contenu: Schema.Attribute.Component<"component.contenu", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      "oneToMany",
+      "api::suivi-et-maintien-de-l-accessibilite.suivi-et-maintien-de-l-accessibilite"
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTemoignageTemoignage extends Struct.SingleTypeSchema {
+  collectionName: "temoignages";
+  info: {
+    displayName: "t\u00E9moignage";
+    pluralName: "temoignages";
+    singularName: "temoignage";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    auteur: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::temoignage.temoignage"> & Schema.Attribute.Private;
+    metier: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    temoignage: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -991,15 +1931,51 @@ declare module "@strapi/strapi" {
       "admin::transfer-token": AdminTransferToken;
       "admin::transfer-token-permission": AdminTransferTokenPermission;
       "admin::user": AdminUser;
+      "api::accompagnement-operationnel.accompagnement-operationnel": ApiAccompagnementOperationnelAccompagnementOperationnel;
+      "api::accompagnement-strategique.accompagnement-strategique": ApiAccompagnementStrategiqueAccompagnementStrategique;
+      "api::approche-accompagnement.approche-accompagnement": ApiApprocheAccompagnementApprocheAccompagnement;
+      "api::approche-development.approche-development": ApiApprocheDevelopmentApprocheDevelopment;
+      "api::approche-inclusif-utilisateur.approche-inclusif-utilisateur": ApiApprocheInclusifUtilisateurApprocheInclusifUtilisateur;
+      "api::approche-pedagogique.approche-pedagogique": ApiApprochePedagogiqueApprochePedagogique;
+      "api::approche-test-utilisateur.approche-test-utilisateur": ApiApprocheTestUtilisateurApprocheTestUtilisateur;
+      "api::assistance-technique-et-correction.assistance-technique-et-correction": ApiAssistanceTechniqueEtCorrectionAssistanceTechniqueEtCorrection;
+      "api::audit-d-accessibilite.audit-d-accessibilite": ApiAuditDAccessibiliteAuditDAccessibilite;
+      "api::audits-de-conformite.audits-de-conformite": ApiAuditsDeConformiteAuditsDeConformite;
+      "api::creation-site-institutionnel.creation-site-institutionnel": ApiCreationSiteInstitutionnelCreationSiteInstitutionnel;
       "api::engagement.engagement": ApiEngagementEngagement;
+      "api::foire-aux-questions-audit.foire-aux-questions-audit": ApiFoireAuxQuestionsAuditFoireAuxQuestionsAudit;
+      "api::foire-aux-questions-utilisateur.foire-aux-questions-utilisateur": ApiFoireAuxQuestionsUtilisateurFoireAuxQuestionsUtilisateur;
+      "api::formation.formation": ApiFormationFormation;
       "api::inolib-academy.inolib-academy": ApiInolibAcademyInolibAcademy;
       "api::intro-a.intro-a": ApiIntroAIntroA;
+      "api::intro-accompagnement-technique.intro-accompagnement-technique": ApiIntroAccompagnementTechniqueIntroAccompagnementTechnique;
+      "api::intro-accompagnement.intro-accompagnement": ApiIntroAccompagnementIntroAccompagnement;
+      "api::intro-development.intro-development": ApiIntroDevelopmentIntroDevelopment;
+      "api::intro-formation.intro-formation": ApiIntroFormationIntroFormation;
+      "api::intro-page-accueille.intro-page-accueille": ApiIntroPageAccueilleIntroPageAccueille;
+      "api::intro-site-vitrine.intro-site-vitrine": ApiIntroSiteVitrineIntroSiteVitrine;
+      "api::intro-test-utilisateur.intro-test-utilisateur": ApiIntroTestUtilisateurIntroTestUtilisateur;
       "api::membre.membre": ApiMembreMembre;
       "api::mention-legale.mention-legale": ApiMentionLegaleMentionLegale;
+      "api::methodologie-audit.methodologie-audit": ApiMethodologieAuditMethodologieAudit;
       "api::mission.mission": ApiMissionMission;
+      "api::offres-d-audit.offres-d-audit": ApiOffresDAuditOffresDAudit;
+      "api::partenaire.partenaire": ApiPartenairePartenaire;
       "api::plan-du-site.plan-du-site": ApiPlanDuSitePlanDuSite;
+      "api::plus-loin-accompagnement.plus-loin-accompagnement": ApiPlusLoinAccompagnementPlusLoinAccompagnement;
+      "api::plus-loin.plus-loin": ApiPlusLoinPlusLoin;
       "api::politique-de-confidentialite.politique-de-confidentialite": ApiPolitiqueDeConfidentialitePolitiqueDeConfidentialite;
+      "api::pourquoi-development.pourquoi-development": ApiPourquoiDevelopmentPourquoiDevelopment;
       "api::qualiopi.qualiopi": ApiQualiopiQualiopi;
+      "api::recommandation-accompagnement.recommandation-accompagnement": ApiRecommandationAccompagnementRecommandationAccompagnement;
+      "api::referent-en-accessibilite.referent-en-accessibilite": ApiReferentEnAccessibiliteReferentEnAccessibilite;
+      "api::resultats-utilisateur.resultats-utilisateur": ApiResultatsUtilisateurResultatsUtilisateur;
+      "api::service-accueil.service-accueil": ApiServiceAccueilServiceAccueil;
+      "api::service-development.service-development": ApiServiceDevelopmentServiceDevelopment;
+      "api::site-institutionnel.site-institutionnel": ApiSiteInstitutionnelSiteInstitutionnel;
+      "api::site-vitrine.site-vitrine": ApiSiteVitrineSiteVitrine;
+      "api::suivi-et-maintien-de-l-accessibilite.suivi-et-maintien-de-l-accessibilite": ApiSuiviEtMaintienDeLAccessibiliteSuiviEtMaintienDeLAccessibilite;
+      "api::temoignage.temoignage": ApiTemoignageTemoignage;
       "api::valeur.valeur": ApiValeurValeur;
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;

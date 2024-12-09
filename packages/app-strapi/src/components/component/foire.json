@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_component_foires",
+  "info": {
+    "displayName": "foire"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "reponse": {
+      "type": "text"
+    }
+  }
+}

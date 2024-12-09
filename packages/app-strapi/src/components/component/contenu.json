@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_component_contenus",
+  "info": {
+    "displayName": "contenu",
+    "icon": "",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "lien": {
+      "type": "string"
+    }
+  }
+}

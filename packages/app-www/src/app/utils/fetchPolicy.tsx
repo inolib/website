@@ -884,3 +884,19 @@ export const fetchResultsData = async () => {
     })),
   };
 };
+
+export const fetchPosts = async (page: number) => {
+  const limit = 9;
+  const start = (page - 1) * limit;
+  const response = await fetch(`http://strapi:1337/api/articles?populate=*`, {
+    next: { revalidate: 60 },
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch articles");
+  }
+
+  const data = await response.json();
+  return data.data;
+  console.log("montre les posts", data);
+};

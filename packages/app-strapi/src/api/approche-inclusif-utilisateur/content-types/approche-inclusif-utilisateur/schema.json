@@ -1,0 +1,38 @@
+{
+  "kind": "singleType",
+  "collectionName": "approche_inclusif_utilisateurs",
+  "info": {
+    "singularName": "approche-inclusif-utilisateur",
+    "pluralName": "approche-inclusif-utilisateurs",
+    "displayName": "Approche inclusive utilisateur",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "contenu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.contenu"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "service_accueils",
+  "info": {
+    "singularName": "service-accueil",
+    "pluralName": "service-accueils",
+    "displayName": "Service-accueil"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "contenu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.titre"
+    }
+  }
+}

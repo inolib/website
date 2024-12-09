@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_component_image_partenaire_s",
+  "info": {
+    "displayName": "image-partenaire "
+  },
+  "options": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

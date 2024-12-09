@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "audits_de_conformites",
+  "info": {
+    "singularName": "audits-de-conformite",
+    "pluralName": "audits-de-conformites",
+    "displayName": "Intro Audits d'accessibilité ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "paragraphe": {
+      "type": "blocks"
+    }
+  }
+}

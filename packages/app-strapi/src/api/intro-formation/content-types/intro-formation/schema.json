@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intro_formations",
+  "info": {
+    "singularName": "intro-formation",
+    "pluralName": "intro-formations",
+    "displayName": "intro-formation",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "plus_loin_accompagnements",
+  "info": {
+    "singularName": "plus-loin-accompagnement",
+    "pluralName": "plus-loin-accompagnements",
+    "displayName": "plus loin Accompagnement",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "contenu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.contenu"
+    }
+  }
+}

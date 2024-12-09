@@ -19,6 +19,43 @@ export interface ComponentContactInfo extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentContenu extends Struct.ComponentSchema {
+  collectionName: "components_component_contenus";
+  info: {
+    description: "";
+    displayName: "contenu";
+    icon: "";
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    lien: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    titre: Schema.Attribute.String;
+  };
+}
+
+export interface ComponentFoire extends Struct.ComponentSchema {
+  collectionName: "components_component_foires";
+  info: {
+    displayName: "foire";
+  };
+  attributes: {
+    question: Schema.Attribute.Text;
+    reponse: Schema.Attribute.Text;
+  };
+}
+
+export interface ComponentImagePartenaire extends Struct.ComponentSchema {
+  collectionName: "components_component_image_partenaire_s";
+  info: {
+    displayName: "image-partenaire ";
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    titre: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentListItem extends Struct.ComponentSchema {
   collectionName: "components_component_list_items";
   info: {
@@ -26,7 +63,9 @@ export interface ComponentListItem extends Struct.ComponentSchema {
     displayName: "ListItem";
   };
   attributes: {
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     ListItem: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    titre: Schema.Attribute.String;
   };
 }
 
@@ -66,14 +105,32 @@ export interface ComponentSousLien extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentTitre extends Struct.ComponentSchema {
+  collectionName: "components_component_titres";
+  info: {
+    description: "";
+    displayName: "titre";
+  };
+  attributes: {
+    cles: Schema.Attribute.Component<"component.list-item", true>;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    text: Schema.Attribute.String;
+    titre: Schema.Attribute.String;
+  };
+}
+
 declare module "@strapi/strapi" {
   export module Public {
     export interface ComponentSchemas {
       "component.contact-info": ComponentContactInfo;
+      "component.contenu": ComponentContenu;
+      "component.foire": ComponentFoire;
+      "component.image-partenaire": ComponentImagePartenaire;
       "component.list-item": ComponentListItem;
       "component.privacy-policy-section": ComponentPrivacyPolicySection;
       "component.section": ComponentSection;
       "component.sous-lien": ComponentSousLien;
+      "component.titre": ComponentTitre;
     }
   }
 }

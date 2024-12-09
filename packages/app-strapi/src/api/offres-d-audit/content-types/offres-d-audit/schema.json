@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "offres_d_audits",
+  "info": {
+    "singularName": "offres-d-audit",
+    "pluralName": "offres-d-audits",
+    "displayName": "offres d’audit",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titre": {
+      "type": "string"
+    },
+    "contenu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.titre"
+    }
+  }
+}
