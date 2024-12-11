@@ -149,6 +149,4 @@ declare module "@strapi/strapi" {
     }
   }
 }
-/*
- * The app doesn't have any components yet.
- */
+
