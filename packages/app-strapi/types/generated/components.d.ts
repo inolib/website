@@ -1,5 +1,19 @@
 import type { Schema, Struct } from "@strapi/strapi";
 
+export interface ComponentArticle extends Struct.ComponentSchema {
+  collectionName: "components_component_articles";
+  info: {
+    description: "";
+    displayName: "article";
+  };
+  attributes: {
+    categorie: Schema.Attribute.Relation<"oneToMany", "api::categorie.categorie">;
+    date: Schema.Attribute.Date;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    titre: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentContactInfo extends Struct.ComponentSchema {
   collectionName: "components_component_contact_infos";
   info: {
@@ -122,6 +136,7 @@ export interface ComponentTitre extends Struct.ComponentSchema {
 declare module "@strapi/strapi" {
   export module Public {
     export interface ComponentSchemas {
+      "component.article": ComponentArticle;
       "component.contact-info": ComponentContactInfo;
       "component.contenu": ComponentContenu;
       "component.foire": ComponentFoire;

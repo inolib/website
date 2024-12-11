@@ -524,6 +524,35 @@ export interface ApiApprocheTestUtilisateurApprocheTestUtilisateur extends Struc
   };
 }
 
+export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
+  collectionName: "articles";
+  info: {
+    description: "";
+    displayName: "article";
+    pluralName: "articles";
+    singularName: "article";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Auteur: Schema.Attribute.Enumeration<["Djebrine Aloui", "Maria Grairi"]>;
+    Categorie: Schema.Attribute.Enumeration<["Audit", "Accessibilit\u00E9", "RGAA"]>;
+    contenu: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    image: Schema.Attribute.Media<"images">;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::article.article"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<"titre">;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiAssistanceTechniqueEtCorrectionAssistanceTechniqueEtCorrection extends Struct.SingleTypeSchema {
   collectionName: "assistance_technique_et_corrections";
   info: {
@@ -599,6 +628,28 @@ export interface ApiAuditsDeConformiteAuditsDeConformite extends Struct.SingleTy
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.Text;
     titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
+  collectionName: "categories";
+  info: {
+    displayName: "categorie";
+    pluralName: "categories";
+    singularName: "categorie";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categorie: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::categorie.categorie"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -1499,6 +1550,30 @@ export interface ApiTemoignageTemoignage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTitreArticleTitreArticle extends Struct.CollectionTypeSchema {
+  collectionName: "titre_articles";
+  info: {
+    displayName: "Titre Article";
+    pluralName: "titre-articles";
+    singularName: "titre-article";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::titre-article.titre-article"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<"titre">;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiValeurValeur extends Struct.CollectionTypeSchema {
   collectionName: "valeurs";
   info: {
@@ -1518,6 +1593,91 @@ export interface ApiValeurValeur extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<"oneToMany", "api::valeur.valeur"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface PluginCommentsComment extends Struct.CollectionTypeSchema {
+  collectionName: "comments_comment";
+  info: {
+    description: "Comment content type";
+    displayName: "Comment";
+    kind: "collectionType";
+    pluralName: "comments";
+    singularName: "comment";
+    tableName: "plugin-comments-comments";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    "content-manager": {
+      visible: false;
+    };
+    "content-type-builder": {
+      visible: false;
+    };
+  };
+  attributes: {
+    approvalStatus: Schema.Attribute.String;
+    authorAvatar: Schema.Attribute.String;
+    authorEmail: Schema.Attribute.Email;
+    authorId: Schema.Attribute.String;
+    authorName: Schema.Attribute.String;
+    authorUser: Schema.Attribute.Relation<"oneToOne", "plugin::users-permissions.user">;
+    blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    blockedThread: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    blockReason: Schema.Attribute.String;
+    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    isAdminComment: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "plugin::comments.comment"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    related: Schema.Attribute.String;
+    removed: Schema.Attribute.Boolean;
+    reports: Schema.Attribute.Relation<"oneToMany", "plugin::comments.comment-report">;
+    threadOf: Schema.Attribute.Relation<"oneToOne", "plugin::comments.comment">;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface PluginCommentsCommentReport extends Struct.CollectionTypeSchema {
+  collectionName: "comments_comment-report";
+  info: {
+    description: "Reports content type";
+    displayName: "Reports";
+    kind: "collectionType";
+    pluralName: "comment-reports";
+    singularName: "comment-report";
+    tableName: "plugin-comments-reports";
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    "content-manager": {
+      visible: false;
+    };
+    "content-type-builder": {
+      visible: false;
+    };
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "plugin::comments.comment-report"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    reason: Schema.Attribute.Enumeration<["BAD_LANGUAGE", "DISCRIMINATION", "OTHER"]> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<"OTHER">;
+    related: Schema.Attribute.Relation<"manyToOne", "plugin::comments.comment">;
+    resolved: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -1938,9 +2098,11 @@ declare module "@strapi/strapi" {
       "api::approche-inclusif-utilisateur.approche-inclusif-utilisateur": ApiApprocheInclusifUtilisateurApprocheInclusifUtilisateur;
       "api::approche-pedagogique.approche-pedagogique": ApiApprochePedagogiqueApprochePedagogique;
       "api::approche-test-utilisateur.approche-test-utilisateur": ApiApprocheTestUtilisateurApprocheTestUtilisateur;
+      "api::article.article": ApiArticleArticle;
       "api::assistance-technique-et-correction.assistance-technique-et-correction": ApiAssistanceTechniqueEtCorrectionAssistanceTechniqueEtCorrection;
       "api::audit-d-accessibilite.audit-d-accessibilite": ApiAuditDAccessibiliteAuditDAccessibilite;
       "api::audits-de-conformite.audits-de-conformite": ApiAuditsDeConformiteAuditsDeConformite;
+      "api::categorie.categorie": ApiCategorieCategorie;
       "api::creation-site-institutionnel.creation-site-institutionnel": ApiCreationSiteInstitutionnelCreationSiteInstitutionnel;
       "api::engagement.engagement": ApiEngagementEngagement;
       "api::foire-aux-questions-audit.foire-aux-questions-audit": ApiFoireAuxQuestionsAuditFoireAuxQuestionsAudit;
@@ -1976,7 +2138,10 @@ declare module "@strapi/strapi" {
       "api::site-vitrine.site-vitrine": ApiSiteVitrineSiteVitrine;
       "api::suivi-et-maintien-de-l-accessibilite.suivi-et-maintien-de-l-accessibilite": ApiSuiviEtMaintienDeLAccessibiliteSuiviEtMaintienDeLAccessibilite;
       "api::temoignage.temoignage": ApiTemoignageTemoignage;
+      "api::titre-article.titre-article": ApiTitreArticleTitreArticle;
       "api::valeur.valeur": ApiValeurValeur;
+      "plugin::comments.comment": PluginCommentsComment;
+      "plugin::comments.comment-report": PluginCommentsCommentReport;
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;
       "plugin::i18n.locale": PluginI18NLocale;

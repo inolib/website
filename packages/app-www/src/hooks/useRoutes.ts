@@ -7,6 +7,11 @@ export type Routes = Record<
 >;
 
 export const useRoutes = (): Routes => ({
+
+  "/blog/test2": {
+    isActive: true,
+    title: "test",
+  },
   "/blog/test-article": {
     isActive: true,
     title: "test",

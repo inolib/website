@@ -885,18 +885,35 @@ export const fetchResultsData = async () => {
   };
 };
 
-export const fetchPosts = async (page: number) => {
-  const limit = 9;
-  const start = (page - 1) * limit;
-  const response = await fetch(`http://strapi:1337/api/articles?populate=*`, {
-    next: { revalidate: 60 },
-  });
+export const fetchPosts = async (slug: string) => {
+  console.log("affiche un article et son slug",slug)
+  const res = await fetch("http://strapi:1337/api/articles?populate=*");
 
-  if (!response.ok) {
+  if (!res.ok) {
     throw new Error("Failed to fetch articles");
   }
 
-  const data = await response.json();
+  const data = await res.json();
+console.log("affiche tous les posts" ,data)
+  if (data?.data?.length === 0) {
+    throw new Error("Article not found");
+  }
+
   return data.data;
-  console.log("montre les posts", data);
+};
+export const fetchPost = async (slug: string) => {
+  console.log("affiche un article et son slug",slug)
+  const res = await fetch(`http://strapi:1337/api/articles?filters[slug][$eq]=${slug}&populate=*`);
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch articles");
+  }
+
+  const data = await res.json();
+console.log("affiche tous les posts" ,data)
+  if (data?.data?.length === 0) {
+    throw new Error("Article not found");
+  }
+
+  return data.data;
 };

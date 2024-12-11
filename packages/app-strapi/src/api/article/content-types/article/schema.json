@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "contenu": {
+      "type": "blocks"
+    },
+    "Categorie": {
+      "type": "enumeration",
+      "enum": [
+        "Audit",
+        "Accessibilité",
+        "RGAA"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titre"
+    },
+    "Auteur": {
+      "type": "enumeration",
+      "enum": [
+        "Djebrine Aloui",
+        "Maria Grairi"
+      ]
+    }
+  }
+}
