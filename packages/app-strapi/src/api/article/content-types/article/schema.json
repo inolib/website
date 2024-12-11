@@ -15,9 +15,6 @@
     "titre": {
       "type": "string"
     },
-    "date": {
-      "type": "date"
-    },
     "contenu": {
       "type": "blocks"
     },
@@ -47,6 +44,15 @@
         "Djebrine Aloui",
         "Maria Grairi"
       ]
+    },
+    "commentaires": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::commentaire.commentaire",
+      "mappedBy": "articles"
+    },
+    "Date": {
+      "type": "date"
     }
   }
 }

@@ -538,10 +538,11 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   attributes: {
     Auteur: Schema.Attribute.Enumeration<["Djebrine Aloui", "Maria Grairi"]>;
     Categorie: Schema.Attribute.Enumeration<["Audit", "Accessibilit\u00E9", "RGAA"]>;
+    commentaires: Schema.Attribute.Relation<"manyToMany", "api::commentaire.commentaire">;
     contenu: Schema.Attribute.Blocks;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
-    date: Schema.Attribute.Date;
+    Date: Schema.Attribute.Date;
     image: Schema.Attribute.Media<"images">;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::article.article"> & Schema.Attribute.Private;
@@ -655,6 +656,31 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCommentaireCommentaire extends Struct.CollectionTypeSchema {
+  collectionName: "commentaires";
+  info: {
+    displayName: "commentaire";
+    pluralName: "commentaires";
+    singularName: "commentaire";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<"manyToMany", "api::article.article">;
+    Auteur: Schema.Attribute.String;
+    contenu: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    Date: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::commentaire.commentaire"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCreationSiteInstitutionnelCreationSiteInstitutionnel extends Struct.SingleTypeSchema {
   collectionName: "creation_site_institutionnels";
   info: {
@@ -756,6 +782,31 @@ export interface ApiFoireAuxQuestionsUtilisateurFoireAuxQuestionsUtilisateur ext
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.Text;
     titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
+  collectionName: "footers";
+  info: {
+    displayName: "Footer";
+    pluralName: "footers";
+    singularName: "footer";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    imageQualiopi: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    lien: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::footer.footer"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    site: Schema.Attribute.String;
+    textQualiopi: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -1599,7 +1650,7 @@ export interface ApiValeurValeur extends Struct.CollectionTypeSchema {
 }
 
 export interface PluginCommentsComment extends Struct.CollectionTypeSchema {
-  collectionName: "comments_comment";
+  collectionName: "plugin_comments_comments";
   info: {
     description: "Comment content type";
     displayName: "Comment";
@@ -1620,7 +1671,7 @@ export interface PluginCommentsComment extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    approvalStatus: Schema.Attribute.String;
+    approvalStatus: Schema.Attribute.Enumeration<["PENDING", "APPROVED", "REJECTED"]>;
     authorAvatar: Schema.Attribute.String;
     authorEmail: Schema.Attribute.Email;
     authorId: Schema.Attribute.String;
@@ -1646,7 +1697,7 @@ export interface PluginCommentsComment extends Struct.CollectionTypeSchema {
 }
 
 export interface PluginCommentsCommentReport extends Struct.CollectionTypeSchema {
-  collectionName: "comments_comment-report";
+  collectionName: "plugin_comments_reports";
   info: {
     description: "Reports content type";
     displayName: "Reports";
@@ -2103,10 +2154,12 @@ declare module "@strapi/strapi" {
       "api::audit-d-accessibilite.audit-d-accessibilite": ApiAuditDAccessibiliteAuditDAccessibilite;
       "api::audits-de-conformite.audits-de-conformite": ApiAuditsDeConformiteAuditsDeConformite;
       "api::categorie.categorie": ApiCategorieCategorie;
+      "api::commentaire.commentaire": ApiCommentaireCommentaire;
       "api::creation-site-institutionnel.creation-site-institutionnel": ApiCreationSiteInstitutionnelCreationSiteInstitutionnel;
       "api::engagement.engagement": ApiEngagementEngagement;
       "api::foire-aux-questions-audit.foire-aux-questions-audit": ApiFoireAuxQuestionsAuditFoireAuxQuestionsAudit;
       "api::foire-aux-questions-utilisateur.foire-aux-questions-utilisateur": ApiFoireAuxQuestionsUtilisateurFoireAuxQuestionsUtilisateur;
+      "api::footer.footer": ApiFooterFooter;
       "api::formation.formation": ApiFormationFormation;
       "api::inolib-academy.inolib-academy": ApiInolibAcademyInolibAcademy;
       "api::intro-a.intro-a": ApiIntroAIntroA;
