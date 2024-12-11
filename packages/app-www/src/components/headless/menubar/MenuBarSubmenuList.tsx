@@ -1,15 +1,9 @@
 import { forwardRef, type HTMLAttributes } from "react";
 
-import { useMenuBarSubmenu } from "./MenuBarSubmenu";
-
 export type MenuBarSubmenuListProps = HTMLAttributes<HTMLUListElement>;
 
-export const MenuBarSubmenuList = forwardRef<HTMLUListElement, MenuBarSubmenuListProps>(
-  ({ style, ...passthru }, ref) => {
-    const navMenuBarMenu = useMenuBarSubmenu();
-
-    return <ul ref={ref} style={navMenuBarMenu.isExpanded() ? style : { display: "none", ...style }} {...passthru} />;
-  },
-);
+export const MenuBarSubmenuList = forwardRef<HTMLUListElement, MenuBarSubmenuListProps>(({ ...passthru }, ref) => {
+  return <ul ref={ref} {...passthru} />;
+});
 
 MenuBarSubmenuList.displayName = "MenuBarSubmenuList";

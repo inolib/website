@@ -1,29 +1,34 @@
-import type { ReadonlySignal } from "@preact/signals-react";
+import type { ValidationError } from "@tanstack/react-form";
 import { forwardRef, useId, type InputHTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "~/helpers";
 
 import CheckIcon from "#/images/icons/check.svg";
 
-export type CheckboxFieldProps = {
-  _error: ReadonlySignal<string>;
+export type CheckboxFieldProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "aria-describedby" | "aria-invalid" | "id" | "type"
+> & {
+  _errors: ValidationError[];
   _label: ReactNode;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, "aria-describedby" | "aria-invalid" | "id" | "type">;
+};
 
 export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
-  ({ _error, _label, className, ...passthru }, ref) => {
+  ({ _errors, _label, className, ...passthru }, ref) => {
     const id = useId();
+
+    const hasError = _errors.length > 0;
 
     return (
       <div className="flex flex-col gap-2">
         <div className="relative flex items-center gap-2">
           <input
             aria-describedby={`${id}-error`}
-            aria-invalid={_error.value !== ""}
+            aria-invalid={hasError}
             className={cn(
-              "peer/input size-6 shrink-0 cursor-pointer appearance-none rounded-md border border-blue-600 outline-none checked:bg-blue-900 hover:bg-blue-50 hover:checked:bg-blue-900 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-600",
+              "size-6 shrink-0 cursor-pointer appearance-none rounded-md border border-blue-600 outline-none transition-all duration-300 checked:bg-blue-900 hover:bg-blue-50 hover:checked:bg-blue-900 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-600",
               {
-                "border-red-600 focus-visible:outline-red-600": _error.value !== "",
+                "border-red-600 focus-visible:outline-red-600": hasError,
               },
               className,
             )}
@@ -33,17 +38,17 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
             {...passthru}
           />
 
+          <div className="pointer-events-none absolute flex size-6 items-center justify-center">
+            <CheckIcon className="size-0 stroke-white transition-all duration-300 [:checked+div>&]:size-[1.125rem]" />
+          </div>
+
           <label className="cursor-pointer" htmlFor={id}>
             {_label}
           </label>
-
-          <div className="pointer-events-none absolute hidden size-6 items-center justify-center peer-checked/input:flex">
-            <CheckIcon className="stroke-white" />
-          </div>
         </div>
 
         <p className="text-red-600" id={`${id}-error`}>
-          {_error.value}
+          {hasError ? (_errors[0] as string).split(", ")[0] : undefined}
         </p>
       </div>
     );

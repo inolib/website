@@ -1,5 +1,6 @@
 /** @type {import("next").NextConfig} */
 export default {
+  compress: false,
   experimental: {
     cpus: 1,
     workerThreads: false,
@@ -43,17 +44,7 @@ export default {
             options: {
               icon: true,
               svgoConfig: {
-                plugins: [
-                  {
-                    name: "removeUselessStrokeAndFill",
-                    params: {
-                      stroke: false,
-                      fill: false,
-                      removeNone: false,
-                    },
-                  },
-                  "removeXMLNS",
-                ],
+                plugins: ["removeXMLNS"],
               },
             },
           },

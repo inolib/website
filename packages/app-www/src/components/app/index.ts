@@ -4,6 +4,7 @@ export * from "./Contact";
 export * from "./ContentInfo";
 export * from "./Header";
 export * from "./Link";
+export * from "./Nav";
 export * from "./Orejime";
 export * from "./ScrollingText";
 export * from "./Services";

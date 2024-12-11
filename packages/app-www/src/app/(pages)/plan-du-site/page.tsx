@@ -19,12 +19,10 @@ const Page = () => {
             <HeadingContent _level={1}>Plan du site</HeadingContent>
           </Heading>
         </TwoColumnsFlexLayoutColumn>
-
-        <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
 
       <nav aria-label="Plan du site">
-        <UnorderedList className="flex flex-col gap-2">
+        <UnorderedList className="flex list-none flex-col gap-2 pl-0">
           <UnorderedListItem>
             <Link href="/">Accueil</Link>
           </UnorderedListItem>
@@ -42,7 +40,7 @@ const Page = () => {
             <p>Audit</p>
             <UnorderedList className="flex flex-col gap-2">
               <UnorderedListItem>
-                <Link href="/audit/audit-de-conformite">Audit de conformité</Link>
+                <Link href="/audit/audits-accessibilité">Audits d’accessibilité</Link>
               </UnorderedListItem>
               <UnorderedListItem>
                 <Link href="/audit/tests-utilisateurs">Tests utilisateurs</Link>
@@ -54,7 +52,7 @@ const Page = () => {
             <p>Accompagnement</p>
             <UnorderedList className="flex flex-col gap-2">
               <UnorderedListItem>
-                <Link href="/accompagnement/accompagnement-de-projet">Accompagnement de projet</Link>
+                <Link href="/accompagnement/pilotage-de-projet">Pilotage de projet</Link>
               </UnorderedListItem>
               <UnorderedListItem>
                 <Link href="/accompagnement/accompagnement-technique">Accompagnement technique</Link>
@@ -72,10 +70,10 @@ const Page = () => {
           </UnorderedListItem>
 
           <UnorderedListItem className="flex flex-col gap-2">
-            <Link href="/inolib-academy">INOLIB Academy</Link>
+            <Link href="/formations">Formations</Link>
             <UnorderedList className="flex flex-col gap-2">
               <UnorderedListItem>
-                <Link href="/inolib-academy/certificat-qualiopi">Certificat Qualiopi</Link>
+                <Link href="/formations/certificat-qualiopi">Certificat Qualiopi</Link>
               </UnorderedListItem>
             </UnorderedList>
           </UnorderedListItem>

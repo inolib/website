@@ -8,7 +8,7 @@ import { Section } from "~/components/section";
 import { Verbose, VerboseContent, VerboseIllustration } from "~/components/verbose";
 import { tv } from "~/helpers";
 
-import auditIllustration from "#/images/illustrations/audit.svg?url";
+import tailoredApproachIllustration from "#/images/illustrations/app/(pages)/audit/(subpages)/tests-utilisateurs/tailored-approach.svg?url";
 
 const variants = tv({
   slots: {
@@ -26,11 +26,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type TailoredApproachProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const TailoredApproach = ({ _color }: TailoredApproachProps) => {
   const { sectionClassName } = variants({ _color });
@@ -108,7 +108,7 @@ export const TailoredApproach = ({ _color }: TailoredApproachProps) => {
         </VerboseContent>
 
         <VerboseIllustration>
-          <Image alt="" className="h-96" src={auditIllustration} />
+          <Image alt="" className="max-h-96 w-auto" src={tailoredApproachIllustration} />
         </VerboseIllustration>
       </Verbose>
     </Section>

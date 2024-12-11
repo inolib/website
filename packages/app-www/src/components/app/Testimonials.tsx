@@ -3,19 +3,18 @@ import type { VariantProps } from "tailwind-variants";
 import { Slideshow, SlideshowNextButton, SlideshowPreviousButton, SlideshowSlide } from "~/components/headless";
 import { tv } from "~/helpers";
 
-import ArrowNarrowLeftIcon from "#/images/icons/arrow-narrow-left.svg";
-import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
+import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
 
 const variants = tv({
   slots: {
     slideshowClassName:
       "flex flex-wrap items-center justify-between gap-x-16 gap-y-8 px-[4dvw] py-24 md:flex-nowrap xl:px-[8dvw]",
     slideshowNextButtonClassName:
-      "rounded-full border p-4 outline-none focus-visible:outline-4 focus-visible:outline-offset-4",
-    slideshowNextButtonIconClassName: "size-6",
+      "rounded-full border p-4 outline-none transition-all duration-300 focus-visible:outline-4 focus-visible:outline-offset-4",
+    slideshowNextButtonIconClassName: "size-6 -rotate-90",
     slideshowPreviousButtonClassName:
-      "rounded-full border p-4 outline-none focus-visible:outline-4 focus-visible:outline-offset-4 md:order-first",
-    slideshowPreviousButtonIconClassName: "size-6",
+      "rounded-full border p-4 outline-none transition-all duration-300 focus-visible:outline-4 focus-visible:outline-offset-4 md:order-first",
+    slideshowPreviousButtonIconClassName: "size-6 rotate-90",
     slideshowSlideClassName: "flex flex-col gap-8",
     slideshowSlideRoleClassName: "",
   },
@@ -34,11 +33,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type TestimonialsProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const Testimonials = ({ _color }: TestimonialsProps) => {
   const {
@@ -53,20 +52,10 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
 
   const testimonials = [
     {
-      testimony: "INOLIB nous a permis d’atteindre les standards d’accessibilité et ainsi améliorer notre SEO.",
-      name: "Sienna Hewitt",
-      role: "Project Manager, Layers",
-    },
-    {
-      testimony: "Un service exceptionnel qui a transformé notre approche de l’accessibilité.",
-      name: "John Doe",
-      role: "CEO, Company",
-    },
-    {
       testimony:
-        "Grâce à INOLIB, notre site est désormais accessible à tous et notre SEO s’est considérablement amélioré.",
-      name: "Jane Smith",
-      role: "Marketing Director, Brand",
+        "Nous recommandons INOLIB pour leurs compétences techniques et humaines. C’était un plaisir de travailler ensemble.",
+      name: "Dora BLASBERG",
+      role: "Psychologue et conférencière, cofondatrice de ProAdapt",
     },
   ];
 
@@ -75,7 +64,7 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
       <div>
         {testimonials.map((item, index) => (
           <SlideshowSlide aria-roledescription="diapositive" className={slideshowSlideClassName()} key={index}>
-            <p className="text-3xl sm:h-[11.25rem] sm:text-4xl lg:h-60 lg:text-5xl">{item.testimony}</p>
+            <p className="text-3xl sm:text-4xl">{item.testimony}</p>
 
             <div>
               <p className="text-2xl">{item.name}</p>
@@ -87,7 +76,7 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
 
       {testimonials.length > 1 ? (
         <SlideshowPreviousButton className={slideshowPreviousButtonClassName()} title="Témoignage précédent">
-          <ArrowNarrowLeftIcon aria-label="Témoignage précédent" className={slideshowPreviousButtonIconClassName()} />
+          <ArrowNarrowDownIcon aria-label="Témoignage précédent" className={slideshowPreviousButtonIconClassName()} />
         </SlideshowPreviousButton>
       ) : (
         <div className="border border-transparent p-7 md:order-first" />
@@ -95,7 +84,7 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
 
       {testimonials.length > 1 ? (
         <SlideshowNextButton className={slideshowNextButtonClassName()} title="Témoignage suivant">
-          <ArrowNarrowRightIcon aria-label="Témoignage suivant" className={slideshowNextButtonIconClassName()} />
+          <ArrowNarrowDownIcon aria-label="Témoignage suivant" className={slideshowNextButtonIconClassName()} />
         </SlideshowNextButton>
       ) : (
         <div className="border border-transparent p-7" />

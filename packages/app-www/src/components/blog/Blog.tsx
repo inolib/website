@@ -14,19 +14,30 @@ type Post = {
   id: number;
   titre: string;
   slug: string;
-  date: string;
-  contenu: Array<{
-    type: string;
-    children: Array<{
-      type: string;
-      text: string;
+  title: {
+    rendered: string;
+  };
+  _embedded: {
+    author: Array<{
+      name: string;
     }>;
-  }>;
-  Categorie: string;
-  Auteur: string | null;
-  image: {
-    url: string;
-    alternativeText: string | null;
+    "wp:featuredmedia": Array<{
+      alt_text: string;
+      media_details: {
+        sizes: {
+          full: {
+            height: number;
+            source_url: string;
+            width: number;
+          };
+        };
+      };
+    }>;
+    "wp:term": Array<
+      Array<{
+        name: string;
+      }>
+    >;
   };
 };
 
@@ -76,7 +87,7 @@ export const Blog = async ({ _count, _headingLevel }: BlogProps) => {
 
             <Link _border="black" _color="white" _shape="button" href={`/blog/${item.slug}`}>
               <span>Lire l’article</span>
-              <ArrowNarrowRightIcon className="stroke-black" />
+              <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
             </Link>
 
             <div>

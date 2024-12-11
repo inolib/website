@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { VariantProps } from "tailwind-variants";
 
-import { BoxCard, BoxCardContent, BoxCardIcon } from "~/components/card";
+import { BoxCard, BoxCardContent } from "~/components/card";
 import { Heading, HeadingContent } from "~/components/heading";
 import {
   Highlights,
@@ -10,12 +10,22 @@ import {
   HighlightsListItem,
   HighlightsUnorderedList,
 } from "~/components/highlights";
+import { RoundedIcon } from "~/components/icon";
 import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import ArrowNarrowRightIcon from "#/images/icons/arrow-narrow-right.svg";
-import developmentIllustration from "#/images/illustrations/development.svg?url";
+import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
+import Building02Icon from "#/images/icons/building-02.svg";
+import Building08Icon from "#/images/icons/building-08.svg";
+import Image05Icon from "#/images/icons/image-05.svg";
+import Phone01Icon from "#/images/icons/phone-01.svg";
+import RulerIcon from "#/images/icons/ruler.svg";
+import ShoppingBag03Icon from "#/images/icons/shopping-bag-03.svg";
+import designIllustration from "#/images/illustrations/app/(pages)/developpement/design.svg?url";
+import mobileAppIllustration from "#/images/illustrations/app/(pages)/developpement/mobile-app.svg?url";
+import saasIllustration from "#/images/illustrations/app/(pages)/developpement/saas.svg?url";
+import websiteIllustration from "#/images/illustrations/app/(pages)/developpement/website.svg?url";
 
 const variants = tv({
   slots: {
@@ -33,11 +43,11 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type ServicesProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const Services = ({ _color }: ServicesProps) => {
   const { sectionClassName } = variants({ _color });
@@ -47,7 +57,7 @@ export const Services = ({ _color }: ServicesProps) => {
       title: "Développement de sites web",
       highlights: [
         {
-          icon: <></>,
+          icon: <Building02Icon className="size-6 stroke-yellow-500" />,
           title: "Site vitrines",
           description:
             "Améliorez votre visibilité en ligne avec un site vitrine élégant et intuitif. Offrez à vos visiteurs une expérience utilisateur optimale.",
@@ -57,7 +67,7 @@ export const Services = ({ _color }: ServicesProps) => {
           },
         },
         {
-          icon: <></>,
+          icon: <Building08Icon className="size-6 stroke-yellow-500" />,
           title: "Sites institutionnels",
           description:
             "Valorisez vos activités et vos valeurs. Nos sites institutionnels transmettent vos messages clés de manière claire et impactante.",
@@ -67,49 +77,49 @@ export const Services = ({ _color }: ServicesProps) => {
           },
         },
         {
-          icon: <></>,
+          icon: <ShoppingBag03Icon className="size-6 stroke-yellow-500" />,
           title: "Solutions e-commerce",
           description:
             "Lancez une boutique en ligne performante avec des fonctionnalités adaptées à vos besoins. Chaque solution est optimisée pour une expérience d’achat fluide et une augmentation des conversions.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: websiteIllustration,
     },
     {
       title: "Développement d’applications mobiles",
       highlights: [
         {
-          icon: <></>,
+          icon: <Phone01Icon className="size-6 stroke-yellow-500" />,
           title: "Applications natives et hybrides",
           description:
             "Créez des applications mobiles sur mesure pour iOS et Android. Nos solutions allient performance et facilité d’utilisation.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: mobileAppIllustration,
     },
     {
       title: "Développement de solutions SaaS",
       highlights: [
         {
-          icon: <></>,
+          icon: <RulerIcon className="size-6 stroke-yellow-500" />,
           title: "Logiciels sur mesure",
           description:
             "Optimisez vos processus avec des logiciels SaaS personnalisés, conçus pour soutenir la croissance de votre entreprise.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: saasIllustration,
     },
     {
       title: "Design et branding",
       highlights: [
         {
-          icon: <></>,
+          icon: <Image05Icon className="size-6 stroke-yellow-500" />,
           title: "UI/UX et identité visuelle",
           description:
             "Renforcez votre identité visuelle avec des interfaces marquantes. Nous créons des expériences utilisateur intuitives et attractives.",
         },
       ],
-      illustration: developmentIllustration,
+      illustration: designIllustration,
     },
   ];
 
@@ -130,11 +140,15 @@ export const Services = ({ _color }: ServicesProps) => {
               {item.highlights.map((item, index) => (
                 <HighlightsListItem key={index}>
                   <BoxCard>
-                    <BoxCardIcon className="my-auto">{item.icon}</BoxCardIcon>
-
                     <BoxCardContent>
                       <div className="flex flex-col gap-4">
-                        <p className="text-xl font-bold">{item.title}</p>
+                        <div className="flex items-center gap-4">
+                          <RoundedIcon className="size-12 bg-blue-300">
+                            <RoundedIcon className="size-9 bg-blue-900">{item.icon}</RoundedIcon>
+                          </RoundedIcon>
+
+                          <p className="text-xl font-bold">{item.title}</p>
+                        </div>
                         <p>{item.description}</p>
                       </div>
 
@@ -147,7 +161,7 @@ export const Services = ({ _color }: ServicesProps) => {
                           href={item.link.href}
                         >
                           <span>En savoir plus</span>
-                          <ArrowNarrowRightIcon className="stroke-black" />
+                          <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
                         </Link>
                       )}
                     </BoxCardContent>
@@ -162,7 +176,7 @@ export const Services = ({ _color }: ServicesProps) => {
           </HighlightsContent>
 
           <HighlightsIllustration>
-            <Image alt="" className="h-96" src={item.illustration} />
+            <Image alt="" className="max-h-96 w-auto" src={item.illustration} />
           </HighlightsIllustration>
         </Highlights>
       ))}

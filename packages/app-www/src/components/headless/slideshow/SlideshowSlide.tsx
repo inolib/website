@@ -18,7 +18,7 @@ export const SlideshowSlide = forwardRef<HTMLDivElement, SlideshowSlideProps>(({
 
   const [isSelected, setIsSelected] = useState<boolean>(false);
 
-  const slide: SlideshowSlideObject = useMemo(
+  const slideshowSlide: SlideshowSlideObject = useMemo(
     () => ({
       getId: () => id,
       hide: () => {
@@ -32,8 +32,8 @@ export const SlideshowSlide = forwardRef<HTMLDivElement, SlideshowSlideProps>(({
   );
 
   useEffect(() => {
-    slideshow.pushSlide(slide);
-  }, [slide, slideshow]);
+    slideshow.pushSlide(slideshowSlide);
+  }, [slideshowSlide, slideshow]);
 
   return (
     <div data-id={id} ref={ref} role="group" style={isSelected ? style : { display: "none", ...style }} {...passthru} />

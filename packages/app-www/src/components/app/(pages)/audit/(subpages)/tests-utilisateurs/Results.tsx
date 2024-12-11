@@ -1,13 +1,14 @@
 import type { VariantProps } from "tailwind-variants";
 
 import { Heading, HeadingContent, HeadingSubheading } from "~/components/heading";
+import { RoundedIcon } from "~/components/icon";
 import { FlexGridList, FlexGridListItem } from "~/components/list";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import BrowserFramedIcon from "#/images/icons/framed/browser.svg";
-import HeartFramedIcon from "#/images/icons/framed/heart.svg";
-import MessageSmileCircleFramedIcon from "#/images/icons/framed/message-smile-circle.svg";
+import LineChartUp02Icon from "#/images/icons/line-chart-up-02.svg";
+import MessageSmileSquareIcon from "#/images/icons/message-smile-square.svg";
+import ZapFastIcon from "#/images/icons/zap-fast.svg";
 
 const variants = tv({
   slots: {
@@ -25,28 +26,28 @@ const variants = tv({
   },
 });
 
-type Variants = VariantProps<typeof variants>;
-
 type ResultsProps = {
   _color: NonNullable<Variants["_color"]>;
 };
+
+type Variants = VariantProps<typeof variants>;
 
 export const Results = ({ _color }: ResultsProps) => {
   const { sectionClassName } = variants({ _color });
 
   const values = [
     {
-      icon: <BrowserFramedIcon className="size-12" />,
+      icon: <ZapFastIcon className="size-6 stroke-yellow-500" />,
       title: "Amélioration de l’expérience utilisateur",
       description: "Éliminer les obstacles et proposer une interaction plus fluide.",
     },
     {
-      icon: <HeartFramedIcon className="size-12" />,
+      icon: <LineChartUp02Icon className="size-6 stroke-yellow-500" />,
       title: "Augmentation des conversions",
       description: "Des interfaces optimisées qui favorisent une navigation plus efficace et attractive.",
     },
     {
-      icon: <MessageSmileCircleFramedIcon className="size-12" />,
+      icon: <MessageSmileSquareIcon className="size-6 stroke-yellow-500" />,
       title: "Réduction des demandes de support",
       description: "En anticipant les problèmes d’utilisabilité, vous limitez les besoins d’assistance.",
     },
@@ -68,7 +69,9 @@ export const Results = ({ _color }: ResultsProps) => {
       <FlexGridList>
         {values.map((item, index) => (
           <FlexGridListItem key={index}>
-            {item.icon}
+            <RoundedIcon className="size-12 bg-blue-300">
+              <RoundedIcon className="size-9 bg-blue-900">{item.icon}</RoundedIcon>
+            </RoundedIcon>
 
             <p className="text-2xl font-bold">{item.title}</p>
             <p>{item.description}</p>

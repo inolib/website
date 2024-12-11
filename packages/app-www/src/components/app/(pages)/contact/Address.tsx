@@ -1,14 +1,15 @@
+import { SquaredIcon } from "~/components/icon";
 import { Link } from "~/components/link";
 
-import MarkerPinSquaredIcon from "#/images/icons/squared/marker-pin-02.svg";
-import MessageSmileCircleSquaredIcon from "#/images/icons/squared/message-smile-circle.svg";
-import PhoneSquaredIcon from "#/images/icons/squared/phone.svg";
+import Mail02Icon from "#/images/icons/mail-02.svg";
+import MarkerPin01Icon from "#/images/icons/marker-pin-01.svg";
+import PhoneIcon from "#/images/icons/phone.svg";
 
 export const Address = () => {
   const address = [
     {
-      icon: <MessageSmileCircleSquaredIcon className="size-12" />,
-      title: "Écrivez-nous à",
+      icon: <Mail02Icon className="size-6 stroke-yellow-500" />,
+      title: "E-mail",
       content: (
         <Link
           _color="transparent"
@@ -21,8 +22,8 @@ export const Address = () => {
       ),
     },
     {
-      icon: <PhoneSquaredIcon className="size-12" />,
-      title: "Appelez-nous au",
+      icon: <PhoneIcon className="size-6 stroke-yellow-500" />,
+      title: "Téléphone",
       content: (
         <div className="flex flex-col gap-4">
           <p>
@@ -36,12 +37,12 @@ export const Address = () => {
             </Link>
           </p>
 
-          <p>Du lundi au vendredi de 8 h à 17 h.</p>
+          <p>Horaires : du lundi au vendredi de 9 h à 18 h.</p>
         </div>
       ),
     },
     {
-      icon: <MarkerPinSquaredIcon className="size-12" />,
+      icon: <MarkerPin01Icon className="size-6 stroke-yellow-500" />,
       title: "Adresse",
       content: (
         <Link
@@ -60,7 +61,7 @@ export const Address = () => {
     <address className="flex flex-col gap-4 not-italic md:grid md:grid-cols-3 lg:flex lg:flex-col">
       {address.map((item, index) => (
         <div className="flex flex-col gap-4 rounded-3xl bg-blue-50 p-6" key={index}>
-          <div>{item.icon}</div>
+          <SquaredIcon className="size-12 bg-blue-900">{item.icon}</SquaredIcon>
 
           <div>
             <p className="font-bold">{item.title}</p>

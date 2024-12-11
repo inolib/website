@@ -13,16 +13,17 @@ import {
   type RefObject,
 } from "react";
 
-import { MenuBar, MenuBarList, MenuBarListItem } from "~/components/headless";
+import { MenuBar, MenuBarListItem } from "~/components/headless";
 import { cn } from "~/helpers";
 import { useMenu } from "~/hooks";
 
-import MenuIcon from "#/images/icons/menu-01.svg";
+import Menu01Icon from "#/images/icons/menu-01.svg";
 import XCloseIcon from "#/images/icons/x-close.svg";
 
 import { BurgerNavButton } from "./BurgerNavButton";
 import { BurgerNavHome } from "./BurgerNavHome";
 import { BurgerNavLink } from "./BurgerNavLink";
+import { BurgerNavList } from "./BurgerNavList";
 import { BurgerNavSubmenu } from "./BurgerNavSubmenu";
 
 export type BurgerNavObject = {
@@ -53,7 +54,7 @@ export const BurgerNav = () => {
   const [buttonRef, setButtonRef] = useState<RefObject<HTMLButtonElement>>({ current: null });
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   const burgerNav: BurgerNavObject = useMemo(
     () => ({
@@ -101,9 +102,12 @@ export const BurgerNav = () => {
     <BurgerNavContext.Provider value={burgerNav}>
       <MenuBar
         aria-label="Menu principal"
-        className={cn("relative flex flex-col gap-4 px-[4dvw] py-4 text-2xl lg:hidden", {
-          "bg-blue-900": isHomePage,
-        })}
+        className={cn(
+          "sticky top-[-0.0625rem] z-[1000] flex flex-col gap-4 bg-white px-[4dvw] py-4 text-2xl transition-all duration-300 lg:hidden",
+          {
+            "bg-blue-900": isHomePage,
+          },
+        )}
         onBlurCapture={handleBlurCapture}
         onKeyDownCapture={handleKeyDownCapture}
         ref={ref}
@@ -114,29 +118,44 @@ export const BurgerNav = () => {
           {burgerNav.isExpanded() ? (
             <BurgerNavButton aria-label="Fermer le menu">
               <span>Fermer</span>
-              <XCloseIcon className={cn("stroke-black", { "stroke-white [:hover>&]:stroke-black": isHomePage })} />
+              <XCloseIcon
+                className={cn("stroke-black transition-all duration-300", {
+                  "stroke-white [:hover>&]:stroke-black": isHomePage,
+                })}
+              />
             </BurgerNavButton>
           ) : (
             <BurgerNavButton aria-label="Ouvrir le menu">
               <span>Menu</span>
-              <MenuIcon className={cn("stroke-black", { "stroke-white [:hover>&]:stroke-black": isHomePage })} />
+              <Menu01Icon
+                className={cn("stroke-black transition-all duration-300", {
+                  "stroke-white [:hover>&]:stroke-black": isHomePage,
+                })}
+              />
             </BurgerNavButton>
           )}
         </div>
 
         <div
-          className={cn("absolute left-0 top-20 z-10 flex w-full justify-center bg-white px-[4dvw] pb-24 pt-4", {
-            hidden: !burgerNav.isExpanded(),
-            "bg-blue-900": isHomePage,
-          })}
+          className={cn(
+            "absolute left-0 top-[5.25rem] flex grid w-full grid-rows-[0fr] justify-center bg-white px-[4dvw] transition-all duration-300",
+            {
+              "grid-rows-[1fr] pb-24": burgerNav.isExpanded(),
+              "bg-blue-900": isHomePage,
+            },
+          )}
         >
-          <MenuBarList className="flex w-full max-w-[30rem] flex-col gap-2">
+          <BurgerNavList
+            className={cn("flex w-full max-w-[30rem] flex-col gap-2 overflow-hidden px-2 transition-all duration-300", {
+              "py-2": burgerNav.isExpanded(),
+            })}
+          >
             {menu.map((item, index) => (
               <MenuBarListItem key={index}>
                 {item.submenu === undefined ? <BurgerNavLink _link={item} /> : <BurgerNavSubmenu _submenu={item} />}
               </MenuBarListItem>
             ))}
-          </MenuBarList>
+          </BurgerNavList>
         </div>
       </MenuBar>
     </BurgerNavContext.Provider>

@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, type ButtonHTMLAttributes, type MouseEventHandler } from "react";
+import { useCallback, useEffect, useRef, type ButtonHTMLAttributes, type MouseEventHandler } from "react";
 
 import { Button } from "~/components/button";
 import { useMenuBar } from "~/components/headless";
@@ -17,7 +17,7 @@ export const BurgerNavButton = ({ className, ...passthru }: BurgerNavButtonProps
   const pathname = usePathname();
   const ref = useRef<HTMLButtonElement>(null);
 
-  const isHomePage = useMemo(() => pathname === "/", [pathname]);
+  const isHomePage = pathname === "/";
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback(() => {
     if (burgerNav.isExpanded()) {

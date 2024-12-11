@@ -1,8 +1,8 @@
 import { forwardRef, type HTMLAttributes } from "react";
 
-export type HeadingProps = {
+export type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
   _level: 1 | 2 | 3 | 4 | 5 | 6;
-} & HTMLAttributes<HTMLHeadingElement>;
+};
 
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(({ _level, children, ...passthru }, ref) => {
   switch (_level) {

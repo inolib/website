@@ -1,7 +1,5 @@
 "use client";
 
-import { useMemo } from "react";
-
 import { Heading, type HeadingProps } from "~/components/headless";
 import { tv } from "~/helpers";
 
@@ -21,9 +19,9 @@ const variants = tv({
 export type HeadingContentProps = HeadingProps;
 
 export const HeadingContent = ({ _level, className, ...passthru }: HeadingContentProps) => {
-  const header = useHeading();
+  const heading = useHeading();
 
-  const _size = useMemo(() => header.getSize(), [header]);
+  const _size = heading.getSize();
 
   return <Heading _level={_level} className={variants({ _size, className })} {...passthru} />;
 };

@@ -1,7 +1,12 @@
 import type { ReactNode } from "react";
 
-import FileCheckIcon from "#/images/icons/file-check-02.svg";
-import UserCheckIcon from "#/images/icons/user-check-01.svg";
+import Building01Icon from "#/images/icons/building-01.svg";
+import FileCheck02Icon from "#/images/icons/file-check-02.svg";
+import RouteIcon from "#/images/icons/route.svg";
+import Tool02Icon from "#/images/icons/tool-02.svg";
+import UsersCheckIcon from "#/images/icons/users-check.svg";
+
+export type Menu = Array<MenuLink | MenuSubmenu>;
 
 export type MenuLink = {
   label: string;
@@ -29,8 +34,6 @@ export type MenuSubmenu = {
   href?: never;
 };
 
-export type Menu = Array<MenuLink | MenuSubmenu>;
-
 export const useMenu = (): Menu => [
   {
     label: "Audit",
@@ -42,12 +45,12 @@ export const useMenu = (): Menu => [
       //   href: "/audit",
       // },
       {
-        icon: <FileCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
-        label: "Audit de conformité",
-        href: "/audit/audit-de-conformite",
+        icon: <FileCheck02Icon className="size-6 shrink-0 stroke-blue-600" />,
+        label: "Audits d’accessibilité",
+        href: "/audit/audits-accessibilite",
       },
       {
-        icon: <UserCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <UsersCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Tests utilisateurs",
         href: "/audit/tests-utilisateurs",
       },
@@ -63,12 +66,12 @@ export const useMenu = (): Menu => [
       //   href: "/accompagnement",
       // },
       {
-        icon: <FileCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
-        label: "Accompagnement de projet",
-        href: "/accompagnement/accompagnement-de-projet",
+        icon: <RouteIcon className="size-6 shrink-0 stroke-blue-600" />,
+        label: "Pilotage de projet",
+        href: "/accompagnement/pilotage-de-projet",
       },
       {
-        icon: <UserCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <Tool02Icon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Accompagnement technique",
         href: "/accompagnement/accompagnement-technique",
       },
@@ -84,15 +87,15 @@ export const useMenu = (): Menu => [
         href: "/developpement",
       },
       {
-        icon: <UserCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <Building01Icon className="size-6 shrink-0 stroke-blue-600" />,
         label: "Sites vitrines et institutionnels",
         href: "/developpement/sites-vitrines-et-institutionnels",
       },
     ],
   },
   {
-    label: "INOLIB Academy",
-    href: "/inolib-academy",
+    label: "Formations",
+    href: "/formations",
   },
   {
     label: "À propos",

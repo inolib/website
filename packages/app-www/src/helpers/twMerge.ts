@@ -9,7 +9,7 @@ export const config: Config = {
       colors: [
         "black",
         { blue: ["50", "100", "300", "600", "900", "950"] },
-        { neutral: ["50", "400", "700", "800"] },
+        { neutral: ["50", "700", "800"] },
         { red: ["600"] },
         { sand: ["50", "400"] },
         "transparent",

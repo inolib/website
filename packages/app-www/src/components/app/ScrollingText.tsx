@@ -6,8 +6,8 @@ import { Button } from "~/components/button";
 import { FullBleedSection } from "~/components/section";
 import { cn } from "~/helpers";
 
+import Columns01Icon from "#/images/icons/columns-01.svg";
 import PlayIcon from "#/images/icons/play.svg";
-import StopIcon from "#/images/icons/stop.svg";
 
 export const ScrollingText = () => {
   const [isRunning, setIsRunning] = useState<boolean>(true);
@@ -28,21 +28,21 @@ export const ScrollingText = () => {
           <PlayIcon
             aria-label="Démarrer l’animation"
             className={cn(
-              "size-9 rounded-md stroke-yellow-500 outline-none group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
+              "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-300 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
               { hidden: isRunning },
             )}
           />
-          <StopIcon
+          <Columns01Icon
             aria-label="Stopper l’animation"
             className={cn(
-              "size-9 rounded-md stroke-yellow-500 outline-none group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
+              "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-300 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
               { hidden: !isRunning },
             )}
           />
         </span>
       </Button>
 
-      {[...Array.from({ length: 5 }).keys()].map((index) => (
+      {[...Array.from({ length: 3 }).keys()].map((index) => (
         <div
           aria-hidden={index > 0 ? true : undefined}
           className={cn("shrink-0 animate-marquee", { "[animation-play-state:paused]": !isRunning })}

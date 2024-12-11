@@ -7,7 +7,7 @@ import type { VariantProps } from "tailwind-variants";
 import { tv } from "~/helpers";
 
 const variants = tv({
-  base: "flex w-fit items-center gap-2 outline-none focus-visible:outline-4 focus-visible:outline-offset-4",
+  base: "flex w-fit items-center gap-2 outline-none transition-all duration-300 focus-visible:outline-4 focus-visible:outline-offset-4",
   variants: {
     _border: {
       none: "",
@@ -39,14 +39,14 @@ const variants = tv({
   ],
 });
 
-type Variants = VariantProps<typeof variants>;
+export type LinkProps = BaseLinkProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseLinkProps> & {
+    _border?: Variants["_border"];
+    _color: NonNullable<Variants["_color"]>;
+    _shape: NonNullable<Variants["_shape"]>;
+  };
 
-export type LinkProps = {
-  _border?: Variants["_border"];
-  _color: NonNullable<Variants["_color"]>;
-  _shape: NonNullable<Variants["_shape"]>;
-} & BaseLinkProps &
-  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseLinkProps>;
+type Variants = VariantProps<typeof variants>;
 
 export const Link = ({ _border = "none", _color, _shape, className, href, onClick, ...passthru }: LinkProps) => {
   const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(

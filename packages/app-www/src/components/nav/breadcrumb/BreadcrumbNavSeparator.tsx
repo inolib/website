@@ -1,9 +1,9 @@
-import ChevronRightIcon from "#/images/icons/chevron-right.svg";
+import ChevronDownIcon from "#/images/icons/chevron-down.svg";
 
 export const BreadcrumbNavSeparator = () => {
   return (
     <li>
-      <ChevronRightIcon className="size-4 stroke-black" />
+      <ChevronDownIcon className="size-4 -rotate-90 stroke-black" />
     </li>
   );
 };

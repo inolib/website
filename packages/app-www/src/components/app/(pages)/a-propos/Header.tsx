@@ -17,8 +17,6 @@ export const Header = () => {
             besoins de chacun pour assurer une intégration de tous dans l’ère numérique.
           </p>
         </TwoColumnsFlexLayoutColumn>
-
-        <TwoColumnsFlexLayoutColumn></TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>
     </Section>
   );
