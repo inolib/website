@@ -149,4 +149,3 @@ declare module "@strapi/strapi" {
     }
   }
 }
-
