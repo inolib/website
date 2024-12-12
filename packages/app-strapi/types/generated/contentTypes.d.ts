@@ -790,6 +790,7 @@ export interface ApiFoireAuxQuestionsUtilisateurFoireAuxQuestionsUtilisateur ext
 export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
   collectionName: "footers";
   info: {
+    description: "";
     displayName: "Footer";
     pluralName: "footers";
     singularName: "footer";
@@ -801,11 +802,10 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
     imageQualiopi: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
-    lien: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::footer.footer"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    site: Schema.Attribute.String;
+    sites: Schema.Attribute.Component<"component.sous-lien", true>;
     textQualiopi: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;

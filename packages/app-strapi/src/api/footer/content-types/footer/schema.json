@@ -4,31 +4,32 @@
   "info": {
     "singularName": "footer",
     "pluralName": "footers",
-    "displayName": "Footer"
+    "displayName": "Footer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "site": {
-      "type": "string"
-    },
-    "lien": {
-      "type": "string"
-    },
     "textQualiopi": {
       "type": "string"
     },
     "imageQualiopi": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "sites": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.sous-lien"
     }
   }
 }
