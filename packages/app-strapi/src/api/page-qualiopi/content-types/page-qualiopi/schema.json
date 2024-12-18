@@ -1,0 +1,14 @@
+{
+  "kind": "singleType",
+  "collectionName": "page_qualiopis",
+  "info": {
+    "singularName": "page-qualiopi",
+    "pluralName": "page-qualiopis",
+    "displayName": "certificat qualiopi"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}

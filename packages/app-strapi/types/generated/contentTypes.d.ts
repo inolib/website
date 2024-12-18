@@ -802,9 +802,11 @@ export interface ApiFooterFooter extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
     imageQualiopi: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+    lienQualiopi: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::footer.footer"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    reseau: Schema.Attribute.Component<"component.sous-lien", true>;
     sites: Schema.Attribute.Component<"component.sous-lien", true>;
     textQualiopi: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1191,6 +1193,53 @@ export interface ApiOffresDAuditOffresDAudit extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     Titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPageContactPageContact extends Struct.SingleTypeSchema {
+  collectionName: "page_contacts";
+  info: {
+    description: "";
+    displayName: "Page contact";
+    pluralName: "page-contacts";
+    singularName: "page-contact";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CardInfo: Schema.Attribute.Component<"component.list-item", true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    introduction: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::page-contact.page-contact"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPageQualiopiPageQualiopi extends Struct.SingleTypeSchema {
+  collectionName: "page_qualiopis";
+  info: {
+    displayName: "certificat qualiopi";
+    pluralName: "page-qualiopis";
+    singularName: "page-qualiopi";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::page-qualiopi.page-qualiopi"> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -2175,6 +2224,8 @@ declare module "@strapi/strapi" {
       "api::methodologie-audit.methodologie-audit": ApiMethodologieAuditMethodologieAudit;
       "api::mission.mission": ApiMissionMission;
       "api::offres-d-audit.offres-d-audit": ApiOffresDAuditOffresDAudit;
+      "api::page-contact.page-contact": ApiPageContactPageContact;
+      "api::page-qualiopi.page-qualiopi": ApiPageQualiopiPageQualiopi;
       "api::partenaire.partenaire": ApiPartenairePartenaire;
       "api::plan-du-site.plan-du-site": ApiPlanDuSitePlanDuSite;
       "api::plus-loin-accompagnement.plus-loin-accompagnement": ApiPlusLoinAccompagnementPlusLoinAccompagnement;

@@ -30,6 +30,14 @@
       "type": "component",
       "repeatable": true,
       "component": "component.sous-lien"
+    },
+    "lienQualiopi": {
+      "type": "string"
+    },
+    "reseau": {
+      "type": "component",
+      "repeatable": true,
+      "component": "component.sous-lien"
     }
   }
 }
