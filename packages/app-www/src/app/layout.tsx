@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
 import { Banner, ContentInfo, Nav, Orejime } from "~/components/app";
-
+import { ContentInfoTest } from "~/components/app/ContactInfoTest";
 import "@fontsource-variable/manrope";
 import "orejime/dist/orejime.css";
 import "./globals.css";
@@ -43,7 +43,7 @@ const Layout = ({ children }: PropsWithChildren) => {
             {children}
           </main>
 
-          <ContentInfo />
+          <ContentInfoTest />
         </div>
 
         <Orejime />

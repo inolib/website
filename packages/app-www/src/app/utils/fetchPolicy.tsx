@@ -886,7 +886,7 @@ export const fetchResultsData = async () => {
 };
 
 export const fetchPosts = async (slug: string) => {
-  console.log("affiche un article et son slug",slug)
+ 
   const res = await fetch("http://strapi:1337/api/articles?populate=*");
 
   if (!res.ok) {
@@ -916,4 +916,21 @@ console.log("affiche tous les posts" ,data)
   }
 
   return data.data;
+};
+
+
+/*  fetch footer**/
+
+
+export const fetchFooterData = async () => {
+ 
+    const res= await fetch("http://strapi:1337/api/footers?populate=*"); 
+ 
+   
+    const data = await res.json();
+    
+   
+
+    return data.data;
+    console.log("affiche les liens" , data.data )
 };
