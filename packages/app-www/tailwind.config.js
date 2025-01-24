@@ -27,6 +27,7 @@ export default {
       },
       neutral: {
         50: "#FAFAFA",
+        100: "#EAECF0",
         700: "#404040",
         800: "#262626",
       },

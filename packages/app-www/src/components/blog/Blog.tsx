@@ -64,7 +64,7 @@ export const Blog = ({ _count, _headingLevel }: BlogProps) => {
 
   useEffect(() => {
     void (async () => {
-      setPosts(await fetchPosts(_count));
+       setPosts(await fetchPosts(_count));
     })();
   }, [_count]);
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { /*Blog,*/ Contact, Header, ScrollingText, Services, SocialProof, Testimonials } from "~/components/app";
+import { Blog, Contact, Header, ScrollingText, Services, SocialProof, Testimonials } from "~/components/app";
 
 export const metadata: Metadata = {
   title: "Accueil | INOLIB",
@@ -15,7 +15,7 @@ const Page = () => {
       <ScrollingText />
       <Services _color="white" />
       <Testimonials _color="blue-950" />
-      {/* <Blog /> */}
+      <Blog />
       <Contact />
     </>
   );

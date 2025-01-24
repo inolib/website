@@ -101,8 +101,8 @@ export const useMenu = (): Menu => [
     label: "À propos",
     href: "/a-propos",
   },
-  // {
-  //   label: "Blog",
-  //   href: "/blog",
-  // },
+  {
+    label: "Blog",
+    href: "/blog",
+  },
 ];
