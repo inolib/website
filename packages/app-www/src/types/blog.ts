@@ -2,7 +2,12 @@ export type Author = {
   id: number;
   documentId: string;
   name: string;
-  bio: string;
+  bio?: string;
+  createdAt: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  website?: string;
+  image: Image;
 };
 
 export type BlogPageProps = {
@@ -23,13 +28,13 @@ export type BlogPost = {
   tags: string[];
   author: Author;
   categories: Category[];
-  image: Image;
+  image: Image[];
 };
 
 export type Category = {
   id: number;
   name: string;
-  slug: string;
+  slug?: string;
   description?: string;
 };
 
@@ -38,6 +43,5 @@ export type CategoryWithPosts = Category & { posts: BlogPost[] };
 export type Image = {
   id: number;
   url: string;
-  alt: string;
+  alternateText: string;
 };
-

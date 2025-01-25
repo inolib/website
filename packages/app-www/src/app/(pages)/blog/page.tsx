@@ -1,13 +1,12 @@
-import type {  Metadata } from "next";
+import type { Metadata } from "next";
 
 import { Blog, Header } from "~/components/app/(pages)/blog";
 import { StrapiService } from "~/lib/api/strapi";
-import type {  BlogPost, Category } from "~/types/blog";
+import type { BlogPost, Category } from "~/types/blog";
 
 export const metadata: Metadata = {
   title: "Actualités | INOLIB",
 };
-
 
 const Page = async () => {
   const posts = (await StrapiService.getBlogPosts("*")) as BlogPost[];
@@ -21,7 +20,5 @@ const Page = async () => {
     </>
   );
 };
-
-
 
 export default Page;
