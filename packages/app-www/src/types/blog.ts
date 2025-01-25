@@ -21,7 +21,7 @@ export type BlogPost = {
   title: string;
   slug: string;
   excerpt: string;
-  content: string[];
+  content: ContentParagraph[];
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
@@ -39,6 +39,16 @@ export type Category = {
 };
 
 export type CategoryWithPosts = Category & { posts: BlogPost[] };
+
+export type ContentChild = {
+  type: string;
+  text: string;
+};
+
+export type ContentParagraph = {
+  type: string;
+  children: ContentChild[];
+};
 
 export type Image = {
   id: number;

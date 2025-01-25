@@ -20,6 +20,23 @@ export const StrapiService: ContentManagementService = {
       return [];
     }
   },
+
+  async getBlogPostBySlug(slug: string, populate: string = "*"): Promise<BlogPost | null> {
+    try {
+      const response: StrapiResponse<BlogPost> = await HttpFactory.get<StrapiResponse<BlogPost>>(
+        `/api/blog-posts?filters[slug][$eq]=${slug}&populate=${populate}`,
+      );
+
+      if (response.data) {
+        return response.data;
+      } else {
+        throw new Error("Les données du post sont manquantes dans la réponse.");
+      }
+    } catch (error) {
+      console.error("Erreur lors de la récupération du post :", error);
+      return null;
+    }
+  },
 };
 
 export type StrapiResponse<T> = {

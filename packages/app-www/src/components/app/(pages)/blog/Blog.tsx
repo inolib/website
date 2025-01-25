@@ -1,8 +1,10 @@
 "use client";
 import { defaultTheme, Item, Provider, TabList, Tabs, type Key } from "@adobe/react-spectrum";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
+import { formatDate } from "~/helpers";
 import type { BlogPageProps, CategoryWithPosts } from "~/types/blog";
 
 export const Blog = ({ posts, categories }: BlogPageProps) => {
@@ -72,33 +74,37 @@ export const Blog = ({ posts, categories }: BlogPageProps) => {
         {displayedPosts.length > 0 ? (
           displayedPosts.map((post) => (
             <div className="overflow-hidden rounded-2xl p-4" key={post.id}>
-              <Image
-                alt={post.title}
-                className="h-[200px] w-full rounded object-cover"
-                height={200}
-                src={process.env.NEXT_PUBLIC_STRAPI_URL + post.image?.[0]?.url}
-                width={400}
-              />
-              <div className="mt-4">
-                <span className="inline-block rounded-full px-3 py-1 text-xs font-medium">
-                  {post.categories[0]?.name || "Uncategorized"}
-                </span>
-                <h2 className="mt-2 text-lg font-bold">{post.title}</h2>
-                <p className="mt-2 text-sm">{post.excerpt}</p>
-                <div className="mt-4 flex items-center">
-                  <Image
-                    alt={post.author.name}
-                    className="size-10 rounded-full object-cover"
-                    height={40}
-                    src={process.env.NEXT_PUBLIC_STRAPI_URL + post.image?.[0]?.url || "https://via.placeholder.com/40"}
-                    width={40}
-                  />
-                  <div className="ml-3">
-                    <p className="text-sm font-medium">{post.author.name}</p>
-                    <p className="text-sm">{new Date(post.publishedAt).toLocaleDateString()}</p>
+              <Link href={`/blog/${post.slug}`} passHref>
+                <Image
+                  alt={post.title}
+                  className="h-[200px] w-full rounded object-cover"
+                  height={200}
+                  src={process.env.NEXT_PUBLIC_STRAPI_URL + post.image?.[0]?.url}
+                  width={400}
+                />
+                <div className="mt-4">
+                  <span className="inline-block rounded-full px-3 py-1 text-xs font-medium">
+                    {post.categories[0]?.name || "Uncategorized"}
+                  </span>
+                  <h2 className="mt-2 text-lg font-bold">{post.title}</h2>
+                  <p className="mt-2 text-sm">{post.excerpt}</p>
+                  <div className="mt-4 flex items-center">
+                    <Image
+                      alt={post.author.name}
+                      className="size-10 rounded-full object-cover"
+                      height={40}
+                      src={
+                        process.env.NEXT_PUBLIC_STRAPI_URL + post.image?.[0]?.url || "https://via.placeholder.com/40"
+                      }
+                      width={40}
+                    />
+                    <div className="ml-3">
+                      <p className="text-sm font-medium">{post.author.name}</p>
+                      {post.author.publishedAt ? formatDate(post.author.publishedAt) : "Date non disponible"}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           ))
         ) : (
