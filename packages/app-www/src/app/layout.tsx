@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
 import { Banner, ContentInfo, Nav, Orejime } from "~/components/app";
+import { RoutesProvider } from "~/context/RoutesContext";
 
 import "@fontsource-variable/manrope";
 import "orejime/dist/orejime.css";
@@ -39,9 +40,11 @@ const Layout = ({ children }: PropsWithChildren) => {
 
           <Nav />
 
-          <main id="main" tabIndex={-1}>
-            {children}
-          </main>
+          <RoutesProvider>
+            <main id="main" tabIndex={-1}>
+              {children}
+            </main>
+          </RoutesProvider>
 
           <ContentInfo />
         </div>

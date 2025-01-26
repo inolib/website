@@ -3,8 +3,9 @@
 import { usePathname } from "next/navigation";
 
 import { Link } from "~/components/link";
+import { useRoutesContext } from "~/context/RoutesContext";
 import { cn } from "~/helpers";
-import { useRoutes } from "~/hooks";
+// import { useRoutes } from "~/hooks";
 
 export type BreadcrumbNavSegmentProps = {
   _href: string;
@@ -12,7 +13,7 @@ export type BreadcrumbNavSegmentProps = {
 
 export const BreadcrumbNavSegment = ({ _href }: BreadcrumbNavSegmentProps) => {
   const pathname = usePathname();
-  const routes = useRoutes();
+  const routes = useRoutesContext();
 
   const isCurrentPage = _href === pathname;
 

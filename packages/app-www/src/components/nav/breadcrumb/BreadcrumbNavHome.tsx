@@ -1,5 +1,5 @@
 import { Link } from "~/components/link";
-import { useRoutes } from "~/hooks";
+import { useRoutesContext } from "~/context/RoutesContext";
 
 import HomeLineIcon from "#/images/icons/home-line.svg";
 
@@ -8,7 +8,7 @@ export type BreadcrumbNavHomeProps = {
 };
 
 export const BreadcrumbNavHome = ({ _href }: BreadcrumbNavHomeProps) => {
-  const routes = useRoutes();
+  const routes = useRoutesContext();
 
   return (
     <li className="flex items-center px-2 py-1">

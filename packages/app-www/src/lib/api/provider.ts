@@ -5,9 +5,11 @@ const serviceName = process.env.CONTENT_MANAGEMENT_SERVICE || "strapi";
 
 export const ContentManagementServiceFactory = (): ContentManagementService => {
   switch (serviceName) {
-    case "strapi":
+    case "strapi": {
       return StrapiService;
-    default:
+    }
+    default: {
       return StrapiService;
+    }
   }
 };

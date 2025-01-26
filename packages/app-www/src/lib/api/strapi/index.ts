@@ -1,4 +1,4 @@
-import { HttpFactory } from "~/lib/http/http-factory";
+import { HttpFactory } from "~/lib/http/http-provider";
 import type { BlogPost } from "~/types/blog";
 
 import type { ContentManagementService } from "../index";
