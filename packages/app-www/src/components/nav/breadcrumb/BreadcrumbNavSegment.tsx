@@ -19,7 +19,8 @@ export const BreadcrumbNavSegment = ({ _href }: BreadcrumbNavSegmentProps) => {
 
   return (
     <li className={cn("px-2 py-1", { "font-bold underline": isCurrentPage })}>
-      {routes[_href].isActive ? (
+      {routes[_href] ? (
+      routes[_href].isActive ? (
         <Link
           _color="transparent"
           _shape="link"
@@ -31,7 +32,10 @@ export const BreadcrumbNavSegment = ({ _href }: BreadcrumbNavSegmentProps) => {
         </Link>
       ) : (
         <span>{routes[_href].title}</span>
-      )}
+      )
+    ) : (
+      <span>Page inconnue</span>
+    )}
     </li>
   );
 };

@@ -1,6 +1,12 @@
 /** @type {import("tailwindcss").Config} */
 export default {
-  content: ["./src/**/*.{ts,tsx}"],
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./public/**/*.html",
+  ],
   plugins: [],
   theme: {
     animation: {
@@ -26,6 +32,7 @@ export default {
         950: "#111F22",
       },
       neutral: {
+        30: "#D4D4D4",
         50: "#FAFAFA",
         100: "#EAECF0",
         700: "#404040",

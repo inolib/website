@@ -4,10 +4,12 @@ import type { BlogPost } from "~/types/blog";
 import type { ContentManagementService } from "../index";
 
 export const StrapiService: ContentManagementService = {
-  async getBlogPosts(populate: string = "*"): Promise<BlogPost[]> {
+  async getBlogPosts(populate: string = "*", page: number = 1, pageSize: number = 6): Promise<BlogPost[]> {
     try {
+      const timestamp = Date.now();
+
       const response: StrapiResponse<BlogPost[]> = await HttpFactory.get<StrapiResponse<BlogPost[]>>(
-        `/api/blog-posts?populate=${populate}`,
+        `/api/blog-posts?populate=${populate}&timestamp=${timestamp}&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
       );
 
       if (!response.data) {
@@ -21,14 +23,14 @@ export const StrapiService: ContentManagementService = {
     }
   },
 
-  async getBlogPostBySlug(slug: string, populate: string = "*"): Promise<BlogPost | null> {
+  async getBlogPostBySlug(slug: string, populate: string = "author.avatar"): Promise<BlogPost | null> {
     try {
-      const response: StrapiResponse<BlogPost> = await HttpFactory.get<StrapiResponse<BlogPost>>(
-        `/api/blog-posts?filters[slug][$eq]=${slug}&populate=${populate}`,
+      const response: StrapiResponse<BlogPost[]> = await HttpFactory.get<StrapiResponse<BlogPost[]>>(
+        `/api/blog-posts?filters[slug][$eq]=${slug}&populate[author][populate]=avatar&populate=categories`,
       );
 
-      if (response.data) {
-        return response.data;
+      if (response.data && response.data.length > 0) {
+        return response.data[0];
       } else {
         throw new Error("Les données du post sont manquantes dans la réponse.");
       }

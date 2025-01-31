@@ -7,12 +7,13 @@ export type Author = {
   updatedAt?: string;
   publishedAt?: string;
   website?: string;
-  image: Image;
+  avatar: Image;
 };
 
 export type BlogPageProps = {
   posts: BlogPost[];
   categories: Category[];
+  totalPages: number;
 };
 
 export type BlogPost = {
