@@ -1,33 +1,46 @@
+import { cache } from "react";
+
 import { HttpFactory } from "~/lib/http/http-provider";
-import type { BlogPost } from "~/types/blog";
+import type { BlogPost, PaginatedBlogPosts, Pagination } from "~/types/blog";
 
 import type { ContentManagementService } from "../index";
 
 export const StrapiService: ContentManagementService = {
-  async getBlogPosts(populate: string = "*", page: number = 1, pageSize: number = 6): Promise<BlogPost[]> {
-    try {
-      const timestamp = Date.now();
+  getBlogPosts: cache(
+    async (populate: string = "*", page: number = 1, pageSize: number = 9): Promise<PaginatedBlogPosts> => {
+      try {
+        const timestamp = Date.now();
 
-      const response: StrapiResponse<BlogPost[]> = await HttpFactory.get<StrapiResponse<BlogPost[]>>(
-        `/api/blog-posts?populate=${populate}&timestamp=${timestamp}&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
-      );
+        const response: StrapiResponse<any> = await HttpFactory.get<
+          StrapiResponse<{ data: BlogPost[]; meta: { pagination: Pagination } }>
+        >(
+          `/api/blog-posts?populate=${populate}&timestamp=${timestamp}&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
+        );
 
-      if (!response.data) {
-        throw new Error("Les données des posts sont manquantes dans la réponse.");
+        console.log(response.data);
+
+        if (!response.data || !response.meta || !response.meta.pagination) {
+          throw new Error("Les données ou la pagination sont manquantes.");
+        }
+
+        return {
+          posts: response.data as BlogPost[],
+          pagination: response.meta?.pagination,
+        };
+      } catch (error) {
+        console.error("Erreur lors de la récupération des posts :", error);
+        return { posts: [], pagination: { page: 1, pageSize: 9, pageCount: 0, total: 0 } };
       }
-
-      return response.data;
-    } catch (error) {
-      console.error("Erreur lors de la récupération des posts :", error);
-      return [];
-    }
-  },
+    },
+  ),
 
   async getBlogPostBySlug(slug: string, populate: string = "author.avatar"): Promise<BlogPost | null> {
     try {
       const response: StrapiResponse<BlogPost[]> = await HttpFactory.get<StrapiResponse<BlogPost[]>>(
-        `/api/blog-posts?filters[slug][$eq]=${slug}&populate[author][populate]=avatar&populate=categories`,
+        `/api/blog-posts?filters[slug][$eq]=${slug}&populate=author.avatar&populate=categories`,
       );
+
+      console.log(response.data);
 
       if (response.data && response.data.length > 0) {
         return response.data[0];

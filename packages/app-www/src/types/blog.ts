@@ -13,7 +13,7 @@ export type Author = {
 export type BlogPageProps = {
   posts: BlogPost[];
   categories: Category[];
-  totalPages: number;
+  pagination: Pagination;
 };
 
 export type BlogPost = {
@@ -55,4 +55,16 @@ export type Image = {
   id: number;
   url: string;
   alternateText: string;
+};
+
+export type PaginatedBlogPosts = {
+  posts: BlogPost[];
+  pagination: Pagination;
+};
+
+export type Pagination = {
+  page: number;
+  pageSize: number;
+  pageCount: number;
+  total: number;
 };

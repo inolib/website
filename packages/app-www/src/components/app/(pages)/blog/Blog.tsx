@@ -6,13 +6,12 @@ import { useState } from "react";
 import { Input, SearchField } from "react-aria-components";
 
 import { formatDate } from "~/helpers";
-import type { BlogPageProps, BlogPost, CategoryWithPosts } from "~/types/blog";
+import type { BlogPageProps, CategoryWithPosts } from "~/types/blog";
 
-export const Blog = ({ posts, categories, totalPages }: BlogPageProps) => {
+export const Blog = ({ posts, categories, pagination }: BlogPageProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(pagination.page);
 
   const categoriesWithPosts: CategoryWithPosts[] = categories.map((category) => ({
     ...category,
@@ -28,7 +27,7 @@ export const Blog = ({ posts, categories, totalPages }: BlogPageProps) => {
   };
 
   const handleNextPage = () => {
-    if (currentPage < maxPages) setCurrentPage(currentPage + 1);
+    if (pagination.page < pagination.pageCount) setCurrentPage(pagination.page + 1);
   };
 
   const handlePreviousPage = () => {
@@ -61,7 +60,7 @@ export const Blog = ({ posts, categories, totalPages }: BlogPageProps) => {
               <TabList>
                 <Item key="all" textValue="Tous les articles">
                   <div
-                    className={`border-b-2 inline-flex h-9 cursor-pointer items-center justify-center gap-2 border-[#3e6d77] px-1 pb-3 ${
+                    className={`inline-flex h-9 cursor-pointer items-center justify-center gap-2 border-b-4 border-[#3e6d77] px-1 pb-3 ${
                       selectedCategory === "all" ? "text-[#3E6D77]" : "text-gray-700"
                     } hover:text-[#3E6D77]`}
                   >
@@ -78,7 +77,7 @@ export const Blog = ({ posts, categories, totalPages }: BlogPageProps) => {
                           selectedCategory === category.id.toString() ? "text-[#3E6D77]" : "text-gray-700"
                         } hover:text-[#3E6D77]`}
                       >
-                        <span className="text-neutral-500 font-['Inter'] text-base font-semibold leading-normal">
+                        <span className="font-['Inter'] text-base font-semibold leading-normal text-neutral-500">
                           {category.name}
                         </span>
                       </div>
@@ -156,20 +155,20 @@ export const Blog = ({ posts, categories, totalPages }: BlogPageProps) => {
           <p>Aucun article disponible.</p>
         )}
       </div>
-      <div className="mt-8 flex items-center justify-between">
+      <div className="m-8 flex items-center justify-between border-t border-gray-300 pt-4">
         <button
-          className="rounded-lg border px-4 py-2 disabled:opacity-50"
+          className="rounded-lg border border-gray-400 px-6 py-2 text-gray-700 disabled:opacity-50"
           disabled={currentPage === 1}
           onClick={handlePreviousPage}
         >
           ← Previous
         </button>
-        <p>
-          Page {currentPage} sur {totalPages}
+        <p className="font-medium text-gray-800">
+          Page {currentPage} sur {pagination.pageCount}
         </p>
         <button
-          className="rounded-lg border px-4 py-2 disabled:opacity-50"
-          disabled={currentPage === totalPages}
+          className="rounded-lg border border-gray-400 px-6 py-2 text-gray-700 disabled:opacity-50"
+          disabled={currentPage === pagination.pageCount}
           onClick={handleNextPage}
         >
           Next →

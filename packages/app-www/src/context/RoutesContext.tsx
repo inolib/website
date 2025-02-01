@@ -23,7 +23,7 @@ export const RoutesProvider = ({ children }: { children: React.ReactNode }) => {
       const dynamicRoutes: Routes = {};
 
       try {
-        const posts = (await StrapiService.getBlogPosts("*")) as BlogPost[];
+        const { posts } = (await StrapiService.getBlogPosts("*", 1, 9)) as { posts: BlogPost[] };
         for (const post of posts) {
           dynamicRoutes[`/blog/${post.slug}`] = {
             isActive: true,

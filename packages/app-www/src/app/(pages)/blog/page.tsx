@@ -2,16 +2,18 @@ import type { Metadata } from "next";
 
 import { Blog, Header } from "~/components/app/(pages)/blog";
 import { StrapiService } from "~/lib/api/strapi";
-import type { BlogPost, Category } from "~/types/blog";
+import type { BlogPageProps, Category } from "~/types/blog";
 
 export const metadata: Metadata = {
   title: "Actualités | INOLIB",
 };
 
-// Cette fonction est maintenant asynchrone
 const Page = async () => {
   try {
-    const posts = (await StrapiService.getBlogPosts("*")) as BlogPost[];
+    const { posts, pagination } = (await StrapiService.getBlogPosts("*", 1, 9)) as BlogPageProps;
+
+    console.log(posts);
+
     const categories: Category[] = [
       ...new Map(posts.flatMap((post) => post.categories).map((cat) => [cat.id, cat])).values(),
     ];
@@ -19,7 +21,7 @@ const Page = async () => {
     return (
       <>
         <Header />
-        <Blog categories={categories} posts={posts} />
+        <Blog categories={categories} pagination={pagination} posts={posts} />
       </>
     );
   } catch (error) {

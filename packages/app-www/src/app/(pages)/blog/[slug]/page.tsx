@@ -25,8 +25,7 @@ export const generateMetadata = async (props: { params: Promise<{ slug: string }
 };
 export const generateStaticParams = async () => {
   try {
-    const posts = (await StrapiService.getBlogPosts("*")) as BlogPost[];
-
+    const { posts }: { posts: BlogPost[] } = (await StrapiService.getBlogPosts("*", 1, 9)) as { posts: BlogPost[] };
     const params = posts.map((post) => ({
       slug: post.slug,
     }));
@@ -46,6 +45,8 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
   const { slug } = params;
   try {
     const post = (await StrapiService.getBlogPostBySlug(slug, "*")) as BlogPost;
+
+    console.log(post);
 
     if (!post) {
       return <div>Article non trouvé</div>;
