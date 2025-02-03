@@ -10,14 +10,10 @@ export const StrapiService: ContentManagementService = {
     async (populate: string = "*", page: number = 1, pageSize: number = 9): Promise<PaginatedBlogPosts> => {
       try {
         const timestamp = Date.now();
+        const endpoint = `/api/blog-posts?populate=${populate}&timestamp=${timestamp}&pagination[page]=${page}&pagination[pageSize]=${pageSize}`;
 
-        const response: StrapiResponse<any> = await HttpFactory.get<
-          StrapiResponse<{ data: BlogPost[]; meta: { pagination: Pagination } }>
-        >(
-          `/api/blog-posts?populate=${populate}&timestamp=${timestamp}&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
-        );
-
-        console.log(response.data);
+        const response: StrapiResponse<any> =
+          await HttpFactory.get<StrapiResponse<{ data: BlogPost[]; meta: { pagination: Pagination } }>>(endpoint);
 
         if (!response.data || !response.meta || !response.meta.pagination) {
           throw new Error("Les données ou la pagination sont manquantes.");
@@ -34,11 +30,11 @@ export const StrapiService: ContentManagementService = {
     },
   ),
 
-  async getBlogPostBySlug(slug: string, populate: string = "author.avatar"): Promise<BlogPost | null> {
+  async getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
     try {
-      const response: StrapiResponse<BlogPost[]> = await HttpFactory.get<StrapiResponse<BlogPost[]>>(
-        `/api/blog-posts?filters[slug][$eq]=${slug}&populate=author.avatar&populate=categories`,
-      );
+      const endpoint = `/api/blog-posts?filters[slug][$eq]=${slug}&populate=author.avatar&populate=categories`;
+
+      const response: StrapiResponse<BlogPost[]> = await HttpFactory.get<StrapiResponse<BlogPost[]>>(endpoint);
 
       console.log(response.data);
 
