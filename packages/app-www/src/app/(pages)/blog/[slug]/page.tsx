@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { PostDetail } from "~/components/app/PostDetail";
+import { PostDetail } from "~/components/app/(pages)/blog/PostDetail";
 import { StrapiService } from "~/lib/api/strapi";
 import type { BlogPost } from "~/types/blog";
 
@@ -11,7 +11,7 @@ export const generateMetadata = async (props: { params: Promise<{ slug: string }
   }
 
   try {
-    const post: BlogPost = (await StrapiService.getBlogPostBySlug(params.slug, "author.avatar")) as BlogPost;
+    const post: BlogPost = (await StrapiService.getBlogPostBySlug(params.slug)) as BlogPost;
 
     if (!post) {
       return { title: "Article non trouvé | INOLIB" };
@@ -44,7 +44,7 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;
   const { slug } = params;
   try {
-    const post = (await StrapiService.getBlogPostBySlug(slug, "*")) as BlogPost;
+    const post = (await StrapiService.getBlogPostBySlug(slug)) as BlogPost;
 
     console.log(post);
 

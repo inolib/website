@@ -12,7 +12,6 @@ export type Author = {
 
 export type BlogPageProps = {
   posts: BlogPost[];
-  categories: Category[];
   pagination: Pagination;
 };
 

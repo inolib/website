@@ -1,7 +1,8 @@
 "use client";
-import { defaultTheme, Item, Provider, TabList, Tabs } from "@adobe/react-spectrum";
+// import { defaultTheme, Item, Provider, TabList, Tabs } from "@adobe/react-spectrum";
+import { Box, Tab } from "@mui/material";
+import Tabs from "@mui/material/Tabs";
 
-// import { defaultTheme, Item, Provider, TabList, Tabs, type Key } from "@adobe/react-spectrum";
 import type { Category } from "~/types/blog";
 
 type BlogTabsProps = {
@@ -11,27 +12,56 @@ type BlogTabsProps = {
 };
 
 export const BlogTabs = ({ categories, selectedCategory, onCategoryChange }: BlogTabsProps) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
+    console.log(newValue);
+
+    onCategoryChange(newValue);
+  };
   return (
-    <Provider theme={defaultTheme}>
-      <Tabs
-        aria-label="Catégories de Blog"
-        onSelectionChange={(key) => onCategoryChange(String(key))}
-        selectedKey={selectedCategory}
-        UNSAFE_className="bg-white p-2 rounded-lg"
-      >
-        <TabList>
-          <Item key="all" textValue="Tous les articles">
-            <div className="pb-3 text-gray-700 data-[selected]:text-[#D32F2F]">Tous les articles</div>
-          </Item>
-          <>
-            {categories.map((category) => (
-              <Item key={category.id.toString()} textValue={category.name}>
-                <div className="pb-3 text-gray-700 data-[selected]:text-[#D32F2F]">{category.name}</div>
-              </Item>
-            ))}
-          </>
-        </TabList>
-      </Tabs>
-    </Provider>
+    <>
+      <Box sx={{ borderBottom: 1, borderColor: "divider", fontFamily: "ManRope" }}>
+        <Tabs
+          aria-label="Les choix de catégories d'articles du blog"
+          className="mb-4"
+          onChange={handleChange}
+          sx={{
+            "& .MuiTabs-indicator": {
+              backgroundColor: "#3E6D77",
+              color: "#3E6D77",
+            },
+          }}
+          value={selectedCategory}
+        >
+          <Tab
+            label="Tous les articles"
+            sx={{
+              "&.Mui-selected": {
+                color: "#3E6D77",
+              },
+              "&:focus": {
+                color: "#3E6D77",
+              },
+            }}
+            value="all"
+          />
+          {categories.map((category) => (
+            <Tab
+              aria-controls={category.id.toString()}
+              key={category.id}
+              label={category.name}
+              sx={{
+                "&.Mui-selected": {
+                  color: "#3E6D77",
+                },
+                "&:focus": {
+                  color: "#3E6D77",
+                },
+              }}
+              value={category.id.toString()}
+            />
+          ))}
+        </Tabs>
+      </Box>
+    </>
   );
 };

@@ -7,7 +7,7 @@ type BlogPaginationProps = {
 
 export const BlogPagination = ({ currentPage, totalPages, onPageChange }: BlogPaginationProps) => {
   return (
-    <div className="m-8 flex items-center justify-between border-t border-gray-300 pt-4">
+    <div className="flex items-center justify-between border-t border-gray-300 pt-4">
       <button
         className="cursor-pointer rounded-lg border border-gray-400 px-6 py-2 text-gray-700 disabled:opacity-50"
         disabled={currentPage === 1}
