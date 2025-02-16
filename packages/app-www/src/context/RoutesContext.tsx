@@ -2,6 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 
+import { baseRoutes } from "~/config/RoutesConfig";
 import { StrapiService } from "~/lib/api/strapi";
 import type { BlogPost } from "~/types/blog";
 
@@ -14,12 +15,6 @@ export const RoutesProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const fetchRoutes = async () => {
-      const baseRoutes = {
-        "/": { isActive: true, title: "Accueil" },
-        "/a-propos": { isActive: true, title: "À propos" },
-        "/blog": { isActive: true, title: "Blog" },
-      };
-
       const dynamicRoutes: Routes = {};
 
       try {

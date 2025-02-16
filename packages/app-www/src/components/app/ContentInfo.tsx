@@ -138,6 +138,7 @@ export const ContentInfo = () => {
                   height={384}
                   src="/images/logos/qualiopi/qualiopi.png"
                   width={768}
+                  priority
                 />
               </Link>
 

@@ -13,13 +13,11 @@ type BlogTabsProps = {
 
 export const BlogTabs = ({ categories, selectedCategory, onCategoryChange }: BlogTabsProps) => {
   const handleChange = (_event: React.SyntheticEvent, newValue: string) => {
-    console.log(newValue);
-
     onCategoryChange(newValue);
   };
   return (
     <>
-      <Box sx={{ borderBottom: 1, borderColor: "divider", fontFamily: "ManRope" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           aria-label="Les choix de catégories d'articles du blog"
           className="mb-4"

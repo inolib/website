@@ -1,12 +1,4 @@
-export type Routes = Record<
-  string,
-  {
-    isActive: boolean;
-    title: string;
-  }
->;
-
-export const useRoutes = (): Routes => ({
+export const baseRoutes = {
   "/": {
     isActive: true,
     title: "Accueil",
@@ -79,4 +71,6 @@ export const useRoutes = (): Routes => ({
     isActive: true,
     title: "Politique de confidentialité",
   },
-});
+};
+
+export type Routes = typeof baseRoutes;

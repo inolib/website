@@ -9,8 +9,7 @@ export const StrapiService: ContentManagementService = {
   getBlogPosts: cache(
     async (populate: string = "*", page: number = 1, pageSize: number = 9): Promise<PaginatedBlogPosts> => {
       try {
-        const timestamp = Date.now();
-        const endpoint = `/api/blog-posts?populate=${populate}&timestamp=${timestamp}&pagination[page]=${page}&pagination[pageSize]=${pageSize}`;
+        const endpoint = `/api/blog-posts?populate=${populate}&pagination[page]=${page}&pagination[pageSize]=${pageSize}`;
 
         const response: StrapiResponse<any> =
           await HttpFactory.get<StrapiResponse<{ data: BlogPost[]; meta: { pagination: Pagination } }>>(endpoint);
@@ -35,8 +34,6 @@ export const StrapiService: ContentManagementService = {
       const endpoint = `/api/blog-posts?filters[slug][$eq]=${slug}&populate=author.avatar&populate=categories`;
 
       const response: StrapiResponse<BlogPost[]> = await HttpFactory.get<StrapiResponse<BlogPost[]>>(endpoint);
-
-      console.log(response.data);
 
       if (response.data && response.data.length > 0) {
         return response.data[0];

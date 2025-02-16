@@ -46,8 +46,6 @@ const Page = async (props: { params: Promise<{ slug: string }> }) => {
   try {
     const post = (await StrapiService.getBlogPostBySlug(slug)) as BlogPost;
 
-    console.log(post);
-
     if (!post) {
       return <div>Article non trouvé</div>;
     }

@@ -18,7 +18,7 @@
     "bio": {
       "type": "text"
     },
-    "image": {
+    "avatar": {
       "type": "media",
       "multiple": false,
       "required": false,

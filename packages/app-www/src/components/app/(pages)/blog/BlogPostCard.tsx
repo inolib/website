@@ -14,24 +14,22 @@ export const BlogPostCard = ({ post }: { post: BlogPost }) => {
           height={200}
           src={process.env.NEXT_PUBLIC_STRAPI_URL + post.image?.[0]?.url}
           width={400}
+          priority
         />
         <div className="mt-4">
           <span className="inline-flex items-center justify-center rounded-full bg-[#CBE0E4] px-4 py-1 text-xs font-medium text-[#111F22]">
             {post.categories[0]?.name || "Uncategorized"}
           </span>
-          <h2 className="mt-2 font-['Manrope'] text-[24px] font-semibold leading-[33px] text-[#111F22]">
-            {post.title}
-          </h2>
-          <p className="mt-2 line-clamp-3 font-['Manrope'] text-[16px] font-medium leading-[26px] text-[#525252]">
-            {post.excerpt}
-          </p>
+          <h2 className="mt-2 text-[24px] font-semibold leading-[33px] text-[#111F22]">{post.title}</h2>
+          <p className="mt-2 line-clamp-3 text-[16px] font-medium leading-[26px] text-[#525252]">{post.excerpt}</p>
           <div className="mt-4 flex items-center gap-3">
             <Image
               alt={post.author.name}
               className="size-10 rounded-full object-cover"
               height={40}
-              src={process.env.NEXT_PUBLIC_STRAPI_URL + post.image?.[0]?.url || "https://via.placeholder.com/40"}
+              src={process.env.NEXT_PUBLIC_STRAPI_URL + post.image?.[0]?.url}
               width={40}
+              priority
             />
             <div className="flex flex-col">
               <p className="text-[14px] font-semibold leading-[20px] text-[#111F22]">{post.author.name}</p>
