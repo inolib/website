@@ -1,7 +1,6 @@
-import type { BlogPost } from "~/types/blog";
-
+import type { BlogPost } from "~/lib/strapi/api-client";
 import { PostAuthor } from "./PostAuthor";
-import { PostContent } from "./PostContent";
+import MarkdownRenderer from "./MarkdownRenderer";
 import { PostHeader } from "./PostHeader";
 import { PostImage } from "./PostImage";
 
@@ -10,12 +9,16 @@ type PostDetailProps = {
 };
 
 export const PostDetail = ({ post }: PostDetailProps) => {
+  const postImageUrl = post?.image?.url ? process.env.NEXT_PUBLIC_STRAPI_URL + post?.image.url : "/blog_default.webp";
+
   return (
     <article className="mx-auto w-full max-w-4xl px-8 py-12">
-      <PostHeader categories={post.categories} excerpt={post.excerpt} title={post.title} />
-      <PostAuthor author={post.author} />
-      <PostImage imageUrl={post.image?.[0]?.url} title={post.title} />
-      <PostContent content={post.content} />
+      {post.title && post.categories && post.excerpt && (
+        <PostHeader categories={post.categories} excerpt={post.excerpt} title={post.title} />
+      )}
+      {post.author && <PostAuthor author={{ ...post?.author, publishedAt: post.createdAt }} />}
+      {post.title && <PostImage imageUrl={postImageUrl} title={post.title} />}
+      {post.content && <MarkdownRenderer content={post.content} />}
     </article>
   );
 };

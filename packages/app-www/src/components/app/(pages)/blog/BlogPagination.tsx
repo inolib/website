@@ -1,11 +1,12 @@
 "use client";
+
 type BlogPaginationProps = {
   currentPage: number;
-  totalPages: number;
+  totalPages?: number;
   onPageChange: (newPage: number) => void;
 };
 
-export const BlogPagination = ({ currentPage, totalPages, onPageChange }: BlogPaginationProps) => {
+export const BlogPagination = ({ currentPage, totalPages = 1, onPageChange }: BlogPaginationProps) => {
   return (
     <div className="flex items-center justify-between border-t border-gray-300 pt-4">
       <button

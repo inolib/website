@@ -1,81 +1,124 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import { strapiApi } from "~/lib/strapi";
+import type { Pagination } from "~/types/blog";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
-import { StrapiService } from "~/lib/api/strapi";
-import type { BlogPageProps, Category } from "~/types/blog";
-
 import { BlogList } from "./BlogList";
 import { BlogPagination } from "./BlogPagination";
 import { BlogSearch } from "./BlogSearch";
 import { BlogTabs } from "./BlogTab";
+import type { BlogPost, Category } from "~/lib/strapi/api-client";
+import { BlogPostSkeleton } from "./BlogListLoader";
 
-export const Blog = ({
-  posts: initialPosts,
+export const Blog = ({pageSize}: {pageSize: number}) => {
+  // Categories
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<number>(0);
+  const [isLoadingCategories, setIsLoadingCategories] = useState(true);
 
-  pagination: initialPagination,
-}: BlogPageProps) => {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  // Blog Posts
+  const [posts, setPosts] = useState<BlogPost[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [currentPage, setCurrentPage] = useState<number>(initialPagination.page);
-  const [posts, setPosts] = useState(initialPosts);
-  const [pagination, setPagination] = useState(initialPagination);
-  const [categories, setCategories] = useState<Category[]>([]); // 🔥 Stocke toutes les catégories
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState("");
 
+  // Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pagination, setPagination] = useState<Pagination | null>(null);
+  const [isLoadingPosts, setIsLoadingPosts] = useState(false);
+
+  // Debounce search input
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 300); // 300ms delay
+
+    return () => clearTimeout(handler);
+  }, [searchQuery]);
+
+  // Reset pagination when category or search query changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, debouncedSearchQuery]);
+
+  // Fetch categories first
   useEffect(() => {
     const fetchCategories = async () => {
+      setIsLoadingCategories(true);
       try {
-        const allPosts = (await StrapiService.getBlogPosts("*", 1, 100)) as BlogPageProps;
-        const uniqueCategories = allPosts.posts
-          .flatMap((post) => post.categories)
-          .filter((cat, index, self) => index === self.findIndex((c) => c.id === cat.id)); // Supprime les doublons
-
-        setCategories(uniqueCategories);
+        const response = await strapiApi.category.getCategories({
+          sort: "id:desc",
+          paginationPage: 1,
+          paginationPageSize: 100,
+        });
+        const allCategories = response.data.data ?? [];
+        setCategories([{ id: 0, name: "Tous les articles" }, ...allCategories]); // Default "All" category
       } catch (error) {
         console.error("Erreur lors de la récupération des catégories :", error);
+      } finally {
+        setIsLoadingCategories(false);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  // Fetch posts based on category, search query, and pagination
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setIsLoadingPosts(true);
+      try {
+        const response = await strapiApi.blogPost.getBlogPosts(
+          {
+            sort: "id:desc",
+            paginationPage: currentPage,
+            paginationPageSize: pageSize,
+          },
+          {
+            params: {
+              filters: {
+                ...(selectedCategory !== 0 ? { categories: { id: { $eq: selectedCategory } } } : {}),
+                ...(debouncedSearchQuery ? { title: { $containsi: debouncedSearchQuery } } : {}),
+              },
+              populate: ["image", "author", "author.avatar", "categories"],
+            },
+          },
+        );
+
+        const { data, meta } = response.data;
+        setPosts(data ?? []);
+        setPagination(meta?.pagination ?? null);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des articles :", error);
+      } finally {
+        setIsLoadingPosts(false);
       }
     };
 
-    fetchCategories().catch(console.error);
-  }, []);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const { posts, pagination } = (await StrapiService.getBlogPosts("*", currentPage, 1)) as BlogPageProps;
-      setPosts(posts);
-      setPagination(pagination);
-    };
-
-    fetchPosts().catch(console.error);
-  }, [currentPage]);
-
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-  };
-
-  const handleSearchChange = (query: string) => {
-    setSearchQuery(query.toLowerCase());
-  };
+    fetchPosts();
+  }, [currentPage, selectedCategory, debouncedSearchQuery]);
 
   return (
     <>
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn className="flex-1">
-          <BlogTabs
-            categories={categories}
-            onCategoryChange={handleCategoryChange}
-            selectedCategory={selectedCategory}
-          />
+          {isLoadingCategories ? (
+            <div>Chargement des catégories...</div>
+          ) : (
+            <BlogTabs
+              categories={categories}
+              onCategoryChange={setSelectedCategory}
+              selectedCategory={selectedCategory}
+            />
+          )}
         </TwoColumnsFlexLayoutColumn>
-        <BlogSearch onSearch={handleSearchChange} />
+        <BlogSearch onSearch={setSearchQuery} />
       </TwoColumnsFlexLayout>
-      <BlogList posts={posts} searchQuery={searchQuery} selectedCategory={selectedCategory} />
-      <BlogPagination currentPage={currentPage} onPageChange={handlePageChange} totalPages={pagination.pageCount} />
+
+      {isLoadingPosts ? <BlogPostSkeleton /> : <BlogList posts={posts} />}
+
+      {pagination && (
+        <BlogPagination currentPage={currentPage} onPageChange={setCurrentPage} totalPages={pagination.pageCount} />
+      )}
     </>
   );
 };

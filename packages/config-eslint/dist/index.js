@@ -19,7 +19,7 @@ export default typescriptESLint.config(
   unicornPlugin.configs["flat/recommended"],
   importXPlugin.flatConfigs.recommended,
   jsdocPlugin.configs["flat/recommended"],
-  perfectionistPlugin.configs["recommended-natural"],
+  // perfectionistPlugin.configs["recommended-natural"],
   ...tailwindcssPlugin.configs["flat/recommended"],
   {
     files: ["**/*.{ts,tsx}"],

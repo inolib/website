@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-
 import { PostDetail } from "~/components/app/(pages)/blog/PostDetail";
-import { StrapiService } from "~/lib/api/strapi";
-import type { BlogPost } from "~/types/blog";
+
+import { strapiApi } from "~/lib/strapi";
 
 export const generateMetadata = async (props: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
   const params = await props.params;
@@ -11,11 +10,17 @@ export const generateMetadata = async (props: { params: Promise<{ slug: string }
   }
 
   try {
-    const post: BlogPost = (await StrapiService.getBlogPostBySlug(params.slug)) as BlogPost;
+    const response = await strapiApi.blogPost.getBlogPosts({
+      paginationLimit: 1,
+      filters: { slug: { $eqi: params.slug } },
+      populate: "*",
+    });
+    const { data } = response.data;
 
-    if (!post) {
+    if (!data || data?.length !== 1) {
       return { title: "Article non trouvé | INOLIB" };
     }
+    const post = data[0];
 
     return { title: `${post.title} | INOLIB` };
   } catch (error) {
@@ -23,32 +28,25 @@ export const generateMetadata = async (props: { params: Promise<{ slug: string }
     return { title: "Article non trouvé | INOLIB" };
   }
 };
-export const generateStaticParams = async () => {
-  try {
-    const { posts }: { posts: BlogPost[] } = (await StrapiService.getBlogPosts("*", 1, 9)) as { posts: BlogPost[] };
-    const params = posts.map((post) => ({
-      slug: post.slug,
-    }));
-
-    return params;
-  } catch (error) {
-    console.error("Erreur dans getStaticPaths :", error);
-    return {
-      paths: [],
-      fallback: "blocking",
-    };
-  }
-};
 
 const Page = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;
   const { slug } = params;
   try {
-    const post = (await StrapiService.getBlogPostBySlug(slug)) as BlogPost;
+    const response = await strapiApi.blogPost.getBlogPosts(
+      { paginationLimit: 1 },
+      {
+        params: {
+          filters: { slug: { $eqi: params.slug } },
+          populate: ["image", "author", "author.avatar", "categories"],
+        },
+      },
+    );
 
-    if (!post) {
+    if (!response.data.data) {
       return <div>Article non trouvé</div>;
     }
+    const post = response.data.data[0];
 
     return <PostDetail post={post} />;
   } catch (error) {

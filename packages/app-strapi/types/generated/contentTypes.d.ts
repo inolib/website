@@ -369,18 +369,48 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<"oneToOne", "api::author.author">;
-    categories: Schema.Attribute.Relation<"oneToMany", "api::category.category">;
-    content: Schema.Attribute.Blocks;
+    categories: Schema.Attribute.Relation<"manyToMany", "api::category.category">;
+    content: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
     excerpt: Schema.Attribute.String;
-    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios", true>;
+    image: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::blog-post.blog-post"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.String;
+    slug: Schema.Attribute.String & Schema.Attribute.Required & Schema.Attribute.Unique;
     tags: Schema.Attribute.JSON;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogSettingBlogSetting extends Struct.SingleTypeSchema {
+  collectionName: "blog_settings";
+  info: {
+    displayName: "blog setting";
+    pluralName: "blog-settings";
+    singularName: "blog-setting";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::blog-setting.blog-setting"> & Schema.Attribute.Private;
+    pageSize: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<6>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -397,7 +427,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    blog_post: Schema.Attribute.Relation<"manyToOne", "api::blog-post.blog-post">;
+    blog_posts: Schema.Attribute.Relation<"manyToMany", "api::blog-post.blog-post">;
     cover: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
@@ -822,6 +852,7 @@ declare module "@strapi/strapi" {
       "admin::user": AdminUser;
       "api::author.author": ApiAuthorAuthor;
       "api::blog-post.blog-post": ApiBlogPostBlogPost;
+      "api::blog-setting.blog-setting": ApiBlogSettingBlogSetting;
       "api::category.category": ApiCategoryCategory;
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;

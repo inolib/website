@@ -1,7 +1,7 @@
 type PostHeaderProps = {
   title: string;
   excerpt: string;
-  categories: { id: number; name: string }[];
+  categories: { id?: number; name?: string }[];
 };
 
 export const PostHeader = ({ title, excerpt, categories }: PostHeaderProps) => {

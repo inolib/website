@@ -1,3 +1,5 @@
+import type { AuthorListResponseMetaPagination, BlogPost } from "~/lib/strapi/api-client";
+
 export type Author = {
   id: number;
   documentId: string;
@@ -15,21 +17,21 @@ export type BlogPageProps = {
   pagination: Pagination;
 };
 
-export type BlogPost = {
-  id: number;
-  documentId: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: ContentParagraph[];
-  createdAt: string;
-  updatedAt: string;
-  publishedAt: string;
-  tags: string[];
-  author: Author;
-  categories: Category[];
-  image: Image[];
-};
+// export type BlogPost = {
+//   id: number;
+//   documentId: string;
+//   title: string;
+//   slug: string;
+//   excerpt: string;
+//   content: ContentParagraph[];
+//   createdAt: string;
+//   updatedAt: string;
+//   publishedAt: string;
+//   tags: string[];
+//   author: Author;
+//   categories: Category[];
+//   image: Image[];
+// };
 
 export type Category = {
   id: number;
@@ -61,9 +63,4 @@ export type PaginatedBlogPosts = {
   pagination: Pagination;
 };
 
-export type Pagination = {
-  page: number;
-  pageSize: number;
-  pageCount: number;
-  total: number;
-};
+export type Pagination = AuthorListResponseMetaPagination;

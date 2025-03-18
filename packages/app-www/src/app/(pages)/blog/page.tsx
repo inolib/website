@@ -1,32 +1,39 @@
 import type { Metadata } from "next";
-
 import { Blog, Header } from "~/components/app/(pages)/blog";
 import { Section } from "~/components/section";
-import { StrapiService } from "~/lib/api/strapi";
-import type { BlogPageProps } from "~/types/blog";
+import { strapiApi } from "~/lib/strapi";
+import type { BlogSetting } from "~/lib/strapi/api-client";
 
 export const metadata: Metadata = {
   title: "Actualités | INOLIB",
 };
+export const revalidate = 10;
 
-const Page = async () => {
+const getBlogSettings = async (): Promise<number> => {
   try {
-    const { posts, pagination } = (await StrapiService.getBlogPosts("*", 1, 1)) as BlogPageProps;
-
-    return (
-      <>
-        <Header />
-        <Section>
-          <Blog pagination={pagination} posts={posts} />
-        </Section>
-      </>
-    );
+    const response = await strapiApi.blogSettings.getBlogSetting({
+      sort: "id:desc",
+      paginationPage: 1,
+      paginationPageSize: 100,
+    });
+    return response.data.data?.pageSize ?? 6; // Default to 6 if no setting found
   } catch (error) {
-    console.error("Failed to fetch blog posts:", error);
-    return <div>Une erreur s est produite lors du chargement des articles.</div>;
+    console.error("Erreur lors de la récupération des configurations du blog :", error);
+    return 6;
   }
 };
 
-export const revalidate = 10;
+const Page = async () => {
+  const pageSize = await getBlogSettings();
+
+  return (
+    <>
+      <Header />
+      <Section>
+        <Blog pageSize={pageSize} />
+      </Section>
+    </>
+  );
+};
 
 export default Page;
