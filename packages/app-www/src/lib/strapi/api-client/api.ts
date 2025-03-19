@@ -1896,6 +1896,12 @@ export interface BlogSetting {
      * @type {string}
      * @memberof BlogSetting
      */
+    'heading': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogSetting
+     */
     'createdAt'?: string;
     /**
      * 
@@ -1982,6 +1988,12 @@ export interface BlogSettingLocalizationsInner {
      * @type {string}
      * @memberof BlogSettingLocalizationsInner
      */
+    'heading'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogSettingLocalizationsInner
+     */
     'createdAt'?: string;
     /**
      * 
@@ -2045,6 +2057,12 @@ export interface BlogSettingRequestData {
      * @memberof BlogSettingRequestData
      */
     'pageSize': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogSettingRequestData
+     */
+    'heading': string;
     /**
      * 
      * @type {string}

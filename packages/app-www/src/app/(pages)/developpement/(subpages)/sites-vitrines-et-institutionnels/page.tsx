@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     title: "Création et refonte de votre site web",
     description: "Découvrez nos solutions de sites web sur mesure, pour répondre à vos besoins.",
-    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/developpement/header.svg`,
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/developpement/header.jpg`,
     url: `${process.env.SITE_URL}/developpement/sites-vitrines-et-institutionnels`,
   },
 };

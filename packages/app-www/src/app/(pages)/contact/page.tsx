@@ -8,6 +8,32 @@ import { Section } from "~/components/section";
 
 export const metadata: Metadata = {
   title: "Contactez-nous | INOLIB",
+  description:
+    "Besoin d’informations ou d’assistance ? Contactez INOLIB pour toute question sur nos services d’accessibilité numérique et d’innovation.",
+  keywords: ["INOLIB", "Contact", "Support", "Service client", "Accessibilité numérique", "Innovation"],
+  openGraph: {
+    title: "Contactez-nous | INOLIB",
+    description:
+      "Besoin d’informations ou d’assistance ? Contactez INOLIB pour toute question sur nos services d’accessibilité numérique et d’innovation.",
+    url: `${process.env.SITE_URL}/contact`,
+    type: "website",
+    siteName: "INOLIB",
+    locale: "fr_FR",
+    images: [
+      {
+        url: `${process.env.SITE_URL}/images/logos/inolib/inolib-blue.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "INOLIB - Contactez notre équipe",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contactez-nous | INOLIB",
+    description: "Besoin d’informations ou d’assistance ? Contactez notre équipe.",
+    images: [`${process.env.SITE_URL}/images/logos/inolib/inolib-blue.jpg`],
+  },
 };
 
 const Page = () => {

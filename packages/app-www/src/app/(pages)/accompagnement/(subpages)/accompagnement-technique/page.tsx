@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Accompagnement technique pour l’accessibilité numérique",
     description:
       "INOLIB vous accompagne vers l’accessibilité numérique de vos outils numériques. Nous réalisons des audits, fournissons des recommandations, assurons un support technique et offrons un suivi continu pour garantir la conformité RGAA, WCAG, et RAWeb.",
-    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/accompagnement/header.svg`,
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/accompagnement/header.jpg`,
     url: `${process.env.SITE_URL}/accompagnement/accompagnement-technique`,
   },
 };

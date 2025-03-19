@@ -31,7 +31,6 @@ export const generateMetadata = async (props: { params: Promise<{ slug: string }
 
 const Page = async (props: { params: Promise<{ slug: string }> }) => {
   const params = await props.params;
-  const { slug } = params;
   try {
     const response = await strapiApi.blogPost.getBlogPosts(
       { paginationLimit: 1 },

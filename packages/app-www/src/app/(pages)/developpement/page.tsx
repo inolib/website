@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Développement web et mobile sur mesure",
     description:
       "Découvrez INOLIB, votre expert en développement web et mobile. Solutions sur mesure, éthiques, et performantes, pour répondre à vos besoins numériques.",
-    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/developpement/header.svg`,
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/developpement/header.jpg`,
     url: `${process.env.SITE_URL}/developpement`,
   },
 };

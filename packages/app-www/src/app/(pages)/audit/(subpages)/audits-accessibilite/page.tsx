@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Audits d’accessibilité conformes aux normes RGAA, WCAG, et RAWeb",
     description:
       "Découvrez nos audits d’accessibilité numérique (RGAA, WCAG, RAWeb) pour respecter les normes légales et offrir une meilleure expérience à vos utilisateurs.",
-    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/audit/header.svg`,
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/audit/header.jpg`,
     url: `${process.env.SITE_URL}/audit/audits-accessibilite`,
   },
 };
