@@ -232,6 +232,12 @@ export interface Author {
     'website'?: string;
     /**
      * 
+     * @type {Array<AuthorFormationsInner>}
+     * @memberof Author
+     */
+    'formations'?: Array<AuthorFormationsInner>;
+    /**
+     * 
      * @type {string}
      * @memberof Author
      */
@@ -268,10 +274,10 @@ export interface Author {
     'locale'?: string;
     /**
      * 
-     * @type {Array<AuthorLocalizationsInner>}
+     * @type {Array<AuthorAvatarRelatedInner>}
      * @memberof Author
      */
-    'localizations'?: Array<AuthorLocalizationsInner>;
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
 }
 /**
  * 
@@ -1027,6 +1033,383 @@ export interface AuthorAvatarRelatedInner {
 /**
  * 
  * @export
+ * @interface AuthorFormationsInner
+ */
+export interface AuthorFormationsInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof AuthorFormationsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'titre'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {Array<FormationsConceptsComponent>}
+     * @memberof AuthorFormationsInner
+     */
+    'concepts'?: Array<FormationsConceptsComponent>;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof AuthorFormationsInner
+     */
+    'illustration'?: AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'orientation'?: AuthorFormationsInnerOrientationEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'contenue'?: string;
+    /**
+     * 
+     * @type {AuthorFormationsInnerAuthor}
+     * @memberof AuthorFormationsInner
+     */
+    'author'?: AuthorFormationsInnerAuthor;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof AuthorFormationsInner
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof AuthorFormationsInner
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof AuthorFormationsInner
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+
+export const AuthorFormationsInnerOrientationEnum = {
+    Gauche: 'gauche',
+    Droite: 'droite'
+} as const;
+
+export type AuthorFormationsInnerOrientationEnum = typeof AuthorFormationsInnerOrientationEnum[keyof typeof AuthorFormationsInnerOrientationEnum];
+
+/**
+ * 
+ * @export
+ * @interface AuthorFormationsInnerAuthor
+ */
+export interface AuthorFormationsInnerAuthor {
+    /**
+     * 
+     * @type {number}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'bio'?: string;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'avatar'?: AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'slug'?: string;
+    /**
+     * 
+     * @type {any}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'socials'?: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'website'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'formations'?: Array<AuthorAvatarRelatedInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof AuthorFormationsInnerAuthor
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+/**
+ * 
+ * @export
+ * @interface AuthorFormationsInnerIllustration
+ */
+export interface AuthorFormationsInnerIllustration {
+    /**
+     * 
+     * @type {number}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'alternativeText'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'caption'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'width'?: number;
+    /**
+     * 
+     * @type {number}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'height'?: number;
+    /**
+     * 
+     * @type {any}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'formats'?: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'hash'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'ext'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'mime'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'size'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'url'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'previewUrl'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'provider'?: string;
+    /**
+     * 
+     * @type {any}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'provider_metadata'?: any;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'related'?: Array<AuthorAvatarRelatedInner>;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'folder'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'folderPath'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof AuthorFormationsInnerIllustration
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+/**
+ * 
+ * @export
  * @interface AuthorListResponse
  */
 export interface AuthorListResponse {
@@ -1090,266 +1473,6 @@ export interface AuthorListResponseMetaPagination {
 /**
  * 
  * @export
- * @interface AuthorLocalizationsInner
- */
-export interface AuthorLocalizationsInner {
-    /**
-     * 
-     * @type {number}
-     * @memberof AuthorLocalizationsInner
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'documentId'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'bio'?: string;
-    /**
-     * 
-     * @type {AuthorLocalizationsInnerAvatar}
-     * @memberof AuthorLocalizationsInner
-     */
-    'avatar'?: AuthorLocalizationsInnerAvatar;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'slug'?: string;
-    /**
-     * 
-     * @type {any}
-     * @memberof AuthorLocalizationsInner
-     */
-    'socials'?: any;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'website'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'createdAt'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'updatedAt'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'publishedAt'?: string;
-    /**
-     * 
-     * @type {AuthorAvatarRelatedInner}
-     * @memberof AuthorLocalizationsInner
-     */
-    'createdBy'?: AuthorAvatarRelatedInner;
-    /**
-     * 
-     * @type {AuthorAvatarRelatedInner}
-     * @memberof AuthorLocalizationsInner
-     */
-    'updatedBy'?: AuthorAvatarRelatedInner;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInner
-     */
-    'locale'?: string;
-    /**
-     * 
-     * @type {Array<AuthorAvatarRelatedInner>}
-     * @memberof AuthorLocalizationsInner
-     */
-    'localizations'?: Array<AuthorAvatarRelatedInner>;
-}
-/**
- * 
- * @export
- * @interface AuthorLocalizationsInnerAvatar
- */
-export interface AuthorLocalizationsInnerAvatar {
-    /**
-     * 
-     * @type {number}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'documentId'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'name'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'alternativeText'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'caption'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'width'?: number;
-    /**
-     * 
-     * @type {number}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'height'?: number;
-    /**
-     * 
-     * @type {any}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'formats'?: any;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'hash'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'ext'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'mime'?: string;
-    /**
-     * 
-     * @type {number}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'size'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'url'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'previewUrl'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'provider'?: string;
-    /**
-     * 
-     * @type {any}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'provider_metadata'?: any;
-    /**
-     * 
-     * @type {Array<AuthorAvatarRelatedInner>}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'related'?: Array<AuthorAvatarRelatedInner>;
-    /**
-     * 
-     * @type {AuthorAvatarRelatedInner}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'folder'?: AuthorAvatarRelatedInner;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'folderPath'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'createdAt'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'updatedAt'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'publishedAt'?: string;
-    /**
-     * 
-     * @type {AuthorAvatarRelatedInner}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'createdBy'?: AuthorAvatarRelatedInner;
-    /**
-     * 
-     * @type {AuthorAvatarRelatedInner}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'updatedBy'?: AuthorAvatarRelatedInner;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'locale'?: string;
-    /**
-     * 
-     * @type {Array<AuthorAvatarRelatedInner>}
-     * @memberof AuthorLocalizationsInnerAvatar
-     */
-    'localizations'?: Array<AuthorAvatarRelatedInner>;
-}
-/**
- * 
- * @export
  * @interface AuthorRequest
  */
 export interface AuthorRequest {
@@ -1402,6 +1525,12 @@ export interface AuthorRequestData {
      * @memberof AuthorRequestData
      */
     'website'?: string;
+    /**
+     * 
+     * @type {Array<AuthorRequestDataAvatar>}
+     * @memberof AuthorRequestData
+     */
+    'formations'?: Array<AuthorRequestDataAvatar>;
     /**
      * 
      * @type {string}
@@ -1484,10 +1613,10 @@ export interface BlogPost {
     'image'?: AuthorAvatar;
     /**
      * 
-     * @type {AuthorLocalizationsInner}
+     * @type {BlogPostAuthor}
      * @memberof BlogPost
      */
-    'author'?: AuthorLocalizationsInner;
+    'author'?: BlogPostAuthor;
     /**
      * 
      * @type {Array<BlogPostCategoriesInner>}
@@ -1552,6 +1681,220 @@ export interface BlogPost {
 /**
  * 
  * @export
+ * @interface BlogPostAuthor
+ */
+export interface BlogPostAuthor {
+    /**
+     * 
+     * @type {number}
+     * @memberof BlogPostAuthor
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'name'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'bio'?: string;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof BlogPostAuthor
+     */
+    'avatar'?: AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'slug'?: string;
+    /**
+     * 
+     * @type {any}
+     * @memberof BlogPostAuthor
+     */
+    'socials'?: any;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'website'?: string;
+    /**
+     * 
+     * @type {Array<BlogPostAuthorFormationsInner>}
+     * @memberof BlogPostAuthor
+     */
+    'formations'?: Array<BlogPostAuthorFormationsInner>;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof BlogPostAuthor
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof BlogPostAuthor
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthor
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof BlogPostAuthor
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+/**
+ * 
+ * @export
+ * @interface BlogPostAuthorFormationsInner
+ */
+export interface BlogPostAuthorFormationsInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'titre'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {Array<FormationsConceptsComponent>}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'concepts'?: Array<FormationsConceptsComponent>;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'illustration'?: AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'orientation'?: BlogPostAuthorFormationsInnerOrientationEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'contenue'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'author'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+
+export const BlogPostAuthorFormationsInnerOrientationEnum = {
+    Gauche: 'gauche',
+    Droite: 'droite'
+} as const;
+
+export type BlogPostAuthorFormationsInnerOrientationEnum = typeof BlogPostAuthorFormationsInnerOrientationEnum[keyof typeof BlogPostAuthorFormationsInnerOrientationEnum];
+
+/**
+ * 
+ * @export
  * @interface BlogPostCategoriesInner
  */
 export interface BlogPostCategoriesInner {
@@ -1587,10 +1930,10 @@ export interface BlogPostCategoriesInner {
     'description'?: string;
     /**
      * 
-     * @type {AuthorLocalizationsInnerAvatar}
+     * @type {AuthorFormationsInnerIllustration}
      * @memberof BlogPostCategoriesInner
      */
-    'cover'?: AuthorLocalizationsInnerAvatar;
+    'cover'?: AuthorFormationsInnerIllustration;
     /**
      * 
      * @type {Array<BlogPostCategoriesInnerBlogPostsInner>}
@@ -1678,10 +2021,10 @@ export interface BlogPostCategoriesInnerBlogPostsInner {
     'excerpt'?: string;
     /**
      * 
-     * @type {AuthorLocalizationsInnerAvatar}
+     * @type {AuthorFormationsInnerIllustration}
      * @memberof BlogPostCategoriesInnerBlogPostsInner
      */
-    'image'?: AuthorLocalizationsInnerAvatar;
+    'image'?: AuthorFormationsInnerIllustration;
     /**
      * 
      * @type {AuthorAvatarRelatedInner}
@@ -1902,6 +2245,12 @@ export interface BlogSetting {
      * @type {string}
      * @memberof BlogSetting
      */
+    'Description': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogSetting
+     */
     'createdAt'?: string;
     /**
      * 
@@ -1994,6 +2343,12 @@ export interface BlogSettingLocalizationsInner {
      * @type {string}
      * @memberof BlogSettingLocalizationsInner
      */
+    'Description'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogSettingLocalizationsInner
+     */
     'createdAt'?: string;
     /**
      * 
@@ -2063,6 +2418,12 @@ export interface BlogSettingRequestData {
      * @memberof BlogSettingRequestData
      */
     'heading': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogSettingRequestData
+     */
+    'Description': string;
     /**
      * 
      * @type {string}
@@ -2224,16 +2585,16 @@ export interface CategoryBlogPostsInner {
     'excerpt'?: string;
     /**
      * 
-     * @type {AuthorLocalizationsInnerAvatar}
+     * @type {AuthorFormationsInnerIllustration}
      * @memberof CategoryBlogPostsInner
      */
-    'image'?: AuthorLocalizationsInnerAvatar;
+    'image'?: AuthorFormationsInnerIllustration;
     /**
      * 
-     * @type {AuthorLocalizationsInner}
+     * @type {BlogPostAuthor}
      * @memberof CategoryBlogPostsInner
      */
-    'author'?: AuthorLocalizationsInner;
+    'author'?: BlogPostAuthor;
     /**
      * 
      * @type {Array<CategoryBlogPostsInnerCategoriesInner>}
@@ -2333,10 +2694,10 @@ export interface CategoryBlogPostsInnerCategoriesInner {
     'description'?: string;
     /**
      * 
-     * @type {AuthorLocalizationsInnerAvatar}
+     * @type {AuthorFormationsInnerIllustration}
      * @memberof CategoryBlogPostsInnerCategoriesInner
      */
-    'cover'?: AuthorLocalizationsInnerAvatar;
+    'cover'?: AuthorFormationsInnerIllustration;
     /**
      * 
      * @type {Array<AuthorAvatarRelatedInner>}
@@ -2522,6 +2883,268 @@ export interface ErrorError {
      * @memberof ErrorError
      */
     'details'?: object;
+}
+/**
+ * 
+ * @export
+ * @interface Formation
+ */
+export interface Formation {
+    /**
+     * 
+     * @type {number}
+     * @memberof Formation
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'titre': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'description': string;
+    /**
+     * 
+     * @type {Array<FormationsConceptsComponent>}
+     * @memberof Formation
+     */
+    'concepts': Array<FormationsConceptsComponent>;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof Formation
+     */
+    'illustration': AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'orientation': FormationOrientationEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'contenue': string;
+    /**
+     * 
+     * @type {BlogPostAuthor}
+     * @memberof Formation
+     */
+    'author'?: BlogPostAuthor;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof Formation
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof Formation
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof Formation
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+
+export const FormationOrientationEnum = {
+    Gauche: 'gauche',
+    Droite: 'droite'
+} as const;
+
+export type FormationOrientationEnum = typeof FormationOrientationEnum[keyof typeof FormationOrientationEnum];
+
+/**
+ * 
+ * @export
+ * @interface FormationListResponse
+ */
+export interface FormationListResponse {
+    /**
+     * 
+     * @type {Array<Formation>}
+     * @memberof FormationListResponse
+     */
+    'data'?: Array<Formation>;
+    /**
+     * 
+     * @type {AuthorListResponseMeta}
+     * @memberof FormationListResponse
+     */
+    'meta'?: AuthorListResponseMeta;
+}
+/**
+ * 
+ * @export
+ * @interface FormationRequest
+ */
+export interface FormationRequest {
+    /**
+     * 
+     * @type {FormationRequestData}
+     * @memberof FormationRequest
+     */
+    'data': FormationRequestData;
+}
+/**
+ * 
+ * @export
+ * @interface FormationRequestData
+ */
+export interface FormationRequestData {
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationRequestData
+     */
+    'titre': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationRequestData
+     */
+    'description': string;
+    /**
+     * 
+     * @type {Array<FormationsConceptsComponent>}
+     * @memberof FormationRequestData
+     */
+    'concepts': Array<FormationsConceptsComponent>;
+    /**
+     * 
+     * @type {AuthorRequestDataAvatar}
+     * @memberof FormationRequestData
+     */
+    'illustration': AuthorRequestDataAvatar;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationRequestData
+     */
+    'orientation': FormationRequestDataOrientationEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationRequestData
+     */
+    'contenue': string;
+    /**
+     * 
+     * @type {AuthorRequestDataAvatar}
+     * @memberof FormationRequestData
+     */
+    'author'?: AuthorRequestDataAvatar;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationRequestData
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorRequestDataAvatar>}
+     * @memberof FormationRequestData
+     */
+    'localizations'?: Array<AuthorRequestDataAvatar>;
+}
+
+export const FormationRequestDataOrientationEnum = {
+    Gauche: 'gauche',
+    Droite: 'droite'
+} as const;
+
+export type FormationRequestDataOrientationEnum = typeof FormationRequestDataOrientationEnum[keyof typeof FormationRequestDataOrientationEnum];
+
+/**
+ * 
+ * @export
+ * @interface FormationResponse
+ */
+export interface FormationResponse {
+    /**
+     * 
+     * @type {Formation}
+     * @memberof FormationResponse
+     */
+    'data'?: Formation;
+    /**
+     * 
+     * @type {object}
+     * @memberof FormationResponse
+     */
+    'meta'?: object;
+}
+/**
+ * 
+ * @export
+ * @interface FormationsConceptsComponent
+ */
+export interface FormationsConceptsComponent {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationsConceptsComponent
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationsConceptsComponent
+     */
+    'titre'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationsConceptsComponent
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof FormationsConceptsComponent
+     */
+    'image'?: AuthorFormationsInnerIllustration;
 }
 /**
  * 
@@ -5177,6 +5800,594 @@ export class CategoryApi extends BaseAPI {
      */
     public putCategoriesId(requestParameters: CategoryApiPutCategoriesIdRequest, options?: RawAxiosRequestConfig) {
         return CategoryApiFp(this.configuration).putCategoriesId(requestParameters.id, requestParameters.categoryRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * FormationApi - axios parameter creator
+ * @export
+ */
+export const FormationApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteFormationsId: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteFormationsId', 'id', id)
+            const localVarPath = `/formations/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFormations: async (sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/formations`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (paginationWithCount !== undefined) {
+                localVarQueryParameter['pagination[withCount]'] = paginationWithCount;
+            }
+
+            if (paginationPage !== undefined) {
+                localVarQueryParameter['pagination[page]'] = paginationPage;
+            }
+
+            if (paginationPageSize !== undefined) {
+                localVarQueryParameter['pagination[pageSize]'] = paginationPageSize;
+            }
+
+            if (paginationStart !== undefined) {
+                localVarQueryParameter['pagination[start]'] = paginationStart;
+            }
+
+            if (paginationLimit !== undefined) {
+                localVarQueryParameter['pagination[limit]'] = paginationLimit;
+            }
+
+            if (fields !== undefined) {
+                localVarQueryParameter['fields'] = fields;
+            }
+
+            if (populate !== undefined) {
+                localVarQueryParameter['populate'] = populate;
+            }
+
+            if (filters !== undefined) {
+                localVarQueryParameter['filters'] = filters;
+            }
+
+            if (locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFormationsId: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getFormationsId', 'id', id)
+            const localVarPath = `/formations/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {FormationRequest} formationRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        postFormations: async (formationRequest: FormationRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'formationRequest' is not null or undefined
+            assertParamExists('postFormations', 'formationRequest', formationRequest)
+            const localVarPath = `/formations`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(formationRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {FormationRequest} formationRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putFormationsId: async (id: number, formationRequest: FormationRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('putFormationsId', 'id', id)
+            // verify required parameter 'formationRequest' is not null or undefined
+            assertParamExists('putFormationsId', 'formationRequest', formationRequest)
+            const localVarPath = `/formations/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(formationRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * FormationApi - functional programming interface
+ * @export
+ */
+export const FormationApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = FormationApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteFormationsId(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteFormationsId(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FormationApi.deleteFormationsId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFormations(sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FormationListResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFormations(sort, paginationWithCount, paginationPage, paginationPageSize, paginationStart, paginationLimit, fields, populate, filters, locale, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FormationApi.getFormations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFormationsId(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FormationResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFormationsId(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FormationApi.getFormationsId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {FormationRequest} formationRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async postFormations(formationRequest: FormationRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FormationResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.postFormations(formationRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FormationApi.postFormations']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {FormationRequest} formationRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async putFormationsId(id: number, formationRequest: FormationRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FormationResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.putFormationsId(id, formationRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FormationApi.putFormationsId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * FormationApi - factory interface
+ * @export
+ */
+export const FormationApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = FormationApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {FormationApiDeleteFormationsIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteFormationsId(requestParameters: FormationApiDeleteFormationsIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<number> {
+            return localVarFp.deleteFormationsId(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {FormationApiGetFormationsRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFormations(requestParameters: FormationApiGetFormationsRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<FormationListResponse> {
+            return localVarFp.getFormations(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {FormationApiGetFormationsIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFormationsId(requestParameters: FormationApiGetFormationsIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<FormationResponse> {
+            return localVarFp.getFormationsId(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {FormationApiPostFormationsRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        postFormations(requestParameters: FormationApiPostFormationsRequest, options?: RawAxiosRequestConfig): AxiosPromise<FormationResponse> {
+            return localVarFp.postFormations(requestParameters.formationRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {FormationApiPutFormationsIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putFormationsId(requestParameters: FormationApiPutFormationsIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<FormationResponse> {
+            return localVarFp.putFormationsId(requestParameters.id, requestParameters.formationRequest, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * Request parameters for deleteFormationsId operation in FormationApi.
+ * @export
+ * @interface FormationApiDeleteFormationsIdRequest
+ */
+export interface FormationApiDeleteFormationsIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationApiDeleteFormationsId
+     */
+    readonly id: number
+}
+
+/**
+ * Request parameters for getFormations operation in FormationApi.
+ * @export
+ * @interface FormationApiGetFormationsRequest
+ */
+export interface FormationApiGetFormationsRequest {
+    /**
+     * Sort by attributes ascending (asc) or descending (desc)
+     * @type {string}
+     * @memberof FormationApiGetFormations
+     */
+    readonly sort?: string
+
+    /**
+     * Return page/pageSize (default: true)
+     * @type {boolean}
+     * @memberof FormationApiGetFormations
+     */
+    readonly paginationWithCount?: boolean
+
+    /**
+     * Page number (default: 0)
+     * @type {number}
+     * @memberof FormationApiGetFormations
+     */
+    readonly paginationPage?: number
+
+    /**
+     * Page size (default: 25)
+     * @type {number}
+     * @memberof FormationApiGetFormations
+     */
+    readonly paginationPageSize?: number
+
+    /**
+     * Offset value (default: 0)
+     * @type {number}
+     * @memberof FormationApiGetFormations
+     */
+    readonly paginationStart?: number
+
+    /**
+     * Number of entities to return (default: 25)
+     * @type {number}
+     * @memberof FormationApiGetFormations
+     */
+    readonly paginationLimit?: number
+
+    /**
+     * Fields to return (ex: title,author)
+     * @type {string}
+     * @memberof FormationApiGetFormations
+     */
+    readonly fields?: string
+
+    /**
+     * Relations to return
+     * @type {string}
+     * @memberof FormationApiGetFormations
+     */
+    readonly populate?: string
+
+    /**
+     * Filters to apply
+     * @type {{ [key: string]: any; }}
+     * @memberof FormationApiGetFormations
+     */
+    readonly filters?: { [key: string]: any; }
+
+    /**
+     * Locale to apply
+     * @type {string}
+     * @memberof FormationApiGetFormations
+     */
+    readonly locale?: string
+}
+
+/**
+ * Request parameters for getFormationsId operation in FormationApi.
+ * @export
+ * @interface FormationApiGetFormationsIdRequest
+ */
+export interface FormationApiGetFormationsIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationApiGetFormationsId
+     */
+    readonly id: number
+}
+
+/**
+ * Request parameters for postFormations operation in FormationApi.
+ * @export
+ * @interface FormationApiPostFormationsRequest
+ */
+export interface FormationApiPostFormationsRequest {
+    /**
+     * 
+     * @type {FormationRequest}
+     * @memberof FormationApiPostFormations
+     */
+    readonly formationRequest: FormationRequest
+}
+
+/**
+ * Request parameters for putFormationsId operation in FormationApi.
+ * @export
+ * @interface FormationApiPutFormationsIdRequest
+ */
+export interface FormationApiPutFormationsIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationApiPutFormationsId
+     */
+    readonly id: number
+
+    /**
+     * 
+     * @type {FormationRequest}
+     * @memberof FormationApiPutFormationsId
+     */
+    readonly formationRequest: FormationRequest
+}
+
+/**
+ * FormationApi - object-oriented interface
+ * @export
+ * @class FormationApi
+ * @extends {BaseAPI}
+ */
+export class FormationApi extends BaseAPI {
+    /**
+     * 
+     * @param {FormationApiDeleteFormationsIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FormationApi
+     */
+    public deleteFormationsId(requestParameters: FormationApiDeleteFormationsIdRequest, options?: RawAxiosRequestConfig) {
+        return FormationApiFp(this.configuration).deleteFormationsId(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {FormationApiGetFormationsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FormationApi
+     */
+    public getFormations(requestParameters: FormationApiGetFormationsRequest = {}, options?: RawAxiosRequestConfig) {
+        return FormationApiFp(this.configuration).getFormations(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {FormationApiGetFormationsIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FormationApi
+     */
+    public getFormationsId(requestParameters: FormationApiGetFormationsIdRequest, options?: RawAxiosRequestConfig) {
+        return FormationApiFp(this.configuration).getFormationsId(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {FormationApiPostFormationsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FormationApi
+     */
+    public postFormations(requestParameters: FormationApiPostFormationsRequest, options?: RawAxiosRequestConfig) {
+        return FormationApiFp(this.configuration).postFormations(requestParameters.formationRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {FormationApiPutFormationsIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FormationApi
+     */
+    public putFormationsId(requestParameters: FormationApiPutFormationsIdRequest, options?: RawAxiosRequestConfig) {
+        return FormationApiFp(this.configuration).putFormationsId(requestParameters.id, requestParameters.formationRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

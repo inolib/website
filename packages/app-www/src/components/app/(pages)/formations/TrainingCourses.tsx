@@ -25,6 +25,7 @@ import Scales02Icon from "#/images/icons/scales-02.svg";
 import Tool02Icon from "#/images/icons/tool-02.svg";
 import accessibilityCoursesIllustration from "#/images/illustrations/app/(pages)/formations/accessibility-courses.svg?url";
 import generalCoursesIllustration from "#/images/illustrations/app/(pages)/formations/general-courses.svg?url";
+import type { Formation } from "~/lib/strapi/api-client";
 
 const variants = tv({
   slots: {
@@ -44,14 +45,15 @@ const variants = tv({
 
 type TrainingCoursesProps = {
   _color: NonNullable<Variants["_color"]>;
+  courses: Formation[];
 };
 
 type Variants = VariantProps<typeof variants>;
 
-export const TrainingCourses = ({ _color }: TrainingCoursesProps) => {
+export const TrainingCourses = ({ _color, courses }: TrainingCoursesProps) => {
   const { sectionClassName } = variants({ _color });
 
-  const courses = [
+  const old_courses = [
     {
       title: "Formations en accessibilité numérique",
       subtitle:
@@ -142,18 +144,20 @@ export const TrainingCourses = ({ _color }: TrainingCoursesProps) => {
         <Highlights _isReversed={index % 2 === 0} key={index}>
           <HighlightsContent>
             <Heading _alignment="left" _size="2xl">
-              <HeadingContent _level={3}>{item.title}</HeadingContent>
-              <HeadingSubheading>{item.subtitle}</HeadingSubheading>
+              <HeadingContent _level={3}>{item.titre}</HeadingContent>
+              <HeadingSubheading>{item.description}</HeadingSubheading>
             </Heading>
 
             <HighlightsUnorderedList>
-              {item.highlights.map((item, index) => (
+              {item.concepts.map((item, index) => (
                 <HighlightsListItem key={index}>
                   <BoxCard>
-                    <BoxCardIcon>{item.icon}</BoxCardIcon>
+                    <BoxCardIcon>
+                      {item?.image?.url && <Image alt="" className="max-h-96 w-auto" src={item.image.url} />}
+                    </BoxCardIcon>
 
                     <BoxCardContent className="gap-4">
-                      <p className="text-xl font-bold">{item.title}</p>
+                      <p className="text-xl font-bold">{item.titre}</p>
                       <p>{item.description}</p>
                     </BoxCardContent>
                   </BoxCard>
@@ -166,9 +170,11 @@ export const TrainingCourses = ({ _color }: TrainingCoursesProps) => {
             </Link>
           </HighlightsContent>
 
-          <HighlightsIllustration>
-            <Image alt="" className="max-h-96 w-auto" src={item.illustration} />
-          </HighlightsIllustration>
+          {item?.illustration?.url && (
+            <HighlightsIllustration>
+              <Image alt="" className="max-h-96 w-auto" src={item.illustration.url} />
+            </HighlightsIllustration>
+          )}
         </Highlights>
       ))}
     </Section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { EducationalApproach, Header, Qualiopi, TrainingCourses, Why } from "~/components/app/(pages)/formations";
+import { strapiApi } from "~/lib/strapi";
 
 export const metadata: Metadata = {
   title: "INOLIB Academy – Formations aux métiers du numérique et à l’accessibilité numérique | INOLIB",
@@ -18,11 +19,28 @@ export const metadata: Metadata = {
   },
 };
 
-const Page = () => {
+// Fetch initial categories server-side
+const getFormations = async () => {
+  try {
+    const response = await strapiApi.formation.getFormations({
+      sort: "id:desc",
+      paginationPage: 1,
+      paginationPageSize: 100,
+    });
+    return response.data.data ?? [];
+  } catch (error) {
+    console.error("Erreur lors de la récupération des formations :", error);
+    return [];
+  }
+};
+
+const Page = async () => {
+  const formations = await getFormations();
+
   return (
     <>
       <Header />
-      <TrainingCourses _color="neutral-50" />
+      <TrainingCourses _color="neutral-50" courses={formations} />
       <EducationalApproach _color="white" />
       <Why _color="neutral-50" />
       <Qualiopi _color="white" />
