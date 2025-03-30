@@ -344,6 +344,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     bio: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    formations: Schema.Attribute.Relation<"oneToMany", "api::formation.formation">;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::author.author"> & Schema.Attribute.Private;
     name: Schema.Attribute.String;
@@ -389,6 +390,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
 export interface ApiBlogSettingBlogSetting extends Struct.SingleTypeSchema {
   collectionName: "blog_settings";
   info: {
+    description: "";
     displayName: "blog setting";
     pluralName: "blog-settings";
     singularName: "blog-setting";
@@ -399,6 +401,13 @@ export interface ApiBlogSettingBlogSetting extends Struct.SingleTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<"Actualit\u00E9s">;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::blog-setting.blog-setting"> & Schema.Attribute.Private;
     pageSize: Schema.Attribute.Integer &
@@ -437,6 +446,76 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
+  collectionName: "formations";
+  info: {
+    description: "";
+    displayName: "Formation";
+    pluralName: "formations";
+    singularName: "formation";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    author: Schema.Attribute.Relation<"manyToOne", "api::author.author">;
+    concepts: Schema.Attribute.Component<"formations.concepts", true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contenue: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    illustration: Schema.Attribute.Media<"images"> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::formation.formation">;
+    publishedAt: Schema.Attribute.DateTime;
+    titre: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -854,6 +933,7 @@ declare module "@strapi/strapi" {
       "api::blog-post.blog-post": ApiBlogPostBlogPost;
       "api::blog-setting.blog-setting": ApiBlogSettingBlogSetting;
       "api::category.category": ApiCategoryCategory;
+      "api::formation.formation": ApiFormationFormation;
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;
       "plugin::i18n.locale": PluginI18NLocale;

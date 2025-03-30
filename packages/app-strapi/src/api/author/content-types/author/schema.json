@@ -37,6 +37,12 @@
     },
     "website": {
       "type": "string"
+    },
+    "formations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::formation.formation",
+      "mappedBy": "author"
     }
   }
 }

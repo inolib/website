@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-setting",
     "pluralName": "blog-settings",
-    "displayName": "blog setting"
+    "displayName": "blog setting",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,16 @@
       "required": true,
       "default": 6,
       "min": 1
+    },
+    "heading": {
+      "type": "string",
+      "required": true,
+      "minLength": 3,
+      "default": "Actualités"
+    },
+    "Description": {
+      "type": "text",
+      "required": true
     }
   }
 }
