@@ -52,6 +52,7 @@ type Variants = VariantProps<typeof variants>;
 
 export const TrainingCourses = ({ _color, courses }: TrainingCoursesProps) => {
   const { sectionClassName } = variants({ _color });
+console.log("courses", courses);
 
   const old_courses = [
     {
