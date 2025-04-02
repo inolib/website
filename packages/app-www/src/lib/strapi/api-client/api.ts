@@ -1077,12 +1077,6 @@ export interface AuthorFormationsInner {
      * @type {string}
      * @memberof AuthorFormationsInner
      */
-    'orientation'?: AuthorFormationsInnerOrientationEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof AuthorFormationsInner
-     */
     'contenue'?: string;
     /**
      * 
@@ -1133,14 +1127,6 @@ export interface AuthorFormationsInner {
      */
     'localizations'?: Array<AuthorAvatarRelatedInner>;
 }
-
-export const AuthorFormationsInnerOrientationEnum = {
-    Gauche: 'gauche',
-    Droite: 'droite'
-} as const;
-
-export type AuthorFormationsInnerOrientationEnum = typeof AuthorFormationsInnerOrientationEnum[keyof typeof AuthorFormationsInnerOrientationEnum];
-
 /**
  * 
  * @export
@@ -1828,12 +1814,6 @@ export interface BlogPostAuthorFormationsInner {
      * @type {string}
      * @memberof BlogPostAuthorFormationsInner
      */
-    'orientation'?: BlogPostAuthorFormationsInnerOrientationEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof BlogPostAuthorFormationsInner
-     */
     'contenue'?: string;
     /**
      * 
@@ -1884,14 +1864,6 @@ export interface BlogPostAuthorFormationsInner {
      */
     'localizations'?: Array<AuthorAvatarRelatedInner>;
 }
-
-export const BlogPostAuthorFormationsInnerOrientationEnum = {
-    Gauche: 'gauche',
-    Droite: 'droite'
-} as const;
-
-export type BlogPostAuthorFormationsInnerOrientationEnum = typeof BlogPostAuthorFormationsInnerOrientationEnum[keyof typeof BlogPostAuthorFormationsInnerOrientationEnum];
-
 /**
  * 
  * @export
@@ -2931,12 +2903,6 @@ export interface Formation {
      * @type {string}
      * @memberof Formation
      */
-    'orientation': FormationOrientationEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof Formation
-     */
     'contenue': string;
     /**
      * 
@@ -2987,14 +2953,6 @@ export interface Formation {
      */
     'localizations'?: Array<AuthorAvatarRelatedInner>;
 }
-
-export const FormationOrientationEnum = {
-    Gauche: 'gauche',
-    Droite: 'droite'
-} as const;
-
-export type FormationOrientationEnum = typeof FormationOrientationEnum[keyof typeof FormationOrientationEnum];
-
 /**
  * 
  * @export
@@ -3062,12 +3020,6 @@ export interface FormationRequestData {
      * @type {string}
      * @memberof FormationRequestData
      */
-    'orientation': FormationRequestDataOrientationEnum;
-    /**
-     * 
-     * @type {string}
-     * @memberof FormationRequestData
-     */
     'contenue': string;
     /**
      * 
@@ -3088,14 +3040,6 @@ export interface FormationRequestData {
      */
     'localizations'?: Array<AuthorRequestDataAvatar>;
 }
-
-export const FormationRequestDataOrientationEnum = {
-    Gauche: 'gauche',
-    Droite: 'droite'
-} as const;
-
-export type FormationRequestDataOrientationEnum = typeof FormationRequestDataOrientationEnum[keyof typeof FormationRequestDataOrientationEnum];
-
 /**
  * 
  * @export

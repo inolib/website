@@ -9,6 +9,13 @@ export default [
       methods: ['GET', 'POST', 'PUT', 'DELETE'],
     },
   },
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['https://inolib.com'], 
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
