@@ -79,8 +79,8 @@ export const TrainingCourses = ({ _color, courses }: TrainingCoursesProps) => {
               ))}
             </HighlightsUnorderedList>
 
-            <Link _color="blue-900" _shape="button" href="/contact">
-              Demander un devis
+            <Link _color="blue-900" _shape="button" href={`/formations/${item.id}`}>
+              Aperçu de la formation
             </Link>
           </HighlightsContent>
 
