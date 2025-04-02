@@ -26,6 +26,7 @@ const getFormations = async () => {
       sort: "id:desc",
       paginationPage: 1,
       paginationPageSize: 100,
+      populate: "*"
     });
     return response.data.data ?? [];
   } catch (error) {
