@@ -4,7 +4,8 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Category"
+    "displayName": "Category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,20 +16,25 @@
       "type": "string"
     },
     "slug": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3,
+      "maxLength": 100
     },
     "description": {
       "type": "text"
     },
     "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "blog_posts": {
       "type": "relation",

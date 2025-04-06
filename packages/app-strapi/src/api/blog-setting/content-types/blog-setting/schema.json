@@ -24,8 +24,14 @@
       "minLength": 3,
       "default": "Actualités"
     },
-    "Description": {
+    "description": {
       "type": "text",
+      "required": true
+    },
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-metadata",
       "required": true
     }
   }

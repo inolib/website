@@ -96,27 +96,6 @@ export const Services = ({ _color }: ServicesProps) => {
       illustration: supportIllustration,
     },
     {
-      icon: <CodeBrowserIcon className="size-6 stroke-yellow-500" />,
-      title: "Développement de solutions web et mobiles",
-      description: (
-        <>
-          <p>Chez INOLIB, vos idées prennent vie avec des solutions sur mesure.</p>
-          <p>
-            Un projet de site web, une application, ou une plateforme SaaS, nous concevons et développons des solutions
-            modernes, performantes et accessibles.
-          </p>
-        </>
-      ),
-      links: [
-        {
-          label: "Développement web et mobile",
-          "aria-label": "Découvrir nos services de développement web et mobile",
-          href: "/developpement",
-        },
-      ],
-      illustration: developmentIllustration,
-    },
-    {
       icon: <GraduationHat02Icon className="size-6 stroke-yellow-500" />,
       title: "Formations",
       description: (
@@ -141,6 +120,28 @@ export const Services = ({ _color }: ServicesProps) => {
       ],
       illustration: trainingIllustration,
     },
+    {
+      icon: <CodeBrowserIcon className="size-6 stroke-yellow-500" />,
+      title: "Développement de solutions web et mobiles",
+      description: (
+        <>
+          <p>Chez INOLIB, vos idées prennent vie avec des solutions sur mesure.</p>
+          <p>
+            Un projet de site web, une application, ou une plateforme SaaS, nous concevons et développons des solutions
+            modernes, performantes et accessibles.
+          </p>
+        </>
+      ),
+      links: [
+        {
+          label: "Développement web et mobile",
+          "aria-label": "Découvrir nos services de développement web et mobile",
+          href: "/developpement",
+        },
+      ],
+      illustration: developmentIllustration,
+    },
+    
   ];
 
   return (

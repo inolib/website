@@ -401,7 +401,7 @@ export interface ApiBlogSettingBlogSetting extends Struct.SingleTypeSchema {
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
-    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     heading: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -410,6 +410,7 @@ export interface ApiBlogSettingBlogSetting extends Struct.SingleTypeSchema {
       Schema.Attribute.DefaultTo<"Actualit\u00E9s">;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::blog-setting.blog-setting"> & Schema.Attribute.Private;
+    metadata: Schema.Attribute.Component<"seo.seo-metadata", false> & Schema.Attribute.Required;
     pageSize: Schema.Attribute.Integer &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMax<
@@ -428,6 +429,7 @@ export interface ApiBlogSettingBlogSetting extends Struct.SingleTypeSchema {
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: "categories";
   info: {
+    description: "";
     displayName: "Category";
     pluralName: "categories";
     singularName: "category";
@@ -445,9 +447,90 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     localizations: Schema.Attribute.Relation<"oneToMany", "api::category.category"> & Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.String;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+        minLength: 3;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFormationSettingFormationSetting extends Struct.SingleTypeSchema {
+  collectionName: "formation_settings";
+  info: {
+    description: "";
+    displayName: "Formation setting";
+    pluralName: "formation-settings";
+    singularName: "formation-setting";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    certificationDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    certifications: Schema.Attribute.Component<"formations.certification", true>;
+    certificationTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    formationDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    formationTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }> &
+      Schema.Attribute.DefaultTo<"INOLIB Academy \u2013 Formations aux m\u00E9tiers du num\u00E9rique et \u00E0 l\u2019accessibilit\u00E9 num\u00E9rique">;
+    heroImage: Schema.Attribute.Media<"images"> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::formation-setting.formation-setting"> &
+      Schema.Attribute.Private;
+    pedagogicApproaches: Schema.Attribute.Component<"formations.pedagogic-approach", true>;
+    pedagogicImage: Schema.Attribute.Media<"images"> & Schema.Attribute.Required;
+    pedagogicTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<"seo.seo-metadata", false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    whyUs: Schema.Attribute.Component<"formations.why-us", true>;
+    whyUsDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    whyUsTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
   };
 }
 
@@ -505,6 +588,16 @@ export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::formation.formation">;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
     titre: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
@@ -516,6 +609,149 @@ export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeSettingHomeSetting extends Struct.SingleTypeSchema {
+  collectionName: "home_settings";
+  info: {
+    displayName: "home setting";
+    pluralName: "home-settings";
+    singularName: "home-setting";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    heroImage: Schema.Attribute.Media<"images"> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::home-setting.home-setting"> & Schema.Attribute.Private;
+    movingText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    numberOfLastBlogsToShow: Schema.Attribute.Integer & Schema.Attribute.Required & Schema.Attribute.DefaultTo<3>;
+    partnersTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
+  collectionName: "partners";
+  info: {
+    displayName: "partner";
+    pluralName: "partners";
+    singularName: "partner";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::partner.partner"> & Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<"images", true> & Schema.Attribute.Required;
+    position: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTestimonyTestimony extends Struct.CollectionTypeSchema {
+  collectionName: "testimonies";
+  info: {
+    description: "";
+    displayName: "testimony";
+    pluralName: "testimonies";
+    singularName: "testimony";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    authorDomain: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    authorName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::testimony.testimony">;
+    message: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 3;
+      }>;
+    position: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
   };
@@ -933,7 +1169,11 @@ declare module "@strapi/strapi" {
       "api::blog-post.blog-post": ApiBlogPostBlogPost;
       "api::blog-setting.blog-setting": ApiBlogSettingBlogSetting;
       "api::category.category": ApiCategoryCategory;
+      "api::formation-setting.formation-setting": ApiFormationSettingFormationSetting;
       "api::formation.formation": ApiFormationFormation;
+      "api::home-setting.home-setting": ApiHomeSettingHomeSetting;
+      "api::partner.partner": ApiPartnerPartner;
+      "api::testimony.testimony": ApiTestimonyTestimony;
       "plugin::content-releases.release": PluginContentReleasesRelease;
       "plugin::content-releases.release-action": PluginContentReleasesReleaseAction;
       "plugin::i18n.locale": PluginI18NLocale;

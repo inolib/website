@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Blog, Header } from "~/components/app/(pages)/blog";
 import { Section } from "~/components/section";
 import { strapiApi } from "~/lib/strapi";
+import type { BlogSetting } from "~/lib/strapi/api-client";
 
 export const metadata: Metadata = {
   title: "Actualités | INOLIB",
@@ -33,18 +34,12 @@ export const metadata: Metadata = {
 export const revalidate = 10; // Revalidate static content every 10 seconds
 
 // Fetch initial blog settings
-const getBlogSettings = async (): Promise<number> => {
-  try {
-    const response = await strapiApi.blogSettings.getBlogSetting({
-      sort: "id:desc",
-      paginationPage: 1,
-      paginationPageSize: 100,
-    });
-    return response.data.data?.pageSize ?? 6;
-  } catch (error) {
-    console.error("Erreur lors de la récupération des configurations du blog :", error);
-    return 6;
+const getBlogSettings = async (): Promise<BlogSetting> => {
+  const response = await strapiApi.blogSettings.getBlogSetting();
+  if (!response.data.data) {
+    throw new Error("Erreur lors de la récupération des configurations du blog");
   }
+  return response.data.data;
 };
 
 // Fetch initial blog posts server-side
@@ -89,15 +84,20 @@ const getInitialCategories = async () => {
 };
 
 const Page = async () => {
-  const pageSize = await getBlogSettings();
-  const { posts, pagination } = await getInitialBlogs(pageSize);
+  const pageSettings = await getBlogSettings();
+  const { posts, pagination } = await getInitialBlogs(pageSettings.pageSize);
   const categories = await getInitialCategories();
 
   return (
     <>
-      <Header />
+      <Header pageSettings={pageSettings} />
       <Section>
-        <Blog pageSize={pageSize} initialPosts={posts} initialPagination={pagination} initialCategories={categories} />
+        <Blog
+          pageSize={pageSettings.pageSize}
+          initialPosts={posts}
+          initialPagination={pagination}
+          initialCategories={categories}
+        />
       </Section>
     </>
   );

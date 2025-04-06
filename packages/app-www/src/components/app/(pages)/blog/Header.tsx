@@ -1,18 +1,16 @@
 import { Heading, HeadingContent, HeadingSubheading } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { Section } from "~/components/section";
+import type { BlogSetting } from "~/lib/strapi/api-client";
 
-export const Header = () => {
+export const Header = ({ pageSettings }: { pageSettings: BlogSetting }) => {
   return (
     <Section>
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn>
           <Heading _alignment="left" _size="4xl">
-            <HeadingContent _level={1}>Actualités</HeadingContent>
-            <HeadingSubheading>
-              Décrypte l’actualité de l’accessibilité numérique, publie des articles techniques (développement, design)
-              et partage ses rétrospectives.
-            </HeadingSubheading>
+            <HeadingContent _level={1}>{pageSettings.heading}</HeadingContent>
+            <HeadingSubheading>{pageSettings.Description}</HeadingSubheading>
           </Heading>
         </TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>

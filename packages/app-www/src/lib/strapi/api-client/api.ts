@@ -1089,6 +1089,12 @@ export interface AuthorFormationsInner {
      * @type {string}
      * @memberof AuthorFormationsInner
      */
+    'slug'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AuthorFormationsInner
+     */
     'createdAt'?: string;
     /**
      * 
@@ -1826,6 +1832,12 @@ export interface BlogPostAuthorFormationsInner {
      * @type {string}
      * @memberof BlogPostAuthorFormationsInner
      */
+    'slug'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BlogPostAuthorFormationsInner
+     */
     'createdAt'?: string;
     /**
      * 
@@ -2217,7 +2229,13 @@ export interface BlogSetting {
      * @type {string}
      * @memberof BlogSetting
      */
-    'Description': string;
+    'description': string;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof BlogSetting
+     */
+    'metadata': SeoSeoMetadataComponent;
     /**
      * 
      * @type {string}
@@ -2238,10 +2256,10 @@ export interface BlogSetting {
     'publishedAt'?: string;
     /**
      * 
-     * @type {AuthorAvatarFolderFilesInnerCreatedBy}
+     * @type {AuthorAvatarRelatedInner}
      * @memberof BlogSetting
      */
-    'createdBy'?: AuthorAvatarFolderFilesInnerCreatedBy;
+    'createdBy'?: AuthorAvatarRelatedInner;
     /**
      * 
      * @type {AuthorAvatarRelatedInner}
@@ -2315,7 +2333,13 @@ export interface BlogSettingLocalizationsInner {
      * @type {string}
      * @memberof BlogSettingLocalizationsInner
      */
-    'Description'?: string;
+    'description'?: string;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof BlogSettingLocalizationsInner
+     */
+    'metadata'?: SeoSeoMetadataComponent;
     /**
      * 
      * @type {string}
@@ -2395,7 +2419,13 @@ export interface BlogSettingRequestData {
      * @type {string}
      * @memberof BlogSettingRequestData
      */
-    'Description': string;
+    'description': string;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof BlogSettingRequestData
+     */
+    'metadata': SeoSeoMetadataComponent;
     /**
      * 
      * @type {string}
@@ -2457,7 +2487,7 @@ export interface Category {
      * @type {string}
      * @memberof Category
      */
-    'slug'?: string;
+    'slug': string;
     /**
      * 
      * @type {string}
@@ -2768,7 +2798,7 @@ export interface CategoryRequestData {
      * @type {string}
      * @memberof CategoryRequestData
      */
-    'slug'?: string;
+    'slug': string;
     /**
      * 
      * @type {string}
@@ -2915,6 +2945,12 @@ export interface Formation {
      * @type {string}
      * @memberof Formation
      */
+    'slug': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Formation
+     */
     'createdAt'?: string;
     /**
      * 
@@ -3032,6 +3068,12 @@ export interface FormationRequestData {
      * @type {string}
      * @memberof FormationRequestData
      */
+    'slug': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationRequestData
+     */
     'locale'?: string;
     /**
      * 
@@ -3058,6 +3100,481 @@ export interface FormationResponse {
      * @memberof FormationResponse
      */
     'meta'?: object;
+}
+/**
+ * 
+ * @export
+ * @interface FormationSetting
+ */
+export interface FormationSetting {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationSetting
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'heading': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'description': string;
+    /**
+     * 
+     * @type {AuthorAvatar}
+     * @memberof FormationSetting
+     */
+    'heroImage': AuthorAvatar;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'formationTitle': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'formationDescription': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'pedagogicTitle': string;
+    /**
+     * 
+     * @type {Array<FormationsPedagogicApproachComponent>}
+     * @memberof FormationSetting
+     */
+    'pedagogicApproaches'?: Array<FormationsPedagogicApproachComponent>;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof FormationSetting
+     */
+    'pedagogicImage': AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'whyUsTitle': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'whyUsDescription': string;
+    /**
+     * 
+     * @type {Array<FormationsWhyUsComponent>}
+     * @memberof FormationSetting
+     */
+    'whyUs'?: Array<FormationsWhyUsComponent>;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'certificationTitle': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'certificationDescription': string;
+    /**
+     * 
+     * @type {Array<FormationsCertificationComponent>}
+     * @memberof FormationSetting
+     */
+    'certifications'?: Array<FormationsCertificationComponent>;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof FormationSetting
+     */
+    'seo'?: SeoSeoMetadataComponent;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof FormationSetting
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof FormationSetting
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSetting
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<FormationSettingLocalizationsInner>}
+     * @memberof FormationSetting
+     */
+    'localizations'?: Array<FormationSettingLocalizationsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface FormationSettingListResponse
+ */
+export interface FormationSettingListResponse {
+    /**
+     * 
+     * @type {Array<FormationSetting>}
+     * @memberof FormationSettingListResponse
+     */
+    'data'?: Array<FormationSetting>;
+    /**
+     * 
+     * @type {AuthorListResponseMeta}
+     * @memberof FormationSettingListResponse
+     */
+    'meta'?: AuthorListResponseMeta;
+}
+/**
+ * 
+ * @export
+ * @interface FormationSettingLocalizationsInner
+ */
+export interface FormationSettingLocalizationsInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'heading'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'heroImage'?: AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'formationTitle'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'formationDescription'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'pedagogicTitle'?: string;
+    /**
+     * 
+     * @type {Array<FormationsPedagogicApproachComponent>}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'pedagogicApproaches'?: Array<FormationsPedagogicApproachComponent>;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'pedagogicImage'?: AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'whyUsTitle'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'whyUsDescription'?: string;
+    /**
+     * 
+     * @type {Array<FormationsWhyUsComponent>}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'whyUs'?: Array<FormationsWhyUsComponent>;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'certificationTitle'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'certificationDescription'?: string;
+    /**
+     * 
+     * @type {Array<FormationsCertificationComponent>}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'certifications'?: Array<FormationsCertificationComponent>;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'seo'?: SeoSeoMetadataComponent;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof FormationSettingLocalizationsInner
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+/**
+ * 
+ * @export
+ * @interface FormationSettingRequest
+ */
+export interface FormationSettingRequest {
+    /**
+     * 
+     * @type {FormationSettingRequestData}
+     * @memberof FormationSettingRequest
+     */
+    'data': FormationSettingRequestData;
+}
+/**
+ * 
+ * @export
+ * @interface FormationSettingRequestData
+ */
+export interface FormationSettingRequestData {
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'heading': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'description': string;
+    /**
+     * 
+     * @type {AuthorRequestDataAvatar}
+     * @memberof FormationSettingRequestData
+     */
+    'heroImage': AuthorRequestDataAvatar;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'formationTitle': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'formationDescription': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'pedagogicTitle': string;
+    /**
+     * 
+     * @type {Array<FormationsPedagogicApproachComponent>}
+     * @memberof FormationSettingRequestData
+     */
+    'pedagogicApproaches'?: Array<FormationsPedagogicApproachComponent>;
+    /**
+     * 
+     * @type {AuthorRequestDataAvatar}
+     * @memberof FormationSettingRequestData
+     */
+    'pedagogicImage': AuthorRequestDataAvatar;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'whyUsTitle': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'whyUsDescription': string;
+    /**
+     * 
+     * @type {Array<FormationsWhyUsComponent>}
+     * @memberof FormationSettingRequestData
+     */
+    'whyUs'?: Array<FormationsWhyUsComponent>;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'certificationTitle': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'certificationDescription': string;
+    /**
+     * 
+     * @type {Array<FormationsCertificationComponent>}
+     * @memberof FormationSettingRequestData
+     */
+    'certifications'?: Array<FormationsCertificationComponent>;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof FormationSettingRequestData
+     */
+    'seo'?: SeoSeoMetadataComponent;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationSettingRequestData
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorRequestDataAvatar>}
+     * @memberof FormationSettingRequestData
+     */
+    'localizations'?: Array<AuthorRequestDataAvatar>;
+}
+/**
+ * 
+ * @export
+ * @interface FormationSettingResponse
+ */
+export interface FormationSettingResponse {
+    /**
+     * 
+     * @type {FormationSetting}
+     * @memberof FormationSettingResponse
+     */
+    'data'?: FormationSetting;
+    /**
+     * 
+     * @type {object}
+     * @memberof FormationSettingResponse
+     */
+    'meta'?: object;
+}
+/**
+ * 
+ * @export
+ * @interface FormationsCertificationComponent
+ */
+export interface FormationsCertificationComponent {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationsCertificationComponent
+     */
+    'id'?: number;
 }
 /**
  * 
@@ -3093,6 +3610,362 @@ export interface FormationsConceptsComponent {
 /**
  * 
  * @export
+ * @interface FormationsPedagogicApproachComponent
+ */
+export interface FormationsPedagogicApproachComponent {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationsPedagogicApproachComponent
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationsPedagogicApproachComponent
+     */
+    'title'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationsPedagogicApproachComponent
+     */
+    'description'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface FormationsWhyUsComponent
+ */
+export interface FormationsWhyUsComponent {
+    /**
+     * 
+     * @type {number}
+     * @memberof FormationsWhyUsComponent
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationsWhyUsComponent
+     */
+    'title'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FormationsWhyUsComponent
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {Array<AuthorFormationsInnerIllustration>}
+     * @memberof FormationsWhyUsComponent
+     */
+    'image'?: Array<AuthorFormationsInnerIllustration>;
+}
+/**
+ * 
+ * @export
+ * @interface HomeSetting
+ */
+export interface HomeSetting {
+    /**
+     * 
+     * @type {number}
+     * @memberof HomeSetting
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'heading': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'description': string;
+    /**
+     * 
+     * @type {AuthorAvatar}
+     * @memberof HomeSetting
+     */
+    'heroImage': AuthorAvatar;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'partnersTitle': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'movingText': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HomeSetting
+     */
+    'numberOfLastBlogsToShow': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof HomeSetting
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof HomeSetting
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSetting
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<HomeSettingLocalizationsInner>}
+     * @memberof HomeSetting
+     */
+    'localizations'?: Array<HomeSettingLocalizationsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface HomeSettingListResponse
+ */
+export interface HomeSettingListResponse {
+    /**
+     * 
+     * @type {Array<HomeSetting>}
+     * @memberof HomeSettingListResponse
+     */
+    'data'?: Array<HomeSetting>;
+    /**
+     * 
+     * @type {AuthorListResponseMeta}
+     * @memberof HomeSettingListResponse
+     */
+    'meta'?: AuthorListResponseMeta;
+}
+/**
+ * 
+ * @export
+ * @interface HomeSettingLocalizationsInner
+ */
+export interface HomeSettingLocalizationsInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'heading'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'description'?: string;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'heroImage'?: AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'partnersTitle'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'movingText'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'numberOfLastBlogsToShow'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof HomeSettingLocalizationsInner
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+/**
+ * 
+ * @export
+ * @interface HomeSettingRequest
+ */
+export interface HomeSettingRequest {
+    /**
+     * 
+     * @type {HomeSettingRequestData}
+     * @memberof HomeSettingRequest
+     */
+    'data': HomeSettingRequestData;
+}
+/**
+ * 
+ * @export
+ * @interface HomeSettingRequestData
+ */
+export interface HomeSettingRequestData {
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingRequestData
+     */
+    'heading': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingRequestData
+     */
+    'description': string;
+    /**
+     * 
+     * @type {AuthorRequestDataAvatar}
+     * @memberof HomeSettingRequestData
+     */
+    'heroImage': AuthorRequestDataAvatar;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingRequestData
+     */
+    'partnersTitle': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingRequestData
+     */
+    'movingText': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof HomeSettingRequestData
+     */
+    'numberOfLastBlogsToShow': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof HomeSettingRequestData
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorRequestDataAvatar>}
+     * @memberof HomeSettingRequestData
+     */
+    'localizations'?: Array<AuthorRequestDataAvatar>;
+}
+/**
+ * 
+ * @export
+ * @interface HomeSettingResponse
+ */
+export interface HomeSettingResponse {
+    /**
+     * 
+     * @type {HomeSetting}
+     * @memberof HomeSettingResponse
+     */
+    'data'?: HomeSetting;
+    /**
+     * 
+     * @type {object}
+     * @memberof HomeSettingResponse
+     */
+    'meta'?: object;
+}
+/**
+ * 
+ * @export
  * @interface ModelError
  */
 export interface ModelError {
@@ -3108,6 +3981,541 @@ export interface ModelError {
      * @memberof ModelError
      */
     'error': ErrorError;
+}
+/**
+ * 
+ * @export
+ * @interface Partner
+ */
+export interface Partner {
+    /**
+     * 
+     * @type {number}
+     * @memberof Partner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Partner
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatar>}
+     * @memberof Partner
+     */
+    'logo': Array<AuthorAvatar>;
+    /**
+     * 
+     * @type {number}
+     * @memberof Partner
+     */
+    'position': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Partner
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Partner
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Partner
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof Partner
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof Partner
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof Partner
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<PartnerLocalizationsInner>}
+     * @memberof Partner
+     */
+    'localizations'?: Array<PartnerLocalizationsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerListResponse
+ */
+export interface PartnerListResponse {
+    /**
+     * 
+     * @type {Array<Partner>}
+     * @memberof PartnerListResponse
+     */
+    'data'?: Array<Partner>;
+    /**
+     * 
+     * @type {AuthorListResponseMeta}
+     * @memberof PartnerListResponse
+     */
+    'meta'?: AuthorListResponseMeta;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerLocalizationsInner
+ */
+export interface PartnerLocalizationsInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof PartnerLocalizationsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerLocalizationsInner
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {Array<AuthorFormationsInnerIllustration>}
+     * @memberof PartnerLocalizationsInner
+     */
+    'logo'?: Array<AuthorFormationsInnerIllustration>;
+    /**
+     * 
+     * @type {number}
+     * @memberof PartnerLocalizationsInner
+     */
+    'position'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerLocalizationsInner
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerLocalizationsInner
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerLocalizationsInner
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof PartnerLocalizationsInner
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof PartnerLocalizationsInner
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerLocalizationsInner
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof PartnerLocalizationsInner
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerRequest
+ */
+export interface PartnerRequest {
+    /**
+     * 
+     * @type {PartnerRequestData}
+     * @memberof PartnerRequest
+     */
+    'data': PartnerRequestData;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerRequestData
+ */
+export interface PartnerRequestData {
+    /**
+     * 
+     * @type {Array<AuthorRequestDataAvatar>}
+     * @memberof PartnerRequestData
+     */
+    'logo': Array<AuthorRequestDataAvatar>;
+    /**
+     * 
+     * @type {number}
+     * @memberof PartnerRequestData
+     */
+    'position': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof PartnerRequestData
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorRequestDataAvatar>}
+     * @memberof PartnerRequestData
+     */
+    'localizations'?: Array<AuthorRequestDataAvatar>;
+}
+/**
+ * 
+ * @export
+ * @interface PartnerResponse
+ */
+export interface PartnerResponse {
+    /**
+     * 
+     * @type {Partner}
+     * @memberof PartnerResponse
+     */
+    'data'?: Partner;
+    /**
+     * 
+     * @type {object}
+     * @memberof PartnerResponse
+     */
+    'meta'?: object;
+}
+/**
+ * 
+ * @export
+ * @interface SeoSeoMetadataComponent
+ */
+export interface SeoSeoMetadataComponent {
+    /**
+     * 
+     * @type {number}
+     * @memberof SeoSeoMetadataComponent
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof SeoSeoMetadataComponent
+     */
+    'metaTitle'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SeoSeoMetadataComponent
+     */
+    'metaDescription'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof SeoSeoMetadataComponent
+     */
+    'canonicalURL'?: string;
+    /**
+     * 
+     * @type {AuthorFormationsInnerIllustration}
+     * @memberof SeoSeoMetadataComponent
+     */
+    'metaImage'?: AuthorFormationsInnerIllustration;
+    /**
+     * 
+     * @type {string}
+     * @memberof SeoSeoMetadataComponent
+     */
+    'metaKeywords'?: string;
+}
+/**
+ * 
+ * @export
+ * @interface Testimony
+ */
+export interface Testimony {
+    /**
+     * 
+     * @type {number}
+     * @memberof Testimony
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Testimony
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Testimony
+     */
+    'message': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Testimony
+     */
+    'authorName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Testimony
+     */
+    'authorDomain': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof Testimony
+     */
+    'position': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof Testimony
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Testimony
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof Testimony
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarFolderFilesInnerCreatedBy}
+     * @memberof Testimony
+     */
+    'createdBy'?: AuthorAvatarFolderFilesInnerCreatedBy;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof Testimony
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof Testimony
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<TestimonyLocalizationsInner>}
+     * @memberof Testimony
+     */
+    'localizations'?: Array<TestimonyLocalizationsInner>;
+}
+/**
+ * 
+ * @export
+ * @interface TestimonyListResponse
+ */
+export interface TestimonyListResponse {
+    /**
+     * 
+     * @type {Array<Testimony>}
+     * @memberof TestimonyListResponse
+     */
+    'data'?: Array<Testimony>;
+    /**
+     * 
+     * @type {AuthorListResponseMeta}
+     * @memberof TestimonyListResponse
+     */
+    'meta'?: AuthorListResponseMeta;
+}
+/**
+ * 
+ * @export
+ * @interface TestimonyLocalizationsInner
+ */
+export interface TestimonyLocalizationsInner {
+    /**
+     * 
+     * @type {number}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'id'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'documentId'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'message'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'authorName'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'authorDomain'?: string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'position'?: number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'createdAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'updatedAt'?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'publishedAt'?: string;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'createdBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {AuthorAvatarRelatedInner}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'updatedBy'?: AuthorAvatarRelatedInner;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorAvatarRelatedInner>}
+     * @memberof TestimonyLocalizationsInner
+     */
+    'localizations'?: Array<AuthorAvatarRelatedInner>;
+}
+/**
+ * 
+ * @export
+ * @interface TestimonyRequest
+ */
+export interface TestimonyRequest {
+    /**
+     * 
+     * @type {TestimonyRequestData}
+     * @memberof TestimonyRequest
+     */
+    'data': TestimonyRequestData;
+}
+/**
+ * 
+ * @export
+ * @interface TestimonyRequestData
+ */
+export interface TestimonyRequestData {
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyRequestData
+     */
+    'message': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyRequestData
+     */
+    'authorName': string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyRequestData
+     */
+    'authorDomain': string;
+    /**
+     * 
+     * @type {number}
+     * @memberof TestimonyRequestData
+     */
+    'position': number;
+    /**
+     * 
+     * @type {string}
+     * @memberof TestimonyRequestData
+     */
+    'locale'?: string;
+    /**
+     * 
+     * @type {Array<AuthorRequestDataAvatar>}
+     * @memberof TestimonyRequestData
+     */
+    'localizations'?: Array<AuthorRequestDataAvatar>;
+}
+/**
+ * 
+ * @export
+ * @interface TestimonyResponse
+ */
+export interface TestimonyResponse {
+    /**
+     * 
+     * @type {Testimony}
+     * @memberof TestimonyResponse
+     */
+    'data'?: Testimony;
+    /**
+     * 
+     * @type {object}
+     * @memberof TestimonyResponse
+     */
+    'meta'?: object;
 }
 /**
  * 
@@ -6332,6 +7740,1956 @@ export class FormationApi extends BaseAPI {
      */
     public putFormationsId(requestParameters: FormationApiPutFormationsIdRequest, options?: RawAxiosRequestConfig) {
         return FormationApiFp(this.configuration).putFormationsId(requestParameters.id, requestParameters.formationRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * FormationSettingApi - axios parameter creator
+ * @export
+ */
+export const FormationSettingApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteFormationSetting: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/formation-setting`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFormationSetting: async (sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/formation-setting`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (paginationWithCount !== undefined) {
+                localVarQueryParameter['pagination[withCount]'] = paginationWithCount;
+            }
+
+            if (paginationPage !== undefined) {
+                localVarQueryParameter['pagination[page]'] = paginationPage;
+            }
+
+            if (paginationPageSize !== undefined) {
+                localVarQueryParameter['pagination[pageSize]'] = paginationPageSize;
+            }
+
+            if (paginationStart !== undefined) {
+                localVarQueryParameter['pagination[start]'] = paginationStart;
+            }
+
+            if (paginationLimit !== undefined) {
+                localVarQueryParameter['pagination[limit]'] = paginationLimit;
+            }
+
+            if (fields !== undefined) {
+                localVarQueryParameter['fields'] = fields;
+            }
+
+            if (populate !== undefined) {
+                localVarQueryParameter['populate'] = populate;
+            }
+
+            if (filters !== undefined) {
+                localVarQueryParameter['filters'] = filters;
+            }
+
+            if (locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {FormationSettingRequest} formationSettingRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putFormationSetting: async (formationSettingRequest: FormationSettingRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'formationSettingRequest' is not null or undefined
+            assertParamExists('putFormationSetting', 'formationSettingRequest', formationSettingRequest)
+            const localVarPath = `/formation-setting`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(formationSettingRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * FormationSettingApi - functional programming interface
+ * @export
+ */
+export const FormationSettingApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = FormationSettingApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteFormationSetting(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteFormationSetting(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FormationSettingApi.deleteFormationSetting']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getFormationSetting(sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FormationSettingResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getFormationSetting(sort, paginationWithCount, paginationPage, paginationPageSize, paginationStart, paginationLimit, fields, populate, filters, locale, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FormationSettingApi.getFormationSetting']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {FormationSettingRequest} formationSettingRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async putFormationSetting(formationSettingRequest: FormationSettingRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<FormationSettingResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.putFormationSetting(formationSettingRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['FormationSettingApi.putFormationSetting']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * FormationSettingApi - factory interface
+ * @export
+ */
+export const FormationSettingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = FormationSettingApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteFormationSetting(options?: RawAxiosRequestConfig): AxiosPromise<number> {
+            return localVarFp.deleteFormationSetting(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {FormationSettingApiGetFormationSettingRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getFormationSetting(requestParameters: FormationSettingApiGetFormationSettingRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<FormationSettingResponse> {
+            return localVarFp.getFormationSetting(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {FormationSettingApiPutFormationSettingRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putFormationSetting(requestParameters: FormationSettingApiPutFormationSettingRequest, options?: RawAxiosRequestConfig): AxiosPromise<FormationSettingResponse> {
+            return localVarFp.putFormationSetting(requestParameters.formationSettingRequest, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * Request parameters for getFormationSetting operation in FormationSettingApi.
+ * @export
+ * @interface FormationSettingApiGetFormationSettingRequest
+ */
+export interface FormationSettingApiGetFormationSettingRequest {
+    /**
+     * Sort by attributes ascending (asc) or descending (desc)
+     * @type {string}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly sort?: string
+
+    /**
+     * Return page/pageSize (default: true)
+     * @type {boolean}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly paginationWithCount?: boolean
+
+    /**
+     * Page number (default: 0)
+     * @type {number}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly paginationPage?: number
+
+    /**
+     * Page size (default: 25)
+     * @type {number}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly paginationPageSize?: number
+
+    /**
+     * Offset value (default: 0)
+     * @type {number}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly paginationStart?: number
+
+    /**
+     * Number of entities to return (default: 25)
+     * @type {number}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly paginationLimit?: number
+
+    /**
+     * Fields to return (ex: title,author)
+     * @type {string}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly fields?: string
+
+    /**
+     * Relations to return
+     * @type {string}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly populate?: string
+
+    /**
+     * Filters to apply
+     * @type {{ [key: string]: any; }}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly filters?: { [key: string]: any; }
+
+    /**
+     * Locale to apply
+     * @type {string}
+     * @memberof FormationSettingApiGetFormationSetting
+     */
+    readonly locale?: string
+}
+
+/**
+ * Request parameters for putFormationSetting operation in FormationSettingApi.
+ * @export
+ * @interface FormationSettingApiPutFormationSettingRequest
+ */
+export interface FormationSettingApiPutFormationSettingRequest {
+    /**
+     * 
+     * @type {FormationSettingRequest}
+     * @memberof FormationSettingApiPutFormationSetting
+     */
+    readonly formationSettingRequest: FormationSettingRequest
+}
+
+/**
+ * FormationSettingApi - object-oriented interface
+ * @export
+ * @class FormationSettingApi
+ * @extends {BaseAPI}
+ */
+export class FormationSettingApi extends BaseAPI {
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FormationSettingApi
+     */
+    public deleteFormationSetting(options?: RawAxiosRequestConfig) {
+        return FormationSettingApiFp(this.configuration).deleteFormationSetting(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {FormationSettingApiGetFormationSettingRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FormationSettingApi
+     */
+    public getFormationSetting(requestParameters: FormationSettingApiGetFormationSettingRequest = {}, options?: RawAxiosRequestConfig) {
+        return FormationSettingApiFp(this.configuration).getFormationSetting(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {FormationSettingApiPutFormationSettingRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof FormationSettingApi
+     */
+    public putFormationSetting(requestParameters: FormationSettingApiPutFormationSettingRequest, options?: RawAxiosRequestConfig) {
+        return FormationSettingApiFp(this.configuration).putFormationSetting(requestParameters.formationSettingRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * HomeSettingApi - axios parameter creator
+ * @export
+ */
+export const HomeSettingApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteHomeSetting: async (options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/home-setting`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getHomeSetting: async (sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/home-setting`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (paginationWithCount !== undefined) {
+                localVarQueryParameter['pagination[withCount]'] = paginationWithCount;
+            }
+
+            if (paginationPage !== undefined) {
+                localVarQueryParameter['pagination[page]'] = paginationPage;
+            }
+
+            if (paginationPageSize !== undefined) {
+                localVarQueryParameter['pagination[pageSize]'] = paginationPageSize;
+            }
+
+            if (paginationStart !== undefined) {
+                localVarQueryParameter['pagination[start]'] = paginationStart;
+            }
+
+            if (paginationLimit !== undefined) {
+                localVarQueryParameter['pagination[limit]'] = paginationLimit;
+            }
+
+            if (fields !== undefined) {
+                localVarQueryParameter['fields'] = fields;
+            }
+
+            if (populate !== undefined) {
+                localVarQueryParameter['populate'] = populate;
+            }
+
+            if (filters !== undefined) {
+                localVarQueryParameter['filters'] = filters;
+            }
+
+            if (locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {HomeSettingRequest} homeSettingRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putHomeSetting: async (homeSettingRequest: HomeSettingRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'homeSettingRequest' is not null or undefined
+            assertParamExists('putHomeSetting', 'homeSettingRequest', homeSettingRequest)
+            const localVarPath = `/home-setting`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(homeSettingRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * HomeSettingApi - functional programming interface
+ * @export
+ */
+export const HomeSettingApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = HomeSettingApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteHomeSetting(options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteHomeSetting(options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['HomeSettingApi.deleteHomeSetting']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getHomeSetting(sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<HomeSettingResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getHomeSetting(sort, paginationWithCount, paginationPage, paginationPageSize, paginationStart, paginationLimit, fields, populate, filters, locale, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['HomeSettingApi.getHomeSetting']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {HomeSettingRequest} homeSettingRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async putHomeSetting(homeSettingRequest: HomeSettingRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<HomeSettingResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.putHomeSetting(homeSettingRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['HomeSettingApi.putHomeSetting']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * HomeSettingApi - factory interface
+ * @export
+ */
+export const HomeSettingApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = HomeSettingApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteHomeSetting(options?: RawAxiosRequestConfig): AxiosPromise<number> {
+            return localVarFp.deleteHomeSetting(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {HomeSettingApiGetHomeSettingRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getHomeSetting(requestParameters: HomeSettingApiGetHomeSettingRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<HomeSettingResponse> {
+            return localVarFp.getHomeSetting(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {HomeSettingApiPutHomeSettingRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putHomeSetting(requestParameters: HomeSettingApiPutHomeSettingRequest, options?: RawAxiosRequestConfig): AxiosPromise<HomeSettingResponse> {
+            return localVarFp.putHomeSetting(requestParameters.homeSettingRequest, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * Request parameters for getHomeSetting operation in HomeSettingApi.
+ * @export
+ * @interface HomeSettingApiGetHomeSettingRequest
+ */
+export interface HomeSettingApiGetHomeSettingRequest {
+    /**
+     * Sort by attributes ascending (asc) or descending (desc)
+     * @type {string}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly sort?: string
+
+    /**
+     * Return page/pageSize (default: true)
+     * @type {boolean}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly paginationWithCount?: boolean
+
+    /**
+     * Page number (default: 0)
+     * @type {number}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly paginationPage?: number
+
+    /**
+     * Page size (default: 25)
+     * @type {number}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly paginationPageSize?: number
+
+    /**
+     * Offset value (default: 0)
+     * @type {number}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly paginationStart?: number
+
+    /**
+     * Number of entities to return (default: 25)
+     * @type {number}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly paginationLimit?: number
+
+    /**
+     * Fields to return (ex: title,author)
+     * @type {string}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly fields?: string
+
+    /**
+     * Relations to return
+     * @type {string}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly populate?: string
+
+    /**
+     * Filters to apply
+     * @type {{ [key: string]: any; }}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly filters?: { [key: string]: any; }
+
+    /**
+     * Locale to apply
+     * @type {string}
+     * @memberof HomeSettingApiGetHomeSetting
+     */
+    readonly locale?: string
+}
+
+/**
+ * Request parameters for putHomeSetting operation in HomeSettingApi.
+ * @export
+ * @interface HomeSettingApiPutHomeSettingRequest
+ */
+export interface HomeSettingApiPutHomeSettingRequest {
+    /**
+     * 
+     * @type {HomeSettingRequest}
+     * @memberof HomeSettingApiPutHomeSetting
+     */
+    readonly homeSettingRequest: HomeSettingRequest
+}
+
+/**
+ * HomeSettingApi - object-oriented interface
+ * @export
+ * @class HomeSettingApi
+ * @extends {BaseAPI}
+ */
+export class HomeSettingApi extends BaseAPI {
+    /**
+     * 
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HomeSettingApi
+     */
+    public deleteHomeSetting(options?: RawAxiosRequestConfig) {
+        return HomeSettingApiFp(this.configuration).deleteHomeSetting(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {HomeSettingApiGetHomeSettingRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HomeSettingApi
+     */
+    public getHomeSetting(requestParameters: HomeSettingApiGetHomeSettingRequest = {}, options?: RawAxiosRequestConfig) {
+        return HomeSettingApiFp(this.configuration).getHomeSetting(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {HomeSettingApiPutHomeSettingRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof HomeSettingApi
+     */
+    public putHomeSetting(requestParameters: HomeSettingApiPutHomeSettingRequest, options?: RawAxiosRequestConfig) {
+        return HomeSettingApiFp(this.configuration).putHomeSetting(requestParameters.homeSettingRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * PartnerApi - axios parameter creator
+ * @export
+ */
+export const PartnerApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deletePartnersId: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deletePartnersId', 'id', id)
+            const localVarPath = `/partners/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPartners: async (sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/partners`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (paginationWithCount !== undefined) {
+                localVarQueryParameter['pagination[withCount]'] = paginationWithCount;
+            }
+
+            if (paginationPage !== undefined) {
+                localVarQueryParameter['pagination[page]'] = paginationPage;
+            }
+
+            if (paginationPageSize !== undefined) {
+                localVarQueryParameter['pagination[pageSize]'] = paginationPageSize;
+            }
+
+            if (paginationStart !== undefined) {
+                localVarQueryParameter['pagination[start]'] = paginationStart;
+            }
+
+            if (paginationLimit !== undefined) {
+                localVarQueryParameter['pagination[limit]'] = paginationLimit;
+            }
+
+            if (fields !== undefined) {
+                localVarQueryParameter['fields'] = fields;
+            }
+
+            if (populate !== undefined) {
+                localVarQueryParameter['populate'] = populate;
+            }
+
+            if (filters !== undefined) {
+                localVarQueryParameter['filters'] = filters;
+            }
+
+            if (locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPartnersId: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getPartnersId', 'id', id)
+            const localVarPath = `/partners/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {PartnerRequest} partnerRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        postPartners: async (partnerRequest: PartnerRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'partnerRequest' is not null or undefined
+            assertParamExists('postPartners', 'partnerRequest', partnerRequest)
+            const localVarPath = `/partners`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(partnerRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {PartnerRequest} partnerRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putPartnersId: async (id: number, partnerRequest: PartnerRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('putPartnersId', 'id', id)
+            // verify required parameter 'partnerRequest' is not null or undefined
+            assertParamExists('putPartnersId', 'partnerRequest', partnerRequest)
+            const localVarPath = `/partners/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(partnerRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * PartnerApi - functional programming interface
+ * @export
+ */
+export const PartnerApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = PartnerApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deletePartnersId(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deletePartnersId(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['PartnerApi.deletePartnersId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getPartners(sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerListResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPartners(sort, paginationWithCount, paginationPage, paginationPageSize, paginationStart, paginationLimit, fields, populate, filters, locale, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['PartnerApi.getPartners']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getPartnersId(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getPartnersId(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['PartnerApi.getPartnersId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {PartnerRequest} partnerRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async postPartners(partnerRequest: PartnerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.postPartners(partnerRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['PartnerApi.postPartners']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {PartnerRequest} partnerRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async putPartnersId(id: number, partnerRequest: PartnerRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<PartnerResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.putPartnersId(id, partnerRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['PartnerApi.putPartnersId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * PartnerApi - factory interface
+ * @export
+ */
+export const PartnerApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = PartnerApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {PartnerApiDeletePartnersIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deletePartnersId(requestParameters: PartnerApiDeletePartnersIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<number> {
+            return localVarFp.deletePartnersId(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {PartnerApiGetPartnersRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPartners(requestParameters: PartnerApiGetPartnersRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<PartnerListResponse> {
+            return localVarFp.getPartners(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {PartnerApiGetPartnersIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getPartnersId(requestParameters: PartnerApiGetPartnersIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerResponse> {
+            return localVarFp.getPartnersId(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {PartnerApiPostPartnersRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        postPartners(requestParameters: PartnerApiPostPartnersRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerResponse> {
+            return localVarFp.postPartners(requestParameters.partnerRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {PartnerApiPutPartnersIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putPartnersId(requestParameters: PartnerApiPutPartnersIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<PartnerResponse> {
+            return localVarFp.putPartnersId(requestParameters.id, requestParameters.partnerRequest, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * Request parameters for deletePartnersId operation in PartnerApi.
+ * @export
+ * @interface PartnerApiDeletePartnersIdRequest
+ */
+export interface PartnerApiDeletePartnersIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof PartnerApiDeletePartnersId
+     */
+    readonly id: number
+}
+
+/**
+ * Request parameters for getPartners operation in PartnerApi.
+ * @export
+ * @interface PartnerApiGetPartnersRequest
+ */
+export interface PartnerApiGetPartnersRequest {
+    /**
+     * Sort by attributes ascending (asc) or descending (desc)
+     * @type {string}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly sort?: string
+
+    /**
+     * Return page/pageSize (default: true)
+     * @type {boolean}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly paginationWithCount?: boolean
+
+    /**
+     * Page number (default: 0)
+     * @type {number}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly paginationPage?: number
+
+    /**
+     * Page size (default: 25)
+     * @type {number}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly paginationPageSize?: number
+
+    /**
+     * Offset value (default: 0)
+     * @type {number}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly paginationStart?: number
+
+    /**
+     * Number of entities to return (default: 25)
+     * @type {number}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly paginationLimit?: number
+
+    /**
+     * Fields to return (ex: title,author)
+     * @type {string}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly fields?: string
+
+    /**
+     * Relations to return
+     * @type {string}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly populate?: string
+
+    /**
+     * Filters to apply
+     * @type {{ [key: string]: any; }}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly filters?: { [key: string]: any; }
+
+    /**
+     * Locale to apply
+     * @type {string}
+     * @memberof PartnerApiGetPartners
+     */
+    readonly locale?: string
+}
+
+/**
+ * Request parameters for getPartnersId operation in PartnerApi.
+ * @export
+ * @interface PartnerApiGetPartnersIdRequest
+ */
+export interface PartnerApiGetPartnersIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof PartnerApiGetPartnersId
+     */
+    readonly id: number
+}
+
+/**
+ * Request parameters for postPartners operation in PartnerApi.
+ * @export
+ * @interface PartnerApiPostPartnersRequest
+ */
+export interface PartnerApiPostPartnersRequest {
+    /**
+     * 
+     * @type {PartnerRequest}
+     * @memberof PartnerApiPostPartners
+     */
+    readonly partnerRequest: PartnerRequest
+}
+
+/**
+ * Request parameters for putPartnersId operation in PartnerApi.
+ * @export
+ * @interface PartnerApiPutPartnersIdRequest
+ */
+export interface PartnerApiPutPartnersIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof PartnerApiPutPartnersId
+     */
+    readonly id: number
+
+    /**
+     * 
+     * @type {PartnerRequest}
+     * @memberof PartnerApiPutPartnersId
+     */
+    readonly partnerRequest: PartnerRequest
+}
+
+/**
+ * PartnerApi - object-oriented interface
+ * @export
+ * @class PartnerApi
+ * @extends {BaseAPI}
+ */
+export class PartnerApi extends BaseAPI {
+    /**
+     * 
+     * @param {PartnerApiDeletePartnersIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PartnerApi
+     */
+    public deletePartnersId(requestParameters: PartnerApiDeletePartnersIdRequest, options?: RawAxiosRequestConfig) {
+        return PartnerApiFp(this.configuration).deletePartnersId(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {PartnerApiGetPartnersRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PartnerApi
+     */
+    public getPartners(requestParameters: PartnerApiGetPartnersRequest = {}, options?: RawAxiosRequestConfig) {
+        return PartnerApiFp(this.configuration).getPartners(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {PartnerApiGetPartnersIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PartnerApi
+     */
+    public getPartnersId(requestParameters: PartnerApiGetPartnersIdRequest, options?: RawAxiosRequestConfig) {
+        return PartnerApiFp(this.configuration).getPartnersId(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {PartnerApiPostPartnersRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PartnerApi
+     */
+    public postPartners(requestParameters: PartnerApiPostPartnersRequest, options?: RawAxiosRequestConfig) {
+        return PartnerApiFp(this.configuration).postPartners(requestParameters.partnerRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {PartnerApiPutPartnersIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof PartnerApi
+     */
+    public putPartnersId(requestParameters: PartnerApiPutPartnersIdRequest, options?: RawAxiosRequestConfig) {
+        return PartnerApiFp(this.configuration).putPartnersId(requestParameters.id, requestParameters.partnerRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+}
+
+
+
+/**
+ * TestimonyApi - axios parameter creator
+ * @export
+ */
+export const TestimonyApiAxiosParamCreator = function (configuration?: Configuration) {
+    return {
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteTestimoniesId: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('deleteTestimoniesId', 'id', id)
+            const localVarPath = `/testimonies/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'DELETE', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestimonies: async (sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/testimonies`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (sort !== undefined) {
+                localVarQueryParameter['sort'] = sort;
+            }
+
+            if (paginationWithCount !== undefined) {
+                localVarQueryParameter['pagination[withCount]'] = paginationWithCount;
+            }
+
+            if (paginationPage !== undefined) {
+                localVarQueryParameter['pagination[page]'] = paginationPage;
+            }
+
+            if (paginationPageSize !== undefined) {
+                localVarQueryParameter['pagination[pageSize]'] = paginationPageSize;
+            }
+
+            if (paginationStart !== undefined) {
+                localVarQueryParameter['pagination[start]'] = paginationStart;
+            }
+
+            if (paginationLimit !== undefined) {
+                localVarQueryParameter['pagination[limit]'] = paginationLimit;
+            }
+
+            if (fields !== undefined) {
+                localVarQueryParameter['fields'] = fields;
+            }
+
+            if (populate !== undefined) {
+                localVarQueryParameter['populate'] = populate;
+            }
+
+            if (filters !== undefined) {
+                localVarQueryParameter['filters'] = filters;
+            }
+
+            if (locale !== undefined) {
+                localVarQueryParameter['locale'] = locale;
+            }
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestimoniesId: async (id: number, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('getTestimoniesId', 'id', id)
+            const localVarPath = `/testimonies/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {TestimonyRequest} testimonyRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        postTestimonies: async (testimonyRequest: TestimonyRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'testimonyRequest' is not null or undefined
+            assertParamExists('postTestimonies', 'testimonyRequest', testimonyRequest)
+            const localVarPath = `/testimonies`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(testimonyRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {TestimonyRequest} testimonyRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putTestimoniesId: async (id: number, testimonyRequest: TestimonyRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'id' is not null or undefined
+            assertParamExists('putTestimoniesId', 'id', id)
+            // verify required parameter 'testimonyRequest' is not null or undefined
+            assertParamExists('putTestimoniesId', 'testimonyRequest', testimonyRequest)
+            const localVarPath = `/testimonies/{id}`
+                .replace(`{${"id"}}`, encodeURIComponent(String(id)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'PUT', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+
+    
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(testimonyRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+    }
+};
+
+/**
+ * TestimonyApi - functional programming interface
+ * @export
+ */
+export const TestimonyApiFp = function(configuration?: Configuration) {
+    const localVarAxiosParamCreator = TestimonyApiAxiosParamCreator(configuration)
+    return {
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async deleteTestimoniesId(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<number>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.deleteTestimoniesId(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TestimonyApi.deleteTestimoniesId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {string} [sort] Sort by attributes ascending (asc) or descending (desc)
+         * @param {boolean} [paginationWithCount] Return page/pageSize (default: true)
+         * @param {number} [paginationPage] Page number (default: 0)
+         * @param {number} [paginationPageSize] Page size (default: 25)
+         * @param {number} [paginationStart] Offset value (default: 0)
+         * @param {number} [paginationLimit] Number of entities to return (default: 25)
+         * @param {string} [fields] Fields to return (ex: title,author)
+         * @param {string} [populate] Relations to return
+         * @param {{ [key: string]: any; }} [filters] Filters to apply
+         * @param {string} [locale] Locale to apply
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getTestimonies(sort?: string, paginationWithCount?: boolean, paginationPage?: number, paginationPageSize?: number, paginationStart?: number, paginationLimit?: number, fields?: string, populate?: string, filters?: { [key: string]: any; }, locale?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TestimonyListResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTestimonies(sort, paginationWithCount, paginationPage, paginationPageSize, paginationStart, paginationLimit, fields, populate, filters, locale, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TestimonyApi.getTestimonies']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async getTestimoniesId(id: number, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TestimonyResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.getTestimoniesId(id, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TestimonyApi.getTestimoniesId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {TestimonyRequest} testimonyRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async postTestimonies(testimonyRequest: TestimonyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TestimonyResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.postTestimonies(testimonyRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TestimonyApi.postTestimonies']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
+         * @param {number} id 
+         * @param {TestimonyRequest} testimonyRequest 
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async putTestimoniesId(id: number, testimonyRequest: TestimonyRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<TestimonyResponse>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.putTestimoniesId(id, testimonyRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['TestimonyApi.putTestimoniesId']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+    }
+};
+
+/**
+ * TestimonyApi - factory interface
+ * @export
+ */
+export const TestimonyApiFactory = function (configuration?: Configuration, basePath?: string, axios?: AxiosInstance) {
+    const localVarFp = TestimonyApiFp(configuration)
+    return {
+        /**
+         * 
+         * @param {TestimonyApiDeleteTestimoniesIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        deleteTestimoniesId(requestParameters: TestimonyApiDeleteTestimoniesIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<number> {
+            return localVarFp.deleteTestimoniesId(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {TestimonyApiGetTestimoniesRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestimonies(requestParameters: TestimonyApiGetTestimoniesRequest = {}, options?: RawAxiosRequestConfig): AxiosPromise<TestimonyListResponse> {
+            return localVarFp.getTestimonies(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {TestimonyApiGetTestimoniesIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        getTestimoniesId(requestParameters: TestimonyApiGetTestimoniesIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<TestimonyResponse> {
+            return localVarFp.getTestimoniesId(requestParameters.id, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {TestimonyApiPostTestimoniesRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        postTestimonies(requestParameters: TestimonyApiPostTestimoniesRequest, options?: RawAxiosRequestConfig): AxiosPromise<TestimonyResponse> {
+            return localVarFp.postTestimonies(requestParameters.testimonyRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
+         * @param {TestimonyApiPutTestimoniesIdRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        putTestimoniesId(requestParameters: TestimonyApiPutTestimoniesIdRequest, options?: RawAxiosRequestConfig): AxiosPromise<TestimonyResponse> {
+            return localVarFp.putTestimoniesId(requestParameters.id, requestParameters.testimonyRequest, options).then((request) => request(axios, basePath));
+        },
+    };
+};
+
+/**
+ * Request parameters for deleteTestimoniesId operation in TestimonyApi.
+ * @export
+ * @interface TestimonyApiDeleteTestimoniesIdRequest
+ */
+export interface TestimonyApiDeleteTestimoniesIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof TestimonyApiDeleteTestimoniesId
+     */
+    readonly id: number
+}
+
+/**
+ * Request parameters for getTestimonies operation in TestimonyApi.
+ * @export
+ * @interface TestimonyApiGetTestimoniesRequest
+ */
+export interface TestimonyApiGetTestimoniesRequest {
+    /**
+     * Sort by attributes ascending (asc) or descending (desc)
+     * @type {string}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly sort?: string
+
+    /**
+     * Return page/pageSize (default: true)
+     * @type {boolean}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly paginationWithCount?: boolean
+
+    /**
+     * Page number (default: 0)
+     * @type {number}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly paginationPage?: number
+
+    /**
+     * Page size (default: 25)
+     * @type {number}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly paginationPageSize?: number
+
+    /**
+     * Offset value (default: 0)
+     * @type {number}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly paginationStart?: number
+
+    /**
+     * Number of entities to return (default: 25)
+     * @type {number}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly paginationLimit?: number
+
+    /**
+     * Fields to return (ex: title,author)
+     * @type {string}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly fields?: string
+
+    /**
+     * Relations to return
+     * @type {string}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly populate?: string
+
+    /**
+     * Filters to apply
+     * @type {{ [key: string]: any; }}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly filters?: { [key: string]: any; }
+
+    /**
+     * Locale to apply
+     * @type {string}
+     * @memberof TestimonyApiGetTestimonies
+     */
+    readonly locale?: string
+}
+
+/**
+ * Request parameters for getTestimoniesId operation in TestimonyApi.
+ * @export
+ * @interface TestimonyApiGetTestimoniesIdRequest
+ */
+export interface TestimonyApiGetTestimoniesIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof TestimonyApiGetTestimoniesId
+     */
+    readonly id: number
+}
+
+/**
+ * Request parameters for postTestimonies operation in TestimonyApi.
+ * @export
+ * @interface TestimonyApiPostTestimoniesRequest
+ */
+export interface TestimonyApiPostTestimoniesRequest {
+    /**
+     * 
+     * @type {TestimonyRequest}
+     * @memberof TestimonyApiPostTestimonies
+     */
+    readonly testimonyRequest: TestimonyRequest
+}
+
+/**
+ * Request parameters for putTestimoniesId operation in TestimonyApi.
+ * @export
+ * @interface TestimonyApiPutTestimoniesIdRequest
+ */
+export interface TestimonyApiPutTestimoniesIdRequest {
+    /**
+     * 
+     * @type {number}
+     * @memberof TestimonyApiPutTestimoniesId
+     */
+    readonly id: number
+
+    /**
+     * 
+     * @type {TestimonyRequest}
+     * @memberof TestimonyApiPutTestimoniesId
+     */
+    readonly testimonyRequest: TestimonyRequest
+}
+
+/**
+ * TestimonyApi - object-oriented interface
+ * @export
+ * @class TestimonyApi
+ * @extends {BaseAPI}
+ */
+export class TestimonyApi extends BaseAPI {
+    /**
+     * 
+     * @param {TestimonyApiDeleteTestimoniesIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TestimonyApi
+     */
+    public deleteTestimoniesId(requestParameters: TestimonyApiDeleteTestimoniesIdRequest, options?: RawAxiosRequestConfig) {
+        return TestimonyApiFp(this.configuration).deleteTestimoniesId(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {TestimonyApiGetTestimoniesRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TestimonyApi
+     */
+    public getTestimonies(requestParameters: TestimonyApiGetTestimoniesRequest = {}, options?: RawAxiosRequestConfig) {
+        return TestimonyApiFp(this.configuration).getTestimonies(requestParameters.sort, requestParameters.paginationWithCount, requestParameters.paginationPage, requestParameters.paginationPageSize, requestParameters.paginationStart, requestParameters.paginationLimit, requestParameters.fields, requestParameters.populate, requestParameters.filters, requestParameters.locale, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {TestimonyApiGetTestimoniesIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TestimonyApi
+     */
+    public getTestimoniesId(requestParameters: TestimonyApiGetTestimoniesIdRequest, options?: RawAxiosRequestConfig) {
+        return TestimonyApiFp(this.configuration).getTestimoniesId(requestParameters.id, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {TestimonyApiPostTestimoniesRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TestimonyApi
+     */
+    public postTestimonies(requestParameters: TestimonyApiPostTestimoniesRequest, options?: RawAxiosRequestConfig) {
+        return TestimonyApiFp(this.configuration).postTestimonies(requestParameters.testimonyRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @param {TestimonyApiPutTestimoniesIdRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof TestimonyApi
+     */
+    public putTestimoniesId(requestParameters: TestimonyApiPutTestimoniesIdRequest, options?: RawAxiosRequestConfig) {
+        return TestimonyApiFp(this.configuration).putTestimoniesId(requestParameters.id, requestParameters.testimonyRequest, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

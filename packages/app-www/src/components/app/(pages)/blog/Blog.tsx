@@ -7,7 +7,7 @@ import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/l
 import { BlogList } from "./BlogList";
 import { BlogPagination } from "./BlogPagination";
 import { BlogSearch } from "./BlogSearch";
-import { BlogTabs } from "./BlogTab";
+import { BlogCategorySelect } from "./BlogCategorySelect";
 import { BlogPostSkeleton } from "./BlogListLoader";
 
 type BlogProps = {
@@ -53,8 +53,7 @@ export const Blog = ({ pageSize, initialPosts, initialPagination, initialCategor
       isFirstRender.current = false; // Mark as no longer the first render
       return;
     }
-    console.log("here");
-    
+
     const fetchPosts = async () => {
       setIsLoadingPosts(true);
       try {
@@ -95,7 +94,7 @@ export const Blog = ({ pageSize, initialPosts, initialPagination, initialCategor
     <>
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn className="flex-1">
-          <BlogTabs
+          <BlogCategorySelect
             categories={categories}
             onCategoryChange={setSelectedCategory}
             selectedCategory={selectedCategory}
