@@ -552,13 +552,6 @@ export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
   };
   attributes: {
     author: Schema.Attribute.Relation<"manyToOne", "api::author.author">;
-    concepts: Schema.Attribute.Component<"formations.concepts", true> &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     contenue: Schema.Attribute.RichText &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -579,7 +572,6 @@ export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
         minLength: 3;
       }>;
     illustration: Schema.Attribute.Media<"images"> &
-      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

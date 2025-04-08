@@ -13,6 +13,7 @@ import {
 import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
+import FileCheck02Icon from "#/images/icons/file-check-02.svg";
 
 import type { Formation } from "~/lib/strapi/api-client";
 
@@ -65,9 +66,7 @@ export const TrainingCourses = ({ _color, courses }: TrainingCoursesProps) => {
                 <HighlightsListItem key={index}>
                   <BoxCard>
                     <BoxCardIcon>
-                      {item?.image?.url && (
-                        <Image alt="" className="size-12 max-h-96 w-auto stroke-blue-600" src={item.image.url} />
-                      )}
+                      <FileCheck02Icon className="size-12 stroke-blue-600" />
                     </BoxCardIcon>
 
                     <BoxCardContent className="gap-4">

@@ -37,22 +37,10 @@
       "required": true,
       "minLength": 3
     },
-    "concepts": {
-      "displayName": "Concepts",
-      "type": "component",
-      "repeatable": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "formations.concepts",
-      "required": true
-    },
     "illustration": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ],
