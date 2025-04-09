@@ -9,7 +9,7 @@ type PostDetailProps = {
 };
 
 export const PostDetail = ({ post }: PostDetailProps) => {
-  const postImageUrl = post?.image?.url ? process.env.NEXT_PUBLIC_STRAPI_URL + post?.image.url : "/blog_default.webp";
+  const postImageUrl = post?.image?.url ? post?.image.url : process.env.NEXT_PUBLIC_STRAPI_URL + "/blog_default.webp";
 
   return (
     <article className="mx-auto w-full max-w-4xl px-8 py-12">

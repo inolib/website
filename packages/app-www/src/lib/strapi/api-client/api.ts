@@ -1062,12 +1062,6 @@ export interface AuthorFormationsInner {
     'description'?: string;
     /**
      * 
-     * @type {Array<FormationsConceptsComponent>}
-     * @memberof AuthorFormationsInner
-     */
-    'concepts'?: Array<FormationsConceptsComponent>;
-    /**
-     * 
      * @type {AuthorFormationsInnerIllustration}
      * @memberof AuthorFormationsInner
      */
@@ -1803,12 +1797,6 @@ export interface BlogPostAuthorFormationsInner {
      * @memberof BlogPostAuthorFormationsInner
      */
     'description'?: string;
-    /**
-     * 
-     * @type {Array<FormationsConceptsComponent>}
-     * @memberof BlogPostAuthorFormationsInner
-     */
-    'concepts'?: Array<FormationsConceptsComponent>;
     /**
      * 
      * @type {AuthorFormationsInnerIllustration}
@@ -2918,16 +2906,10 @@ export interface Formation {
     'description': string;
     /**
      * 
-     * @type {Array<FormationsConceptsComponent>}
+     * @type {AuthorAvatar}
      * @memberof Formation
      */
-    'concepts': Array<FormationsConceptsComponent>;
-    /**
-     * 
-     * @type {AuthorFormationsInnerIllustration}
-     * @memberof Formation
-     */
-    'illustration': AuthorFormationsInnerIllustration;
+    'illustration'?: AuthorAvatar;
     /**
      * 
      * @type {string}
@@ -3041,16 +3023,10 @@ export interface FormationRequestData {
     'description': string;
     /**
      * 
-     * @type {Array<FormationsConceptsComponent>}
-     * @memberof FormationRequestData
-     */
-    'concepts': Array<FormationsConceptsComponent>;
-    /**
-     * 
      * @type {AuthorRequestDataAvatar}
      * @memberof FormationRequestData
      */
-    'illustration': AuthorRequestDataAvatar;
+    'illustration'?: AuthorRequestDataAvatar;
     /**
      * 
      * @type {string}
@@ -3575,37 +3551,6 @@ export interface FormationsCertificationComponent {
      * @memberof FormationsCertificationComponent
      */
     'id'?: number;
-}
-/**
- * 
- * @export
- * @interface FormationsConceptsComponent
- */
-export interface FormationsConceptsComponent {
-    /**
-     * 
-     * @type {number}
-     * @memberof FormationsConceptsComponent
-     */
-    'id'?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof FormationsConceptsComponent
-     */
-    'titre'?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof FormationsConceptsComponent
-     */
-    'description'?: string;
-    /**
-     * 
-     * @type {AuthorFormationsInnerIllustration}
-     * @memberof FormationsConceptsComponent
-     */
-    'image'?: AuthorFormationsInnerIllustration;
 }
 /**
  * 

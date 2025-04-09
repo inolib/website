@@ -23,14 +23,31 @@ export const RoutesProvider = ({ children }: { children: React.ReactNode }) => {
           populate: "*",
         });
         const posts = response.data.data;
-        console.log("posts", posts);
-
         if (posts) {
           for (const post of posts) {
             if (post.title) {
               dynamicRoutes[`/blog/${post.slug}`] = {
                 isActive: true,
                 title: post.title,
+              };
+            }
+          }
+        }
+
+        // Add formations
+        const FormationResponse = await strapiApi.formation.getFormations({
+          sort: "id:desc",
+          paginationPage: 1,
+          paginationPageSize: 9,
+          populate: "*",
+        });
+        const formations = FormationResponse.data.data;
+        if (formations) {
+          for (const formation of formations) {
+            if (formation.titre) {
+              dynamicRoutes[`/formations/${formation.slug}`] = {
+                isActive: true,
+                title: formation.titre,
               };
             }
           }

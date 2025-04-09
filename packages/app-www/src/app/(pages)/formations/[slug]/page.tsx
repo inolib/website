@@ -1,62 +1,87 @@
-import type { Metadata } from "next";
-import { PostDetail } from "~/components/app/(pages)/formations/PostDetail";
+"use client";
 
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
+import Head from "next/head";
+import { PostDetail } from "~/components/app/(pages)/formations/PostDetail";
 import { strapiApi } from "~/lib/strapi";
 
-export const generateMetadata = async (props: { params: Promise<{ id: string }> }): Promise<Metadata> => {
-  const params = await props.params;
-  if (!params?.id) {
-    return { title: "Formation non trouvé | INOLIB" };
-  }
+const Page = () => {
+  const { slug } = useParams();
+  const [post, setPost] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  try {
-    const response = await strapiApi.formation.getFormations(
-      { paginationLimit: 1 },
-      {
-        params: {
-          filters: { id: { $in: [params.id] } },
-          populate: ["illustration", "author", "author.avatar"],
-        },
-      },
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await strapiApi.formation.getFormations(
+          { paginationLimit: 1 },
+          {
+            params: {
+              filters: { slug: { $eq: slug } },
+              populate: ["illustration", "author", "author.avatar"],
+            },
+          },
+        );
+
+        const data = response.data.data;
+
+        if (!data || data.length === 0) {
+          setError("Formation non trouvée");
+        } else {
+          setPost(data[0]);
+        }
+      } catch (err) {
+        console.error("Erreur lors du chargement de la formation:", err);
+        setError("Erreur lors du chargement de la formation");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (slug) fetchPost();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <p role="status" aria-live="polite">
+        Chargement de la formation...
+      </p>
     );
-
-    const { data } = response.data;
-
-    if (!data || data?.length !== 1) {
-      return { title: "Formation non trouvé | INOLIB" };
-    }
-    const post = data[0];
-
-    return { title: `${post.titre} | INOLIB` };
-  } catch (error) {
-    console.error("Erreur dans generateMetadata :", error);
-    return { title: "Formation non trouvé | INOLIB" };
   }
-};
 
-const Page = async (props: { params: Promise<{ id: string }> }) => {
-  const params = await props.params;
-  try {
-    const response = await strapiApi.formation.getFormations(
-      { paginationLimit: 1 },
-      {
-        params: {
-          filters: { id: { $in: [params.id] } },
-          populate: ["illustration", "author", "author.avatar"],
-        },
-      },
-    );
-
-    if (!response.data.data) {
-      return <div>Formation non trouvé</div>;
-    }
-    const post = response.data.data[0];
-
-    return <PostDetail post={post} />;
-  } catch (error) {
-    console.error("Erreur lors du chargement de l'Formation :", error);
-    return <div>Erreur lors du chargement de lFormation</div>;
+  if (error) {
+    return <p className="text-red-600">{error}</p>;
   }
+
+  // Dynamic title and meta
+  const title = post ? `${post.title} | INOLIB` : "Formation non trouvée | INOLIB";
+  const description = post?.description || "Découvrez nos formations et programmes de qualité.";
+  const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
+  const ogImage = post?.illustration?.url
+    ? `${post.illustration.url}`
+    : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
+
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={`${siteUrl}/formations/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+      </Head>
+
+      {post ? <PostDetail post={post} /> : null}
+    </>
+  );
 };
 
 export default Page;

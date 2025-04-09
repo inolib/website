@@ -134,10 +134,9 @@ export const ContentInfo = () => {
               >
                 <Image
                   alt="Certificat Qualiopi"
-                  className="size-full"
-                  height={384}
                   src="/images/logos/qualiopi/qualiopi.png"
-                  width={768}
+                  height={76}
+                  width={144}
                   priority
                 />
               </Link>
@@ -153,11 +152,9 @@ export const ContentInfo = () => {
         <p className="self-center text-center md:hidden">Accessibilité : totalement accessible</p>
 
         <div className="flex items-end justify-between gap-8">
-          <Image alt="" className="h-8 w-fit" src={inolibYellowLogo} />
-
+          <Image alt="logo Inolib" height={78} width={154} src={inolibYellowLogo} />
           <p className="hidden md:block">Accessibilité : totalement accessible</p>
-
-          <p>© 2024 INOLIB</p>
+          <p>© {new Date().getFullYear()} INOLIB</p>
         </div>
       </Section>
     </footer>

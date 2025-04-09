@@ -17,7 +17,7 @@ export const PostAuthor = ({ author }: PostAuthorProps) => {
         alt={author?.name || "Nom non disponible"}
         className="size-10 rounded-full object-cover"
         height={40}
-        src={author?.avatar?.url ? process.env.NEXT_PUBLIC_STRAPI_URL + author?.avatar.url : "/blog_default.webp"}
+        src={author?.avatar?.url ? author?.avatar.url : process.env.NEXT_PUBLIC_STRAPI_URL + "/blog_default.webp"}
         width={40}
       />
       <div className="ml-3">

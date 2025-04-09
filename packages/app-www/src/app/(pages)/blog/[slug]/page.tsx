@@ -1,57 +1,80 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useState } from "react";
+import Head from "next/head";
+import { useParams } from "next/navigation";
+
 import { PostDetail } from "~/components/app/(pages)/blog/PostDetail";
-
 import { strapiApi } from "~/lib/strapi";
+import type { BlogPost } from "~/lib/strapi/api-client";
 
-export const generateMetadata = async (props: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
-  const params = await props.params;
-  if (!params?.slug) {
-    return { title: "Article non trouvé | INOLIB" };
-  }
+const Page = () => {
+  const { slug } = useParams() as { slug: string };
+  const [post, setPost] = useState<BlogPost | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
-  try {
-    const response = await strapiApi.blogPost.getBlogPosts({
-      paginationLimit: 1,
-      filters: { slug: { $eqi: params.slug } },
-      populate: "*",
-    });
-    const { data } = response.data;
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const response = await strapiApi.blogPost.getBlogPosts(
+          { paginationLimit: 1 },
+          {
+            params: {
+              filters: { slug: { $eqi: slug } },
+              populate: ["image", "author", "author.avatar", "categories"],
+            },
+          },
+        );
+        const postData = response?.data?.data?.[0];
 
-    if (!data || data?.length !== 1) {
-      return { title: "Article non trouvé | INOLIB" };
+        if (!postData) {
+          setNotFound(true);
+        } else {
+          setPost(postData);
+        }
+      } catch (error) {
+        console.error("Erreur lors du chargement de l'article :", error);
+        setNotFound(true);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (slug) {
+      fetchPost();
+    } else {
+      setNotFound(true);
+      setLoading(false);
     }
-    const post = data[0];
+  }, [slug]);
 
-    return { title: `${post.title} | INOLIB` };
-  } catch (error) {
-    console.error("Erreur dans generateMetadata :", error);
-    return { title: "Article non trouvé | INOLIB" };
-  }
-};
+  const title = post ? `${post.title} | INOLIB` : "Article non trouvé | INOLIB";
+  const description = post?.excerpt || "Découvrez un article du blog INOLIB.";
+  const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
+  const ogImage = post?.image?.url ? `${post.image.url}` : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
 
-const Page = async (props: { params: Promise<{ slug: string }> }) => {
-  const params = await props.params;
-  try {
-    const response = await strapiApi.blogPost.getBlogPosts(
-      { paginationLimit: 1 },
-      {
-        params: {
-          filters: { slug: { $eqi: params.slug } },
-          populate: ["image", "author", "author.avatar", "categories"],
-        },
-      },
-    );
+  return (
+    <>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={`${siteUrl}/blog/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+      </Head>
 
-    if (!response.data.data) {
-      return <div>Article non trouvé</div>;
-    }
-    const post = response.data.data[0];
-
-    return <PostDetail post={post} />;
-  } catch (error) {
-    console.error("Erreur lors du chargement de l'article :", error);
-    return <div>Erreur lors du chargement de larticle</div>;
-  }
+      {loading && <div>Chargement de l’article...</div>}
+      {notFound && !loading && <div>Article non trouvé</div>}
+      {post && !loading && <PostDetail post={post} />}
+    </>
+  );
 };
 
 export default Page;

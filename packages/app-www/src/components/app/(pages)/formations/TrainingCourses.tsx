@@ -1,4 +1,5 @@
 import Image from "next/image";
+import NextLink from "next/link";
 import type { VariantProps } from "tailwind-variants";
 
 import { BoxCard, BoxCardContent, BoxCardIcon } from "~/components/card";
@@ -14,6 +15,7 @@ import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 import FileCheck02Icon from "#/images/icons/file-check-02.svg";
+import generalCoursesIllustration from "#/images/illustrations/app/(pages)/formations/general-courses.svg?url";
 
 import type { Formation } from "~/lib/strapi/api-client";
 
@@ -36,12 +38,21 @@ const variants = tv({
 type TrainingCoursesProps = {
   _color: NonNullable<Variants["_color"]>;
   courses: Formation[];
+  loading?: boolean;
 };
 
 type Variants = VariantProps<typeof variants>;
 
-export const TrainingCourses = ({ _color, courses }: TrainingCoursesProps) => {
+export const TrainingCourses = ({ _color, courses, loading }: TrainingCoursesProps) => {
   const { sectionClassName } = variants({ _color });
+
+  if (loading) {
+    return (
+      <p role="status" aria-live="polite">
+        Chargement des formations en cours...
+      </p>
+    );
+  }
 
   return (
     <Section className={sectionClassName()}>
@@ -53,17 +64,12 @@ export const TrainingCourses = ({ _color, courses }: TrainingCoursesProps) => {
         </HeadingSubheading>
       </Heading>
 
-      {courses.map((item, index) => (
-        <Highlights _isReversed={index % 2 === 0} key={index}>
-          <HighlightsContent>
-            <Heading _alignment="left" _size="2xl">
-              <HeadingContent _level={3}>{item.titre}</HeadingContent>
-              <HeadingSubheading>{item.description}</HeadingSubheading>
-            </Heading>
-
-            <HighlightsUnorderedList>
-              {item.concepts.map((item, index) => (
-                <HighlightsListItem key={index}>
+      <Highlights _isReversed={true}>
+        <HighlightsContent>
+          <HighlightsUnorderedList>
+            {courses.map((item, index) => (
+              <HighlightsListItem key={item.slug}>
+                <NextLink href={`/formations/${item.slug}`} className="text-inherit block no-underline" passHref>
                   <BoxCard>
                     <BoxCardIcon>
                       <FileCheck02Icon className="size-12 stroke-blue-600" />
@@ -74,22 +80,19 @@ export const TrainingCourses = ({ _color, courses }: TrainingCoursesProps) => {
                       <p>{item.description}</p>
                     </BoxCardContent>
                   </BoxCard>
-                </HighlightsListItem>
-              ))}
-            </HighlightsUnorderedList>
+                </NextLink>
+              </HighlightsListItem>
+            ))}
+          </HighlightsUnorderedList>
+          <Link _color="blue-900" _shape="button" href="/contact">
+            Demander un devis
+          </Link>
+        </HighlightsContent>
 
-            <Link _color="blue-900" _shape="button" href={`/formations/${item.id}`}>
-              Aperçu de la formation
-            </Link>
-          </HighlightsContent>
-
-          {item?.illustration?.url && (
-            <HighlightsIllustration>
-              <Image alt="" className="max-h-96 w-auto" src={item.illustration.url} width={600} height={800} />
-            </HighlightsIllustration>
-          )}
-        </Highlights>
-      ))}
+        <HighlightsIllustration>
+          <Image alt="" className="max-h-96 w-auto" src={generalCoursesIllustration} />
+        </HighlightsIllustration>
+      </Highlights>
     </Section>
   );
 };

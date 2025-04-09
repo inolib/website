@@ -10,7 +10,7 @@ export const Header = ({ pageSettings }: { pageSettings: BlogSetting }) => {
         <TwoColumnsFlexLayoutColumn>
           <Heading _alignment="left" _size="4xl">
             <HeadingContent _level={1}>{pageSettings.heading}</HeadingContent>
-            <HeadingSubheading>{pageSettings.Description}</HeadingSubheading>
+            <HeadingSubheading>{pageSettings.description}</HeadingSubheading>
           </Heading>
         </TwoColumnsFlexLayoutColumn>
       </TwoColumnsFlexLayout>

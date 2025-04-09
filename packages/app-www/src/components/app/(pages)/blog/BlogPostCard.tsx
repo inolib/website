@@ -10,11 +10,11 @@ export const BlogPostCard = ({ post }: { post: BlogPost }) => {
   const postTitle = title || "Untitled Post";
   const postExcerpt = excerpt || "No excerpt available.";
   const postDate = createdAt ? formatDate(createdAt) : "Date not available";
-  const postImageUrl = image?.url ? process.env.NEXT_PUBLIC_STRAPI_URL + image.url : "/blog_default.webp";
+  const postImageUrl = image?.url ? image.url : process.env.NEXT_PUBLIC_STRAPI_URL + "/blog_default.webp";
   const authorName = author?.name || "Unknown Author";
   const authorAvatar = author?.avatar?.url
-    ? process.env.NEXT_PUBLIC_STRAPI_URL + author.avatar.url
-    : "/default-avatar.png";
+    ? author.avatar.url
+    : process.env.NEXT_PUBLIC_STRAPI_URL + "/default-avatar.png";
   const postCategories = categories?.length ? categories : [{ id: 0, name: "Uncategorized" }];
 
   return (
