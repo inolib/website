@@ -79,7 +79,7 @@ export const Blog = ({ _count, _headingLevel }: BlogProps) => {
 
             <div className="line-clamp-3 [&>*:not(:first-child)]:hidden">{item.excerpt}</div>
 
-            <Link _border="black" _color="white" _shape="button" href={`/actualites/${item.slug}`}>
+            <Link _border="black" _color="white" _shape="button" href={`/blog/${item.slug}`}>
               <span>Lire l’article</span>
               <ArrowNarrowDownIcon className="-rotate-90 stroke-black" />
             </Link>
