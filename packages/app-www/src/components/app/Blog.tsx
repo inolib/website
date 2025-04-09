@@ -11,7 +11,7 @@ export const Blog = () => {
           <HeadingContent _level={2}>Nos dernières actualités</HeadingContent>
         </Heading>
 
-        <Link _color="blue-900" _shape="button" className="hidden md:flex" href="/actualites">
+        <Link _color="blue-900" _shape="button" className="hidden md:flex" href="/blog">
           Voir tous les articles
         </Link>
       </div>

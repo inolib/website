@@ -71,7 +71,7 @@ export const Blog = ({ _count, _headingLevel }: BlogProps) => {
                 _color="transparent"
                 _shape="link"
                 className="text-left focus-visible:outline-black"
-                href={`/actualites/${item.slug}`}
+                href={`/blog/${item.slug}`}
               >
                 {item.title}
               </Link>
