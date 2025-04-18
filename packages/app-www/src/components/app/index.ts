@@ -6,6 +6,7 @@ export * from "./Header";
 export * from "./Link";
 export * from "./Nav";
 export * from "./Orejime";
+export * from "./Matomo";
 export * from "./ScrollingText";
 export * from "./Services";
 export * from "./SocialProof";

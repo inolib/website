@@ -83,6 +83,7 @@ export const Qualiopi = ({ _color }: QualiopiProps) => {
               height={384}
               src="/images/logos/qualiopi/qualiopi.png"
               width={768}
+              priority
             />
           </VerboseIllustration>
         </Verbose>

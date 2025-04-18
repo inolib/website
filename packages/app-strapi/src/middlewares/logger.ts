@@ -1,4 +1,4 @@
-import type { Core } from '@strapi/types';
+import type { Core } from "@strapi/types";
 
 const logger: Core.MiddlewareFactory = (_, { strapi }) => {
   return async (context, next) => {
@@ -6,7 +6,7 @@ const logger: Core.MiddlewareFactory = (_, { strapi }) => {
     await next();
     const delta = Math.ceil(Date.now() - start);
 
-    if (context.method !== 'HEAD') {
+    if (context.method !== "HEAD") {
       strapi.log.http(`${context.method} ${context.url} (${delta} ms) ${context.status}`);
     }
   };

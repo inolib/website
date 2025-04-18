@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
-import { Banner, ContentInfo, Nav, Orejime } from "~/components/app";
+import { Banner, ContentInfo, Matomo, Nav, Orejime } from "~/components/app";
+import { RoutesProvider } from "~/context/RoutesContext";
 
 import "@fontsource-variable/manrope";
 import "orejime/dist/orejime.css";
@@ -33,20 +34,23 @@ export const metadata: Metadata = {
 const Layout = ({ children }: PropsWithChildren) => {
   return (
     <html className="min-[1920px]:text-[clamp(1rem,_0.83333dvw,_2rem)]" lang="fr">
-      <body className="mx-auto min-w-[320px] max-w-[3840px] font-manrope text-lg font-medium" tabIndex={-1}>
+      <body className="mx-auto min-w-[320px] max-w-[3840px] font-['manrope'] text-lg font-medium" tabIndex={-1}>
         <div id="app">
           <Banner />
 
           <Nav />
 
-          <main id="main" tabIndex={-1}>
-            {children}
-          </main>
+          <RoutesProvider>
+            <main id="main" tabIndex={-1}>
+              {children}
+            </main>
+          </RoutesProvider>
 
           <ContentInfo />
         </div>
 
         <Orejime />
+        <Matomo />
       </body>
     </html>
   );

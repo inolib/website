@@ -6,8 +6,33 @@ import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/l
 import { Section } from "~/components/section";
 
 export const metadata: Metadata = {
-  title: "Prenez rendez-vous | INOLIB",
+  title: "Prendre Rendez-vous | INOLIB",
+  description: "Planifiez un rendez-vous avec nos experts en accessibilité numérique et innovation. INOLIB vous accompagne dans vos projets.",
+  keywords: ["INOLIB", "Rendez-vous", "Consultation", "Accessibilité numérique", "Innovation", "Experts"],
+  openGraph: {
+    title: "Prendre Rendez-vous | INOLIB",
+    description: "Planifiez un rendez-vous avec nos experts en accessibilité numérique et innovation. INOLIB vous accompagne dans vos projets.",
+    url: "${process.env.SITE_URL}/contact",
+    type: "website",
+    siteName: "INOLIB",
+    locale: "fr_FR",
+    images: [
+      {
+        url: "${process.env.SITE_URL}/images/logos/inolib/inolib-blue.jpg", // Ensure this image exists
+        width: 1200,
+        height: 630,
+        alt: "INOLIB - Prendre Rendez-vous avec nos experts",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prendre Rendez-vous | INOLIB",
+    description: "Planifiez un rendez-vous avec nos experts en accessibilité numérique et innovation.",
+    images: ["${process.env.SITE_URL}/images/logos/inolib/inolib-blue.jpg"],
+  },
 };
+
 
 const Page = () => {
   return (

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     title: "Tests utilisateurs",
     description: "Comprenez vos utilisateurs en profondeur et optimisez l’expérience qu’ils vivent avec votre produit.",
-    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/audit/header.svg`,
+    images: `${process.env.SITE_URL}/images/illustrations/app/(pages)/audit/header.jpg`,
     url: `${process.env.SITE_URL}/audit/tests-utilisateurs`,
   },
 };
