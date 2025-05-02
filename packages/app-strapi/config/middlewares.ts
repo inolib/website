@@ -1,32 +1,18 @@
 export default [
-  'global::logger',
-  'strapi::errors',
-  'strapi::security',
+  "global::logger",
+  "strapi::errors",
+  "strapi::security",
   {
-    name: 'strapi::cors',
+    name: "strapi::cors",
     config: {
-      origin: ['http://localhost:8000'], 
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      origin: ["http://localhost:8000", "http://localhost:3000", "http://localhost:3001", "https://inolib.com"],
+      methods: ["GET", "POST", "PUT", "DELETE"],
     },
   },
-  {
-    name: 'strapi::cors',
-    config: {
-      origin: ['http://localhost:3000'], 
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    },
-  },
-  {
-    name: 'strapi::cors',
-    config: {
-      origin: ['https://inolib.com'], 
-      methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    },
-  },
-  'strapi::poweredBy',
-  'strapi::query',
-  'strapi::body',
-  'strapi::session',
-  'strapi::favicon',
-  'strapi::public',
+  "strapi::poweredBy",
+  "strapi::query",
+  "strapi::body",
+  "strapi::session",
+  "strapi::favicon",
+  "strapi::public",
 ];
