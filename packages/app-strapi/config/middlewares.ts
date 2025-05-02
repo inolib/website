@@ -5,7 +5,13 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: ["http://localhost:8000", "http://localhost:3000", "http://localhost:3001", "https://inolib.com"],
+      origin: [
+        "http://localhost:8000",
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://inolib.com",
+        "https://www.inolib.com",
+      ],
       methods: ["GET", "POST", "PUT", "DELETE"],
     },
   },
