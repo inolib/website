@@ -11,10 +11,10 @@ export const PostImage = ({ imageUrl, title }: PostImageProps) => {
   return (
     <Image
       alt={title}
-      className="mt-6 w-full rounded-lg object-cover"
-      height={450}
+      className="mx-auto mt-6 w-1/2 rounded-lg"
+      height={250}
       src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${imageUrl}`}
-      width={800}
+      width={250}
     />
   );
 };
