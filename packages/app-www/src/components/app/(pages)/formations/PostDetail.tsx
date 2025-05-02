@@ -14,8 +14,6 @@ export const PostDetail = ({ post }: PostDetailProps) => {
     ? post?.illustration.url
     : process.env.NEXT_PUBLIC_STRAPI_URL + "/blog_default.webp";
 
-  console.log(post.illustration);
-
   return (
     <article className="mx-auto w-full max-w-4xl px-8 py-12">
       {post.titre && post.description && <PostHeader categories={[]} excerpt={post.description} title={post.titre} />}

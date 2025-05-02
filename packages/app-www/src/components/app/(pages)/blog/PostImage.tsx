@@ -8,6 +8,10 @@ type PostImageProps = {
 export const PostImage = ({ imageUrl, alternativeText }: PostImageProps) => {
   if (!imageUrl) return null;
 
+  console.log("imageUrl", imageUrl);
+
+  console.log(process.env.NEXT_PUBLIC_STRAPI_URL);
+
   alternativeText ? null : "";
 
   return (

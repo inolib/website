@@ -580,6 +580,12 @@ export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::formation.formation">;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<"seo.seo-metadata", false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

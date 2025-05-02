@@ -74,6 +74,16 @@
       "type": "string",
       "required": true,
       "minLength": 3
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "seo.seo-metadata"
     }
   }
 }
