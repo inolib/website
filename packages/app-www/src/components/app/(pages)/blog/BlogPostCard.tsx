@@ -10,8 +10,9 @@ export const BlogPostCard = ({ post }: { post: BlogPost }) => {
   const postTitle = title || "Untitled Post";
   const postExcerpt = excerpt || "No excerpt available.";
   const postDate = createdAt ? formatDate(createdAt) : "Date not available";
-  const postImageUrl = image?.url ? image.url : process.env.NEXT_PUBLIC_STRAPI_URL + "/blog_default.webp";
-  const authorName = author?.name || "Unknown Author";
+  const postImageUrl = image?.url ? image.url : (process.env.NEXT_PUBLIC_STRAPI_URL || "") + "/blog_default.webp";
+
+  const authorName = author?.name || "Auteur inconnu";
   const authorAvatar = author?.avatar?.url
     ? author.avatar.url
     : process.env.NEXT_PUBLIC_STRAPI_URL + "/default-avatar.png";
@@ -48,7 +49,7 @@ export const BlogPostCard = ({ post }: { post: BlogPost }) => {
             <h2 className="mt-2 text-[24px] font-semibold leading-[33px] text-[#111F22]">{postTitle}</h2>
 
             {/* Excerpt */}
-            <p className="mt-2 line-clamp-3 text-[16px] font-medium leading-[26px] text-[#525252]">{postExcerpt}</p>
+            {/* <p className="mt-2 line-clamp-3 text-[16px] font-medium leading-[26px] text-[#525252]">{postExcerpt}</p> */}
 
             {/* Author Info */}
             <div className="mt-4 flex items-center gap-3">
@@ -60,10 +61,10 @@ export const BlogPostCard = ({ post }: { post: BlogPost }) => {
                 width={40}
                 priority
               />
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <p className="text-[14px] font-semibold leading-[20px] text-[#111F22]">{authorName}</p>
-                <p className="text-[14px] font-normal leading-[20px] text-[#525252]">{postDate}</p>
-              </div>
+                <p className="text-[14px] font-normal leading-[20px] text-[#525252]">{postDate}</p> */}
+              {/* </div> */}
             </div>
           </div>
         </div>

@@ -92,21 +92,27 @@ export const Blog = ({ pageSize, initialPosts, initialPagination, initialCategor
 
   return (
     <>
-      <TwoColumnsFlexLayout>
-        <TwoColumnsFlexLayoutColumn className="flex-1">
-          <BlogCategorySelect
-            categories={categories}
-            onCategoryChange={setSelectedCategory}
-            selectedCategory={selectedCategory}
-          />
-        </TwoColumnsFlexLayoutColumn>
-        <BlogSearch onSearch={setSearchQuery} />
-      </TwoColumnsFlexLayout>
+      {posts.length > 0 ? (
+        <>
+          <TwoColumnsFlexLayout>
+            <TwoColumnsFlexLayoutColumn className="flex-1">
+              <BlogCategorySelect
+                categories={categories}
+                onCategoryChange={setSelectedCategory}
+                selectedCategory={selectedCategory}
+              />
+            </TwoColumnsFlexLayoutColumn>
+            <BlogSearch onSearch={setSearchQuery} />
+          </TwoColumnsFlexLayout>
 
-      {isLoadingPosts ? <BlogPostSkeleton /> : <BlogList posts={posts} />}
+          {isLoadingPosts ? <BlogPostSkeleton /> : <BlogList posts={posts} />}
 
-      {pagination && (
-        <BlogPagination currentPage={currentPage} onPageChange={setCurrentPage} totalPages={pagination.pageCount} />
+          {pagination && (
+            <BlogPagination currentPage={currentPage} onPageChange={setCurrentPage} totalPages={pagination.pageCount} />
+          )}
+        </>
+      ) : (
+        <p>Aucun article disponible.</p>
       )}
     </>
   );
