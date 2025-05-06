@@ -87,6 +87,7 @@ const Page = () => {
       ) : (
         <>
           <Header pageSettings={pageSettings} />
+          {posts.length > 0 ? (
           <Section>
             <Blog
               pageSize={pageSettings.pageSize}
@@ -95,6 +96,12 @@ const Page = () => {
               initialCategories={categories}
             />
           </Section>
+          ) : (
+            // Même espacement et structure que Section, sans le composant
+            <div className="min-h-screen px-[4dvw] py-24 first-of-type:pt-4 xl:px-[8dvw]">
+              <p className="text-center text-gray-500">Aucun article n'est disponible pour le moment.</p>
+            </div>
+          )}
         </>
       )}
     </>
