@@ -17,7 +17,7 @@ export const PostDetail = ({ post }: PostDetailProps) => {
         <PostHeader categories={post.categories} excerpt={post.excerpt} title={post.title} />
       )}
       {post.author && <PostAuthor author={{ ...post?.author, publishedAt: post.createdAt }} />}
-      {post.title && <PostImage imageUrl={postImageUrl} title={post.title} />}
+      {post.title && post.image && <PostImage imageUrl={postImageUrl} title={post.title} />}
       {post.content && <MarkdownRenderer content={post.content} />}
     </article>
   );

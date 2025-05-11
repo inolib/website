@@ -3,14 +3,11 @@ import Image from "next/image";
 type PostImageProps = {
   imageUrl?: string;
   alternativeText?: string | null;
+  title?: string;
 };
 
 export const PostImage = ({ imageUrl, alternativeText }: PostImageProps) => {
   if (!imageUrl) return null;
-
-  console.log("imageUrl", imageUrl);
-
-  console.log(process.env.NEXT_PUBLIC_STRAPI_URL);
 
   alternativeText ? null : "";
 
