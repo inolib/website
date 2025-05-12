@@ -1,10 +1,10 @@
 import { PostDetail } from "~/components/app/(pages)/blog/PostDetail";
 import { strapiApi } from "~/lib/strapi";
-import type { BlogPost } from "~/lib/strapi/api-client";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const slug = params.slug;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
 
   const response = await strapiApi.blogPost.getBlogPosts(
     { paginationLimit: 1 },
@@ -53,12 +53,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-const Page = async ({ params }: { params: { slug: string } }) => {
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
   const response = await strapiApi.blogPost.getBlogPosts(
     { paginationLimit: 1 },
     {
       params: {
-        filters: { slug: { $eqi: params.slug } },
+        filters: { slug: { $eqi: slug } },
         populate: ["image", "author", "author.avatar", "categories"],
       },
     },
@@ -66,13 +68,8 @@ const Page = async ({ params }: { params: { slug: string } }) => {
 
   const post = response?.data?.data?.[0];
 
-  console.log("post", post);
-
   if (!post) {
-    return {
-      title: "Article non trouvé | INOLIB",
-      description: "Cet article du blog INOLIB est introuvable.",
-    };
+    notFound();
   }
 
   // useEffect(() => {
@@ -110,10 +107,10 @@ const Page = async ({ params }: { params: { slug: string } }) => {
   //   }
   // }, [slug]);
 
-  const title = post ? `${post.title} | INOLIB` : "Article non trouvé | INOLIB";
-  const description = post?.excerpt || "Découvrez un article du blog INOLIB.";
-  const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
-  const ogImage = post?.image?.url ? `${post.image.url}` : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
+  // const title = post ? `${post.title} | INOLIB` : "Article non trouvé | INOLIB";
+  // const description = post?.excerpt || "Découvrez un article du blog INOLIB.";
+  // const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
+  // const ogImage = post?.image?.url ? `${post.image.url}` : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
 
   return (
     <>
@@ -134,6 +131,4 @@ const Page = async ({ params }: { params: { slug: string } }) => {
       {post && <PostDetail post={post} />}
     </>
   );
-};
-
-export default Page;
+}

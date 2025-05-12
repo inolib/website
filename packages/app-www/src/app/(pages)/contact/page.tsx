@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { Address } from "~/components/app/(pages)/contact/Address";
+import { ContactForm } from "~/components/app/(pages)/contact/ContactForm";
 
-import { Address, ContactForm } from "~/components/app/(pages)/contact";
 import { Heading, HeadingContent } from "~/components/heading";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
 import { Link } from "~/components/link";

@@ -1,71 +1,136 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import Head from "next/head";
 import { PostDetail } from "~/components/app/(pages)/formations/PostDetail";
 import { strapiApi } from "~/lib/strapi";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-const Page = () => {
-  const { slug } = useParams();
-  const [post, setPost] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const response = await strapiApi.formation.getFormations(
+    { paginationLimit: 1 },
+    {
+      params: {
+        filters: { slug: { $eq: slug } },
+        populate: ["illustration", "author", "author.avatar"],
+      },
+    },
+  );
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await strapiApi.formation.getFormations(
-          { paginationLimit: 1 },
-          {
-            params: {
-              filters: { slug: { $eq: slug } },
-              populate: ["illustration", "author", "author.avatar"],
-            },
-          },
-        );
-
-        const data = response.data.data;
-
-        if (!data || data.length === 0) {
-          setError("Formation non trouvée");
-        } else {
-          setPost(data[0]);
-        }
-      } catch (err) {
-        console.error("Erreur lors du chargement de la formation:", err);
-        setError("Erreur lors du chargement de la formation");
-      } finally {
-        setLoading(false);
-      }
+  const formation = response.data.data?.[0];
+  if (!formation) {
+    return {
+      title: "Formation non trouvée | INOLIB",
+      description: "Cette formation est introuvable.",
     };
-
-    if (slug) fetchPost();
-  }, [slug]);
-
-  if (loading) {
-    return (
-      <p role="status" aria-live="polite">
-        Chargement de la formation...
-      </p>
-    );
   }
 
-  if (error) {
-    return <p className="text-red-600">{error}</p>;
+  const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
+
+  const description = formation.description || "Découvrez nos formations et programmes de qualité.";
+  const ogImage = formation.illustration?.url
+    ? `${formation.illustration.url}`
+    : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
+
+  return {
+    title: `${formation.titre} | INOLIB`,
+    description,
+    openGraph: {
+      title: `${formation.titre} | INOLIB`,
+      description,
+      url: `${siteUrl}/formations/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: formation.titre,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${formation.titre} | INOLIB`,
+      description,
+      images: [ogImage],
+    },
+  };
+}
+
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+
+  const response = await strapiApi.formation.getFormations(
+    { paginationLimit: 1 },
+    {
+      params: {
+        filters: { slug: { $eq: slug } },
+        populate: ["illustration", "author", "author.avatar"],
+      },
+    },
+  );
+  const formation = response.data.data?.[0];
+
+  if (!formation) {
+    notFound();
   }
+  // const [post, setPost] = useState<any>(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState<string | null>(null);
+
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     try {
+  //       const response = await strapiApi.formation.getFormations(
+  //         { paginationLimit: 1 },
+  //         {
+  //           params: {
+  //             filters: { slug: { $eq: slug } },
+  //             populate: ["illustration", "author", "author.avatar"],
+  //           },
+  //         },
+  //       );
+
+  //       const data = response.data.data;
+
+  //       if (!data || data.length === 0) {
+  //         setError("Formation non trouvée");
+  //       } else {
+  //         setPost(data[0]);
+  //       }
+  //     } catch (err) {
+  //       console.error("Erreur lors du chargement de la formation:", err);
+  //       setError("Erreur lors du chargement de la formation");
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   if (slug) fetchPost();
+  // }, [slug]);
+
+  // if (loading) {
+  //   return (
+  //     <p role="status" aria-live="polite">
+  //       Chargement de la formation...
+  //     </p>
+  //   );
+  // }
+
+  // if (error) {
+  //   return <p className="text-red-600">{error}</p>;
+  // }
 
   // Dynamic title and meta
-  const title = post ? `${post.title} | INOLIB` : "Formation non trouvée | INOLIB";
-  const description = post?.description || "Découvrez nos formations et programmes de qualité.";
-  const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
-  const ogImage = post?.illustration?.url
-    ? `${post.illustration.url}`
-    : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
+  // const title = post ? `${post.title} | INOLIB` : "Formation non trouvée | INOLIB";
+  // const description = post?.description || "Découvrez nos formations et programmes de qualité.";
+  // const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
+  // const ogImage = post?.illustration?.url
+  //   ? `${post.illustration.url}`
+  //   : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
 
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />
@@ -77,11 +142,9 @@ const Page = () => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
-      </Head>
+      </Head> */}
 
-      {post ? <PostDetail post={post} /> : null}
+      {formation && <PostDetail post={formation} />}
     </>
   );
-};
-
-export default Page;
+}
