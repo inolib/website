@@ -71,6 +71,7 @@ export interface FormationsWhyUs extends Struct.ComponentSchema {
 export interface SeoSeoMetadata extends Struct.ComponentSchema {
   collectionName: "components_seo_seo_metadata";
   info: {
+    description: "";
     displayName: "seo_metadata";
     icon: "connector";
   };
@@ -85,7 +86,7 @@ export interface SeoSeoMetadata extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
-    metaImage: Schema.Attribute.Media<"files" | "images"> & Schema.Attribute.Required;
+    metaImage: Schema.Attribute.Media<"files" | "images">;
     metaKeywords: Schema.Attribute.String;
     metaTitle: Schema.Attribute.String &
       Schema.Attribute.Required &

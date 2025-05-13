@@ -379,6 +379,7 @@ export interface ApiBlogPostBlogPost extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::blog-post.blog-post"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<"seo.seo-metadata", false>;
     slug: Schema.Attribute.String & Schema.Attribute.Required & Schema.Attribute.Unique;
     tags: Schema.Attribute.JSON;
     title: Schema.Attribute.String;
@@ -580,6 +581,12 @@ export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<"oneToMany", "api::formation.formation">;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<"seo.seo-metadata", false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     slug: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

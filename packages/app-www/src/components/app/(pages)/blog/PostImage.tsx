@@ -3,6 +3,7 @@ import Image from "next/image";
 type PostImageProps = {
   imageUrl?: string;
   alternativeText?: string | null;
+  title?: string;
 };
 
 export const PostImage = ({ imageUrl, alternativeText }: PostImageProps) => {

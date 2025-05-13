@@ -1086,6 +1086,12 @@ export interface AuthorFormationsInner {
     'slug'?: string;
     /**
      * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof AuthorFormationsInner
+     */
+    'seo'?: SeoSeoMetadataComponent;
+    /**
+     * 
      * @type {string}
      * @memberof AuthorFormationsInner
      */
@@ -1623,6 +1629,12 @@ export interface BlogPost {
     'content'?: string;
     /**
      * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof BlogPost
+     */
+    'seo'?: SeoSeoMetadataComponent;
+    /**
+     * 
      * @type {string}
      * @memberof BlogPost
      */
@@ -1821,6 +1833,12 @@ export interface BlogPostAuthorFormationsInner {
      * @memberof BlogPostAuthorFormationsInner
      */
     'slug'?: string;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof BlogPostAuthorFormationsInner
+     */
+    'seo'?: SeoSeoMetadataComponent;
     /**
      * 
      * @type {string}
@@ -2023,6 +2041,12 @@ export interface BlogPostCategoriesInnerBlogPostsInner {
     'content'?: string;
     /**
      * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof BlogPostCategoriesInnerBlogPostsInner
+     */
+    'seo'?: SeoSeoMetadataComponent;
+    /**
+     * 
      * @type {string}
      * @memberof BlogPostCategoriesInnerBlogPostsInner
      */
@@ -2150,6 +2174,12 @@ export interface BlogPostRequestData {
      * @memberof BlogPostRequestData
      */
     'content'?: string;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof BlogPostRequestData
+     */
+    'seo'?: SeoSeoMetadataComponent;
     /**
      * 
      * @type {string}
@@ -2605,6 +2635,12 @@ export interface CategoryBlogPostsInner {
     'content'?: string;
     /**
      * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof CategoryBlogPostsInner
+     */
+    'seo'?: SeoSeoMetadataComponent;
+    /**
+     * 
      * @type {string}
      * @memberof CategoryBlogPostsInner
      */
@@ -2930,6 +2966,12 @@ export interface Formation {
     'slug': string;
     /**
      * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof Formation
+     */
+    'seo'?: SeoSeoMetadataComponent;
+    /**
+     * 
      * @type {string}
      * @memberof Formation
      */
@@ -3045,6 +3087,12 @@ export interface FormationRequestData {
      * @memberof FormationRequestData
      */
     'slug': string;
+    /**
+     * 
+     * @type {SeoSeoMetadataComponent}
+     * @memberof FormationRequestData
+     */
+    'seo'?: SeoSeoMetadataComponent;
     /**
      * 
      * @type {string}

@@ -2,7 +2,8 @@
   "collectionName": "components_seo_seo_metadata",
   "info": {
     "displayName": "seo_metadata",
-    "icon": "connector"
+    "icon": "connector",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -23,13 +24,13 @@
       "minLength": 3
     },
     "metaImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files",
         "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "metaKeywords": {
       "type": "string"
