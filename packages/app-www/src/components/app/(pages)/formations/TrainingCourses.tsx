@@ -69,18 +69,22 @@ export const TrainingCourses = ({ _color, courses, loading }: TrainingCoursesPro
           <HighlightsUnorderedList>
             {courses.map((item, index) => (
               <HighlightsListItem key={item.slug}>
-                <NextLink href={`/formations/${item.slug}`} className="text-inherit block no-underline" passHref>
-                  <BoxCard>
-                    <BoxCardIcon>
-                      <FileCheck02Icon className="size-12 stroke-blue-600" />
-                    </BoxCardIcon>
+                <BoxCard>
+                  <BoxCardIcon aria-hidden="true">
+                    <FileCheck02Icon className="size-12 stroke-blue-600" />
+                  </BoxCardIcon>
 
-                    <BoxCardContent className="gap-4">
-                      <p className="text-xl font-bold">{item.titre}</p>
-                      <p>{item.description}</p>
-                    </BoxCardContent>
-                  </BoxCard>
-                </NextLink>
+                  <BoxCardContent className="gap-4">
+                    <h3 className="text-xl font-bold">{item.titre}</h3>
+                    <p>{item.description}</p>
+                    <NextLink
+                      href={`/formations/${item.slug}`}
+                      className="inline-flex w-fit items-center gap-2 rounded-lg bg-blue-900 px-3 py-1.5 text-base font-semibold text-white transition-all duration-300 hover:bg-blue-950 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-blue-900"
+                    >
+                      Voir la formation
+                    </NextLink>
+                  </BoxCardContent>
+                </BoxCard>
               </HighlightsListItem>
             ))}
           </HighlightsUnorderedList>
