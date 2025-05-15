@@ -80,9 +80,9 @@ export const Qualiopi = ({ _color }: QualiopiProps) => {
             <Image
               alt=""
               className="max-h-96 w-auto"
-              height={384}
+              height={184}
               src="/images/logos/qualiopi/qualiopi.png"
-              width={768}
+              width={168}
               priority
             />
           </VerboseIllustration>
