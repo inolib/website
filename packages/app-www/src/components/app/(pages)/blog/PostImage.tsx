@@ -2,21 +2,21 @@ import Image from "next/image";
 
 type PostImageProps = {
   imageUrl?: string;
-  alternativeText?: string | null;
+  alternativeText?: string;
 };
 
 export const PostImage = ({ imageUrl, alternativeText }: PostImageProps) => {
   if (!imageUrl) return null;
 
-  alternativeText ? null : "";
+  alternativeText = alternativeText || "";
 
   return (
     <Image
-      alt={alternativeText ?? ""}
-      className="mx-auto mt-6 w-1/2 rounded-lg"
-      height={250}
-      src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${imageUrl}`}
-      width={250}
+      alt={alternativeText}
+      className="mt-6 w-full rounded-lg object-cover"
+      height={450}
+      src={imageUrl}
+      width={800}
     />
   );
 };

@@ -1,62 +1,122 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import Head from "next/head";
-import { useParams } from "next/navigation";
-
 import { PostDetail } from "~/components/app/(pages)/blog/PostDetail";
 import { strapiApi } from "~/lib/strapi";
-import type { BlogPost } from "~/lib/strapi/api-client";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-const Page = () => {
-  const { slug } = useParams() as { slug: string };
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [notFound, setNotFound] = useState(false);
+export const dynamic = "force-dynamic";
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      try {
-        const response = await strapiApi.blogPost.getBlogPosts(
-          { paginationLimit: 1 },
-          {
-            params: {
-              filters: { slug: { $eqi: slug } },
-              populate: ["image", "author", "author.avatar", "categories"],
-            },
-          },
-        );
-        const postData = response?.data?.data?.[0];
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { slug } = await params;
 
-        if (!postData) {
-          setNotFound(true);
-        } else {
-          setPost(postData);
-        }
-      } catch (error) {
-        console.error("Erreur lors du chargement de l'article :", error);
-        setNotFound(true);
-      } finally {
-        setLoading(false);
-      }
+  const response = await strapiApi.blogPost.getBlogPosts(
+    { paginationLimit: 1 },
+    {
+      params: {
+        filters: { slug: { $eqi: slug } },
+        populate: ["image", "author", "author.avatar", "categories"],
+      },
+    },
+  );
+  const post = response?.data?.data?.[0];
+
+  if (!post) {
+    return {
+      title: "Article non trouvé | INOLIB",
+      description: "Cet article du blog INOLIB est introuvable.",
     };
+  }
 
-    if (slug) {
-      fetchPost();
-    } else {
-      setNotFound(true);
-      setLoading(false);
-    }
-  }, [slug]);
-
-  const title = post ? `${post.title} | INOLIB` : "Article non trouvé | INOLIB";
-  const description = post?.excerpt || "Découvrez un article du blog INOLIB.";
   const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
   const ogImage = post?.image?.url ? `${post.image.url}` : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
 
+  return {
+    title: `${post.title} | INOLIB`,
+    description: post.excerpt || "Découvrez un article du blog INOLIB.",
+    openGraph: {
+      title: `${post.title} | INOLIB`,
+      description: post.excerpt || "Découvrez un article du blog INOLIB.",
+      url: `${siteUrl}/blog/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | INOLIB`,
+      description: post.excerpt || "Découvrez un article du blog INOLIB.",
+      images: [ogImage],
+    },
+  };
+}
+
+export default async function Page({ params }: { params: any }) {
+  const { slug } = await params;
+
+  const response = await strapiApi.blogPost.getBlogPosts(
+    { paginationLimit: 1 },
+    {
+      params: {
+        filters: { slug: { $eqi: slug } },
+        populate: ["image", "author", "author.avatar", "categories"],
+      },
+    },
+  );
+
+  const post = response?.data?.data?.[0];
+
+  if (!post) {
+    notFound();
+  }
+
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     try {
+  //       const response = await strapiApi.blogPost.getBlogPosts(
+  //         { paginationLimit: 1 },
+  //         {
+  //           params: {
+  //             filters: { slug: { $eqi: slug } },
+  //             populate: ["image", "author", "author.avatar", "categories"],
+  //           },
+  //         },
+  //       );
+  //       const postData = response?.data?.data?.[0];
+
+  //       if (!postData) {
+  //         setNotFound(true);
+  //       } else {
+  //         setPost(postData);
+  //       }
+  //     } catch (error) {
+  //       console.error("Erreur lors du chargement de l'article :", error);
+  //       setNotFound(true);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   if (slug) {
+  //     fetchPost();
+  //   } else {
+  //     setNotFound(true);
+  //     setLoading(false);
+  //   }
+  // }, [slug]);
+
+  // const title = post ? `${post.title} | INOLIB` : "Article non trouvé | INOLIB";
+  // const description = post?.excerpt || "Découvrez un article du blog INOLIB.";
+  // const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
+  // const ogImage = post?.image?.url ? `${post.image.url}` : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
+
   return (
     <>
-      <Head>
+      {/* <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta property="og:title" content={title} />
@@ -68,13 +128,9 @@ const Page = () => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
-      </Head>
+      </Head> */}
 
-      {loading && <div>Chargement de l’article...</div>}
-      {notFound && !loading && <div>Article non trouvé</div>}
-      {post && !loading && <PostDetail post={post} />}
+      {post && <PostDetail post={post} />}
     </>
   );
-};
-
-export default Page;
+}
