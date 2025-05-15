@@ -1,10 +1,8 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
-
 import { baseRoutes } from "~/config/RoutesConfig";
-import { StrapiService } from "~/lib/api/strapi";
-import type { BlogPost } from "~/types/blog";
+import { strapiApi } from "~/lib/strapi";
 
 export type Routes = Record<string, { isActive: boolean; title: string }>;
 
@@ -18,12 +16,41 @@ export const RoutesProvider = ({ children }: { children: React.ReactNode }) => {
       const dynamicRoutes: Routes = {};
 
       try {
-        const { posts } = (await StrapiService.getBlogPosts("*", 1, 9)) as { posts: BlogPost[] };
-        for (const post of posts) {
-          dynamicRoutes[`/blog/${post.slug}`] = {
-            isActive: true,
-            title: post.title,
-          };
+        const response = await strapiApi.blogPost.getBlogPosts({
+          sort: "id:desc",
+          paginationPage: 1,
+          paginationPageSize: 9,
+          populate: "*",
+        });
+        const posts = response.data.data;
+        if (posts) {
+          for (const post of posts) {
+            if (post.title) {
+              dynamicRoutes[`/blog/${post.slug}`] = {
+                isActive: true,
+                title: post.title,
+              };
+            }
+          }
+        }
+
+        // Add formations
+        const FormationResponse = await strapiApi.formation.getFormations({
+          sort: "id:desc",
+          paginationPage: 1,
+          paginationPageSize: 9,
+          populate: "*",
+        });
+        const formations = FormationResponse.data.data;
+        if (formations) {
+          for (const formation of formations) {
+            if (formation.titre) {
+              dynamicRoutes[`/formations/${formation.slug}`] = {
+                isActive: true,
+                title: formation.titre,
+              };
+            }
+          }
         }
       } catch (error) {
         console.error("Erreur lors de la récupération des routes dynamiques :", error);

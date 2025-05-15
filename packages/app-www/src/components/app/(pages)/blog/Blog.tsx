@@ -1,81 +1,113 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
+import { useEffect, useRef, useState } from "react";
+import { strapiApi } from "~/lib/strapi";
+import type { AuthorListResponseMetaPagination, BlogPost, Category } from "~/lib/strapi/api-client";
 import { TwoColumnsFlexLayout, TwoColumnsFlexLayoutColumn } from "~/components/layout";
-import { StrapiService } from "~/lib/api/strapi";
-import type { BlogPageProps, Category } from "~/types/blog";
-
 import { BlogList } from "./BlogList";
 import { BlogPagination } from "./BlogPagination";
 import { BlogSearch } from "./BlogSearch";
-import { BlogTabs } from "./BlogTab";
+import { BlogCategorySelect } from "./BlogCategorySelect";
+import { BlogPostSkeleton } from "./BlogListLoader";
 
-export const Blog = ({
-  posts: initialPosts,
+type BlogProps = {
+  pageSize: number;
+  initialPosts: BlogPost[];
+  initialPagination: AuthorListResponseMetaPagination | null;
+  initialCategories: Category[];
+};
 
-  pagination: initialPagination,
-}: BlogPageProps) => {
-  const [selectedCategory, setSelectedCategory] = useState("all");
+export const Blog = ({ pageSize, initialPosts, initialPagination, initialCategories }: BlogProps) => {
+  // Categories
+  const [categories] = useState<Category[]>(initialCategories);
+  const [selectedCategory, setSelectedCategory] = useState<number>(0);
+
+  // Blog Posts
+  const [posts, setPosts] = useState<BlogPost[]>(initialPosts);
   const [searchQuery, setSearchQuery] = useState("");
-  const [currentPage, setCurrentPage] = useState<number>(initialPagination.page);
-  const [posts, setPosts] = useState(initialPosts);
-  const [pagination, setPagination] = useState(initialPagination);
-  const [categories, setCategories] = useState<Category[]>([]); // 🔥 Stocke toutes les catégories
+  const [debouncedSearchQuery, setDebouncedSearchQuery] = useState("");
 
+  // Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [pagination, setPagination] = useState<AuthorListResponseMetaPagination | null>(initialPagination);
+  const [isLoadingPosts, setIsLoadingPosts] = useState(false);
+
+  // Debounce search input
   useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const allPosts = (await StrapiService.getBlogPosts("*", 1, 100)) as BlogPageProps;
-        const uniqueCategories = allPosts.posts
-          .flatMap((post) => post.categories)
-          .filter((cat, index, self) => index === self.findIndex((c) => c.id === cat.id)); // Supprime les doublons
+    const handler = setTimeout(() => {
+      setDebouncedSearchQuery(searchQuery);
+    }, 300); // 300ms delay
 
-        setCategories(uniqueCategories);
+    return () => clearTimeout(handler);
+  }, [searchQuery]);
+
+  // Reset pagination when category or search query changes
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, debouncedSearchQuery]);
+
+  // Fetch posts when filters change
+  useEffect(() => {
+    // Skip the effect on the first render
+    if (isFirstRender.current) {
+      isFirstRender.current = false; // Mark as no longer the first render
+      return;
+    }
+
+    const fetchPosts = async () => {
+      setIsLoadingPosts(true);
+      try {
+        const response = await strapiApi.blogPost.getBlogPosts(
+          {
+            sort: "id:desc",
+            paginationPage: currentPage,
+            paginationPageSize: pageSize,
+          },
+          {
+            params: {
+              filters: {
+                ...(selectedCategory !== 0 ? { categories: { id: { $eq: selectedCategory } } } : {}),
+                ...(debouncedSearchQuery ? { title: { $containsi: debouncedSearchQuery } } : {}),
+              },
+              populate: ["image", "author", "author.avatar", "categories"],
+            },
+          },
+        );
+
+        const { data, meta } = response.data;
+        setPosts(data ?? []);
+        setPagination(meta?.pagination ?? null);
       } catch (error) {
-        console.error("Erreur lors de la récupération des catégories :", error);
+        console.error("Erreur lors de la récupération des articles :", error);
+      } finally {
+        setIsLoadingPosts(false);
       }
     };
 
-    fetchCategories().catch(console.error);
-  }, []);
+    fetchPosts();
+  }, [currentPage, selectedCategory, debouncedSearchQuery]);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const { posts, pagination } = (await StrapiService.getBlogPosts("*", currentPage, 1)) as BlogPageProps;
-      setPosts(posts);
-      setPagination(pagination);
-    };
-
-    fetchPosts().catch(console.error);
-  }, [currentPage]);
-
-  const handlePageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const handleCategoryChange = (category: string) => {
-    setSelectedCategory(category);
-  };
-
-  const handleSearchChange = (query: string) => {
-    setSearchQuery(query.toLowerCase());
-  };
+  // Use a ref to track the first render and avoid fetching server initial data again
+  const isFirstRender = useRef(true);
 
   return (
     <>
       <TwoColumnsFlexLayout>
         <TwoColumnsFlexLayoutColumn className="flex-1">
-          <BlogTabs
+          <BlogCategorySelect
             categories={categories}
-            onCategoryChange={handleCategoryChange}
+            onCategoryChange={setSelectedCategory}
             selectedCategory={selectedCategory}
           />
         </TwoColumnsFlexLayoutColumn>
-        <BlogSearch onSearch={handleSearchChange} />
+        <BlogSearch onSearch={setSearchQuery} />
       </TwoColumnsFlexLayout>
-      <BlogList posts={posts} searchQuery={searchQuery} selectedCategory={selectedCategory} />
-      <BlogPagination currentPage={currentPage} onPageChange={handlePageChange} totalPages={pagination.pageCount} />
+
+      {isLoadingPosts ? <BlogPostSkeleton /> : <BlogList posts={posts} />}
+
+      {pagination && (
+        <BlogPagination currentPage={currentPage} onPageChange={setCurrentPage} totalPages={pagination.pageCount} />
+      )}
     </>
   );
 };

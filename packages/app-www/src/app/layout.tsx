@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
-import { Banner, ContentInfo, Nav, Orejime } from "~/components/app";
+import { Banner, ContentInfo, Matomo, Nav, Orejime } from "~/components/app";
 import { RoutesProvider } from "~/context/RoutesContext";
 
 import "@fontsource-variable/manrope";
@@ -50,6 +50,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         </div>
 
         <Orejime />
+        <Matomo />
       </body>
     </html>
   );

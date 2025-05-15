@@ -1,0 +1,101 @@
+{
+  "kind": "singleType",
+  "collectionName": "formation_settings",
+  "info": {
+    "singularName": "formation-setting",
+    "pluralName": "formation-settings",
+    "displayName": "Formation setting",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "INOLIB Academy – Formations aux métiers du numérique et à l’accessibilité numérique",
+      "required": true,
+      "minLength": 3
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "formationTitle": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "formationDescription": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "pedagogicTitle": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "pedagogicApproaches": {
+      "displayName": "pedagogicApproach",
+      "type": "component",
+      "repeatable": true,
+      "component": "formations.pedagogic-approach"
+    },
+    "pedagogicImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "whyUsTitle": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "whyUsDescription": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "whyUs": {
+      "displayName": "whyUs",
+      "type": "component",
+      "repeatable": true,
+      "component": "formations.why-us"
+    },
+    "certificationTitle": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "certificationDescription": {
+      "type": "string",
+      "required": true,
+      "minLength": 3
+    },
+    "certifications": {
+      "displayName": "certification",
+      "type": "component",
+      "repeatable": true,
+      "component": "formations.certification"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-metadata"
+    }
+  }
+}

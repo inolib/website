@@ -57,6 +57,12 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
       name: "Dora BLASBERG",
       role: "Psychologue et conférencière, cofondatrice de ProAdapt",
     },
+    {
+      testimony:
+        "Vous recommandons INOLIB pour leurs compétences techniques et humaines. C’était un plaisir de travailler ensemble.",
+      name: "Dora BLASBERG",
+      role: "Psychologue et conférencière, cofondatrice de ProAdapt",
+    },
   ];
 
   return (

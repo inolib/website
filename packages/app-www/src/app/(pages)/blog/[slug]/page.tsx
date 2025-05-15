@@ -1,60 +1,136 @@
-import type { Metadata } from "next";
-
 import { PostDetail } from "~/components/app/(pages)/blog/PostDetail";
-import { StrapiService } from "~/lib/api/strapi";
-import type { BlogPost } from "~/types/blog";
+import { strapiApi } from "~/lib/strapi";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
-export const generateMetadata = async (props: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
-  const params = await props.params;
-  if (!params?.slug) {
-    return { title: "Article non trouvé | INOLIB" };
-  }
+export const dynamic = "force-dynamic";
 
-  try {
-    const post: BlogPost = (await StrapiService.getBlogPostBySlug(params.slug)) as BlogPost;
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
+  const { slug } = await params;
 
-    if (!post) {
-      return { title: "Article non trouvé | INOLIB" };
-    }
+  const response = await strapiApi.blogPost.getBlogPosts(
+    { paginationLimit: 1 },
+    {
+      params: {
+        filters: { slug: { $eqi: slug } },
+        populate: ["image", "author", "author.avatar", "categories"],
+      },
+    },
+  );
+  const post = response?.data?.data?.[0];
 
-    return { title: `${post.title} | INOLIB` };
-  } catch (error) {
-    console.error("Erreur dans generateMetadata :", error);
-    return { title: "Article non trouvé | INOLIB" };
-  }
-};
-export const generateStaticParams = async () => {
-  try {
-    const { posts }: { posts: BlogPost[] } = (await StrapiService.getBlogPosts("*", 1, 9)) as { posts: BlogPost[] };
-    const params = posts.map((post) => ({
-      slug: post.slug,
-    }));
-
-    return params;
-  } catch (error) {
-    console.error("Erreur dans getStaticPaths :", error);
+  if (!post) {
     return {
-      paths: [],
-      fallback: "blocking",
+      title: "Article non trouvé | INOLIB",
+      description: "Cet article du blog INOLIB est introuvable.",
     };
   }
-};
 
-const Page = async (props: { params: Promise<{ slug: string }> }) => {
-  const params = await props.params;
-  const { slug } = params;
-  try {
-    const post = (await StrapiService.getBlogPostBySlug(slug)) as BlogPost;
+  const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
+  const ogImage = post?.image?.url ? `${post.image.url}` : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
 
-    if (!post) {
-      return <div>Article non trouvé</div>;
-    }
+  return {
+    title: `${post.title} | INOLIB`,
+    description: post.excerpt || "Découvrez un article du blog INOLIB.",
+    openGraph: {
+      title: `${post.title} | INOLIB`,
+      description: post.excerpt || "Découvrez un article du blog INOLIB.",
+      url: `${siteUrl}/blog/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | INOLIB`,
+      description: post.excerpt || "Découvrez un article du blog INOLIB.",
+      images: [ogImage],
+    },
+  };
+}
 
-    return <PostDetail post={post} />;
-  } catch (error) {
-    console.error("Erreur lors du chargement de l'article :", error);
-    return <div>Erreur lors du chargement de larticle</div>;
+export default async function Page({ params }: { params: any }) {
+  const { slug } = await params;
+
+  const response = await strapiApi.blogPost.getBlogPosts(
+    { paginationLimit: 1 },
+    {
+      params: {
+        filters: { slug: { $eqi: slug } },
+        populate: ["image", "author", "author.avatar", "categories"],
+      },
+    },
+  );
+
+  const post = response?.data?.data?.[0];
+
+  if (!post) {
+    notFound();
   }
-};
 
-export default Page;
+  // useEffect(() => {
+  //   const fetchPost = async () => {
+  //     try {
+  //       const response = await strapiApi.blogPost.getBlogPosts(
+  //         { paginationLimit: 1 },
+  //         {
+  //           params: {
+  //             filters: { slug: { $eqi: slug } },
+  //             populate: ["image", "author", "author.avatar", "categories"],
+  //           },
+  //         },
+  //       );
+  //       const postData = response?.data?.data?.[0];
+
+  //       if (!postData) {
+  //         setNotFound(true);
+  //       } else {
+  //         setPost(postData);
+  //       }
+  //     } catch (error) {
+  //       console.error("Erreur lors du chargement de l'article :", error);
+  //       setNotFound(true);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   if (slug) {
+  //     fetchPost();
+  //   } else {
+  //     setNotFound(true);
+  //     setLoading(false);
+  //   }
+  // }, [slug]);
+
+  // const title = post ? `${post.title} | INOLIB` : "Article non trouvé | INOLIB";
+  // const description = post?.excerpt || "Découvrez un article du blog INOLIB.";
+  // const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
+  // const ogImage = post?.image?.url ? `${post.image.url}` : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
+
+  return (
+    <>
+      {/* <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={`${siteUrl}/blog/${slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+      </Head> */}
+
+      {post && <PostDetail post={post} />}
+    </>
+  );
+}
