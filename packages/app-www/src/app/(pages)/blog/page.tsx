@@ -136,36 +136,20 @@ const Page = async () => {
 
   return (
     <>
-      {/* <Head>
-        <title>Actualités | INOLIB</title>
-        <meta name="description" content="Découvrez les dernières actualités et articles d’INOLIB." />
-        <meta property="og:title" content="Actualités | INOLIB" />
-        <meta property="og:description" content="Découvrez les dernières actualités et articles d’INOLIB." />
-        <meta property="og:url" content={`${siteUrl}/blog`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="INOLIB" />
-        <meta property="og:locale" content="fr_FR" />
-        <meta property="og:image" content={`${siteUrl}/images/logos/inolib/inolib-blue.jpg`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Actualités | INOLIB" />
-        <meta name="twitter:description" content="Découvrez les dernières actualités et articles d’INOLIB." />
-        <meta name="twitter:image" content={`${siteUrl}/images/logos/inolib/inolib-blue.jpg`} />
-      </Head>
-
-      {loading || !pageSettings ? (
+      {!pageSettings ? (
         <div>Chargement des articles...</div>
       ) : (
         <>
           <Header pageSettings={pageSettings} />
           {posts.length > 0 ? (
-          <Section>
-            <Blog
-              pageSize={pageSettings.pageSize}
-              initialPosts={posts}
-              initialPagination={pagination}
-              initialCategories={categories}
-            />
-          </Section>
+            <Section>
+              <Blog
+                pageSize={pageSettings.pageSize}
+                initialPosts={posts}
+                initialPagination={pagination}
+                initialCategories={categories}
+              />
+            </Section>
           ) : (
             // Même espacement et structure que Section, sans le composant
             <div className="min-h-screen px-[4dvw] py-24 first-of-type:pt-4 xl:px-[8dvw]">
@@ -174,7 +158,6 @@ const Page = async () => {
           )}
         </>
       )}
-
     </>
   );
 };
