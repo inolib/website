@@ -3,8 +3,11 @@ import { strapiApi } from "~/lib/strapi";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: any }): Promise<Metadata> {
   const { slug } = await params;
+
   const response = await strapiApi.formation.getFormations(
     { paginationLimit: 1 },
     {
@@ -16,6 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   );
 
   const formation = response.data.data?.[0];
+
   if (!formation) {
     return {
       title: "Formation non trouvée | INOLIB",
@@ -24,11 +28,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   const siteUrl = process.env.SITE_URL || "https://www.inolib.com";
-
-  const description = formation.description || "Découvrez nos formations et programmes de qualité.";
   const ogImage = formation.illustration?.url
     ? `${formation.illustration.url}`
     : `${siteUrl}/images/logos/inolib/inolib-blue.jpg`;
+
+  const description = formation.description || "Découvrez nos formations et programmes de qualité.";
 
   return {
     title: `${formation.titre} | INOLIB`,
@@ -56,7 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Page({ params }: { params: any }) {
   const { slug } = await params;
 
   const response = await strapiApi.formation.getFormations(

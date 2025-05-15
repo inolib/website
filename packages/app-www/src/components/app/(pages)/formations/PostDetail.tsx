@@ -17,7 +17,7 @@ export const PostDetail = ({ post }: PostDetailProps) => {
   return (
     <article className="mx-auto w-full max-w-4xl px-8 py-12">
       {post.titre && post.description && <PostHeader categories={[]} excerpt={post.description} title={post.titre} />}
-      {post.titre && <PostImage imageUrl={postImageUrl} alternativeText={post.illustration?.alternativeText} />}
+      {postImageUrl && <PostImage imageUrl={postImageUrl} alternativeText={post?.illustration?.alternativeText} />}
       {post.contenue && <MarkdownRenderer content={post.contenue} />}
       <Link _color="blue-900" className="my-5" _shape="button" href="/contact">
         Demander un devis

@@ -41,8 +41,6 @@ const Page = async () => {
     console.error("Erreur lors de la récupération des formations :", error);
   }
 
-  console.log("formations", formations);
-
   // useEffect(() => {
   //   const fetchFormations = async () => {
   //     try {
