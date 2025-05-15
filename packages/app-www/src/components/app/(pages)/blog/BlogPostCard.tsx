@@ -7,15 +7,15 @@ export const BlogPostCard = ({ post }: { post: BlogPost }) => {
   const { slug, title, excerpt, createdAt, image, categories, author } = post;
 
   // Fallback values
-  const postTitle = title || "Untitled Post";
-  const postExcerpt = excerpt || "No excerpt available.";
-  const postDate = createdAt ? formatDate(createdAt) : "Date not available";
-  const postImageUrl = image?.url ? image.url : process.env.NEXT_PUBLIC_STRAPI_URL + "/blog_default.webp";
-  const authorName = author?.name || "Unknown Author";
+  const postTitle = title || "Article sans titre";
+  const postExcerpt = excerpt || "Aucun extrait disponible.";
+  const postDate = createdAt ? formatDate(createdAt) : "Date non disponible";
+  const postImageUrl = image?.url ? image.url : "/blog_default.webp";
+  const authorName = author?.name || "Auteur inconnu";
   const authorAvatar = author?.avatar?.url
     ? author.avatar.url
-    : process.env.NEXT_PUBLIC_STRAPI_URL + "/default-avatar.png";
-  const postCategories = categories?.length ? categories : [{ id: 0, name: "Uncategorized" }];
+    : "/default-avatar.png";
+  const postCategories = categories?.length ? categories : [{ id: 0, name: "Non classé" }];
 
   return (
     <div className="overflow-hidden rounded-2xl p-4">
@@ -51,7 +51,7 @@ export const BlogPostCard = ({ post }: { post: BlogPost }) => {
             <p className="mt-2 line-clamp-3 text-[16px] font-medium leading-[26px] text-[#525252]">{postExcerpt}</p>
 
             {/* Author Info */}
-            <div className="mt-4 flex items-center gap-3">
+            <div className="mt-4 flex items-center gap-[6.8rem]">
               <Image
                 alt={authorName}
                 className="size-10 rounded-full object-cover"

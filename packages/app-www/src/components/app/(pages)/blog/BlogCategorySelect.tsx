@@ -22,7 +22,7 @@ export const BlogCategorySelect = ({ categories = [], selectedCategory, onCatego
         id="category-select"
         value={selectedCategory}
         onChange={handleChange}
-        className="w-full max-w-sm rounded-md border border-gray-300 p-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        className="w-full max-w-sm rounded-md border border-gray-300 bg-white p-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
         aria-label="Sélection de catégorie d’article"
       >
         {categories.map(({ id, name }) => (
