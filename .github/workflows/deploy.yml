@@ -1,0 +1,30 @@
+name: CI/CD Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set Up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Deploy to OVH
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+            cd /chemin/vers/votre/projet  # Remplacez par le chemin réel
+            git pull origin main
+            npm install
+            npm run build  # ou la commande appropriée pour votre build
+            pm2 restart votreApplication  # ou la commande pm2 appropriée
+            exit
+          EOF
