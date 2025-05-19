@@ -32,7 +32,7 @@ jobs:
       - name: Deploy to OVH
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
-            cd /inolib-website/packages/app-www
+            cd /home/ubuntu/inolib-website/packages/app-www
             git fetch origin main
             git reset --hard origin/main
             pnpm install --frozen-lockfile
