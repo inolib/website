@@ -12,21 +12,30 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
       - name: Set Up SSH
-        uses: webfactory/ssh-agent@v0.5.3
+        uses: webfactory/ssh-agent@v0.7.0
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          ssh-private-key: |
+            ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add known hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
       - name: Deploy to OVH
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} << 'EOF'
+          ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /inolib-website/packages/app-www
-            git pull origin main
-            pnpm install
-            rm -rf .next
+            git fetch origin main
+            git reset --hard origin/main
+            pnpm install --frozen-lockfile
             pnpm run build
-            pm2 restart nextjs-front
-            exit
-          EOF
+            pm2 reload nextjs-front --update-env
+          '
