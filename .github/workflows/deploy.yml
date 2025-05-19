@@ -35,7 +35,7 @@ jobs:
           ls -l ~/.ssh/
           head -5 ~/.ssh/id_rsa
 
-      - name: Test SSH connection (mode agent)
+      - name: Test SSH connection (mode agent )
         run: ssh -vvv ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "echo OK agent"
 
       - name: Test SSH connection (clé fichier)
