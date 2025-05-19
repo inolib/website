@@ -22,10 +22,11 @@ jobs:
       - name: Deploy to OVH
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.SERVER_IP }} << 'EOF'
-            cd /chemin/vers/votre/projet  # Remplacez par le chemin réel
+            cd /inolib-website/packages/app-www
             git pull origin main
-            npm install
-            npm run build  # ou la commande appropriée pour votre build
-            pm2 restart votreApplication  # ou la commande pm2 appropriée
+            pnpm install
+            rm -rf .next
+            pnpm run build
+            pm2 restart nextjs-front
             exit
           EOF
