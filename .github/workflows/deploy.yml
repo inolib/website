@@ -2,8 +2,7 @@ name: CI/CD Deployment
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   deploy:
@@ -19,15 +18,28 @@ jobs:
         with:
           node-version: 18
 
-      - name: Set Up SSH
+      - name: Set Up SSH (inject in agent)
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: |
             ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Add known hosts
+      - name: Add server to known_hosts
         run: |
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Debug SSH Key (OPTIONNEL, pour debug - effacer après)
+        run: |
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ls -l ~/.ssh/
+          head -5 ~/.ssh/id_rsa
+
+      - name: Test SSH connection (mode agent)
+        run: ssh -vvv ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "echo OK agent"
+
+      - name: Test SSH connection (clé fichier)
+        run: ssh -i ~/.ssh/id_rsa -vvv ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "echo OK file"
 
       - name: Deploy to OVH
         run: |
