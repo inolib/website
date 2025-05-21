@@ -6,18 +6,19 @@
   "scripts": {
     "build": "pnpm run build:app && pnpm run build:server && pnpm run build:sitemap",
     "build:app": "npm run generate-api && next build",
+    "build:app:ci": "next build",
     "build:server": "tsup",
     "build:sitemap": "dotenvx run -- next-sitemap",
+    "dev": "next dev",
     "format": "pnpm run format:prettier && pnpm run format:eslint",
     "format:eslint": "eslint --fix --format silent .",
     "format:prettier": "prettier --log-level warn --write .",
+    "generate-api": "npx @openapitools/openapi-generator-cli generate   -i ../app-strapi/src/extensions/documentation/documentation/1.0.0/full_documentation.json   -g typescript-axios -o src/lib/strapi/api-client   --skip-validate-spec --additional-properties=useSingleRequestParameter=true,supportsES6=true > /dev/null 2>&1",
     "lint": "pnpm run lint:eslint && pnpm run lint:tsc",
     "lint:eslint": "eslint .",
     "lint:tsc": "tsc",
     "serve:development": "dotenvx run -f ./.env.development -- tsx ./src/server.ts",
-    "dev": "next dev",
-    "serve:production": "dotenvx run -- node ./dist/server.cjs",
-    "generate-api": "npx @openapitools/openapi-generator-cli generate   -i ../app-strapi/src/extensions/documentation/documentation/1.0.0/full_documentation.json   -g typescript-axios -o src/lib/strapi/api-client   --skip-validate-spec --additional-properties=useSingleRequestParameter=true,supportsES6=true > /dev/null 2>&1"
+    "serve:production": "dotenvx run -- node ./dist/server.cjs"
   },
   "dependencies": {
     "@adobe/react-spectrum": "^3.39.0",

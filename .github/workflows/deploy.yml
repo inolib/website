@@ -40,7 +40,7 @@ jobs:
             cp .env.production .env
             pnpm install --frozen-lockfile
             rm -rf .next
-            pnpm run build
+            pnpm run build:app:ci
             pm2 reload nextjs-front --update-env
           '
       - name: Deploy STRAPI PRODUCTION
@@ -88,7 +88,7 @@ jobs:
             cp .env.staging .env
             pnpm install --frozen-lockfile
             rm -rf .next
-            pnpm run build
+            pnpm run build:app:ci
             pm2 reload nextjs-front --update-env
           '
       - name: Deploy STRAPI STAGING
