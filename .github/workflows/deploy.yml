@@ -91,7 +91,8 @@ jobs:
             pm2 delete nextjs-staging
             git fetch origin develop
             git reset --hard origin/develop
-            rm -f .env 
+            rm -f .env
+            rm -f .env.production
             cp .env.staging .env
             pnpm install --frozen-lockfile
             rm -rf .next node_modules/.cache
