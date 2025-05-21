@@ -43,7 +43,7 @@ jobs:
             pnpm install --frozen-lockfile
             rm -rf .next node_modules/.cache
             pnpm run build:app:ci
-            pm2 start "pnpm start -- --port 8000" --name nextjs-front --update-env
+            pm2 start "pnpm start" --name nextjs-front --update-env
 
           '
       - name: Deploy STRAPI PRODUCTION
@@ -96,7 +96,7 @@ jobs:
             pnpm install --frozen-lockfile
             rm -rf .next node_modules/.cache
             pnpm run build:app:ci
-            pm2 start "pnpm start -- --port 8001" --name nextjs-staging --update-env
+            pm2 start "pnpm start" --name nextjs-staging --update-env
 
 
           '
