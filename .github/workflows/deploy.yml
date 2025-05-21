@@ -35,7 +35,7 @@ jobs:
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /home/ubuntu/inolib-website/packages/app-www
-            pm2 stop nextjs-front
+            pm2 delete nextjs-front
             git fetch origin main
             git reset --hard origin/main
             rm -f .env
@@ -50,6 +50,7 @@ jobs:
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /home/ubuntu/inolib-website/packages/app-strapi
+            pm2 delete strapi
             git fetch origin main
             git reset --hard origin/main
             rm -f .env 
@@ -87,7 +88,7 @@ jobs:
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /home/ubuntu/inolib-website/packages/app-www
-            pm2 stop nextjs-front
+            pm2 delete nextjs-staging
             git fetch origin develop
             git reset --hard origin/develop
             rm -f .env 
@@ -102,6 +103,7 @@ jobs:
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /home/ubuntu/inolib-website/packages/app-strapi
+            pm2 delete strapi-staging
             git fetch origin develop
             git reset --hard origin/develop
             rm -f .env 
