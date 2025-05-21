@@ -39,6 +39,7 @@ jobs:
             git reset --hard origin/main
             cp .env.production .env
             pnpm install --frozen-lockfile
+            rm -rf .next
             pnpm run build
             pm2 reload nextjs-front --update-env
           '
@@ -51,7 +52,7 @@ jobs:
             cp .env.production .env
             pnpm install --frozen-lockfile
             pnpm run build
-            pm2 start "pnpm start" --name strapi-prod --update-env || pm2 reload strapi-prod --update-env
+            pm2 start "pnpm start" --name strapi --update-env || pm2 reload strapi --update-env
           '
 
   deploy-staging:
@@ -86,6 +87,7 @@ jobs:
             git reset --hard origin/develop
             cp .env.staging .env
             pnpm install --frozen-lockfile
+            rm -rf .next
             pnpm run build
             pm2 reload nextjs-staging --update-env || pm2 start "pnpm start -- --port 8001" --name nextjs-staging --update-env
           '
