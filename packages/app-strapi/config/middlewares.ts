@@ -11,6 +11,8 @@ export default [
         "http://localhost:3001",
         "https://inolib.com",
         "https://www.inolib.com",
+        "https://staging-api.inolib.com",
+        "https://www.staging-api.inolib.com",
       ],
       methods: ["GET", "POST", "PUT", "DELETE"],
     },
