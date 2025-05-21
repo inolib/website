@@ -35,12 +35,13 @@ jobs:
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /home/ubuntu/inolib-website/packages/app-www
+            pm2 stop nextjs-front
             git fetch origin main
             git reset --hard origin/main
             rm -f .env
             cp .env.production .env
             pnpm install --frozen-lockfile
-            rm -rf .next
+            rm -rf .next node_modules/.cache
             pnpm run build:app:ci
             pm2 reload nextjs-front --update-env || pm2 start "pnpm start" --name nextjs-front --update-env
 
@@ -51,6 +52,7 @@ jobs:
             cd /home/ubuntu/inolib-website/packages/app-strapi
             git fetch origin main
             git reset --hard origin/main
+            rm -f .env 
             cp .env.production .env
             pnpm install --frozen-lockfile
             pnpm run build
@@ -85,12 +87,13 @@ jobs:
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /home/ubuntu/inolib-website/packages/app-www
+            pm2 stop nextjs-front
             git fetch origin develop
             git reset --hard origin/develop
             rm -f .env 
             cp .env.staging .env
             pnpm install --frozen-lockfile
-            rm -rf .next
+            rm -rf .next node_modules/.cache
             pnpm run build:app:ci
             pm2 reload nextjs-staging --update-env || pm2 start "pnpm start -- --port 8001" --name nextjs-staging --update-env
 
@@ -101,6 +104,7 @@ jobs:
             cd /home/ubuntu/inolib-website/packages/app-strapi
             git fetch origin develop
             git reset --hard origin/develop
+            rm -f .env 
             cp .env.staging .env
             pnpm install --frozen-lockfile
             pnpm run build
