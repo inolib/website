@@ -2,10 +2,13 @@ name: CI/CD Deployment
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - develop
 
 jobs:
-  deploy:
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: production
 
@@ -18,7 +21,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: Set Up SSH (inject in agent)
+      - name: Set Up SSH
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: |
@@ -28,26 +31,83 @@ jobs:
         run: |
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: Debug SSH Key (OPTIONNEL, pour debug - effacer après)
-        run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ls -l ~/.ssh/
-          head -5 ~/.ssh/id_rsa
-
-      - name: Test SSH connection (mode agent )
-        run: ssh -vvv ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "echo OK agent"
-
-      - name: Test SSH connection (clé fichier)
-        run: ssh -i ~/.ssh/id_rsa -vvv ${{ secrets.USER }}@${{ secrets.SERVER_IP }} "echo OK file"
-
-      - name: Deploy to OVH
+      - name: Deploy to PRODUCTION
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /home/ubuntu/inolib-website/packages/app-www
+            pm2 stop nextjs-front
             git fetch origin main
             git reset --hard origin/main
+            rm -f .env
+            cp .env.production .env
+            pnpm install --frozen-lockfile
+            rm -rf .next node_modules/.cache
+            pnpm run build:app:ci
+            pm2 reload nextjs-front --update-env || pm2 start "pnpm start" --name nextjs-front --update-env
+
+          '
+      - name: Deploy STRAPI PRODUCTION
+        run: |
+          ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
+            cd /home/ubuntu/inolib-website/packages/app-strapi
+            git fetch origin main
+            git reset --hard origin/main
+            rm -f .env 
+            cp .env.production .env
             pnpm install --frozen-lockfile
             pnpm run build
-            pm2 reload nextjs-front --update-env
+            pm2 start "pnpm start" --name strapi --update-env || pm2 reload strapi --update-env
+          '
+
+  deploy-staging:
+    if: github.ref == 'refs/heads/develop'
+    runs-on: ubuntu-latest
+    environment: staging
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Set Up SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: |
+            ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add server to known_hosts
+        run: |
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to STAGING
+        run: |
+          ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
+            cd /home/ubuntu/inolib-website/packages/app-www
+            pm2 stop nextjs-front
+            git fetch origin develop
+            git reset --hard origin/develop
+            rm -f .env 
+            cp .env.staging .env
+            pnpm install --frozen-lockfile
+            rm -rf .next node_modules/.cache
+            pnpm run build:app:ci
+            pm2 reload nextjs-staging --update-env || pm2 start "pnpm start -- --port 8001" --name nextjs-staging --update-env
+
+          '
+      - name: Deploy STRAPI STAGING
+        run: |
+          ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
+            cd /home/ubuntu/inolib-website/packages/app-strapi
+            git fetch origin develop
+            git reset --hard origin/develop
+            rm -f .env 
+            cp .env.staging .env
+            pnpm install --frozen-lockfile
+            pnpm run build
+            pm2 reload strapi-staging --update-env || pm2 start "pnpm start" --name strapi-staging --update-env
+
           '

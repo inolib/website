@@ -13,10 +13,10 @@ export const PostImage = ({ imageUrl, alternativeText }: PostImageProps) => {
   return (
     <Image
       alt={alternativeText}
-      className="mt-6 w-full rounded-lg object-cover"
-      height={450}
-      src={imageUrl}
-      width={800}
+      className="mx-auto mt-6 rounded-lg object-cover"
+      height={250}
+      src={`${process.env.NEXT_PUBLIC_STRAPI_URL}${imageUrl}`}
+      width={250}
     />
   );
 };
