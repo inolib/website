@@ -18,7 +18,8 @@
     "lint:eslint": "eslint .",
     "lint:tsc": "tsc",
     "serve:development": "dotenvx run -f ./.env.development -- tsx ./src/server.ts",
-    "serve:production": "dotenvx run -- node ./dist/server.cjs"
+    "serve:production": "dotenvx run -- node ./dist/server.cjs",
+    "start": "next start"
   },
   "dependencies": {
     "@adobe/react-spectrum": "^3.39.0",
