@@ -104,8 +104,8 @@ export const Blog = ({ pageSize, initialPosts, initialPagination, initialCategor
       </TwoColumnsFlexLayout>
 
       {isLoadingPosts ? <BlogPostSkeleton /> : <BlogList posts={posts} />}
-
-      {pagination && (
+      {/* checks if pagination exists and pageCount > 1 before rendering pagination */}
+      {pagination?.pageCount && pagination.pageCount > 1 && (
         <BlogPagination currentPage={currentPage} onPageChange={setCurrentPage} totalPages={pagination.pageCount} />
       )}
     </>
