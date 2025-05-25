@@ -7,7 +7,7 @@ export const Blog = () => {
   return (
     <Section className="flex flex-col gap-24" id="blog" tabIndex={-1}>
       <div className="flex items-center justify-between gap-8">
-        <Heading _alignment="left" _size="4xl">
+        <Heading _alignment="center" _size="4xl">
           <HeadingContent _level={2}>Nos dernières actualités</HeadingContent>
         </Heading>
 
