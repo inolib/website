@@ -45,7 +45,7 @@ export const Services = ({ _color }: ServicesProps) => {
 
   const services = [
     {
-      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" />,
+      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" role="presentation" />,
       title: "Audits d’accessibilité numérique",
       description: (
         <>
@@ -66,7 +66,7 @@ export const Services = ({ _color }: ServicesProps) => {
       illustration: auditIllustration,
     },
     {
-      icon: <Map01Icon className="size-6 stroke-yellow-500" />,
+      icon: <Map01Icon className="size-6 stroke-yellow-500" role="presentation" />,
       title: "Accompagnement et conseil",
       description: (
         <>
@@ -96,7 +96,7 @@ export const Services = ({ _color }: ServicesProps) => {
       illustration: supportIllustration,
     },
     {
-      icon: <GraduationHat02Icon className="size-6 stroke-yellow-500" />,
+      icon: <GraduationHat02Icon role="presentation" className="size-6 stroke-yellow-500" />,
       title: "Formations",
       description: (
         <>
@@ -121,7 +121,7 @@ export const Services = ({ _color }: ServicesProps) => {
       illustration: trainingIllustration,
     },
     {
-      icon: <CodeBrowserIcon className="size-6 stroke-yellow-500" />,
+      icon: <CodeBrowserIcon className="size-6 stroke-yellow-500" role="presentation" />,
       title: "Développement de solutions web et mobiles",
       description: (
         <>
@@ -141,7 +141,6 @@ export const Services = ({ _color }: ServicesProps) => {
       ],
       illustration: developmentIllustration,
     },
-    
   ];
 
   return (
