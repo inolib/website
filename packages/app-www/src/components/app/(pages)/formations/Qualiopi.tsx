@@ -78,7 +78,7 @@ export const Qualiopi = ({ _color }: QualiopiProps) => {
 
           <VerboseIllustration>
             <Image
-              alt=""
+              alt="Certificat Qualiopi"
               className="max-h-96 w-auto"
               height={184}
               src="/images/logos/qualiopi/qualiopi.png"
