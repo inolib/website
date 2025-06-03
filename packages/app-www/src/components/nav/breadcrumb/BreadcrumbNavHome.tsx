@@ -10,6 +10,8 @@ export type BreadcrumbNavHomeProps = {
 export const BreadcrumbNavHome = ({ _href }: BreadcrumbNavHomeProps) => {
   const routes = useRoutesContext();
 
+  console.log(routes[_href]);
+
   return (
     <li className="flex items-center px-2 py-1">
       <Link
