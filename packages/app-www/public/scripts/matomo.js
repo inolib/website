@@ -1,11 +1,14 @@
+const MATOMO_URL = process.env.NEXT_PUBLIC_MATOMO_URL || "";
+const MATOMO_SITE_ID = process.env.NEXT_PUBLIC_MATOMO_SITE_ID || "1";
+
 var _paq = (window._paq = window._paq || []);
 /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
 _paq.push(["trackPageView"]);
 _paq.push(["enableLinkTracking"]);
 (function () {
-  var u = "//analytics.inolib.com/";
+  var u = "${MATOMO_URL}";
   _paq.push(["setTrackerUrl", u + "matomo.php"]);
-  _paq.push(["setSiteId", "1"]);
+  _paq.push(["setSiteId", "${MATOMO_SITE_ID}"]);
   var d = document,
     g = d.createElement("script"),
     s = d.getElementsByTagName("script")[0];
