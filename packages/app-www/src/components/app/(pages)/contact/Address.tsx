@@ -61,7 +61,9 @@ export const Address = () => {
     <address className="flex flex-col gap-4 not-italic md:grid md:grid-cols-3 lg:flex lg:flex-col">
       {address.map((item, index) => (
         <div className="flex flex-col gap-4 rounded-3xl bg-blue-50 p-6" key={index}>
-          <SquaredIcon className="size-12 bg-blue-900">{item.icon}</SquaredIcon>
+          <SquaredIcon className="size-12 bg-blue-900" aria-hidden>
+            {item.icon}
+          </SquaredIcon>
 
           <div>
             <p className="font-bold">{item.title}</p>
