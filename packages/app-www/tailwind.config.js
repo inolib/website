@@ -71,7 +71,7 @@ export default {
       },
     },
     fontFamily: {
-      manrope: ["Manrope"],
+      manrope: ["Manrope", "sans-serif"],
     },
     fontSize: {
       xs: ["0.75rem", 1.5],
