@@ -34,11 +34,10 @@ jobs:
       - name: Deploy to PRODUCTION
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
-            cd /home/ubuntu/inolib-website/packages/app-www
+            cd /home/ubuntu/inolib-website-prod/packages/app-www
             pm2 delete nextjs-front
             git fetch origin main
             git reset --hard origin/main
-            rm -f .env
             cp .env.production .env
             pnpm install --frozen-lockfile
             rm -rf .next node_modules/.cache
@@ -48,11 +47,10 @@ jobs:
       - name: Deploy STRAPI PRODUCTION
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
-            cd /home/ubuntu/inolib-website/packages/app-strapi
+            cd /home/ubuntu/inolib-website-prod/packages/app-strapi
             pm2 delete strapi
             git fetch origin main
             git reset --hard origin/main
-            rm -f .env 
             cp .env.production .env
             pnpm install --frozen-lockfile
             pnpm run build
@@ -86,11 +84,10 @@ jobs:
       - name: Deploy to STAGING
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
-            cd /home/ubuntu/inolib-website/packages/app-www
+            cd /home/ubuntu/inolib-website-staging/packages/app-www
             pm2 delete nextjs-staging
             git fetch origin develop
             git reset --hard origin/develop
-            rm -f .env
             cp .env.staging .env
             pnpm install --frozen-lockfile
             rm -rf .next node_modules/.cache
@@ -102,11 +99,10 @@ jobs:
       - name: Deploy STRAPI STAGING
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
-            cd /home/ubuntu/inolib-website/packages/app-strapi
+            cd /home/ubuntu/inolib-website-staging/packages/app-strapi
             pm2 delete strapi-staging
             git fetch origin develop
             git reset --hard origin/develop
-            rm -f .env 
             cp .env.staging .env
             pnpm install --frozen-lockfile
             pnpm run build
