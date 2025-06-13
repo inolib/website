@@ -7,7 +7,7 @@ export const Orejime = () => {
         data-name="hubspot-analytics"
         data-src="/scripts/hubspot.js"
         data-type="application/javascript"
-        type="opt-in"
+        type="text/plain"
       />
 
       <Script src="/scripts/orejimeConfig.js" strategy="afterInteractive" />
