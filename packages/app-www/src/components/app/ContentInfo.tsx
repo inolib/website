@@ -79,7 +79,7 @@ export const ContentInfo = () => {
   ];
 
   return (
-    <footer role="contentinfo">
+    <footer>
       <Section className="flex flex-col gap-16 bg-blue-950 pb-4 font-normal text-blue-300 first-of-type:pt-24">
         <ThreeColumnsFlexLayout className="items-center">
           <ThreeColumnsFlexLayoutColumn className="flex flex-col">
