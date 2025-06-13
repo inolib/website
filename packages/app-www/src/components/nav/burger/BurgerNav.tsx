@@ -122,7 +122,7 @@ export const BurgerNav = () => {
                 className={cn("stroke-black transition-all duration-300", {
                   "stroke-white [:hover>&]:stroke-black": isHomePage,
                 })}
-                aria-hidden="true"
+                aria-hidden
                 role="presentation"
               />
             </BurgerNavButton>
@@ -130,7 +130,7 @@ export const BurgerNav = () => {
             <BurgerNavButton aria-label="Ouvrir le menu">
               <span>Menu</span>
               <Menu01Icon
-                aria-hidden="true"
+                aria-hidden
                 role="presentation"
                 className={cn("stroke-black transition-all duration-300", {
                   "stroke-white [:hover>&]:stroke-black": isHomePage,

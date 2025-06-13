@@ -44,6 +44,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
 
         <span>
           <ChevronDownIcon
+            aria-hidden
             className={cn(
               "stroke-black transition-all duration-300 [[aria-expanded=true]_&]:rotate-180 [[aria-expanded=true]_&]:stroke-black",
               {
