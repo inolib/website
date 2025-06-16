@@ -31,9 +31,9 @@ export const Address = () => {
               _color="transparent"
               _shape="link"
               className="font-semibold text-blue-700 focus-visible:outline-blue-700"
-              href="tel:+33647218669"
+              href="tel:+33482530039"
             >
-              +33 6 47 21 86 69
+              04 82 53 00 39
             </Link>
           </p>
 
