@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run build
+npm run start &
+
+NEXT_PID=$!
+sleep 6
+npm run test:a11y
+RESULT=$?
+kill $NEXT_PID
+
+exit $RESULT

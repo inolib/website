@@ -17,7 +17,7 @@ export const Banner = () => {
   const isHomePage = pathname === "/";
 
   return (
-    <header role="banner">
+    <header>
       <Section
         className={cn(
           "flex items-center justify-between gap-8 bg-blue-50 transition-all duration-300 first-of-type:py-4",
