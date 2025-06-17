@@ -25,6 +25,7 @@ export const Banner = () => {
             "bg-blue-950": isHomePage,
           },
         )}
+        asDiv
       >
         <Link
           _color={isHomePage ? "blue-950" : "blue-50"}
