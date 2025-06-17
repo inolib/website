@@ -37,17 +37,17 @@ export const Results = ({ _color }: ResultsProps) => {
 
   const values = [
     {
-      icon: <ZapFastIcon className="size-6 stroke-yellow-500" />,
+      icon: <ZapFastIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Amélioration de l’expérience utilisateur",
       description: "Éliminer les obstacles et proposer une interaction plus fluide.",
     },
     {
-      icon: <LineChartUp02Icon className="size-6 stroke-yellow-500" />,
+      icon: <LineChartUp02Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Augmentation des conversions",
       description: "Des interfaces optimisées qui favorisent une navigation plus efficace et attractive.",
     },
     {
-      icon: <MessageSmileSquareIcon className="size-6 stroke-yellow-500" />,
+      icon: <MessageSmileSquareIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Réduction des demandes de support",
       description: "En anticipant les problèmes d’utilisabilité, vous limitez les besoins d’assistance.",
     },

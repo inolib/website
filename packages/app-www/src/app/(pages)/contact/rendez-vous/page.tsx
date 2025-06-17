@@ -7,11 +7,13 @@ import { Section } from "~/components/section";
 
 export const metadata: Metadata = {
   title: "Prendre Rendez-vous | INOLIB",
-  description: "Planifiez un rendez-vous avec nos experts en accessibilité numérique et innovation. INOLIB vous accompagne dans vos projets.",
+  description:
+    "Planifiez un rendez-vous avec nos experts en accessibilité numérique et innovation. INOLIB vous accompagne dans vos projets.",
   keywords: ["INOLIB", "Rendez-vous", "Consultation", "Accessibilité numérique", "Innovation", "Experts"],
   openGraph: {
     title: "Prendre Rendez-vous | INOLIB",
-    description: "Planifiez un rendez-vous avec nos experts en accessibilité numérique et innovation. INOLIB vous accompagne dans vos projets.",
+    description:
+      "Planifiez un rendez-vous avec nos experts en accessibilité numérique et innovation. INOLIB vous accompagne dans vos projets.",
     url: "${process.env.SITE_URL}/contact",
     type: "website",
     siteName: "INOLIB",
@@ -32,7 +34,6 @@ export const metadata: Metadata = {
     images: ["${process.env.SITE_URL}/images/logos/inolib/inolib-blue.jpg"],
   },
 };
-
 
 const Page = () => {
   return (

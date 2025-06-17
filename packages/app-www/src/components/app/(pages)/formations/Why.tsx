@@ -39,29 +39,29 @@ export const Why = ({ _color }: WhyProps) => {
 
   const why = [
     {
-      icon: <Scales02Icon className="size-6 stroke-yellow-500" />,
+      icon: <Scales02Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Méthode équilibrée",
       description: "Une alliance de théorie et de pratique pour une montée en compétences progressive.",
     },
     {
-      icon: <Users01Icon className="size-6 stroke-yellow-500" />,
+      icon: <Users01Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Accompagnement personnalisé",
       description:
         "Un suivi pendant et après la formation, avec un suivi cohérent post-formation pour assurer la bonne mise en pratique des acquis.",
     },
     {
-      icon: <GraduationHat02Icon className="size-6 stroke-yellow-500" />,
+      icon: <GraduationHat02Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Formateurs experts",
       description:
         "Nos formateurs sont des experts reconnus dans leurs domaines, garantissant un enseignement de qualité.",
     },
     {
-      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" />,
+      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Expertise en accessibilité numérique",
       description: "Des formations spécialisées et adaptées aux exigences actuelles des entreprises.",
     },
     {
-      icon: <Certificate01Icon className="size-6 stroke-yellow-500" />,
+      icon: <Certificate01Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Certification Qualiopi",
       description: "Des formations de qualité reconnue par un organisme de certification indépendant.",
     },

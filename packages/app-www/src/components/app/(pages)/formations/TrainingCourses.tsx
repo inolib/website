@@ -71,7 +71,7 @@ export const TrainingCourses = ({ _color, courses, loading }: TrainingCoursesPro
               <HighlightsListItem key={item.slug}>
                 <BoxCard>
                   <BoxCardIcon aria-hidden>
-                    <FileCheck02Icon className="size-12 stroke-blue-600" />
+                    <FileCheck02Icon className="size-12 stroke-blue-600" aria-hidden />
                   </BoxCardIcon>
 
                   <BoxCardContent className="gap-4">

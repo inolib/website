@@ -4,11 +4,12 @@ import Image from "next/image";
 import type { VariantProps } from "tailwind-variants";
 
 import { Heading, HeadingContent } from "~/components/heading";
+import LinkedInIcon from "~/components/icon/LinkedinIcon";
 import { Link } from "~/components/link";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import LinkedInIcon from "#/images/logos/social-networks/linkedin.svg";
+// import LinkedInIcon from "#/images/logos/social-networks/linkedin.svg";
 
 const variants = tv({
   slots: {
@@ -49,6 +50,7 @@ export const Team = ({ _color }: TeamProps) => {
               aria-label="Djebrine ALOUI sur LinkedIn"
               className="size-8 fill-black transition-all duration-300 group-hover/link:fill-[#0B66C2]"
               key={0}
+              clipPathId="Djebrine"
             />
           ),
         },
@@ -57,7 +59,7 @@ export const Team = ({ _color }: TeamProps) => {
     {
       photo: "/images/photos/team/aurore-mauve-voeltzel.jpg",
       name: "Aurore-Mauve VOELTZEL",
-      role: "Responsable administrative et financière",
+      role: "Responsable admin. et financière",
       socialNetworks: [
         {
           label: "Aurore-Mauve VOELTZEL sur LinkedIn",
@@ -67,6 +69,7 @@ export const Team = ({ _color }: TeamProps) => {
               aria-label="Aurore-Mauve VOELTZEL sur LinkedIn"
               className="size-8 fill-black transition-all duration-300 group-hover/link:fill-[#0B66C2]"
               key={0}
+              clipPathId="Aurore"
             />
           ),
         },
@@ -137,6 +140,7 @@ export const Team = ({ _color }: TeamProps) => {
               aria-label="Brice MENDEZ sur LinkedIn"
               className="size-8 fill-black transition-all duration-300 group-hover/link:fill-[#0B66C2]"
               key={0}
+              clipPathId="Brice"
             />
           ),
         },

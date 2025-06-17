@@ -22,6 +22,10 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
 
   const isHomePage = pathname === "/";
 
+  if (!burgerNav.isExpanded()) {
+    return null;
+  }
+
   return (
     <MenuBarSubmenu className="flex flex-col">
       <MenuBarSubmenuButton
@@ -32,7 +36,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
               isHomePage,
           },
         )}
-        tabIndex={burgerNav.isExpanded() ? 0 : -1}
+        // tabIndex={burgerNav.isExpanded() ? 0 : -1}
       >
         <span
           className={cn({

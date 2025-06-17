@@ -18,8 +18,12 @@ export const BurgerNavSubmenuLink = ({ children, ...passthru }: BurgerNavSubmenu
     menuBar.closeSubmenus();
   }, [burgerNav, menuBar]);
 
+  if (!menuBarSubmenu.isExpanded()) {
+    return null;
+  }
+
   return (
-    <Link data-id={id} onClick={handleClick} tabIndex={menuBarSubmenu.isExpanded() ? 0 : -1} {...passthru}>
+    <Link data-id={id} onClick={handleClick} {...passthru}>
       {children}
     </Link>
   );

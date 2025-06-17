@@ -18,8 +18,8 @@ export const FAQQuestion = ({ children, className, ...passthru }: FAQQuestionPro
       {children}
 
       <div className="flex size-9 shrink-0 grow-0 items-center justify-center rounded-full bg-blue-900">
-        <MinusIcon className="size-6 stroke-white [[data-expanded=false]_&]:hidden" />
-        <PlusIcon className="size-6 stroke-white [[data-expanded=true]_&]:hidden" />
+        <MinusIcon className="size-6 stroke-white [[data-expanded=false]_&]:hidden" aria-hidden />
+        <PlusIcon className="size-6 stroke-white [[data-expanded=true]_&]:hidden" aria-hidden />
       </div>
     </BaseFAQQuestion>
   );

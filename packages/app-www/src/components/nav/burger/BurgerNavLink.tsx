@@ -27,6 +27,10 @@ export const BurgerNavLink = ({ _link }: BurgerNavLinkProps) => {
     menuBar.closeSubmenus();
   }, [burgerNav, menuBar]);
 
+  if (!burgerNav.isExpanded()) {
+    return null;
+  }
+
   return (
     <Link
       _color={isHomePage ? "blue-900" : "white"}
@@ -38,7 +42,6 @@ export const BurgerNavLink = ({ _link }: BurgerNavLinkProps) => {
       })}
       href={_link.href}
       onClick={handleClick}
-      tabIndex={burgerNav.isExpanded() ? 0 : -1}
     >
       {_link.label}
     </Link>
