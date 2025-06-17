@@ -57,7 +57,7 @@ export const Services = ({ _color }: ServicesProps) => {
       title: "Développement de sites web",
       highlights: [
         {
-          icon: <Building02Icon className="size-6 stroke-yellow-500" />,
+          icon: <Building02Icon className="size-6 stroke-yellow-500" aria-hidden />,
           title: "Site vitrines",
           description:
             "Améliorez votre visibilité en ligne avec un site vitrine élégant et intuitif. Offrez à vos visiteurs une expérience utilisateur optimale.",
@@ -67,7 +67,7 @@ export const Services = ({ _color }: ServicesProps) => {
           },
         },
         {
-          icon: <Building08Icon className="size-6 stroke-yellow-500" />,
+          icon: <Building08Icon className="size-6 stroke-yellow-500" aria-hidden />,
           title: "Sites institutionnels",
           description:
             "Valorisez vos activités et vos valeurs. Nos sites institutionnels transmettent vos messages clés de manière claire et impactante.",
@@ -77,7 +77,7 @@ export const Services = ({ _color }: ServicesProps) => {
           },
         },
         {
-          icon: <ShoppingBag03Icon className="size-6 stroke-yellow-500" />,
+          icon: <ShoppingBag03Icon className="size-6 stroke-yellow-500" aria-hidden />,
           title: "Solutions e-commerce",
           description:
             "Lancez une boutique en ligne performante avec des fonctionnalités adaptées à vos besoins. Chaque solution est optimisée pour une expérience d’achat fluide et une augmentation des conversions.",
@@ -89,7 +89,7 @@ export const Services = ({ _color }: ServicesProps) => {
       title: "Développement d’applications mobiles",
       highlights: [
         {
-          icon: <Phone01Icon className="size-6 stroke-yellow-500" />,
+          icon: <Phone01Icon className="size-6 stroke-yellow-500" aria-hidden />,
           title: "Applications natives et hybrides",
           description:
             "Créez des applications mobiles sur mesure pour iOS et Android. Nos solutions allient performance et facilité d’utilisation.",
@@ -101,7 +101,7 @@ export const Services = ({ _color }: ServicesProps) => {
       title: "Développement de solutions SaaS",
       highlights: [
         {
-          icon: <RulerIcon className="size-6 stroke-yellow-500" />,
+          icon: <RulerIcon className="size-6 stroke-yellow-500" aria-hidden />,
           title: "Logiciels sur mesure",
           description:
             "Optimisez vos processus avec des logiciels SaaS personnalisés, conçus pour soutenir la croissance de votre entreprise.",
@@ -113,7 +113,7 @@ export const Services = ({ _color }: ServicesProps) => {
       title: "Design et branding",
       highlights: [
         {
-          icon: <Image05Icon className="size-6 stroke-yellow-500" />,
+          icon: <Image05Icon className="size-6 stroke-yellow-500" aria-hidden />,
           title: "UI/UX et identité visuelle",
           description:
             "Renforcez votre identité visuelle avec des interfaces marquantes. Nous créons des expériences utilisateur intuitives et attractives.",

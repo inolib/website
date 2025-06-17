@@ -49,37 +49,37 @@ export const Steps = ({ _color }: StepsProps) => {
 
   const highlights = [
     {
-      icon: <SearchSmIcon className="size-12 stroke-blue-600" />,
+      icon: <SearchSmIcon className="size-12 stroke-blue-600" aria-hidden />,
       title: "1. Découverte",
       description: "Analyse de vos besoins et définition de vos objectifs.",
     },
     {
-      icon: <Map01Icon className="size-12 stroke-blue-600" />,
+      icon: <Map01Icon className="size-12 stroke-blue-600" aria-hidden />,
       title: "2. Stratégie",
       description: "Élaboration d’une stratégie de contenu et d’un plan de site.",
     },
     {
-      icon: <Image05Icon className="size-12 stroke-blue-600" />,
+      icon: <Image05Icon className="size-12 stroke-blue-600" aria-hidden />,
       title: "3. Design",
       description: "Création d’un design sur mesure, reflet de votre identité.",
     },
     {
-      icon: <CodeBrowserIcon className="size-12 stroke-blue-600" />,
+      icon: <CodeBrowserIcon className="size-12 stroke-blue-600" aria-hidden />,
       title: "4. Développement",
       description: "Intégration des fonctionnalités et développement technique.",
     },
     {
-      icon: <FileCheck02Icon className="size-12 stroke-blue-600" />,
+      icon: <FileCheck02Icon className="size-12 stroke-blue-600" aria-hidden />,
       title: "5. Tests et validation",
       description: "Vérification de la performance, de l'accessibilité, et de la sécurité.",
     },
     {
-      icon: <Rocket02Icon className="size-12 stroke-blue-600" />,
+      icon: <Rocket02Icon className="size-12 stroke-blue-600" aria-hidden />,
       title: "6. Lancement",
       description: "Mise en ligne et formation à l’utilisation du site.",
     },
     {
-      icon: <Tool02Icon className="size-12 stroke-blue-600" />,
+      icon: <Tool02Icon className="size-12 stroke-blue-600" aria-hidden />,
       title: "7. Suivi et optimisation",
       description: "Support continu et améliorations régulières.",
     },

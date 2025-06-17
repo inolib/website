@@ -45,12 +45,12 @@ export const useMenu = (): Menu => [
       //   href: "/audit",
       // },
       {
-        icon: <FileCheck02Icon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <FileCheck02Icon className="size-6 shrink-0 stroke-blue-600" aria-hidden />,
         label: "Audits d’accessibilité",
         href: "/audit/audits-accessibilite",
       },
       {
-        icon: <UsersCheckIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <UsersCheckIcon className="size-6 shrink-0 stroke-blue-600" aria-hidden />,
         label: "Tests utilisateurs",
         href: "/audit/tests-utilisateurs",
       },
@@ -66,12 +66,12 @@ export const useMenu = (): Menu => [
       //   href: "/accompagnement",
       // },
       {
-        icon: <RouteIcon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <RouteIcon className="size-6 shrink-0 stroke-blue-600" aria-hidden />,
         label: "Pilotage de projet",
         href: "/accompagnement/pilotage-de-projet",
       },
       {
-        icon: <Tool02Icon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <Tool02Icon className="size-6 shrink-0 stroke-blue-600" aria-hidden />,
         label: "Accompagnement technique",
         href: "/accompagnement/accompagnement-technique",
       },
@@ -87,7 +87,7 @@ export const useMenu = (): Menu => [
         href: "/developpement",
       },
       {
-        icon: <Building01Icon className="size-6 shrink-0 stroke-blue-600" />,
+        icon: <Building01Icon className="size-6 shrink-0 stroke-blue-600" aria-hidden />,
         label: "Sites vitrines et institutionnels",
         href: "/developpement/sites-vitrines-et-institutionnels",
       },

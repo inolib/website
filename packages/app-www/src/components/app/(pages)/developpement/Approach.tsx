@@ -49,23 +49,23 @@ export const Approach = ({ _color }: ApproachProps) => {
       title: "Technologies utilisées",
       highlights: [
         {
-          icon: <CodeBrowserIcon className="size-12 stroke-blue-600" />,
+          icon: <CodeBrowserIcon className="size-12 stroke-blue-600" aria-hidden />,
           title: "Développement web et mobile",
           description: "Next.js, React, Node.js, headless CMS, React Native.",
         },
         {
-          icon: <MagicWand02Icon className="size-12 stroke-blue-600" />,
+          icon: <MagicWand02Icon className="size-12 stroke-blue-600" aria-hidden />,
           title: "Intelligence artificielle (IA)",
           description: "Automatisation et optimisation des processus pour une meilleure productivité.",
         },
         {
-          icon: <PuzzlePiece01Icon className="size-12 stroke-blue-600" />,
+          icon: <PuzzlePiece01Icon className="size-12 stroke-blue-600" aria-hidden />,
           title: "APIs",
           description:
             "Intégration fluide et sécurisée avec vos systèmes existants pour garantir une compatibilité et des échanges de données efficaces.",
         },
         {
-          icon: <CpuChip01Icon className="size-12 stroke-blue-600" />,
+          icon: <CpuChip01Icon className="size-12 stroke-blue-600" aria-hidden />,
           title: "Machine learning",
           description: "Analyse prédictive et apprentissage continu pour des décisions plus stratégiques.",
         },

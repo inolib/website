@@ -22,6 +22,10 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
 
   const isHomePage = pathname === "/";
 
+  if (!burgerNav.isExpanded()) {
+    return null;
+  }
+
   return (
     <MenuBarSubmenu className="flex flex-col">
       <MenuBarSubmenuButton
@@ -32,7 +36,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
               isHomePage,
           },
         )}
-        tabIndex={burgerNav.isExpanded() ? 0 : -1}
+        // tabIndex={burgerNav.isExpanded() ? 0 : -1}
       >
         <span
           className={cn({
@@ -44,6 +48,7 @@ export const BurgerNavSubmenu = ({ _submenu }: BurgerNavSubmenuProps) => {
 
         <span>
           <ChevronDownIcon
+            aria-hidden
             className={cn(
               "stroke-black transition-all duration-300 [[aria-expanded=true]_&]:rotate-180 [[aria-expanded=true]_&]:stroke-black",
               {

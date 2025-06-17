@@ -37,6 +37,7 @@ export const Banner = () => {
             className={cn("shrink-0 stroke-blue-900 transition-all duration-300", {
               "stroke-sand-50": isHomePage,
             })}
+            aria-hidden
           />
         </Link>
 

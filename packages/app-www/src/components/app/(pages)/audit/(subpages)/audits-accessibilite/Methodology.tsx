@@ -47,28 +47,28 @@ export const Methodology = ({ _color }: MethodologyProps) => {
 
   const highlights = [
     {
-      icon: <CompassIcon className="size-12 stroke-blue-600" />,
+      icon: <CompassIcon className="size-12 stroke-blue-600" aria-hidden />,
       title: "1. Co-construction",
       description: "Sélection d’un échantillon représentatif avec vous.",
     },
     {
-      icon: <SearchSmIcon className="size-12 stroke-blue-600" />,
+      icon: <SearchSmIcon className="size-12 stroke-blue-600" aria-hidden />,
       title: "2. Investigation",
       description: "Analyse de l’échantillon au regard du référentiel choisi.",
     },
     {
-      icon: <Pencil01Icon className="size-12 stroke-blue-600" />,
+      icon: <Pencil01Icon className="size-12 stroke-blue-600" aria-hidden />,
       title: "3. Synthèse",
       description: "Rédaction d’un rapport détaillé avec recommandations.",
     },
     {
-      icon: <MessageChatSquareIcon className="size-12 stroke-blue-600" />,
+      icon: <MessageChatSquareIcon className="size-12 stroke-blue-600" aria-hidden />,
       title: "4. Échange",
       description:
         "Restitution des résultats en visioconférence, avec explication des non-conformités, des solutions, et des priorités d’action.",
     },
     {
-      icon: <PackageIcon className="size-12 stroke-blue-600" />,
+      icon: <PackageIcon className="size-12 stroke-blue-600" aria-hidden />,
       title: "5. Livraison",
       description: "Grille technique, rapport détaillé, déclaration d’accessibilité.",
     },

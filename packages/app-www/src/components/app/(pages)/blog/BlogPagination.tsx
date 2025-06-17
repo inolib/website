@@ -18,34 +18,30 @@ export const BlogPagination = ({ currentPage, totalPages = 1, onPageChange }: Bl
     >
       <button
         type="button"
-        className="cursor-pointer rounded-lg border border-gray-400 px-6 py-2 text-gray-700 disabled:opacity-50 flex items-center gap-2"
+        className="flex cursor-pointer items-center gap-2 rounded-lg border border-gray-400 px-6 py-2 text-gray-700 disabled:opacity-50"
         disabled={isFirst}
         aria-disabled={isFirst}
         aria-label="Page précédente"
         onClick={() => onPageChange(currentPage - 1)}
       >
-        <span aria-hidden="true">←</span>
+        <span aria-hidden>←</span>
         <span>Précédent</span>
       </button>
 
-      <p
-        className="font-medium text-gray-800"
-        aria-live="polite"
-        aria-atomic="true"
-      >
+      <p className="font-medium text-gray-800" aria-live="polite" aria-atomic="true">
         Page {currentPage} sur {totalPages}
       </p>
 
       <button
         type="button"
-        className="cursor-pointer rounded-lg border border-gray-400 px-6 py-2 text-gray-700 disabled:opacity-50 flex items-center gap-2"
+        className="flex cursor-pointer items-center gap-2 rounded-lg border border-gray-400 px-6 py-2 text-gray-700 disabled:opacity-50"
         disabled={isLast}
         aria-disabled={isLast}
         aria-label="Page suivante"
         onClick={() => onPageChange(currentPage + 1)}
       >
         <span>Suivant</span>
-        <span aria-hidden="true">→</span>
+        <span aria-hidden>→</span>
       </button>
     </nav>
   );

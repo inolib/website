@@ -82,7 +82,11 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
 
       {testimonials.length > 1 ? (
         <SlideshowPreviousButton className={slideshowPreviousButtonClassName()} title="Témoignage précédent">
-          <ArrowNarrowDownIcon aria-label="Témoignage précédent" className={slideshowPreviousButtonIconClassName()} />
+          <ArrowNarrowDownIcon
+            role="img"
+            aria-label="Témoignage précédent"
+            className={slideshowPreviousButtonIconClassName()}
+          />
         </SlideshowPreviousButton>
       ) : (
         <div className="border border-transparent p-7 md:order-first" />
@@ -90,7 +94,11 @@ export const Testimonials = ({ _color }: TestimonialsProps) => {
 
       {testimonials.length > 1 ? (
         <SlideshowNextButton className={slideshowNextButtonClassName()} title="Témoignage suivant">
-          <ArrowNarrowDownIcon aria-label="Témoignage suivant" className={slideshowNextButtonIconClassName()} />
+          <ArrowNarrowDownIcon
+            role="img"
+            aria-label="Témoignage suivant"
+            className={slideshowNextButtonIconClassName()}
+          />
         </SlideshowNextButton>
       ) : (
         <div className="border border-transparent p-7" />
