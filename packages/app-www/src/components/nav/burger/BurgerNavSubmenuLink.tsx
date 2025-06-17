@@ -7,7 +7,7 @@ import { useBurgerNav } from "./BurgerNav";
 
 export type BurgerNavSubmenuLinkProps = LinkProps;
 
-export const BurgerNavSubmenuLink = ({ ...passthru }: BurgerNavSubmenuLinkProps) => {
+export const BurgerNavSubmenuLink = ({ children, ...passthru }: BurgerNavSubmenuLinkProps) => {
   const burgerNav = useBurgerNav();
   const id = useId();
   const menuBar = useMenuBar();
@@ -18,5 +18,13 @@ export const BurgerNavSubmenuLink = ({ ...passthru }: BurgerNavSubmenuLinkProps)
     menuBar.closeSubmenus();
   }, [burgerNav, menuBar]);
 
-  return <Link data-id={id} onClick={handleClick} tabIndex={menuBarSubmenu.isExpanded() ? 0 : -1} {...passthru} />;
+  if (!menuBarSubmenu.isExpanded()) {
+    return null;
+  }
+
+  return (
+    <Link data-id={id} onClick={handleClick} {...passthru}>
+      {children}
+    </Link>
+  );
 };

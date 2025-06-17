@@ -39,7 +39,11 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
           />
 
           <div className="pointer-events-none absolute flex size-6 items-center justify-center">
-            <CheckIcon className="size-0 stroke-white transition-all duration-300 [:checked+div>&]:size-[1.125rem]" />
+            <CheckIcon
+              className="size-0 stroke-white transition-all duration-300 [:checked+div>&]:size-[1.125rem]"
+              aria-hidden
+              role="img"
+            />
           </div>
 
           <label className="cursor-pointer" htmlFor={id}>

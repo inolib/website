@@ -40,33 +40,33 @@ export const Why = ({ _color }: WhyProps) => {
 
   const why = [
     {
-      icon: <Certificate01Icon className="size-6 stroke-yellow-500" />,
+      icon: <Certificate01Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Expertise",
       description: "Une équipe passionnée, à la pointe des dernières technologies.",
     },
     {
-      icon: <ZapFastIcon className="size-6 stroke-yellow-500" />,
+      icon: <ZapFastIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Agilité",
       description:
         "Nous nous adaptons rapidement à vos besoins, garantissant des résultats concrets et des livraisons rapides.",
     },
     {
-      icon: <ThumbsUpIcon className="size-6 stroke-yellow-500" />,
+      icon: <ThumbsUpIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Engagement",
       description: "Nos solutions sur mesure sont conçues en toute transparence, pour des résultats fiables.",
     },
     {
-      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" />,
+      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Accessibilité numérique",
       description: "Nos solutions respectent les critères RGAA, WCAG, et RAWeb, garantissant une accessibilité à tous.",
     },
     {
-      icon: <Globe04Icon className="size-6 stroke-yellow-500" />,
+      icon: <Globe04Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Éco-conception",
       description: "Nous réduisons l’impact environnemental de nos solutions.",
     },
     {
-      icon: <Lock01Icon className="size-6 stroke-yellow-500" />,
+      icon: <Lock01Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Sécurité",
       description:
         "La protection des données est notre priorité, avec des mesures strictes de sécurité et de confidentialité.",

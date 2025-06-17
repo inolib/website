@@ -40,6 +40,7 @@ export const MainNavSubmenu = ({ _submenu }: MainNavSubmenuProps) => {
         </span>
 
         <ChevronDownIcon
+          aria-hidden
           className={cn(
             "stroke-black transition-all duration-300 [[aria-expanded=true]>&]:rotate-180 [[aria-expanded=true]>&]:stroke-black",
             {
