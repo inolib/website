@@ -48,4 +48,6 @@ export const formatHubspotFields = (data: Schema, objectTypeId: ObjectTypeID) =>
       fields.push({ objectTypeId, name, value });
     }
   }
+
+  return fields;
 };
