@@ -70,8 +70,8 @@ export const TrainingCourses = ({ _color, courses, loading }: TrainingCoursesPro
             {courses.map((item, index) => (
               <HighlightsListItem key={item.slug}>
                 <BoxCard>
-                  <BoxCardIcon aria-hidden="true">
-                    <FileCheck02Icon className="size-12 stroke-blue-600" />
+                  <BoxCardIcon aria-hidden>
+                    <FileCheck02Icon className="size-12 stroke-blue-600" aria-hidden />
                   </BoxCardIcon>
 
                   <BoxCardContent className="gap-4">

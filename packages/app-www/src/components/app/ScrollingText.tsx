@@ -50,14 +50,14 @@ export const ScrollingText = () => {
       >
         <span className="inline-flex size-[4.34375rem] items-center justify-center bg-blue-950">
           <PlayIcon
-            aria-hidden="true"
+            aria-hidden
             className={cn(
               "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-300 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
               { hidden: isRunning },
             )}
           />
           <Columns01Icon
-            aria-hidden="true"
+            aria-hidden
             className={cn(
               "size-9 rounded-md fill-yellow-500 outline-none transition-all duration-300 group-focus-visible/button:outline-4 group-focus-visible/button:outline-offset-2 group-focus-visible/button:outline-yellow-500",
               { hidden: !isRunning },

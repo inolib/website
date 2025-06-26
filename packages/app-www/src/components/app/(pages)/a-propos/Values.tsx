@@ -40,33 +40,33 @@ export const Values = ({ _color }: ValuesProps) => {
 
   const values = [
     {
-      icon: <Lightbulb05Icon className="size-6 stroke-yellow-500" />,
+      icon: <Lightbulb05Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Innovation et créativité",
       description: "Rechercher constamment des solutions créatives pour répondre aux défis actuels et futurs.",
     },
     {
-      icon: <MessageChatSquareIcon className="size-6 stroke-yellow-500" />,
+      icon: <MessageChatSquareIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Transparence et intégrité",
       description: "Privilégier une communication claire et des actions éthiques.",
     },
     {
-      icon: <ThumbsUpIcon className="size-6 stroke-yellow-500" />,
+      icon: <ThumbsUpIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Fiabilité et confiance",
       description: "Établir des relations solides et durables, favorisant ainsi la confiance et le succès commun.",
     },
     {
-      icon: <Users01Icon className="size-6 stroke-yellow-500" />,
+      icon: <Users01Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Inclusion et diversité",
       description: "Valoriser l’inclusion et la diversité dans tous nos projets, ainsi que dans notre équipe.",
     },
     {
-      icon: <HeartIcon className="size-6 stroke-yellow-500" />,
+      icon: <HeartIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Responsabilité et bienveillance",
       description:
         "Évaluer l’impact de nos choix sur la société et agir avec respect, en faisant preuve d’une réelle considération pour chacun.",
     },
     {
-      icon: <ZapFastIcon className="size-6 stroke-yellow-500" />,
+      icon: <ZapFastIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Efficacité et proactivité",
       description: "Anticiper les besoins de nos clients et proposer des solutions innovantes et sur mesure.",
     },

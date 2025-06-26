@@ -40,7 +40,7 @@ const Page = () => {
             <p>Audit</p>
             <UnorderedList className="flex flex-col gap-2">
               <UnorderedListItem>
-                <Link href="/audit/audits-accessibilité">Audits d’accessibilité</Link>
+                <Link href="/audit/audits-accessibilite">Audits d’accessibilité</Link>
               </UnorderedListItem>
               <UnorderedListItem>
                 <Link href="/audit/tests-utilisateurs">Tests utilisateurs</Link>

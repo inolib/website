@@ -17,7 +17,7 @@ export const Banner = () => {
   const isHomePage = pathname === "/";
 
   return (
-    <header role="banner">
+    <header>
       <Section
         className={cn(
           "flex items-center justify-between gap-8 bg-blue-50 transition-all duration-300 first-of-type:py-4",
@@ -25,6 +25,7 @@ export const Banner = () => {
             "bg-blue-950": isHomePage,
           },
         )}
+        asDiv
       >
         <Link
           _color={isHomePage ? "blue-950" : "blue-50"}
@@ -37,6 +38,7 @@ export const Banner = () => {
             className={cn("shrink-0 stroke-blue-900 transition-all duration-300", {
               "stroke-sand-50": isHomePage,
             })}
+            aria-hidden
           />
         </Link>
 

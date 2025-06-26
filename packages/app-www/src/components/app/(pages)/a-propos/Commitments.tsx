@@ -40,33 +40,33 @@ export const Commitments = ({ _color }: CommitmentsProps) => {
 
   const values = [
     {
-      icon: <RulerIcon className="size-6 stroke-yellow-500" />,
+      icon: <RulerIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Excellence technologique",
       description: "Offrir des solutions sur mesure, parfaitement adaptées aux besoins uniques de chaque client.",
     },
     {
-      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" />,
+      icon: <FileCheck02Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Accessibilité pour tous",
       description: "Garantir que nos solutions sont accessibles à tous.",
     },
     {
-      icon: <GraduationHat02Icon className="size-6 stroke-yellow-500" />,
+      icon: <GraduationHat02Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Partage de compétences",
       description:
         "Proposer des formations pour aider les individus et organisations à maîtriser et à intégrer efficacement des pratiques inclusives.",
     },
     {
-      icon: <Lightbulb05Icon className="size-6 stroke-yellow-500" />,
+      icon: <Lightbulb05Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Innovation continue",
       description: "Explorer de nouvelles idées pour créer des solutions qui placent nos clients au premier plan.",
     },
     {
-      icon: <Globe04Icon className="size-6 stroke-yellow-500" />,
+      icon: <Globe04Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Éthique et responsabilité",
       description: "Réduire notre impact environnemental et promouvoir un usage responsable de la technologie.",
     },
     {
-      icon: <ThumbsUpIcon className="size-6 stroke-yellow-500" />,
+      icon: <ThumbsUpIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Impact social positif",
       description: "Améliorer la vie des individus et contribuer à un avenir équitable et durable.",
     },

@@ -8,7 +8,7 @@ import PhoneIcon from "#/images/icons/phone.svg";
 export const Address = () => {
   const address = [
     {
-      icon: <Mail02Icon className="size-6 stroke-yellow-500" />,
+      icon: <Mail02Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "E-mail",
       content: (
         <Link
@@ -22,7 +22,7 @@ export const Address = () => {
       ),
     },
     {
-      icon: <PhoneIcon className="size-6 stroke-yellow-500" />,
+      icon: <PhoneIcon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Téléphone",
       content: (
         <div className="flex flex-col gap-4">
@@ -42,7 +42,7 @@ export const Address = () => {
       ),
     },
     {
-      icon: <MarkerPin01Icon className="size-6 stroke-yellow-500" />,
+      icon: <MarkerPin01Icon className="size-6 stroke-yellow-500" aria-hidden />,
       title: "Adresse",
       content: (
         <Link

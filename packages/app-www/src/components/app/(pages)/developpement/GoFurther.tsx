@@ -52,7 +52,7 @@ export const GoFurther = ({ _color }: GoFurtherProps) => {
                   <div className="flex items-center gap-4">
                     <RoundedIcon className="size-12 bg-blue-300">
                       <RoundedIcon className="size-9 bg-blue-900">
-                        <FileCheck02Icon className="size-6 stroke-yellow-500" />
+                        <FileCheck02Icon className="size-6 stroke-yellow-500" aria-hidden />
                       </RoundedIcon>
                     </RoundedIcon>
 
@@ -85,7 +85,7 @@ export const GoFurther = ({ _color }: GoFurtherProps) => {
                   <div className="flex items-center gap-4">
                     <RoundedIcon className="size-12 bg-blue-300">
                       <RoundedIcon className="size-9 bg-blue-900">
-                        <Map01Icon className="size-6 stroke-yellow-500" />
+                        <Map01Icon className="size-6 stroke-yellow-500" aria-hidden />
                       </RoundedIcon>
                     </RoundedIcon>
 

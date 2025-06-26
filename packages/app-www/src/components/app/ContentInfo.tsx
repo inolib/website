@@ -79,8 +79,8 @@ export const ContentInfo = () => {
   ];
 
   return (
-    <footer role="contentinfo">
-      <Section className="flex flex-col gap-16 bg-blue-950 pb-4 font-normal text-blue-300 first-of-type:pt-24">
+    <footer>
+      <Section className="flex flex-col gap-16 bg-blue-950 pb-4 font-normal text-blue-300 first-of-type:pt-24" asDiv>
         <ThreeColumnsFlexLayout className="items-center">
           <ThreeColumnsFlexLayoutColumn className="flex flex-col">
             <nav aria-label="Menu de pied de page">
