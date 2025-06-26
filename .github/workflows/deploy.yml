@@ -35,7 +35,7 @@ jobs:
         run: |
           ssh ${{ secrets.USER }}@${{ secrets.SERVER_IP }} '
             cd /home/ubuntu/inolib-website-prod/packages/app-www
-            pm2 delete nextjs-prod
+            pm2 delete nextjs-front
             git fetch origin main
             git reset --hard origin/main
             cp .env.production .env
