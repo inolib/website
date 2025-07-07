@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "qualiopi_certificates",
+  "info": {
+    "singularName": "qualiopi-certificate",
+    "pluralName": "qualiopi-certificates",
+    "displayName": "Qualiopi certificate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

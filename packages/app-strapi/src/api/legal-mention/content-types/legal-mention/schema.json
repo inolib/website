@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "legal_mentions",
+  "info": {
+    "singularName": "legal-mention",
+    "pluralName": "legal-mentions",
+    "displayName": "Legal Mention"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

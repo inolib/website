@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pilot_projects",
+  "info": {
+    "singularName": "pilot-project",
+    "pluralName": "pilot-projects",
+    "displayName": "Pilot project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

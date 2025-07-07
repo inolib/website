@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "showcase_websites",
+  "info": {
+    "singularName": "showcase-website",
+    "pluralName": "showcase-websites",
+    "displayName": "Showcase website"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

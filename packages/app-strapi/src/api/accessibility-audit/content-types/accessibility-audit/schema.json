@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "accessibility_audits",
+  "info": {
+    "singularName": "accessibility-audit",
+    "pluralName": "accessibility-audits",
+    "displayName": "Accessibility audit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

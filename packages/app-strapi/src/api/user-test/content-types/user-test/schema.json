@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "user_tests",
+  "info": {
+    "singularName": "user-test",
+    "pluralName": "user-tests",
+    "displayName": "User test"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

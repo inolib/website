@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "web_developments",
+  "info": {
+    "singularName": "web-development",
+    "pluralName": "web-developments",
+    "displayName": "Web development"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_section_heroes",
+  "info": {
+    "displayName": "Hero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "blocks"
+    },
+    "subtitle": {
+      "type": "blocks"
+    },
+    "heroImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.image"
+    },
+    "heroButton": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.button"
+    }
+  }
+}

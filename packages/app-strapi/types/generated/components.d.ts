@@ -68,6 +68,20 @@ export interface FormationsWhyUs extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionHero extends Struct.ComponentSchema {
+  collectionName: "components_section_heroes";
+  info: {
+    description: "";
+    displayName: "Hero";
+  };
+  attributes: {
+    heroButton: Schema.Attribute.Component<"shared.button", true>;
+    heroImage: Schema.Attribute.Component<"shared.image", false>;
+    subtitle: Schema.Attribute.Blocks;
+    title: Schema.Attribute.Blocks;
+  };
+}
+
 export interface SeoSeoMetadata extends Struct.ComponentSchema {
   collectionName: "components_seo_seo_metadata";
   info: {
@@ -96,6 +110,33 @@ export interface SeoSeoMetadata extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedButton extends Struct.ComponentSchema {
+  collectionName: "components_shared_buttons";
+  info: {
+    description: "";
+    displayName: "Button";
+  };
+  attributes: {
+    ariaLabel: Schema.Attribute.String;
+    external: Schema.Attribute.Boolean;
+    label: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedImage extends Struct.ComponentSchema {
+  collectionName: "components_shared_images";
+  info: {
+    displayName: "Image";
+  };
+  attributes: {
+    alt: Schema.Attribute.String;
+    caption: Schema.Attribute.String;
+    decorative: Schema.Attribute.Boolean;
+    media: Schema.Attribute.Media<"images" | "files" | "videos" | "audios">;
+  };
+}
+
 declare module "@strapi/strapi" {
   export module Public {
     export interface ComponentSchemas {
@@ -103,7 +144,10 @@ declare module "@strapi/strapi" {
       "formations.concepts": FormationsConcepts;
       "formations.pedagogic-approach": FormationsPedagogicApproach;
       "formations.why-us": FormationsWhyUs;
+      "section.hero": SectionHero;
       "seo.seo-metadata": SeoSeoMetadata;
+      "shared.button": SharedButton;
+      "shared.image": SharedImage;
     }
   }
 }
