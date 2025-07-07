@@ -7,6 +7,7 @@ import { RoutesProvider } from "~/context/RoutesContext";
 import "@fontsource-variable/manrope";
 import "orejime/dist/orejime.css";
 import "./globals.css";
+import { GoogleAnalytics } from "~/components/app/GoogleAnalytics";
 
 export const metadata: Metadata = {
   icons: [
@@ -35,6 +36,7 @@ const Layout = ({ children }: PropsWithChildren) => {
   return (
     <html className="min-[1920px]:text-[clamp(1rem,_0.83333dvw,_2rem)]" lang="fr">
       <body className="mx-auto min-w-[320px] max-w-[3840px] font-manrope text-lg font-medium" tabIndex={-1}>
+        <GoogleAnalytics />
         <div id="app">
           <Banner />
 
