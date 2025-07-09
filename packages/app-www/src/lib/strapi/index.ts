@@ -1,4 +1,12 @@
-import { AuthorApi, BlogPostApi, BlogSettingApi, Configuration, CategoryApi, FormationApi } from "./api-client";
+import {
+  AuthorApi,
+  BlogPostApi,
+  BlogSettingApi,
+  Configuration,
+  CategoryApi,
+  FormationApi,
+  HomePageApi,
+} from "./api-client";
 
 const baseURL = (process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337") + "/api";
 const apiToken = process.env.STRAPI_API_TOKEN;
@@ -12,6 +20,7 @@ const apiConfig = new Configuration({
 export const strapiApi = {
   // Single types API
   blogSettings: new BlogSettingApi(apiConfig),
+  homePage: new HomePageApi(apiConfig),
 
   // Component Api
   blogPost: new BlogPostApi(apiConfig),

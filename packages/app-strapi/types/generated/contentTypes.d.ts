@@ -702,6 +702,28 @@ export interface ApiFormationFormation extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: "home_pages";
+  info: {
+    displayName: "HomePage";
+    pluralName: "home-pages";
+    singularName: "home-page";
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<"oneToMany", "api::home-page.home-page"> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<["section.hero"]>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomeSettingHomeSetting extends Struct.SingleTypeSchema {
   collectionName: "home_settings";
   info: {
@@ -739,29 +761,6 @@ export interface ApiHomeSettingHomeSetting extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomeHome extends Struct.SingleTypeSchema {
-  collectionName: "homes";
-  info: {
-    description: "";
-    displayName: "Home";
-    pluralName: "homes";
-    singularName: "home";
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
-    HomeHero: Schema.Attribute.Component<"section.hero", false>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<"oneToMany", "api::home.home"> & Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<"oneToOne", "admin::user"> & Schema.Attribute.Private;
@@ -1469,8 +1468,8 @@ declare module "@strapi/strapi" {
       "api::course.course": ApiCourseCourse;
       "api::formation-setting.formation-setting": ApiFormationSettingFormationSetting;
       "api::formation.formation": ApiFormationFormation;
+      "api::home-page.home-page": ApiHomePageHomePage;
       "api::home-setting.home-setting": ApiHomeSettingHomeSetting;
-      "api::home.home": ApiHomeHome;
       "api::legal-mention.legal-mention": ApiLegalMentionLegalMention;
       "api::partner.partner": ApiPartnerPartner;
       "api::pilot-project.pilot-project": ApiPilotProjectPilotProject;

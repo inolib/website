@@ -7,8 +7,18 @@ import { Section } from "~/components/section";
 import ArrowNarrowDownIcon from "#/images/icons/arrow-narrow-down.svg";
 import headerIllustration from "#/images/illustrations/app/header.svg?url";
 import inolibYellowLogo from "#/images/logos/inolib/inolib-yellow.svg?url";
+import { extractRichText } from "~/helpers/extractRichText";
+import { getMediaUrl } from "~/helpers/getMediaUrl";
+import type { HomePageRequestDataSectionsInner } from "~/lib/strapi/api-client";
 
-export const Header = () => {
+export const Header = ({ headerData }: { headerData?: HomePageRequestDataSectionsInner }) => {
+  const title = extractRichText(headerData?.title);
+  const subtitle = extractRichText(headerData?.subtitle);
+  const heroImageUrl = getMediaUrl(headerData?.heroImage?.media);
+  const heroButtons = headerData?.heroButton ?? [];
+  const firstButton = heroButtons[0] ?? {};
+  const secondButton = heroButtons[1] ?? {};
+
   return (
     <div className="bg-blue-900">
       <Section className="flex flex-col gap-8 bg-blue-950 bg-[radial-gradient(at_bottom_left,_#304825_0%,_rgb(17_31_34_/_0)_50%),_radial-gradient(at_bottom_right,_#304825_0%,_rgb(17_31_34_/_0)_50%)] first-of-type:pt-24 sm:rounded-tr-[18rem]">
@@ -40,12 +50,11 @@ export const Header = () => {
                     className="relative bottom-[-0.03125rem] inline-block h-[2.333rem] w-fit align-baseline sm:h-12 md:h-[2.333rem] lg:h-12"
                     src={inolibYellowLogo}
                   />
-                  <span className="sr-only">INOLIB</span>, de l’idée à la réalisation pour un numérique accessible
+                  <span className="sr-only">INOLIB</span>
+                  {title}
                 </h1>
 
-                <p className="text-xl font-normal text-sand-400">
-                  Auditer, accompagner, développer, et former : une équipe engagée pour la réussite de votre projet.
-                </p>
+                <p className="text-xl font-normal text-sand-400">{subtitle}</p>
               </div>
             </div>
 
@@ -55,20 +64,33 @@ export const Header = () => {
                 _color="blue-950"
                 _shape="button"
                 className="shrink-0 text-sand-400"
-                href="#services"
+                href={firstButton.url ?? "#"}
+                aria-label={firstButton.ariaLabel ?? undefined}
               >
-                <span>Découvrir nos services</span>
+                <span>{firstButton.label ?? "Découvrir nos services"}</span>
                 <ArrowNarrowDownIcon className="stroke-sand-400" />
               </Link>
 
-              <Link _color="yellow-500" _shape="button" className="w-auto shrink-0" href="/contact">
-                Nous contacter
+              <Link
+                _color="yellow-500"
+                _shape="button"
+                className="w-auto shrink-0"
+                href={secondButton.url ?? "#"}
+                aria-label={secondButton.ariaLabel ?? undefined}
+              >
+                {secondButton.label ?? "Nous contacter"}
               </Link>
             </div>
           </TwoColumnsFlexLayoutColumn>
 
           <TwoColumnsFlexLayoutColumn className="flex items-center justify-center">
-            <Image alt="" className="h-96 md:size-full" src={headerIllustration} />
+            <Image
+              alt=""
+              className="h-96 md:size-full"
+              src={heroImageUrl}
+              width={headerData?.heroImage?.media?.width || 400}
+              height={headerData?.heroImage?.media?.height || 300}
+            />
           </TwoColumnsFlexLayoutColumn>
         </TwoColumnsFlexLayout>
       </Section>
